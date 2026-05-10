@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand */}
           <div style={{ gridColumn: 'span 1' }}>
             <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: 16 }}>
-              <Image src="/digiwolf-logo.svg" alt="Digi Wolf Agency" width={160} height={64} />
+              <Image src="/digiwolf-logo.png" alt="Digi Wolf Agency" width={160} height={168} style={{ objectFit: 'contain' }} />
             </Link>
             <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.7, maxWidth: 240 }}>
               Full-stack digital agency helping entrepreneurs grow in Central & Eastern Europe.
