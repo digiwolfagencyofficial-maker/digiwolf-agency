@@ -1,6 +1,1 @@
-import { redirect } from 'next/navigation'
-
-export default function RootPage() {
-  // Redirect to public homepage
-  redirect('/')
-}
+export { default } from './(public)/page'
