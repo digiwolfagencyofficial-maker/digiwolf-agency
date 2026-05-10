@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
-import { auth } from '@/lib/auth'
 import { z } from 'zod'
 
-const leadSchema = z.object({
+const contactSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   company: z.string().optional(),
@@ -12,29 +11,10 @@ const leadSchema = z.object({
   message: z.string().min(10),
 })
 
-export async function GET() {
-  const session = await auth()
-
-  if (!session || (session.user as { role?: string }).role !== 'admin') {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
-
-  const { data, error } = await supabaseAdmin
-    .from('leads')
-    .select('*')
-    .order('created_at', { ascending: false })
-
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
-  }
-
-  return NextResponse.json(data)
-}
-
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const parsed = leadSchema.safeParse(body)
+    const parsed = contactSchema.safeParse(body)
 
     if (!parsed.success) {
       return NextResponse.json(
@@ -47,20 +27,23 @@ export async function POST(req: NextRequest) {
       .from('leads')
       .insert({
         ...parsed.data,
-        source: 'website',
+        source: 'contact_form',
         status: 'new',
       })
       .select()
       .single()
 
     if (error) {
-      console.error('Lead insert error:', error)
-      return NextResponse.json({ error: 'Failed to save lead' }, { status: 500 })
+      console.error('Contact insert error:', error)
+      return NextResponse.json({ error: 'Failed to send message' }, { status: 500 })
     }
 
-    return NextResponse.json({ success: true, id: data.id }, { status: 201 })
+    return NextResponse.json(
+      { success: true, message: 'Message sent successfully', id: data.id },
+      { status: 201 }
+    )
   } catch (err) {
-    console.error('Leads API error:', err)
+    console.error('Contact API error:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

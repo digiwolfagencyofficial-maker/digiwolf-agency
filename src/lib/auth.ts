@@ -1,5 +1,6 @@
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
+import GoogleProvider from 'next-auth/providers/google'
 import { supabaseAdmin } from '@/lib/supabase'
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
@@ -15,12 +16,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
         try {
           const { createClient } = await import('@supabase/supabase-js')
-          const supabase = createClient(
+          const supabaseAuth = createClient(
             process.env.NEXT_PUBLIC_SUPABASE_URL!,
             process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
           )
 
-          const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+          const { data: authData, error: authError } = await supabaseAuth.auth.signInWithPassword({
             email: credentials.email as string,
             password: credentials.password as string,
           })
@@ -47,19 +48,23 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         }
       },
     }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID ?? '',
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? '',
+    }),
   ],
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.role = (user as any).role
+        token.role = (user as { role?: string }).role
         token.id = user.id
       }
       return token
     },
     async session({ session, token }) {
       if (session.user) {
-        (session.user as any).role = token.role
-        ;(session.user as any).id = token.id
+        (session.user as { role?: unknown; id?: unknown }).role = token.role
+        ;(session.user as { role?: unknown; id?: unknown }).id = token.id
       }
       return session
     },
