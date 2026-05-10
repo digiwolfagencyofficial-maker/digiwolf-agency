@@ -1,11 +1,13 @@
 import { Hero } from '@/components/sections/Hero'
 import { Services } from '@/components/sections/Services'
 import { Process } from '@/components/sections/Process'
-import { Pricing } from '@/components/sections/Pricing'
+import { CaseStudies } from '@/components/sections/CaseStudies'
 import { Testimonials } from '@/components/sections/Testimonials'
+import { AIHighlight } from '@/components/sections/AIHighlight'
+import { Pricing } from '@/components/sections/Pricing'
 import { FAQ } from '@/components/sections/FAQ'
 import { CTA } from '@/components/sections/CTA'
-import { ContactForm } from '@/components/sections/ContactForm'
+import { ScrollToTop } from '@/components/ui/ScrollToTop'
 
 export default function HomePage() {
   return (
@@ -13,11 +15,13 @@ export default function HomePage() {
       <Hero />
       <Services />
       <Process />
-      <Pricing />
+      <CaseStudies />
       <Testimonials />
+      <AIHighlight />
+      <Pricing />
       <FAQ />
       <CTA />
-      <ContactForm />
+      <ScrollToTop />
     </main>
   )
 }

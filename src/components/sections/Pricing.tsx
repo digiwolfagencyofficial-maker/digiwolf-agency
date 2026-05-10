@@ -1,175 +1,126 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Check, Zap } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
-import { Badge } from '@/components/ui/Badge'
-import { cn } from '@/lib/utils'
+import { useEffect, useRef } from 'react'
 
-interface PricingTier {
-  name: string
-  price: string
-  priceNote?: string
-  description: string
-  features: string[]
-  cta: string
-  featured?: boolean
-  badge?: string
-}
-
-const tiers: PricingTier[] = [
+const plans = [
   {
-    name: 'Starter',
-    price: '25 000 CZK',
-    priceNote: 'one-time',
-    description: 'Perfect for small businesses and entrepreneurs launching their first professional web presence.',
+    tier: 'Starter',
+    price: '15,000',
+    currency: 'CZK',
+    desc: 'Perfect for solo founders and small businesses who need a professional online presence fast.',
     features: [
-      'Up to 5 pages',
-      'Responsive design',
-      'SEO basics included',
-      'Contact form setup',
-      'Google Analytics integration',
-      'SSL certificate & hosting setup',
-      '1 month post-launch support',
-      '2 rounds of revisions',
+      'Up to 5-page custom website',
+      'Mobile-responsive design',
+      'Basic on-page SEO setup',
+      'Contact form & Google Maps',
+      '3 months free minor edits',
     ],
-    cta: 'Get Started',
+    btnText: 'Get Started →',
+    btnClass: 'pricing-btn-ghost',
+    featured: false,
+    delay: '',
   },
   {
-    name: 'Growth',
-    price: '55 000 CZK',
-    priceNote: 'one-time',
-    description: 'Ideal for growing businesses that need a content-rich site with e-commerce and marketing tools.',
+    tier: 'Growth',
+    price: '35,000',
+    currency: 'CZK',
+    desc: 'For growing businesses that need a powerful site or web app with more pages and integrations.',
     features: [
-      'Up to 10 pages',
-      'CMS integration (Sanity / Strapi)',
-      'E-commerce functionality',
-      'Advanced SEO setup',
-      'Performance optimization',
-      'Email marketing integration',
-      'Multi-language support',
-      '3 months post-launch support',
-      'Unlimited revisions during build',
-      'Priority response time',
+      'Everything in Starter',
+      'Up to 15 pages or custom web app MVP',
+      'CMS integration (headless or WordPress)',
+      'Analytics & conversion tracking',
+      'AI chatbot or lead capture automation',
+      'Priority support & 6-month maintenance',
     ],
-    cta: 'Start Growing',
+    btnText: 'Book Your Call →',
+    btnClass: 'pricing-btn-primary',
     featured: true,
-    badge: 'Most Popular',
+    delay: 'fade-in-delay-1',
+    badge: '⭐ Most Popular',
   },
   {
-    name: 'Enterprise',
+    tier: 'Studio',
     price: 'Custom',
-    priceNote: 'tailored quote',
-    description: 'Full-stack digital infrastructure for established businesses with complex technical requirements.',
+    currency: null,
+    desc: 'For complex projects, mobile apps, full S.R.O. packages, or ongoing retainer partnerships.',
     features: [
-      'Unlimited pages',
-      'Full-stack custom development',
-      'AI automation integrations',
+      'Full-stack web or mobile app',
+      'Czech S.R.O. formation bundle',
       'Dedicated project manager',
-      'Custom API development',
-      'Advanced security & compliance',
-      'SLA with guaranteed uptime',
-      'Priority 24/7 support',
-      'Quarterly strategy reviews',
-      'White-label options available',
+      'AI automation & custom integrations',
+      'Ongoing maintenance retainer',
+      'White-glove strategy sessions',
     ],
-    cta: 'Talk to Us',
+    btnText: 'Talk to Us →',
+    btnClass: 'pricing-btn-ghost',
+    featured: false,
+    delay: 'fade-in-delay-2',
+    customPrice: true,
   },
 ]
 
 export function Pricing() {
+  const headerRef = useRef<HTMLDivElement>(null)
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    )
+    if (headerRef.current) observer.observe(headerRef.current)
+    cardRefs.current.forEach(el => { if (el) observer.observe(el) })
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <section id="pricing" className="bg-[#0a0a0a] py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-16 text-center">
-          <Badge variant="orange" className="mb-4">
-            Transparent Pricing
-          </Badge>
-          <h2 className="mb-4 text-4xl font-black tracking-tight text-white sm:text-5xl">
-            Simple, Honest Pricing
-          </h2>
-          <p className="mx-auto max-w-xl text-lg text-white/50">
-            No hidden fees. No surprise invoices. Pick the tier that fits your project and grow from there.
-          </p>
+    <section id="pricing" className="section" style={{ background: '#0A0A0A' }}>
+      <div className="container">
+        <div className="section-header fade-in" ref={headerRef}>
+          <div className="section-divider"></div>
+          <span className="section-label">Transparent Pricing</span>
+          <h2 className="section-title">Simple, Honest Pricing</h2>
+          <p className="section-sub">No hidden fees. No surprises. Choose a package that fits your goals and budget — or let&apos;s build something custom.</p>
         </div>
-
-        {/* Tiers grid */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {tiers.map((tier, i) => (
-            <motion.div
-              key={tier.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ delay: i * 0.12, duration: 0.6 }}
-              className={cn(
-                'relative flex flex-col rounded-2xl border p-8 transition-all duration-300',
-                tier.featured
-                  ? 'border-orange-500 bg-orange-500/5 shadow-2xl shadow-orange-500/15 scale-[1.02]'
-                  : 'border-white/10 bg-[#111111] hover:border-white/20'
-              )}
+        <div className="pricing-grid">
+          {plans.map((plan, i) => (
+            <div
+              key={plan.tier}
+              className={`pricing-card fade-in ${plan.delay}${plan.featured ? ' featured' : ''}`}
+              ref={el => { cardRefs.current[i] = el }}
             >
-              {tier.featured && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-orange-500 px-4 py-1 text-xs font-bold text-white shadow-lg shadow-orange-500/30">
-                    <Zap className="h-3 w-3 fill-current" />
-                    {tier.badge}
-                  </span>
-                </div>
-              )}
-
-              <div className="mb-6">
-                <h3
-                  className={cn(
-                    'mb-1 text-lg font-bold',
-                    tier.featured ? 'text-orange-400' : 'text-white/70'
-                  )}
-                >
-                  {tier.name}
-                </h3>
-                <div className="mb-2 flex items-baseline gap-2">
-                  <span className="text-3xl font-black text-white sm:text-4xl">{tier.price}</span>
-                  {tier.priceNote && (
-                    <span className="text-sm text-white/40">{tier.priceNote}</span>
-                  )}
-                </div>
-                <p className="text-sm leading-relaxed text-white/55">{tier.description}</p>
+              {plan.badge && <div className="popular-badge">{plan.badge}</div>}
+              <div className="pricing-tier">{plan.tier}</div>
+              <div className="pricing-price" style={plan.customPrice ? { fontSize: '28px' } : {}}>
+                {plan.price}
+                {plan.currency && <sub> {plan.currency}</sub>}
               </div>
-
-              <ul className="mb-8 flex-1 space-y-3">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-sm text-white/70">
-                    <Check
-                      className={cn(
-                        'mt-0.5 h-4 w-4 flex-shrink-0',
-                        tier.featured ? 'text-orange-500' : 'text-orange-500/70'
-                      )}
-                    />
-                    {feature}
-                  </li>
+              <p className="pricing-desc">{plan.desc}</p>
+              <div className="pricing-features">
+                {plan.features.map(f => (
+                  <div key={f} className="pricing-feature">{f}</div>
                 ))}
-              </ul>
-
-              <Button
-                variant={tier.featured ? 'primary' : 'secondary'}
-                className="w-full"
-                onClick={() =>
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-                }
+              </div>
+              <a
+                href="https://calendly.com/digiwolf-agency-consultation/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`pricing-btn ${plan.btnClass}`}
               >
-                {tier.cta}
-              </Button>
-            </motion.div>
+                {plan.btnText}
+              </a>
+            </div>
           ))}
         </div>
-
-        <p className="mt-10 text-center text-sm text-white/40">
-          All prices listed in Czech Koruna (CZK) and exclude VAT. Custom payment schedules available for Growth and Enterprise tiers.
-        </p>
       </div>
     </section>
   )
 }
-
-export default Pricing

@@ -1,106 +1,103 @@
 'use client'
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/Button'
+import { useEffect, useRef, useState } from 'react'
 
-const navLinks = [
-  { href: '#services', label: 'Services' },
-  { href: '#process', label: 'Process' },
-  { href: '#pricing', label: 'Pricing' },
-  { href: '#about', label: 'About' },
-  { href: '#contact', label: 'Contact' },
-]
+const WolfLogo = () => (
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="4,14 8,2 13,12" fill="#0047FF" opacity="0.9"/>
+    <polygon points="28,14 24,2 19,12" fill="#0047FF" opacity="0.9"/>
+    <polygon points="6,13 9,5 12,12" fill="#3d74ff" opacity="0.6"/>
+    <polygon points="26,13 23,5 20,12" fill="#3d74ff" opacity="0.6"/>
+    <polygon points="16,3 28,14 26,26 16,30 6,26 4,14" fill="#0047FF" opacity="0.95"/>
+    <polygon points="16,10 24,16 22,24 16,27 10,24 8,16" fill="#1a5cff" opacity="0.5"/>
+    <circle cx="12" cy="17" r="2.2" fill="#F5F5F5"/>
+    <circle cx="20" cy="17" r="2.2" fill="#F5F5F5"/>
+    <circle cx="12.5" cy="17.3" r="1" fill="#0A0A0A"/>
+    <circle cx="20.5" cy="17.3" r="1" fill="#0A0A0A"/>
+    <polygon points="16,21 13,24 19,24" fill="#1a3bcc" opacity="0.7"/>
+    <circle cx="16" cy="21.5" r="1.3" fill="#0A1050"/>
+  </svg>
+)
 
-export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const navRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const closeMenu = () => setMenuOpen(false)
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      const target = document.querySelector(href)
+      if (target) {
+        const offset = 80
+        const top = target.getBoundingClientRect().top + window.scrollY - offset
+        window.scrollTo({ top, behavior: 'smooth' })
+      }
+      closeMenu()
+    }
+  }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#0a0a0a]/90 backdrop-blur-md">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-black tracking-tight text-orange-500">
-              DIGI<span className="text-white"> WOLF</span>
-            </span>
-            <span className="hidden text-xs text-white/40 sm:block">AGENCY</span>
-          </Link>
-
-          {/* Desktop nav */}
-          <nav className="hidden items-center gap-1 lg:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-md px-3 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white hover:bg-white/5"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Desktop CTA */}
-          <div className="hidden lg:block">
-            <Button
-              variant="primary"
-              size="sm"
-              onClick={() => {
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Get Free Audit
-            </Button>
-          </div>
-
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="inline-flex items-center justify-center rounded-md p-2 text-white/70 transition-colors hover:bg-white/5 hover:text-white lg:hidden"
-            aria-label="Toggle menu"
+    <nav id="navbar" ref={navRef} className={scrolled ? 'scrolled' : ''}>
+      <div className="container">
+        <div className="nav-inner">
+          <a href="#" className="nav-logo">
+            <WolfLogo />
+            DIGI WOLF
+          </a>
+          <ul className="nav-links">
+            <li><a href="#services" onClick={e => handleAnchorClick(e, '#services')}>Services</a></li>
+            <li><a href="#how" onClick={e => handleAnchorClick(e, '#how')}>Process</a></li>
+            <li><a href="#cases" onClick={e => handleAnchorClick(e, '#cases')}>Work</a></li>
+            <li><a href="#pricing" onClick={e => handleAnchorClick(e, '#pricing')}>Pricing</a></li>
+            <li><a href="#faq" onClick={e => handleAnchorClick(e, '#faq')}>FAQ</a></li>
+          </ul>
+          <a
+            href="https://calendly.com/digiwolf-agency-consultation/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-cta desktop-only"
           >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            Book a Call
+          </a>
+          <button
+            className={`hamburger${menuOpen ? ' active' : ''}`}
+            id="hamburger"
+            aria-label="Menu"
+            onClick={() => setMenuOpen(prev => !prev)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
         </div>
       </div>
-
-      {/* Mobile menu */}
-      <div
-        className={cn(
-          'overflow-hidden transition-all duration-300 ease-in-out lg:hidden',
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        )}
-      >
-        <div className="border-t border-white/5 bg-[#0a0a0a] px-4 py-4 space-y-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="block rounded-md px-3 py-2.5 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <div className="pt-2">
-            <Button
-              variant="primary"
-              size="sm"
-              className="w-full"
-              onClick={() => {
-                setIsOpen(false)
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Get Free Audit
-            </Button>
-          </div>
-        </div>
+      <div className={`mobile-menu${menuOpen ? ' open' : ''}`} id="mobile-menu">
+        <a href="#services" onClick={e => handleAnchorClick(e, '#services')}>Services</a>
+        <a href="#how" onClick={e => handleAnchorClick(e, '#how')}>Process</a>
+        <a href="#cases" onClick={e => handleAnchorClick(e, '#cases')}>Work</a>
+        <a href="#pricing" onClick={e => handleAnchorClick(e, '#pricing')}>Pricing</a>
+        <a href="#faq" onClick={e => handleAnchorClick(e, '#faq')}>FAQ</a>
+        <a
+          href="https://calendly.com/digiwolf-agency-consultation/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nav-cta"
+          onClick={closeMenu}
+        >
+          Book a Call →
+        </a>
       </div>
-    </header>
+    </nav>
   )
 }
-
-export default Navbar

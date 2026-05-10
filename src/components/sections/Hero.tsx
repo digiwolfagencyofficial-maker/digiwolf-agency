@@ -1,141 +1,166 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { ArrowRight, Play } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
-
-const stats = [
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '30+', label: 'Happy Clients' },
-  { value: '3', label: 'Countries Served' },
-  { value: '100%', label: 'Satisfaction Rate' },
-]
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.12, duration: 0.6, ease: 'easeOut' as const },
-  }),
-}
-
-const staggerContainer = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-}
+import { useEffect, useRef } from 'react'
 
 export function Hero() {
+  const leftRef = useRef<HTMLDivElement>(null)
+  const rightRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    )
+    if (leftRef.current) observer.observe(leftRef.current)
+    if (rightRef.current) observer.observe(rightRef.current)
+    return () => observer.disconnect()
+  }, [])
+
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault()
+      const target = document.querySelector(href)
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY - 80
+        window.scrollTo({ top, behavior: 'smooth' })
+      }
+    }
+  }
+
   return (
-    <section
-      id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0a0a0a] pt-16"
-    >
-      {/* Background grid */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
-          backgroundSize: '64px 64px',
-        }}
-      />
-
-      {/* Radial glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/4 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/5 blur-3xl" />
-      <div className="pointer-events-none absolute right-0 bottom-0 h-[400px] w-[400px] rounded-full bg-orange-500/3 blur-3xl" />
-
-      <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="text-center"
-        >
-          {/* Eyebrow badge */}
-          <motion.div
-            custom={0}
-            variants={fadeUp}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-1.5 text-sm font-medium text-orange-400"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500" />
-            </span>
-            Available for New Projects
-          </motion.div>
-
-          {/* H1 */}
-          <motion.h1
-            custom={1}
-            variants={fadeUp}
-            className="mb-6 text-5xl font-black leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl"
-          >
-            We Build
-            <br />
-            <span className="text-orange-500">Digital Empires.</span>
-          </motion.h1>
-
-          {/* Subheading */}
-          <motion.p
-            custom={2}
-            variants={fadeUp}
-            className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/60 sm:text-xl"
-          >
-            Digi Wolf Agency helps entrepreneurs, startups, and the Mongolian diaspora in Central &amp; Eastern Europe build powerful online presences — from blazing-fast websites to Czech S.R.O. formation and AI-powered automation.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            custom={3}
-            variants={fadeUp}
-            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
-          >
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() =>
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-              }
-            >
-              Start Your Project
-              <ArrowRight className="h-5 w-5" />
-            </Button>
-            <Button
-              variant="secondary"
-              size="lg"
-              onClick={() =>
-                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
-              }
-            >
-              <Play className="h-4 w-4 fill-current" />
-              View Our Work
-            </Button>
-          </motion.div>
-
-          {/* Stats row */}
-          <motion.div
-            custom={4}
-            variants={fadeUp}
-            className="mx-auto mt-20 grid max-w-3xl grid-cols-2 gap-6 md:grid-cols-4"
-          >
-            {stats.map(({ value, label }) => (
-              <div
-                key={label}
-                className="flex flex-col items-center gap-1 rounded-xl border border-white/5 bg-white/[0.02] p-4"
+    <section id="hero">
+      <div className="hero-bg"></div>
+      <div className="container">
+        <div className="hero-inner">
+          {/* Left */}
+          <div className="hero-left fade-in" ref={leftRef}>
+            <div className="hero-badge">Prague-Based Digital Agency</div>
+            <h1 className="hero-title">
+              From Idea to<br />
+              <span className="accent">Digital Reality</span>
+            </h1>
+            <p className="hero-sub">
+              We build modern websites, full-stack web apps, and mobile apps — powered by AI.{' '}
+              Plus Czech S.R.O. company formation and intelligent automation for businesses worldwide.
+            </p>
+            <div className="hero-ctas">
+              <a
+                href="https://calendly.com/digiwolf-agency-consultation/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
               >
-                <span className="text-3xl font-black text-orange-500 sm:text-4xl">{value}</span>
-                <span className="text-center text-xs font-medium text-white/50">{label}</span>
+                Book Free Consultation
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+              <a
+                href="#services"
+                className="btn-ghost"
+                onClick={e => handleAnchorClick(e, '#services')}
+              >
+                View Services
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                  <path d="M8 3L8 13M8 13L4 9M8 13L12 9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </div>
+            <div className="hero-stats">
+              <div className="hero-stat">
+                <span className="hero-stat-num">12+</span>
+                <span className="hero-stat-label">Happy Clients</span>
               </div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </div>
+              <div className="hero-stat-sep"></div>
+              <div className="hero-stat">
+                <span className="hero-stat-num">5</span>
+                <span className="hero-stat-label">Countries Served</span>
+              </div>
+              <div className="hero-stat-sep"></div>
+              <div className="hero-stat">
+                <span className="hero-stat-num">AI</span>
+                <span className="hero-stat-label">Powered Builds</span>
+              </div>
+            </div>
+          </div>
 
-      {/* Bottom fade */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+          {/* Right: Browser Mockup */}
+          <div className="hero-right fade-in fade-in-delay-2" ref={rightRef}>
+            <div className="browser-wrap">
+              <div className="browser-glow"></div>
+              {/* Floating badges */}
+              <div className="float-badge float-badge-1">
+                <div className="dot" style={{ background: '#28C840', boxShadow: '0 0 8px #28C840' }}></div>
+                Deployed ✓
+              </div>
+              <div className="float-badge float-badge-2">
+                <div className="dot" style={{ background: 'var(--accent)', boxShadow: '0 0 8px var(--accent)' }}></div>
+                AI Generated
+              </div>
+              <div className="float-badge float-badge-3">
+                <div className="dot" style={{ background: '#FEBC2E', boxShadow: '0 0 8px #FEBC2E' }}></div>
+                3 days delivery
+              </div>
+              {/* Browser window */}
+              <div className="browser">
+                <div className="browser-bar">
+                  <div className="browser-dots">
+                    <div className="browser-dot"></div>
+                    <div className="browser-dot"></div>
+                    <div className="browser-dot"></div>
+                  </div>
+                  <div className="browser-url">digiwolf.agency</div>
+                </div>
+                <div className="browser-content">
+                  <div className="bc-nav">
+                    <div className="bc-logo"></div>
+                    <div className="bc-nav-links">
+                      <div className="bc-link"></div>
+                      <div className="bc-link"></div>
+                      <div className="bc-link"></div>
+                    </div>
+                    <div className="bc-btn"></div>
+                  </div>
+                  <div className="bc-hero-section">
+                    <div className="bc-hero-title"></div>
+                    <div className="bc-hero-title-2"></div>
+                    <div className="bc-hero-sub"></div>
+                    <div className="bc-hero-sub-2"></div>
+                    <div className="bc-ctas">
+                      <div className="bc-cta-1"></div>
+                      <div className="bc-cta-2"></div>
+                    </div>
+                  </div>
+                  <div className="bc-cards">
+                    <div className="bc-card">
+                      <div className="bc-card-icon"></div>
+                      <div className="bc-card-line"></div>
+                      <div className="bc-card-line-2"></div>
+                    </div>
+                    <div className="bc-card">
+                      <div className="bc-card-icon"></div>
+                      <div className="bc-card-line"></div>
+                      <div className="bc-card-line-2"></div>
+                    </div>
+                    <div className="bc-card">
+                      <div className="bc-card-icon"></div>
+                      <div className="bc-card-line"></div>
+                      <div className="bc-card-line-2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
-
-export default Hero
