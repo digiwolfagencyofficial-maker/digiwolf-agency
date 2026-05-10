@@ -1,61 +1,347 @@
 'use client'
-import Link from 'next/link'
-import { useState } from 'react'
 
-const WolfSVG = () => (
-  <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
+import { useState } from 'react'
+import Link from 'next/link'
+import Navbar from '@/components/Navbar'
+
+const WolfLogo = ({ size = 36 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 32 32" fill="none">
     <polygon points="4,14 8,2 13,12" fill="#0047FF" opacity="0.9"/>
     <polygon points="28,14 24,2 19,12" fill="#0047FF" opacity="0.9"/>
+    <polygon points="6,13 9,5 12,12" fill="#3d74ff" opacity="0.6"/>
+    <polygon points="26,13 23,5 20,12" fill="#3d74ff" opacity="0.6"/>
     <polygon points="16,3 28,14 26,26 16,30 6,26 4,14" fill="#0047FF" opacity="0.95"/>
+    <polygon points="16,10 24,16 22,24 16,27 10,24 8,16" fill="#1a5cff" opacity="0.5"/>
     <circle cx="12" cy="17" r="2.2" fill="#F5F5F5"/>
     <circle cx="20" cy="17" r="2.2" fill="#F5F5F5"/>
     <circle cx="12.5" cy="17.3" r="1" fill="#0A0A0A"/>
     <circle cx="20.5" cy="17.3" r="1" fill="#0A0A0A"/>
+    <polygon points="16,21 13,24 19,24" fill="#1a3bcc" opacity="0.7"/>
+    <circle cx="16" cy="21.5" r="1.3" fill="#0A1050"/>
   </svg>
 )
 
-const input = { width: '100%', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(96,165,250,0.2)', borderRadius: 10, padding: '14px 16px', fontSize: 15, color: '#F5F5F5', outline: 'none', boxSizing: 'border-box' as const, marginTop: 6 }
+const Step = ({ num, icon, title, desc }: { num: number; icon: string; title: string; desc: string }) => (
+  <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start' }}>
+    <div style={{
+      width: 48, height: 48, borderRadius: 14,
+      background: 'linear-gradient(135deg, rgba(0,71,255,0.2), rgba(0,71,255,0.08))',
+      border: '1px solid rgba(0,71,255,0.3)',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      fontSize: 22, flexShrink: 0,
+    }}>{icon}</div>
+    <div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
+        <span style={{ fontSize: 11, fontWeight: 700, color: '#0047FF', letterSpacing: '1px', textTransform: 'uppercase' }}>
+          Step {num}
+        </span>
+      </div>
+      <div style={{ fontSize: 15, fontWeight: 700, color: '#f0f4ff', marginBottom: 4 }}>{title}</div>
+      <div style={{ fontSize: 13, color: '#8892b0', lineHeight: 1.6 }}>{desc}</div>
+    </div>
+  </div>
+)
 
 export default function RegisterPage() {
-  const [form, setForm] = useState({ name: '', email: '', company: '', password: '' })
+  const [fullName, setFullName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [company, setCompany] = useState('')
+  const [agreed, setAgreed] = useState(false)
+  const [focused, setFocused] = useState('')
+  const [btnHover, setBtnHover] = useState(false)
+  const [loginHover, setLoginHover] = useState(false)
+
+  const fieldStyle = (name: string): React.CSSProperties => ({
+    width: '100%',
+    padding: '12px 16px',
+    background: focused === name ? '#0d1528' : '#0a1020',
+    border: `1.5px solid ${focused === name ? '#0047FF' : '#1e2a45'}`,
+    borderRadius: 10,
+    color: '#f0f4ff',
+    fontSize: 15,
+    outline: 'none',
+    transition: 'border-color 0.2s, background 0.2s',
+    boxSizing: 'border-box',
+  })
+
   return (
-    <div style={{ background: '#0A0A0A', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
-      <div style={{ width: '100%', maxWidth: 440 }}>
-        <div style={{ textAlign: 'center', marginBottom: 40 }}>
-          <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10, marginBottom: 24 }}>
-            <WolfSVG/>
-          </Link>
-          <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 8 }}>Create Account</h1>
-          <p style={{ fontSize: 15, color: '#C0C8D8' }}>Join the Digi Wolf client portal</p>
-        </div>
-        <div style={{ background: '#111218', borderRadius: 20, border: '1px solid rgba(96,165,250,0.15)', padding: '40px 36px' }}>
-          <form style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-            <div>
-              <label style={{ fontSize: 13, fontWeight: 600, color: '#C0C8D8' }}>Full Name</label>
-              <input style={input} placeholder="Your full name" value={form.name} onChange={e => setForm({...form, name: e.target.value})}/>
-            </div>
-            <div>
-              <label style={{ fontSize: 13, fontWeight: 600, color: '#C0C8D8' }}>Email Address</label>
-              <input type="email" style={input} placeholder="your@email.com" value={form.email} onChange={e => setForm({...form, email: e.target.value})}/>
-            </div>
-            <div>
-              <label style={{ fontSize: 13, fontWeight: 600, color: '#C0C8D8' }}>Company Name</label>
-              <input style={input} placeholder="Your company (optional)" value={form.company} onChange={e => setForm({...form, company: e.target.value})}/>
-            </div>
-            <div>
-              <label style={{ fontSize: 13, fontWeight: 600, color: '#C0C8D8' }}>Password</label>
-              <input type="password" style={input} placeholder="Create a strong password" value={form.password} onChange={e => setForm({...form, password: e.target.value})}/>
-            </div>
-            <button type="submit" style={{ background: '#0047FF', color: '#fff', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, border: 'none', cursor: 'pointer', boxShadow: '0 0 24px rgba(0,71,255,0.35)', marginTop: 4 }}>Create Account →</button>
-          </form>
-          <div style={{ textAlign: 'center', marginTop: 24, fontSize: 14, color: '#C0C8D8' }}>
-            Already have an account? <Link href="/login" style={{ color: '#3d74ff', fontWeight: 600 }}>Sign in</Link>
+    <div style={{ minHeight: '100vh', background: '#030712', color: '#f0f4ff', fontFamily: 'Inter, system-ui, sans-serif' }}>
+      <Navbar />
+      <div style={{ display: 'flex', minHeight: '100vh', paddingTop: 64 }}>
+
+        {/* Left decorative panel */}
+        <div style={{
+          flex: 1,
+          background: 'linear-gradient(135deg, #020818 0%, #030f2a 50%, #040d20 100%)',
+          borderRight: '1px solid #0d1a35',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          padding: '60px 56px',
+          position: 'relative',
+          overflow: 'hidden',
+        }} className="register-left-panel">
+          <div style={{
+            position: 'absolute', top: '15%', left: '5%',
+            width: 280, height: 280,
+            background: 'radial-gradient(circle, rgba(0,71,255,0.1) 0%, transparent 70%)',
+            borderRadius: '50%', pointerEvents: 'none',
+          }} />
+          <div style={{
+            position: 'absolute', bottom: '20%', right: '0%',
+            width: 220, height: 220,
+            background: 'radial-gradient(circle, rgba(0,71,255,0.07) 0%, transparent 70%)',
+            borderRadius: '50%', pointerEvents: 'none',
+          }} />
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 52 }}>
+            <WolfLogo size={40} />
+            <span style={{ fontSize: 22, fontWeight: 700, letterSpacing: '-0.5px', color: '#f0f4ff' }}>DigiWolf</span>
+          </div>
+
+          <div style={{ marginBottom: 16 }}>
+            <span style={{
+              display: 'inline-block',
+              padding: '5px 12px',
+              background: 'rgba(0,71,255,0.12)',
+              border: '1px solid rgba(0,71,255,0.25)',
+              borderRadius: 20,
+              fontSize: 12,
+              fontWeight: 700,
+              color: '#4d80ff',
+              letterSpacing: '0.8px',
+              textTransform: 'uppercase',
+              marginBottom: 16,
+            }}>
+              How it works
+            </span>
+            <h2 style={{ fontSize: 34, fontWeight: 800, lineHeight: 1.2, marginBottom: 12, letterSpacing: '-0.8px' }}>
+              3 steps to<br />
+              <span style={{ color: '#0047FF' }}>launch your project</span>
+            </h2>
+            <p style={{ color: '#8892b0', fontSize: 15, lineHeight: 1.7, marginBottom: 44, maxWidth: 380 }}>
+              Join 47+ clients who trust DigiWolf to build and grow their digital presence.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
+            <Step
+              num={1}
+              icon="📋"
+              title="Create your account"
+              desc="Sign up in under 2 minutes. No credit card required to get started."
+            />
+            <div style={{ width: 2, height: 20, background: 'linear-gradient(to bottom, rgba(0,71,255,0.4), transparent)', marginLeft: 23 }} />
+            <Step
+              num={2}
+              icon="🤝"
+              title="Discovery call"
+              desc="We schedule a free 30-minute strategy session to understand your goals."
+            />
+            <div style={{ width: 2, height: 20, background: 'linear-gradient(to bottom, rgba(0,71,255,0.4), transparent)', marginLeft: 23 }} />
+            <Step
+              num={3}
+              icon="🚀"
+              title="Launch & scale"
+              desc="We build, launch, and continuously optimize your digital presence."
+            />
+          </div>
+
+          {/* Trust badges */}
+          <div style={{ display: 'flex', gap: 20, marginTop: 52 }}>
+            {['🔒 Secure & private', '⚡ Fast onboarding', '💬 24/7 support'].map((badge) => (
+              <div key={badge} style={{
+                padding: '6px 12px',
+                background: 'rgba(0,71,255,0.06)',
+                border: '1px solid rgba(0,71,255,0.15)',
+                borderRadius: 20,
+                fontSize: 12,
+                color: '#8892b0',
+              }}>{badge}</div>
+            ))}
           </div>
         </div>
-        <div style={{ textAlign: 'center', marginTop: 24 }}>
-          <Link href="/" style={{ fontSize: 14, color: '#C0C8D8', opacity: 0.7 }}>← Back to digiwolf.agency</Link>
+
+        {/* Right form panel */}
+        <div style={{
+          width: 500,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '40px 48px',
+          flexShrink: 0,
+          overflowY: 'auto',
+        }}>
+          <div style={{ width: '100%', maxWidth: 400 }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 32 }}>
+              <div style={{
+                width: 64, height: 64, borderRadius: 18,
+                background: 'rgba(0,71,255,0.1)',
+                border: '1px solid rgba(0,71,255,0.2)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                marginBottom: 20,
+              }}>
+                <WolfLogo size={36} />
+              </div>
+              <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6, letterSpacing: '-0.5px', textAlign: 'center' }}>
+                Create Account
+              </h1>
+              <p style={{ color: '#8892b0', fontSize: 14, textAlign: 'center' }}>
+                Start your free DigiWolf client portal
+              </p>
+            </div>
+
+            <form onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  onFocus={() => setFocused('name')}
+                  onBlur={() => setFocused('')}
+                  placeholder="Jan Novák"
+                  style={fieldStyle('name')}
+                />
+              </div>
+
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  onFocus={() => setFocused('email')}
+                  onBlur={() => setFocused('')}
+                  placeholder="jan@firma.cz"
+                  style={fieldStyle('email')}
+                />
+              </div>
+
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>
+                  Password
+                </label>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  onFocus={() => setFocused('password')}
+                  onBlur={() => setFocused('')}
+                  placeholder="Min. 8 characters"
+                  style={fieldStyle('password')}
+                />
+                <div style={{ display: 'flex', gap: 6, marginTop: 8 }}>
+                  {[0, 1, 2, 3].map((i) => (
+                    <div key={i} style={{
+                      flex: 1, height: 3, borderRadius: 2,
+                      background: password.length > i * 2
+                        ? (password.length > 8 ? '#22c55e' : '#eab308')
+                        : '#1e2a45',
+                      transition: 'background 0.3s',
+                    }} />
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>
+                  Company Name
+                </label>
+                <input
+                  type="text"
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                  onFocus={() => setFocused('company')}
+                  onBlur={() => setFocused('')}
+                  placeholder="Your s.r.o. or a.s."
+                  style={fieldStyle('company')}
+                />
+              </div>
+
+              {/* Terms */}
+              <label style={{ display: 'flex', alignItems: 'flex-start', gap: 10, cursor: 'pointer', marginTop: 4 }}>
+                <div
+                  onClick={() => setAgreed(!agreed)}
+                  style={{
+                    width: 18, height: 18, borderRadius: 5, flexShrink: 0, marginTop: 1,
+                    background: agreed ? '#0047FF' : 'transparent',
+                    border: `2px solid ${agreed ? '#0047FF' : '#2a3a5c'}`,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    cursor: 'pointer', transition: 'all 0.2s',
+                  }}
+                >
+                  {agreed && (
+                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                      <path d="M1 4L4 7L9 1" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  )}
+                </div>
+                <span style={{ fontSize: 13, color: '#8892b0', lineHeight: 1.5 }}>
+                  I agree to the{' '}
+                  <a href="#" style={{ color: '#0047FF', textDecoration: 'none' }}>Terms of Service</a>
+                  {' '}and{' '}
+                  <a href="#" style={{ color: '#0047FF', textDecoration: 'none' }}>Privacy Policy</a>
+                </span>
+              </label>
+
+              <button
+                type="submit"
+                onMouseEnter={() => setBtnHover(true)}
+                onMouseLeave={() => setBtnHover(false)}
+                style={{
+                  width: '100%',
+                  padding: '13px 0',
+                  background: btnHover
+                    ? 'linear-gradient(135deg, #0038cc, #0047FF)'
+                    : 'linear-gradient(135deg, #0047FF, #1a5cff)',
+                  border: 'none',
+                  borderRadius: 10,
+                  color: '#fff',
+                  fontSize: 15,
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                  transform: btnHover ? 'translateY(-1px)' : 'translateY(0)',
+                  boxShadow: btnHover ? '0 8px 24px rgba(0,71,255,0.35)' : '0 4px 12px rgba(0,71,255,0.2)',
+                  letterSpacing: '0.3px',
+                  marginTop: 8,
+                }}
+              >
+                Create Account — Free
+              </button>
+            </form>
+
+            <p style={{ textAlign: 'center', marginTop: 24, fontSize: 14, color: '#8892b0' }}>
+              Already have an account?{' '}
+              <Link
+                href="/login"
+                onMouseEnter={() => setLoginHover(true)}
+                onMouseLeave={() => setLoginHover(false)}
+                style={{
+                  color: loginHover ? '#3d74ff' : '#0047FF',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                  transition: 'color 0.2s',
+                }}
+              >
+                Sign in
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .register-left-panel { display: none !important; }
+        }
+      `}</style>
     </div>
   )
 }

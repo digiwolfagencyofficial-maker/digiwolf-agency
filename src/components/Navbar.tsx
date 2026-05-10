@@ -1,10 +1,10 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 
-const WolfSVG = ({ size = 32 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+const WolfLogo = ({ size = 32 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 32 32" fill="none">
     <polygon points="4,14 8,2 13,12" fill="#0047FF" opacity="0.9"/>
     <polygon points="28,14 24,2 19,12" fill="#0047FF" opacity="0.9"/>
     <polygon points="6,13 9,5 12,12" fill="#3d74ff" opacity="0.6"/>
@@ -25,124 +25,138 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 60)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const links = [
+    { label: 'Services', href: '/services' },
+    { label: 'Case Studies', href: '/case-studies' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'About', href: '/about' },
+    { label: 'Contact', href: '/contact' },
+  ]
+
   return (
-    <nav style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      zIndex: 1000,
-      background: scrolled ? 'rgba(10,10,10,0.9)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(20px)' : 'none',
-      borderBottom: scrolled ? '1px solid rgba(96,165,250,0.15)' : '1px solid transparent',
-      transition: 'all 0.3s ease',
-    }}>
-      <div style={{ maxWidth: '1160px', margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-          <WolfSVG size={32} />
-          <span style={{ fontWeight: 800, fontSize: '18px', letterSpacing: '0.08em', color: '#F5F5F5' }}>DIGI WOLF</span>
-        </Link>
-
-        {/* Desktop Nav */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }} className="hidden md:flex">
-          {[
-            { label: 'Services', href: '/services' },
-            { label: 'Process', href: '/#process' },
-            { label: 'Case Studies', href: '/case-studies' },
-            { label: 'Pricing', href: '/pricing' },
-            { label: 'FAQ', href: '/#faq' },
-          ].map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              style={{ color: '#C0C8D8', fontSize: '14px', fontWeight: 500, transition: 'color 0.2s' }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#F5F5F5')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#C0C8D8')}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="/contact"
-            style={{
-              background: '#0047FF',
-              color: '#F5F5F5',
-              padding: '10px 22px',
-              borderRadius: '10px',
-              fontSize: '14px',
-              fontWeight: 600,
-              textDecoration: 'none',
-              transition: 'background 0.2s',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = '#3d74ff')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = '#0047FF')}
-          >
-            Get Started
+    <>
+      <nav style={{
+        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
+        padding: '0 24px',
+        transition: 'all 0.3s ease',
+        ...(scrolled ? {
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          background: 'rgba(3,7,18,0.85)',
+          borderBottom: '1px solid rgba(255,255,255,0.07)',
+          boxShadow: '0 4px 30px rgba(0,0,0,0.3)',
+        } : {
+          background: 'transparent',
+        })
+      }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          {/* Logo */}
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+            <WolfLogo size={36} />
+            <span style={{ fontWeight: 700, fontSize: 18, color: '#f0f4ff', letterSpacing: '-0.02em' }}>
+              Digi Wolf<span style={{ color: '#0047FF' }}>.</span>
+            </span>
           </Link>
-        </div>
 
-        {/* Mobile menu toggle */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          style={{ background: 'none', border: 'none', color: '#F5F5F5', cursor: 'pointer', display: 'none', padding: '8px' }}
-          className="flex md:hidden"
-          aria-label="Toggle menu"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            {menuOpen
-              ? <><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></>
-              : <><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></>
-            }
-          </svg>
-        </button>
-      </div>
+          {/* Desktop Links */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }} className="hidden-mobile">
+            {links.map(l => (
+              <Link key={l.href} href={l.href} style={{
+                color: '#8892b0', textDecoration: 'none', padding: '8px 16px',
+                borderRadius: 8, fontSize: 14, fontWeight: 500,
+                transition: 'color 0.2s, background 0.2s',
+              }}
+                onMouseEnter={e => { (e.target as HTMLElement).style.color = '#f0f4ff'; (e.target as HTMLElement).style.background = 'rgba(255,255,255,0.05)'; }}
+                onMouseLeave={e => { (e.target as HTMLElement).style.color = '#8892b0'; (e.target as HTMLElement).style.background = 'transparent'; }}
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <Link href="/login" style={{
+              color: '#8892b0', textDecoration: 'none', fontSize: 14, fontWeight: 500,
+              padding: '8px 16px', borderRadius: 8, transition: 'color 0.2s',
+            }}
+              onMouseEnter={e => (e.target as HTMLElement).style.color = '#f0f4ff'}
+              onMouseLeave={e => (e.target as HTMLElement).style.color = '#8892b0'}
+              className="hidden-mobile"
+            >
+              Sign In
+            </Link>
+            <Link href="/contact" style={{
+              background: '#0047FF', color: '#fff', textDecoration: 'none',
+              padding: '10px 20px', borderRadius: 10, fontSize: 14, fontWeight: 600,
+              transition: 'transform 0.2s, box-shadow 0.2s',
+              boxShadow: '0 4px 20px rgba(0,71,255,0.3)',
+            }}
+              onMouseEnter={e => { (e.target as HTMLElement).style.transform = 'translateY(-1px)'; (e.target as HTMLElement).style.boxShadow = '0 8px 30px rgba(0,71,255,0.5)'; }}
+              onMouseLeave={e => { (e.target as HTMLElement).style.transform = 'none'; (e.target as HTMLElement).style.boxShadow = '0 4px 20px rgba(0,71,255,0.3)'; }}
+            >
+              Get Started →
+            </Link>
+
+            {/* Hamburger */}
+            <button
+              onClick={() => setMenuOpen(true)}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, display: 'none' }}
+              className="show-mobile"
+              aria-label="Menu"
+            >
+              <div style={{ width: 22, height: 2, background: '#f0f4ff', marginBottom: 5, borderRadius: 2 }}/>
+              <div style={{ width: 16, height: 2, background: '#f0f4ff', marginBottom: 5, borderRadius: 2 }}/>
+              <div style={{ width: 22, height: 2, background: '#f0f4ff', borderRadius: 2 }}/>
+            </button>
+          </div>
+        </div>
+      </nav>
 
       {/* Mobile Menu */}
       {menuOpen && (
         <div style={{
-          background: '#111218',
-          borderTop: '1px solid rgba(96,165,250,0.15)',
-          padding: '16px 24px 24px',
-        }} className="flex md:hidden flex-col gap-4">
-          {[
-            { label: 'Services', href: '/services' },
-            { label: 'Process', href: '/#process' },
-            { label: 'Case Studies', href: '/case-studies' },
-            { label: 'Pricing', href: '/pricing' },
-            { label: 'FAQ', href: '/#faq' },
-          ].map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              style={{ color: '#C0C8D8', fontSize: '15px', fontWeight: 500, padding: '8px 0' }}
-            >
-              {link.label}
+          position: 'fixed', inset: 0, background: 'rgba(3,7,18,0.98)',
+          backdropFilter: 'blur(20px)', zIndex: 999,
+          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 32,
+        }}>
+          <button onClick={() => setMenuOpen(false)} style={{
+            position: 'absolute', top: 24, right: 24,
+            background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
+            color: '#fff', width: 44, height: 44, borderRadius: 10, fontSize: 20, cursor: 'pointer',
+          }}>✕</button>
+          {links.map(l => (
+            <Link key={l.href} href={l.href} onClick={() => setMenuOpen(false)} style={{
+              color: '#f0f4ff', textDecoration: 'none', fontSize: 28, fontWeight: 700,
+              letterSpacing: '-0.02em', transition: 'color 0.2s',
+            }}>
+              {l.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            onClick={() => setMenuOpen(false)}
-            style={{
-              background: '#0047FF',
-              color: '#F5F5F5',
-              padding: '12px 22px',
-              borderRadius: '10px',
-              fontSize: '15px',
-              fontWeight: 600,
-              textAlign: 'center',
-              marginTop: '8px',
-            }}
-          >
-            Get Started
+          <Link href="/contact" onClick={() => setMenuOpen(false)} style={{
+            background: '#0047FF', color: '#fff', textDecoration: 'none',
+            padding: '16px 40px', borderRadius: 12, fontSize: 18, fontWeight: 700,
+            marginTop: 16, boxShadow: '0 8px 30px rgba(0,71,255,0.5)',
+          }}>
+            Get Started →
           </Link>
         </div>
       )}
-    </nav>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .hidden-mobile { display: none !important; }
+          .show-mobile { display: flex !important; }
+        }
+        @media (min-width: 769px) {
+          .show-mobile { display: none !important; }
+        }
+      `}</style>
+    </>
   )
 }
