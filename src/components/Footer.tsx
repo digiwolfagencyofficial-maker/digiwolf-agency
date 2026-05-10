@@ -1,16 +1,5 @@
 import Link from 'next/link'
-
-const WolfLogo = ({ size = 32 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 32 32" fill="none">
-    <polygon points="4,14 8,2 13,12" fill="#0047FF" opacity="0.9"/>
-    <polygon points="28,14 24,2 19,12" fill="#0047FF" opacity="0.9"/>
-    <polygon points="16,3 28,14 26,26 16,30 6,26 4,14" fill="#0047FF" opacity="0.95"/>
-    <circle cx="12" cy="17" r="2.2" fill="#F5F5F5"/>
-    <circle cx="20" cy="17" r="2.2" fill="#F5F5F5"/>
-    <circle cx="12.5" cy="17.3" r="1" fill="#0A0A0A"/>
-    <circle cx="20.5" cy="17.3" r="1" fill="#0A0A0A"/>
-  </svg>
-)
+import Image from 'next/image'
 
 export default function Footer() {
   const services = ['Agency Websites', 'Czech S.R.O. Formation', 'AI Automation', 'SEO & Growth', 'Branding', 'Maintenance']
@@ -18,15 +7,14 @@ export default function Footer() {
   const legal = ['Privacy Policy', 'Terms of Service', 'Cookie Policy']
 
   return (
-    <footer style={{ background: '#030712', borderTop: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden', zIndex: 2 }}>
-      <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: 1, background: 'linear-gradient(90deg, transparent, #0047FF, transparent)' }} />
+    <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden', zIndex: 2 }}>
+      <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: 1, background: 'linear-gradient(90deg, transparent, #3b82f6, transparent)' }} />
       <div style={{ maxWidth: 1280, margin: '0 auto', padding: '80px 24px 40px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 48, marginBottom: 64 }}>
           {/* Brand */}
           <div style={{ gridColumn: 'span 1' }}>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none', marginBottom: 16 }}>
-              <WolfLogo size={36} />
-              <span style={{ fontWeight: 700, fontSize: 18, color: '#f0f4ff' }}>Digi Wolf<span style={{ color: '#0047FF' }}>.</span></span>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: 16 }}>
+              <Image src="/digiwolf-logo.svg" alt="Digi Wolf Agency" width={160} height={64} />
             </Link>
             <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.7, maxWidth: 240 }}>
               Full-stack digital agency helping entrepreneurs grow in Central & Eastern Europe.
@@ -40,7 +28,7 @@ export default function Footer() {
                   color: '#8892b0', fontSize: 11, fontWeight: 600, textDecoration: 'none',
                   transition: 'all 0.2s',
                 }}
-                  onMouseEnter={e => { const el = e.target as HTMLElement; el.style.borderColor = '#0047FF'; el.style.color = '#3d74ff'; }}
+                  onMouseEnter={e => { const el = e.target as HTMLElement; el.style.borderColor = '#3b82f6'; el.style.color = '#3b82f6'; }}
                   onMouseLeave={e => { const el = e.target as HTMLElement; el.style.borderColor = 'rgba(255,255,255,0.08)'; el.style.color = '#8892b0'; }}
                 >
                   {s[0]}
@@ -96,7 +84,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 32, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
           <p style={{ color: '#8892b0', fontSize: 13 }}>
-            © 2025 Digi Wolf Agency s.r.o. All rights reserved.
+            © 2026 Digi Wolf Agency s.r.o. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: 24 }}>
             {legal.map(l => (

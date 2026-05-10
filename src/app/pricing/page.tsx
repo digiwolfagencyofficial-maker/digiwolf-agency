@@ -1,135 +1,78 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { useState } from 'react'
+import Link from 'next/link'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 const tiers = [
   {
     id: 'starter',
     name: 'Starter',
-    priceOnce: '15,000 CZK',
-    priceMonthly: '3,500 CZK/mo',
+    price: '45,000 CZK',
     priceNote: 'One-time project fee',
-    priceMonthlyNote: 'Billed monthly, 6-month minimum',
     tagline: 'For new businesses and solo founders',
     color: '#8892b0',
     featured: false,
-    features: {
-      'Website Pages': '5 pages',
-      'Design Revisions': '2 rounds',
-      'CMS Integration': 'Basic',
-      'SEO Setup': '✓ Included',
-      'Mobile Responsive': '✓ Included',
-      'Analytics Setup': '✓ Google Analytics',
-      'Performance Score': '90+ Lighthouse',
-      'Delivery Time': '5–7 days',
-      'Support Period': '14 days',
-      'Custom Animations': '–',
-      'Blog / News Section': '–',
-      'Multi-language': '–',
-      'Priority Support': '–',
-      'Dedicated Manager': '–',
-    },
+    features: [
+      '5-page website',
+      'Mobile-first responsive design',
+      'Basic SEO setup',
+      'Google Analytics integration',
+      'Contact form',
+      '2 rounds of design revisions',
+      '90+ Lighthouse performance score',
+      '5–7 business day delivery',
+      '1 month post-launch support',
+    ],
   },
   {
     id: 'growth',
     name: 'Growth',
-    priceOnce: '45,000 CZK',
-    priceMonthly: '9,500 CZK/mo',
-    priceNote: 'Complete digital presence',
-    priceMonthlyNote: 'Billed monthly, 3-month minimum',
+    price: '89,000 CZK',
+    priceNote: 'Complete digital presence package',
     tagline: 'For scaling teams and serious brands',
-    color: '#0047FF',
+    color: '#3b82f6',
     featured: true,
-    features: {
-      'Website Pages': 'Up to 15 pages',
-      'Design Revisions': 'Unlimited',
-      'CMS Integration': 'Full (Sanity / Contentful)',
-      'SEO Setup': '✓ Advanced + Schema',
-      'Mobile Responsive': '✓ Included',
-      'Analytics Setup': '✓ GA4 + Hotjar + GTM',
-      'Performance Score': '100 Lighthouse',
-      'Delivery Time': '7–10 days',
-      'Support Period': '30 days',
-      'Custom Animations': '✓ Included',
-      'Blog / News Section': '✓ Included',
-      'Multi-language': '2 languages',
-      'Priority Support': '< 4hr response',
-      'Dedicated Manager': '–',
-    },
+    features: [
+      '10-page website',
+      'E-commerce integration',
+      'AI chatbot included',
+      'Advanced SEO + schema markup',
+      'GA4 + Hotjar + GTM setup',
+      'Custom animations & interactions',
+      'Multilingual support (2 languages)',
+      'Unlimited design revisions',
+      '100 Lighthouse performance score',
+      '7–10 business day delivery',
+      '3 months post-launch support',
+      'Priority < 4hr response',
+    ],
   },
   {
     id: 'enterprise',
     name: 'Enterprise',
-    priceOnce: 'Custom',
-    priceMonthly: 'Custom',
+    price: 'Custom',
     priceNote: 'Tailored to your exact scope',
-    priceMonthlyNote: 'Flexible billing options',
     tagline: 'For established businesses with complex needs',
-    color: '#00C9A7',
+    color: '#10b981',
     featured: false,
-    features: {
-      'Website Pages': 'Unlimited',
-      'Design Revisions': 'Unlimited',
-      'CMS Integration': 'Custom headless CMS',
-      'SEO Setup': '✓ Enterprise SEO strategy',
-      'Mobile Responsive': '✓ Included',
-      'Analytics Setup': '✓ Full custom dashboard',
-      'Performance Score': '100 Lighthouse',
-      'Delivery Time': 'Agreed in contract',
-      'Support Period': '90 days + ongoing option',
-      'Custom Animations': '✓ Advanced interactions',
-      'Blog / News Section': '✓ Full editorial suite',
-      'Multi-language': 'Unlimited languages',
-      'Priority Support': '< 1hr response SLA',
-      'Dedicated Manager': '✓ Dedicated account manager',
-    },
+    features: [
+      'Full-stack custom application',
+      'CRM & ERP integration',
+      'AI automation systems',
+      'Unlimited pages',
+      'Enterprise SEO strategy',
+      'Custom headless CMS',
+      'Unlimited languages',
+      'Advanced security & compliance',
+      'Dedicated account manager',
+      'SLA with < 1hr response',
+      '90 days support + ongoing option',
+      'Custom billing & contracts',
+    ],
   },
-];
-
-const addons = [
-  {
-    icon: '📈',
-    title: 'SEO & Growth Retainer',
-    price: '8,000 CZK/mo',
-    priceMonthly: '8,000 CZK/mo',
-    desc: 'Full technical SEO, keyword research, content strategy, and monthly link building targeting Czech, Slovak, and English-language markets.',
-    includes: ['Monthly keyword audit', 'On-page optimization', 'Content briefs (4/mo)', 'GSC management', 'Monthly report'],
-    color: '#FF6B35',
-    badge: 'Monthly',
-  },
-  {
-    icon: '🛡️',
-    title: 'Maintenance & Support',
-    price: '3,000 CZK/mo',
-    priceMonthly: '3,000 CZK/mo',
-    desc: '24/7 uptime monitoring, weekly updates, daily backups, and priority bug fixes. Keep your site secure, fast, and always online.',
-    includes: ['24/7 uptime monitoring', 'Weekly CMS updates', 'Daily backups', 'Security scanning', 'Priority bug fixes'],
-    color: '#FFB300',
-    badge: 'Monthly',
-  },
-  {
-    icon: '🤖',
-    title: 'AI Chatbot Integration',
-    price: '15,000 CZK',
-    priceMonthly: '15,000 CZK',
-    desc: 'Custom GPT-4 powered chatbot for your website — trained on your content, integrated with your CRM, and live 24/7 to qualify and convert leads.',
-    includes: ['Custom GPT-4 chatbot', 'Website integration', 'CRM connection', 'Lead qualification flows', '30-day optimization'],
-    color: '#00C9A7',
-    badge: 'One-time',
-  },
-  {
-    icon: '🎨',
-    title: 'Brand Identity System',
-    price: '18,000 CZK',
-    priceMonthly: '18,000 CZK',
-    desc: 'Complete visual identity including logo suite, color system, typography, brand guidelines, and social media kit. Everything you need to look elite.',
-    includes: ['Primary + secondary logos', 'Color palette system', 'Typography hierarchy', 'Brand guidelines PDF', 'Social media kit (10+)'],
-    color: '#E040FB',
-    badge: 'One-time',
-  },
-];
+]
 
 const faqs = [
   {
@@ -145,169 +88,106 @@ const faqs = [
     a: 'Never. Our quotes are fully itemized and fixed. The only additional costs that could arise are third-party services you choose to add (e.g., a premium Sanity plan, specific API subscriptions) — we always disclose these upfront.',
   },
   {
-    q: 'What happens if I need more revisions than my plan includes?',
+    q: 'What happens if I need more revisions?',
     a: 'On Starter plans, additional revision rounds are available at 2,500 CZK per round. Growth and Enterprise plans include unlimited revisions within scope. We define scope clearly in your proposal to avoid any ambiguity.',
   },
   {
     q: 'How does the 14-day money-back guarantee work?',
-    a: 'If you\'re not satisfied with the initial design concepts after the first review round, you can request a full refund within 14 days of project start. This applies to new website projects only — not retainer or SRO services.',
+    a: 'If you\'re not satisfied with the initial design concepts after the first review round, you can request a full refund within 14 days of project start. This applies to new website projects only.',
   },
   {
     q: 'Can I upgrade my plan later?',
     a: 'Absolutely. Many clients start on Starter and upgrade as their business grows. We apply a credit for work already done against your upgrade cost, so you never pay twice for the same work.',
   },
   {
-    q: 'Do retainer contracts auto-renew?',
-    a: 'Yes, monthly retainers auto-renew unless cancelled with 30 days\' written notice. Growth retainers have a 3-month minimum; SEO retainers have a 6-month minimum to allow sufficient time to demonstrate results.',
-  },
-  {
     q: 'Is VAT included in your prices?',
     a: 'All displayed prices are exclusive of VAT. If you\'re a Czech VAT-registered entity, standard Czech VAT (21%) will be applied to invoices. EU business clients with a valid VAT ID benefit from reverse-charge rules.',
   },
-];
-
-const featureKeys = [
-  'Website Pages',
-  'Design Revisions',
-  'CMS Integration',
-  'SEO Setup',
-  'Mobile Responsive',
-  'Analytics Setup',
-  'Performance Score',
-  'Delivery Time',
-  'Support Period',
-  'Custom Animations',
-  'Blog / News Section',
-  'Multi-language',
-  'Priority Support',
-  'Dedicated Manager',
-];
+  {
+    q: 'What\'s included in the AI chatbot for the Growth plan?',
+    a: 'The Growth plan includes a custom GPT-4 powered chatbot trained on your website content, integrated into your site, with basic lead qualification flows. Full AI automation systems (CRM integration, complex pipelines) are priced separately.',
+  },
+]
 
 export default function PricingPage() {
-  const [isMonthly, setIsMonthly] = useState(false);
-  const [hoveredTier, setHoveredTier] = useState<string | null>(null);
-  const [hoveredAddon, setHoveredAddon] = useState<number | null>(null);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [hoveredCta, setHoveredCta] = useState(false);
+  const [hoveredTier, setHoveredTier] = useState<string | null>(null)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [hoveredFaq, setHoveredFaq] = useState<number | null>(null)
 
   return (
-    <div style={{ background: '#030712', minHeight: '100vh', color: '#f0f4ff', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div style={{ background: '#0a0a0a', minHeight: '100vh', color: '#f0f4ff', fontFamily: 'Inter, system-ui, sans-serif' }}>
       <Navbar />
 
       {/* Hero */}
       <section style={{
         position: 'relative', padding: '140px 24px 80px',
-        textAlign: 'center', overflow: 'hidden',
+        textAlign: 'center' as const, overflow: 'hidden',
       }}>
-        <div className="grid-bg" style={{ position: 'absolute', inset: 0, opacity: 0.3 }} />
         <div style={{
           position: 'absolute', top: '40%', left: '50%',
           transform: 'translate(-50%, -50%)',
           width: 700, height: 400,
-          background: 'radial-gradient(ellipse, rgba(0,71,255,0.14) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(59,130,246,0.14) 0%, transparent 70%)',
           pointerEvents: 'none',
         }} />
         <div style={{ position: 'relative', maxWidth: 820, margin: '0 auto' }}>
-          <div className="badge fade-up" style={{
+          <div style={{
             display: 'inline-block', marginBottom: 24,
-            background: 'rgba(0,71,255,0.12)', border: '1px solid rgba(0,71,255,0.35)',
-            color: '#6b9fff', padding: '8px 20px', borderRadius: 100,
-            fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase',
+            background: 'rgba(59,130,246,0.12)', border: '1px solid rgba(59,130,246,0.35)',
+            color: '#93c5fd', padding: '8px 20px', borderRadius: 100,
+            fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' as const,
           }}>
             Transparent Pricing
           </div>
-          <h1 className="fade-up" style={{
+          <h1 style={{
             fontSize: 'clamp(36px, 6vw, 68px)', fontWeight: 900,
             lineHeight: 1.05, marginBottom: 24,
           }}>
             Simple Pricing.{' '}
             <span style={{
-              background: 'linear-gradient(135deg, #0047FF 0%, #00C9A7 100%)',
+              background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
             }}>
               Zero Surprises.
             </span>
           </h1>
-          <p className="fade-up" style={{
+          <p style={{
             fontSize: 20, color: '#8892b0', lineHeight: 1.75,
             maxWidth: 600, margin: '0 auto 40px',
           }}>
             Every price is fixed, every deliverable is defined. Choose your plan, know exactly what you get,
             and let us build something exceptional together.
           </p>
-
-          {/* Toggle */}
-          <div className="fade-up" style={{
-            display: 'inline-flex', alignItems: 'center', gap: 16,
-            background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
-            borderRadius: 100, padding: '6px 6px 6px 20px',
-          }}>
-            <span style={{ fontSize: 14, fontWeight: 600, color: !isMonthly ? '#f0f4ff' : '#8892b0', transition: 'color 0.2s' }}>
-              One-Time
-            </span>
-            <button
-              onClick={() => setIsMonthly(!isMonthly)}
-              style={{
-                width: 52, height: 28, borderRadius: 100,
-                background: isMonthly ? '#0047FF' : 'rgba(255,255,255,0.15)',
-                border: 'none', cursor: 'pointer', position: 'relative',
-                transition: 'background 0.25s',
-              }}
-            >
-              <span style={{
-                position: 'absolute', top: 4,
-                left: isMonthly ? 26 : 4,
-                width: 20, height: 20, borderRadius: '50%',
-                background: '#fff', transition: 'left 0.25s',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
-              }} />
-            </button>
-            <span style={{
-              fontSize: 14, fontWeight: 600, color: isMonthly ? '#f0f4ff' : '#8892b0',
-              transition: 'color 0.2s', paddingRight: 14,
-            }}>
-              Monthly
-              <span style={{
-                marginLeft: 8, background: '#0047FF20', border: '1px solid #0047FF40',
-                color: '#6b9fff', padding: '2px 8px', borderRadius: 100, fontSize: 11, fontWeight: 700,
-              }}>
-                Save 20%
-              </span>
-            </span>
-          </div>
         </div>
       </section>
 
       {/* Pricing Cards */}
-      <section style={{ padding: '60px 24px', maxWidth: 1200, margin: '0 auto' }}>
+      <section style={{ padding: '60px 24px 100px', maxWidth: 1200, margin: '0 auto' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: 24, alignItems: 'start',
         }}>
           {tiers.map((tier) => {
-            const isHov = hoveredTier === tier.id;
-            const price = isMonthly ? tier.priceMonthly : tier.priceOnce;
-            const note = isMonthly ? tier.priceMonthlyNote : tier.priceNote;
+            const isHov = hoveredTier === tier.id
             return (
               <div
                 key={tier.id}
-                className="glass"
                 onMouseEnter={() => setHoveredTier(tier.id)}
                 onMouseLeave={() => setHoveredTier(null)}
                 style={{
                   background: tier.featured
-                    ? 'linear-gradient(135deg, rgba(0,71,255,0.12) 0%, rgba(0,71,255,0.04) 100%)'
+                    ? 'linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(59,130,246,0.04) 100%)'
                     : isHov ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.03)',
                   border: tier.featured
-                    ? '1.5px solid rgba(0,71,255,0.5)'
+                    ? '1.5px solid rgba(59,130,246,0.5)'
                     : `1px solid ${isHov ? tier.color + '35' : 'rgba(255,255,255,0.07)'}`,
                   borderRadius: 28, padding: 40,
-                  position: 'relative', overflow: 'hidden',
+                  position: 'relative' as const, overflow: 'hidden',
                   transition: 'all 0.35s cubic-bezier(0.4,0,0.2,1)',
                   transform: tier.featured ? 'scale(1.03)' : isHov ? 'translateY(-4px)' : 'none',
                   boxShadow: tier.featured
-                    ? '0 0 60px rgba(0,71,255,0.2), 0 24px 60px rgba(0,0,0,0.4)'
+                    ? '0 0 60px rgba(59,130,246,0.2), 0 24px 60px rgba(0,0,0,0.4)'
                     : isHov ? '0 20px 50px rgba(0,0,0,0.3)' : 'none',
                   cursor: 'default',
                 }}
@@ -316,17 +196,17 @@ export default function PricingPage() {
                   <div style={{
                     position: 'absolute', top: 0, left: 0, right: 0,
                     height: 3,
-                    background: 'linear-gradient(90deg, #0047FF, #00C9A7)',
+                    background: 'linear-gradient(90deg, #3b82f6, #8b5cf6)',
                     borderRadius: '28px 28px 0 0',
                   }} />
                 )}
                 {tier.featured && (
                   <div style={{
                     position: 'absolute', top: 20, right: 20,
-                    background: '#0047FF', color: '#fff',
+                    background: '#3b82f6', color: '#fff',
                     padding: '4px 14px', borderRadius: 100,
-                    fontSize: 11, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase',
-                    boxShadow: '0 4px 20px rgba(0,71,255,0.4)',
+                    fontSize: 11, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase' as const,
+                    boxShadow: '0 4px 20px rgba(59,130,246,0.4)',
                   }}>
                     Most Popular
                   </div>
@@ -339,113 +219,71 @@ export default function PricingPage() {
 
                 <div style={{ margin: '28px 0', borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: 28 }}>
                   <div style={{ fontSize: 40, fontWeight: 900, color: tier.color, lineHeight: 1 }}>
-                    {price}
+                    {tier.price}
                   </div>
-                  <div style={{ fontSize: 13, color: '#8892b0', marginTop: 8 }}>{note}</div>
+                  <div style={{ fontSize: 13, color: '#8892b0', marginTop: 8 }}>{tier.priceNote}</div>
                 </div>
 
-                <a href="/contact" style={{
-                  display: 'block', textAlign: 'center',
-                  background: tier.featured ? '#0047FF' : 'rgba(255,255,255,0.06)',
+                <Link href="/contact" style={{
+                  display: 'block', textAlign: 'center' as const,
+                  background: tier.featured ? '#3b82f6' : 'rgba(255,255,255,0.06)',
                   color: '#fff', padding: '13px 24px', borderRadius: 12,
                   fontWeight: 700, fontSize: 15, textDecoration: 'none',
                   border: tier.featured ? 'none' : '1px solid rgba(255,255,255,0.12)',
                   marginBottom: 28,
-                  boxShadow: tier.featured ? '0 8px 30px rgba(0,71,255,0.4)' : 'none',
+                  boxShadow: tier.featured ? '0 8px 30px rgba(59,130,246,0.4)' : 'none',
                   transition: 'all 0.2s',
                 }}>
                   {tier.id === 'enterprise' ? 'Contact Us' : 'Get Started →'}
-                </a>
+                </Link>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  {featureKeys.map((key) => {
-                    const val = tier.features[key as keyof typeof tier.features];
-                    const isCheck = val === '✓ Included' || val?.startsWith('✓');
-                    const isMissing = val === '–';
-                    return (
-                      <div key={key} style={{
-                        display: 'flex', alignItems: 'center',
-                        justifyContent: 'space-between', gap: 12,
-                        paddingBottom: 10,
-                        borderBottom: '1px solid rgba(255,255,255,0.04)',
-                      }}>
-                        <span style={{ fontSize: 13, color: '#8892b0' }}>{key}</span>
-                        <span style={{
-                          fontSize: 13, fontWeight: 600, textAlign: 'right',
-                          color: isMissing ? '#4a5568' : isCheck ? '#00C9A7' : '#f0f4ff',
-                        }}>
-                          {val}
-                        </span>
-                      </div>
-                    );
-                  })}
+                  <p style={{ fontSize: 12, fontWeight: 700, color: '#8892b0', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: 4 }}>
+                    What&apos;s Included
+                  </p>
+                  {tier.features.map((feature) => (
+                    <div key={feature} style={{
+                      display: 'flex', alignItems: 'flex-start', gap: 10,
+                      fontSize: 14, color: '#c8d0e0',
+                    }}>
+                      <span style={{
+                        width: 18, height: 18, borderRadius: '50%', flexShrink: 0, marginTop: 1,
+                        background: `${tier.color}20`, border: `1px solid ${tier.color}50`,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: 10, color: tier.color,
+                      }}>✓</span>
+                      {feature}
+                    </div>
+                  ))}
                 </div>
               </div>
-            );
+            )
           })}
         </div>
-      </section>
 
-      {/* Full Comparison Table */}
-      <section style={{ padding: '80px 24px', maxWidth: 1100, margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', marginBottom: 48 }}>
-          <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 40px)', fontWeight: 800, marginBottom: 14 }}>
-            Full Feature Comparison
-          </h2>
-          <p style={{ fontSize: 16, color: '#8892b0' }}>Every detail, side by side.</p>
-        </div>
+        {/* Trust badges */}
         <div style={{
-          background: 'rgba(255,255,255,0.02)',
-          border: '1px solid rgba(255,255,255,0.07)',
-          borderRadius: 20, overflow: 'hidden',
+          display: 'flex', justifyContent: 'center' as const, gap: 40,
+          flexWrap: 'wrap' as const, marginTop: 56,
         }}>
-          {/* Header */}
-          <div style={{
-            display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr',
-            background: 'rgba(255,255,255,0.04)',
-            borderBottom: '1px solid rgba(255,255,255,0.07)',
-            padding: '20px 28px', gap: 16,
-          }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#8892b0', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              Feature
-            </div>
-            {tiers.map((t) => (
-              <div key={t.id} style={{ textAlign: 'center', fontSize: 14, fontWeight: 800, color: t.color }}>
-                {t.name}
-              </div>
-            ))}
-          </div>
-          {/* Rows */}
-          {featureKeys.map((key, idx) => (
-            <div
-              key={key}
-              style={{
-                display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr',
-                padding: '16px 28px', gap: 16,
-                background: idx % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.015)',
-                borderBottom: '1px solid rgba(255,255,255,0.04)',
-              }}
-            >
-              <div style={{ fontSize: 14, color: '#c0c8d8' }}>{key}</div>
-              {tiers.map((t) => {
-                const val = t.features[key as keyof typeof t.features];
-                const isMissing = val === '–';
-                const isCheckmark = val?.startsWith('✓');
-                return (
-                  <div key={t.id} style={{
-                    textAlign: 'center', fontSize: 13, fontWeight: 600,
-                    color: isMissing ? '#3a4560' : isCheckmark ? '#00C9A7' : t.featured ? '#f0f4ff' : '#a0aec0',
-                  }}>
-                    {val}
-                  </div>
-                );
-              })}
+          {[
+            { icon: '🔒', text: 'Fixed pricing, no hidden fees' },
+            { icon: '⏱️', text: 'On-time delivery guaranteed' },
+            { icon: '♾️', text: 'Unlimited revisions within scope' },
+            { icon: '💳', text: '50/50 payment plans available' },
+          ].map((badge) => (
+            <div key={badge.text} style={{
+              display: 'flex', alignItems: 'center', gap: 8,
+              color: '#8892b0', fontSize: 14,
+            }}>
+              <span>{badge.icon}</span>
+              <span>{badge.text}</span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Add-ons */}
+      {/* Add-ons / Extra Services */}
       <section style={{
         padding: '100px 24px',
         background: 'rgba(255,255,255,0.015)',
@@ -453,248 +291,163 @@ export default function PricingPage() {
         borderBottom: '1px solid rgba(255,255,255,0.06)',
       }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div className="badge" style={{
+          <div style={{ textAlign: 'center' as const, marginBottom: 56 }}>
+            <div style={{
               display: 'inline-block', marginBottom: 20,
-              background: 'rgba(0,71,255,0.1)', border: '1px solid rgba(0,71,255,0.3)',
-              color: '#6b9fff', padding: '7px 18px', borderRadius: 100,
-              fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+              background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.3)',
+              color: '#93c5fd', padding: '7px 18px', borderRadius: 100,
+              fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const,
             }}>
-              Supercharge Your Plan
+              Additional Services
             </div>
             <h2 style={{ fontSize: 'clamp(26px, 4vw, 44px)', fontWeight: 800, marginBottom: 14 }}>
-              Power-Up Add-Ons
+              Supercharge Your Plan
             </h2>
             <p style={{ fontSize: 17, color: '#8892b0', maxWidth: 500, margin: '0 auto', lineHeight: 1.7 }}>
-              Add any of these services to your plan and build a complete digital engine for your business.
+              Add any of these services to your package and build a complete digital engine for your business.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
-            {addons.map((addon, i) => {
-              const isHov = hoveredAddon === i;
-              return (
-                <div
-                  key={addon.title}
-                  className="glass"
-                  onMouseEnter={() => setHoveredAddon(i)}
-                  onMouseLeave={() => setHoveredAddon(null)}
-                  style={{
-                    background: isHov ? `${addon.color}08` : 'rgba(255,255,255,0.03)',
-                    border: `1px solid ${isHov ? addon.color + '35' : 'rgba(255,255,255,0.07)'}`,
-                    borderRadius: 22, padding: 32,
-                    transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)',
-                    transform: isHov ? 'translateY(-4px)' : 'none',
-                    boxShadow: isHov ? `0 20px 50px rgba(0,0,0,0.3), 0 0 30px ${addon.color}15` : 'none',
-                    cursor: 'default',
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 }}>
-                    <div style={{
-                      width: 52, height: 52, borderRadius: 14,
-                      background: `${addon.color}18`, border: `1px solid ${addon.color}35`,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 24,
-                    }}>
-                      {addon.icon}
-                    </div>
-                    <span style={{
-                      background: `${addon.color}18`, border: `1px solid ${addon.color}35`,
-                      color: addon.color, padding: '4px 12px', borderRadius: 100,
-                      fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em',
-                    }}>
-                      {addon.badge}
-                    </span>
-                  </div>
-                  <h3 style={{ fontSize: 18, fontWeight: 800, marginBottom: 8 }}>{addon.title}</h3>
-                  <div style={{ fontSize: 22, fontWeight: 900, color: addon.color, marginBottom: 12 }}>
-                    {isMonthly && addon.badge === 'Monthly' ? addon.priceMonthly : addon.price}
-                  </div>
-                  <p style={{ fontSize: 14, color: '#8892b0', lineHeight: 1.7, marginBottom: 20 }}>{addon.desc}</p>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                    {addon.includes.map((item) => (
-                      <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#c0c8d8' }}>
-                        <span style={{
-                          width: 16, height: 16, borderRadius: '50%',
-                          background: `${addon.color}20`, border: `1px solid ${addon.color}40`,
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          flexShrink: 0, fontSize: 9, color: addon.color,
-                        }}>✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Money-Back Guarantee */}
-      <section style={{ padding: '80px 24px', maxWidth: 900, margin: '0 auto' }}>
-        <div style={{
-          background: 'linear-gradient(135deg, rgba(0,201,167,0.08) 0%, rgba(0,71,255,0.08) 100%)',
-          border: '1px solid rgba(0,201,167,0.25)',
-          borderRadius: 28, padding: '60px 48px', textAlign: 'center',
-          position: 'relative', overflow: 'hidden',
-        }}>
-          <div style={{
-            position: 'absolute', top: -40, right: -40,
-            width: 200, height: 200,
-            background: 'radial-gradient(circle, rgba(0,201,167,0.1) 0%, transparent 70%)',
-            borderRadius: '50%',
-          }} />
-          <div style={{ fontSize: 56, marginBottom: 20 }}>🛡️</div>
-          <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 40px)', fontWeight: 900, marginBottom: 16 }}>
-            14-Day Money-Back Guarantee
-          </h2>
-          <p style={{ fontSize: 17, color: '#8892b0', lineHeight: 1.8, maxWidth: 580, margin: '0 auto 32px' }}>
-            Not happy with the initial design concepts after your first review? Request a full refund within 14 days of project start — no questions asked, no awkward conversations.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 32, flexWrap: 'wrap' }}>
             {[
-              { icon: '✓', text: 'No questions asked' },
-              { icon: '✓', text: 'Full refund, not credit' },
-              { icon: '✓', text: 'Applies to all new projects' },
-            ].map((item) => (
-              <div key={item.text} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 15, color: '#00C9A7', fontWeight: 600 }}>
-                <span style={{
-                  width: 20, height: 20, borderRadius: '50%',
-                  background: 'rgba(0,201,167,0.2)', border: '1px solid rgba(0,201,167,0.4)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 11, flexShrink: 0,
-                }}>✓</span>
-                {item.text}
+              {
+                icon: '📈', title: 'SEO & Growth Retainer',
+                price: '8,000 CZK/mo', color: '#f59e0b', badge: 'Monthly',
+                desc: 'Full technical SEO, keyword research, content strategy, and monthly link building.',
+              },
+              {
+                icon: '🛡️', title: 'Website Maintenance',
+                price: '3,000 CZK/mo', color: '#8b5cf6', badge: 'Monthly',
+                desc: '24/7 uptime monitoring, weekly updates, daily backups, and priority bug fixes.',
+              },
+              {
+                icon: '🤖', title: 'AI Chatbot Integration',
+                price: 'from 15,000 CZK', color: '#10b981', badge: 'One-time',
+                desc: 'Custom GPT-4 powered chatbot trained on your content, integrated with your CRM.',
+              },
+              {
+                icon: '🎨', title: 'Brand Identity System',
+                price: 'from 12,000 CZK', color: '#ec4899', badge: 'One-time',
+                desc: 'Complete visual identity including logo, color system, typography, and guidelines.',
+              },
+            ].map((addon) => (
+              <div
+                key={addon.title}
+                style={{
+                  background: 'rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(255,255,255,0.07)',
+                  borderRadius: 22, padding: 32,
+                  cursor: 'default',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 }}>
+                  <div style={{
+                    width: 52, height: 52, borderRadius: 14,
+                    background: `${addon.color}18`, border: `1px solid ${addon.color}35`,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontSize: 24,
+                  }}>
+                    {addon.icon}
+                  </div>
+                  <span style={{
+                    background: `${addon.color}20`, border: `1px solid ${addon.color}40`,
+                    color: addon.color, padding: '3px 10px', borderRadius: 100,
+                    fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const,
+                  }}>
+                    {addon.badge}
+                  </span>
+                </div>
+                <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{addon.title}</h3>
+                <p style={{ fontSize: 14, color: '#8892b0', lineHeight: 1.6, marginBottom: 16 }}>{addon.desc}</p>
+                <div style={{ fontSize: 20, fontWeight: 800, color: addon.color }}>{addon.price}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section style={{
-        padding: '80px 24px 100px',
-        maxWidth: 760, margin: '0 auto',
-      }}>
-        <div style={{ textAlign: 'center', marginBottom: 56 }}>
-          <div className="badge" style={{
+      {/* FAQ Section */}
+      <section style={{ padding: '100px 24px', maxWidth: 820, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center' as const, marginBottom: 56 }}>
+          <div style={{
             display: 'inline-block', marginBottom: 20,
-            background: 'rgba(0,71,255,0.1)', border: '1px solid rgba(0,71,255,0.3)',
-            color: '#6b9fff', padding: '7px 18px', borderRadius: 100,
-            fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+            background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.3)',
+            color: '#93c5fd', padding: '7px 18px', borderRadius: 100,
+            fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const,
           }}>
-            Pricing FAQ
+            FAQ
           </div>
           <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 40px)', fontWeight: 800, marginBottom: 14 }}>
             Frequently Asked Questions
           </h2>
-          <p style={{ fontSize: 16, color: '#8892b0' }}>
-            Everything you need to know about how we work and how we charge.
-          </p>
+          <p style={{ fontSize: 16, color: '#8892b0' }}>Everything you need to know about our pricing.</p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-          {faqs.map((faq, i) => {
-            const isOpen = openFaq === i;
-            return (
-              <div
-                key={i}
-                className="glass"
+          {faqs.map((faq, i) => (
+            <div
+              key={i}
+              onMouseEnter={() => setHoveredFaq(i)}
+              onMouseLeave={() => setHoveredFaq(null)}
+              style={{
+                background: '#0f0f0f',
+                border: hoveredFaq === i || openFaq === i ? '1px solid rgba(59,130,246,0.35)' : '1px solid rgba(255,255,255,0.08)',
+                borderRadius: 14,
+                overflow: 'hidden',
+                transition: 'border-color 0.2s ease',
+              }}
+            >
+              <button
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 style={{
-                  background: isOpen ? 'rgba(0,71,255,0.06)' : 'rgba(255,255,255,0.03)',
-                  border: `1px solid ${isOpen ? 'rgba(0,71,255,0.3)' : 'rgba(255,255,255,0.07)'}`,
-                  borderRadius: 16, overflow: 'hidden',
-                  transition: 'all 0.3s',
+                  width: '100%', background: 'transparent', border: 'none',
+                  padding: '20px 24px', display: 'flex', justifyContent: 'space-between',
+                  alignItems: 'center', cursor: 'pointer', gap: 16, textAlign: 'left' as const,
                 }}
               >
-                <button
-                  onClick={() => setOpenFaq(isOpen ? null : i)}
-                  style={{
-                    width: '100%', padding: '20px 24px',
-                    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                    background: 'transparent', border: 'none', cursor: 'pointer',
-                    color: '#f0f4ff', fontSize: 16, fontWeight: 600, textAlign: 'left', gap: 16,
-                  }}
-                >
-                  <span>{faq.q}</span>
-                  <span style={{
-                    width: 28, height: 28, borderRadius: '50%',
-                    background: isOpen ? '#0047FF' : 'rgba(255,255,255,0.08)',
-                    border: `1px solid ${isOpen ? '#0047FF' : 'rgba(255,255,255,0.12)'}`,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 16, flexShrink: 0, transition: 'all 0.25s',
-                    transform: isOpen ? 'rotate(45deg)' : 'none',
-                  }}>
-                    +
-                  </span>
-                </button>
-                {isOpen && (
-                  <div style={{
-                    padding: '0 24px 22px',
-                    fontSize: 15, color: '#8892b0', lineHeight: 1.8,
-                  }}>
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+                <span style={{ fontSize: 15, fontWeight: 600, color: '#f0f4ff', fontFamily: 'Inter, sans-serif' }}>{faq.q}</span>
+                <span style={{
+                  color: '#3b82f6', fontSize: 20, fontWeight: 700, flexShrink: 0,
+                  transition: 'transform 0.2s ease',
+                  transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0)',
+                }}>+</span>
+              </button>
+              {openFaq === i && (
+                <div style={{ padding: '0 24px 20px' }}>
+                  <div style={{ height: 1, background: 'rgba(255,255,255,0.06)', marginBottom: 16 }} />
+                  <p style={{ fontSize: 14, color: '#8892b0', lineHeight: 1.7, margin: 0 }}>{faq.a}</p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Bottom CTA */}
       <section style={{
-        padding: '100px 24px',
-        textAlign: 'center',
-        background: 'linear-gradient(180deg, transparent 0%, rgba(0,71,255,0.08) 100%)',
+        padding: '80px 24px 120px',
+        textAlign: 'center' as const,
+        background: 'linear-gradient(180deg, transparent 0%, rgba(59,130,246,0.07) 100%)',
         borderTop: '1px solid rgba(255,255,255,0.06)',
       }}>
         <div style={{ maxWidth: 680, margin: '0 auto' }}>
-          <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', fontWeight: 900, marginBottom: 20 }}>
-            Not Sure Which Plan?{' '}
-            <span style={{
-              background: 'linear-gradient(135deg, #0047FF 0%, #00C9A7 100%)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-            }}>
-              Let's Talk.
-            </span>
+          <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 800, marginBottom: 20 }}>
+            Not Sure Which Plan to Choose?
           </h2>
-          <p style={{ fontSize: 18, color: '#8892b0', lineHeight: 1.7, marginBottom: 40 }}>
-            Book a free 30-minute strategy call. We'll understand your goals, recommend the right plan,
-            and give you a detailed proposal within 24 hours. No commitment required.
+          <p style={{ fontSize: 18, color: '#8892b0', marginBottom: 40, lineHeight: 1.7 }}>
+            Book a free 30-minute strategy call and we&apos;ll help you figure out exactly what you need —
+            no commitment, no sales pressure.
           </p>
-          <a
-            href="/contact"
-            onMouseEnter={() => setHoveredCta(true)}
-            onMouseLeave={() => setHoveredCta(false)}
-            style={{
-              display: 'inline-block',
-              background: hoveredCta ? '#0038cc' : '#0047FF',
-              color: '#fff', padding: '18px 48px', borderRadius: 14,
-              fontWeight: 800, fontSize: 18, textDecoration: 'none',
-              boxShadow: hoveredCta ? '0 0 50px rgba(0,71,255,0.6)' : '0 0 30px rgba(0,71,255,0.35)',
-              transform: hoveredCta ? 'translateY(-2px) scale(1.02)' : 'none',
-              transition: 'all 0.25s',
-            }}
-          >
-            Book Free Strategy Call →
-          </a>
-          <div style={{
-            marginTop: 32, display: 'flex', justifyContent: 'center',
-            gap: 32, flexWrap: 'wrap',
+          <Link href="/contact" style={{
+            display: 'inline-block',
+            background: '#3b82f6', color: '#fff', padding: '16px 40px',
+            borderRadius: 12, fontWeight: 700, fontSize: 17,
+            textDecoration: 'none', boxShadow: '0 8px 30px rgba(59,130,246,0.4)',
           }}>
-            {[
-              { text: '✓ Free 30-min call' },
-              { text: '✓ Proposal in 24h' },
-              { text: '✓ No commitment' },
-              { text: '✓ Fixed pricing guaranteed' },
-            ].map((item) => (
-              <span key={item.text} style={{ fontSize: 14, color: '#8892b0' }}>{item.text}</span>
-            ))}
-          </div>
+            Book a Free Call →
+          </Link>
         </div>
       </section>
 
       <Footer />
     </div>
-  );
+  )
 }

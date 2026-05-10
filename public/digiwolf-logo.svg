@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" fill="#000000"/>
+  
+  <!-- D letter shape -->
+  <path d="M 80 180 L 80 270 L 110 270 Q 155 270 155 225 Q 155 180 110 180 Z M 95 195 L 110 195 Q 138 195 138 225 Q 138 255 110 255 L 95 255 Z" fill="url(#silverGrad)" />
+  
+  <!-- Inner D cutout highlight -->
+  <path d="M 80 180 L 130 150 L 155 180 L 138 195 Q 110 195 95 195 Z" fill="url(#silverGrad2)"/>
+
+  <!-- Wolf head - geometric low-poly style -->
+  <!-- Main skull -->
+  <polygon points="165,60 220,45 260,70 275,110 250,145 220,160 185,145 160,110" fill="url(#wolfGrad1)"/>
+  
+  <!-- Left ear -->
+  <polygon points="165,60 145,25 185,55" fill="url(#silverGrad)"/>
+  <!-- Left ear inner -->
+  <polygon points="168,58 152,32 180,54" fill="#888"/>
+  
+  <!-- Right ear -->
+  <polygon points="220,45 235,15 255,55" fill="url(#silverGrad)"/>
+  <!-- Right ear inner -->
+  <polygon points="222,46 236,22 250,52" fill="#888"/>
+  
+  <!-- Snout -->
+  <polygon points="185,145 220,160 210,185 175,175" fill="url(#wolfGrad2)"/>
+  <polygon points="220,160 250,145 235,180 210,185" fill="url(#wolfGrad3)"/>
+  
+  <!-- Eye left -->
+  <polygon points="180,95 195,88 198,100 185,105" fill="#1a1a2e"/>
+  <polygon points="182,96 193,90 195,99 184,103" fill="#0066ff" opacity="0.8"/>
+  
+  <!-- Eye right -->
+  <polygon points="225,88 240,85 242,97 228,100" fill="#1a1a2e"/>
+  <polygon points="227,89 238,87 240,96 229,99" fill="#0066ff" opacity="0.8"/>
+  
+  <!-- Neck/chest geometric -->
+  <polygon points="185,145 175,175 155,200 150,230 165,225 185,200 210,185" fill="url(#wolfGrad2)"/>
+  <polygon points="250,145 235,180 255,210 265,230 250,225 225,195 210,185" fill="url(#wolfGrad3)"/>
+  
+  <!-- Face detail lines -->
+  <polygon points="195,105 215,100 220,115 205,120 195,112" fill="url(#wolfGrad4)"/>
+  
+  <!-- Forehead highlight -->
+  <polygon points="195,65 220,55 235,75 215,80 195,72" fill="url(#highlight)"/>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="50%" style="stop-color:#cccccc"/>
+      <stop offset="100%" style="stop-color:#888888"/>
+    </linearGradient>
+    <linearGradient id="silverGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#aaaaaa"/>
+    </linearGradient>
+    <linearGradient id="wolfGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0e0e0"/>
+      <stop offset="40%" style="stop-color:#b0b0b0"/>
+      <stop offset="100%" style="stop-color:#555555"/>
+    </linearGradient>
+    <linearGradient id="wolfGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#aaaaaa"/>
+      <stop offset="100%" style="stop-color:#444444"/>
+    </linearGradient>
+    <linearGradient id="wolfGrad3" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#888888"/>
+      <stop offset="100%" style="stop-color:#333333"/>
+    </linearGradient>
+    <linearGradient id="wolfGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#cccccc"/>
+      <stop offset="100%" style="stop-color:#777777"/>
+    </linearGradient>
+    <linearGradient id="highlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" style="stop-color:#dddddd" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- DIGIWOLF text -->
+  <text x="200" y="305" font-family="Arial Black, sans-serif" font-weight="900" font-size="38" fill="white" text-anchor="middle" letter-spacing="8">DIGIWOLF</text>
+  
+  <!-- Divider lines + AGENCY -->
+  <line x1="85" y1="318" x2="148" y2="318" stroke="#888" stroke-width="1"/>
+  <text x="200" y="325" font-family="Arial, sans-serif" font-weight="400" font-size="14" fill="#aaaaaa" text-anchor="middle" letter-spacing="10">AGENCY</text>
+  <line x1="252" y1="318" x2="315" y2="318" stroke="#888" stroke-width="1"/>
+  
+  <!-- Domain -->
+  <text x="200" y="350" font-family="Arial, sans-serif" font-size="12" fill="#666666" text-anchor="middle" letter-spacing="3">digiwolf.agency</text>
+</svg>

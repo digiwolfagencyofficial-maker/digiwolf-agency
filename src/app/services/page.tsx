@@ -1,31 +1,32 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { useState } from 'react'
+import Link from 'next/link'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 const services = [
   {
-    id: 'websites',
-    icon: '⚡',
-    title: 'Agency Websites',
-    tagline: 'Blazing-fast sites that convert',
-    price: 'from 15,000 CZK',
+    id: 'web',
+    icon: '💻',
+    title: 'Web Development',
+    tagline: 'Full-stack websites that convert',
+    price: 'from 45,000 CZK',
     badge: 'Most Popular',
     description:
-      'We build premium Next.js websites engineered for performance, SEO, and conversions. Every pixel is intentional. Every millisecond counts. Your site will be the sharpest weapon in your business arsenal.',
+      'We build premium full-stack websites engineered for performance, SEO, and conversions. Next.js, Webflow, e-commerce — every pixel intentional, every millisecond optimized.',
     features: [
-      'Next.js 14 + TypeScript stack',
+      'Next.js 14 + TypeScript full-stack',
+      'Webflow & custom CMS builds',
+      'E-commerce with Shopify / WooCommerce',
       'Mobile-first responsive design',
       'Technical SEO built-in from day one',
       'Core Web Vitals optimized (100/100)',
       'Custom animations & interactions',
-      'CMS integration (Sanity / Contentful)',
       'Analytics & conversion tracking',
-      '5–10 business day delivery',
       '30-day post-launch support included',
     ],
-    color: '#0047FF',
+    color: '#3b82f6',
     process: [
       { step: '01', label: 'Discovery Call', desc: 'We map your goals, audience, and competitors in 60 minutes.' },
       { step: '02', label: 'Design Wireframes', desc: 'Low-fi to high-fi prototypes reviewed and approved by you.' },
@@ -38,22 +39,22 @@ const services = [
     icon: '🏛️',
     title: 'Czech S.R.O. Formation',
     tagline: 'EU company in days, not months',
-    price: 'from 12,000 CZK',
+    price: 'from 15,000 CZK',
     badge: 'EU Gateway',
     description:
-      'Set up a fully legal Czech limited liability company (S.R.O.) with complete English-language guidance. We handle every form, notary, and government office so you can focus on building your business inside the EU.',
+      'Complete company registration for your Czech S.R.O. — bank account setup, compliance, and full English-language guidance. We handle every form, notary, and government office.',
     features: [
       'Full company registration handled end-to-end',
-      'English-language guidance throughout',
+      'Bank account opening assistance',
       'Trade license (živnostenský list) included',
       'Registered office address (1 year)',
-      'Bank account opening assistance',
       'VAT registration support',
       'Memorandum of Association drafting',
       'Apostille & certified translations if needed',
       'Ongoing compliance consultation',
+      'English guidance throughout',
     ],
-    color: '#6C63FF',
+    color: '#6366f1',
     process: [
       { step: '01', label: 'Document Checklist', desc: 'We send you a precise list of required documents.' },
       { step: '02', label: 'Notary Appointment', desc: 'We schedule and attend the notary signing with you.' },
@@ -69,11 +70,11 @@ const services = [
     price: 'from 25,000 CZK',
     badge: 'Future-Proof',
     description:
-      'We deploy custom AI systems that eliminate repetitive work and supercharge your team. From intelligent chatbots to complex multi-step automation pipelines — we make your business run on autopilot.',
+      'We deploy custom AI systems — chatbots, workflow automation, and lead generation systems — that eliminate repetitive work and supercharge your team productivity.',
     features: [
       'Custom GPT-4 / Claude chatbots',
       'Lead qualification & nurturing bots',
-      'n8n / Make / Zapier workflow automation',
+      'Workflow automation (n8n / Make / Zapier)',
       'CRM & ERP integration',
       'Document processing pipelines',
       'AI-powered content generation',
@@ -81,7 +82,7 @@ const services = [
       'Custom API integrations',
       'Training & handover documentation',
     ],
-    color: '#00C9A7',
+    color: '#10b981',
     process: [
       { step: '01', label: 'Workflow Audit', desc: 'We identify your highest-ROI automation opportunities.' },
       { step: '02', label: 'System Design', desc: 'Architecture mapped and approved before a single line of code.' },
@@ -94,22 +95,22 @@ const services = [
     icon: '📈',
     title: 'SEO & Growth',
     tagline: 'Rank higher. Grow faster.',
-    price: 'from 8,000 CZK/mo',
+    price: 'from 8,000 CZK/month',
     badge: 'Ongoing',
     description:
-      'Data-driven SEO built for Central & Eastern European markets. We combine technical excellence with strategic content to get your site ranking on Page 1 — and keep it there as the algorithm evolves.',
+      'Technical SEO, content strategy, and Google Ads built for Central & Eastern European markets. We combine technical excellence with strategic content to get your site on Page 1.',
     features: [
       'Full technical SEO audit & fix',
       'Keyword research (CZ, SK, PL, EN)',
       'On-page optimization & schema markup',
       'Monthly content strategy & briefs',
+      'Google Ads campaign management',
       'Link building in CEE markets',
       'Google Search Console management',
       'Competitor gap analysis',
       'Monthly reporting with real metrics',
-      'Core Web Vitals monitoring',
     ],
-    color: '#FF6B35',
+    color: '#f59e0b',
     process: [
       { step: '01', label: 'SEO Audit', desc: 'Complete technical and content audit delivered in week one.' },
       { step: '02', label: 'Strategy Build', desc: 'Custom roadmap targeting your exact keywords and markets.' },
@@ -122,10 +123,10 @@ const services = [
     icon: '🎨',
     title: 'Brand Identity',
     tagline: 'Look like the leader you are',
-    price: 'from 18,000 CZK',
+    price: 'from 12,000 CZK',
     badge: 'Premium',
     description:
-      'A complete visual identity system that makes you instantly recognizable and unforgettable. From logo to brand guidelines, we craft identities that communicate authority and attract your ideal clients.',
+      'A complete visual identity system — logo, brand guidelines, and visual system — that makes you instantly recognizable and unforgettable. From logo to brand guidelines.',
     features: [
       'Brand strategy & positioning workshop',
       'Primary + secondary logo suite',
@@ -137,7 +138,7 @@ const services = [
       'Icon set & illustration style',
       'All source files (AI, EPS, Figma)',
     ],
-    color: '#E040FB',
+    color: '#ec4899',
     process: [
       { step: '01', label: 'Brand Discovery', desc: 'Deep dive into your story, values, and ideal customer.' },
       { step: '02', label: 'Concept Directions', desc: '3 distinct creative directions presented for feedback.' },
@@ -146,26 +147,26 @@ const services = [
     ],
   },
   {
-    id: 'support',
+    id: 'maintenance',
     icon: '🛡️',
-    title: 'Maintenance & Support',
+    title: 'Website Maintenance',
     tagline: 'Always online. Always protected.',
-    price: 'from 3,000 CZK/mo',
+    price: 'from 3,000 CZK/month',
     badge: 'Peace of Mind',
     description:
-      'Sleep soundly knowing your digital assets are monitored, updated, and secured 24/7. Our proactive maintenance plans keep your website and systems running at peak performance, always.',
+      'Hosting, updates, security, and support — 24/7. Our proactive maintenance plans keep your website and systems running at peak performance, always.',
     features: [
       '24/7 uptime monitoring with alerts',
+      'Managed hosting included',
       'Weekly CMS & dependency updates',
       'Security scanning & malware removal',
       'Daily automated backups (30-day retention)',
       'Performance monitoring & optimization',
       'Monthly performance report',
       'Priority bug fixes (< 4hr response)',
-      'SSL certificate management',
       'Dedicated Slack channel support',
     ],
-    color: '#FFB300',
+    color: '#8b5cf6',
     process: [
       { step: '01', label: 'Onboarding', desc: 'We audit your current setup and set up monitoring tools.' },
       { step: '02', label: 'Baseline Fix', desc: 'Any critical issues resolved in the first week.' },
@@ -173,70 +174,66 @@ const services = [
       { step: '04', label: 'Monthly Review', desc: 'Report delivered with metrics, changes made, and next steps.' },
     ],
   },
-];
+]
 
 export default function ServicesPage() {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
-  const [hoveredProcess, setHoveredProcess] = useState<string | null>(null);
-  const [hoveredCta, setHoveredCta] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
+  const [hoveredProcess, setHoveredProcess] = useState<string | null>(null)
 
   return (
-    <div style={{ background: '#030712', minHeight: '100vh', color: '#f0f4ff', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div style={{ background: '#0a0a0a', minHeight: '100vh', color: '#f0f4ff', fontFamily: 'Inter, system-ui, sans-serif' }}>
       <Navbar />
 
       {/* Hero */}
-      <section style={{ position: 'relative', padding: '140px 24px 100px', textAlign: 'center', overflow: 'hidden' }}>
-        <div className="grid-bg" style={{ position: 'absolute', inset: 0, opacity: 0.3 }} />
+      <section style={{ position: 'relative', padding: '140px 24px 100px', textAlign: 'center' as const, overflow: 'hidden' }}>
         <div style={{
           position: 'absolute', top: '50%', left: '50%',
           transform: 'translate(-50%, -50%)',
           width: 600, height: 600,
-          background: 'radial-gradient(circle, rgba(0,71,255,0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%)',
           borderRadius: '50%', pointerEvents: 'none',
         }} />
         <div style={{ position: 'relative', maxWidth: 800, margin: '0 auto' }}>
-          <div className="badge fade-up" style={{
+          <div style={{
             display: 'inline-block', marginBottom: 24,
-            background: 'rgba(0,71,255,0.15)', border: '1px solid rgba(0,71,255,0.4)',
-            color: '#6b9fff', padding: '8px 20px', borderRadius: 100,
-            fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase',
+            background: 'rgba(59,130,246,0.15)', border: '1px solid rgba(59,130,246,0.4)',
+            color: '#93c5fd', padding: '8px 20px', borderRadius: 100,
+            fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' as const,
           }}>
             Full-Stack Agency Services
           </div>
-          <h1 className="fade-up" style={{
+          <h1 style={{
             fontSize: 'clamp(36px, 6vw, 68px)', fontWeight: 800,
             lineHeight: 1.1, marginBottom: 24,
           }}>
             Every Service You Need to{' '}
-            <span className="gradient-text" style={{
-              background: 'linear-gradient(135deg, #0047FF 0%, #00C9A7 100%)',
+            <span style={{
+              background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
             }}>
               Dominate Your Market
             </span>
           </h1>
-          <p className="fade-up" style={{
+          <p style={{
             fontSize: 20, color: '#8892b0', lineHeight: 1.7, maxWidth: 600, margin: '0 auto 40px',
           }}>
-            From zero to market leader — we provide every digital service a modern business needs,
-            built by experts who understand Central European markets.
+            From zero to market leader — web development, company formation, AI automation, and more.
+            Built by experts who understand Central European markets.
           </p>
-          <div className="fade-up" style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="/contact" style={{
-              background: '#0047FF', color: '#fff', padding: '14px 32px',
+          <div style={{ display: 'flex', gap: 16, justifyContent: 'center' as const, flexWrap: 'wrap' as const }}>
+            <Link href="/contact" style={{
+              background: '#3b82f6', color: '#fff', padding: '14px 32px',
               borderRadius: 12, fontWeight: 700, fontSize: 16,
               textDecoration: 'none', display: 'inline-block',
-              boxShadow: '0 0 30px rgba(0,71,255,0.4)',
-              transition: 'all 0.2s',
+              boxShadow: '0 0 30px rgba(59,130,246,0.4)',
             }}>
               Start a Project
-            </a>
+            </Link>
             <a href="#services" style={{
               background: 'rgba(255,255,255,0.05)', color: '#f0f4ff',
               border: '1px solid rgba(255,255,255,0.1)',
               padding: '14px 32px', borderRadius: 12, fontWeight: 600, fontSize: 16,
               textDecoration: 'none', display: 'inline-block',
-              transition: 'all 0.2s',
             }}>
               Explore Services ↓
             </a>
@@ -253,7 +250,7 @@ export default function ServicesPage() {
         <div style={{
           maxWidth: 900, margin: '0 auto',
           display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-          gap: 32, textAlign: 'center',
+          gap: 32, textAlign: 'center' as const,
         }}>
           {[
             { num: '6', label: 'Core Services' },
@@ -262,7 +259,7 @@ export default function ServicesPage() {
             { num: '98%', label: 'Satisfaction Rate' },
           ].map((s) => (
             <div key={s.label}>
-              <div style={{ fontSize: 36, fontWeight: 800, color: '#0047FF' }}>{s.num}</div>
+              <div style={{ fontSize: 36, fontWeight: 800, color: '#3b82f6' }}>{s.num}</div>
               <div style={{ fontSize: 14, color: '#8892b0', marginTop: 4 }}>{s.label}</div>
             </div>
           ))}
@@ -273,16 +270,15 @@ export default function ServicesPage() {
       <section id="services" style={{ padding: '100px 24px', maxWidth: 1280, margin: '0 auto' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: 32 }}>
           {services.map((svc) => {
-            const isHovered = hoveredCard === svc.id;
+            const isHovered = hoveredCard === svc.id
             return (
               <div
                 key={svc.id}
-                className="glass"
                 onMouseEnter={() => setHoveredCard(svc.id)}
                 onMouseLeave={() => setHoveredCard(null)}
                 style={{
                   background: isHovered
-                    ? `linear-gradient(135deg, rgba(${svc.color === '#0047FF' ? '0,71,255' : svc.color === '#6C63FF' ? '108,99,255' : svc.color === '#00C9A7' ? '0,201,167' : svc.color === '#FF6B35' ? '255,107,53' : svc.color === '#E040FB' ? '224,64,251' : '255,179,0'},0.08) 0%, rgba(3,7,18,0.95) 100%)`
+                    ? 'rgba(255,255,255,0.05)'
                     : 'rgba(255,255,255,0.03)',
                   border: `1px solid ${isHovered ? svc.color + '44' : 'rgba(255,255,255,0.07)'}`,
                   borderRadius: 24, padding: 40,
@@ -307,7 +303,7 @@ export default function ServicesPage() {
                   <span style={{
                     background: `${svc.color}20`, border: `1px solid ${svc.color}40`,
                     color: svc.color, padding: '4px 14px', borderRadius: 100,
-                    fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                    fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const,
                   }}>
                     {svc.badge}
                   </span>
@@ -325,13 +321,13 @@ export default function ServicesPage() {
                   display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                 }}>
                   <span style={{ fontSize: 13, color: '#8892b0' }}>Starting at</span>
-                  <span style={{ fontSize: 22, fontWeight: 800, color: svc.color }}>{svc.price}</span>
+                  <span style={{ fontSize: 20, fontWeight: 800, color: svc.color }}>{svc.price}</span>
                 </div>
 
                 {/* Features */}
                 <div style={{ marginBottom: 32, flex: 1 }}>
-                  <p style={{ fontSize: 12, fontWeight: 700, color: '#8892b0', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>
-                    What's Included
+                  <p style={{ fontSize: 12, fontWeight: 700, color: '#8892b0', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: 14 }}>
+                    What&apos;s Included
                   </p>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
                     {svc.features.map((f) => (
@@ -354,7 +350,7 @@ export default function ServicesPage() {
                   border: '1px solid rgba(255,255,255,0.06)',
                   borderRadius: 16, padding: 20, marginBottom: 28,
                 }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: '#8892b0', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16 }}>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: '#8892b0', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: 16 }}>
                     Our Process
                   </p>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
@@ -377,8 +373,8 @@ export default function ServicesPage() {
                 </div>
 
                 {/* CTA */}
-                <a href="/contact" style={{
-                  display: 'block', textAlign: 'center',
+                <Link href="/contact" style={{
+                  display: 'block', textAlign: 'center' as const,
                   background: isHovered ? svc.color : 'rgba(255,255,255,0.05)',
                   color: '#fff', padding: '14px 24px', borderRadius: 12,
                   fontWeight: 700, fontSize: 15, textDecoration: 'none',
@@ -387,140 +383,91 @@ export default function ServicesPage() {
                   boxShadow: isHovered ? `0 8px 30px ${svc.color}40` : 'none',
                 }}>
                   Get Started →
-                </a>
+                </Link>
               </div>
-            );
+            )
           })}
         </div>
       </section>
 
-      {/* Why Us Process Section */}
+      {/* Guarantees */}
       <section style={{
-        padding: '100px 24px',
+        padding: '80px 24px',
         background: 'rgba(255,255,255,0.02)',
         borderTop: '1px solid rgba(255,255,255,0.06)',
-        borderBottom: '1px solid rgba(255,255,255,0.06)',
       }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', textAlign: 'center' }}>
-          <div className="badge" style={{
-            display: 'inline-block', marginBottom: 20,
-            background: 'rgba(0,71,255,0.1)', border: '1px solid rgba(0,71,255,0.3)',
-            color: '#6b9fff', padding: '7px 18px', borderRadius: 100,
-            fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{
+            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: 24,
           }}>
-            How It Works
-          </div>
-          <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 800, marginBottom: 16 }}>
-            From First Call to Live Launch
-          </h2>
-          <p style={{ fontSize: 18, color: '#8892b0', maxWidth: 520, margin: '0 auto 60px', lineHeight: 1.7 }}>
-            Our battle-tested delivery process ensures every project lands on time, on budget, and above expectations.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 24 }}>
             {[
-              { num: '01', icon: '📞', title: 'Discovery Call', desc: 'Free 30-min strategy session. We learn your goals and define scope together.' },
-              { num: '02', icon: '📋', title: 'Proposal & Quote', desc: 'Detailed proposal with timeline, deliverables, and fixed pricing. No surprises.' },
-              { num: '03', icon: '🚀', title: 'Rapid Execution', desc: 'Our team gets to work immediately. Weekly updates keep you in the loop.' },
-              { num: '04', icon: '✅', title: 'Review & Handover', desc: 'You review, we refine. Full ownership transfer with documentation.' },
-            ].map((step, i) => (
+              { icon: '⏱️', title: 'On-Time Delivery', desc: 'We ship on schedule, every time. If we miss a deadline, you get 10% off your invoice.' },
+              { icon: '🔒', title: 'Fixed Pricing', desc: 'Quote agreed upfront, no scope creep surprises. What we quote is what you pay.' },
+              { icon: '♾️', title: 'Unlimited Revisions', desc: 'Within scope, we iterate until you\'re 100% satisfied. Period.' },
+            ].map((g) => (
               <div
-                key={step.num}
-                className="glass"
+                key={g.title}
                 style={{
-                  background: 'rgba(255,255,255,0.03)',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  borderRadius: 20, padding: 32, textAlign: 'left', position: 'relative',
+                  background: 'rgba(59,130,246,0.05)',
+                  border: '1px solid rgba(59,130,246,0.2)',
+                  borderRadius: 20, padding: 32,
+                  display: 'flex', gap: 20, alignItems: 'flex-start',
                 }}
               >
-                <div style={{
-                  position: 'absolute', top: 20, right: 20,
-                  fontSize: 48, fontWeight: 900, color: 'rgba(0,71,255,0.08)',
-                  lineHeight: 1,
-                }}>{step.num}</div>
-                <div style={{ fontSize: 32, marginBottom: 16 }}>{step.icon}</div>
-                <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 10 }}>{step.title}</h3>
-                <p style={{ fontSize: 14, color: '#8892b0', lineHeight: 1.7 }}>{step.desc}</p>
+                <span style={{ fontSize: 36 }}>{g.icon}</span>
+                <div>
+                  <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{g.title}</h3>
+                  <p style={{ fontSize: 14, color: '#8892b0', lineHeight: 1.7 }}>{g.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Guarantees */}
-      <section style={{ padding: '80px 24px', maxWidth: 1100, margin: '0 auto' }}>
-        <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: 24,
-        }}>
-          {[
-            { icon: '⏱️', title: 'On-Time Delivery', desc: 'We ship on schedule, every time. If we miss a deadline, you get 10% off your invoice.' },
-            { icon: '🔒', title: 'Fixed Pricing', desc: 'Quote agreed upfront, no scope creep surprises. What we quote is what you pay.' },
-            { icon: '♾️', title: 'Unlimited Revisions', desc: 'Within scope, we iterate until you\'re 100% satisfied. Period.' },
-          ].map((g) => (
-            <div
-              key={g.title}
-              className="glass"
-              style={{
-                background: 'rgba(0,71,255,0.05)',
-                border: '1px solid rgba(0,71,255,0.2)',
-                borderRadius: 20, padding: 32,
-                display: 'flex', gap: 20, alignItems: 'flex-start',
-              }}
-            >
-              <span style={{ fontSize: 36 }}>{g.icon}</span>
-              <div>
-                <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{g.title}</h3>
-                <p style={{ fontSize: 14, color: '#8892b0', lineHeight: 1.7 }}>{g.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Bottom CTA */}
       <section style={{
         padding: '100px 24px',
-        textAlign: 'center',
-        background: 'linear-gradient(180deg, transparent 0%, rgba(0,71,255,0.08) 100%)',
+        textAlign: 'center' as const,
+        background: 'linear-gradient(180deg, transparent 0%, rgba(59,130,246,0.08) 100%)',
         borderTop: '1px solid rgba(255,255,255,0.06)',
       }}>
         <div style={{ maxWidth: 700, margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', fontWeight: 800, marginBottom: 20 }}>
             Ready to Build Something{' '}
             <span style={{
-              background: 'linear-gradient(135deg, #0047FF 0%, #00C9A7 100%)',
+              background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
             }}>
               Exceptional?
             </span>
           </h2>
           <p style={{ fontSize: 18, color: '#8892b0', marginBottom: 40, lineHeight: 1.7 }}>
-            Book a free 30-minute strategy call. We'll map your goals, identify the right services,
+            Book a free 30-minute strategy call. We&apos;ll map your goals, identify the right services,
             and deliver a detailed proposal within 24 hours.
           </p>
-          <a
-            href="/contact"
-            onMouseEnter={() => setHoveredCta(true)}
-            onMouseLeave={() => setHoveredCta(false)}
-            style={{
-              display: 'inline-block',
-              background: hoveredCta ? '#0038cc' : '#0047FF',
-              color: '#fff', padding: '18px 48px', borderRadius: 14,
-              fontWeight: 800, fontSize: 18, textDecoration: 'none',
-              boxShadow: hoveredCta ? '0 0 50px rgba(0,71,255,0.6)' : '0 0 30px rgba(0,71,255,0.35)',
-              transform: hoveredCta ? 'translateY(-2px) scale(1.02)' : 'none',
-              transition: 'all 0.25s',
-            }}
-          >
-            Book Free Strategy Call →
-          </a>
-          <p style={{ marginTop: 20, fontSize: 14, color: '#8892b0' }}>
-            No commitment. No sales pressure. Just strategy.
-          </p>
+          <div style={{ display: 'flex', gap: 16, justifyContent: 'center' as const, flexWrap: 'wrap' as const }}>
+            <Link href="/contact" style={{
+              background: '#3b82f6', color: '#fff', padding: '16px 40px',
+              borderRadius: 12, fontWeight: 700, fontSize: 17,
+              textDecoration: 'none', boxShadow: '0 8px 30px rgba(59,130,246,0.4)',
+            }}>
+              Book a Free Strategy Call →
+            </Link>
+            <Link href="/pricing" style={{
+              background: 'rgba(255,255,255,0.05)', color: '#f0f4ff',
+              border: '1px solid rgba(255,255,255,0.1)',
+              padding: '16px 40px', borderRadius: 12, fontWeight: 600, fontSize: 17,
+              textDecoration: 'none',
+            }}>
+              View Pricing
+            </Link>
+          </div>
         </div>
       </section>
 
       <Footer />
     </div>
-  );
+  )
 }
