@@ -291,7 +291,6 @@ export function ContactForm() {
                     <p className="mt-3 text-center text-xs text-white/30">
                       By submitting, you agree to our privacy policy. We never share your data.
                     </p>
-                  </p>
                 </form>
               )}
             </motion.div>
