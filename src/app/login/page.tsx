@@ -1,13 +1,20 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import { signIn } from 'next-auth/react'
 import Navbar from '@/components/Navbar'
 
 export default function LoginPage() {
+  const router = useRouter()
+  const callbackUrl = '/dashboard'
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
   const [emailFocused, setEmailFocused] = useState(false)
   const [passwordFocused, setPasswordFocused] = useState(false)
   const [btnHover, setBtnHover] = useState(false)
@@ -28,6 +35,32 @@ export default function LoginPage() {
     boxSizing: 'border-box',
   })
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setError('')
+    setLoading(true)
+    try {
+      const result = await signIn('credentials', {
+        email,
+        password,
+        redirect: false,
+      })
+      if (result?.ok) {
+        router.push(callbackUrl)
+      } else {
+        setError('Invalid email or password. Please try again.')
+      }
+    } catch {
+      setError('An error occurred. Please try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleGoogle = () => {
+    signIn('google', { callbackUrl })
+  }
+
   return (
     <div style={{ minHeight: '100vh', background: '#030712', color: '#f0f4ff', fontFamily: 'Inter, system-ui, sans-serif' }}>
       <Navbar />
@@ -45,7 +78,6 @@ export default function LoginPage() {
           position: 'relative',
           overflow: 'hidden',
         }} className="login-left-panel">
-          {/* Background glow */}
           <div style={{
             position: 'absolute', top: '20%', left: '10%',
             width: 320, height: 320,
@@ -59,12 +91,10 @@ export default function LoginPage() {
             borderRadius: '50%', pointerEvents: 'none',
           }} />
 
-          {/* Brand */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 56 }}>
             <Image src="/digiwolf-logo.svg" alt="Digi Wolf Agency" width={140} height={56} priority />
           </div>
 
-          {/* Headline */}
           <h2 style={{ fontSize: 36, fontWeight: 800, lineHeight: 1.15, marginBottom: 16, letterSpacing: '-1px' }}>
             Your digital growth<br />
             <span style={{ color: '#0047FF' }}>starts here.</span>
@@ -73,7 +103,6 @@ export default function LoginPage() {
             Access your client portal, track projects, manage invoices, and collaborate with our team — all in one place.
           </p>
 
-          {/* Testimonial */}
           <div style={{
             background: 'rgba(0,71,255,0.06)',
             border: '1px solid rgba(0,71,255,0.18)',
@@ -82,9 +111,9 @@ export default function LoginPage() {
             marginBottom: 48,
             position: 'relative',
           }}>
-            <div style={{ fontSize: 48, color: '#0047FF', opacity: 0.4, lineHeight: 1, marginBottom: 8 }}>"</div>
+            <div style={{ fontSize: 48, color: '#0047FF', opacity: 0.4, lineHeight: 1, marginBottom: 8 }}>&ldquo;</div>
             <p style={{ color: '#c8d0e0', fontSize: 15, lineHeight: 1.75, fontStyle: 'italic', marginBottom: 20 }}>
-              DigiWolf transformed our online presence completely. The client portal makes it incredibly easy to track progress and communicate with the team. Best investment we've made this year.
+              DigiWolf transformed our online presence completely. The client portal makes it incredibly easy to track progress and communicate with the team.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
               <div style={{
@@ -100,7 +129,6 @@ export default function LoginPage() {
             </div>
           </div>
 
-          {/* Stats */}
           <div style={{ display: 'flex', gap: 40 }}>
             {[
               { value: '47+', label: 'Happy Clients' },
@@ -125,7 +153,6 @@ export default function LoginPage() {
           flexShrink: 0,
         }}>
           <div style={{ width: '100%', maxWidth: 380 }}>
-            {/* Logo + title */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 36 }}>
               <div style={{ marginBottom: 20 }}>
                 <Image src="/digiwolf-logo.svg" alt="Digi Wolf Agency" width={140} height={56} />
@@ -138,8 +165,17 @@ export default function LoginPage() {
               </p>
             </div>
 
-            {/* Form */}
-            <form onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            {error && (
+              <div style={{
+                background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)',
+                borderRadius: 10, padding: '12px 16px', marginBottom: 20,
+                fontSize: 14, color: '#fca5a5',
+              }}>
+                {error}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div>
                 <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>
                   Email address
@@ -151,6 +187,7 @@ export default function LoginPage() {
                   onFocus={() => setEmailFocused(true)}
                   onBlur={() => setEmailFocused(false)}
                   placeholder="you@company.com"
+                  required
                   style={fieldStyle(emailFocused)}
                 />
               </div>
@@ -174,18 +211,20 @@ export default function LoginPage() {
                   onFocus={() => setPasswordFocused(true)}
                   onBlur={() => setPasswordFocused(false)}
                   placeholder="••••••••"
+                  required
                   style={fieldStyle(passwordFocused)}
                 />
               </div>
 
               <button
                 type="submit"
+                disabled={loading}
                 onMouseEnter={() => setBtnHover(true)}
                 onMouseLeave={() => setBtnHover(false)}
                 style={{
                   width: '100%',
                   padding: '13px 0',
-                  background: btnHover
+                  background: loading ? 'rgba(0,71,255,0.5)' : btnHover
                     ? 'linear-gradient(135deg, #0038cc, #0047FF)'
                     : 'linear-gradient(135deg, #0047FF, #1a5cff)',
                   border: 'none',
@@ -193,27 +232,36 @@ export default function LoginPage() {
                   color: '#fff',
                   fontSize: 15,
                   fontWeight: 700,
-                  cursor: 'pointer',
+                  cursor: loading ? 'not-allowed' : 'pointer',
                   transition: 'all 0.2s',
-                  transform: btnHover ? 'translateY(-1px)' : 'translateY(0)',
-                  boxShadow: btnHover ? '0 8px 24px rgba(0,71,255,0.35)' : '0 4px 12px rgba(0,71,255,0.2)',
+                  transform: btnHover && !loading ? 'translateY(-1px)' : 'translateY(0)',
+                  boxShadow: btnHover && !loading ? '0 8px 24px rgba(0,71,255,0.35)' : '0 4px 12px rgba(0,71,255,0.2)',
                   letterSpacing: '0.3px',
                   marginTop: 4,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: 8,
+                  fontFamily: 'Inter, system-ui, sans-serif',
                 }}
               >
-                Sign In
+                {loading ? (
+                  <>
+                    <span style={{ width: 16, height: 16, border: '2px solid rgba(255,255,255,0.3)', borderTopColor: '#fff', borderRadius: '50%', animation: 'spin 0.7s linear infinite', display: 'inline-block' }} />
+                    Signing in...
+                  </>
+                ) : 'Sign In'}
               </button>
             </form>
 
-            {/* Divider */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, margin: '24px 0' }}>
               <div style={{ flex: 1, height: 1, background: '#1e2a45' }} />
               <span style={{ color: '#8892b0', fontSize: 13 }}>or</span>
               <div style={{ flex: 1, height: 1, background: '#1e2a45' }} />
             </div>
 
-            {/* Google OAuth button */}
             <button
+              onClick={handleGoogle}
               onMouseEnter={() => setGoogleHover(true)}
               onMouseLeave={() => setGoogleHover(false)}
               style={{
@@ -231,6 +279,7 @@ export default function LoginPage() {
                 justifyContent: 'center',
                 gap: 10,
                 transition: 'all 0.2s',
+                fontFamily: 'Inter, system-ui, sans-serif',
               }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24">
@@ -242,9 +291,8 @@ export default function LoginPage() {
               Continue with Google
             </button>
 
-            {/* Register link */}
             <p style={{ textAlign: 'center', marginTop: 28, fontSize: 14, color: '#8892b0' }}>
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <Link
                 href="/register"
                 onMouseEnter={() => setRegisterHover(true)}
@@ -264,6 +312,7 @@ export default function LoginPage() {
       </div>
 
       <style>{`
+        @keyframes spin { to { transform: rotate(360deg); } }
         @media (max-width: 768px) {
           .login-left-panel { display: none !important; }
         }

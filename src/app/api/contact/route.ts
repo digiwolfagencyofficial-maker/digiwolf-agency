@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { supabaseAdmin } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
     const { name, email, company, service, budget, message } = body
 
-    // Basic validation
     if (!name || !email || !service || !budget || !message) {
       return NextResponse.json(
         { error: 'Missing required fields' },
@@ -13,9 +13,22 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Here you would normally send an email or save to DB
-    // For now we just log and return success
-    console.log('Contact form submission:', { name, email, company, service, budget, message })
+    const { error: dbError } = await supabaseAdmin
+      .from('leads')
+      .insert({
+        name,
+        email,
+        company: company || null,
+        service,
+        budget,
+        message,
+        status: 'new',
+      })
+
+    if (dbError) {
+      console.error('Supabase insert error:', dbError)
+      // Still return success to the user — don't expose DB errors
+    }
 
     return NextResponse.json(
       { success: true, message: 'Thank you! We will be in touch within 4 business hours.' },

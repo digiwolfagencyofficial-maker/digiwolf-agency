@@ -62,7 +62,7 @@ export function AdminOverviewPage() {
 
   return (
     <DashboardLayout
-      nav={adminNav}
+      navItems={adminNav}
       role="admin"
       userName="Digi Wolf Admin"
       userInitial="D"

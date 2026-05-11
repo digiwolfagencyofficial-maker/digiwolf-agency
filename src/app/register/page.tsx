@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar'
+import { supabase } from '@/lib/supabase'
 
 const Step = ({ num, icon, title, desc }: { num: number; icon: string; title: string; desc: string }) => (
   <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start' }}>
@@ -27,6 +29,7 @@ const Step = ({ num, icon, title, desc }: { num: number; icon: string; title: st
 )
 
 export default function RegisterPage() {
+  const router = useRouter()
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -35,6 +38,9 @@ export default function RegisterPage() {
   const [focused, setFocused] = useState('')
   const [btnHover, setBtnHover] = useState(false)
   const [loginHover, setLoginHover] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState(false)
 
   const fieldStyle = (name: string): React.CSSProperties => ({
     width: '100%',
@@ -47,7 +53,34 @@ export default function RegisterPage() {
     outline: 'none',
     transition: 'border-color 0.2s, background 0.2s',
     boxSizing: 'border-box',
+    fontFamily: 'Inter, system-ui, sans-serif',
   })
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!agreed) { setError('Please agree to the Terms of Service to continue.'); return }
+    setError('')
+    setLoading(true)
+    try {
+      const { error: signUpError } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: { full_name: fullName, company },
+        },
+      })
+      if (signUpError) {
+        setError(signUpError.message)
+      } else {
+        setSuccess(true)
+        setTimeout(() => router.push('/login'), 3000)
+      }
+    } catch {
+      setError('An error occurred. Please try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div style={{ minHeight: '100vh', background: '#030712', color: '#f0f4ff', fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -109,29 +142,13 @@ export default function RegisterPage() {
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
-            <Step
-              num={1}
-              icon="📋"
-              title="Create your account"
-              desc="Sign up in under 2 minutes. No credit card required to get started."
-            />
+            <Step num={1} icon="📋" title="Create your account" desc="Sign up in under 2 minutes. No credit card required to get started." />
             <div style={{ width: 2, height: 20, background: 'linear-gradient(to bottom, rgba(0,71,255,0.4), transparent)', marginLeft: 23 }} />
-            <Step
-              num={2}
-              icon="🤝"
-              title="Discovery call"
-              desc="We schedule a free 30-minute strategy session to understand your goals."
-            />
+            <Step num={2} icon="🤝" title="Discovery call" desc="We schedule a free 30-minute strategy session to understand your goals." />
             <div style={{ width: 2, height: 20, background: 'linear-gradient(to bottom, rgba(0,71,255,0.4), transparent)', marginLeft: 23 }} />
-            <Step
-              num={3}
-              icon="🚀"
-              title="Launch & scale"
-              desc="We build, launch, and continuously optimize your digital presence."
-            />
+            <Step num={3} icon="🚀" title="Launch & scale" desc="We build, launch, and continuously optimize your digital presence." />
           </div>
 
-          {/* Trust badges */}
           <div style={{ display: 'flex', gap: 20, marginTop: 52 }}>
             {['🔒 Secure & private', '⚡ Fast onboarding', '💬 24/7 support'].map((badge) => (
               <div key={badge} style={{
@@ -169,130 +186,161 @@ export default function RegisterPage() {
               </p>
             </div>
 
-            <form onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              <div>
-                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  onFocus={() => setFocused('name')}
-                  onBlur={() => setFocused('')}
-                  placeholder="Jan Novák"
-                  style={fieldStyle('name')}
-                />
+            {success ? (
+              <div style={{
+                background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.3)',
+                borderRadius: 14, padding: '32px 24px', textAlign: 'center',
+              }}>
+                <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
+                <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8 }}>Account Created!</h3>
+                <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.6 }}>
+                  Check your email to confirm your account. Redirecting to login...
+                </p>
               </div>
+            ) : (
+              <>
+                {error && (
+                  <div style={{
+                    background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)',
+                    borderRadius: 10, padding: '12px 16px', marginBottom: 20,
+                    fontSize: 14, color: '#fca5a5',
+                  }}>
+                    {error}
+                  </div>
+                )}
 
-              <div>
-                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onFocus={() => setFocused('email')}
-                  onBlur={() => setFocused('')}
-                  placeholder="jan@firma.cz"
-                  style={fieldStyle('email')}
-                />
-              </div>
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>Full Name</label>
+                    <input
+                      type="text"
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
+                      onFocus={() => setFocused('name')}
+                      onBlur={() => setFocused('')}
+                      placeholder="Jan Novák"
+                      required
+                      style={fieldStyle('name')}
+                    />
+                  </div>
 
-              <div>
-                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>
-                  Password
-                </label>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  onFocus={() => setFocused('password')}
-                  onBlur={() => setFocused('')}
-                  placeholder="Min. 8 characters"
-                  style={fieldStyle('password')}
-                />
-                <div style={{ display: 'flex', gap: 6, marginTop: 8 }}>
-                  {[0, 1, 2, 3].map((i) => (
-                    <div key={i} style={{
-                      flex: 1, height: 3, borderRadius: 2,
-                      background: password.length > i * 2
-                        ? (password.length > 8 ? '#22c55e' : '#eab308')
-                        : '#1e2a45',
-                      transition: 'background 0.3s',
-                    }} />
-                  ))}
-                </div>
-              </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>Email address</label>
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      onFocus={() => setFocused('email')}
+                      onBlur={() => setFocused('')}
+                      placeholder="jan@firma.cz"
+                      required
+                      style={fieldStyle('email')}
+                    />
+                  </div>
 
-              <div>
-                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
-                  onFocus={() => setFocused('company')}
-                  onBlur={() => setFocused('')}
-                  placeholder="Your s.r.o. or a.s."
-                  style={fieldStyle('company')}
-                />
-              </div>
+                  <div>
+                    <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>Password</label>
+                    <input
+                      type="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      onFocus={() => setFocused('password')}
+                      onBlur={() => setFocused('')}
+                      placeholder="Min. 8 characters"
+                      required
+                      minLength={8}
+                      style={fieldStyle('password')}
+                    />
+                    <div style={{ display: 'flex', gap: 6, marginTop: 8 }}>
+                      {[0, 1, 2, 3].map((i) => (
+                        <div key={i} style={{
+                          flex: 1, height: 3, borderRadius: 2,
+                          background: password.length > i * 2
+                            ? (password.length > 8 ? '#22c55e' : '#eab308')
+                            : '#1e2a45',
+                          transition: 'background 0.3s',
+                        }} />
+                      ))}
+                    </div>
+                  </div>
 
-              {/* Terms */}
-              <label style={{ display: 'flex', alignItems: 'flex-start', gap: 10, cursor: 'pointer', marginTop: 4 }}>
-                <div
-                  onClick={() => setAgreed(!agreed)}
-                  style={{
-                    width: 18, height: 18, borderRadius: 5, flexShrink: 0, marginTop: 1,
-                    background: agreed ? '#0047FF' : 'transparent',
-                    border: `2px solid ${agreed ? '#0047FF' : '#2a3a5c'}`,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    cursor: 'pointer', transition: 'all 0.2s',
-                  }}
-                >
-                  {agreed && (
-                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                      <path d="M1 4L4 7L9 1" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  )}
-                </div>
-                <span style={{ fontSize: 13, color: '#8892b0', lineHeight: 1.5 }}>
-                  I agree to the{' '}
-                  <a href="#" style={{ color: '#0047FF', textDecoration: 'none' }}>Terms of Service</a>
-                  {' '}and{' '}
-                  <a href="#" style={{ color: '#0047FF', textDecoration: 'none' }}>Privacy Policy</a>
-                </span>
-              </label>
+                  <div>
+                    <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>Company Name</label>
+                    <input
+                      type="text"
+                      value={company}
+                      onChange={(e) => setCompany(e.target.value)}
+                      onFocus={() => setFocused('company')}
+                      onBlur={() => setFocused('')}
+                      placeholder="Your s.r.o. or a.s."
+                      style={fieldStyle('company')}
+                    />
+                  </div>
 
-              <button
-                type="submit"
-                onMouseEnter={() => setBtnHover(true)}
-                onMouseLeave={() => setBtnHover(false)}
-                style={{
-                  width: '100%',
-                  padding: '13px 0',
-                  background: btnHover
-                    ? 'linear-gradient(135deg, #0038cc, #0047FF)'
-                    : 'linear-gradient(135deg, #0047FF, #1a5cff)',
-                  border: 'none',
-                  borderRadius: 10,
-                  color: '#fff',
-                  fontSize: 15,
-                  fontWeight: 700,
-                  cursor: 'pointer',
-                  transition: 'all 0.2s',
-                  transform: btnHover ? 'translateY(-1px)' : 'translateY(0)',
-                  boxShadow: btnHover ? '0 8px 24px rgba(0,71,255,0.35)' : '0 4px 12px rgba(0,71,255,0.2)',
-                  letterSpacing: '0.3px',
-                  marginTop: 8,
-                }}
-              >
-                Create Account — Free
-              </button>
-            </form>
+                  <label style={{ display: 'flex', alignItems: 'flex-start', gap: 10, cursor: 'pointer', marginTop: 4 }}>
+                    <div
+                      onClick={() => setAgreed(!agreed)}
+                      style={{
+                        width: 18, height: 18, borderRadius: 5, flexShrink: 0, marginTop: 1,
+                        background: agreed ? '#0047FF' : 'transparent',
+                        border: `2px solid ${agreed ? '#0047FF' : '#2a3a5c'}`,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        cursor: 'pointer', transition: 'all 0.2s',
+                      }}
+                    >
+                      {agreed && (
+                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                          <path d="M1 4L4 7L9 1" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      )}
+                    </div>
+                    <span style={{ fontSize: 13, color: '#8892b0', lineHeight: 1.5 }}>
+                      I agree to the{' '}
+                      <a href="#" style={{ color: '#0047FF', textDecoration: 'none' }}>Terms of Service</a>
+                      {' '}and{' '}
+                      <a href="#" style={{ color: '#0047FF', textDecoration: 'none' }}>Privacy Policy</a>
+                    </span>
+                  </label>
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    onMouseEnter={() => setBtnHover(true)}
+                    onMouseLeave={() => setBtnHover(false)}
+                    style={{
+                      width: '100%',
+                      padding: '13px 0',
+                      background: loading ? 'rgba(0,71,255,0.5)' : btnHover
+                        ? 'linear-gradient(135deg, #0038cc, #0047FF)'
+                        : 'linear-gradient(135deg, #0047FF, #1a5cff)',
+                      border: 'none',
+                      borderRadius: 10,
+                      color: '#fff',
+                      fontSize: 15,
+                      fontWeight: 700,
+                      cursor: loading ? 'not-allowed' : 'pointer',
+                      transition: 'all 0.2s',
+                      transform: btnHover && !loading ? 'translateY(-1px)' : 'translateY(0)',
+                      boxShadow: btnHover && !loading ? '0 8px 24px rgba(0,71,255,0.35)' : '0 4px 12px rgba(0,71,255,0.2)',
+                      letterSpacing: '0.3px',
+                      marginTop: 8,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: 8,
+                      fontFamily: 'Inter, system-ui, sans-serif',
+                    }}
+                  >
+                    {loading ? (
+                      <>
+                        <span style={{ width: 16, height: 16, border: '2px solid rgba(255,255,255,0.3)', borderTopColor: '#fff', borderRadius: '50%', animation: 'spin 0.7s linear infinite', display: 'inline-block' }} />
+                        Creating account...
+                      </>
+                    ) : 'Create Account — Free'}
+                  </button>
+                </form>
+              </>
+            )}
 
             <p style={{ textAlign: 'center', marginTop: 24, fontSize: 14, color: '#8892b0' }}>
               Already have an account?{' '}
@@ -315,6 +363,7 @@ export default function RegisterPage() {
       </div>
 
       <style>{`
+        @keyframes spin { to { transform: rotate(360deg); } }
         @media (max-width: 768px) {
           .register-left-panel { display: none !important; }
         }

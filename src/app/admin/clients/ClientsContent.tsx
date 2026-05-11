@@ -195,7 +195,7 @@ export function ClientsPageInner() {
 
   return (
     <DashboardLayout
-      nav={adminNav}
+      navItems={adminNav}
       role="admin"
       userName="Digi Wolf Admin"
       userInitial="D"

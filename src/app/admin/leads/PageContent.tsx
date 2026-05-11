@@ -119,7 +119,7 @@ export function LeadPipelinePage() {
 
   return (
     <DashboardLayout
-      nav={adminNav}
+      navItems={adminNav}
       role="admin"
       userName="Digi Wolf Admin"
       userInitial="D"
