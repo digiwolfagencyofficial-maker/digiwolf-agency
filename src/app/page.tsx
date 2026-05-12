@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useInView } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import FaqAccordion from '@/components/ui/FaqAccordion'
 
 // Wolf SVG
 const WolfSVG = ({ size = 32 }: { size?: number }) => (
@@ -48,7 +49,6 @@ function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
 }
 
 export default function HomePage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
   const heroRef = useRef<HTMLDivElement>(null)
 
@@ -135,11 +135,12 @@ export default function HomePage() {
   ]
 
   const faqs = [
-    { q: 'How long does a website project take?', a: 'Most agency websites are delivered in 5–10 business days. Complex platforms with client portals or custom features take 3–4 weeks. We always agree on a timeline before starting.' },
-    { q: 'Do you work with international clients?', a: 'Yes. We work with entrepreneurs across Czech Republic, Slovakia, Hungary, and Mongolia. All communication is in English, Czech, or Mongolian.' },
-    { q: 'What is included in the Czech S.R.O. formation?', a: 'Everything: document preparation, notary coordination, trade office registration, bank account opening guidance, and full handover. We handle the entire process in English.' },
-    { q: 'Can I upgrade my plan later?', a: 'Absolutely. All our websites are built to scale. You can add features, pages, or integrations at any time without rebuilding from scratch.' },
-    { q: 'Do you offer ongoing support?', a: 'Yes. Our Maintenance & Support plan covers hosting, security updates, performance monitoring, and priority technical support for 3,000 CZK/month.' },
+    { q: 'How long does a website project take?', a: 'Most projects take 3–6 weeks from kickoff to launch.' },
+    { q: "What's included in Czech S.R.O. formation?", a: 'Full company registration, trade license, registered address for 1 year, bank account guidance. We handle everything.' },
+    { q: 'Do you work with international clients?', a: 'Yes — we work remotely with clients across Europe and beyond. We speak English, Czech, and Mongolian.' },
+    { q: "What's your payment structure?", a: '50% upfront to begin, 50% on final delivery. We accept bank transfer (CZK/EUR) and Wise.' },
+    { q: 'Can I update the website myself after launch?', a: 'Yes. We build on modern platforms and provide a handover guide. Optional maintenance retainers available.' },
+    { q: 'What AI automation services do you offer?', a: 'We build n8n workflows, AI agents, chatbots, and Hermes-powered automations for client acquisition, onboarding, and internal ops.' },
   ]
 
   const caseStudies = [
@@ -638,26 +639,7 @@ export default function HomePage() {
               </h2>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {faqs.map((f, i) => (
-                <div key={i} className="fade-up" style={{
-                  background: 'rgba(255,255,255,0.03)', border: `1px solid ${openFaq === i ? 'rgba(0,71,255,0.3)' : 'rgba(255,255,255,0.07)'}`,
-                  borderRadius: 16, overflow: 'hidden', transition: 'border-color 0.3s',
-                }}>
-                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{
-                    width: '100%', background: 'none', border: 'none', cursor: 'pointer',
-                    padding: '24px 28px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                    textAlign: 'left',
-                  }}>
-                    <span style={{ color: '#f0f4ff', fontWeight: 600, fontSize: 16 }}>{f.q}</span>
-                    <span style={{ color: '#3d74ff', fontSize: 20, fontWeight: 700, transition: 'transform 0.3s', transform: openFaq === i ? 'rotate(45deg)' : 'none', flexShrink: 0, marginLeft: 16 }}>+</span>
-                  </button>
-                  {openFaq === i && (
-                    <div style={{ padding: '0 28px 24px', color: '#8892b0', lineHeight: 1.8, fontSize: 15 }}>{f.a}</div>
-                  )}
-                </div>
-              ))}
-            </div>
+            <FaqAccordion items={faqs} />
           </div>
         </section>
 

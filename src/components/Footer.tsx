@@ -2,11 +2,40 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+const LinkedinIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+    <rect x="2" y="9" width="4" height="12"/>
+    <circle cx="4" cy="4" r="2"/>
+  </svg>
+)
+const XIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+)
+const InstagramIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+  </svg>
+)
 
 export default function Footer() {
   const services = ['Agency Websites', 'Czech S.R.O. Formation', 'AI Automation', 'SEO & Growth', 'Branding', 'Maintenance']
-  const company = ['About', 'Case Studies', 'Pricing', 'Contact', 'Blog']
-  const legal = ['Privacy Policy', 'Terms of Service', 'Cookie Policy']
+  const companyLinks = [
+    { label: 'About', href: '/about' },
+    { label: 'Work', href: '/work' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Contact', href: '/contact' },
+    { label: 'Blog', href: '/blog' },
+  ]
+  const legalLinks = [
+    { label: 'Privacy Policy', href: '/privacy' },
+    { label: 'Terms of Service', href: '/terms' },
+    { label: 'Cookie Policy', href: '/cookies' },
+  ]
 
   return (
     <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden', zIndex: 2 }}>
@@ -22,18 +51,22 @@ export default function Footer() {
               Full-stack digital agency helping entrepreneurs grow in Central & Eastern Europe.
             </p>
             <div style={{ display: 'flex', gap: 12, marginTop: 24 }}>
-              {['LinkedIn', 'X', 'Instagram'].map(s => (
-                <a key={s} href="#" style={{
-                  width: 36, height: 36, borderRadius: 8,
+              {[
+                { icon: <LinkedinIcon />, href: 'https://linkedin.com/company/digiwolf-agency', label: 'LinkedIn' },
+                { icon: <XIcon />, href: 'https://twitter.com/digiwolfagency', label: 'X (Twitter)' },
+                { icon: <InstagramIcon />, href: 'https://instagram.com/digiwolfagency', label: 'Instagram' },
+              ].map(s => (
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} style={{
+                  width: 40, height: 40, borderRadius: 8,
                   background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: '#8892b0', fontSize: 11, fontWeight: 600, textDecoration: 'none',
+                  color: '#8892b0', textDecoration: 'none',
                   transition: 'all 0.2s',
                 }}
-                  onMouseEnter={e => { const el = e.target as HTMLElement; el.style.borderColor = '#3b82f6'; el.style.color = '#3b82f6'; }}
-                  onMouseLeave={e => { const el = e.target as HTMLElement; el.style.borderColor = 'rgba(255,255,255,0.08)'; el.style.color = '#8892b0'; }}
+                  onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = '#3b82f6'; el.style.color = '#3b82f6'; el.style.background = 'rgba(59,130,246,0.1)'; }}
+                  onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = 'rgba(255,255,255,0.08)'; el.style.color = '#8892b0'; el.style.background = 'rgba(255,255,255,0.05)'; }}
                 >
-                  {s[0]}
+                  {s.icon}
                 </a>
               ))}
             </div>
@@ -56,11 +89,11 @@ export default function Footer() {
           <div>
             <h4 style={{ color: '#f0f4ff', fontWeight: 700, fontSize: 14, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 20 }}>Company</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {company.map(s => (
-                <Link key={s} href={`/${s.toLowerCase().replace(' ', '-')}`} style={{ color: '#8892b0', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
+              {companyLinks.map(l => (
+                <Link key={l.label} href={l.href} style={{ color: '#8892b0', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
                   onMouseEnter={e => (e.target as HTMLElement).style.color = '#f0f4ff'}
                   onMouseLeave={e => (e.target as HTMLElement).style.color = '#8892b0'}
-                >{s}</Link>
+                >{l.label}</Link>
               ))}
             </div>
           </div>
@@ -88,12 +121,12 @@ export default function Footer() {
           <p style={{ color: '#8892b0', fontSize: 13 }}>
             © 2026 Digi Wolf Agency s.r.o. All rights reserved.
           </p>
-          <div style={{ display: 'flex', gap: 24 }}>
-            {legal.map(l => (
-              <a key={l} href="#" style={{ color: '#8892b0', textDecoration: 'none', fontSize: 13, transition: 'color 0.2s' }}
+          <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+            {legalLinks.map(l => (
+              <Link key={l.label} href={l.href} style={{ color: '#8892b0', textDecoration: 'none', fontSize: 13, transition: 'color 0.2s' }}
                 onMouseEnter={e => (e.target as HTMLElement).style.color = '#f0f4ff'}
                 onMouseLeave={e => (e.target as HTMLElement).style.color = '#8892b0'}
-              >{l}</a>
+              >{l.label}</Link>
             ))}
           </div>
         </div>
