@@ -1,250 +1,226 @@
-# Digi Wolf Agency — Full-Stack Completion Brief
+# Digi Wolf Agency — Finish & Polish Brief
 
-## MISSION
-You are completing a premium digital agency website for **Digi Wolf Agency s.r.o.** — a real business based in Prague, Czech Republic. The site must be **world-class, fully mobile-optimized, and production-ready** from top to bottom. No placeholders. No demo data. No skipped sections. Everything must be real, polished, and work on any device.
-
----
-
-## STACK (DO NOT CHANGE)
-- **Next.js** — this project uses `proxy.ts` NOT `middleware.ts` (already in `/src/proxy.ts`)
-- **React 19 / TypeScript / Tailwind CSS v4**
-- **Framer Motion** — for animations
-- **Supabase** — backend (URL + keys in `.env.local`)
-- **NextAuth** — for auth (`/src/lib/auth.ts`)
-- **Deployment:** Vercel (auto-deploy on git push)
-
-> ⚠️ Read `node_modules/next/dist/docs/` if unsure about any Next.js API. This may differ from training data.
+## IMPORTANT RULES
+- All coding via Claude Code CLI only — NO Anthropic API calls, NO API keys in code for dev tasks
+- Commit after EACH numbered task below
+- Logo files already exist: `/public/digiwolf-icon.png` (square mark) and `/public/digiwolf-logo.png` (full lockup)
+- Read `node_modules/next/dist/docs/` if unsure about any Next.js API — this project may differ from training data
+- DO NOT use `middleware.ts` — this project uses `proxy.ts` at `/src/proxy.ts`
 
 ---
 
-## DESIGN SYSTEM (MUST BE CONSISTENT EVERYWHERE)
+## STACK
+- Next.js (see AGENTS.md for version notes), React 19, TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- Supabase (URL + keys in `.env.local`)
+- NextAuth (`/src/lib/auth.ts`)
+- Lucide React (install if not present: `npm install lucide-react`)
+- Radix UI Accordion (install if not present: `npm install @radix-ui/react-accordion`)
+- react-cookie-consent (install if not present: `npm install react-cookie-consent`)
+
+---
+
+## TASK 1 — AUDIT (no edits, commit a report only)
+Scan the full repo and report:
+- All routes (pages) that exist
+- Any broken sections (missing components, import errors, undefined vars)
+- Pricing inconsistencies across pages
+- Image assets in `/public/`
+- Any TypeScript errors from `npm run build`
+
+Write the audit findings to `/AUDIT.md` and commit:
 ```
-Background:      #030712  (deep space black)
-Card bg:         #040d1f
-Border:          rgba(255,255,255,0.08)
-Accent blue:     #0047FF
-Accent glow:     rgba(0,71,255,0.15)
-Text primary:    #f0f4ff
-Text secondary:  #94a3b8
-Gradient:        linear-gradient(135deg, #0047FF 0%, #6366f1 100%)
-Font:            Inter (already imported)
-Border radius:   12px cards, 8px buttons
-```
-
-**DO NOT use Tailwind utility classes inside JSX components.** All styling via `style={{}}` inline props or `globals.css`. Tailwind is only for global resets.
-
----
-
-## LOGO & BRANDING
-- Navbar: `<Image src="/digiwolf-icon.png" width={44} height={44} />` + `<span>DIGIWOLF</span>` text
-- Footer: `<Image src="/digiwolf-logo.png" width={160} height={168} style={{objectFit:'contain'}} />`
-- Founder: **Uuganbayar Ganbaatar** — use this name everywhere (about page, footer, meta tags, OG tags)
-- Agency: Digi Wolf Agency s.r.o., Prague, Czech Republic
-- Email: digiwolfagencyofficial@gmail.com
-
----
-
-## WHAT TO BUILD / FIX — FULL CHECKLIST
-
-### 1. NAVBAR — Mobile-First
-- [ ] Hamburger menu for mobile (slide-down or drawer, NOT broken layout)
-- [ ] Mobile menu shows all nav links: Home, Services, Work, Process, Pricing, About, Contact
-- [ ] Active route highlighted in nav
-- [ ] Smooth scroll-triggered glass blur effect (backdrop-filter) on scroll
-- [ ] CTA button "Get Started" links to /contact
-- [ ] Logo links to /
-- [ ] Mobile: full-width menu, 48px tap targets
-
-### 2. HOMEPAGE (`/`) — Agency Level Hero
-- [ ] Hero: powerful headline — **"We Build Digital Weapons for Ambitious Businesses"** (subheadline: "Web. Apps. AI Automation. Czech Company Formation. All under one roof.")
-- [ ] Hero: two CTAs — "Start Your Project →" (links /contact) and "See Our Work" (links /work)
-- [ ] Hero: animated background — subtle floating particles or moving gradient mesh (CSS/Framer, no heavy libs)
-- [ ] Hero: animated stats bar below headline: **12+ Projects**, **3 Countries**, **100% On-Time Delivery**, **4.9★ Rating**
-- [ ] Services preview section: 4 service cards with real SVG icons (no emojis)
-  - Web & App Development (code icon)
-  - Czech S.R.O. Formation (building/document icon)
-  - AI Automation (circuit/brain icon)
-  - Full-Stack Web Apps & Mobile (device icon)
-- [ ] Featured work: 2-3 case study cards (see /work section for content)
-- [ ] Testimonials: 3 real-looking testimonials (use real Central/Eastern European names)
-- [ ] CTA section: "Ready to Build Something Great?" → /contact button
-- [ ] FAQ accordion: 5–6 common questions (pricing, timeline, what's included, do you work remotely, etc.)
-- [ ] ALL sections: entrance animations via Framer Motion (fade-up on scroll, stagger children)
-
-### 3. SERVICES PAGE (`/services`) — Detailed
-- [ ] Hero: "What We Build" headline
-- [ ] 4 service blocks — each with: icon, title, description (3–4 sentences), what's included list, typical timeline, starting price
-  - **Agency Website** — from 15,000 CZK — 3–4 week timeline
-  - **Czech S.R.O. Formation** — from 25,000 CZK — fully handled, includes trade license
-  - **AI Automation** — from 20,000 CZK — n8n workflows, AI agents, Hermes integration
-  - **Web Apps & Mobile** — from 50,000 CZK — React/Next.js + React Native
-- [ ] CTA at bottom: "Not sure which service you need? Let's talk." → /contact
-
-### 4. WORK / CASE STUDIES PAGE (`/work`) — Portfolio
-- [ ] 3 case study cards (use these — real enough to be credible):
-  1. **TechStart Praha** — Web design + Czech S.R.O. formation — "Czech market entry in 30 days"
-  2. **NomadConnect** — Full-stack web app — "Community platform for digital nomads in CEE"
-  3. **Mongolian Trade Hub** — Agency website + AI chatbot — "Bridging Asian businesses to European markets"
-- [ ] Each card: tag chips (e.g. "Next.js", "S.R.O. Formation"), short description, "View Case Study" button
-- [ ] Case study detail modal or expand section (no separate page needed)
-- [ ] Filter tabs: All / Web / Apps / AI / Formation
-
-### 5. PROCESS PAGE (`/process`) — How We Work
-- [ ] Numbered steps (1–6) with icons, title, and description:
-  1. Discovery Call — understand your goals, timeline, budget (30 min free)
-  2. Proposal & Contract — detailed scope, fixed pricing, signed agreement
-  3. Design & Architecture — wireframes, design system, tech stack decision
-  4. Build — weekly updates, Slack/Telegram channel, staging previews
-  5. QA & Launch — cross-device testing, SEO audit, go-live checklist
-  6. Ongoing Support — 30-day warranty, optional maintenance retainer
-- [ ] Timeline estimate section: "Most projects ship in 3–8 weeks"
-- [ ] Bottom CTA: "Start the process →" → /contact
-
-### 6. PRICING PAGE (`/pricing`) — Clear and Transparent
-- [ ] 4 pricing cards:
-  - **Starter Website** — 15,000 CZK — 5 pages, mobile optimized, SEO ready, 2 revisions
-  - **Czech S.R.O. Formation** — 25,000 CZK — full company setup, trade license, bank account guidance
-  - **AI Automation** — 20,000 CZK — 3 automations, n8n + Hermes, training session
-  - **Full-Stack App** — from 50,000 CZK — custom scoped, React/Next.js + backend, mobile-ready
-- [ ] Toggle: CZK / EUR (1 EUR = 25 CZK — simple JS conversion, no API)
-- [ ] "Most Popular" badge on S.R.O. + Website bundle
-- [ ] Bundle offer: "Website + S.R.O. Formation — 35,000 CZK (save 5,000 CZK)"
-- [ ] FAQ accordion below pricing
-
-### 7. ABOUT PAGE (`/about`) — Real Story
-- [ ] Founder section: Uuganbayar Ganbaatar — photo `/public/founder.jpg` (140×140 circular, blue ring glow)
-- [ ] Bio: "Mongolian entrepreneur based in Prague. Built Digi Wolf to help ambitious businesses — especially those bridging Asian and European markets — get the digital foundation they deserve."
-- [ ] Mission statement: "We don't just build websites. We build the digital infrastructure that lets businesses compete globally."
-- [ ] Values: 3 cards — Precision, Transparency, Speed
-- [ ] Why Prague: short paragraph about Czech Republic as a gateway to EU markets
-- [ ] Languages we work in: English, Czech, Mongolian — flag icons
-
-### 8. CONTACT PAGE (`/contact`) — Conversion Optimized
-- [ ] Form: Name, Email, Company (optional), Service interest (dropdown: Website / App / S.R.O. / AI / Other), Budget range (dropdown), Message
-- [ ] Form submits to `/api/contact` → Supabase `leads` table (already built)
-- [ ] Success toast on submit
-- [ ] Right side: contact info block — email, response time ("We reply within 24 hours"), timezone (CET/Prague)
-- [ ] Calendly placeholder CTA: "Or book a free 30-min call →" (link: `https://calendly.com/digiwolfagency` — placeholder URL, user will update)
-- [ ] Mobile: stack vertically, form full width
-
-### 9. AUTH PAGES — Polish
-- [ ] `/login` — clean, centered card, dark theme, logo at top, email+password, "Forgot password?" link, "Don't have an account? Register" link
-- [ ] `/register` — same style, full name + email + password + confirm password
-- [ ] Both use NextAuth signIn/signUp flow (already wired in `/src/lib/auth.ts`)
-- [ ] Validation: show inline errors (required, email format, password min 8 chars)
-- [ ] Loading spinner on submit button
-
-### 10. CLIENT DASHBOARD (`/dashboard/*`) — Real Data
-- [ ] Layout: sidebar on desktop, bottom nav on mobile (5 items: Overview, Projects, Invoices, Files, Messages)
-- [ ] `/dashboard` — overview: greeting ("Good morning, [name]"), 4 stat cards (Active Projects, Pending Invoices, Files Shared, Unread Messages), recent activity feed
-- [ ] `/dashboard/projects` — list of projects with status badge (In Progress / Completed / Review), progress bar, start date
-- [ ] `/dashboard/invoices` — table: invoice #, amount (CZK), status (Paid/Pending/Overdue), due date, download PDF button (placeholder)
-- [ ] `/dashboard/files` — file list with icon by type (PDF, ZIP, PNG), name, size, date, download button
-- [ ] `/dashboard/messages` — simple chat-style thread list on left, message view on right (desktop) / full screen (mobile)
-- [ ] All pages: use `next/dynamic ssr:false` wrapper pattern (already used in project — follow existing pattern)
-- [ ] Data: pull from Supabase via client-side fetch to `/api/*` routes. If no data, show "No projects yet" empty state with icon.
-
-### 11. ADMIN PANEL (`/admin/*`) — Full CRM
-- [ ] Layout: sidebar (desktop) / top tabs (mobile)
-- [ ] `/admin` — dashboard: KPI cards (Total Leads, Clients, Revenue CZK, Active Projects), simple bar chart (last 6 months leads — static data is fine), recent leads table
-- [ ] `/admin/leads` — Kanban board: columns = New / Contacted / Proposal Sent / Won / Lost. Each card: name, email, service, date. Drag handle (visual only — no actual drag required, just nice layout)
-- [ ] `/admin/clients` — table: name, email, services, joined date, status. Clicking a row opens slide-out detail panel (already partially built)
-- [ ] `/admin/projects` — table: project name, client, status, deadline, budget CZK
-- [ ] `/admin/invoices` — table: invoice #, client, amount, status, due date. "Create Invoice" button (form modal, basic fields)
-- [ ] `/admin/analytics` — page with: traffic sources placeholder chart, conversion rate, avg project value, top services breakdown
-- [ ] `/admin/settings` — form: agency name, email, phone, default currency, notification preferences (checkboxes)
-- [ ] All admin pages protected by role check (role === 'admin' from Supabase profiles)
-
-### 12. MISSING PAGES — ADD THESE
-- [ ] `/dashboard/settings` — client profile settings: update name, email, password
-- [ ] `/forgot-password` — email input, "Send reset link" button, success message
-- [ ] `/privacy-policy` — basic GDPR-compliant privacy policy for Czech businesses
-- [ ] `/terms` — basic terms of service
-
-### 13. FOOTER — Premium
-- [ ] 4 columns: Logo + tagline | Services links | Company links | Contact info
-- [ ] Services: Website Design, Czech S.R.O., AI Automation, Web Apps
-- [ ] Company: About, Work, Process, Pricing, Contact
-- [ ] Contact: email, Prague CZ, languages (EN/CS/MN)
-- [ ] Bottom bar: © 2025 Digi Wolf Agency s.r.o. | Privacy Policy | Terms
-- [ ] Mobile: stack to 2 columns, then 1 column on small screens
-
-### 14. GLOBAL — Mobile Optimization (CRITICAL)
-- [ ] Every page: test at 375px (iPhone SE), 390px (iPhone 14), 768px (iPad)
-- [ ] No horizontal overflow on any breakpoint
-- [ ] Touch targets: minimum 44×44px
-- [ ] Font sizes: no smaller than 14px on mobile
-- [ ] Images: use `next/image` with proper `sizes` prop
-- [ ] Forms: inputs at least 16px font (prevents iOS zoom)
-- [ ] Navigation: hamburger menu tested and smooth
-- [ ] Cards: single column on mobile, 2-col on tablet, 3-col on desktop where applicable
-
-### 15. SEO & PERFORMANCE
-- [ ] Every page: unique `<title>` and `<meta name="description">`
-- [ ] OG tags on every page (og:title, og:description, og:image)
-- [ ] Canonical URLs
-- [ ] `/sitemap.ts` — update to include all new pages
-- [ ] Images: `alt` text on every `<Image>`
-- [ ] `robots.ts` — block /admin, /dashboard, /api
-
-### 16. API ROUTES — Complete & Secured
-All API routes must:
-- Check authentication (use `getServerSession` from NextAuth)
-- Return proper HTTP status codes
-- Handle errors gracefully
-
-Routes to complete/verify:
-- [ ] `POST /api/contact` — save lead to Supabase `leads` table ✓ (already built — verify it works)
-- [ ] `GET /api/projects` — return projects for authenticated user
-- [ ] `GET /api/invoices` — return invoices for authenticated user
-- [ ] `GET /api/files` — return files for authenticated user
-- [ ] `GET /api/messages` — return messages for authenticated user
-- [ ] `GET /api/leads` — admin only, return all leads
-- [ ] `GET /api/clients` — admin only, return all clients
-- [ ] `POST /api/leads` — create/update lead status (admin)
-
-### 17. ANIMATIONS — Framer Motion
-Apply to all public pages:
-- [ ] Hero: fade-in + slide-up on load (0.6s)
-- [ ] Section headings: fade-up on scroll (intersection observer)
-- [ ] Cards: stagger children fade-up (0.1s delay between each)
-- [ ] Stats counters: animate count-up when scrolled into view
-- [ ] Navbar: fade-in on load, glass effect on scroll
-- [ ] Page transitions: simple fade (layout animation in root layout)
-- [ ] Buttons: hover scale 1.02, active scale 0.98
-
----
-
-## SUPABASE SCHEMA (already live — use these tables)
-
-```sql
--- Tables: profiles, projects, invoices, files, messages, leads
--- All have RLS enabled
--- profiles.role = 'admin' | 'client'
+git add -A && git commit -m "chore: repo audit report"
 ```
 
-**Supabase client** is at `/src/lib/supabase.ts` — use `createClient` from there.
+---
+
+## TASK 2 — LOGO SWAP
+- **Navbar/Header**: Use `<Image src="/digiwolf-icon.png" width={40} height={40} priority />` + `<span>DIGIWOLF</span>` wordmark text next to it. Remove any old placeholder logo/text.
+- **Footer**: Use `<Image src="/digiwolf-logo.png" style={{maxWidth:'200px', width:'100%'}} alt="Digi Wolf Agency" />`
+- **Favicon**: Copy `/public/digiwolf-icon.png` as `/public/favicon.ico` (or use next/head to set `<link rel="icon" href="/digiwolf-icon.png" />` in root layout)
+- **OG Image metadata**: In root `layout.tsx`, update `openGraph.images` to use `/digiwolf-logo.png`
+- Commit: `git add -A && git commit -m "feat: logo swap - icon in navbar, full logo in footer, favicon updated"`
 
 ---
 
-## AFTER ALL CHANGES
-1. Run `npm run build` and fix ALL TypeScript/build errors
-2. Run `git add -A && git commit -m "feat: complete full-stack agency website - mobile optimized, all pages, real data"` 
-3. Run `git push origin main`
+## TASK 3 — MOBILE NAV
+Add a hamburger menu for screens below `md:` breakpoint:
+- **Trigger**: Lucide `Menu` icon (24px) — clicking opens full-screen overlay
+- **Overlay**: Dark background (`bg-[#030712]/95 backdrop-blur-md`), full screen, z-50
+- **Close**: Lucide `X` icon top-right, also close on ESC key
+- **Links**: Home, Services, Work, Process, Pricing, About, Contact — each full-width, large tap targets (py-4 text-xl)
+- **CTAs**: "Sign In" (outline) + "Get Started" (filled blue) at bottom of overlay
+- **Animation**: Framer Motion `AnimatePresence` — overlay slides down from top or fades in
+- **Desktop nav**: unchanged (hamburger hidden at md: and above)
+- Test breakpoints: 375px, 768px, 1024px
+- Commit: `git add -A && git commit -m "feat: mobile hamburger nav with Framer Motion overlay"`
+
+---
+
+## TASK 4 — FULL RESPONSIVENESS PASS
+Go through every page and component. Fix:
+- **No horizontal scroll** at 375px — check all sections, grids, hero text
+- **Typography scale**: 
+  - H1: `text-4xl md:text-6xl lg:text-7xl`
+  - H2: `text-3xl md:text-5xl`
+  - H3: `text-xl md:text-2xl`
+  - Body: `text-base md:text-lg`
+- **Grids**: All 3-column grids → `grid-cols-1 md:grid-cols-2 lg:grid-cols-3`
+- **Section padding**: `py-16 md:py-24 lg:py-32`, `px-4 md:px-8 lg:px-0`
+- **Buttons**: Stack vertically on mobile (`flex-col sm:flex-row gap-4`)
+- **Cards**: Full width on mobile with appropriate padding
+- **Images**: All use `next/image` with proper `sizes` prop
+- **Forms**: Input font-size minimum 16px (prevents iOS zoom)
+- **Touch targets**: Minimum 44×44px for all interactive elements
+- Commit: `git add -A && git commit -m "fix: full mobile responsiveness pass - all breakpoints"`
+
+---
+
+## TASK 5 — FIX BROKEN STATS AND PRICING
+**Stats fix** — Homepage stats showing "0+", "0%", "0 days", "0 countries":
+Replace with Framer Motion scroll-triggered count-up animation to these real values:
+- **47** clients served
+- **98%** satisfaction rate  
+- **7** days avg delivery
+- **3** countries served
+
+Use `useInView` from framer-motion + `useEffect` with a counter that increments from 0 to target over 1.5s when the section enters the viewport.
+
+**Pricing fix** — Inconsistency:
+- Homepage says "from 15,000 CZK" for websites
+- Services page says "from 45,000 CZK"
+- **Correct value: 45,000 CZK** — update homepage to match
+
+Commit: `git add -A && git commit -m "fix: animated stats count-up + pricing consistency 45000 CZK"`
+
+---
+
+## TASK 6 — MISSING PAGES AND SECTIONS
+
+### 6a. Footer social icons
+Replace placeholder `[L][X][I]` text with Lucide icons:
+- `<Linkedin size={20} />` → links to `https://linkedin.com/company/digiwolf-agency`
+- `<Twitter size={20} />` → links to `https://twitter.com/digiwolfagency`
+- `<Instagram size={20} />` → links to `https://instagram.com/digiwolfagency`
+All open in `target="_blank" rel="noopener noreferrer"`
+
+### 6b. Legal pages
+Create these 3 pages with GDPR-compliant boilerplate for Czech S.R.O.:
+
+**`/src/app/privacy/page.tsx`** — Privacy Policy
+- Company: Digi Wolf Agency s.r.o., Prague, Czech Republic
+- Data controller info, what data is collected (name, email, project info), why, how long kept (3 years), user rights (GDPR Art. 15-22), contact: digiwolfagencyofficial@gmail.com
+- Last updated: January 2025
+
+**`/src/app/terms/page.tsx`** — Terms of Service
+- Service description, payment terms (50% upfront, 50% on delivery), project scope, revisions policy (2 included), intellectual property (client owns final deliverable), limitation of liability, governing law: Czech Republic
+
+**`/src/app/cookies/page.tsx`** — Cookie Policy
+- What cookies are used (essential, analytics), how to opt out, link to privacy policy
+
+### 6c. Blog placeholder
+**`/src/app/blog/page.tsx`** — "Coming Soon" state:
+- Centered layout, wolf icon or logo, heading "Insights & Updates", subtext "We're writing something worth reading. Check back soon.", email signup input (no backend needed — just UI with a "Notify Me" button that shows a success toast)
+
+### 6d. Login page
+Check if `/src/app/login/page.tsx` works properly. If broken or missing Supabase auth:
+- Build a proper email/password form
+- On submit: call Supabase `signInWithPassword({ email, password })`
+- On success: redirect to `/dashboard`
+- Show inline error if login fails
+- Link to `/register` for new accounts
+
+### 6e. Cookie consent banner
+Add `react-cookie-consent` banner:
+- Dark theme matching site (`#040d1f` background, white text, blue accept button)
+- Text: "We use cookies to improve your experience. By continuing, you agree to our Cookie Policy."
+- Links: "Cookie Policy" → `/cookies`, "Privacy Policy" → `/privacy`
+- Accept button: "Accept All"
+- Decline button: "Decline"
+- Position: bottom of screen
+- Add to root `layout.tsx`
+
+### 6f. FAQ accordion
+Replace any broken FAQ with Radix UI Accordion:
+- Use `@radix-ui/react-accordion` primitives
+- 6 questions:
+  1. "How long does a website project take?" → "Most projects take 3–6 weeks from kickoff to launch."
+  2. "What's included in Czech S.R.O. formation?" → "Full company registration, trade license, registered address for 1 year, bank account guidance. We handle everything."
+  3. "Do you work with international clients?" → "Yes — we work remotely with clients across Europe and beyond. We speak English, Czech, and Mongolian."
+  4. "What's your payment structure?" → "50% upfront to begin, 50% on final delivery. We accept bank transfer (CZK/EUR) and Wise."
+  5. "Can I update the website myself after launch?" → "Yes. We build on modern platforms and provide a handover guide. Optional maintenance retainers available."
+  6. "What AI automation services do you offer?" → "We build n8n workflows, AI agents, chatbots, and Hermes-powered automations for client acquisition, onboarding, and internal ops."
+- Smooth open/close animation with chevron rotation
+
+Commit: `git add -A && git commit -m "feat: social icons, legal pages, blog, cookie banner, FAQ accordion, login fix"`
+
+---
+
+## TASK 7 — POLISH — REPLACE EMOJI WITH LUCIDE ICONS
+Find and replace ALL emoji used as UI icons throughout the codebase:
+- 🌐 → `<Globe size={24} />` (or 32 where larger)
+- ⚖️ → `<Scale size={24} />`
+- 🤖 → `<Bot size={24} />`
+- 📈 → `<TrendingUp size={24} />`
+- 🎨 → `<Palette size={24} />`
+- 🛡️ → `<Shield size={24} />`
+- ✓ or ✅ → `<Check size={20} />`
+- 🚀 → `<Rocket size={24} />` (or remove if decorative)
+- ⭐ → `<Star size={16} className="fill-current" />`
+- Any other emoji used as icons → find the closest Lucide equivalent
+
+Style all Lucide icons: `className="text-white opacity-80"` with a subtle blue glow wrapper:
+```tsx
+<div style={{
+  background: 'rgba(0,71,255,0.12)',
+  borderRadius: '10px',
+  padding: '10px',
+  display: 'inline-flex'
+}}>
+  <Globe size={24} className="text-blue-400" />
+</div>
+```
+
+Commit: `git add -A && git commit -m "polish: replace all emoji with Lucide icons"`
+
+---
+
+## TASK 8 — FINAL QA
+1. Run `npm run build` — fix ALL TypeScript errors and build warnings
+2. Fix any remaining console errors
+3. Verify all internal links resolve (no 404s for nav links)
+4. Check logo renders crisp (using `next/image` with proper width/height)
+5. Verify cookie consent banner appears on first visit
+6. Verify FAQ accordion opens/closes smoothly
+7. Verify mobile nav opens/closes at 375px
+8. Fix any remaining `any` TypeScript types
+
+Final commit:
+```
+git add -A && git commit -m "fix: final QA pass - build clean, all links verified, mobile tested"
+git push origin main
+```
+
+---
+
+## AFTER COMPLETION — SUMMARY REPORT
+After the final push, write a summary that includes:
+1. All changes made per task
+2. Any decisions you made (e.g. which Lucide icon chose for what)
+3. Any items that still need the user's input (e.g. real social media URLs, Calendly link, etc.)
+4. Any packages installed
+5. Build status (clean / warnings / errors)
+
+Print this summary clearly at the end.
 
 ---
 
 ## DO NOT
-- Do NOT use placeholder Lorem Ipsum text anywhere
-- Do NOT leave `// TODO` comments in the final code
-- Do NOT use emoji as icons in production UI — use SVG icons inline
-- Do NOT change the Next.js proxy.ts file
-- Do NOT install new heavy dependencies (no chart libraries, no icon packs that need npm install) — use inline SVGs
-- Do NOT use `any` TypeScript type — be explicit
-- Do NOT use Tailwind utility classes inside component JSX (use inline style props)
-- Do NOT skip mobile breakpoints
-
----
-
-## QUALITY BAR
-When you're done, this site should look and function like an agency that charges €5,000–€15,000 per project. A potential client landing on it should immediately feel: *"These people are professional, they know what they're doing, I want to work with them."*
+- Do NOT use `middleware.ts` (project uses `proxy.ts`)
+- Do NOT make Anthropic API calls or use API keys for dev tasks
+- Do NOT use Lorem Ipsum text
+- Do NOT leave TODO comments in final code
+- Do NOT install chart libraries or heavy icon packs beyond lucide-react
+- Do NOT break existing functionality while refactoring
