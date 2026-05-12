@@ -37,7 +37,7 @@ const stats = [
   { num: '47', label: 'Clients Served', suffix: '+' },
   { num: '98', label: 'Satisfaction Rate', suffix: '%' },
   { num: '3', label: 'Countries Active', suffix: '' },
-  { num: '6', label: 'Avg Day Delivery', suffix: ' days' },
+  { num: '7', label: 'Avg Day Delivery', suffix: ' days' },
 ]
 
 const timeline = [
