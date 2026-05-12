@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   keywords: ['web agency Prague', 'Czech SRO formation', 'AI automation', 'web development Czech Republic', 'Next.js agency', 'digital agency Prague', 'Mongolian entrepreneur Prague'],
   authors: [{ name: 'Digi Wolf Agency', url: 'https://digiwolf-agency.vercel.app' }],
   creator: 'Digi Wolf Agency',
+  icons: {
+    icon: '/digiwolf-icon.png',
+    apple: '/digiwolf-icon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
