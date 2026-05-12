@@ -4,8 +4,11 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
+import { AnimatePresence, motion } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
+  { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
   { label: 'Work', href: '/work' },
   { label: 'Process', href: '/process' },
@@ -31,6 +34,12 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => { if (e.key === 'Escape') setMenuOpen(false) }
+    window.addEventListener('keydown', handleEsc)
+    return () => window.removeEventListener('keydown', handleEsc)
+  }, [])
+
   const closeMenu = () => setMenuOpen(false)
 
   return (
@@ -46,13 +55,13 @@ export default function Navbar() {
         <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-            <Image src="/digiwolf-icon.png" alt="Digi Wolf Agency" width={44} height={44} style={{ objectFit: 'contain' }} />
+            <Image src="/digiwolf-icon.png" alt="Digi Wolf Agency" width={40} height={40} priority style={{ objectFit: 'contain' }} />
             <span style={{ fontSize: 17, fontWeight: 800, color: '#f0f4ff', letterSpacing: '0.05em' }}>DIGIWOLF</span>
           </Link>
 
           {/* Desktop nav links */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 4 }} className="nav-desktop">
-            {navLinks.map(link => {
+            {navLinks.filter(l => l.href !== '/').map(link => {
               const isActive = pathname === link.href || pathname.startsWith(link.href + '/')
               return (
                 <Link key={link.href} href={link.href} style={{
@@ -96,7 +105,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Hamburger */}
+          {/* Hamburger — mobile only */}
           <button
             onClick={() => setMenuOpen(v => !v)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -105,62 +114,86 @@ export default function Navbar() {
               width: 44, height: 44, borderRadius: 10,
               background: menuOpen ? 'rgba(0,71,255,0.15)' : 'rgba(255,255,255,0.06)',
               border: '1px solid rgba(255,255,255,0.1)',
-              cursor: 'pointer', display: 'flex', flexDirection: 'column',
-              alignItems: 'center', justifyContent: 'center', gap: 5,
-              transition: 'all 0.2s',
+              cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+              transition: 'all 0.2s', color: '#f0f4ff',
             }}
           >
-            <span style={{ display: 'block', width: 20, height: 2, background: '#f0f4ff', borderRadius: 2, transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
-            <span style={{ display: 'block', width: 20, height: 2, background: '#f0f4ff', borderRadius: 2, transition: 'all 0.3s', opacity: menuOpen ? 0 : 1 }} />
-            <span style={{ display: 'block', width: 20, height: 2, background: '#f0f4ff', borderRadius: 2, transition: 'all 0.3s', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile menu overlay */}
-      {menuOpen && (
-        <div style={{
-          position: 'fixed', inset: 0, zIndex: 998,
-          background: 'rgba(3,7,18,0.97)', backdropFilter: 'blur(20px)',
-          display: 'flex', flexDirection: 'column', paddingTop: 80,
-        }}>
-          <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: 4 }}>
-            {navLinks.map(link => {
-              const isActive = pathname === link.href
-              return (
-                <Link key={link.href} href={link.href} onClick={closeMenu} style={{
-                  padding: '16px 20px', borderRadius: 12, textDecoration: 'none',
-                  fontSize: 18, fontWeight: isActive ? 700 : 500,
-                  color: isActive ? '#f0f4ff' : '#94a3b8',
-                  background: isActive ? 'rgba(0,71,255,0.12)' : 'transparent',
-                  border: isActive ? '1px solid rgba(0,71,255,0.2)' : '1px solid transparent',
-                  minHeight: 52, display: 'flex', alignItems: 'center',
-                  transition: 'all 0.2s',
-                }}>
-                  {link.label}
-                </Link>
-              )
-            })}
-          </div>
-          <div style={{ padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 12, marginTop: 'auto', borderTop: '1px solid rgba(255,255,255,0.07)', paddingBottom: 48 }}>
-            <Link href="/login" onClick={closeMenu} style={{
-              padding: '14px', borderRadius: 12, textDecoration: 'none',
-              fontSize: 16, fontWeight: 600, color: '#94a3b8',
-              border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center',
-            }}>
-              Sign In
-            </Link>
-            <Link href="/contact" onClick={closeMenu} style={{
-              padding: '16px', borderRadius: 12, textDecoration: 'none',
-              fontSize: 16, fontWeight: 700, color: '#fff',
-              background: '#0047FF', textAlign: 'center',
-              boxShadow: '0 4px 20px rgba(0,71,255,0.4)',
-            }}>
-              Get Started →
-            </Link>
-          </div>
-        </div>
-      )}
+      {/* Mobile menu overlay with Framer Motion */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+            style={{
+              position: 'fixed', inset: 0, zIndex: 998,
+              background: 'rgba(3,7,18,0.97)', backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              display: 'flex', flexDirection: 'column', paddingTop: 80,
+            }}
+          >
+            {/* Close button top-right */}
+            <button
+              onClick={closeMenu}
+              aria-label="Close menu"
+              style={{
+                position: 'absolute', top: 16, right: 24,
+                width: 44, height: 44, borderRadius: 10,
+                background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)',
+                cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: '#f0f4ff',
+              }}
+            >
+              <X size={24} />
+            </button>
+
+            <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: 4 }}>
+              {navLinks.map(link => {
+                const isActive = pathname === link.href
+                return (
+                  <Link key={link.href} href={link.href} onClick={closeMenu} style={{
+                    padding: '16px 20px', borderRadius: 12, textDecoration: 'none',
+                    fontSize: 18, fontWeight: isActive ? 700 : 500,
+                    color: isActive ? '#f0f4ff' : '#94a3b8',
+                    background: isActive ? 'rgba(0,71,255,0.12)' : 'transparent',
+                    border: isActive ? '1px solid rgba(0,71,255,0.2)' : '1px solid transparent',
+                    minHeight: 52, display: 'flex', alignItems: 'center',
+                    transition: 'all 0.2s',
+                  }}>
+                    {link.label}
+                  </Link>
+                )
+              })}
+            </div>
+
+            {/* CTAs at bottom */}
+            <div style={{ padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 12, marginTop: 'auto', borderTop: '1px solid rgba(255,255,255,0.07)', paddingBottom: 48 }}>
+              <Link href="/login" onClick={closeMenu} style={{
+                padding: '14px', borderRadius: 12, textDecoration: 'none',
+                fontSize: 16, fontWeight: 600, color: '#94a3b8',
+                border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center',
+              }}>
+                Sign In
+              </Link>
+              <Link href="/contact" onClick={closeMenu} style={{
+                padding: '16px', borderRadius: 12, textDecoration: 'none',
+                fontSize: 16, fontWeight: 700, color: '#fff',
+                background: '#0047FF', textAlign: 'center',
+                boxShadow: '0 4px 20px rgba(0,71,255,0.4)',
+              }}>
+                Get Started →
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style>{`
         .nav-desktop { display: flex !important; }
