@@ -220,7 +220,7 @@ export default function ServicesPage() {
             From zero to market leader — web development, company formation, AI automation, and more.
             Built by experts who understand Central European markets.
           </p>
-          <div style={{ display: 'flex', gap: 16, justifyContent: 'center' as const, flexWrap: 'wrap' as const }}>
+          <div className="btn-row" style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" style={{
               background: '#3b82f6', color: '#fff', padding: '14px 32px',
               borderRadius: 12, fontWeight: 700, fontSize: 16,
@@ -268,7 +268,7 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <section id="services" style={{ padding: '100px 24px', maxWidth: 1280, margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: 32 }}>
+        <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32 }}>
           {services.map((svc) => {
             const isHovered = hoveredCard === svc.id
             return (

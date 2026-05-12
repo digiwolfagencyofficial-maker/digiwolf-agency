@@ -197,7 +197,7 @@ export default function HomePage() {
                 </p>
 
                 {/* CTAs */}
-                <div className="fade-up fade-up-delay-3" style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 56 }}>
+                <div className="fade-up fade-up-delay-3 btn-row" style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 56 }}>
                   <Link href="/contact" style={{
                     background: '#0047FF', color: '#fff', textDecoration: 'none',
                     padding: '16px 32px', borderRadius: 12, fontSize: 16, fontWeight: 700,
@@ -223,7 +223,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Stats row */}
-                <div className="fade-up fade-up-delay-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+                <div className="fade-up fade-up-delay-4 hero-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
                   {stats.map((s, i) => (
                     <div key={i} style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', paddingLeft: 16 }}>
                       <div style={{ fontSize: 28, fontWeight: 800, color: '#f0f4ff', letterSpacing: '-0.02em' }}>
@@ -309,7 +309,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="stagger" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 20 }}>
+            <div className="stagger services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
               {services.map((s, i) => (
                 <div key={i} style={{
                   background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)',
@@ -376,7 +376,7 @@ export default function HomePage() {
               {/* Connector line */}
               <div style={{ position: 'absolute', top: 40, left: '10%', right: '10%', height: 1, background: 'linear-gradient(90deg, transparent, rgba(0,71,255,0.3), transparent)', display: 'none' }} />
 
-              <div className="stagger" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24 }} id="process-grid">
+              <div className="stagger process-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 24 }} id="process-grid">
                 {process.map((p, i) => (
                   <div key={i} style={{ textAlign: 'center', position: 'relative' }}>
                     {/* Step number circle */}
@@ -565,7 +565,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="stagger" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+            <div className="stagger pricing-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
               {[
                 { name: 'Starter', price: '15,000', currency: 'CZK', desc: 'Perfect for freelancers and small businesses launching their first professional website.', features: ['5-page website', 'Mobile responsive', 'SEO optimized', 'Contact form', '30-day support', 'Source code included'], cta: 'Get Started', featured: false },
                 { name: 'Growth', price: '45,000', currency: 'CZK', desc: 'For growing agencies that need a full-featured site with client portal and integrations.', features: ['Unlimited pages', 'Client dashboard', 'Payment integration', 'CRM integration', 'AI chatbot', '90-day support', 'Priority delivery'], cta: 'Most Popular', featured: true },
@@ -719,10 +719,16 @@ export default function HomePage() {
           .hero-grid { grid-template-columns: 1fr !important; }
           .case-grid { grid-template-columns: 1fr !important; }
           .ai-grid { grid-template-columns: 1fr !important; }
+          .process-grid { grid-template-columns: 1fr 1fr !important; }
           #process-grid { grid-template-columns: 1fr 1fr !important; }
         }
         @media (max-width: 600px) {
+          .process-grid { grid-template-columns: 1fr !important; }
           #process-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 480px) {
+          .hero-grid h1 { font-size: clamp(32px, 9vw, 48px) !important; }
+          .browser-mockup { display: none !important; }
         }
         @keyframes pulseRing {
           0% { box-shadow: 0 0 0 0 rgba(0,200,100,0.4); }
