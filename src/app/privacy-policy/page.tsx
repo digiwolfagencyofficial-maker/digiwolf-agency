@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: '1. Who We Are',
-    content: `Digi Wolf Agency s.r.o. ("we", "our", "us") is a digital agency incorporated in the Czech Republic. Our registered office is in Prague, Czech Republic. We can be contacted at digiwolfagencyofficial@gmail.com.
+    content: `Digi Wolf Agency s.r.o. ("we", "our", "us") is a digital agency incorporated in the Czech Republic. Our registered office is in Prague, Czech Republic. We can be contacted at info@digiwolf.agency.
 
 We are the data controller for personal data collected through our website and services.`,
   },
@@ -92,7 +92,7 @@ You can manage cookie preferences through your browser settings. Refusing analyt
 • Right to object: object to processing based on legitimate interests
 • Right to withdraw consent: withdraw consent at any time without affecting lawfulness of prior processing
 
-To exercise any of these rights, contact us at digiwolfagencyofficial@gmail.com. We will respond within 30 days.
+To exercise any of these rights, contact us at info@digiwolf.agency. We will respond within 30 days.
 
 You also have the right to lodge a complaint with the Office for Personal Data Protection (Úřad pro ochranu osobních údajů), Pplk. Sochora 27, 170 00 Prague 7, Czech Republic.`,
   },
@@ -159,7 +159,7 @@ export default function PrivacyPolicyPage() {
           <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Questions about your data?</h3>
           <p style={{ color: '#8892b0', fontSize: 14, marginBottom: 20, lineHeight: 1.6 }}>
             Contact our Data Protection contact at{' '}
-            <a href="mailto:digiwolfagencyofficial@gmail.com" style={{ color: '#3d74ff', textDecoration: 'none' }}>digiwolfagencyofficial@gmail.com</a>.
+            <a href="mailto:info@digiwolf.agency" style={{ color: '#3d74ff', textDecoration: 'none' }}>info@digiwolf.agency</a>.
             We respond to all data requests within 30 days.
           </p>
           <Link href="/contact" style={{

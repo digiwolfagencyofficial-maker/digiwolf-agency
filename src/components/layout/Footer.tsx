@@ -37,7 +37,7 @@ export default function Footer() {
             <div style={{ display: 'flex', gap: 12 }}>
               {[
                 { label: 'LinkedIn', href: 'https://linkedin.com/company/digiwolf-agency', icon: <LinkedinIcon /> },
-                { label: 'X (Twitter)', href: 'https://twitter.com/digiwolfagency', icon: <XIcon /> },
+                { label: 'Facebook', href: 'https://facebook.com/digiwolf', icon: <XIcon /> },
                 { label: 'Instagram', href: 'https://instagram.com/digiwolfagency', icon: <InstagramIcon /> },
               ].map(s => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} style={{
@@ -98,10 +98,10 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div>
                 <div style={{ fontSize: 11, color: '#475569', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 4 }}>Email</div>
-                <a href="mailto:digiwolfagencyofficial@gmail.com" style={{ fontSize: 14, color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}
+                <a href="mailto:info@digiwolf.agency" style={{ fontSize: 14, color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#f0f4ff'}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = '#64748b'}
-                >digiwolfagencyofficial@gmail.com</a>
+                >info@digiwolf.agency</a>
               </div>
               <div>
                 <div style={{ fontSize: 11, color: '#475569', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 4 }}>Location</div>

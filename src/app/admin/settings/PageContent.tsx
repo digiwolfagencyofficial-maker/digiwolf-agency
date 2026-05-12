@@ -36,8 +36,8 @@ const inputStyle: React.CSSProperties = {
 export function AdminSettingsPage() {
   const [agency, setAgency] = useState({
     name: 'Digi Wolf Agency s.r.o.',
-    email: 'digiwolfagencyofficial@gmail.com',
-    phone: '+420 000 000 000',
+    email: 'info@digiwolf.agency',
+    phone: '+420 296 183 158',
     currency: 'CZK',
     address: 'Prague, Czech Republic',
     website: 'https://digiwolfagency.com',

@@ -112,7 +112,7 @@ export default function CookiesPage() {
           <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Questions or Concerns?</h3>
           <p style={{ color: '#8892b0', fontSize: 14, marginBottom: 20, lineHeight: 1.6 }}>
             If you have questions about how we use cookies, contact us at{' '}
-            <a href="mailto:digiwolfagencyofficial@gmail.com" style={{ color: '#3d74ff', textDecoration: 'none' }}>digiwolfagencyofficial@gmail.com</a>.
+            <a href="mailto:info@digiwolf.agency" style={{ color: '#3d74ff', textDecoration: 'none' }}>info@digiwolf.agency</a>.
             You can also read our{' '}
             <Link href="/privacy" style={{ color: '#3d74ff', textDecoration: 'none' }}>Privacy Policy</Link> for more information about how we handle your data.
           </p>

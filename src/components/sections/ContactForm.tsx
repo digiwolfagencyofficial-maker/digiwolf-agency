@@ -122,10 +122,10 @@ export function ContactForm() {
               <div className="mt-8 rounded-xl border border-orange-500/20 bg-orange-500/5 p-5">
                 <p className="text-sm font-semibold text-orange-400">Prefer email?</p>
                 <a
-                  href="mailto:hello@digiwolf.agency"
+                  href="mailto:info@digiwolf.agency"
                   className="mt-1 block text-sm text-white/60 transition-colors hover:text-orange-400"
                 >
-                  hello@digiwolf.agency
+                  info@digiwolf.agency
                 </a>
               </div>
             </div>

@@ -7,8 +7,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 const contactInfo = [
-  { icon: <Mail size={18} />, label: 'Email', value: 'hello@digiwolf.agency', href: 'mailto:hello@digiwolf.agency' },
-  { icon: <Phone size={18} />, label: 'Phone', value: '+420 XXX XXX XXX', href: 'tel:+420000000000' },
+  { icon: <Mail size={18} />, label: 'Email', value: 'info@digiwolf.agency', href: 'mailto:info@digiwolf.agency' },
+{ icon: <Phone size={18} />, label: 'Phone', value: '+420 296 183 158', href: 'tel:+420296183158' },
   { icon: <MapPin size={18} />, label: 'Location', value: 'Prague, Czech Republic', href: '#' },
 ]
 

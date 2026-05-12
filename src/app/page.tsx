@@ -191,15 +191,13 @@ export default function HomePage() {
 
                 {/* Headline */}
                 <h1 className="fade-up fade-up-delay-1" style={{ fontSize: 'clamp(40px, 5vw, 68px)', fontWeight: 800, lineHeight: 1.05, letterSpacing: '-0.03em', marginBottom: 24 }}>
-                  <span style={{ color: '#f0f4ff' }}>Your Digital Agency</span>
+                  <span style={{ color: '#f0f4ff' }}>We Build Digital Weapons</span>
                   <br />
-                  <span className="gradient-text">in Central Europe</span>
-                  <br />
-                  <span style={{ color: '#f0f4ff' }}>— Done Right.</span>
+                  <span className="gradient-text">for Ambitious Businesses</span>
                 </h1>
 
                 <p className="fade-up fade-up-delay-2" style={{ fontSize: 18, color: '#8892b0', lineHeight: 1.7, marginBottom: 40, maxWidth: 480 }}>
-                  We build high-converting websites, automate your workflows with AI, and handle Czech S.R.O. formation — so you can focus on growing your business.
+                  Web. Apps. AI Automation. Czech Company Formation. All under one roof — built in Prague, delivered globally.
                 </p>
 
                 {/* CTAs */}

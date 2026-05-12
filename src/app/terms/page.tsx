@@ -159,7 +159,7 @@ export default function TermsPage() {
           <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Questions about our terms?</h3>
           <p style={{ color: '#8892b0', fontSize: 14, marginBottom: 20, lineHeight: 1.6 }}>
             Contact us at{' '}
-            <a href="mailto:digiwolfagencyofficial@gmail.com" style={{ color: '#3d74ff', textDecoration: 'none' }}>digiwolfagencyofficial@gmail.com</a>{' '}
+            <a href="mailto:info@digiwolf.agency" style={{ color: '#3d74ff', textDecoration: 'none' }}>info@digiwolf.agency</a>{' '}
             with any questions about these Terms.
           </p>
           <Link href="/contact" style={{

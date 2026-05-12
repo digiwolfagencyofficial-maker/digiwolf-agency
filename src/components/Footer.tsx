@@ -53,7 +53,7 @@ export default function Footer() {
             <div style={{ display: 'flex', gap: 12, marginTop: 24 }}>
               {[
                 { icon: <LinkedinIcon />, href: 'https://linkedin.com/company/digiwolf-agency', label: 'LinkedIn' },
-                { icon: <XIcon />, href: 'https://twitter.com/digiwolfagency', label: 'X (Twitter)' },
+                { icon: <XIcon />, href: 'https://facebook.com/digiwolf', label: 'Facebook' },
                 { icon: <InstagramIcon />, href: 'https://instagram.com/digiwolfagency', label: 'Instagram' },
               ].map(s => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} style={{
@@ -103,7 +103,7 @@ export default function Footer() {
             <h4 style={{ color: '#f0f4ff', fontWeight: 700, fontSize: 14, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 20 }}>Contact</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {[
-                { label: 'hello@digiwolf.agency', href: 'mailto:hello@digiwolf.agency' },
+                { label: 'info@digiwolf.agency', href: 'mailto:info@digiwolf.agency' },
                 { label: 'Prague, Czech Republic', href: '#' },
                 { label: 'Ulaanbaatar, Mongolia', href: '#' },
               ].map(item => (
