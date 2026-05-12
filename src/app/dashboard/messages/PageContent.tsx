@@ -189,7 +189,7 @@ export function MessagesPageInner() {
 
   return (
     <DashboardLayout
-      nav={clientNav}
+      navItems={clientNav}
       role="client"
       userName="Martin Novák"
       userInitial="M"

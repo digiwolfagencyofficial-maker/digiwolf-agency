@@ -1,103 +1,175 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 
-const WolfLogo = () => (
-  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polygon points="4,14 8,2 13,12" fill="#0047FF" opacity="0.9"/>
-    <polygon points="28,14 24,2 19,12" fill="#0047FF" opacity="0.9"/>
-    <polygon points="6,13 9,5 12,12" fill="#3d74ff" opacity="0.6"/>
-    <polygon points="26,13 23,5 20,12" fill="#3d74ff" opacity="0.6"/>
-    <polygon points="16,3 28,14 26,26 16,30 6,26 4,14" fill="#0047FF" opacity="0.95"/>
-    <polygon points="16,10 24,16 22,24 16,27 10,24 8,16" fill="#1a5cff" opacity="0.5"/>
-    <circle cx="12" cy="17" r="2.2" fill="#F5F5F5"/>
-    <circle cx="20" cy="17" r="2.2" fill="#F5F5F5"/>
-    <circle cx="12.5" cy="17.3" r="1" fill="#0A0A0A"/>
-    <circle cx="20.5" cy="17.3" r="1" fill="#0A0A0A"/>
-    <polygon points="16,21 13,24 19,24" fill="#1a3bcc" opacity="0.7"/>
-    <circle cx="16" cy="21.5" r="1.3" fill="#0A1050"/>
-  </svg>
-)
+const navLinks = [
+  { label: 'Services', href: '/services' },
+  { label: 'Work', href: '/work' },
+  { label: 'Process', href: '/process' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const navRef = useRef<HTMLElement>(null)
+  const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60)
-    }
+    const handleScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (menuOpen) document.body.style.overflow = 'hidden'
+    else document.body.style.overflow = ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
   const closeMenu = () => setMenuOpen(false)
 
-  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault()
-      const target = document.querySelector(href)
-      if (target) {
-        const offset = 80
-        const top = target.getBoundingClientRect().top + window.scrollY - offset
-        window.scrollTo({ top, behavior: 'smooth' })
-      }
-      closeMenu()
-    }
-  }
-
   return (
-    <nav id="navbar" ref={navRef} className={scrolled ? 'scrolled' : ''}>
-      <div className="container">
-        <div className="nav-inner">
-          <a href="#" className="nav-logo">
-            <WolfLogo />
-            DIGI WOLF
-          </a>
-          <ul className="nav-links">
-            <li><a href="#services" onClick={e => handleAnchorClick(e, '#services')}>Services</a></li>
-            <li><a href="#how" onClick={e => handleAnchorClick(e, '#how')}>Process</a></li>
-            <li><a href="#cases" onClick={e => handleAnchorClick(e, '#cases')}>Work</a></li>
-            <li><a href="#pricing" onClick={e => handleAnchorClick(e, '#pricing')}>Pricing</a></li>
-            <li><a href="#faq" onClick={e => handleAnchorClick(e, '#faq')}>FAQ</a></li>
-          </ul>
-          <a
-            href="https://calendly.com/digiwolf-agency-consultation/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-cta desktop-only"
-          >
-            Book a Call
-          </a>
+    <>
+      <nav style={{
+        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 999,
+        transition: 'background 0.3s, border-color 0.3s, backdrop-filter 0.3s',
+        background: scrolled ? 'rgba(3,7,18,0.92)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(20px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
+        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : '1px solid transparent',
+      }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          {/* Logo */}
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+            <Image src="/digiwolf-icon.png" alt="Digi Wolf Agency" width={44} height={44} style={{ objectFit: 'contain' }} />
+            <span style={{ fontSize: 17, fontWeight: 800, color: '#f0f4ff', letterSpacing: '0.05em' }}>DIGIWOLF</span>
+          </Link>
+
+          {/* Desktop nav links */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }} className="nav-desktop">
+            {navLinks.map(link => {
+              const isActive = pathname === link.href || pathname.startsWith(link.href + '/')
+              return (
+                <Link key={link.href} href={link.href} style={{
+                  padding: '8px 14px', borderRadius: 8,
+                  fontSize: 14, fontWeight: isActive ? 700 : 500,
+                  color: isActive ? '#f0f4ff' : '#94a3b8',
+                  textDecoration: 'none',
+                  background: isActive ? 'rgba(255,255,255,0.07)' : 'transparent',
+                  transition: 'all 0.2s',
+                }}
+                  onMouseEnter={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = '#f0f4ff' }}
+                  onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLElement).style.color = '#94a3b8' }}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
+          </div>
+
+          {/* Desktop CTA */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }} className="nav-desktop">
+            <Link href="/login" style={{
+              fontSize: 14, fontWeight: 600, color: '#94a3b8', textDecoration: 'none',
+              padding: '8px 14px', borderRadius: 8, transition: 'color 0.2s',
+            }}
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#f0f4ff'}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = '#94a3b8'}
+            >
+              Sign In
+            </Link>
+            <Link href="/contact" style={{
+              background: '#0047FF', color: '#fff', textDecoration: 'none',
+              padding: '10px 22px', borderRadius: 10, fontSize: 14, fontWeight: 700,
+              boxShadow: '0 4px 20px rgba(0,71,255,0.35)', transition: 'all 0.2s',
+              display: 'inline-flex', alignItems: 'center', gap: 6,
+            }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-1px)'; el.style.boxShadow = '0 8px 30px rgba(0,71,255,0.5)' }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'none'; el.style.boxShadow = '0 4px 20px rgba(0,71,255,0.35)' }}
+            >
+              Get Started →
+            </Link>
+          </div>
+
+          {/* Hamburger */}
           <button
-            className={`hamburger${menuOpen ? ' active' : ''}`}
-            id="hamburger"
-            aria-label="Menu"
-            onClick={() => setMenuOpen(prev => !prev)}
+            onClick={() => setMenuOpen(v => !v)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            className="nav-mobile"
+            style={{
+              width: 44, height: 44, borderRadius: 10,
+              background: menuOpen ? 'rgba(0,71,255,0.15)' : 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              cursor: 'pointer', display: 'flex', flexDirection: 'column',
+              alignItems: 'center', justifyContent: 'center', gap: 5,
+              transition: 'all 0.2s',
+            }}
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <span style={{ display: 'block', width: 20, height: 2, background: '#f0f4ff', borderRadius: 2, transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+            <span style={{ display: 'block', width: 20, height: 2, background: '#f0f4ff', borderRadius: 2, transition: 'all 0.3s', opacity: menuOpen ? 0 : 1 }} />
+            <span style={{ display: 'block', width: 20, height: 2, background: '#f0f4ff', borderRadius: 2, transition: 'all 0.3s', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
           </button>
         </div>
-      </div>
-      <div className={`mobile-menu${menuOpen ? ' open' : ''}`} id="mobile-menu">
-        <a href="#services" onClick={e => handleAnchorClick(e, '#services')}>Services</a>
-        <a href="#how" onClick={e => handleAnchorClick(e, '#how')}>Process</a>
-        <a href="#cases" onClick={e => handleAnchorClick(e, '#cases')}>Work</a>
-        <a href="#pricing" onClick={e => handleAnchorClick(e, '#pricing')}>Pricing</a>
-        <a href="#faq" onClick={e => handleAnchorClick(e, '#faq')}>FAQ</a>
-        <a
-          href="https://calendly.com/digiwolf-agency-consultation/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="nav-cta"
-          onClick={closeMenu}
-        >
-          Book a Call →
-        </a>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mobile menu overlay */}
+      {menuOpen && (
+        <div style={{
+          position: 'fixed', inset: 0, zIndex: 998,
+          background: 'rgba(3,7,18,0.97)', backdropFilter: 'blur(20px)',
+          display: 'flex', flexDirection: 'column', paddingTop: 80,
+        }}>
+          <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: 4 }}>
+            {navLinks.map(link => {
+              const isActive = pathname === link.href
+              return (
+                <Link key={link.href} href={link.href} onClick={closeMenu} style={{
+                  padding: '16px 20px', borderRadius: 12, textDecoration: 'none',
+                  fontSize: 18, fontWeight: isActive ? 700 : 500,
+                  color: isActive ? '#f0f4ff' : '#94a3b8',
+                  background: isActive ? 'rgba(0,71,255,0.12)' : 'transparent',
+                  border: isActive ? '1px solid rgba(0,71,255,0.2)' : '1px solid transparent',
+                  minHeight: 52, display: 'flex', alignItems: 'center',
+                  transition: 'all 0.2s',
+                }}>
+                  {link.label}
+                </Link>
+              )
+            })}
+          </div>
+          <div style={{ padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 12, marginTop: 'auto', borderTop: '1px solid rgba(255,255,255,0.07)', paddingBottom: 48 }}>
+            <Link href="/login" onClick={closeMenu} style={{
+              padding: '14px', borderRadius: 12, textDecoration: 'none',
+              fontSize: 16, fontWeight: 600, color: '#94a3b8',
+              border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center',
+            }}>
+              Sign In
+            </Link>
+            <Link href="/contact" onClick={closeMenu} style={{
+              padding: '16px', borderRadius: 12, textDecoration: 'none',
+              fontSize: 16, fontWeight: 700, color: '#fff',
+              background: '#0047FF', textAlign: 'center',
+              boxShadow: '0 4px 20px rgba(0,71,255,0.4)',
+            }}>
+              Get Started →
+            </Link>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        .nav-desktop { display: flex !important; }
+        .nav-mobile { display: none !important; }
+        @media (max-width: 768px) {
+          .nav-desktop { display: none !important; }
+          .nav-mobile { display: flex !important; }
+        }
+      `}</style>
+    </>
   )
 }

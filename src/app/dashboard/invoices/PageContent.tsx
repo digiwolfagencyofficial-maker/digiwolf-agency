@@ -70,7 +70,7 @@ export function InvoicesPageInner() {
 
   return (
     <DashboardLayout
-      nav={clientNav}
+      navItems={clientNav}
       role="client"
       userName="Martin Novák"
       userInitial="M"
