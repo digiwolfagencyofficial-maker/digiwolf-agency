@@ -2,13 +2,14 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { Phone, Palette, Settings, Search, Rocket, Zap, Check, RefreshCw } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 const steps = [
   {
     num: '01',
-    icon: '📞',
+    icon: <Phone size={28} />,
     title: 'Discovery Call',
     subtitle: '30 minutes — Free',
     desc: "We start with a focused 30-minute call to understand your business, goals, and audience. No fluff, no sales pitch — just the information we need to build something that actually works for you. We'll assess your competition, ask the hard questions, and come out with a crystal-clear picture of what success looks like.",
@@ -19,7 +20,7 @@ const steps = [
   },
   {
     num: '02',
-    icon: '🎨',
+    icon: <Palette size={28} />,
     title: 'Strategy & Design',
     subtitle: '2–3 days',
     desc: "Custom wireframes and high-fidelity mockups tailored to your brand. You see exactly what we're building before a single line of code is written. We design mobile-first, with every element purposefully placed to guide your visitors toward conversion. You approve every pixel — revisions are unlimited at this stage.",
@@ -30,7 +31,7 @@ const steps = [
   },
   {
     num: '03',
-    icon: '⚙️',
+    icon: <Settings size={28} />,
     title: 'Development',
     subtitle: '3–7 days',
     desc: "Production-grade code built with Next.js, TypeScript, and Supabase. We don't use page builders or templates — everything is custom-engineered for performance and scale. Core Web Vitals are a priority: we target 95+ scores across all metrics. Clean, documented code that you own completely.",
@@ -41,7 +42,7 @@ const steps = [
   },
   {
     num: '04',
-    icon: '🔍',
+    icon: <Search size={28} />,
     title: 'Review & Refine',
     subtitle: '1–2 days',
     desc: "Full QA across all major browsers, devices, and screen sizes. You receive staging access to test everything yourself. Any changes you request are completed without question — we don't start counting revisions until you're completely satisfied. Accessibility and performance are validated before we move forward.",
@@ -52,7 +53,7 @@ const steps = [
   },
   {
     num: '05',
-    icon: '🚀',
+    icon: <Rocket size={28} />,
     title: 'Launch & Grow',
     subtitle: 'Ongoing',
     desc: "We handle the deployment, DNS configuration, and post-launch monitoring. Your site goes live with zero downtime. After launch, we monitor performance and are on call for any issues for 30 days. For ongoing clients, we provide continuous improvements, A/B testing, and growth optimization — turning your website into a sales machine.",
@@ -112,12 +113,12 @@ export default function ProcessPageClient() {
 
           <div className="fade-up fade-up-delay-3" style={{ display: 'flex', gap: 32, justifyContent: 'center', flexWrap: 'wrap' }}>
             {[
-              { icon: '⚡', label: 'Avg. 6-day delivery' },
-              { icon: '✓', label: 'Fixed-price, no surprises' },
-              { icon: '🔄', label: 'Unlimited revisions' },
+              { icon: <Zap size={16} />, label: 'Avg. 7-day delivery' },
+              { icon: <Check size={16} />, label: 'Fixed-price, no surprises' },
+              { icon: <RefreshCw size={16} />, label: 'Unlimited revisions' },
             ].map((item) => (
               <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#8892b0', fontSize: 15 }}>
-                <span style={{ color: '#0047FF' }}>{item.icon}</span>
+                <span style={{ color: '#0047FF', display: 'flex' }}>{item.icon}</span>
                 {item.label}
               </div>
             ))}
@@ -151,7 +152,7 @@ export default function ProcessPageClient() {
                     boxShadow: `0 0 30px ${step.bg}`,
                     flexShrink: 0,
                   }}>
-                    <span style={{ fontSize: 28 }}>{step.icon}</span>
+                    <span style={{ color: step.color, display: 'flex' }}>{step.icon}</span>
                     <span style={{ fontSize: 10, fontWeight: 800, color: step.color, letterSpacing: '0.05em', marginTop: 2 }}>{step.num}</span>
                   </div>
                 </div>
@@ -178,7 +179,7 @@ export default function ProcessPageClient() {
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                           {step.deliverables.map((d) => (
                             <span key={d} style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '6px 14px', borderRadius: 100, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: '#c0c8d8' }}>
-                              <span style={{ color: step.color, fontSize: 12 }}>✓</span>
+                              <Check size={12} style={{ color: step.color }} />
                               {d}
                             </span>
                           ))}

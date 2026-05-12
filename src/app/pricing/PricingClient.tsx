@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { Check, Lock, Clock, Infinity, CreditCard, TrendingUp, Shield, Bot, Palette } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -250,8 +251,8 @@ export default function PricingPage() {
                         width: 18, height: 18, borderRadius: '50%', flexShrink: 0, marginTop: 1,
                         background: `${tier.color}20`, border: `1px solid ${tier.color}50`,
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontSize: 10, color: tier.color,
-                      }}>✓</span>
+                        color: tier.color,
+                      }}><Check size={10} /></span>
                       {feature}
                     </div>
                   ))}
@@ -267,16 +268,16 @@ export default function PricingPage() {
           flexWrap: 'wrap' as const, marginTop: 56,
         }}>
           {[
-            { icon: '🔒', text: 'Fixed pricing, no hidden fees' },
-            { icon: '⏱️', text: 'On-time delivery guaranteed' },
-            { icon: '♾️', text: 'Unlimited revisions within scope' },
-            { icon: '💳', text: '50/50 payment plans available' },
+            { icon: <Lock size={14} />, text: 'Fixed pricing, no hidden fees' },
+            { icon: <Clock size={14} />, text: 'On-time delivery guaranteed' },
+            { icon: <Infinity size={14} />, text: 'Unlimited revisions within scope' },
+            { icon: <CreditCard size={14} />, text: '50/50 payment plans available' },
           ].map((badge) => (
             <div key={badge.text} style={{
               display: 'flex', alignItems: 'center', gap: 8,
               color: '#8892b0', fontSize: 14,
             }}>
-              <span>{badge.icon}</span>
+              <span style={{ display: 'flex' }}>{badge.icon}</span>
               <span>{badge.text}</span>
             </div>
           ))}
@@ -310,22 +311,22 @@ export default function PricingPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
             {[
               {
-                icon: '📈', title: 'SEO & Growth Retainer',
+                icon: <TrendingUp size={24} />, title: 'SEO & Growth Retainer',
                 price: '8,000 CZK/mo', color: '#f59e0b', badge: 'Monthly',
                 desc: 'Full technical SEO, keyword research, content strategy, and monthly link building.',
               },
               {
-                icon: '🛡️', title: 'Website Maintenance',
+                icon: <Shield size={24} />, title: 'Website Maintenance',
                 price: '3,000 CZK/mo', color: '#8b5cf6', badge: 'Monthly',
                 desc: '24/7 uptime monitoring, weekly updates, daily backups, and priority bug fixes.',
               },
               {
-                icon: '🤖', title: 'AI Chatbot Integration',
+                icon: <Bot size={24} />, title: 'AI Chatbot Integration',
                 price: 'from 15,000 CZK', color: '#10b981', badge: 'One-time',
                 desc: 'Custom GPT-4 powered chatbot trained on your content, integrated with your CRM.',
               },
               {
-                icon: '🎨', title: 'Brand Identity System',
+                icon: <Palette size={24} />, title: 'Brand Identity System',
                 price: 'from 12,000 CZK', color: '#ec4899', badge: 'One-time',
                 desc: 'Complete visual identity including logo, color system, typography, and guidelines.',
               },
@@ -344,7 +345,7 @@ export default function PricingPage() {
                     width: 52, height: 52, borderRadius: 14,
                     background: `${addon.color}18`, border: `1px solid ${addon.color}35`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 24,
+                    color: addon.color,
                   }}>
                     {addon.icon}
                   </div>

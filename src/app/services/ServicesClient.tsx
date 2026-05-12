@@ -2,13 +2,14 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { Globe, Scale, Bot, TrendingUp, Palette, Shield, Check, Clock, Lock, Infinity } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 const services = [
   {
     id: 'web',
-    icon: '💻',
+    icon: <Globe size={26} />,
     title: 'Web Development',
     tagline: 'Full-stack websites that convert',
     price: 'from 45,000 CZK',
@@ -36,7 +37,7 @@ const services = [
   },
   {
     id: 'sro',
-    icon: '🏛️',
+    icon: <Scale size={26} />,
     title: 'Czech S.R.O. Formation',
     tagline: 'EU company in days, not months',
     price: 'from 15,000 CZK',
@@ -64,7 +65,7 @@ const services = [
   },
   {
     id: 'ai',
-    icon: '🤖',
+    icon: <Bot size={26} />,
     title: 'AI Automation',
     tagline: 'Work smarter, scale faster',
     price: 'from 25,000 CZK',
@@ -92,7 +93,7 @@ const services = [
   },
   {
     id: 'seo',
-    icon: '📈',
+    icon: <TrendingUp size={26} />,
     title: 'SEO & Growth',
     tagline: 'Rank higher. Grow faster.',
     price: 'from 8,000 CZK/month',
@@ -120,7 +121,7 @@ const services = [
   },
   {
     id: 'brand',
-    icon: '🎨',
+    icon: <Palette size={26} />,
     title: 'Brand Identity',
     tagline: 'Look like the leader you are',
     price: 'from 12,000 CZK',
@@ -148,7 +149,7 @@ const services = [
   },
   {
     id: 'maintenance',
-    icon: '🛡️',
+    icon: <Shield size={26} />,
     title: 'Website Maintenance',
     tagline: 'Always online. Always protected.',
     price: 'from 3,000 CZK/month',
@@ -296,7 +297,7 @@ export default function ServicesPage() {
                     background: `${svc.color}20`,
                     border: `1px solid ${svc.color}40`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: 26,
+                    color: svc.color,
                   }}>
                     {svc.icon}
                   </div>
@@ -336,8 +337,8 @@ export default function ServicesPage() {
                           width: 18, height: 18, borderRadius: '50%',
                           background: `${svc.color}20`, border: `1px solid ${svc.color}50`,
                           display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          flexShrink: 0, marginTop: 1, fontSize: 10, color: svc.color,
-                        }}>✓</span>
+                          flexShrink: 0, marginTop: 1, color: svc.color,
+                        }}><Check size={10} /></span>
                         {f}
                       </li>
                     ))}
@@ -402,9 +403,9 @@ export default function ServicesPage() {
             gap: 24,
           }}>
             {[
-              { icon: '⏱️', title: 'On-Time Delivery', desc: 'We ship on schedule, every time. If we miss a deadline, you get 10% off your invoice.' },
-              { icon: '🔒', title: 'Fixed Pricing', desc: 'Quote agreed upfront, no scope creep surprises. What we quote is what you pay.' },
-              { icon: '♾️', title: 'Unlimited Revisions', desc: 'Within scope, we iterate until you\'re 100% satisfied. Period.' },
+              { icon: <Clock size={28} color="#3b82f6" />, title: 'On-Time Delivery', desc: 'We ship on schedule, every time. If we miss a deadline, you get 10% off your invoice.' },
+              { icon: <Lock size={28} color="#3b82f6" />, title: 'Fixed Pricing', desc: 'Quote agreed upfront, no scope creep surprises. What we quote is what you pay.' },
+              { icon: <Infinity size={28} color="#3b82f6" />, title: 'Unlimited Revisions', desc: 'Within scope, we iterate until you\'re 100% satisfied. Period.' },
             ].map((g) => (
               <div
                 key={g.title}
@@ -415,7 +416,7 @@ export default function ServicesPage() {
                   display: 'flex', gap: 20, alignItems: 'flex-start',
                 }}
               >
-                <span style={{ fontSize: 36 }}>{g.icon}</span>
+                <div style={{ background: 'rgba(59,130,246,0.12)', borderRadius: 10, padding: 10, display: 'inline-flex', flexShrink: 0 }}>{g.icon}</div>
                 <div>
                   <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{g.title}</h3>
                   <p style={{ fontSize: 14, color: '#8892b0', lineHeight: 1.7 }}>{g.desc}</p>

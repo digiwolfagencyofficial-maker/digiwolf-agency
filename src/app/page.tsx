@@ -3,9 +3,16 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useInView } from 'framer-motion'
+import { Globe, Globe2, Scale, Bot, TrendingUp, Palette, Shield, Check, Inbox, Zap, Star } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FaqAccordion from '@/components/ui/FaqAccordion'
+
+const IconWrapper = ({ children }: { children: React.ReactNode }) => (
+  <div style={{ background: 'rgba(0,71,255,0.12)', borderRadius: '10px', padding: '10px', display: 'inline-flex' }}>
+    {children}
+  </div>
+)
 
 // Wolf SVG
 const WolfSVG = ({ size = 32 }: { size?: number }) => (
@@ -105,12 +112,12 @@ export default function HomePage() {
   }, [])
 
   const services = [
-    { icon: '🌐', title: 'Agency Websites', desc: 'High-converting, SEO-optimised websites built with Next.js that turn visitors into paying clients.', tag: 'Most Popular', price: 'from 45,000 CZK' },
-    { icon: '⚖️', title: 'Czech S.R.O. Formation', desc: 'Full Czech company registration end-to-end in English. No bureaucracy, no stress, just results.', tag: '', price: 'from 12,000 CZK' },
-    { icon: '🤖', title: 'AI Automation', desc: 'Custom AI workflows, chatbots, and automation pipelines that save your team 20+ hours per week.', tag: 'High Demand', price: 'from 25,000 CZK' },
-    { icon: '📈', title: 'SEO & Growth', desc: 'Data-driven SEO strategies tailored for CEE markets. Rank higher, get found, grow consistently.', tag: '', price: 'from 8,000 CZK/mo' },
-    { icon: '🎨', title: 'Brand Identity', desc: 'Premium logo, brand system, and visual identity that makes your business unforgettable.', tag: '', price: 'from 18,000 CZK' },
-    { icon: '🛡️', title: 'Maintenance & Support', desc: '24/7 monitoring, updates, security patches, and priority support for your digital assets.', tag: '', price: 'from 3,000 CZK/mo' },
+    { icon: <Globe size={24} className="text-blue-400" />, title: 'Agency Websites', desc: 'High-converting, SEO-optimised websites built with Next.js that turn visitors into paying clients.', tag: 'Most Popular', price: 'from 45,000 CZK' },
+    { icon: <Scale size={24} className="text-blue-400" />, title: 'Czech S.R.O. Formation', desc: 'Full Czech company registration end-to-end in English. No bureaucracy, no stress, just results.', tag: '', price: 'from 12,000 CZK' },
+    { icon: <Bot size={24} className="text-blue-400" />, title: 'AI Automation', desc: 'Custom AI workflows, chatbots, and automation pipelines that save your team 20+ hours per week.', tag: 'High Demand', price: 'from 25,000 CZK' },
+    { icon: <TrendingUp size={24} className="text-blue-400" />, title: 'SEO & Growth', desc: 'Data-driven SEO strategies tailored for CEE markets. Rank higher, get found, grow consistently.', tag: '', price: 'from 8,000 CZK/mo' },
+    { icon: <Palette size={24} className="text-blue-400" />, title: 'Brand Identity', desc: 'Premium logo, brand system, and visual identity that makes your business unforgettable.', tag: '', price: 'from 18,000 CZK' },
+    { icon: <Shield size={24} className="text-blue-400" />, title: 'Maintenance & Support', desc: '24/7 monitoring, updates, security patches, and priority support for your digital assets.', tag: '', price: 'from 3,000 CZK/mo' },
   ]
 
   const stats = [
@@ -258,9 +265,13 @@ export default function HomePage() {
                       <div style={{ height: 7, background: 'rgba(255,255,255,0.15)', borderRadius: 5, width: '80%', margin: '0 auto' }} />
                     </div>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10 }}>
-                      {[['🌐', '#0047FF'], ['⚖️', '#00c864'], ['🤖', '#7c3aed']].map(([icon, color], i) => (
-                        <div key={i} style={{ background: `rgba(${color === '#0047FF' ? '0,71,255' : color === '#00c864' ? '0,200,100' : '124,58,237'},0.1)`, borderRadius: 10, padding: 16, textAlign: 'center', border: `1px solid ${color}22` }}>
-                          <div style={{ fontSize: 20 }}>{icon}</div>
+                      {[
+                        { icon: <Globe size={20} color="#0047FF" />, color: '#0047FF', rgb: '0,71,255' },
+                        { icon: <Scale size={20} color="#00c864" />, color: '#00c864', rgb: '0,200,100' },
+                        { icon: <Bot size={20} color="#7c3aed" />, color: '#7c3aed', rgb: '124,58,237' },
+                      ].map(({ icon, color, rgb }, i) => (
+                        <div key={i} style={{ background: `rgba(${rgb},0.1)`, borderRadius: 10, padding: 16, textAlign: 'center', border: `1px solid ${color}22` }}>
+                          <div style={{ display: 'flex', justifyContent: 'center' }}>{icon}</div>
                           <div style={{ height: 6, background: 'rgba(255,255,255,0.1)', borderRadius: 3, marginTop: 8 }} />
                         </div>
                       ))}
@@ -342,7 +353,9 @@ export default function HomePage() {
                     }}>{s.tag}</span>
                   )}
 
-                  <div style={{ fontSize: 36, marginBottom: 20 }}>{s.icon}</div>
+                  <div style={{ marginBottom: 20 }}>
+                    <IconWrapper>{s.icon}</IconWrapper>
+                  </div>
                   <h3 style={{ fontSize: 20, fontWeight: 700, color: '#f0f4ff', marginBottom: 12 }}>{s.title}</h3>
                   <p style={{ color: '#8892b0', lineHeight: 1.7, marginBottom: 24, fontSize: 15 }}>{s.desc}</p>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -437,8 +450,8 @@ export default function HomePage() {
                       </div>
                       <div style={{ padding: 20, height: 120, background: 'linear-gradient(135deg, rgba(255,255,255,0.02), transparent)' }}>
                         <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                          <div style={{ width: 40, height: 40, borderRadius: 8, background: c.color + '33', border: `1px solid ${c.color}44`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>
-                            {i === 0 ? '💻' : '🌏'}
+                          <div style={{ width: 40, height: 40, borderRadius: 8, background: c.color + '33', border: `1px solid ${c.color}44`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                            {i === 0 ? <Globe size={20} color={c.color} /> : <Globe2 size={20} color={c.color} />}
                           </div>
                           <div>
                             <div style={{ height: 8, background: 'rgba(255,255,255,0.2)', borderRadius: 4, width: 120, marginBottom: 6 }} />
@@ -489,7 +502,9 @@ export default function HomePage() {
                       <div style={{ fontWeight: 700, color: '#f0f4ff', fontSize: 14 }}>{t.name}</div>
                       <div style={{ color: '#8892b0', fontSize: 12, marginTop: 2 }}>{t.role}</div>
                     </div>
-                    <div style={{ marginLeft: 'auto', color: '#ffa000', fontSize: 12 }}>★★★★★</div>
+                    <div style={{ marginLeft: 'auto', color: '#ffa000', display: 'flex', gap: 2 }}>
+                      {[...Array(5)].map((_, i) => <Star key={i} size={12} fill="#ffa000" color="#ffa000" />)}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -514,7 +529,9 @@ export default function HomePage() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 40 }}>
                     {['Lead qualification chatbots', 'Document automation & e-signatures', 'CRM data enrichment pipelines', 'AI-generated weekly reports'].map((item, i) => (
                       <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, color: '#c8d3f0', fontSize: 15 }}>
-                        <span style={{ width: 20, height: 20, background: 'rgba(0,71,255,0.2)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, color: '#3d74ff', flexShrink: 0 }}>✓</span>
+                        <span style={{ width: 20, height: 20, background: 'rgba(0,71,255,0.2)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          <Check size={12} color="#3d74ff" />
+                        </span>
                         {item}
                       </div>
                     ))}
@@ -534,13 +551,18 @@ export default function HomePage() {
                 </div>
                 {/* AI Flow Visual */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  {['Input Data', 'AI Processing', 'Automation', 'Results Delivered'].map((step, i) => (
+                  {[
+                    { label: 'Input Data', icon: <Inbox size={18} className="text-blue-400" /> },
+                    { label: 'AI Processing', icon: <Bot size={18} className="text-blue-400" /> },
+                    { label: 'Automation', icon: <Zap size={18} className="text-blue-400" /> },
+                    { label: 'Results Delivered', icon: <Check size={18} className="text-blue-400" /> },
+                  ].map((step, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                      <div style={{ width: 40, height: 40, borderRadius: 10, background: `rgba(0,71,255,${0.1 + i * 0.08})`, border: `1px solid rgba(0,71,255,${0.2 + i * 0.1})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, flexShrink: 0 }}>
-                        {['📥', '🤖', '⚡', '✅'][i]}
+                      <div style={{ width: 40, height: 40, borderRadius: 10, background: `rgba(0,71,255,${0.1 + i * 0.08})`, border: `1px solid rgba(0,71,255,${0.2 + i * 0.1})`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        {step.icon}
                       </div>
                       <div style={{ flex: 1, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: '12px 16px' }}>
-                        <div style={{ color: '#f0f4ff', fontWeight: 600, fontSize: 13 }}>{step}</div>
+                        <div style={{ color: '#f0f4ff', fontWeight: 600, fontSize: 13 }}>{step.label}</div>
                       </div>
                       {i < 3 && <div style={{ position: 'absolute', marginTop: 52, marginLeft: 20, width: 1, height: 12, background: 'rgba(0,71,255,0.3)' }} />}
                     </div>
@@ -596,7 +618,7 @@ export default function HomePage() {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
                     {plan.features.map((f, fi) => (
                       <div key={fi} style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c8d3f0', fontSize: 14 }}>
-                        <span style={{ color: plan.featured ? '#3d74ff' : '#8892b0', fontSize: 14 }}>✓</span> {f}
+                        <Check size={14} color={plan.featured ? '#3d74ff' : '#8892b0'} /> {f}
                       </div>
                     ))}
                   </div>
@@ -683,9 +705,13 @@ export default function HomePage() {
                     See Pricing
                   </Link>
                 </div>
-                <p style={{ color: '#8892b0', fontSize: 13, marginTop: 24 }}>
-                  ✓ Free 30-minute consultation &nbsp;&nbsp; ✓ No commitment required &nbsp;&nbsp; ✓ Response within 24 hours
-                </p>
+                <div style={{ color: '#8892b0', fontSize: 13, marginTop: 24, display: 'flex', gap: 24, justifyContent: 'center', flexWrap: 'wrap' }}>
+                  {['Free 30-minute consultation', 'No commitment required', 'Response within 24 hours'].map(item => (
+                    <span key={item} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                      <Check size={14} color="#00c864" /> {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

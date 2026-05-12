@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { Monitor, Globe2, Bot, Target, Settings, TrendingUp } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -15,7 +16,7 @@ const caseStudies = [
     color: '#0047FF',
     bg: 'rgba(0,71,255,0.06)',
     border: 'rgba(0,71,255,0.2)',
-    emoji: '💻',
+    icon: <Monitor size={24} />,
     metrics: [
       { value: '+340%', label: 'Conversion rate' },
       { value: '5 days', label: 'Delivery time' },
@@ -38,7 +39,7 @@ const caseStudies = [
     color: '#10b981',
     bg: 'rgba(16,185,129,0.06)',
     border: 'rgba(16,185,129,0.2)',
-    emoji: '🌏',
+    icon: <Globe2 size={24} />,
     metrics: [
       { value: '€180K', label: 'Revenue in 90 days' },
       { value: '3 langs', label: 'CZ / EN / MN' },
@@ -61,7 +62,7 @@ const caseStudies = [
     color: '#8b5cf6',
     bg: 'rgba(139,92,246,0.06)',
     border: 'rgba(139,92,246,0.2)',
-    emoji: '🤖',
+    icon: <Bot size={24} />,
     metrics: [
       { value: '23h/wk', label: 'Time saved on admin' },
       { value: '4.8×', label: 'More qualified leads' },
@@ -165,7 +166,7 @@ export default function WorkPageClient() {
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 32, flexWrap: 'wrap', gap: 20 }}>
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                      <div style={{ width: 48, height: 48, borderRadius: 12, background: cs.bg, border: `1px solid ${cs.border}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24 }}>{cs.emoji}</div>
+                      <div style={{ width: 48, height: 48, borderRadius: 12, background: cs.bg, border: `1px solid ${cs.border}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: cs.color }}>{cs.icon}</div>
                       <div>
                         <div style={{ fontSize: 13, color: '#8892b0', marginBottom: 2 }}>{cs.category}</div>
                         <div style={{ fontSize: 20, fontWeight: 800 }}>{cs.client}</div>
@@ -192,13 +193,13 @@ export default function WorkPageClient() {
                 {/* Challenge / Solution / Results */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24, marginBottom: 36 }}>
                   {[
-                    { label: 'The Challenge', text: cs.challenge, icon: '🎯' },
-                    { label: 'Our Solution', text: cs.solution, icon: '⚙️' },
-                    { label: 'The Results', text: cs.results, icon: '📈' },
+                    { label: 'The Challenge', text: cs.challenge, icon: <Target size={18} /> },
+                    { label: 'Our Solution', text: cs.solution, icon: <Settings size={18} /> },
+                    { label: 'The Results', text: cs.results, icon: <TrendingUp size={18} /> },
                   ].map((item) => (
                     <div key={item.label} style={{ padding: '24px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 16 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
-                        <span style={{ fontSize: 18 }}>{item.icon}</span>
+                        <span style={{ color: '#8892b0', display: 'flex' }}>{item.icon}</span>
                         <span style={{ fontSize: 13, fontWeight: 700, color: '#8892b0', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{item.label}</span>
                       </div>
                       <p style={{ fontSize: 14, color: '#c0c8d8', lineHeight: 1.75, margin: 0 }}>{item.text}</p>

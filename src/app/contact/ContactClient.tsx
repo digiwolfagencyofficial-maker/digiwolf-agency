@@ -2,13 +2,14 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { Mail, Phone, MapPin, Zap, Check, Calendar } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 const contactInfo = [
-  { icon: '✉', label: 'Email', value: 'hello@digiwolf.agency', href: 'mailto:hello@digiwolf.agency' },
-  { icon: '📞', label: 'Phone', value: '+420 XXX XXX XXX', href: 'tel:+420000000000' },
-  { icon: '📍', label: 'Location', value: 'Prague, Czech Republic', href: '#' },
+  { icon: <Mail size={18} />, label: 'Email', value: 'hello@digiwolf.agency', href: 'mailto:hello@digiwolf.agency' },
+  { icon: <Phone size={18} />, label: 'Phone', value: '+420 XXX XXX XXX', href: 'tel:+420000000000' },
+  { icon: <MapPin size={18} />, label: 'Location', value: 'Prague, Czech Republic', href: '#' },
 ]
 
 const socials = [
@@ -146,7 +147,7 @@ export default function ContactPage() {
                       width: '44px', height: '44px', borderRadius: '12px',
                       background: 'rgba(59,130,246,0.12)', border: '1px solid rgba(59,130,246,0.25)',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: '18px', flexShrink: 0,
+                      color: '#93c5fd', flexShrink: 0,
                     }}>
                       {item.icon}
                     </div>
@@ -170,7 +171,7 @@ export default function ContactPage() {
               border: '1px solid rgba(59,130,246,0.2)',
               borderRadius: '16px', padding: '24px', marginBottom: '48px',
             }}>
-              <div style={{ fontSize: '28px', marginBottom: '10px' }}>⚡</div>
+              <div style={{ marginBottom: '10px', color: '#f59e0b' }}><Zap size={28} /></div>
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#f0f4ff', margin: '0 0 8px' }}>
                 4-Hour Response Guarantee
               </h3>
@@ -275,9 +276,9 @@ export default function ContactPage() {
                     width: '72px', height: '72px', borderRadius: '50%',
                     background: 'rgba(16,185,129,0.15)', border: '2px solid rgba(16,185,129,0.4)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    margin: '0 auto 24px', fontSize: '28px',
+                    margin: '0 auto 24px', color: '#10b981',
                   }}>
-                    ✓
+                    <Check size={28} />
                   </div>
                   <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#f0f4ff', margin: '0 0 12px' }}>
                     Message Received!
@@ -514,7 +515,7 @@ export default function ContactPage() {
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' as const, marginBottom: '24px' }}>
               {['Free consultation', '30 minutes', 'No commitment'].map((tag) => (
                 <div key={tag} style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#8892b0' }}>
-                  <span style={{ color: '#10b981', fontSize: '14px' }}>✓</span> {tag}
+                  <Check size={14} style={{ color: '#10b981' }} /> {tag}
                 </div>
               ))}
             </div>
@@ -537,7 +538,7 @@ export default function ContactPage() {
                 ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
               }}
             >
-              📅 Open Calendly
+              <Calendar size={16} /> Open Calendly
             </a>
           </div>
           <div style={{
@@ -545,7 +546,7 @@ export default function ContactPage() {
             background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.08)',
             borderRadius: '16px', padding: '24px', textAlign: 'center' as const,
           }}>
-            <div style={{ fontSize: '14px', fontWeight: 700, color: '#f0f4ff', marginBottom: '16px' }}>📅 Available Slots</div>
+            <div style={{ fontSize: '14px', fontWeight: 700, color: '#f0f4ff', marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}><Calendar size={14} /> Available Slots</div>
             {['Mon–Fri', 'Sat'].map((day, i) => (
               <div key={day} style={{
                 display: 'flex', justifyContent: 'space-between',

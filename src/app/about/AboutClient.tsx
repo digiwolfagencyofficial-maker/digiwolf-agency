@@ -3,30 +3,31 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Zap, Target, Handshake, TrendingUp, Scale, Rocket, Palette, Bot, Globe2, Settings, BookOpen, Heart, MapPin } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 const values = [
   {
-    icon: '⚡',
+    icon: <Zap size={24} />,
     title: 'Speed',
     desc: 'We move fast without cutting corners. Most projects launch in 5–10 days. Systematized delivery means premium results at startup velocity.',
     color: '#f59e0b',
   },
   {
-    icon: '🎯',
+    icon: <Target size={24} />,
     title: 'Precision',
     desc: 'Every line of code, every pixel, every document is crafted to the highest standard. We don\'t ship anything we wouldn\'t be proud to put our name on.',
     color: '#3b82f6',
   },
   {
-    icon: '🤝',
+    icon: <Handshake size={24} />,
     title: 'Transparency',
     desc: 'No hidden fees, no vague timelines, no agency doublespeak. Clear pricing, honest scoping, and direct communication throughout every project.',
     color: '#10b981',
   },
   {
-    icon: '📈',
+    icon: <TrendingUp size={24} />,
     title: 'Results',
     desc: 'We measure success by your growth metrics, not our activity. Every strategy we deploy is tied to concrete, trackable outcomes for your business.',
     color: '#8b5cf6',
@@ -41,19 +42,19 @@ const stats = [
 ]
 
 const timeline = [
-  { year: '2020', event: 'Agency founded in Prague by Uuganbayar Ganbaatar', icon: '🐺' },
-  { year: '2021', event: 'First 10 Czech S.R.O. formations for Mongolian clients', icon: '🏛️' },
-  { year: '2022', event: 'Expanded into web development — 15 sites launched', icon: '🚀' },
-  { year: '2023', event: 'Brand Identity service launched; 30+ companies rebranded', icon: '🎨' },
-  { year: '2024', event: 'AI Automation division opens; 47+ clients across 3 countries', icon: '🤖' },
-  { year: '2025', event: 'Expanding into Slovak and Polish markets', icon: '🌍' },
+  { year: '2020', event: 'Agency founded in Prague by Uuganbayar Ganbaatar', icon: <Scale size={18} /> },
+  { year: '2021', event: 'First 10 Czech S.R.O. formations for Mongolian clients', icon: <Scale size={18} /> },
+  { year: '2022', event: 'Expanded into web development — 15 sites launched', icon: <Rocket size={18} /> },
+  { year: '2023', event: 'Brand Identity service launched; 30+ companies rebranded', icon: <Palette size={18} /> },
+  { year: '2024', event: 'AI Automation division opens; 47+ clients across 3 countries', icon: <Bot size={18} /> },
+  { year: '2025', event: 'Expanding into Slovak and Polish markets', icon: <Globe2 size={18} /> },
 ]
 
 const culturePillars = [
-  { icon: '🌍', title: 'Global Mindset', desc: 'We serve clients in 3 countries and speak Czech, English, and Mongolian. Diversity is our superpower.' },
-  { icon: '⚙️', title: 'Systems Thinking', desc: 'We build repeatable processes so quality is never an accident — it\'s engineered in from day one.' },
-  { icon: '📚', title: 'Continuous Learning', desc: 'Every team member invests in staying ahead — new frameworks, new regulations, new AI tools.' },
-  { icon: '❤️', title: 'Client Empathy', desc: 'We\'ve all been outsiders building something new. That lived experience shapes how we treat every client.' },
+  { icon: <Globe2 size={24} />, title: 'Global Mindset', desc: 'We serve clients in 3 countries and speak Czech, English, and Mongolian. Diversity is our superpower.' },
+  { icon: <Settings size={24} />, title: 'Systems Thinking', desc: 'We build repeatable processes so quality is never an accident — it\'s engineered in from day one.' },
+  { icon: <BookOpen size={24} />, title: 'Continuous Learning', desc: 'Every team member invests in staying ahead — new frameworks, new regulations, new AI tools.' },
+  { icon: <Heart size={24} />, title: 'Client Empathy', desc: 'We\'ve all been outsiders building something new. That lived experience shapes how we treat every client.' },
 ]
 
 export default function AboutPage() {
@@ -441,7 +442,9 @@ export default function AboutPage() {
         background: 'linear-gradient(180deg, transparent 0%, rgba(59,130,246,0.07) 100%)',
       }}>
         <div style={{ maxWidth: 680, margin: '0 auto' }}>
-          <div style={{ fontSize: 48, marginBottom: 20 }}>🐺</div>
+          <div style={{ marginBottom: 20, display: 'flex', justifyContent: 'center' }}>
+            <Image src="/digiwolf-icon.png" alt="Digi Wolf" width={72} height={72} style={{ borderRadius: 16, opacity: 0.9 }} />
+          </div>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', fontWeight: 800, marginBottom: 20 }}>
             Ready to Join the Pack?
           </h2>
@@ -470,12 +473,12 @@ export default function AboutPage() {
             gap: 40, flexWrap: 'wrap' as const,
           }}>
             {[
-              { icon: '📍', text: 'Based in Prague, Czech Republic' },
-              { icon: '🌐', text: 'Serving 3 countries' },
-              { icon: '🗣️', text: 'CZ, EN, MN spoken' },
+              { icon: <MapPin size={14} />, text: 'Based in Prague, Czech Republic' },
+              { icon: <Globe2 size={14} />, text: 'Serving 3 countries' },
+              { icon: <Settings size={14} />, text: 'CZ, EN, MN spoken' },
             ].map((item) => (
               <div key={item.text} style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#8892b0', fontSize: 14 }}>
-                <span>{item.icon}</span>
+                <span style={{ display: 'flex' }}>{item.icon}</span>
                 <span>{item.text}</span>
               </div>
             ))}
