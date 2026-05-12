@@ -11,6 +11,7 @@ const adminNav = [
   { icon: '📋', label: 'Projects', href: '/admin/projects' },
   { icon: '🧾', label: 'Invoices', href: '/admin/invoices' },
   { icon: '🎯', label: 'Leads', href: '/admin/leads' },
+  { icon: '📅', label: 'Bookings', href: '/admin/bookings' },
   { icon: '📊', label: 'Analytics', href: '/admin/analytics' },
   { icon: '⚙️', label: 'Settings', href: '/admin/settings' },
 ];

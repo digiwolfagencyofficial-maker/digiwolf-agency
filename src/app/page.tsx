@@ -690,17 +690,18 @@ export default function HomePage() {
                     onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-3px)'; el.style.boxShadow = '0 16px 60px rgba(0,71,255,0.7)'; }}
                     onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'none'; el.style.boxShadow = '0 8px 40px rgba(0,71,255,0.5)'; }}
                   >
-                    Book Discovery Call →
+                    Start Your Project →
                   </Link>
-                  <Link href="/pricing" style={{
+                  <Link href="/book" style={{
                     color: '#f0f4ff', textDecoration: 'none',
                     padding: '18px 40px', borderRadius: 14, fontSize: 17, fontWeight: 700,
                     border: '1px solid rgba(255,255,255,0.15)', transition: 'all 0.2s',
+                    display: 'inline-flex', alignItems: 'center', gap: 8,
                   }}
                     onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(255,255,255,0.05)'; el.style.borderColor = 'rgba(255,255,255,0.3)'; }}
                     onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'transparent'; el.style.borderColor = 'rgba(255,255,255,0.15)'; }}
                   >
-                    See Pricing
+                    Book a Free Call
                   </Link>
                 </div>
                 <div style={{ color: '#8892b0', fontSize: 13, marginTop: 24, display: 'flex', gap: 24, justifyContent: 'center', flexWrap: 'wrap' }}>

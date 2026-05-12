@@ -519,27 +519,7 @@ export default function ContactPage() {
                 </div>
               ))}
             </div>
-            <a
-              href="https://calendly.com/digiwolf-agency-consultation/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                background: '#3b82f6', color: '#fff', padding: '14px 28px',
-                borderRadius: '10px', fontWeight: 700, fontSize: '15px',
-                textDecoration: 'none', transition: 'all 0.2s ease',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = '#2563eb'
-                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = '#3b82f6'
-                ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
-              }}
-            >
-              <Calendar size={16} /> Open Calendly
-            </a>
+            <Link href="/book" style={{ color: '#3d74ff', fontWeight: 600 }}>→ Book a free 30-min discovery call</Link>
           </div>
           <div style={{
             width: '280px', flexShrink: 0,
