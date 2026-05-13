@@ -61,7 +61,7 @@ export default function Navbar() {
         <div style={{ maxWidth: 1280, margin: '0 auto', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-            <Image src="/digiwolf-icon.png" alt="Digi Wolf Agency" width={40} height={40} priority style={{ objectFit: 'contain' }} />
+            <Image src="/digiwolf-icon-transparent.png" alt="Digi Wolf Agency" width={40} height={40} priority style={{ objectFit: 'contain' }} />
             <span style={{ color: '#f0f4ff', fontWeight: 800, fontSize: 17, letterSpacing: '0.05em' }}>DIGIWOLF</span>
           </Link>
 

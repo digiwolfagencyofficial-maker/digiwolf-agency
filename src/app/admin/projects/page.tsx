@@ -1,8 +1,9 @@
-'use client'
 import dynamic from 'next/dynamic'
+import { requireAuth } from '@/lib/auth'
 
 const Inner = dynamic(() => import('./PageContent').then(m => ({ default: m.AdminProjectsPage })), { ssr: false })
 
-export default function Page() {
+export default async function Page() {
+  await requireAuth()
   return <Inner />
 }
