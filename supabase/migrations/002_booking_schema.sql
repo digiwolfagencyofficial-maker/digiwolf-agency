@@ -9,7 +9,8 @@ create table bookings (
   preferred_time text not null, -- '09:00' | '10:00' | '11:00' | '14:00' | '15:00' | '16:00'
   status text default 'pending', -- 'pending' | 'confirmed' | 'cancelled'
   google_event_id text,
-  created_at timestamptz default now()
+  created_at timestamptz default now(),
+  updated_at timestamptz
 );
 alter table bookings enable row level security;
 create policy "Anyone can insert" on bookings for insert with check (true);
