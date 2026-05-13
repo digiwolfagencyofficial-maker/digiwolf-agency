@@ -1,4 +1,4 @@
-# Digi Wolf Agency — Booking System: Complete Build
+# Digi Wolf Agency — Booking System + Login Fix: Complete Build
 
 ## CRITICAL RULES
 - Run ALL work through Claude Code CLI (Claude Pro) — no API calls
@@ -176,7 +176,93 @@ Commit: `git add -A && git commit -m "feat: admin setup guide - Supabase + Googl
 
 ---
 
-## TASK 6 — Build + Deploy
+## TASK 6 — Fix Admin Login (Supabase Auth)
+
+The current login uses next-auth but it's broken. Replace with direct Supabase Auth:
+
+### 6a. Update `/src/app/login/page.tsx`:
+- Remove `next-auth/react` import
+- Import `import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'` 
+- Create client: `const supabase = createClientComponentClient()`
+- handleSubmit: 
+  ```ts
+  const { error } = await supabase.auth.signInWithPassword({ email, password })
+  if (error) setError(error.message)
+  else router.push('/admin/dashboard')
+  ```
+- For Google sign-in button:
+  ```ts
+  const handleGoogleSignIn = async () => {
+    await supabase.auth.signInWithOAuth({ 
+      provider: 'google',
+      options: { redirectTo: `${window.location.origin}/auth/callback` }
+    })
+  }
+  ```
+
+### 6b. Create `/src/app/auth/callback/route.ts`:
+```ts
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
+import { cookies } from 'next/headers'
+import { NextResponse } from 'next/server'
+
+export async function GET(request: Request) {
+  const requestUrl = new URL(request.url)
+  const code = requestUrl.searchParams.get('code')
+  if (code) {
+    const supabase = createRouteHandlerClient({ cookies })
+    await supabase.auth.exchangeCodeForSession(code)
+  }
+  return NextResponse.redirect(new URL('/admin/dashboard', request.url))
+}
+```
+
+### 6c. Update `/src/app/register/page.tsx`:
+- Same pattern: use `supabase.auth.signUp({ email, password })`
+- After signup, show "Check your email for confirmation link"
+
+### 6d. Protect admin routes — create `/src/lib/auth.ts`:
+```ts
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+
+export async function requireAuth() {
+  const supabase = createServerComponentClient({ cookies })
+  const { data: { session } } = await supabase.auth.getSession()
+  if (!session) redirect('/login')
+  return session
+}
+```
+
+### 6e. Add auth check to all `/src/app/admin/**/page.tsx` files:
+At the top of each admin page component, call:
+```ts
+import { requireAuth } from '@/lib/auth'
+// inside component:
+await requireAuth()
+```
+
+### 6f. Create `/src/app/logout/route.ts`:
+```ts
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
+import { cookies } from 'next/headers'
+import { NextResponse } from 'next/server'
+
+export async function GET() {
+  const supabase = createRouteHandlerClient({ cookies })
+  await supabase.auth.signOut()
+  return NextResponse.redirect(new URL('/login', process.env.NEXT_PUBLIC_SITE_URL || 'https://digiwolf.agency'))
+}
+```
+
+### 6g. Update all admin PageContent.tsx files — add logout link in nav
+
+Commit: `git add -A && git commit -m "feat: Supabase Auth for admin login/logout/register"`
+
+---
+
+## TASK 7 — Build + Deploy
 
 1. `npm run build` — fix ALL TypeScript/build errors (ignore pre-existing node_modules type errors)
 2. `git add -A && git commit -m "fix: final build clean for booking system"`  
