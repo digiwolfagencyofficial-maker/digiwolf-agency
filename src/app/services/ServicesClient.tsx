@@ -222,7 +222,7 @@ export default function ServicesPage() {
             Built by experts who understand Central European markets.
           </p>
           <div className="btn-row" style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" style={{
+            <Link href="/book" style={{
               background: '#3b82f6', color: '#fff', padding: '14px 32px',
               borderRadius: 12, fontWeight: 700, fontSize: 16,
               textDecoration: 'none', display: 'inline-block',
@@ -374,7 +374,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* CTA */}
-                <Link href="/contact" style={{
+                <Link href={`/book?service=${svc.id === 'web' ? 'website' : svc.id}`} style={{
                   display: 'block', textAlign: 'center' as const,
                   background: isHovered ? svc.color : 'rgba(255,255,255,0.05)',
                   color: '#fff', padding: '14px 24px', borderRadius: 12,
@@ -383,7 +383,7 @@ export default function ServicesPage() {
                   transition: 'all 0.3s',
                   boxShadow: isHovered ? `0 8px 30px ${svc.color}40` : 'none',
                 }}>
-                  Get Started →
+                  Book a Consultation →
                 </Link>
               </div>
             )
@@ -449,7 +449,7 @@ export default function ServicesPage() {
             and deliver a detailed proposal within 24 hours.
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center' as const, flexWrap: 'wrap' as const }}>
-            <Link href="/contact" style={{
+            <Link href="/book" style={{
               background: '#3b82f6', color: '#fff', padding: '16px 40px',
               borderRadius: 12, fontWeight: 700, fontSize: 17,
               textDecoration: 'none', boxShadow: '0 8px 30px rgba(59,130,246,0.4)',

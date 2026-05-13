@@ -113,7 +113,7 @@ export default function AboutPage() {
             where they started. We build the tools. We open the doors.
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' as const }}>
-            <Link href="/contact" style={{
+            <Link href="/book" style={{
               background: '#3b82f6', color: '#fff', padding: '14px 36px',
               borderRadius: 12, fontWeight: 700, fontSize: 16,
               textDecoration: 'none', display: 'inline-block',
@@ -251,11 +251,19 @@ export default function AboutPage() {
               having helped over 47 entrepreneurs from Mongolia, Kazakhstan, and Central Asia establish their
               presence in the European market.
             </p>
-            <p style={{ fontSize: 16, color: '#8892b0', lineHeight: 1.85 }}>
+            <p style={{ fontSize: 16, color: '#8892b0', lineHeight: 1.85, marginBottom: 28 }}>
               With over 10 years living and working in the Czech Republic, he understands firsthand what
               it means to be an outsider building something real in a new country — and that empathy is at
               the core of every service Digi Wolf offers.
             </p>
+            <Link href="/book" style={{
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+              background: '#3b82f6', color: '#fff', textDecoration: 'none',
+              padding: '13px 28px', borderRadius: 10, fontSize: 15, fontWeight: 700,
+              boxShadow: '0 8px 30px rgba(59,130,246,0.35)',
+            }}>
+              Work with us →
+            </Link>
           </div>
         </div>
       </section>

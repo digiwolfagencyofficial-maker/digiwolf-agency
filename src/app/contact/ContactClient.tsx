@@ -310,6 +310,21 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <>
+                  {/* Book a call CTA */}
+                  <div style={{ marginBottom: 28, padding: '16px 20px', background: 'rgba(0,71,255,0.08)', border: '1px solid rgba(0,71,255,0.25)', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
+                    <div>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#f0f4ff', marginBottom: 2 }}>Prefer a call?</div>
+                      <div style={{ fontSize: 12, color: '#8892b0' }}>Book a free 30-min discovery session</div>
+                    </div>
+                    <Link href="/book" style={{
+                      display: 'inline-flex', alignItems: 'center', gap: 6,
+                      background: '#0047FF', color: '#fff', textDecoration: 'none',
+                      padding: '9px 18px', borderRadius: 8, fontSize: 13, fontWeight: 700,
+                      whiteSpace: 'nowrap',
+                    }}>
+                      Book a Free 30-min Discovery Call →
+                    </Link>
+                  </div>
                   <h2 style={{ fontSize: '24px', fontWeight: 800, color: '#f0f4ff', margin: '0 0 8px', position: 'relative' }}>
                     Start Your Project
                   </h2>

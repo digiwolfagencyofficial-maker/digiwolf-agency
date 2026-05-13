@@ -213,7 +213,7 @@ export default function HomePage() {
                   >
                     Start Your Project →
                   </Link>
-                  <Link href="/case-studies" style={{
+                  <Link href="/book" style={{
                     color: '#f0f4ff', textDecoration: 'none',
                     padding: '16px 32px', borderRadius: 12, fontSize: 16, fontWeight: 600,
                     border: '1px solid rgba(255,255,255,0.12)', transition: 'all 0.2s',
@@ -222,7 +222,7 @@ export default function HomePage() {
                     onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = '#0047FF'; el.style.background = 'rgba(0,71,255,0.1)'; }}
                     onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = 'rgba(255,255,255,0.12)'; el.style.background = 'transparent'; }}
                   >
-                    View Case Studies
+                    Book a Free Call
                   </Link>
                 </div>
 

@@ -82,6 +82,7 @@ export default function Footer() {
                 { label: 'Work', href: '/work' },
                 { label: 'Process', href: '/process' },
                 { label: 'Pricing', href: '/pricing' },
+                { label: 'Book a Call', href: '/book' },
                 { label: 'Contact', href: '/contact' },
               ].map(l => (
                 <Link key={l.label} href={l.href} style={{ fontSize: 14, color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}

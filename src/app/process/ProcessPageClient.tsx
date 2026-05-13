@@ -185,6 +185,19 @@ export default function ProcessPageClient() {
                           ))}
                         </div>
                       </div>
+                      {step.num === '01' && (
+                        <div style={{ marginTop: 24 }}>
+                          <Link href="/book" style={{
+                            display: 'inline-flex', alignItems: 'center', gap: 8,
+                            background: 'rgba(0,71,255,0.15)', border: '1px solid rgba(0,71,255,0.4)',
+                            color: '#3d74ff', padding: '10px 20px', borderRadius: 10,
+                            fontWeight: 700, fontSize: 14, textDecoration: 'none',
+                            transition: 'all 0.2s',
+                          }}>
+                            → Book your free call
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

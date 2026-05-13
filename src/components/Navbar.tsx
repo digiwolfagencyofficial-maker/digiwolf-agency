@@ -98,7 +98,7 @@ export default function Navbar() {
             >
               Sign In
             </Link>
-            <Link href="/contact" style={{
+            <Link href="/book" style={{
               background: '#0047FF', color: '#fff', textDecoration: 'none',
               padding: '10px 20px', borderRadius: 10, fontSize: 14, fontWeight: 700,
               transition: 'transform 0.2s, box-shadow 0.2s',
@@ -188,7 +188,7 @@ export default function Navbar() {
               }}>
                 Sign In
               </Link>
-              <Link href="/contact" onClick={closeMenu} style={{
+              <Link href="/book" onClick={closeMenu} style={{
                 padding: '16px', borderRadius: 12, textDecoration: 'none',
                 fontSize: 16, fontWeight: 700, color: '#fff',
                 background: '#0047FF', textAlign: 'center',

@@ -225,7 +225,7 @@ export default function PricingPage() {
                   <div style={{ fontSize: 13, color: '#8892b0', marginTop: 8 }}>{tier.priceNote}</div>
                 </div>
 
-                <Link href="/contact" style={{
+                <Link href={tier.id === 'enterprise' ? '/book' : `/book?service=website`} style={{
                   display: 'block', textAlign: 'center' as const,
                   background: tier.featured ? '#3b82f6' : 'rgba(255,255,255,0.06)',
                   color: '#fff', padding: '13px 24px', borderRadius: 12,
@@ -235,7 +235,7 @@ export default function PricingPage() {
                   boxShadow: tier.featured ? '0 8px 30px rgba(59,130,246,0.4)' : 'none',
                   transition: 'all 0.2s',
                 }}>
-                  {tier.id === 'enterprise' ? 'Contact Us' : 'Get Started →'}
+                  {tier.id === 'enterprise' ? 'Book a Call →' : 'Get Started →'}
                 </Link>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -437,7 +437,7 @@ export default function PricingPage() {
             Book a free 30-minute strategy call and we&apos;ll help you figure out exactly what you need —
             no commitment, no sales pressure.
           </p>
-          <Link href="/contact" style={{
+          <Link href="/book" style={{
             display: 'inline-block',
             background: '#3b82f6', color: '#fff', padding: '16px 40px',
             borderRadius: 12, fontWeight: 700, fontSize: 17,
