@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
-import { auth } from '@/lib/auth'
+import { getSession } from '@/lib/auth'
 
 export async function GET() {
-  const session = await auth()
+  const session = await getSession()
 
-  if (!session || (session.user as { role?: string }).role !== 'admin') {
+  if (!session) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 

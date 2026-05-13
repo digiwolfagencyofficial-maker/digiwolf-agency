@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
-import { auth } from '@/lib/auth'
+import { getSession } from '@/lib/auth'
 import { z } from 'zod'
 
 const leadSchema = z.object({
@@ -13,9 +13,9 @@ const leadSchema = z.object({
 })
 
 export async function GET() {
-  const session = await auth()
+  const session = await getSession()
 
-  if (!session || (session.user as { role?: string }).role !== 'admin') {
+  if (!session) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
