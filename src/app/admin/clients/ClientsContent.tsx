@@ -14,6 +14,7 @@ const adminNav = [
   { icon: '📅', label: 'Bookings', href: '/admin/bookings' },
   { icon: '📊', label: 'Analytics', href: '/admin/analytics' },
   { icon: '⚙️', label: 'Settings', href: '/admin/settings' },
+  { icon: '🛠', label: 'Setup', href: '/admin/setup' },
 ];
 
 type Client = {
