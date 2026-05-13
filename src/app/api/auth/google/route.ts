@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
     `, { status: 400, headers: { 'Content-Type': 'text/html' } })
   }
 
-  const redirectUri = process.env.GOOGLE_REDIRECT_URI || 'https://digiwolf-agency.vercel.app/api/auth/google/callback'
+  const redirectUri = process.env.GOOGLE_REDIRECT_URI || 'https://digiwolf.agency/api/auth/google/callback'
 
   const params = new URLSearchParams({
     client_id: process.env.GOOGLE_CLIENT_ID!,

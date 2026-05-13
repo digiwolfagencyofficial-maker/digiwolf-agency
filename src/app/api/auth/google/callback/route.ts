@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid state' }, { status: 400 })
   }
 
-  const redirectUri = process.env.GOOGLE_REDIRECT_URI || 'https://digiwolf-agency.vercel.app/api/auth/google/callback'
+  const redirectUri = process.env.GOOGLE_REDIRECT_URI || 'https://digiwolf.agency/api/auth/google/callback'
 
   const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
     method: 'POST',
