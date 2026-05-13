@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
+import { createCalendarEvent } from '@/lib/google-calendar'
 
 const TIME_SLOTS = ['09:00', '10:00', '11:00', '14:00', '15:00', '16:00']
 
@@ -40,6 +41,29 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid time slot' }, { status: 400 })
     }
 
+    // Slot conflict check
+    const { data: existing } = await supabaseAdmin
+      .from('bookings')
+      .select('id')
+      .eq('preferred_date', preferred_date)
+      .eq('preferred_time', preferred_time)
+      .neq('status', 'cancelled')
+      .maybeSingle()
+    if (existing) {
+      return NextResponse.json({ error: 'This slot was just taken — please choose another.' }, { status: 409 })
+    }
+
+    // Create Google Calendar event (non-blocking if not configured)
+    const googleEventId = await createCalendarEvent({
+      name,
+      email,
+      company: company || null,
+      service,
+      message: message || null,
+      date: preferred_date,
+      time: preferred_time,
+    })
+
     const { data, error } = await supabaseAdmin
       .from('bookings')
       .insert({
@@ -51,6 +75,7 @@ export async function POST(request: NextRequest) {
         preferred_date,
         preferred_time,
         status: 'pending',
+        google_event_id: googleEventId || null,
       })
       .select('id')
       .single()
@@ -60,7 +85,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Failed to create booking' }, { status: 500 })
     }
 
-    return NextResponse.json({ success: true, id: data.id })
+    return NextResponse.json({ success: true, id: data.id, ref: data.id.slice(0, 8).toUpperCase() })
   } catch (err) {
     console.error('Booking API error:', err)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })

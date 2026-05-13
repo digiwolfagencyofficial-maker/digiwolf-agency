@@ -8,6 +8,7 @@ create table bookings (
   preferred_date date not null,
   preferred_time text not null, -- '09:00' | '10:00' | '11:00' | '14:00' | '15:00' | '16:00'
   status text default 'pending', -- 'pending' | 'confirmed' | 'cancelled'
+  google_event_id text,
   created_at timestamptz default now()
 );
 alter table bookings enable row level security;
