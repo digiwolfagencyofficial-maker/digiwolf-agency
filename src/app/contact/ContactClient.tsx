@@ -5,6 +5,12 @@ import Link from 'next/link'
 import { Mail, Phone, MapPin, Zap, Check, Calendar } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import {
+  CONTACT_BUDGETS,
+  CONTACT_SERVICES,
+  contactLeadSchema,
+  formatContactFieldErrors,
+} from '@/lib/contact-options'
 
 const contactInfo = [
   { icon: <Mail size={18} />, label: 'Email', value: 'info@digiwolf.agency', href: 'mailto:info@digiwolf.agency' },
@@ -37,27 +43,51 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
   const [focusedField, setFocusedField] = useState<string | null>(null)
   const [hoveredBtn, setHoveredBtn] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    const { name } = e.target
+    setForm((prev) => ({ ...prev, [name]: e.target.value }))
+    if (fieldErrors[name]) {
+      setFieldErrors((prev) => {
+        const next = { ...prev }
+        delete next[name]
+        return next
+      })
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setLoading(true)
     setError('')
+    setFieldErrors({})
+
+    const parsed = contactLeadSchema.safeParse(form)
+    if (!parsed.success) {
+      setFieldErrors(formatContactFieldErrors(parsed.error))
+      return
+    }
+
+    setLoading(true)
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify(parsed.data),
       })
+      const data = await res.json().catch(() => ({}))
       if (res.ok) {
         setSubmitted(true)
+      } else if (res.status === 400 && data.fields) {
+        setFieldErrors(data.fields as Record<string, string>)
+        setError(data.error ?? 'Please check the highlighted fields.')
       } else {
-        setError('Something went wrong. Please try again or email us directly.')
+        setError(
+          (data as { error?: string }).error ??
+            'Something went wrong. Please try again or email us directly.'
+        )
       }
     } catch {
       setError('Network error. Please try again or email us directly.')
@@ -68,8 +98,16 @@ export default function ContactPage() {
 
   const inputStyle = (name: string): React.CSSProperties => ({
     width: '100%',
-    background: focusedField === name ? 'rgba(59,130,246,0.06)' : 'rgba(255,255,255,0.03)',
-    border: focusedField === name ? '1px solid rgba(59,130,246,0.5)' : '1px solid rgba(255,255,255,0.1)',
+    background: fieldErrors[name]
+      ? 'rgba(239,68,68,0.06)'
+      : focusedField === name
+        ? 'rgba(59,130,246,0.06)'
+        : 'rgba(255,255,255,0.03)',
+    border: fieldErrors[name]
+      ? '1px solid rgba(239,68,68,0.5)'
+      : focusedField === name
+        ? '1px solid rgba(59,130,246,0.5)'
+        : '1px solid rgba(255,255,255,0.1)',
     borderRadius: '10px',
     padding: '14px 16px',
     color: '#f0f4ff',
@@ -87,6 +125,12 @@ export default function ContactPage() {
     color: '#8892b0',
     marginBottom: '8px',
     letterSpacing: '0.03em',
+  }
+
+  const fieldErrorStyle: React.CSSProperties = {
+    fontSize: '12px',
+    color: '#fca5a5',
+    marginTop: '6px',
   }
 
   return (
@@ -298,6 +342,8 @@ export default function ContactPage() {
                     onClick={() => {
                       setSubmitted(false)
                       setForm({ name: '', email: '', company: '', service: '', budget: '', message: '' })
+                      setFieldErrors({})
+                      setError('')
                     }}
                     style={{
                       background: 'transparent', border: '1px solid rgba(255,255,255,0.15)',
@@ -334,34 +380,36 @@ export default function ContactPage() {
 
                   <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px', position: 'relative' }}>
                     {/* Name + Email row */}
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                    <div className="contact-form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                       <div>
                         <label style={labelStyle}>Full Name *</label>
                         <input
                           type="text"
                           name="name"
-                          required
                           placeholder="Jan Novák"
                           value={form.name}
                           onChange={handleChange}
                           onFocus={() => setFocusedField('name')}
                           onBlur={() => setFocusedField(null)}
                           style={inputStyle('name')}
+                          aria-invalid={!!fieldErrors.name}
                         />
+                        {fieldErrors.name && <p style={fieldErrorStyle}>{fieldErrors.name}</p>}
                       </div>
                       <div>
                         <label style={labelStyle}>Email Address *</label>
                         <input
                           type="email"
                           name="email"
-                          required
                           placeholder="jan@company.cz"
                           value={form.email}
                           onChange={handleChange}
                           onFocus={() => setFocusedField('email')}
                           onBlur={() => setFocusedField(null)}
                           style={inputStyle('email')}
+                          aria-invalid={!!fieldErrors.email}
                         />
+                        {fieldErrors.email && <p style={fieldErrorStyle}>{fieldErrors.email}</p>}
                       </div>
                     </div>
 
@@ -377,50 +425,48 @@ export default function ContactPage() {
                         onFocus={() => setFocusedField('company')}
                         onBlur={() => setFocusedField(null)}
                         style={inputStyle('company')}
+                        aria-invalid={!!fieldErrors.company}
                       />
+                      {fieldErrors.company && <p style={fieldErrorStyle}>{fieldErrors.company}</p>}
                     </div>
 
                     {/* Service + Budget row */}
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                    <div className="contact-form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                       <div>
                         <label style={labelStyle}>Service Interest *</label>
                         <select
                           name="service"
-                          required
                           value={form.service}
                           onChange={handleChange}
                           onFocus={() => setFocusedField('service')}
                           onBlur={() => setFocusedField(null)}
                           style={{ ...inputStyle('service'), appearance: 'none', cursor: 'pointer' }}
+                          aria-invalid={!!fieldErrors.service}
                         >
                           <option value="" disabled style={{ background: '#0f0f0f' }}>Select a service</option>
-                          <option value="Web Development" style={{ background: '#0f0f0f' }}>Web Development</option>
-                          <option value="Czech S.R.O. Formation" style={{ background: '#0f0f0f' }}>Czech S.R.O. Formation</option>
-                          <option value="AI Automation" style={{ background: '#0f0f0f' }}>AI Automation</option>
-                          <option value="SEO & Growth" style={{ background: '#0f0f0f' }}>SEO & Growth</option>
-                          <option value="Brand Identity" style={{ background: '#0f0f0f' }}>Brand Identity</option>
-                          <option value="Website Maintenance" style={{ background: '#0f0f0f' }}>Website Maintenance</option>
-                          <option value="Other" style={{ background: '#0f0f0f' }}>Other</option>
+                          {CONTACT_SERVICES.map((svc) => (
+                            <option key={svc} value={svc} style={{ background: '#0f0f0f' }}>{svc}</option>
+                          ))}
                         </select>
+                        {fieldErrors.service && <p style={fieldErrorStyle}>{fieldErrors.service}</p>}
                       </div>
                       <div>
                         <label style={labelStyle}>Budget Range *</label>
                         <select
                           name="budget"
-                          required
                           value={form.budget}
                           onChange={handleChange}
                           onFocus={() => setFocusedField('budget')}
                           onBlur={() => setFocusedField(null)}
                           style={{ ...inputStyle('budget'), appearance: 'none', cursor: 'pointer' }}
+                          aria-invalid={!!fieldErrors.budget}
                         >
                           <option value="" disabled style={{ background: '#0f0f0f' }}>Select budget</option>
-                          <option value="Under 15k CZK" style={{ background: '#0f0f0f' }}>Under 15k CZK</option>
-                          <option value="15k–45k CZK" style={{ background: '#0f0f0f' }}>15k–45k CZK</option>
-                          <option value="45k–100k CZK" style={{ background: '#0f0f0f' }}>45k–100k CZK</option>
-                          <option value="100k+ CZK" style={{ background: '#0f0f0f' }}>100k+ CZK</option>
-                          <option value="Monthly Retainer" style={{ background: '#0f0f0f' }}>Monthly Retainer</option>
+                          {CONTACT_BUDGETS.map((b) => (
+                            <option key={b} value={b} style={{ background: '#0f0f0f' }}>{b}</option>
+                          ))}
                         </select>
+                        {fieldErrors.budget && <p style={fieldErrorStyle}>{fieldErrors.budget}</p>}
                       </div>
                     </div>
 
@@ -429,7 +475,6 @@ export default function ContactPage() {
                       <label style={labelStyle}>Project Description *</label>
                       <textarea
                         name="message"
-                        required
                         rows={5}
                         placeholder="Tell us about your project — what you need, your goals, your timeline, and any specific requirements..."
                         value={form.message}
@@ -437,7 +482,9 @@ export default function ContactPage() {
                         onFocus={() => setFocusedField('message')}
                         onBlur={() => setFocusedField(null)}
                         style={{ ...inputStyle('message'), resize: 'vertical', lineHeight: 1.6 }}
+                        aria-invalid={!!fieldErrors.message}
                       />
+                      {fieldErrors.message && <p style={fieldErrorStyle}>{fieldErrors.message}</p>}
                     </div>
 
                     {error && (
@@ -569,6 +616,11 @@ export default function ContactPage() {
         }
         @media (max-width: 900px) {
           .contact-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .contact-form-row {
             grid-template-columns: 1fr !important;
           }
         }
