@@ -2,11 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { useInView } from 'framer-motion'
 import { Globe, Globe2, Scale, Bot, TrendingUp, Palette, Shield, Check, Inbox, Zap, Star } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FaqAccordion from '@/components/ui/FaqAccordion'
+import AnimatedCounter from '@/components/ui/AnimatedCounter'
 
 const IconWrapper = ({ children }: { children: React.ReactNode }) => (
   <div style={{ background: 'rgba(0,71,255,0.12)', borderRadius: '10px', padding: '10px', display: 'inline-flex' }}>
@@ -30,30 +30,6 @@ const WolfSVG = ({ size = 32 }: { size?: number }) => (
     <polygon points="16,21 13,24 19,24" fill="#1a3bcc" opacity="0.7"/>
   </svg>
 )
-
-// Animated counter using framer-motion useInView
-function Counter({ end, suffix = '' }: { end: number; suffix?: string }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef<HTMLSpanElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '0px 0px -50px 0px' })
-  const started = useRef(false)
-
-  useEffect(() => {
-    if (isInView && !started.current) {
-      started.current = true
-      let start = 0
-      const duration = 1500
-      const step = (end / duration) * 16
-      const timer = setInterval(() => {
-        start += step
-        if (start >= end) { setCount(end); clearInterval(timer) }
-        else setCount(Math.floor(start))
-      }, 16)
-    }
-  }, [isInView, end])
-
-  return <span ref={ref}>{count}{suffix}</span>
-}
 
 export default function HomePage() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
@@ -231,7 +207,7 @@ export default function HomePage() {
                   {stats.map((s, i) => (
                     <div key={i} style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', paddingLeft: 16 }}>
                       <div style={{ fontSize: 28, fontWeight: 800, color: '#f0f4ff', letterSpacing: '-0.02em' }}>
-                        <Counter end={s.value} suffix={s.suffix} />
+                        <AnimatedCounter value={s.value} suffix={s.suffix} />
                       </div>
                       <div style={{ fontSize: 12, color: '#8892b0', marginTop: 2 }}>{s.label}</div>
                     </div>
