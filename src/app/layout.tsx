@@ -2,18 +2,19 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import CookieBanner from '@/components/CookieBanner'
+import { siteUrl } from '@/lib/site-url'
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://digiwolf-agency.vercel.app'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Digi Wolf Agency — Web Development, AI Automation & Czech S.R.O. Formation',
     template: '%s | Digi Wolf Agency',
   },
   description: 'Prague-based digital agency specialising in premium websites, web applications, AI automation, and Czech S.R.O. company formation. Serving clients across Czech Republic, Slovakia, and Mongolia.',
   keywords: ['web agency Prague', 'Czech SRO formation', 'AI automation', 'web development Czech Republic', 'Next.js agency', 'digital agency Prague', 'Mongolian entrepreneur Prague'],
-  authors: [{ name: 'Digi Wolf Agency', url: 'https://digiwolf-agency.vercel.app' }],
+  authors: [{ name: 'Digi Wolf Agency', url: siteUrl }],
   creator: 'Digi Wolf Agency',
   icons: {
     icon: '/digiwolf-icon.png',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://digiwolf-agency.vercel.app',
+    url: siteUrl,
     siteName: 'Digi Wolf Agency',
     title: 'Digi Wolf Agency — Web Development, AI Automation & Czech S.R.O. Formation',
     description: 'Prague-based digital agency delivering world-class websites, AI automation, and Czech company formation.',

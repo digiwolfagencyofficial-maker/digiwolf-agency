@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import ProcessPageClient from './ProcessPageClient'
+import { siteUrl } from '@/lib/site-url'
 
 export const metadata: Metadata = {
   title: 'Our Process — How We Work | Digi Wolf Agency',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Our Process — How We Work | Digi Wolf Agency',
     description: 'From discovery call to live launch — our proven 5-step process delivers premium results fast.',
-    url: 'https://digiwolf-agency.vercel.app/process',
+    url: `${siteUrl}/process`,
   },
 }
 

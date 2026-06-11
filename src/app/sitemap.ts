@@ -1,7 +1,8 @@
 import type { MetadataRoute } from 'next'
+import { siteUrl } from '@/lib/site-url'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://digiwolf-agency.vercel.app'
+  const base = siteUrl
   const now = new Date()
 
   return [

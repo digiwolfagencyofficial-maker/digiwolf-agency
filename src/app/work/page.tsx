@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import WorkPageClient from './WorkPageClient'
+import { siteUrl } from '@/lib/site-url'
 
 export const metadata: Metadata = {
   title: 'Case Studies — Our Work | Digi Wolf Agency',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Case Studies — Our Work | Digi Wolf Agency',
     description: 'Real results from Digi Wolf Agency — +340% conversions, €180K revenue, and more.',
-    url: 'https://digiwolf-agency.vercel.app/work',
+    url: `${siteUrl}/work`,
   },
 }
 

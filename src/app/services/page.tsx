@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import ServicesClient from './ServicesClient'
+import { siteUrl } from '@/lib/site-url'
 
 export const metadata: Metadata = {
   title: 'Services — Web Development, AI Automation & S.R.O. Formation',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Services | Digi Wolf Agency',
     description: 'Premium digital services: websites, AI automation, Czech company formation. Based in Prague.',
-    url: 'https://digiwolf-agency.vercel.app/services',
+    url: `${siteUrl}/services`,
   },
 }
 

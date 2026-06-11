@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import ContactClient from './ContactClient'
+import { siteUrl } from '@/lib/site-url'
 
 export const metadata: Metadata = {
   title: 'Contact — Start Your Project',
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Contact Digi Wolf Agency — Start Your Project',
     description: 'Tell us about your project. We respond within 4 business hours — personally, not with a bot.',
-    url: 'https://digiwolf-agency.vercel.app/contact',
+    url: `${siteUrl}/contact`,
   },
 }
 

@@ -5,4 +5,4 @@ Disallow: /dashboard
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://digiwolf-agency.vercel.app/sitemap.xml
+Sitemap: https://digiwolf.agency/sitemap.xml
