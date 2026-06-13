@@ -646,19 +646,19 @@
         "label": "Core Services"
       },
       {
-        "id": "clientsServed",
-        "num": "47+",
-        "label": "Clients Served"
+        "id": "languages",
+        "num": "3",
+        "label": "Languages Supported"
       },
       {
         "id": "deliveryDays",
-        "num": "5–10",
-        "label": "Day Delivery"
+        "num": "7",
+        "label": "Day Delivery Commitment"
       },
       {
-        "id": "satisfaction",
-        "num": "98%",
-        "label": "Satisfaction Rate"
+        "id": "sourceCode",
+        "num": "100%",
+        "label": "Source Code Yours"
       }
     ],
     "cards": [
@@ -1655,12 +1655,12 @@
     },
     "guarantees": {
       "response": {
-        "title": "4-Hour Response Guarantee",
-        "desc": "We guarantee a personal response to every enquiry within 4 business hours. No auto-replies, no chatbots — real humans who understand your project."
+        "title": "24-Hour Response",
+        "desc": "We respond personally to every enquiry within 24 hours. No auto-replies — real humans who understand your project."
       },
       "availability": {
-        "badge": "Limited Availability",
-        "desc": "We only take 3 new clients per month to ensure exceptional quality. Book your discovery call before spots fill up."
+        "badge": "Founding Clients",
+        "desc": "Now accepting founding clients — limited founding-client rates available. Book a free discovery call to get started."
       }
     }
   },
@@ -1683,28 +1683,28 @@
     },
     "stats": [
       {
-        "id": "clients",
-        "num": "47",
-        "suffix": "+",
-        "label": "Clients Served"
-      },
-      {
-        "id": "satisfaction",
-        "num": "98",
-        "suffix": "%",
-        "label": "Satisfaction Rate"
-      },
-      {
-        "id": "countries",
+        "id": "languages",
         "num": "3",
         "suffix": "",
-        "label": "Countries Active"
+        "label": "Languages (EN/CZ/MN)"
+      },
+      {
+        "id": "response",
+        "num": "24",
+        "suffix": "h",
+        "label": "Response Time"
+      },
+      {
+        "id": "markets",
+        "num": "3",
+        "suffix": "",
+        "label": "Markets We Serve"
       },
       {
         "id": "delivery",
         "num": "7",
-        "suffix": " days",
-        "label": "Avg Day Delivery"
+        "suffix": "-day",
+        "label": "Delivery Commitment"
       }
     ],
     "founder": {
@@ -1743,7 +1743,7 @@
         },
         {
           "id": "p2",
-          "text": "He specializes in web development, business formation (Czech S.R.O.), and AI automation — having helped over 47 entrepreneurs from Mongolia, Kazakhstan, and Central Asia establish their presence in the European market."
+          "text": "He specializes in web development, Czech S.R.O. formation, and AI automation — helping entrepreneurs from Mongolia and Central Asia establish their presence in the European market."
         },
         {
           "id": "p3",
@@ -1780,48 +1780,43 @@
     },
     "journey": {
       "badge": "Our Journey",
-      "titleLine1": "5 Years of",
-      "titleLine2": "Relentless Growth",
+      "titleLine1": "Building",
+      "titleLine2": "Digi Wolf",
       "paragraphs": [
         {
           "id": "p1",
-          "text": "From a one-person consultancy to a full-stack digital agency serving clients across 3 countries — every milestone was earned by delivering exceptional results for our clients."
+          "text": "Digi Wolf Agency was built from firsthand experience — helping entrepreneurs navigate Czech business setup, web development, and digital growth in a new country."
         },
         {
           "id": "p2",
-          "text": "Today, Digi Wolf serves clients across the Czech Republic, Mongolia, and Slovakia, providing end-to-end digital services in English, Czech, and Mongolian."
+          "text": "Today we're focused on founders and small businesses in the Czech Republic, Slovakia, and Mongolia — with services in English, Czech, and Mongolian."
         }
       ],
       "timeline": [
         {
+          "id": "2015",
+          "year": "2015",
+          "event": "Founder relocates to Prague, Czech Republic"
+        },
+        {
           "id": "2020",
           "year": "2020",
-          "event": "Agency founded in Prague by Uuganbayar Ganbaatar"
-        },
-        {
-          "id": "2021",
-          "year": "2021",
-          "event": "First 10 Czech S.R.O. formations for Mongolian clients"
-        },
-        {
-          "id": "2022",
-          "year": "2022",
-          "event": "Expanded into web development — 15 sites launched"
+          "event": "Begins consulting on Czech business setup for international entrepreneurs"
         },
         {
           "id": "2023",
           "year": "2023",
-          "event": "Brand Identity service launched; 30+ companies rebranded"
-        },
-        {
-          "id": "2024",
-          "year": "2024",
-          "event": "AI Automation division opens; 47+ clients across 3 countries"
+          "event": "Expands into web development and AI automation services"
         },
         {
           "id": "2025",
           "year": "2025",
-          "event": "Expanding into Slovak and Polish markets"
+          "event": "Launches Digi Wolf Agency — digiwolf.agency goes live"
+        },
+        {
+          "id": "2026",
+          "year": "2026",
+          "event": "Now accepting founding clients across Czech Republic, Slovakia & Mongolia"
         }
       ]
     },
@@ -1863,7 +1858,7 @@
         },
         {
           "id": "countries",
-          "text": "Serving 3 countries"
+          "text": "Built for Czech Republic, Slovakia & Mongolia"
         },
         {
           "id": "languages",
@@ -2089,38 +2084,38 @@
   },
   "work": {
     "hero": {
-      "badge": "Case Studies",
-      "titleLine1": "Real Results,",
-      "titleLine2": "Real Clients",
-      "subtitle": "Not mock-ups. Not hypotheticals. Actual projects we built for actual businesses — with the numbers to prove it.",
+      "badge": "Our Work",
+      "titleLine1": "This Site Is",
+      "titleLine2": "Our Proof",
+      "subtitle": "We're a founder-led agency building our client portfolio. This live site demonstrates the quality, speed, and features we deliver.",
       "stats": [
         {
-          "id": "projectsShipped",
-          "value": "47+",
-          "label": "Projects Shipped"
-        },
-        {
-          "id": "satisfaction",
-          "value": "98%",
-          "label": "Satisfaction Rate"
-        },
-        {
-          "id": "countries",
+          "id": "languages",
           "value": "3",
-          "label": "Countries"
+          "label": "Languages (EN/CZ/MN)"
+        },
+        {
+          "id": "responseTime",
+          "value": "24h",
+          "label": "Response time"
+        },
+        {
+          "id": "sourceCode",
+          "value": "100%",
+          "label": "Source code yours"
         }
       ]
     },
     "labels": {
-      "challenge": "The Challenge",
-      "solution": "Our Solution",
-      "results": "The Results",
-      "services": "Services:"
+      "challenge": "The Goal",
+      "solution": "What We Built",
+      "results": "What's Live Today",
+      "services": "Features:"
     },
     "cta": {
-      "badge": "Your Project Next",
-      "title": "Ready to Join This List?",
-      "description": "Let's add your company to our case studies. Book a free discovery call and see what's possible.",
+      "badge": "Founding Clients",
+      "title": "Be Our Next Project",
+      "description": "Now accepting founding clients at intro rates. Book a free discovery call and let's build something together.",
       "ctas": [
         {
           "id": "startProject",
@@ -2134,162 +2129,44 @@
     },
     "caseStudies": [
       {
-        "id": "techventures",
-        "client": "TechVentures Prague",
-        "category": "SaaS Website + Client Portal",
-        "headline": "+340% Conversion Rate in 30 Days",
-        "tagline": "Full-stack rebrand and Next.js platform launch",
+        "id": "digiwolfAgency",
+        "client": "digiwolf.agency",
+        "category": "Agency Website",
+        "headline": "Live production portfolio",
+        "tagline": "The site you're browsing — built in-house, deployed on Vercel",
         "metrics": [
           {
-            "id": "conversion",
-            "value": "+340%",
-            "label": "Conversion rate"
-          },
-          {
-            "id": "delivery",
-            "value": "5 days",
-            "label": "Delivery time"
-          },
-          {
-            "id": "lighthouse",
-            "value": "98",
-            "label": "Lighthouse score"
-          },
-          {
-            "id": "downtime",
-            "value": "€0",
-            "label": "Downtime at launch"
-          }
-        ],
-        "challenge": "TechVentures Prague was losing enterprise clients to competitors with more polished digital presences. Their existing WordPress site was slow, generic, and failing to communicate the premium nature of their SaaS product. Conversion rates were under 1.2%.",
-        "solution": "We rebuilt their entire digital presence from scratch using Next.js 14, Supabase, and a custom client portal. The new site featured a premium dark design, interactive product demos, and a fully integrated dashboard for their existing clients.",
-        "results": "Within 30 days of launch, conversion rates jumped from 1.2% to 4.2% — a 340% increase. The average session duration doubled. Three enterprise clients explicitly cited the new website as a factor in their purchasing decision.",
-        "services": [
-          {
-            "id": "s1",
-            "label": "Next.js Website"
-          },
-          {
-            "id": "s2",
-            "label": "Client Portal"
-          },
-          {
-            "id": "s3",
-            "label": "Supabase Backend"
-          },
-          {
-            "id": "s4",
-            "label": "Brand Identity"
-          },
-          {
-            "id": "s5",
-            "label": "SEO Strategy"
-          }
-        ],
-        "quote": {
-          "text": "Digi Wolf built our entire platform in 5 days. The quality is exceptional — our conversion rate jumped 340% in the first month. Best investment we've made this year.",
-          "author": "Arjun Sharma",
-          "role": "CEO, TechVentures Prague"
-        }
-      },
-      {
-        "id": "mnExportHub",
-        "client": "MN Export Hub",
-        "category": "E-commerce Platform + S.R.O. Formation",
-        "headline": "€180K Revenue in First 90 Days",
-        "tagline": "Trilingual B2B marketplace + Czech company setup",
-        "metrics": [
-          {
-            "id": "revenue",
-            "value": "€180K",
-            "label": "Revenue in 90 days"
+            "id": "framework",
+            "value": "Next.js",
+            "label": "15 + TypeScript"
           },
           {
             "id": "languages",
-            "value": "3 langs",
-            "label": "CZ / EN / MN"
+            "value": "3",
+            "label": "Languages"
           },
           {
-            "id": "delivery",
-            "value": "14 days",
-            "label": "Total delivery"
+            "id": "aiChat",
+            "value": "AI",
+            "label": "Chat built-in"
           },
           {
-            "id": "entity",
-            "value": "S.R.O.",
-            "label": "Czech entity formed"
-          }
-        ],
-        "challenge": "A Mongolian entrepreneur wanted to bridge Mongolian exporters with EU buyers but lacked both a Czech legal entity and an online platform. The challenge was creating a trilingual B2B marketplace while simultaneously handling Czech S.R.O. formation — all within a tight launch window.",
-        "solution": "We handled the complete Czech S.R.O. registration in parallel with building the e-commerce platform. The marketplace was built with Next.js, featured full Czech/English/Mongolian localization, B2B inquiry flows, and an admin portal for managing listings and leads.",
-        "results": "The platform launched within 14 days. In the first 90 days, MN Export Hub facilitated €180K in B2B transactions between Mongolian exporters and Czech/Slovak buyers. The company became operational with a valid Czech S.R.O. entity from day one.",
-        "services": [
-          {
-            "id": "s1",
-            "label": "E-commerce Platform"
-          },
-          {
-            "id": "s2",
-            "label": "Czech S.R.O. Formation"
-          },
-          {
-            "id": "s3",
-            "label": "Multilingual (CZ/EN/MN)"
-          },
-          {
-            "id": "s4",
-            "label": "B2B Portal"
-          },
-          {
-            "id": "s5",
-            "label": "Admin Dashboard"
-          }
-        ],
-        "quote": {
-          "text": "As a Mongolian entrepreneur in Prague, having an agency that speaks my language — literally — is invaluable. They formed my company and built my platform simultaneously. Results speak for themselves.",
-          "author": "Enkhmaa B.",
-          "role": "Founder, MN Export Hub"
-        }
-      },
-      {
-        "id": "novakConsulting",
-        "client": "Novák Consulting s.r.o.",
-        "category": "Agency Website + AI Automation",
-        "headline": "23 Hours/Week Saved with AI Workflows",
-        "tagline": "Lead qualification chatbot + premium website",
-        "metrics": [
-          {
-            "id": "timeSaved",
-            "value": "23h/wk",
-            "label": "Time saved on admin"
-          },
-          {
-            "id": "qualifiedLeads",
-            "value": "4.8×",
-            "label": "More qualified leads"
-          },
-          {
-            "id": "delivery",
-            "value": "6 days",
-            "label": "Website delivery"
-          },
-          {
-            "id": "satisfaction",
+            "id": "code",
             "value": "100%",
-            "label": "Client satisfaction"
+            "label": "Source code yours"
           }
         ],
-        "challenge": "Tomáš Novák was spending 20+ hours per week manually qualifying leads, following up with prospects, and managing consultation bookings. His existing website looked dated and was not converting. He needed both a new digital presence and automation to reclaim his time.",
-        "solution": "We built a premium consulting website and integrated a custom AI lead qualification chatbot that pre-qualifies prospects, books discovery calls directly into Calendly, and sends personalized follow-up sequences. The entire pipeline runs autonomously.",
-        "results": "The AI system reduced manual admin work from 20+ hours to under 3 hours per week. Lead quality improved — the chatbot pre-qualification meant Tomáš only spoke to prospects who were already 80% ready to buy. Revenue grew 60% in the first quarter.",
+        "challenge": "As a new founder-led agency, we needed a real production site — not a template — that proves we can deliver modern web development, multilingual sites, AI integration, and business automation.",
+        "solution": "We built digiwolf.agency on Next.js 15 with trilingual routing (EN/CZ/MN), an AI chat assistant, lead capture with Supabase + Resend email notifications, Cal.com booking, Stripe-ready payments, GDPR legal pages, and a mobile-first dark UI.",
+        "results": "Every service we offer is demonstrated here. This is our living portfolio until client case studies are ready to publish.",
         "services": [
           {
             "id": "s1",
-            "label": "Consulting Website"
+            "label": "Trilingual i18n"
           },
           {
             "id": "s2",
-            "label": "AI Chatbot"
+            "label": "AI Chat"
           },
           {
             "id": "s3",
@@ -2297,18 +2174,13 @@
           },
           {
             "id": "s4",
-            "label": "Calendly Integration"
+            "label": "Online Booking"
           },
           {
             "id": "s5",
-            "label": "Email Sequences"
+            "label": "Stripe-ready"
           }
-        ],
-        "quote": {
-          "text": "They handled my Czech S.R.O. formation while simultaneously building my agency site. Then automated my entire lead pipeline. Professional, fast, and zero stress.",
-          "author": "Tomáš Novák",
-          "role": "Founder, Novák Consulting"
-        }
+        ]
       }
     ]
   },
@@ -2324,25 +2196,25 @@
   },
   "caseStudies": {
     "hero": {
-      "badge": "Case Studies",
-      "titleLine1": "Real Projects.",
-      "titleLine2": "Real Results.",
-      "subtitle": "Every project in our portfolio is a story of transformation. Here are six of our most impactful engagements — with the numbers to prove it.",
+      "badge": "Our Work",
+      "titleLine1": "Portfolio",
+      "titleLine2": "In Progress",
+      "subtitle": "We're building our client case study library. For now, this live site is our proof of build quality — no mockups, no hypotheticals.",
       "stats": [
         {
-          "id": "projects",
-          "n": "6+",
-          "l": "Projects"
+          "id": "languages",
+          "n": "3",
+          "l": "Languages"
         },
         {
-          "id": "clientRevenue",
-          "n": "€400K+",
-          "l": "Client Revenue"
+          "id": "response",
+          "n": "24h",
+          "l": "Response time"
         },
         {
-          "id": "averageRating",
-          "n": "4.9★",
-          "l": "Average Rating"
+          "id": "code",
+          "n": "100%",
+          "l": "Source code yours"
         }
       ]
     },
@@ -2365,15 +2237,15 @@
       }
     ],
     "labels": {
-      "challenge": "Challenge",
-      "solution": "Solution",
-      "results": "Results",
+      "challenge": "Goal",
+      "solution": "What We Built",
+      "results": "Features Live",
       "techStack": "Tech Stack"
     },
     "cta": {
-      "titleLine1": "Ready to Write",
-      "titleLine2": "Your Case Study?",
-      "subtitle": "Join the companies that trusted DigiWolf to transform their digital presence. Let's make your results the next story we tell.",
+      "titleLine1": "Want to Be",
+      "titleLine2": "Case Study #1?",
+      "subtitle": "We're accepting founding clients at intro rates. Build with us and help shape our portfolio.",
       "ctas": [
         {
           "id": "startProject",
@@ -2387,37 +2259,45 @@
     },
     "items": [
       {
-        "id": "techventures",
-        "name": "TechVentures Prague",
-        "client": "TechVentures s.r.o.",
+        "id": "digiwolfAgency",
+        "name": "digiwolf.agency",
+        "client": "Our own production site",
         "category": "Websites",
-        "tag": "SaaS Website",
-        "metric": "+340%",
-        "metricLabel": "Conversions in 30 days",
-        "challenge": "TechVentures had a dated, slow-loading website with poor mobile UX that was bleeding leads. Their SaaS product was excellent but the online presence failed to communicate value to enterprise prospects.",
-        "solution": "We redesigned the entire digital experience from scratch — product-led landing pages, interactive demos, pricing clarity, and a lightning-fast Next.js build with SSR optimisation.",
+        "tag": "Live portfolio",
+        "metric": "Live",
+        "metricLabel": "Production site",
+        "challenge": "As a new founder-led agency, we needed a production site that proves our capabilities — not a template or mockup.",
+        "solution": "Built on Next.js 15 with trilingual routing, AI chat, lead capture (Supabase + Resend), Cal.com booking, Stripe-ready payments, and GDPR legal pages.",
         "results": [
           {
             "id": "r1",
-            "text": "340% increase in demo bookings within 30 days"
+            "text": "Next.js 15 + TypeScript production build"
           },
           {
             "id": "r2",
-            "text": "Page load time reduced from 7.2s to 0.9s"
+            "text": "Trilingual (EN / CZ / MN) with next-intl"
           },
           {
             "id": "r3",
-            "text": "Bounce rate dropped from 78% to 31%"
+            "text": "AI chat assistant integrated on-site"
           },
           {
             "id": "r4",
-            "text": "MRR grew by €42,000 in Q1 post-launch"
+            "text": "Lead form → Supabase + email notifications"
+          },
+          {
+            "id": "r5",
+            "text": "Online booking via Cal.com webhook"
+          },
+          {
+            "id": "r6",
+            "text": "Stripe-ready payment infrastructure"
           }
         ],
         "techStack": [
           {
             "id": "t1",
-            "label": "Next.js 14"
+            "label": "Next.js 15"
           },
           {
             "id": "t2",
@@ -2425,294 +2305,21 @@
           },
           {
             "id": "t3",
-            "label": "Framer Motion"
+            "label": "Supabase"
           },
           {
             "id": "t4",
+            "label": "Tailwind CSS"
+          },
+          {
+            "id": "t5",
             "label": "Vercel"
-          },
-          {
-            "id": "t5",
-            "label": "Stripe"
-          }
-        ],
-        "testimonial": "DigiWolf transformed our online presence completely. We went from losing leads to converting them at an extraordinary rate. The results speak for themselves.",
-        "author": "Tomáš Novotný",
-        "role": "CEO, TechVentures s.r.o."
-      },
-      {
-        "id": "mnExportHub",
-        "name": "MN Export Hub",
-        "client": "MN Export Hub GmbH",
-        "category": "S.R.O. Formation",
-        "tag": "E-commerce + S.R.O.",
-        "metric": "€180K",
-        "metricLabel": "Revenue in 90 days",
-        "challenge": "A Mongolian export company wanted to enter the European market but had zero EU legal entity, no localised web presence, and no understanding of Czech business compliance requirements.",
-        "solution": "End-to-end solution: Czech S.R.O. registration, EU VAT setup, a bilingual e-commerce platform in Czech and English, and a full compliance framework for cross-border trade.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "S.R.O. registered within 8 business days"
-          },
-          {
-            "id": "r2",
-            "text": "€180,000 revenue generated in first 90 days"
-          },
-          {
-            "id": "r3",
-            "text": "Successfully onboarded 14 EU wholesale buyers"
-          },
-          {
-            "id": "r4",
-            "text": "Full VAT compliance across 3 EU jurisdictions"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js"
-          },
-          {
-            "id": "t2",
-            "label": "Shopify"
-          },
-          {
-            "id": "t3",
-            "label": "Czech Trade Licence"
-          },
-          {
-            "id": "t4",
-            "label": "EU VAT System"
-          },
-          {
-            "id": "t5",
-            "label": "Stripe"
-          }
-        ],
-        "testimonial": "We went from zero European presence to a fully operational Czech company with a profitable e-commerce operation in under 3 months. Incredible service.",
-        "author": "Boldbaatar Gantulga",
-        "role": "Director, MN Export Hub"
-      },
-      {
-        "id": "novakConsulting",
-        "name": "Novak Consulting",
-        "client": "Novak & Partners s.r.o.",
-        "category": "Websites",
-        "tag": "Agency Website",
-        "metric": "4 Days",
-        "metricLabel": "From brief to live site",
-        "challenge": "Novak Consulting needed a professional website urgently before a major client pitch. Their existing site was a template from 2018 with broken links, no SSL, and zero brand identity.",
-        "solution": "Rapid sprint delivery — brand identity refresh, custom Next.js site, content copywriting, SEO foundation, and full deployment in under 96 hours without cutting corners on quality.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "Fully live in 4 business days"
-          },
-          {
-            "id": "r2",
-            "text": "Won €65,000 contract at the client pitch"
-          },
-          {
-            "id": "r3",
-            "text": "Google PageSpeed score of 98/100"
-          },
-          {
-            "id": "r4",
-            "text": "3x increase in inbound enquiries within 2 weeks"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js 14"
-          },
-          {
-            "id": "t2",
-            "label": "Tailwind"
-          },
-          {
-            "id": "t3",
-            "label": "Vercel"
-          },
-          {
-            "id": "t4",
-            "label": "Google Analytics 4"
-          },
-          {
-            "id": "t5",
-            "label": "Cloudflare"
-          }
-        ],
-        "testimonial": "I was amazed. Four days from first call to a live, polished website that helped us win a €65K contract. DigiWolf delivered when no one else could.",
-        "author": "Petra Nováková",
-        "role": "Managing Partner, Novak & Partners"
-      },
-      {
-        "id": "fintechBratislava",
-        "name": "FinTech Bratislava",
-        "client": "FinTech Bratislava a.s.",
-        "category": "AI Automation",
-        "tag": "Web App + AI",
-        "metric": "80%",
-        "metricLabel": "Reduction in manual work",
-        "challenge": "A fintech startup was spending 120+ hours per week on manual data entry, report generation, and client onboarding processes that were completely un-automated and error-prone.",
-        "solution": "Custom AI automation pipeline: GPT-4 powered document processing, automated client onboarding workflows, real-time reporting dashboards, and integration with their existing banking APIs.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "80% reduction in manual administrative work"
-          },
-          {
-            "id": "r2",
-            "text": "120 hours/week freed up for revenue-generating activity"
-          },
-          {
-            "id": "r3",
-            "text": "Error rate dropped from 12% to 0.3%"
-          },
-          {
-            "id": "r4",
-            "text": "Client onboarding time: 5 days → 2 hours"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Python"
-          },
-          {
-            "id": "t2",
-            "label": "OpenAI GPT-4"
-          },
-          {
-            "id": "t3",
-            "label": "Next.js"
-          },
-          {
-            "id": "t4",
-            "label": "PostgreSQL"
-          },
-          {
-            "id": "t5",
-            "label": "n8n"
           },
           {
             "id": "t6",
-            "label": "Zapier"
+            "label": "Resend"
           }
-        ],
-        "testimonial": "The AI automation suite DigiWolf built has fundamentally changed how we operate. We've effectively gained back an entire team's worth of productive hours.",
-        "author": "Martin Kováč",
-        "role": "CTO, FinTech Bratislava"
-      },
-      {
-        "id": "pragueBeautyStudio",
-        "name": "Prague Beauty Studio",
-        "client": "Lumière Beauty Studio",
-        "category": "Websites",
-        "tag": "Branding + Web",
-        "metric": "5x",
-        "metricLabel": "Instagram follower growth",
-        "challenge": "A premium Prague beauty studio had no coherent brand identity, a non-existent social media presence, and relied entirely on word-of-mouth with no ability to attract new high-value clients.",
-        "solution": "Complete brand identity system, luxury website with online booking integration, social media strategy, branded content templates, and a Google My Business optimisation campaign.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "5x Instagram followers in 60 days (1.2K → 6.1K)"
-          },
-          {
-            "id": "r2",
-            "text": "Online bookings increased by 220%"
-          },
-          {
-            "id": "r3",
-            "text": "Average booking value up by 45%"
-          },
-          {
-            "id": "r4",
-            "text": "Featured in Prague lifestyle magazine"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js"
-          },
-          {
-            "id": "t2",
-            "label": "Calendly API"
-          },
-          {
-            "id": "t3",
-            "label": "Instagram Graph API"
-          },
-          {
-            "id": "t4",
-            "label": "Figma"
-          },
-          {
-            "id": "t5",
-            "label": "Adobe CC"
-          }
-        ],
-        "testimonial": "DigiWolf understood our luxury positioning perfectly. The brand and website they created attracts exactly the type of high-end clients we want.",
-        "author": "Karolína Dvořáčková",
-        "role": "Owner, Lumière Beauty Studio"
-      },
-      {
-        "id": "mongolianTradeHub",
-        "name": "Mongolian Trade Hub",
-        "client": "Mongolian Trade Hub s.r.o.",
-        "category": "S.R.O. Formation",
-        "tag": "S.R.O. + Trilingual Site",
-        "metric": "3 Markets",
-        "metricLabel": "EU expansion in 60 days",
-        "challenge": "A major Mongolian trading company wanted to establish a legal EU hub to facilitate B2B trade across Central Europe, with no existing EU infrastructure, legal entity, or multilingual digital presence.",
-        "solution": "Czech S.R.O. formation, trilingual website (English, Czech, Mongolian), EU trade compliance setup, customs documentation workflow, and strategic partnership with Prague Chamber of Commerce.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "S.R.O. operational in 7 business days"
-          },
-          {
-            "id": "r2",
-            "text": "Expanded to 3 EU markets simultaneously"
-          },
-          {
-            "id": "r3",
-            "text": "Secured 8 B2B partnerships within 60 days"
-          },
-          {
-            "id": "r4",
-            "text": "Trilingual site driving qualified leads in all 3 languages"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js i18n"
-          },
-          {
-            "id": "t2",
-            "label": "Czech Legal Framework"
-          },
-          {
-            "id": "t3",
-            "label": "EU Trade Law"
-          },
-          {
-            "id": "t4",
-            "label": "Vercel"
-          },
-          {
-            "id": "t5",
-            "label": "HubSpot"
-          }
-        ],
-        "testimonial": "DigiWolf made our European expansion seamless. From the legal entity to the trilingual website, every detail was handled with expertise and speed.",
-        "author": "Enkhjargal Dorj",
-        "role": "CEO, Mongolian Trade Hub"
+        ]
       }
     ]
   },
@@ -3001,7 +2608,7 @@
         "title": "Book a Free Discovery Call",
         "description": "Schedule a free 30-minute discovery call with Digi Wolf Agency. No sales pitch — honest advice on websites, Czech S.R.O. formation, and AI automation. We respond within 4 business hours.",
         "openGraphTitle": "Book a Free 30-Min Discovery Call — Digi Wolf Agency",
-        "openGraphDescription": "Pick a time that works for you. Free consultation, no commitment. Limited spots — we take 3 new clients per month."
+        "openGraphDescription": "Pick a time that works for you. Free consultation, no commitment. Now accepting founding clients."
       },
       "about": {
         "title": "About — Our Story & Team",
@@ -3017,17 +2624,17 @@
       },
       "work": {
         "title": "Case Studies — Our Work | Digi Wolf Agency",
-        "description": "Real results for real clients. See how Digi Wolf Agency helped TechVentures Prague achieve +340% conversions and MN Export Hub generate €180K revenue in 90 days.",
-        "openGraphTitle": "Case Studies — Our Work | Digi Wolf Agency",
-        "openGraphDescription": "Real results from Digi Wolf Agency — +340% conversions, €180K revenue, and more."
+        "description": "See digiwolf.agency — our live production site built with Next.js, trilingual support, AI chat, and lead automation. Proof of what we deliver.",
+        "openGraphTitle": "Our Work | Digi Wolf Agency",
+        "openGraphDescription": "Our live portfolio site — Next.js, trilingual, AI chat, booking, and Stripe-ready. No mockups."
       },
       "blog": {
         "title": "Blog",
         "description": "Insights and updates from Digi Wolf Agency about web development, AI automation, and business growth."
       },
       "caseStudies": {
-        "title": "Case Studies",
-        "description": "Real project breakdowns with challenges, solutions, and measurable results."
+        "title": "Our Work | Digi Wolf Agency",
+        "description": "Portfolio in progress. digiwolf.agency is our live proof — Next.js, trilingual, AI chat, lead automation, and Stripe-ready."
       },
       "privacy": {
         "title": "Privacy Policy",
