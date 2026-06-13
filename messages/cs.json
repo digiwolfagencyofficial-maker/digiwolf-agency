@@ -125,41 +125,46 @@
       ],
       "floatingBadges": [
         {
-          "id": "projectLaunched",
-          "title": "✓ Projekt spuštěn",
-          "subtitle": "TechVentures Prague"
+          "id": "liveSite",
+          "title": "digiwolf.agency",
+          "subtitle": "Live"
         },
         {
-          "id": "satisfaction",
-          "title": "⚡ 98% spokojenost",
-          "subtitle": "47 spokojených klientů"
+          "id": "trilingual",
+          "title": "Trojjazyčný web + AI chat",
+          "subtitle": "EN · CZ · MN"
+        },
+        {
+          "id": "founderLed",
+          "title": "Founder-led",
+          "subtitle": "Přímý přístup"
         }
       ]
     },
     "stats": [
       {
-        "id": "clientsServed",
-        "value": 47,
-        "suffix": "+",
-        "label": "Obsloužených klientů"
-      },
-      {
-        "id": "satisfactionRate",
-        "value": 98,
-        "suffix": "%",
-        "label": "Míra spokojenosti"
-      },
-      {
-        "id": "avgDelivery",
-        "value": 7,
-        "suffix": " dní",
-        "label": "Průměrné dodání"
-      },
-      {
-        "id": "markets",
+        "id": "languages",
         "value": 3,
-        "suffix": " země",
-        "label": "Aktivní trhy"
+        "suffix": "",
+        "label": "Jazyky (EN/CZ/MN)"
+      },
+      {
+        "id": "responseTime",
+        "value": 24,
+        "suffix": "h",
+        "label": "Doba odezvy"
+      },
+      {
+        "id": "deliveryCommitment",
+        "value": 7,
+        "suffix": "-day",
+        "label": "Závazek dodání"
+      },
+      {
+        "id": "sourceCode",
+        "value": 100,
+        "suffix": "%",
+        "label": "Zdrojový kód váš"
       }
     ],
     "servicesSection": {
@@ -247,56 +252,98 @@
       ]
     },
     "caseStudiesSection": {
-      "badge": "Případové studie",
-      "titleLine1": "Skutečné výsledky,",
-      "titleLine2": "skuteční klienti",
-      "viewAll": "Zobrazit vše →",
-      "items": [
-        {
-          "id": "techventures",
-          "title": "TechVentures Prague",
-          "category": "SaaS web + CRM",
-          "result": "+340% konverzí",
-          "desc": "Kompletní rebrand a spuštění webu na Next.js s integrovaným klientským dashboardem a Stripe platbami."
-        },
-        {
-          "id": "mnExportHub",
-          "title": "MN Export Hub",
-          "category": "E-commerce + S.R.O.",
-          "result": "€180K tržeb za 90 dní",
-          "desc": "Založení české společnosti + trojjazyčný B2B marketplace propojující mongolské exportéry s kupci v EU."
-        }
-      ]
+      "badge": "Naše práce",
+      "titleLine1": "Tento web je",
+      "titleLine2": "naše reference",
+      "description": "Prohlížíte si živý produkční web — ne mockup. Vše, co zde vidíte, umíme vytvořit i pro vás.",
+      "cta": "Prozkoumat služby →",
+      "showcase": {
+        "title": "digiwolf.agency",
+        "tag": "Live",
+        "features": [
+          {
+            "id": "nextjs",
+            "label": "Next.js 15 + TypeScript"
+          },
+          {
+            "id": "trilingual",
+            "label": "Trojjazyčný (EN / CZ / MN)"
+          },
+          {
+            "id": "aiChat",
+            "label": "AI chat asistent"
+          },
+          {
+            "id": "leadAutomation",
+            "label": "Zachycení leadů + e-mailové notifikace"
+          },
+          {
+            "id": "booking",
+            "label": "Online rezervace (Cal.com)"
+          },
+          {
+            "id": "stripe",
+            "label": "Stripe platby připraveny"
+          }
+        ]
+      },
+      "capabilities": {
+        "title": "Co stavíme",
+        "items": [
+          {
+            "id": "websites",
+            "label": "Vysoce konverzní weby pro firmy"
+          },
+          {
+            "id": "sro",
+            "label": "Založení české S.R.O."
+          },
+          {
+            "id": "aiAutomation",
+            "label": "AI chatboti a automatizace workflow"
+          },
+          {
+            "id": "bookingCrm",
+            "label": "Rezervační systémy a CRM pro leady"
+          },
+          {
+            "id": "multilingual",
+            "label": "Vícejazyčné weby a lokalizace"
+          },
+          {
+            "id": "payments",
+            "label": "Stripe platby a klientské portály"
+          }
+        ]
+      }
     },
     "testimonialsSection": {
-      "badge": "Reference",
-      "titleLine1": "Důvěřují nám podnikatelé",
-      "titleLine2": "ve 3 zemích",
+      "badge": "První klienti",
+      "titleLine1": "Pro podnikatele",
+      "titleLine2": "v Česku, na Slovensku a v Mongolsku",
+      "description": "Sloužíme zakladatelům a malým firmám, které potřebují seriózní digitální přítomnost — bez agenturní režie.",
       "items": [
         {
-          "id": "arjun",
-          "name": "Arjun Sharma",
-          "role": "CEO, TechVentures Prague",
-          "text": "Digi Wolf vytvořil celý náš SaaS web za 5 dní. Kvalita je výjimečná — naše konverze v prvním měsíci vzrostly o 340 %."
+          "id": "founderAttention",
+          "title": "Přímá pozornost zakladatele",
+          "desc": "Každý projekt vedu osobně — žádní account manažeři, žádné předávání."
         },
         {
-          "id": "tomas",
-          "name": "Tomas Novák",
-          "role": "Founder, Novák Consulting",
-          "text": "Vyřídili moje založení české S.R.O. a zároveň postavili web pro mou agenturu. Profesionální, rychlí a bez stresu."
+          "id": "foundingRates",
+          "title": "Zvýhodněné ceny pro první klienty",
+          "desc": "Raní partneři získají prioritní ceny, zatímco budujeme portfolio."
         },
         {
-          "id": "enkhmaa",
-          "name": "Enkhmaa B.",
-          "role": "Director, MN Export Hub",
-          "text": "Jako mongolská podnikatelka v Praze oceňuji agenturu, která mluví mým jazykem (doslova). Výsledky mluví samy za sebe."
+          "id": "trilingualSupport",
+          "title": "Trojjazyčná podpora",
+          "desc": "Pracujeme v angličtině, češtině a mongolštině — vzácné ve střední Evropě."
         }
       ]
     },
     "aiSection": {
       "badge": "Poháněno AI",
       "title": "Automatizujte podnikání pomocí vlastní AI",
-      "description": "Tvoříme AI pipeline, chatboty a automatizační workflow, které eliminují opakující se úkoly. Naši klienti ušetří v průměru 23 hodin týdně.",
+      "description": "Tvoříme AI pipeline, chatboty a automatizační workflow, které eliminují opakující se úkoly — automatizace navržené tak, aby ušetřily 20+ hodin týdně na ruční práci.",
       "checklist": [
         {
           "id": "leadChatbots",
@@ -495,10 +542,10 @@
       ]
     },
     "ctaBanner": {
-      "badge": "Omezená kapacita",
+      "badge": "První klienti",
       "titleLine1": "Připraveni vytvořit něco",
       "titleLine2": "výjimečného?",
-      "description": "Každý měsíc přijímáme pouze 3 nové klienty, abychom udrželi špičkovou kvalitu. Rezervujte si úvodní hovor dříve, než se kapacita naplní.",
+      "description": "Nyní přijímáme první klienty — k dispozici jsou zvýhodněné ceny pro early partnery. Rezervujte si bezplatný úvodní hovor.",
       "ctas": [
         {
           "id": "startProject",

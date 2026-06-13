@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-import { Globe, Globe2, Scale, Bot, TrendingUp, Palette, Shield, Check, Inbox, Zap, Star } from 'lucide-react'
+import { Globe, Scale, Bot, TrendingUp, Palette, Shield, Check, Inbox, Zap, User, Sparkles, Languages } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FaqAccordion from '@/components/ui/FaqAccordion'
@@ -34,9 +34,9 @@ const WolfSVG = ({ size = 32 }: { size?: number }) => (
 type HomeStat = { id: string; value: number; suffix: string; label: string }
 type ServiceCard = { id: string; title: string; desc: string; tag: string; price: string }
 type ProcessStep = { id: string; title: string; desc: string }
-type Testimonial = { id: string; name: string; role: string; text: string }
+type ValueProp = { id: string; title: string; desc: string }
 type FaqItem = { id: string; q: string; a: string }
-type CaseStudy = { id: string; title: string; category: string; result: string; desc: string }
+type CapabilityItem = { id: string; label: string }
 type TechStackItem = { id: string; label: string }
 type CtaItem = { id: string; label: string }
 type FloatingBadge = { id: string; title: string; subtitle: string }
@@ -64,9 +64,10 @@ const SERVICE_ICONS: Record<string, React.ReactNode> = {
   maintenance: <Shield size={24} className="text-blue-400" />,
 }
 
-const CASE_STUDY_COLORS: Record<string, string> = {
-  techventures: '#0047FF',
-  mnExportHub: '#00c864',
+const VALUE_PROP_ICONS: Record<string, React.ReactNode> = {
+  founderAttention: <User size={22} className="text-blue-400" />,
+  foundingRates: <Sparkles size={22} className="text-blue-400" />,
+  trilingualSupport: <Languages size={22} className="text-blue-400" />,
 }
 
 const AI_FLOW_ICONS: Record<string, React.ReactNode> = {
@@ -87,9 +88,10 @@ export default function HomePageClient() {
   const stats = t.raw('stats') as HomeStat[]
   const services = t.raw('servicesSection.cards') as ServiceCard[]
   const process = t.raw('processSection.steps') as ProcessStep[]
-  const testimonials = t.raw('testimonialsSection.items') as Testimonial[]
+  const valueProps = t.raw('testimonialsSection.items') as ValueProp[]
   const faqs = t.raw('faqSection.items') as FaqItem[]
-  const caseStudies = t.raw('caseStudiesSection.items') as CaseStudy[]
+  const showcaseFeatures = t.raw('caseStudiesSection.showcase.features') as ChecklistItem[]
+  const capabilities = t.raw('caseStudiesSection.capabilities.items') as CapabilityItem[]
   const techStack = t.raw('techStack') as TechStackItem[]
   const heroCtas = t.raw('hero.ctas') as CtaItem[]
   const floatingBadges = t.raw('hero.floatingBadges') as FloatingBadge[]
@@ -236,14 +238,21 @@ export default function HomePageClient() {
                 </div>
 
                 <div className="fade-up fade-up-delay-4 hero-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
-                  {stats.map((s) => (
-                    <div key={s.id} style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', paddingLeft: 16 }}>
-                      <div style={{ fontSize: 28, fontWeight: 800, color: '#f0f4ff', letterSpacing: '-0.02em' }}>
-                        <AnimatedCounter value={s.value} suffix={s.suffix} />
+                  {stats.map((s) => {
+                    const shortSuffix = s.suffix.length <= 2 ? s.suffix : ''
+                    const unit = s.suffix.length > 2 ? s.suffix.trim() : ''
+                    return (
+                      <div key={s.id} style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', paddingLeft: 16 }}>
+                        <div style={{ fontSize: 28, fontWeight: 800, color: '#f0f4ff', letterSpacing: '-0.02em', display: 'flex', alignItems: 'baseline', gap: 4, flexWrap: 'wrap' }}>
+                          <AnimatedCounter value={s.value} suffix={shortSuffix} immediate />
+                          {unit ? (
+                            <span style={{ fontSize: 14, fontWeight: 600, color: '#8892b0' }}>{unit}</span>
+                          ) : null}
+                        </div>
+                        <div style={{ fontSize: 12, color: '#8892b0', marginTop: 2 }}>{s.label}</div>
                       </div>
-                      <div style={{ fontSize: 12, color: '#8892b0', marginTop: 2 }}>{s.label}</div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
 
@@ -286,6 +295,10 @@ export default function HomePageClient() {
                 <div style={{ position: 'absolute', top: -20, right: -20, background: 'rgba(0,200,100,0.12)', border: '1px solid rgba(0,200,100,0.3)', borderRadius: 12, padding: '10px 16px', backdropFilter: 'blur(10px)', animation: 'float 4s ease-in-out infinite' }}>
                   <div style={{ fontSize: 11, color: '#00c864', fontWeight: 700 }}>{floatingBadges[0]?.title}</div>
                   <div style={{ fontSize: 10, color: '#8892b0', marginTop: 2 }}>{floatingBadges[0]?.subtitle}</div>
+                </div>
+                <div style={{ position: 'absolute', top: 40, left: -24, background: 'rgba(124,58,237,0.12)', border: '1px solid rgba(124,58,237,0.3)', borderRadius: 12, padding: '10px 16px', backdropFilter: 'blur(10px)', animation: 'float 6s ease-in-out infinite', animationDelay: '-1s' }}>
+                  <div style={{ fontSize: 11, color: '#a78bfa', fontWeight: 700 }}>{floatingBadges[2]?.title}</div>
+                  <div style={{ fontSize: 10, color: '#8892b0', marginTop: 2 }}>{floatingBadges[2]?.subtitle}</div>
                 </div>
                 <div style={{ position: 'absolute', bottom: -16, left: -20, background: 'rgba(0,71,255,0.12)', border: '1px solid rgba(0,71,255,0.3)', borderRadius: 12, padding: '10px 16px', backdropFilter: 'blur(10px)', animation: 'float 5s ease-in-out infinite', animationDelay: '-2s' }}>
                   <div style={{ fontSize: 11, color: '#3d74ff', fontWeight: 700 }}>{floatingBadges[1]?.title}</div>
@@ -413,81 +426,110 @@ export default function HomePageClient() {
           </div>
         </section>
 
-        {/* ============ CASE STUDIES ============ */}
+        {/* ============ SHOWCASE ============ */}
         <section id="work" style={{ padding: '120px 24px', position: 'relative', zIndex: 2 }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
-            <div className="fade-up" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 64, flexWrap: 'wrap', gap: 24 }}>
+            <div className="fade-up" style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: 24, flexWrap: 'wrap', gap: 24 }}>
               <div>
                 <span className="badge" style={{ marginBottom: 20, display: 'inline-flex' }}>{t('caseStudiesSection.badge')}</span>
                 <h2 style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, letterSpacing: '-0.03em', color: '#f0f4ff' }}>
                   {t('caseStudiesSection.titleLine1')}<br /><span className="gradient-text">{t('caseStudiesSection.titleLine2')}</span>
                 </h2>
               </div>
-              <Link href="/case-studies" style={{ color: '#3d74ff', textDecoration: 'none', fontWeight: 600, fontSize: 15, border: '1px solid rgba(0,71,255,0.3)', padding: '12px 24px', borderRadius: 10, transition: 'all 0.2s' }}
+              <Link href="/services" style={{ color: '#3d74ff', textDecoration: 'none', fontWeight: 600, fontSize: 15, border: '1px solid rgba(0,71,255,0.3)', padding: '12px 24px', borderRadius: 10, transition: 'all 0.2s' }}
                 onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(0,71,255,0.1)'; }}
                 onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'transparent'; }}
-              >{t('caseStudiesSection.viewAll')}</Link>
+              >{t('caseStudiesSection.cta')}</Link>
             </div>
+            <p className="fade-up" style={{ color: '#8892b0', fontSize: 17, lineHeight: 1.7, maxWidth: 640, marginBottom: 48 }}>
+              {t('caseStudiesSection.description')}
+            </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }} className="case-grid">
-              {caseStudies.map((c, i) => {
-                const color = CASE_STUDY_COLORS[c.id] ?? '#0047FF'
-                return (
-                  <div key={c.id} className="fade-up" style={{
-                    background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)',
-                    borderRadius: 24, overflow: 'hidden', transition: 'all 0.3s',
-                  }}
-                    onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-4px)'; el.style.borderColor = `${color}44`; }}
-                    onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'none'; el.style.borderColor = 'rgba(255,255,255,0.07)'; }}
-                  >
-                    <div style={{ background: `linear-gradient(135deg, ${color}22, transparent)`, padding: 32, borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                      <div className="browser-mockup" style={{ background: '#0d1117' }}>
-                        <div className="browser-bar">
-                          <div className="browser-dot" style={{ background: '#ff5f57' }} />
-                          <div className="browser-dot" style={{ background: '#febc2e' }} />
-                          <div className="browser-dot" style={{ background: '#28c840' }} />
-                          <div style={{ flex: 1, background: 'rgba(255,255,255,0.05)', borderRadius: 4, height: 20, marginLeft: 8 }} />
-                        </div>
-                        <div style={{ padding: 20, height: 120, background: 'linear-gradient(135deg, rgba(255,255,255,0.02), transparent)' }}>
-                          <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                            <div style={{ width: 40, height: 40, borderRadius: 8, background: color + '33', border: `1px solid ${color}44`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                              {i === 0 ? <Globe size={20} color={color} /> : <Globe2 size={20} color={color} />}
-                            </div>
-                            <div>
-                              <div style={{ height: 8, background: 'rgba(255,255,255,0.2)', borderRadius: 4, width: 120, marginBottom: 6 }} />
-                              <div style={{ height: 6, background: 'rgba(255,255,255,0.1)', borderRadius: 4, width: 80 }} />
-                            </div>
-                          </div>
-                        </div>
+              <div className="fade-up" style={{
+                background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)',
+                borderRadius: 24, overflow: 'hidden', transition: 'all 0.3s',
+              }}
+                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-4px)'; el.style.borderColor = 'rgba(0,71,255,0.3)'; }}
+                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'none'; el.style.borderColor = 'rgba(255,255,255,0.07)'; }}
+              >
+                <div style={{ background: 'linear-gradient(135deg, rgba(0,71,255,0.15), transparent)', padding: 32, borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <div className="browser-mockup" style={{ background: '#0d1117' }}>
+                    <div className="browser-bar">
+                      <div className="browser-dot" style={{ background: '#ff5f57' }} />
+                      <div className="browser-dot" style={{ background: '#febc2e' }} />
+                      <div className="browser-dot" style={{ background: '#28c840' }} />
+                      <div style={{ flex: 1, background: 'rgba(255,255,255,0.05)', borderRadius: 4, height: 20, marginLeft: 8, display: 'flex', alignItems: 'center', paddingLeft: 10 }}>
+                        <span style={{ color: '#8892b0', fontSize: 10 }}>digiwolf.agency</span>
                       </div>
                     </div>
-                    <div style={{ padding: 32 }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                        <span style={{ background: `${color}22`, border: `1px solid ${color}44`, color, fontSize: 11, fontWeight: 700, padding: '4px 10px', borderRadius: 100, letterSpacing: '0.05em', textTransform: 'uppercase' as const }}>{c.category}</span>
+                    <div style={{ padding: 20, height: 120, background: 'linear-gradient(135deg, rgba(255,255,255,0.02), transparent)' }}>
+                      <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                        <div style={{ width: 40, height: 40, borderRadius: 8, background: 'rgba(0,71,255,0.2)', border: '1px solid rgba(0,71,255,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <WolfSVG size={22} />
+                        </div>
+                        <div>
+                          <div style={{ height: 8, background: 'rgba(255,255,255,0.2)', borderRadius: 4, width: 120, marginBottom: 6 }} />
+                          <div style={{ height: 6, background: 'rgba(255,255,255,0.1)', borderRadius: 4, width: 80 }} />
+                        </div>
                       </div>
-                      <h3 style={{ fontSize: 22, fontWeight: 800, color: '#f0f4ff', marginBottom: 10 }}>{c.title}</h3>
-                      <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.7, marginBottom: 20 }}>{c.desc}</p>
-                      <div style={{ fontSize: 24, fontWeight: 800, color }}>{c.result}</div>
                     </div>
                   </div>
-                )
-              })}
+                </div>
+                <div style={{ padding: 32 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
+                    <h3 style={{ fontSize: 22, fontWeight: 800, color: '#f0f4ff' }}>{t('caseStudiesSection.showcase.title')}</h3>
+                    <span style={{ background: 'rgba(0,200,100,0.15)', border: '1px solid rgba(0,200,100,0.3)', color: '#00c864', fontSize: 11, fontWeight: 700, padding: '4px 10px', borderRadius: 100, letterSpacing: '0.05em', textTransform: 'uppercase' as const }}>{t('caseStudiesSection.showcase.tag')}</span>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {showcaseFeatures.map((feature) => (
+                      <div key={feature.id} style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c8d3f0', fontSize: 14 }}>
+                        <Check size={14} color="#3d74ff" /> {feature.label}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="fade-up" style={{
+                background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)',
+                borderRadius: 24, padding: 32, transition: 'all 0.3s',
+                display: 'flex', flexDirection: 'column', justifyContent: 'center',
+              }}
+                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-4px)'; el.style.borderColor = 'rgba(0,200,100,0.3)'; }}
+                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'none'; el.style.borderColor = 'rgba(255,255,255,0.07)'; }}
+              >
+                <h3 style={{ fontSize: 22, fontWeight: 800, color: '#f0f4ff', marginBottom: 24 }}>{t('caseStudiesSection.capabilities.title')}</h3>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+                  {capabilities.map((cap) => (
+                    <div key={cap.id} style={{
+                      background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)',
+                      borderRadius: 12, padding: '14px 16px', color: '#c8d3f0', fontSize: 14, lineHeight: 1.5,
+                    }}>
+                      {cap.label}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ============ TESTIMONIALS ============ */}
+        {/* ============ FOUNDING CLIENTS ============ */}
         <section style={{ padding: '120px 24px', background: 'rgba(255,255,255,0.01)', borderTop: '1px solid rgba(255,255,255,0.05)', position: 'relative', zIndex: 2 }}>
           <div style={{ maxWidth: 1280, margin: '0 auto' }}>
             <div className="fade-up" style={{ textAlign: 'center', marginBottom: 64 }}>
               <span className="badge" style={{ marginBottom: 20, display: 'inline-flex' }}>{t('testimonialsSection.badge')}</span>
-              <h2 style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, letterSpacing: '-0.03em', color: '#f0f4ff' }}>
+              <h2 style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, letterSpacing: '-0.03em', color: '#f0f4ff', marginBottom: 16 }}>
                 {t('testimonialsSection.titleLine1')}<br /><span className="gradient-text">{t('testimonialsSection.titleLine2')}</span>
               </h2>
+              <p style={{ color: '#8892b0', fontSize: 17, maxWidth: 560, margin: '0 auto', lineHeight: 1.7 }}>
+                {t('testimonialsSection.description')}
+              </p>
             </div>
 
             <div className="stagger" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20 }}>
-              {testimonials.map((item) => (
+              {valueProps.map((item) => (
                 <div key={item.id} style={{
                   background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: 20, padding: 32, transition: 'all 0.3s',
@@ -495,18 +537,11 @@ export default function HomePageClient() {
                   onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = 'rgba(0,71,255,0.3)'; el.style.transform = 'translateY(-4px)'; }}
                   onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = 'rgba(255,255,255,0.07)'; el.style.transform = 'none'; }}
                 >
-                  <div style={{ fontSize: 32, color: '#0047FF', marginBottom: 16, opacity: 0.7 }}>&quot;</div>
-                  <p style={{ color: '#c8d3f0', lineHeight: 1.8, fontSize: 15, marginBottom: 28, fontStyle: 'italic' }}>{item.text}</p>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                    <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'linear-gradient(135deg, #0047FF, #3d74ff)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 16, color: '#fff' }}>{item.name.charAt(0)}</div>
-                    <div>
-                      <div style={{ fontWeight: 700, color: '#f0f4ff', fontSize: 14 }}>{item.name}</div>
-                      <div style={{ color: '#8892b0', fontSize: 12, marginTop: 2 }}>{item.role}</div>
-                    </div>
-                    <div style={{ marginLeft: 'auto', color: '#ffa000', display: 'flex', gap: 2 }}>
-                      {[...Array(5)].map((_, si) => <Star key={si} size={12} fill="#ffa000" color="#ffa000" />)}
-                    </div>
+                  <div style={{ marginBottom: 20 }}>
+                    <IconWrapper>{VALUE_PROP_ICONS[item.id] ?? <Check size={22} className="text-blue-400" />}</IconWrapper>
                   </div>
+                  <h3 style={{ fontWeight: 700, color: '#f0f4ff', fontSize: 18, marginBottom: 12 }}>{item.title}</h3>
+                  <p style={{ color: '#8892b0', lineHeight: 1.7, fontSize: 15 }}>{item.desc}</p>
                 </div>
               ))}
             </div>

@@ -6,6 +6,8 @@ interface AnimatedCounterProps {
   value: number
   suffix?: string
   duration?: number
+  /** Show final value immediately (no count-up). Use for above-the-fold stats to avoid 0+ flash. */
+  immediate?: boolean
 }
 
 function prefersReducedMotion(): boolean {
@@ -24,6 +26,7 @@ export default function AnimatedCounter({
   value,
   suffix = '',
   duration = 1500,
+  immediate = false,
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(value)
   const ref = useRef<HTMLSpanElement>(null)
@@ -34,19 +37,20 @@ export default function AnimatedCounter({
     if (hasAnimated.current) return
     hasAnimated.current = true
 
-    if (prefersReducedMotion() || value === 0) {
+    if (immediate || prefersReducedMotion() || value === 0) {
       setCount(value)
       return
     }
 
-    setCount(0)
+    setCount(1)
     const start = performance.now()
 
     const tick = (now: number) => {
       const elapsed = now - start
       const t = Math.min(elapsed / duration, 1)
       const eased = 1 - (1 - t) ** 3
-      setCount(Math.round(eased * value))
+      const next = Math.round(eased * value)
+      setCount(value > 0 ? Math.max(1, next) : next)
 
       if (t < 1) {
         rafId.current = requestAnimationFrame(tick)
@@ -56,13 +60,17 @@ export default function AnimatedCounter({
     }
 
     rafId.current = requestAnimationFrame(tick)
-  }, [duration, value])
+  }, [duration, immediate, value])
 
   useLayoutEffect(() => {
     const node = ref.current
     if (!node || hasAnimated.current) return
 
-    if (prefersReducedMotion()) return
+    if (immediate || prefersReducedMotion()) {
+      setCount(value)
+      hasAnimated.current = true
+      return
+    }
 
     if (isElementInView(node)) {
       animate()
@@ -84,7 +92,7 @@ export default function AnimatedCounter({
       observer.disconnect()
       if (rafId.current !== null) cancelAnimationFrame(rafId.current)
     }
-  }, [animate])
+  }, [animate, immediate, value])
 
   return (
     <span ref={ref}>

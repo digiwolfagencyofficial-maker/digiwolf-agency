@@ -125,41 +125,46 @@
       ],
       "floatingBadges": [
         {
-          "id": "projectLaunched",
-          "title": "✓ Project Launched",
-          "subtitle": "TechVentures Prague"
+          "id": "liveSite",
+          "title": "digiwolf.agency",
+          "subtitle": "Live"
         },
         {
-          "id": "satisfaction",
-          "title": "⚡ 98% Satisfaction",
-          "subtitle": "47 happy clients"
+          "id": "trilingual",
+          "title": "Trilingual + AI chat",
+          "subtitle": "EN · CZ · MN"
+        },
+        {
+          "id": "founderLed",
+          "title": "Founder-led",
+          "subtitle": "Direct access"
         }
       ]
     },
     "stats": [
       {
-        "id": "clientsServed",
-        "value": 47,
-        "suffix": "+",
-        "label": "Clients Served"
-      },
-      {
-        "id": "satisfactionRate",
-        "value": 98,
-        "suffix": "%",
-        "label": "Satisfaction Rate"
-      },
-      {
-        "id": "avgDelivery",
-        "value": 7,
-        "suffix": " days",
-        "label": "Avg. Delivery"
-      },
-      {
-        "id": "markets",
+        "id": "languages",
         "value": 3,
-        "suffix": " countries",
-        "label": "Markets Active"
+        "suffix": "",
+        "label": "Languages (EN/CZ/MN)"
+      },
+      {
+        "id": "responseTime",
+        "value": 24,
+        "suffix": "h",
+        "label": "Response time"
+      },
+      {
+        "id": "deliveryCommitment",
+        "value": 7,
+        "suffix": "-day",
+        "label": "Delivery commitment"
+      },
+      {
+        "id": "sourceCode",
+        "value": 100,
+        "suffix": "%",
+        "label": "Source code yours"
       }
     ],
     "servicesSection": {
@@ -247,56 +252,98 @@
       ]
     },
     "caseStudiesSection": {
-      "badge": "Case Studies",
-      "titleLine1": "Real Results,",
-      "titleLine2": "Real Clients",
-      "viewAll": "View All →",
-      "items": [
-        {
-          "id": "techventures",
-          "title": "TechVentures Prague",
-          "category": "SaaS Website + CRM",
-          "result": "+340% conversions",
-          "desc": "Full rebrand and Next.js site launch with integrated client dashboard and Stripe payments."
-        },
-        {
-          "id": "mnExportHub",
-          "title": "MN Export Hub",
-          "category": "E-commerce + S.R.O.",
-          "result": "€180K revenue in 90 days",
-          "desc": "Czech company formation + trilingual B2B marketplace connecting Mongolian exporters to EU buyers."
-        }
-      ]
+      "badge": "Our Work",
+      "titleLine1": "This Site Is",
+      "titleLine2": "Our Proof",
+      "description": "You're browsing a live production build — not a mockup. Everything you see here, we can build for you.",
+      "cta": "Explore Services →",
+      "showcase": {
+        "title": "digiwolf.agency",
+        "tag": "Live now",
+        "features": [
+          {
+            "id": "nextjs",
+            "label": "Next.js 15 + TypeScript"
+          },
+          {
+            "id": "trilingual",
+            "label": "Trilingual (EN / CZ / MN)"
+          },
+          {
+            "id": "aiChat",
+            "label": "AI chat assistant"
+          },
+          {
+            "id": "leadAutomation",
+            "label": "Lead capture + email notifications"
+          },
+          {
+            "id": "booking",
+            "label": "Online booking (Cal.com)"
+          },
+          {
+            "id": "stripe",
+            "label": "Stripe-ready payments"
+          }
+        ]
+      },
+      "capabilities": {
+        "title": "What We Build",
+        "items": [
+          {
+            "id": "websites",
+            "label": "High-converting agency websites"
+          },
+          {
+            "id": "sro",
+            "label": "Czech S.R.O. company formation"
+          },
+          {
+            "id": "aiAutomation",
+            "label": "AI chatbots & workflow automation"
+          },
+          {
+            "id": "bookingCrm",
+            "label": "Booking systems & lead CRM"
+          },
+          {
+            "id": "multilingual",
+            "label": "Multilingual sites & localisation"
+          },
+          {
+            "id": "payments",
+            "label": "Stripe payments & client portals"
+          }
+        ]
+      }
     },
     "testimonialsSection": {
-      "badge": "Testimonials",
-      "titleLine1": "Trusted by Entrepreneurs",
-      "titleLine2": "Across 3 Countries",
+      "badge": "Founding Clients",
+      "titleLine1": "Built for Entrepreneurs",
+      "titleLine2": "Across Czech Republic, Slovakia & Mongolia",
+      "description": "We serve founders and small businesses who need a serious digital presence — without agency overhead.",
       "items": [
         {
-          "id": "arjun",
-          "name": "Arjun Sharma",
-          "role": "CEO, TechVentures Prague",
-          "text": "Digi Wolf built our entire SaaS website in 5 days. The quality is exceptional — our conversion rate jumped 340% in the first month."
+          "id": "founderAttention",
+          "title": "Direct founder attention",
+          "desc": "Every project is led personally — no account managers, no hand-offs."
         },
         {
-          "id": "tomas",
-          "name": "Tomas Novák",
-          "role": "Founder, Novák Consulting",
-          "text": "They handled my Czech S.R.O. formation while simultaneously building my agency site. Professional, fast, and zero stress."
+          "id": "foundingRates",
+          "title": "Founding-client rates",
+          "desc": "Early partners get priority pricing while we build our portfolio."
         },
         {
-          "id": "enkhmaa",
-          "name": "Enkhmaa B.",
-          "role": "Director, MN Export Hub",
-          "text": "As a Mongolian entrepreneur in Prague, having an agency that speaks my language (literally) is invaluable. Results speak for themselves."
+          "id": "trilingualSupport",
+          "title": "Trilingual support",
+          "desc": "We work in English, Czech, and Mongolian — rare in Central Europe."
         }
       ]
     },
     "aiSection": {
       "badge": "AI-Powered",
       "title": "Automate Your Business with Custom AI",
-      "description": "We build AI pipelines, chatbots, and automation workflows that eliminate repetitive tasks. Our clients save an average of 23 hours per week.",
+      "description": "We build AI pipelines, chatbots, and automation workflows that eliminate repetitive tasks — automations designed to save 20+ hours/week on manual work.",
       "checklist": [
         {
           "id": "leadChatbots",
@@ -495,10 +542,10 @@
       ]
     },
     "ctaBanner": {
-      "badge": "Limited Availability",
+      "badge": "Founding Clients",
       "titleLine1": "Ready to Build Something",
       "titleLine2": "Extraordinary?",
-      "description": "We only take 3 new clients per month to ensure exceptional quality. Book your discovery call before spots fill up.",
+      "description": "Now accepting founding clients — limited founding-client rates available. Book a free discovery call to get started.",
       "ctas": [
         {
           "id": "startProject",
