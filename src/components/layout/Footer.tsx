@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { COMPANY, companyCopyright, companyFullAddress, companyLegalLine } from '@/lib/company'
 const LinkedinIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -99,14 +100,18 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div>
                 <div style={{ fontSize: 11, color: '#475569', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 4 }}>Email</div>
-                <a href="mailto:info@digiwolf.agency" style={{ fontSize: 14, color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}
+                <a href={`mailto:${COMPANY.email}`} style={{ fontSize: 14, color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#f0f4ff'}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = '#64748b'}
-                >info@digiwolf.agency</a>
+                >{COMPANY.email}</a>
               </div>
               <div>
-                <div style={{ fontSize: 11, color: '#475569', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 4 }}>Location</div>
-                <div style={{ fontSize: 14, color: '#64748b', lineHeight: 1.6 }}>Prague, Czech Republic<br />Digi Wolf Agency s.r.o.<br />IČ 24344648</div>
+                <div style={{ fontSize: 11, color: '#475569', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 4 }}>Registered office</div>
+                <div style={{ fontSize: 14, color: '#64748b', lineHeight: 1.6 }}>
+                  {companyLegalLine}<br />
+                  {companyFullAddress}<br />
+                  {COMPANY.address.country}
+                </div>
               </div>
               <div>
                 <div style={{ fontSize: 11, color: '#475569', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 4 }}>Languages</div>
@@ -122,7 +127,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: 28, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
-          <div style={{ fontSize: 13, color: '#475569' }}>© 2026 Digi Wolf Agency s.r.o., IČ 24344648. All rights reserved.</div>
+          <div style={{ fontSize: 13, color: '#475569' }}>{companyCopyright}</div>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             {[
               { label: 'Privacy Policy', href: '/privacy' },

@@ -111,11 +111,13 @@ Recommended: **Vercel**
 
 ## Agency Info
 
-- **Location**: Prague, Czech Republic
+- **Company**: Digi Wolf Agency s.r.o., IČO 243 44 648
+- **Registered office**: Varšavská 715/36, Vinohrady, 120 00 Praha 2, Czech Republic
+- **Email**: info@digiwolf.agency
 - **Target market**: Mongolian diaspora in Central & Eastern Europe
 - **Services**: Web dev, Czech S.R.O. formation, AI automation
 - **Languages**: English, Czech, Mongolian
 
 ---
 
-&copy; 2024 Digi Wolf Agency s.r.o.
+&copy; 2026 Digi Wolf Agency s.r.o., IČO 243 44 648

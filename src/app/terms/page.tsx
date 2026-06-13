@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { companyFullAddress, companyLegalLine } from '@/lib/company'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: '1. Agreement to Terms',
-    content: `By engaging Digi Wolf Agency s.r.o. ("Agency", "we", "us") for services, using our website at digiwolf.agency, submitting our contact form, or booking a call through our site, you ("Client", "you") agree to these Terms of Service.
+    content: `By engaging ${companyLegalLine} ("Agency", "we", "us"), registered office at ${companyFullAddress}, for services, using our website at digiwolf.agency, submitting our contact form, or booking a call through our site, you ("Client", "you") agree to these Terms of Service.
 
 These Terms constitute a legally binding agreement under Czech law. If you do not agree, please do not use our website or services.
 
@@ -139,7 +140,7 @@ export default function TermsPage() {
             These Terms of Service govern your use of Digi Wolf Agency s.r.o. services. Please read them carefully before engaging us for any project.
           </p>
           <div style={{ display: 'flex', gap: 24, fontSize: 13, color: '#64748b', flexWrap: 'wrap' }}>
-            <span>Company: Digi Wolf Agency s.r.o., IČ 24344648</span>
+            <span>Company: {companyLegalLine}</span>
             <span>Last updated: 13 June 2026</span>
             <span>Governing law: Czech Republic</span>
           </div>

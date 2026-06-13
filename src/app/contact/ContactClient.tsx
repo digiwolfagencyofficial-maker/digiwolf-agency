@@ -11,11 +11,12 @@ import {
   contactLeadSchema,
   formatContactFieldErrors,
 } from '@/lib/contact-options'
+import { COMPANY, companyFullAddress } from '@/lib/company'
 
 const contactInfo = [
-  { icon: <Mail size={18} />, label: 'Email', value: 'info@digiwolf.agency', href: 'mailto:info@digiwolf.agency' },
-{ icon: <Phone size={18} />, label: 'Phone', value: '+420 296 183 158', href: 'tel:+420296183158' },
-  { icon: <MapPin size={18} />, label: 'Location', value: 'Prague, Czech Republic', href: '#' },
+  { icon: <Mail size={18} />, label: 'Email', value: COMPANY.email, href: `mailto:${COMPANY.email}` },
+  { icon: <Phone size={18} />, label: 'Phone', value: COMPANY.phone, href: `tel:${COMPANY.phone.replace(/\s/g, '')}` },
+  { icon: <MapPin size={18} />, label: 'Registered office', value: companyFullAddress, href: `https://maps.google.com/?q=${encodeURIComponent(companyFullAddress)}` },
 ]
 
 const socials = [

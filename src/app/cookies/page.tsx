@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { companyLegalLine } from '@/lib/company'
 
 export const metadata: Metadata = {
   title: 'Cookie Policy',
@@ -45,7 +46,7 @@ export default function CookiesPage() {
             This Cookie Policy explains how Digi Wolf Agency s.r.o. uses cookies and similar technologies on digiwolf.agency.
           </p>
           <div style={{ display: 'flex', gap: 24, fontSize: 13, color: '#64748b', flexWrap: 'wrap' }}>
-            <span>Company: Digi Wolf Agency s.r.o., IČ 24344648</span>
+            <span>Company: {companyLegalLine}</span>
             <span>Last updated: 13 June 2026</span>
           </div>
         </div>

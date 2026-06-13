@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { Zap, Target, Handshake, TrendingUp, Scale, Rocket, Palette, Bot, Globe2, Settings, BookOpen, Heart, MapPin } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { companyFullAddress } from '@/lib/company'
 
 const values = [
   {
@@ -481,7 +482,7 @@ export default function AboutPage() {
             gap: 40, flexWrap: 'wrap' as const,
           }}>
             {[
-              { icon: <MapPin size={14} />, text: 'Based in Prague, Czech Republic' },
+              { icon: <MapPin size={14} />, text: companyFullAddress },
               { icon: <Globe2 size={14} />, text: 'Serving 3 countries' },
               { icon: <Settings size={14} />, text: 'CZ, EN, MN spoken' },
             ].map((item) => (

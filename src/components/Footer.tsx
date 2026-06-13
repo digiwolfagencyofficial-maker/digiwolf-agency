@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { COMPANY, companyCopyright, companyFullAddress, companyLegalLine } from '@/lib/company'
 const LinkedinIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -104,8 +105,8 @@ export default function Footer() {
             <h4 style={{ color: '#f0f4ff', fontWeight: 700, fontSize: 14, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 20 }}>Contact</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {[
-                { label: 'info@digiwolf.agency', href: 'mailto:info@digiwolf.agency' },
-                { label: 'Prague, Czech Republic', href: '#' },
+                { label: COMPANY.email, href: `mailto:${COMPANY.email}` },
+                { label: companyFullAddress, href: `https://maps.google.com/?q=${encodeURIComponent(companyFullAddress)}` },
                 { label: 'Ulaanbaatar, Mongolia', href: '#' },
               ].map(item => (
                 <a key={item.label} href={item.href} style={{ color: '#8892b0', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
@@ -120,7 +121,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 32, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
           <p style={{ color: '#8892b0', fontSize: 13 }}>
-            © 2026 Digi Wolf Agency s.r.o., IČ 24344648. All rights reserved.
+            {companyCopyright}
           </p>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             {legalLinks.map(l => (

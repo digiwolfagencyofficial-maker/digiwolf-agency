@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic'
 
 import { useState } from 'react'
 import DashboardLayout from '@/components/dashboard/DashboardLayout'
+import { COMPANY, companyFullAddress } from '@/lib/company'
 
 const adminNav = [
   { icon: '⬡', label: 'Overview', href: '/admin' },
@@ -38,12 +39,12 @@ const inputStyle: React.CSSProperties = {
 
 export function AdminSettingsPage() {
   const [agency, setAgency] = useState({
-    name: 'Digi Wolf Agency s.r.o.',
-    email: 'info@digiwolf.agency',
-    phone: '+420 296 183 158',
+    name: COMPANY.legalName,
+    email: COMPANY.email,
+    phone: COMPANY.phone,
     currency: 'CZK',
-    address: 'Prague, Czech Republic',
-    website: 'https://digiwolfagency.com',
+    address: companyFullAddress,
+    website: 'https://digiwolf.agency',
   })
   const [notifications, setNotifications] = useState({
     newLead: true,

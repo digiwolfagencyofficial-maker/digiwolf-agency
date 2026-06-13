@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { COMPANY, companyFullAddress, companyLegalLine } from '@/lib/company'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: '1. Who We Are',
-    content: `Digi Wolf Agency s.r.o., IČ 24344648 ("we", "our", "us") is a digital agency registered in the Czech Republic with its registered office in Prague. We operate in the European Union and can be contacted at info@digiwolf.agency.
+    content: `${companyLegalLine} ("we", "our", "us") is a digital agency registered in the Czech Republic. Our registered office is at ${companyFullAddress}. We operate in the European Union and can be contacted at ${COMPANY.email}.
 
 We are the data controller for personal data collected through our website at digiwolf.agency and through our services.`,
   },
@@ -148,7 +149,7 @@ export default function PrivacyPage() {
             This Privacy Policy explains how Digi Wolf Agency s.r.o. collects, uses, and protects your personal data in compliance with GDPR and applicable Czech law.
           </p>
           <div style={{ display: 'flex', gap: 24, fontSize: 13, color: '#64748b', flexWrap: 'wrap' }}>
-            <span>Company: Digi Wolf Agency s.r.o., IČ 24344648, Prague, Czech Republic</span>
+            <span>Company: {companyLegalLine}, {companyFullAddress}</span>
             <span>Last updated: 13 June 2026</span>
           </div>
         </div>
