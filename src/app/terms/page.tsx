@@ -11,12 +11,24 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: '1. Agreement to Terms',
-    content: `By engaging Digi Wolf Agency s.r.o. ("Agency", "we", "us") for services or accessing our website at digiwolf.agency, you ("Client", "you") agree to be bound by these Terms of Service.
+    content: `By engaging Digi Wolf Agency s.r.o. ("Agency", "we", "us") for services, using our website at digiwolf.agency, submitting our contact form, or booking a call through our site, you ("Client", "you") agree to these Terms of Service.
 
-These Terms constitute a legally binding agreement. If you do not agree to these Terms, do not use our services.`,
+These Terms constitute a legally binding agreement under Czech law. If you do not agree, please do not use our website or services.
+
+Personal data you provide is processed as described in our Privacy Policy at /privacy.`,
   },
   {
-    title: '2. Services',
+    title: '2. Use of Our Website',
+    content: `2.1 You may use digiwolf.agency for lawful purposes only.
+
+2.2 You must not attempt to disrupt the site, gain unauthorised access to our systems, scrape content at scale, or submit false or misleading information through our forms.
+
+2.3 Bookings are made through Cal.com embedded on /book. By booking, you agree to provide accurate name and contact details. Cancellation and rescheduling follow Cal.com's interface and our confirmation communications.
+
+2.4 We reserve the right to suspend access where we reasonably believe these Terms have been breached.`,
+  },
+  {
+    title: '3. Services',
     content: `We provide digital services including, but not limited to:
 
 • Website design and development
@@ -30,7 +42,7 @@ These Terms constitute a legally binding agreement. If you do not agree to these
 The specific services, deliverables, timelines, and pricing for each project are set out in a separate Project Agreement or Statement of Work ("SOW") agreed between the parties.`,
   },
   {
-    title: '3. Payment Terms',
+    title: '4. Payment Terms',
     content: `3.1 Fees are set out in the relevant Project Agreement or invoice.
 
 3.2 Unless otherwise agreed, payment is due within 14 days of invoice date.
@@ -42,7 +54,7 @@ The specific services, deliverables, timelines, and pricing for each project are
 3.5 All prices are in Czech Crowns (CZK) unless otherwise stated. We are not registered for VAT unless explicitly stated on the invoice.`,
   },
   {
-    title: '4. Intellectual Property',
+    title: '5. Intellectual Property',
     content: `4.1 Upon full payment, the Client receives full ownership of all custom deliverables created specifically for the project (websites, code, designs, copy).
 
 4.2 We retain the right to display the work in our portfolio and marketing materials unless the Client requests confidentiality in writing.
@@ -52,7 +64,7 @@ The specific services, deliverables, timelines, and pricing for each project are
 4.4 Third-party components (open-source libraries, stock images, fonts) are subject to their respective licences. We will advise you of any licencing requirements.`,
   },
   {
-    title: '5. Client Responsibilities',
+    title: '6. Client Responsibilities',
     content: `The Client agrees to:
 
 • Provide accurate information and content required for the project in a timely manner
@@ -64,7 +76,7 @@ The specific services, deliverables, timelines, and pricing for each project are
 Delays caused by the Client may result in revised timelines and additional fees.`,
   },
   {
-    title: '6. Revisions and Changes',
+    title: '7. Revisions and Changes',
     content: `6.1 The number of included revisions is specified in the Project Agreement.
 
 6.2 Additional revisions beyond the agreed scope will be charged at our current hourly rate.
@@ -72,7 +84,7 @@ Delays caused by the Client may result in revised timelines and additional fees.
 6.3 Material changes to the project scope will require a new or amended Project Agreement and may affect the timeline and price.`,
   },
   {
-    title: '7. Warranties and Representations',
+    title: '8. Warranties and Representations',
     content: `7.1 We warrant that our services will be delivered with reasonable skill and care, consistent with industry standards.
 
 7.2 We do not warrant that websites will achieve specific search rankings, traffic levels, or conversion rates.
@@ -80,7 +92,7 @@ Delays caused by the Client may result in revised timelines and additional fees.
 7.3 The Client warrants that all content and materials provided to us are lawful and do not infringe third-party rights.`,
   },
   {
-    title: '8. Limitation of Liability',
+    title: '9. Limitation of Liability',
     content: `8.1 To the maximum extent permitted by Czech law, our total liability for any claim arising under these Terms is limited to the fees paid by the Client for the specific service giving rise to the claim.
 
 8.2 We are not liable for indirect, consequential, or incidental damages, including loss of revenue, loss of data, or business interruption.
@@ -88,11 +100,11 @@ Delays caused by the Client may result in revised timelines and additional fees.
 8.3 We are not responsible for errors or issues arising from third-party services, hosting providers, or software outside our control.`,
   },
   {
-    title: '9. Confidentiality',
+    title: '10. Confidentiality',
     content: `Both parties agree to keep confidential any non-public information received from the other party. This obligation survives termination of the agreement for a period of 3 years.`,
   },
   {
-    title: '10. Termination',
+    title: '11. Termination',
     content: `10.1 Either party may terminate a project with 30 days' written notice.
 
 10.2 Upon termination, the Client pays for all work completed to date. If the Client terminates after the deposit stage, the deposit is non-refundable.
@@ -100,7 +112,7 @@ Delays caused by the Client may result in revised timelines and additional fees.
 10.3 We may immediately terminate services if the Client breaches these Terms, fails to make payment, or engages in unlawful conduct.`,
   },
   {
-    title: '11. Governing Law and Disputes',
+    title: '12. Governing Law and Disputes',
     content: `11.1 These Terms are governed by the laws of the Czech Republic.
 
 11.2 The courts of the Czech Republic have jurisdiction over any disputes arising from these Terms.
@@ -108,7 +120,7 @@ Delays caused by the Client may result in revised timelines and additional fees.
 11.3 We encourage resolution of disputes through direct negotiation before commencing legal proceedings.`,
   },
   {
-    title: '12. Changes to These Terms',
+    title: '13. Changes to These Terms',
     content: `We may update these Terms from time to time. Material changes will be communicated by email. Continued use of our services after changes constitutes acceptance.`,
   },
 ]
@@ -127,8 +139,9 @@ export default function TermsPage() {
             These Terms of Service govern your use of Digi Wolf Agency s.r.o. services. Please read them carefully before engaging us for any project.
           </p>
           <div style={{ display: 'flex', gap: 24, fontSize: 13, color: '#64748b', flexWrap: 'wrap' }}>
-            <span>Last updated: 11 May 2026</span>
-            <span>Effective: 11 May 2026</span>
+            <span>Company: Digi Wolf Agency s.r.o., IČ 24344648</span>
+            <span>Last updated: 13 June 2026</span>
+            <span>Governing law: Czech Republic</span>
           </div>
         </div>
 

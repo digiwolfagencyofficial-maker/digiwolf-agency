@@ -120,7 +120,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 32, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
           <p style={{ color: '#8892b0', fontSize: 13 }}>
-            © 2026 Digi Wolf Agency s.r.o. All rights reserved.
+            © 2026 Digi Wolf Agency s.r.o., IČ 24344648. All rights reserved.
           </p>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             {legalLinks.map(l => (

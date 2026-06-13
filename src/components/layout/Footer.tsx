@@ -106,7 +106,7 @@ export default function Footer() {
               </div>
               <div>
                 <div style={{ fontSize: 11, color: '#475569', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 4 }}>Location</div>
-                <div style={{ fontSize: 14, color: '#64748b', lineHeight: 1.6 }}>Prague, Czech Republic<br />Digi Wolf Agency s.r.o.</div>
+                <div style={{ fontSize: 14, color: '#64748b', lineHeight: 1.6 }}>Prague, Czech Republic<br />Digi Wolf Agency s.r.o.<br />IČ 24344648</div>
               </div>
               <div>
                 <div style={{ fontSize: 11, color: '#475569', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 4 }}>Languages</div>
@@ -122,7 +122,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: 28, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16 }}>
-          <div style={{ fontSize: 13, color: '#475569' }}>© 2025 Digi Wolf Agency s.r.o. All rights reserved.</div>
+          <div style={{ fontSize: 13, color: '#475569' }}>© 2026 Digi Wolf Agency s.r.o., IČ 24344648. All rights reserved.</div>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             {[
               { label: 'Privacy Policy', href: '/privacy' },

@@ -13,6 +13,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/book`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${base}/cookies`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${base}/case-studies`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
   ]
 }
