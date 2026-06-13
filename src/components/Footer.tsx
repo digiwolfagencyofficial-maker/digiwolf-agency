@@ -1,8 +1,10 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import Image from 'next/image'
-import { COMPANY, companyCopyright, companyFullAddress, companyLegalLine } from '@/lib/company'
+import { useTranslations } from 'next-intl'
+import { COMPANY, companyFullAddress } from '@/lib/company'
+
 const LinkedinIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -23,21 +25,31 @@ const InstagramIcon = () => (
   </svg>
 )
 
+const serviceIds = ['websites', 'sro', 'ai', 'seo', 'branding', 'maintenance'] as const
+
+const companyLinks = [
+  { key: 'about', href: '/about' },
+  { key: 'work', href: '/work' },
+  { key: 'pricing', href: '/pricing' },
+  { key: 'book', href: '/book' },
+  { key: 'contact', href: '/contact' },
+  { key: 'blog', href: '/blog' },
+] as const
+
+const legalLinks = [
+  { key: 'privacy', href: '/privacy' },
+  { key: 'terms', href: '/terms' },
+  { key: 'cookies', href: '/cookies' },
+] as const
+
+const socialLinks = [
+  { id: 'linkedin', icon: <LinkedinIcon />, href: 'https://linkedin.com/company/digiwolf-agency' },
+  { id: 'facebook', icon: <XIcon />, href: 'https://facebook.com/digiwolf' },
+  { id: 'instagram', icon: <InstagramIcon />, href: 'https://instagram.com/digiwolfagency' },
+] as const
+
 export default function Footer() {
-  const services = ['Agency Websites', 'Czech S.R.O. Formation', 'AI Automation', 'SEO & Growth', 'Branding', 'Maintenance']
-  const companyLinks = [
-    { label: 'About', href: '/about' },
-    { label: 'Work', href: '/work' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Book a Call', href: '/book' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'Blog', href: '/blog' },
-  ]
-  const legalLinks = [
-    { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Terms of Service', href: '/terms' },
-    { label: 'Cookie Policy', href: '/cookies' },
-  ]
+  const t = useTranslations('footer')
 
   return (
     <footer style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.06)', position: 'relative', overflow: 'hidden', zIndex: 2 }}>
@@ -47,18 +59,14 @@ export default function Footer() {
           {/* Brand */}
           <div style={{ gridColumn: 'span 1' }}>
             <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: 16 }}>
-              <Image src="/digiwolf-logo-transparent.png" alt="Digi Wolf Agency" width={200} height={80} style={{ maxWidth: '200px', width: '100%', height: 'auto', objectFit: 'contain' }} />
+              <Image src="/digiwolf-logo-transparent.png" alt={t('brandAlt')} width={200} height={80} style={{ maxWidth: '200px', width: '100%', height: 'auto', objectFit: 'contain' }} />
             </Link>
             <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.7, maxWidth: 240 }}>
-              Full-stack digital agency helping entrepreneurs grow in Central & Eastern Europe.
+              {t('tagline')}
             </p>
             <div style={{ display: 'flex', gap: 12, marginTop: 24 }}>
-              {[
-                { icon: <LinkedinIcon />, href: 'https://linkedin.com/company/digiwolf-agency', label: 'LinkedIn' },
-                { icon: <XIcon />, href: 'https://facebook.com/digiwolf', label: 'Facebook' },
-                { icon: <InstagramIcon />, href: 'https://instagram.com/digiwolfagency', label: 'Instagram' },
-              ].map(s => (
-                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} style={{
+              {socialLinks.map(s => (
+                <a key={s.id} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={t(`social.${s.id}`)} style={{
                   width: 40, height: 40, borderRadius: 8,
                   background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -76,38 +84,38 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 style={{ color: '#f0f4ff', fontWeight: 700, fontSize: 14, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 20 }}>Services</h4>
+            <h4 style={{ color: '#f0f4ff', fontWeight: 700, fontSize: 14, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 20 }}>{t('sections.services.title')}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {services.map(s => (
-                <Link key={s} href="/services" style={{ color: '#8892b0', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
+              {serviceIds.map(id => (
+                <Link key={id} href="/services" style={{ color: '#8892b0', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
                   onMouseEnter={e => (e.target as HTMLElement).style.color = '#f0f4ff'}
                   onMouseLeave={e => (e.target as HTMLElement).style.color = '#8892b0'}
-                >{s}</Link>
+                >{t(`sections.services.${id}`)}</Link>
               ))}
             </div>
           </div>
 
           {/* Company */}
           <div>
-            <h4 style={{ color: '#f0f4ff', fontWeight: 700, fontSize: 14, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 20 }}>Company</h4>
+            <h4 style={{ color: '#f0f4ff', fontWeight: 700, fontSize: 14, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 20 }}>{t('sections.company.title')}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {companyLinks.map(l => (
-                <Link key={l.label} href={l.href} style={{ color: '#8892b0', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
+                <Link key={l.key} href={l.href} style={{ color: '#8892b0', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
                   onMouseEnter={e => (e.target as HTMLElement).style.color = '#f0f4ff'}
                   onMouseLeave={e => (e.target as HTMLElement).style.color = '#8892b0'}
-                >{l.label}</Link>
+                >{t(`sections.company.${l.key}`)}</Link>
               ))}
             </div>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 style={{ color: '#f0f4ff', fontWeight: 700, fontSize: 14, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 20 }}>Contact</h4>
+            <h4 style={{ color: '#f0f4ff', fontWeight: 700, fontSize: 14, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 20 }}>{t('sections.contact.title')}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {[
                 { label: COMPANY.email, href: `mailto:${COMPANY.email}` },
                 { label: companyFullAddress, href: `https://maps.google.com/?q=${encodeURIComponent(companyFullAddress)}` },
-                { label: 'Ulaanbaatar, Mongolia', href: '#' },
+                { label: t('sections.contact.secondaryLocation'), href: '#' },
               ].map(item => (
                 <a key={item.label} href={item.href} style={{ color: '#8892b0', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
                   onMouseEnter={e => (e.target as HTMLElement).style.color = '#f0f4ff'}
@@ -121,14 +129,14 @@ export default function Footer() {
         {/* Bottom bar */}
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 32, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
           <p style={{ color: '#8892b0', fontSize: 13 }}>
-            {companyCopyright}
+            {t('copyright')}
           </p>
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             {legalLinks.map(l => (
-              <Link key={l.label} href={l.href} style={{ color: '#8892b0', textDecoration: 'none', fontSize: 13, transition: 'color 0.2s' }}
+              <Link key={l.key} href={l.href} style={{ color: '#8892b0', textDecoration: 'none', fontSize: 13, transition: 'color 0.2s' }}
                 onMouseEnter={e => (e.target as HTMLElement).style.color = '#f0f4ff'}
                 onMouseLeave={e => (e.target as HTMLElement).style.color = '#8892b0'}
-              >{l.label}</Link>
+              >{t(`sections.legal.${l.key}`)}</Link>
             ))}
           </div>
         </div>

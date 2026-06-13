@@ -1,22 +1,29 @@
 import type { MetadataRoute } from 'next'
+import { localizedPath, publicPaths } from '@/lib/i18n-metadata'
+import { locales, type Locale } from '@/i18n/routing'
 import { siteUrl } from '@/lib/site-url'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = siteUrl
   const now = new Date()
+  const entries: MetadataRoute.Sitemap = []
 
-  return [
-    { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    { url: `${base}/services`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/process`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/work`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/book`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${base}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/cookies`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
-    { url: `${base}/case-studies`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-  ]
+  for (const path of publicPaths) {
+    const languages: Record<string, string> = {}
+    for (const locale of locales) {
+      languages[locale] = `${siteUrl}${localizedPath(path, locale)}`
+    }
+    languages['x-default'] = `${siteUrl}${localizedPath(path, 'en')}`
+
+    for (const locale of locales) {
+      entries.push({
+        url: `${siteUrl}${localizedPath(path, locale)}`,
+        lastModified: now,
+        changeFrequency: path === '' ? 'weekly' : path.includes('privacy') || path.includes('terms') || path.includes('cookies') ? 'yearly' : 'monthly',
+        priority: path === '' ? 1 : path === '/contact' || path === '/book' ? 0.9 : path.includes('privacy') ? 0.3 : 0.8,
+        alternates: { languages },
+      })
+    }
+  }
+
+  return entries
 }

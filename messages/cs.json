@@ -1,0 +1,2999 @@
+{
+  "_meta": {
+    "locale": "cs",
+    "version": "1.0.0",
+    "reviewStatus": "ai_placeholder_needs_native_review"
+  },
+  "nav": {
+    "brandAlt": "Digi Wolf Agency",
+    "home": "Domů",
+    "services": "Služby",
+    "work": "Reference",
+    "process": "Proces",
+    "pricing": "Ceník",
+    "about": "O nás",
+    "contact": "Kontakt",
+    "signIn": "Přihlásit se",
+    "getStarted": "Začít",
+    "openMenu": "Otevřít menu",
+    "closeMenu": "Zavřít menu"
+  },
+  "footer": {
+    "brandAlt": "Logo Digi Wolf Agency",
+    "tagline": "Digitální agentura z Prahy, která pomáhá ambiciózním firmám dominovat online.",
+    "copyright": "© {year} Digi Wolf Agency s.r.o., IČO 243 44 648. Všechna práva vyhrazena.",
+    "social": {
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    },
+    "sections": {
+      "services": {
+        "title": "Služby",
+        "websites": "Weby pro firmy",
+        "sro": "Založení české S.R.O.",
+        "ai": "AI automatizace",
+        "seo": "SEO a růst",
+        "branding": "Brand identita",
+        "maintenance": "Údržba a podpora"
+      },
+      "company": {
+        "title": "Společnost",
+        "about": "O nás",
+        "work": "Reference",
+        "pricing": "Ceník",
+        "book": "Rezervovat hovor",
+        "contact": "Kontakt",
+        "blog": "Blog"
+      },
+      "contact": {
+        "title": "Kontakt",
+        "secondaryLocation": "Praha, Česká republika"
+      },
+      "legal": {
+        "privacy": "Zásady ochrany osobních údajů",
+        "terms": "Podmínky služby",
+        "cookies": "Zásady používání cookies"
+      }
+    }
+  },
+  "common": {
+    "company": {
+      "labels": {
+        "company": "Společnost",
+        "legalName": "Právní název",
+        "ico": "IČO",
+        "email": "E-mail",
+        "phone": "Telefon",
+        "registeredOffice": "Sídlo",
+        "address": "Adresa",
+        "country": "Země"
+      },
+      "legalName": "Digi Wolf Agency s.r.o.",
+      "ico": "243 44 648",
+      "email": "info@digiwolf.agency",
+      "phone": "+420 296 183 158",
+      "address": {
+        "street": "Varšavská 715/36",
+        "district": "Vinohrady",
+        "city": "Praha 2",
+        "postalCode": "120 00",
+        "country": "Czech Republic",
+        "full": "Varšavská 715/36, Vinohrady, 120 00 Praha 2"
+      }
+    },
+    "buttons": {
+      "startProject": "Začněte svůj projekt →",
+      "bookFreeCall": "Rezervujte si bezplatný hovor",
+      "contactUs": "Kontaktujte nás →",
+      "viewServices": "Zobrazit služby",
+      "viewPricing": "Zobrazit ceník",
+      "learnMore": "Zjistit více →"
+    },
+    "trustPills": [
+      {
+        "id": "freeConsult",
+        "label": "Bezplatná 30minutová konzultace"
+      },
+      {
+        "id": "noCommitment",
+        "label": "Bez závazků"
+      },
+      {
+        "id": "response24h",
+        "label": "Odpověď do 24 hodin"
+      }
+    ]
+  },
+  "home": {
+    "badge": "Přijímáme nové projekty",
+    "hero": {
+      "title": {
+        "line1": "Tvoříme digitální zbraně",
+        "line2": "pro ambiciózní firmy"
+      },
+      "subtitle": "Weby. Aplikace. AI automatizace. Založení české společnosti. Vše pod jednou střechou — vytvořeno v Praze, dodáváno globálně.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Začněte svůj projekt →"
+        },
+        {
+          "id": "bookCall",
+          "label": "Rezervujte si bezplatný hovor"
+        }
+      ],
+      "floatingBadges": [
+        {
+          "id": "projectLaunched",
+          "title": "✓ Projekt spuštěn",
+          "subtitle": "TechVentures Prague"
+        },
+        {
+          "id": "satisfaction",
+          "title": "⚡ 98% spokojenost",
+          "subtitle": "47 spokojených klientů"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "id": "clientsServed",
+        "value": 47,
+        "suffix": "+",
+        "label": "Obsloužených klientů"
+      },
+      {
+        "id": "satisfactionRate",
+        "value": 98,
+        "suffix": "%",
+        "label": "Míra spokojenosti"
+      },
+      {
+        "id": "avgDelivery",
+        "value": 7,
+        "suffix": " dní",
+        "label": "Průměrné dodání"
+      },
+      {
+        "id": "markets",
+        "value": 3,
+        "suffix": " země",
+        "label": "Aktivní trhy"
+      }
+    ],
+    "servicesSection": {
+      "badge": "Co děláme",
+      "titleLine1": "Vše, co vaše firma potřebuje",
+      "titleLine2": "k online vítězství",
+      "description": "Od špičkových webů po AI automatizaci a založení české společnosti — zvládneme vše na výjimečné úrovni.",
+      "cards": [
+        {
+          "id": "agencyWebsites",
+          "title": "Weby pro firmy",
+          "desc": "Vysoce konverzní, SEO optimalizované weby na Next.js, které mění návštěvníky v platící klienty.",
+          "tag": "Nejoblíbenější",
+          "price": "od 45 000 CZK"
+        },
+        {
+          "id": "sro",
+          "title": "Založení české S.R.O.",
+          "desc": "Kompletní založení české společnosti v angličtině od začátku do konce. Bez byrokracie, bez stresu, s výsledkem.",
+          "tag": "",
+          "price": "od 12 000 CZK"
+        },
+        {
+          "id": "aiAutomation",
+          "title": "AI automatizace",
+          "desc": "Vlastní AI workflow, chatboti a automatizační pipeline, které vašemu týmu ušetří 20+ hodin týdně.",
+          "tag": "Vysoká poptávka",
+          "price": "od 25 000 CZK"
+        },
+        {
+          "id": "seoGrowth",
+          "title": "SEO a růst",
+          "desc": "Datově řízené SEO strategie pro trhy střední a východní Evropy. Lepší pozice, vyšší dohledatelnost, stabilní růst.",
+          "tag": "",
+          "price": "od 8 000 CZK/měs."
+        },
+        {
+          "id": "brandIdentity",
+          "title": "Brand identita",
+          "desc": "Prémiové logo, brand systém a vizuální identita, díky kterým bude vaše firma nezapomenutelná.",
+          "tag": "",
+          "price": "od 18 000 CZK"
+        },
+        {
+          "id": "maintenance",
+          "title": "Údržba a podpora",
+          "desc": "24/7 monitoring, aktualizace, bezpečnostní záplaty a prioritní podpora pro vaše digitální aktiva.",
+          "tag": "",
+          "price": "od 3 000 CZK/měs."
+        }
+      ],
+      "learnMore": "Zjistit více →"
+    },
+    "processSection": {
+      "badge": "Jak pracujeme",
+      "titleLine1": "Od nápadu",
+      "titleLine2": "k živému výsledku během dnů",
+      "description": "Náš ověřený proces přináší rychlé výsledky bez kompromisů v kvalitě.",
+      "steps": [
+        {
+          "id": "01",
+          "title": "Úvodní hovor",
+          "desc": "Poznáme vaše cíle, cílovou skupinu a trh. Bez omáčky — jen informace, které potřebujeme pro funkční řešení."
+        },
+        {
+          "id": "02",
+          "title": "Strategie a design",
+          "desc": "Vlastní wireframy a designové návrhy na míru vaší značce. Každý pixel schválíte dříve, než začneme kódovat."
+        },
+        {
+          "id": "03",
+          "title": "Vývoj",
+          "desc": "Produkční kód v Next.js, TypeScript a Supabase. Od prvního dne stavíme na výkon a škálování."
+        },
+        {
+          "id": "04",
+          "title": "Revize a doladění",
+          "desc": "Kompletní QA na všech zařízeních. Vy testujete, my opravujeme. Neomezené úpravy, dokud není vše přesně podle vašich představ."
+        },
+        {
+          "id": "05",
+          "title": "Spuštění a růst",
+          "desc": "Nasadíme, monitorujeme a průběžně zlepšujeme. Váš úspěch je dlouhodobé partnerství, ne jednorázový projekt."
+        }
+      ]
+    },
+    "caseStudiesSection": {
+      "badge": "Případové studie",
+      "titleLine1": "Skutečné výsledky,",
+      "titleLine2": "skuteční klienti",
+      "viewAll": "Zobrazit vše →",
+      "items": [
+        {
+          "id": "techventures",
+          "title": "TechVentures Prague",
+          "category": "SaaS web + CRM",
+          "result": "+340% konverzí",
+          "desc": "Kompletní rebrand a spuštění webu na Next.js s integrovaným klientským dashboardem a Stripe platbami."
+        },
+        {
+          "id": "mnExportHub",
+          "title": "MN Export Hub",
+          "category": "E-commerce + S.R.O.",
+          "result": "€180K tržeb za 90 dní",
+          "desc": "Založení české společnosti + trojjazyčný B2B marketplace propojující mongolské exportéry s kupci v EU."
+        }
+      ]
+    },
+    "testimonialsSection": {
+      "badge": "Reference",
+      "titleLine1": "Důvěřují nám podnikatelé",
+      "titleLine2": "ve 3 zemích",
+      "items": [
+        {
+          "id": "arjun",
+          "name": "Arjun Sharma",
+          "role": "CEO, TechVentures Prague",
+          "text": "Digi Wolf vytvořil celý náš SaaS web za 5 dní. Kvalita je výjimečná — naše konverze v prvním měsíci vzrostly o 340 %."
+        },
+        {
+          "id": "tomas",
+          "name": "Tomas Novák",
+          "role": "Founder, Novák Consulting",
+          "text": "Vyřídili moje založení české S.R.O. a zároveň postavili web pro mou agenturu. Profesionální, rychlí a bez stresu."
+        },
+        {
+          "id": "enkhmaa",
+          "name": "Enkhmaa B.",
+          "role": "Director, MN Export Hub",
+          "text": "Jako mongolská podnikatelka v Praze oceňuji agenturu, která mluví mým jazykem (doslova). Výsledky mluví samy za sebe."
+        }
+      ]
+    },
+    "aiSection": {
+      "badge": "Poháněno AI",
+      "title": "Automatizujte podnikání pomocí vlastní AI",
+      "description": "Tvoříme AI pipeline, chatboty a automatizační workflow, které eliminují opakující se úkoly. Naši klienti ušetří v průměru 23 hodin týdně.",
+      "checklist": [
+        {
+          "id": "leadChatbots",
+          "label": "Chatboti pro kvalifikaci leadů"
+        },
+        {
+          "id": "docAutomation",
+          "label": "Automatizace dokumentů a e-podpisy"
+        },
+        {
+          "id": "crmEnrichment",
+          "label": "Pipeline pro obohacení dat v CRM"
+        },
+        {
+          "id": "weeklyReports",
+          "label": "AI generované týdenní reporty"
+        }
+      ],
+      "flow": [
+        {
+          "id": "inputData",
+          "label": "Vstupní data"
+        },
+        {
+          "id": "aiProcessing",
+          "label": "Zpracování AI"
+        },
+        {
+          "id": "automation",
+          "label": "Automatizace"
+        },
+        {
+          "id": "resultsDelivered",
+          "label": "Dodané výsledky"
+        }
+      ],
+      "cta": "Prozkoumat AI služby →"
+    },
+    "pricingPreview": {
+      "badge": "Ceník",
+      "titleLine1": "Transparentní ceny,",
+      "titleLine2": "bez překvapení",
+      "subtitle": "Každý balíček obsahuje kompletní zdrojový kód, 30denní podporu a garanci spokojenosti.",
+      "plans": [
+        {
+          "id": "starter",
+          "name": "Starter",
+          "price": "15,000",
+          "currency": "CZK",
+          "desc": "Ideální pro freelancery a malé firmy, které spouští svůj první profesionální web.",
+          "cta": "Začít",
+          "featured": false,
+          "features": [
+            {
+              "id": "pages5",
+              "label": "Web o 5 stránkách"
+            },
+            {
+              "id": "mobile",
+              "label": "Responzivní pro mobil"
+            },
+            {
+              "id": "seo",
+              "label": "SEO optimalizace"
+            },
+            {
+              "id": "contactForm",
+              "label": "Kontaktní formulář"
+            },
+            {
+              "id": "support30",
+              "label": "Podpora 30 dní"
+            },
+            {
+              "id": "sourceCode",
+              "label": "Zdrojový kód v ceně"
+            }
+          ]
+        },
+        {
+          "id": "growth",
+          "name": "Growth",
+          "price": "45,000",
+          "currency": "CZK",
+          "desc": "Pro rostoucí agentury, které potřebují plně vybavený web s klientským portálem a integracemi.",
+          "cta": "Nejoblíbenější",
+          "featured": true,
+          "badge": "NEJLEPŠÍ POMĚR CENA/VÝKON",
+          "features": [
+            {
+              "id": "pagesUnlimited",
+              "label": "Neomezený počet stránek"
+            },
+            {
+              "id": "clientDashboard",
+              "label": "Klientský dashboard"
+            },
+            {
+              "id": "paymentIntegration",
+              "label": "Integrace plateb"
+            },
+            {
+              "id": "crmIntegration",
+              "label": "Integrace CRM"
+            },
+            {
+              "id": "aiChatbot",
+              "label": "AI chatbot"
+            },
+            {
+              "id": "support90",
+              "label": "Podpora 90 dní"
+            },
+            {
+              "id": "priorityDelivery",
+              "label": "Prioritní dodání"
+            }
+          ]
+        },
+        {
+          "id": "enterprise",
+          "name": "Enterprise",
+          "price": "Na míru",
+          "currency": "",
+          "desc": "Full-stack platforma s vlastním vývojem, AI automatizací a dedikovaným account managementem.",
+          "cta": "Kontaktujte nás",
+          "featured": false,
+          "features": [
+            {
+              "id": "everythingGrowth",
+              "label": "Vše z balíčku Growth"
+            },
+            {
+              "id": "customAi",
+              "label": "Vlastní AI workflow"
+            },
+            {
+              "id": "multiLanguage",
+              "label": "Vícejazyčnost"
+            },
+            {
+              "id": "whiteLabel",
+              "label": "White-label varianta"
+            },
+            {
+              "id": "sla",
+              "label": "SLA garance"
+            },
+            {
+              "id": "dedicatedPm",
+              "label": "Dedikovaný PM"
+            },
+            {
+              "id": "lifetimeSupport",
+              "label": "Doživotní podpora"
+            }
+          ]
+        }
+      ],
+      "viewFullBreakdown": "Zobrazit kompletní rozpis cen →"
+    },
+    "faqSection": {
+      "badge": "FAQ",
+      "title": "Otázky? Odpovědi.",
+      "items": [
+        {
+          "id": "q1",
+          "q": "Jak dlouho trvá webový projekt?",
+          "a": "Většina projektů trvá od zahájení do spuštění 3–6 týdnů."
+        },
+        {
+          "id": "q2",
+          "q": "Co zahrnuje založení české S.R.O.?",
+          "a": "Kompletní registraci společnosti, živnostenské oprávnění, sídlo na 1 rok a poradenství k bankovnímu účtu. Vše zařídíme za vás."
+        },
+        {
+          "id": "q3",
+          "q": "Spolupracujete i se zahraničními klienty?",
+          "a": "Ano — pracujeme na dálku s klienty v celé Evropě i mimo ni. Mluvíme anglicky, česky a mongolsky."
+        },
+        {
+          "id": "q4",
+          "q": "Jak fungují platby?",
+          "a": "50 % předem při zahájení, 50 % při finálním dodání. Přijímáme bankovní převod (CZK/EUR) a Wise."
+        },
+        {
+          "id": "q5",
+          "q": "Mohu si web po spuštění upravovat sám/sama?",
+          "a": "Ano. Stavíme na moderních platformách a předáme vám návod. Volitelně nabízíme i měsíční údržbu."
+        },
+        {
+          "id": "q6",
+          "q": "Jaké AI automatizace nabízíte?",
+          "a": "Tvoříme n8n workflow, AI agenty, chatboty a automatizace postavené na Hermes pro získávání klientů, onboarding i interní provoz."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "badge": "Omezená kapacita",
+      "titleLine1": "Připraveni vytvořit něco",
+      "titleLine2": "výjimečného?",
+      "description": "Každý měsíc přijímáme pouze 3 nové klienty, abychom udrželi špičkovou kvalitu. Rezervujte si úvodní hovor dříve, než se kapacita naplní.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Začněte svůj projekt →"
+        },
+        {
+          "id": "bookCall",
+          "label": "Rezervujte si bezplatný hovor"
+        }
+      ],
+      "points": [
+        {
+          "id": "freeConsult",
+          "label": "Bezplatná 30minutová konzultace"
+        },
+        {
+          "id": "noCommitment",
+          "label": "Bez závazků"
+        },
+        {
+          "id": "response24h",
+          "label": "Odpověď do 24 hodin"
+        }
+      ]
+    },
+    "techStack": [
+      {
+        "id": "nextjs",
+        "label": "Next.js"
+      },
+      {
+        "id": "typescript",
+        "label": "TypeScript"
+      },
+      {
+        "id": "supabase",
+        "label": "Supabase"
+      },
+      {
+        "id": "tailwind",
+        "label": "Tailwind CSS"
+      },
+      {
+        "id": "vercel",
+        "label": "Vercel"
+      },
+      {
+        "id": "stripe",
+        "label": "Stripe"
+      },
+      {
+        "id": "framerMotion",
+        "label": "Framer Motion"
+      },
+      {
+        "id": "prisma",
+        "label": "Prisma"
+      },
+      {
+        "id": "react",
+        "label": "React"
+      },
+      {
+        "id": "postgresql",
+        "label": "PostgreSQL"
+      },
+      {
+        "id": "resend",
+        "label": "Resend"
+      },
+      {
+        "id": "cloudflare",
+        "label": "Cloudflare"
+      }
+    ]
+  },
+  "services": {
+    "hero": {
+      "badge": "Full-stack agenturní služby",
+      "titleLine1": "Všechny služby, které potřebujete",
+      "titleLine2": "k dominanci na trhu",
+      "subtitle": "Od nuly k lídrovi trhu — webový vývoj, založení společnosti, AI automatizace a další. Tvořeno odborníky, kteří rozumí středoevropským trhům.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Spustit projekt"
+        },
+        {
+          "id": "exploreServices",
+          "label": "Prozkoumat služby ↓"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "id": "coreServices",
+        "num": "6",
+        "label": "Klíčových služeb"
+      },
+      {
+        "id": "clientsServed",
+        "num": "47+",
+        "label": "Obsloužených klientů"
+      },
+      {
+        "id": "deliveryDays",
+        "num": "5–10",
+        "label": "Dnů do dodání"
+      },
+      {
+        "id": "satisfaction",
+        "num": "98%",
+        "label": "Míra spokojenosti"
+      }
+    ],
+    "cards": [
+      {
+        "id": "web",
+        "title": "Webový vývoj",
+        "tagline": "Full-stack weby, které konvertují",
+        "price": "od 45 000 CZK",
+        "badge": "Nejoblíbenější",
+        "startingAt": "Začíná na",
+        "includedTitle": "Co je zahrnuto",
+        "processTitle": "Náš proces",
+        "cta": "Rezervovat konzultaci →",
+        "description": "Vytváříme prémiové full-stack weby navržené pro výkon, SEO a konverze. Next.js, Webflow, e-commerce — každý pixel má svůj účel, každá milisekunda je optimalizovaná.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Next.js 14 + TypeScript full-stack"
+          },
+          {
+            "id": "f2",
+            "label": "Webflow a vlastní CMS řešení"
+          },
+          {
+            "id": "f3",
+            "label": "E-commerce přes Shopify / WooCommerce"
+          },
+          {
+            "id": "f4",
+            "label": "Mobile-first responzivní design"
+          },
+          {
+            "id": "f5",
+            "label": "Technické SEO od prvního dne"
+          },
+          {
+            "id": "f6",
+            "label": "Core Web Vitals optimalizace (100/100)"
+          },
+          {
+            "id": "f7",
+            "label": "Vlastní animace a interakce"
+          },
+          {
+            "id": "f8",
+            "label": "Analytika a měření konverzí"
+          },
+          {
+            "id": "f9",
+            "label": "30 dní podpory po spuštění v ceně"
+          }
+        ]
+      },
+      {
+        "id": "sro",
+        "title": "Založení české S.R.O.",
+        "tagline": "Společnost v EU během dní, ne měsíců",
+        "price": "od 15 000 CZK",
+        "badge": "Vstupní brána do EU",
+        "startingAt": "Začíná na",
+        "includedTitle": "Co je zahrnuto",
+        "processTitle": "Náš proces",
+        "cta": "Rezervovat konzultaci →",
+        "description": "Kompletní registrace české S.R.O. — pomoc s bankovním účtem, compliance a plné vedení v angličtině. Vyřídíme každý formulář, notáře i úřady.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Kompletní registrace společnosti od A do Z"
+          },
+          {
+            "id": "f2",
+            "label": "Pomoc s otevřením bankovního účtu"
+          },
+          {
+            "id": "f3",
+            "label": "Živnostenský list v ceně"
+          },
+          {
+            "id": "f4",
+            "label": "Adresa sídla (1 rok)"
+          },
+          {
+            "id": "f5",
+            "label": "Podpora při registraci k DPH"
+          },
+          {
+            "id": "f6",
+            "label": "Příprava společenské smlouvy"
+          },
+          {
+            "id": "f7",
+            "label": "Apostila a ověřené překlady dle potřeby"
+          },
+          {
+            "id": "f8",
+            "label": "Průběžné compliance poradenství"
+          },
+          {
+            "id": "f9",
+            "label": "Průvodce v angličtině po celou dobu"
+          }
+        ]
+      },
+      {
+        "id": "ai",
+        "title": "AI automatizace",
+        "tagline": "Pracujte chytřeji, škálujte rychleji",
+        "price": "od 25 000 CZK",
+        "badge": "Future-Proof",
+        "startingAt": "Začíná na",
+        "includedTitle": "Co je zahrnuto",
+        "processTitle": "Náš proces",
+        "cta": "Rezervovat konzultaci →",
+        "description": "Nasazujeme vlastní AI systémy — chatboty, automatizace workflow a systémy pro generování leadů — které odstraňují rutinní práci a výrazně zvyšují produktivitu týmu.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Vlastní chatboti GPT-4 / Claude"
+          },
+          {
+            "id": "f2",
+            "label": "Boti pro kvalifikaci a nurturing leadů"
+          },
+          {
+            "id": "f3",
+            "label": "Automatizace workflow (n8n / Make / Zapier)"
+          },
+          {
+            "id": "f4",
+            "label": "Integrace CRM a ERP"
+          },
+          {
+            "id": "f5",
+            "label": "Pipeline pro zpracování dokumentů"
+          },
+          {
+            "id": "f6",
+            "label": "AI generování obsahu"
+          },
+          {
+            "id": "f7",
+            "label": "Interní asistenti pro Slack / Teams"
+          },
+          {
+            "id": "f8",
+            "label": "Vlastní API integrace"
+          },
+          {
+            "id": "f9",
+            "label": "Školení a předávací dokumentace"
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "title": "SEO a růst",
+        "tagline": "Vyšší pozice. Rychlejší růst.",
+        "price": "od 8 000 CZK/měsíc",
+        "badge": "Průběžně",
+        "startingAt": "Začíná na",
+        "includedTitle": "Co je zahrnuto",
+        "processTitle": "Náš proces",
+        "cta": "Rezervovat konzultaci →",
+        "description": "Technické SEO, obsahová strategie a Google Ads pro trhy střední a východní Evropy. Kombinujeme technickou kvalitu a strategický obsah, abyste se dostali na 1. stránku výsledků.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Kompletní technický SEO audit a opravy"
+          },
+          {
+            "id": "f2",
+            "label": "Keyword research (CZ, SK, PL, EN)"
+          },
+          {
+            "id": "f3",
+            "label": "On-page optimalizace a schema markup"
+          },
+          {
+            "id": "f4",
+            "label": "Měsíční obsahová strategie a briefy"
+          },
+          {
+            "id": "f5",
+            "label": "Správa kampaní Google Ads"
+          },
+          {
+            "id": "f6",
+            "label": "Linkbuilding pro CEE trhy"
+          },
+          {
+            "id": "f7",
+            "label": "Správa Google Search Console"
+          },
+          {
+            "id": "f8",
+            "label": "Analýza mezer vůči konkurenci"
+          },
+          {
+            "id": "f9",
+            "label": "Měsíční reporty s reálnými metrikami"
+          }
+        ]
+      },
+      {
+        "id": "brand",
+        "title": "Brand identita",
+        "tagline": "Vypadejte jako lídr, kterým jste",
+        "price": "od 12 000 CZK",
+        "badge": "Premium",
+        "startingAt": "Začíná na",
+        "includedTitle": "Co je zahrnuto",
+        "processTitle": "Náš proces",
+        "cta": "Rezervovat konzultaci →",
+        "description": "Kompletní systém vizuální identity — logo, brand guideline a vizuální systém — díky kterému budete okamžitě rozpoznatelní a nezapomenutelní.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Workshop brand strategie a pozicování"
+          },
+          {
+            "id": "f2",
+            "label": "Primární i sekundární sada log"
+          },
+          {
+            "id": "f3",
+            "label": "Kompletní barevný systém"
+          },
+          {
+            "id": "f4",
+            "label": "Volba typografické hierarchie"
+          },
+          {
+            "id": "f5",
+            "label": "Návrh vizitek a hlavičkového papíru"
+          },
+          {
+            "id": "f6",
+            "label": "Sada pro sociální sítě (10+ šablon)"
+          },
+          {
+            "id": "f7",
+            "label": "Brand guideline PDF (50+ stran)"
+          },
+          {
+            "id": "f8",
+            "label": "Sada ikon a styl ilustrací"
+          },
+          {
+            "id": "f9",
+            "label": "Všechny zdrojové soubory (AI, EPS, Figma)"
+          }
+        ]
+      },
+      {
+        "id": "maintenance",
+        "title": "Údržba webu",
+        "tagline": "Stále online. Stále chráněno.",
+        "price": "od 3 000 CZK/měsíc",
+        "badge": "Klid na práci",
+        "startingAt": "Začíná na",
+        "includedTitle": "Co je zahrnuto",
+        "processTitle": "Náš proces",
+        "cta": "Rezervovat konzultaci →",
+        "description": "Hosting, aktualizace, bezpečnost a podpora — 24/7. Naše proaktivní údržba drží váš web i systémy v nejvyšší výkonnosti.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "24/7 monitoring dostupnosti s upozorněními"
+          },
+          {
+            "id": "f2",
+            "label": "Spravovaný hosting v ceně"
+          },
+          {
+            "id": "f3",
+            "label": "Týdenní aktualizace CMS a závislostí"
+          },
+          {
+            "id": "f4",
+            "label": "Bezpečnostní skeny a odstranění malware"
+          },
+          {
+            "id": "f5",
+            "label": "Denní automatické zálohy (retence 30 dní)"
+          },
+          {
+            "id": "f6",
+            "label": "Monitoring výkonu a optimalizace"
+          },
+          {
+            "id": "f7",
+            "label": "Měsíční report výkonu"
+          },
+          {
+            "id": "f8",
+            "label": "Prioritní opravy chyb (< 4h reakce)"
+          },
+          {
+            "id": "f9",
+            "label": "Podpora přes dedikovaný Slack kanál"
+          }
+        ]
+      }
+    ],
+    "guarantees": [
+      {
+        "id": "onTime",
+        "title": "Dodání včas",
+        "desc": "Dodáváme podle harmonogramu vždy. Pokud termín nesplníme, získáte slevu 10 % z faktury."
+      },
+      {
+        "id": "fixedPricing",
+        "title": "Fixní cena",
+        "desc": "Cenu domluvíme předem bez překvapení. Co naceníme, to zaplatíte."
+      },
+      {
+        "id": "unlimitedRevisions",
+        "title": "Neomezené revize",
+        "desc": "V rámci rozsahu iterujeme, dokud nebudete 100% spokojeni."
+      }
+    ],
+    "bottomCta": {
+      "titleLine1": "Připraveni vytvořit něco",
+      "titleLine2": "výjimečného?",
+      "description": "Rezervujte si bezplatný 30minutový strategický hovor. Namapujeme vaše cíle, vybereme správné služby a do 24 hodin doručíme detailní návrh.",
+      "ctas": [
+        {
+          "id": "bookStrategyCall",
+          "label": "Rezervovat bezplatný strategický hovor →"
+        },
+        {
+          "id": "viewPricing",
+          "label": "Zobrazit ceník"
+        }
+      ]
+    }
+  },
+  "pricing": {
+    "hero": {
+      "badge": "Ceník",
+      "titleLine1": "Transparentní ceny,",
+      "titleLine2": "bez překvapení",
+      "description": "Každý balíček obsahuje kompletní zdrojový kód, 30denní podporu a garanci spokojenosti. Fixní ceny — žádné skryté poplatky."
+    },
+    "tiers": [
+      {
+        "id": "starter",
+        "name": "Starter",
+        "price": "15,000",
+        "currency": "CZK",
+        "desc": "Ideální pro freelancery a malé firmy, které spouští svůj první profesionální web.",
+        "cta": "Začít",
+        "featured": false,
+        "features": [
+          {
+            "id": "f1",
+            "label": "Web o 5 stránkách"
+          },
+          {
+            "id": "f2",
+            "label": "Responzivní pro mobil"
+          },
+          {
+            "id": "f3",
+            "label": "SEO optimalizace"
+          },
+          {
+            "id": "f4",
+            "label": "Kontaktní formulář"
+          },
+          {
+            "id": "f5",
+            "label": "Podpora 30 dní"
+          },
+          {
+            "id": "f6",
+            "label": "Zdrojový kód v ceně"
+          }
+        ]
+      },
+      {
+        "id": "growth",
+        "name": "Growth",
+        "price": "45,000",
+        "currency": "CZK",
+        "desc": "Pro rostoucí agentury, které potřebují plně vybavený web s klientským portálem a integracemi.",
+        "cta": "Nejoblíbenější",
+        "featured": true,
+        "featuredBadge": "NEJLEPŠÍ POMĚR CENA/VÝKON",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Neomezený počet stránek"
+          },
+          {
+            "id": "f2",
+            "label": "Klientský dashboard"
+          },
+          {
+            "id": "f3",
+            "label": "Integrace plateb"
+          },
+          {
+            "id": "f4",
+            "label": "Integrace CRM"
+          },
+          {
+            "id": "f5",
+            "label": "AI chatbot"
+          },
+          {
+            "id": "f6",
+            "label": "Podpora 90 dní"
+          },
+          {
+            "id": "f7",
+            "label": "Prioritní dodání"
+          }
+        ]
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "price": "Na míru",
+        "currency": "",
+        "desc": "Full-stack platforma s vlastním vývojem, AI automatizací a dedikovaným account managementem.",
+        "cta": "Kontaktujte nás",
+        "featured": false,
+        "features": [
+          {
+            "id": "f1",
+            "label": "Vše z balíčku Growth"
+          },
+          {
+            "id": "f2",
+            "label": "Vlastní AI workflow"
+          },
+          {
+            "id": "f3",
+            "label": "Vícejazyčnost"
+          },
+          {
+            "id": "f4",
+            "label": "White-label varianta"
+          },
+          {
+            "id": "f5",
+            "label": "SLA garance"
+          },
+          {
+            "id": "f6",
+            "label": "Dedikovaný PM"
+          },
+          {
+            "id": "f7",
+            "label": "Doživotní podpora"
+          }
+        ]
+      }
+    ],
+    "trustBadges": [
+      {
+        "id": "fixedPricing",
+        "text": "Fixní ceny bez skrytých poplatků"
+      },
+      {
+        "id": "onTime",
+        "text": "Garance dodání včas"
+      },
+      {
+        "id": "unlimitedRevisions",
+        "text": "Neomezené revize v rámci rozsahu"
+      },
+      {
+        "id": "paymentPlan",
+        "text": "Možnost plateb 50/50"
+      }
+    ],
+    "comparison": {
+      "badge": "Porovnání balíčků",
+      "title": "Kompletní porovnání funkcí",
+      "subtitle": "Přesně vidíte, co každý balíček obsahuje — bez domýšlení.",
+      "featureLabel": "Funkce",
+      "rows": [
+        {
+          "id": "pagesIncluded",
+          "label": "Počet stránek",
+          "starter": "5 stránek",
+          "growth": "Neomezeně",
+          "enterprise": "Neomezeně"
+        },
+        {
+          "id": "mobileResponsive",
+          "label": "Responzivní design",
+          "starter": true,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "seoSetup",
+          "label": "SEO nastavení",
+          "starter": "Základní",
+          "growth": "Pokročilé",
+          "enterprise": "Enterprise"
+        },
+        {
+          "id": "contactForm",
+          "label": "Kontaktní formulář",
+          "starter": true,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "postLaunchSupport",
+          "label": "Podpora po spuštění",
+          "starter": "30 dní",
+          "growth": "90 dní",
+          "enterprise": "Doživotně"
+        },
+        {
+          "id": "sourceOwnership",
+          "label": "Vlastnictví zdrojového kódu",
+          "starter": true,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "clientDashboard",
+          "label": "Klientský dashboard",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "paymentIntegration",
+          "label": "Integrace plateb",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "crmIntegration",
+          "label": "Integrace CRM",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "aiChatbot",
+          "label": "AI chatbot",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "customAi",
+          "label": "Vlastní AI workflow",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "multiLanguage",
+          "label": "Vícejazyčnost",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "whiteLabel",
+          "label": "White-label varianta",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "sla",
+          "label": "SLA garance",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "dedicatedPm",
+          "label": "Dedikovaný projektový manažer",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "deliveryTimeline",
+          "label": "Čas dodání",
+          "starter": "5–7 dní",
+          "growth": "Prioritní",
+          "enterprise": "Vlastní SLA"
+        }
+      ],
+      "cta": "Získat nabídku na míru →"
+    },
+    "addOns": {
+      "badge": "Doplňky",
+      "title": "Posilte svůj balíček",
+      "subtitle": "Přidejte některou z těchto služeb a vytvořte kompletní digitální motor vašeho růstu.",
+      "items": [
+        {
+          "id": "seoRetainer",
+          "title": "SEO a Growth retainer",
+          "price": "8,000 CZK/měs.",
+          "badge": "Měsíčně",
+          "desc": "Kompletní technické SEO, analýza klíčových slov, obsahová strategie a měsíční linkbuilding."
+        },
+        {
+          "id": "maintenance",
+          "title": "Údržba webu",
+          "price": "3,000 CZK/měs.",
+          "badge": "Měsíčně",
+          "desc": "24/7 monitoring, týdenní aktualizace, denní zálohy a prioritní opravy chyb."
+        },
+        {
+          "id": "aiChatbot",
+          "title": "Integrace AI chatbota",
+          "price": "od 15 000 CZK",
+          "badge": "Jednorázově",
+          "desc": "Vlastní chatbot na GPT-4 natrénovaný na vašem obsahu, integrovaný s vaším CRM."
+        },
+        {
+          "id": "brandSystem",
+          "title": "Systém brand identity",
+          "price": "od 12 000 CZK",
+          "badge": "Jednorázově",
+          "desc": "Kompletní vizuální identita včetně loga, barevného systému, typografie a guideline."
+        }
+      ]
+    },
+    "paymentsFaq": {
+      "badge": "Platby a fakturace",
+      "title": "Často kladené otázky",
+      "subtitle": "Vše, co potřebujete vědět o účtování a možnostech platby.",
+      "items": [
+        {
+          "id": "paymentPlans",
+          "q": "Nabízíte splátkové kalendáře?",
+          "a": "Ano. U projektů nad 20 000 CZK nabízíme rozdělení 50/50 — 50 % předem při zahájení, 50 % při předání. U retainer služeb fakturujeme měsíčně na začátku období."
+        },
+        {
+          "id": "currency",
+          "q": "Jaké měny přijímáte?",
+          "a": "Fakturujeme v českých korunách (CZK). Přijímáme také EUR a USD podle aktuálního kurzu. Platby probíhají bankovním převodem nebo kartou přes Stripe."
+        },
+        {
+          "id": "hiddenFees",
+          "q": "Jsou v ceně nějaké skryté poplatky?",
+          "a": "Nikdy. Naše nabídky jsou detailně rozepsané a fixní. Dodatečné náklady mohou vzniknout pouze u služeb třetích stran, které si zvolíte (např. prémiový CMS plán nebo specifické API) — vždy je předem transparentně uvedeme."
+        },
+        {
+          "id": "moreRevisions",
+          "q": "Co když budu potřebovat více revizí?",
+          "a": "U balíčku Starter jsou další kola revizí za 2 500 CZK za kolo. Balíčky Growth a Enterprise mají neomezené revize v rámci dohodnutého rozsahu. Rozsah vždy jasně definujeme v nabídce."
+        },
+        {
+          "id": "moneyBack",
+          "q": "Jak funguje 14denní garance vrácení peněz?",
+          "a": "Pokud po prvním kole revize nebudete spokojeni s úvodními designovými koncepty, můžete do 14 dní od začátku projektu požádat o plné vrácení peněz. Platí pouze pro nové webové projekty."
+        },
+        {
+          "id": "upgrade",
+          "q": "Mohu později přejít na vyšší balíček?",
+          "a": "Rozhodně ano. Mnoho klientů začíná na Starter a s růstem firmy přechází výš. Práci, která už byla provedena, započítáme do ceny upgradu, takže za stejné věci neplatíte dvakrát."
+        },
+        {
+          "id": "vat",
+          "q": "Je v cenách zahrnuta DPH?",
+          "a": "Všechny uvedené ceny jsou bez DPH. Pokud jste český plátce DPH, na fakturu se aplikuje standardní česká sazba DPH (21 %). Firemní klienti z EU s platným VAT ID využívají režim reverse charge."
+        },
+        {
+          "id": "growthAiChatbot",
+          "q": "Co obsahuje AI chatbot v balíčku Growth?",
+          "a": "Balíček Growth zahrnuje vlastní chatbot na GPT-4 natrénovaný na obsahu vašeho webu, integrovaný do webu, se základními flow pro kvalifikaci leadů. Plné AI automatizace (CRM integrace, komplexní pipeline) se naceňují zvlášť."
+        }
+      ]
+    },
+    "bottomCta": {
+      "title": "Jste připraveni začít svůj projekt?",
+      "description": "Řekněte nám své cíle a do 24 hodin vám pošleme detailní nabídku. Bez závazků, bez obchodního nátlaku — jen jasný plán a fixní cena.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Začněte svůj projekt →"
+        },
+        {
+          "id": "bookCall",
+          "label": "Rezervujte si bezplatný hovor"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Spojte se s námi",
+      "titleLine1": "Pojďme vytvořit něco",
+      "titleLine2": "výjimečného",
+      "subtitle": "Popište nám svůj projekt. Odpovídáme do 4 pracovních hodin — osobně, ne robotem."
+    },
+    "leftColumn": {
+      "contactInformationTitle": "Kontaktní informace",
+      "responseGuarantee": {
+        "title": "Garance odpovědi do 4 hodin",
+        "desc": "Garantujeme osobní odpověď na každou poptávku do 4 pracovních hodin. Žádné automatické odpovědi, žádní chatboti — skuteční lidé, kteří rozumí vašemu projektu."
+      },
+      "whatHappensNextTitle": "Co se bude dít dál",
+      "steps": [
+        {
+          "id": "01",
+          "title": "Pošlete nám zadání",
+          "desc": "Vyplňte formulář s detaily projektu a cíli."
+        },
+        {
+          "id": "02",
+          "title": "Zkontrolujeme a odpovíme",
+          "desc": "Do 4 pracovních hodin dostanete osobní odpověď — ne od bota."
+        },
+        {
+          "id": "03",
+          "title": "Naplánujeme strategický hovor",
+          "desc": "30min Zoom pro sladění rozsahu, termínu a rozpočtu."
+        }
+      ],
+      "followUs": "Sledujte nás",
+      "socials": [
+        {
+          "id": "linkedin",
+          "name": "LinkedIn"
+        },
+        {
+          "id": "instagram",
+          "name": "Instagram"
+        },
+        {
+          "id": "twitterX",
+          "name": "Twitter/X"
+        },
+        {
+          "id": "facebook",
+          "name": "Facebook"
+        }
+      ],
+      "contactInfo": [
+        {
+          "id": "email",
+          "label": "E-mail",
+          "value": "info@digiwolf.agency"
+        },
+        {
+          "id": "phone",
+          "label": "Telefon",
+          "value": "+420 296 183 158"
+        },
+        {
+          "id": "office",
+          "label": "Sídlo",
+          "value": "Varšavská 715/36, Vinohrady, 120 00 Praha 2"
+        }
+      ]
+    },
+    "form": {
+      "callCta": {
+        "title": "Preferujete hovor?",
+        "subtitle": "Rezervujte si bezplatnou 30min úvodní konzultaci",
+        "button": "Rezervovat bezplatný 30min úvodní hovor →"
+      },
+      "title": "Začněte svůj projekt",
+      "subtitle": "Vyplňte formulář níže a brzy se vám ozveme.",
+      "fields": {
+        "fullName": "Celé jméno *",
+        "email": "E-mailová adresa *",
+        "company": "Firma / název podnikání",
+        "service": "O jakou službu máte zájem? *",
+        "budget": "Rozpočtové rozmezí *",
+        "message": "Popis projektu *"
+      },
+      "placeholders": {
+        "fullName": "Jan Novák",
+        "email": "jan@firma.cz",
+        "company": "Acme s.r.o.",
+        "service": "Vyberte službu",
+        "budget": "Vyberte rozpočet",
+        "message": "Napište nám o projektu — co potřebujete, vaše cíle, časový plán a případné specifické požadavky..."
+      },
+      "submitIdle": "Odeslat zadání projektu →",
+      "submitLoading": "Odesíláme zadání...",
+      "privacyNote": "Odesláním souhlasíte s našimi Zásadami ochrany osobních údajů. Vaše data nikdy nesdílíme.",
+      "success": {
+        "title": "Zpráva přijata!",
+        "body": "Děkujeme za kontaktování. Náš tým zkontroluje vaše zadání a do 4 pracovních hodin se ozve s dalšími kroky.",
+        "confirmationLabel": "Potvrzení odesláno na",
+        "fallbackEmail": "váš e-mail",
+        "resetButton": "Odeslat další zprávu"
+      },
+      "errors": {
+        "generic": "Něco se pokazilo. Zkuste to prosím znovu nebo nám napište přímo e-mail.",
+        "network": "Chyba sítě. Zkuste to prosím znovu nebo nám napište přímo e-mail.",
+        "highlighted": "Prosím zkontrolujte zvýrazněná pole."
+      }
+    },
+    "validation": {
+      "name": "Zadejte prosím celé jméno",
+      "email": "Zadejte prosím platnou e-mailovou adresu",
+      "company": "Název společnosti je příliš dlouhý",
+      "service": "Vyberte prosím službu",
+      "budget": "Vyberte prosím rozpočtové rozmezí",
+      "messageMin": "Uveďte prosím alespoň stručný popis projektu",
+      "messageMax": "Zpráva je příliš dlouhá (max 5000 znaků)"
+    },
+    "services": [
+      {
+        "id": "webDevelopment",
+        "value": "Webový vývoj"
+      },
+      {
+        "id": "sroFormation",
+        "value": "Založení české S.R.O."
+      },
+      {
+        "id": "aiAutomation",
+        "value": "AI automatizace"
+      },
+      {
+        "id": "seoGrowth",
+        "value": "SEO a růst"
+      },
+      {
+        "id": "brandIdentity",
+        "value": "Brand identita"
+      },
+      {
+        "id": "websiteMaintenance",
+        "value": "Údržba webu"
+      }
+    ],
+    "budgets": [
+      {
+        "id": "under15k",
+        "value": "Do 15k CZK"
+      },
+      {
+        "id": "15to45k",
+        "value": "15k–45k CZK"
+      },
+      {
+        "id": "45to100k",
+        "value": "45k–100k CZK"
+      },
+      {
+        "id": "over100k",
+        "value": "100k+ CZK"
+      },
+      {
+        "id": "monthlyRetainer",
+        "value": "Měsíční retainer"
+      }
+    ],
+    "scheduleSection": {
+      "badge": "Chcete nejdřív mluvit?",
+      "title": "Rezervujte si bezplatný 30min strategický hovor",
+      "description": "Přeskočte zbytečné přeposílání e-mailů. Vyberte si termín, který vám vyhovuje, a na živém hovoru společně namapujeme projekt. Bez prodejního tlaku — jen poctivé doporučení.",
+      "tags": [
+        {
+          "id": "freeConsult",
+          "label": "Bezplatná konzultace"
+        },
+        {
+          "id": "thirtyMinutes",
+          "label": "30 minut"
+        },
+        {
+          "id": "noCommitment",
+          "label": "Bez závazků"
+        }
+      ],
+      "cta": "→ Rezervovat bezplatný 30min úvodní hovor",
+      "slotsTitle": "Dostupné termíny",
+      "slots": [
+        {
+          "id": "monFri",
+          "day": "Po–Pá",
+          "time": "9:00 – 18:00 CET"
+        },
+        {
+          "id": "sat",
+          "day": "So",
+          "time": "10:00 – 14:00 CET"
+        }
+      ],
+      "timezoneNote": "Praha (CET) · Online přes Zoom"
+    }
+  },
+  "book": {
+    "labels": {
+      "freeDiscoveryCall": "Bezplatný úvodní hovor",
+      "pickTime": "Vyberte čas",
+      "bookingFor": "Rezervace pro:",
+      "timezone": "Praha (CET) · 30 minut · Video nebo telefon"
+    },
+    "serviceLabels": [
+      {
+        "id": "general",
+        "label": "Úvodní hovor"
+      },
+      {
+        "id": "discovery",
+        "label": "Úvodní hovor"
+      },
+      {
+        "id": "website",
+        "label": "Webový projekt"
+      },
+      {
+        "id": "sro",
+        "label": "Založení české S.R.O."
+      },
+      {
+        "id": "ai",
+        "label": "AI automatizace"
+      },
+      {
+        "id": "app",
+        "label": "Webový projekt"
+      }
+    ],
+    "hero": {
+      "title": "Rezervujte si bezplatný 30min úvodní hovor",
+      "subtitle": "Bez prodejního tlaku — jen poctivé doporučení k vašemu projektu, časové ose a rozpočtu. Vyberte termín níže a kalendářní pozvánku vám pošleme okamžitě.",
+      "trustPills": [
+        {
+          "id": "freeConsult",
+          "label": "Bezplatná 30minutová konzultace"
+        },
+        {
+          "id": "noCommitment",
+          "label": "Bez závazků"
+        },
+        {
+          "id": "responseGuarantee",
+          "label": "Garance odpovědi do 4 hodin"
+        }
+      ]
+    },
+    "prepare": {
+      "title": "Co si připravit",
+      "subtitle": "Nepotřebujete formální zadání — stačí hrubá představa. Tyto body vám pomohou využít 30 minut naplno.",
+      "items": [
+        {
+          "id": "projectGoal",
+          "title": "Cíl projektu",
+          "desc": "Web, české S.R.O., AI automatizace nebo něco jiného — stačí jedna věta."
+        },
+        {
+          "id": "timelineBudget",
+          "title": "Časový plán a rozpočet",
+          "desc": "Přibližná rozmezí nám pomohou realisticky doporučit vhodné řešení."
+        },
+        {
+          "id": "existingAssets",
+          "title": "Stávající podklady",
+          "desc": "Současný web, brand guideline nebo příklady konkurence, které se vám líbí."
+        },
+        {
+          "id": "questions",
+          "title": "Vaše otázky",
+          "desc": "Cokoliv chcete na hovoru probrat — proces, cenu nebo technický stack."
+        }
+      ]
+    },
+    "callTopics": {
+      "title": "Co spolu probereme",
+      "items": [
+        {
+          "id": "agencyWebsites",
+          "label": "Firemní weby a klientské portály"
+        },
+        {
+          "id": "sroFormation",
+          "label": "Založení české S.R.O."
+        },
+        {
+          "id": "aiWorkflows",
+          "label": "AI workflow a automatizace"
+        },
+        {
+          "id": "strategyTimeline",
+          "label": "Strategie, harmonogram a další kroky"
+        }
+      ]
+    },
+    "guarantees": {
+      "response": {
+        "title": "Garance odpovědi do 4 hodin",
+        "desc": "Garantujeme osobní odpověď na každou poptávku do 4 pracovních hodin. Žádné automatické odpovědi, žádní chatboti — skuteční lidé, kteří rozumí vašemu projektu."
+      },
+      "availability": {
+        "badge": "Omezená kapacita",
+        "desc": "Každý měsíc přijímáme pouze 3 nové klienty, abychom udrželi špičkovou kvalitu. Rezervujte si úvodní hovor dříve, než se kapacita naplní."
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Náš příběh",
+      "title": "Seznamte se se smečkou",
+      "subtitle": "Digitální agentura z Prahy založená mongolským podnikatelem — pomáháme ambiciózním firmám ve střední a východní Evropě dominovat v digitální době.",
+      "paragraph2": "Věříme, že každý podnikatel si zaslouží špičkovou digitální infrastrukturu bez ohledu na to, odkud začal. My tvoříme nástroje. My otevíráme dveře.",
+      "ctas": [
+        {
+          "id": "workWithUs",
+          "label": "Spolupracujte s námi"
+        },
+        {
+          "id": "ourServices",
+          "label": "Naše služby →"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "id": "clients",
+        "num": "47",
+        "suffix": "+",
+        "label": "Obsloužených klientů"
+      },
+      {
+        "id": "satisfaction",
+        "num": "98",
+        "suffix": "%",
+        "label": "Míra spokojenosti"
+      },
+      {
+        "id": "countries",
+        "num": "3",
+        "suffix": "",
+        "label": "Aktivní země"
+      },
+      {
+        "id": "delivery",
+        "num": "7",
+        "suffix": " dní",
+        "label": "Průměrná doba dodání"
+      }
+    ],
+    "founder": {
+      "badge": "Zakladatel",
+      "sectionTitleLine1": "Z Ulánbátaru do Prahy —",
+      "sectionTitleLine2": "stavíme mosty",
+      "name": "Uuganbayar Ganbaatar",
+      "role": "Zakladatel a CEO",
+      "route": "🇲🇳 Ulaanbaatar → 🇨🇿 Prague",
+      "skills": [
+        {
+          "id": "nextjs",
+          "label": "Next.js"
+        },
+        {
+          "id": "typescript",
+          "label": "TypeScript"
+        },
+        {
+          "id": "aiAutomation",
+          "label": "AI automatizace"
+        },
+        {
+          "id": "czechLaw",
+          "label": "České obchodní právo"
+        },
+        {
+          "id": "brandStrategy",
+          "label": "Brand strategie"
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "p1",
+          "text": "Mongolský podnikatel žijící v Praze v České republice. Uuganbayar založil Digi Wolf Agency, aby propojil příležitosti východoevropského trhu s podnikateli z mongolské diaspory."
+        },
+        {
+          "id": "p2",
+          "text": "Specializuje se na webový vývoj, zakládání firem (české S.R.O.) a AI automatizaci — pomohl více než 47 podnikatelům z Mongolska, Kazachstánu a Střední Asie vstoupit na evropský trh."
+        },
+        {
+          "id": "p3",
+          "text": "Po více než 10 letech života a práce v České republice přesně ví, jaké to je být cizincem, který buduje něco skutečného v nové zemi — a právě tato empatie stojí v jádru každé služby Digi Wolf."
+        }
+      ],
+      "cta": "Spolupracujte s námi →"
+    },
+    "values": {
+      "badge": "Za čím si stojíme",
+      "title": "Naše klíčové hodnoty",
+      "items": [
+        {
+          "id": "speed",
+          "title": "Rychlost",
+          "desc": "Postupujeme rychle bez kompromisů. Většinu projektů spouštíme za 5–10 dní. Díky systémové práci dodáváme prémiové výsledky startupovým tempem."
+        },
+        {
+          "id": "precision",
+          "title": "Preciznost",
+          "desc": "Každý řádek kódu, každý pixel i každý dokument tvoříme podle nejvyššího standardu. Neodevzdáváme nic, pod co bychom se sami nepodepsali."
+        },
+        {
+          "id": "transparency",
+          "title": "Transparentnost",
+          "desc": "Žádné skryté poplatky, neurčité termíny ani agenturní dvojsmysly. Jasné ceny, poctivé vymezení rozsahu a přímá komunikace po celou dobu projektu."
+        },
+        {
+          "id": "results",
+          "title": "Výsledky",
+          "desc": "Úspěch měříme růstem vašeho podnikání, ne naším dojmem aktivity. Každou strategii vážeme na konkrétní, měřitelné výsledky."
+        }
+      ]
+    },
+    "journey": {
+      "badge": "Naše cesta",
+      "titleLine1": "5 let",
+      "titleLine2": "nekompromisního růstu",
+      "paragraphs": [
+        {
+          "id": "p1",
+          "text": "Od jednočlenného poradenství k full-stack digitální agentuře obsluhující klienty ve 3 zemích — každý milník jsme si vybudovali doručením výjimečných výsledků."
+        },
+        {
+          "id": "p2",
+          "text": "Dnes Digi Wolf obsluhuje klienty v České republice, Mongolsku a na Slovensku a poskytuje komplexní digitální služby v angličtině, češtině a mongolštině."
+        }
+      ],
+      "timeline": [
+        {
+          "id": "2020",
+          "year": "2020",
+          "event": "Agentura založena v Praze Uuganbayarem Ganbaatarem"
+        },
+        {
+          "id": "2021",
+          "year": "2021",
+          "event": "Prvních 10 založení českých S.R.O. pro mongolské klienty"
+        },
+        {
+          "id": "2022",
+          "year": "2022",
+          "event": "Rozšíření do webového vývoje — spuštěno 15 webů"
+        },
+        {
+          "id": "2023",
+          "year": "2023",
+          "event": "Spuštění služby brand identity; rebrand 30+ firem"
+        },
+        {
+          "id": "2024",
+          "year": "2024",
+          "event": "Spuštění divize AI automatizace; 47+ klientů ve 3 zemích"
+        },
+        {
+          "id": "2025",
+          "year": "2025",
+          "event": "Expanze na slovenský a polský trh"
+        }
+      ]
+    },
+    "culture": {
+      "badge": "Jak pracujeme",
+      "title": "Týmová kultura",
+      "subtitle": "Jsme štíhlý vysoce výkonný tým postavený na odbornosti, důvěře a skutečné vášni pro to, co děláme. Bez balastu. Bez politiky. Jen výsledky.",
+      "pillars": [
+        {
+          "id": "globalMindset",
+          "title": "Globální mindset",
+          "desc": "Obsluhujeme klienty ve 3 zemích a mluvíme česky, anglicky a mongolsky. Rozmanitost je naše superschopnost."
+        },
+        {
+          "id": "systemsThinking",
+          "title": "Systémové myšlení",
+          "desc": "Tvoříme opakovatelné procesy, aby kvalita nebyla náhoda — ale standard od prvního dne."
+        },
+        {
+          "id": "continuousLearning",
+          "title": "Průběžné vzdělávání",
+          "desc": "Každý člen týmu investuje do toho, aby byl napřed — nové frameworky, nové regulace, nové AI nástroje."
+        },
+        {
+          "id": "clientEmpathy",
+          "title": "Empatie ke klientům",
+          "desc": "Všichni jsme někdy byli ti, kdo začínají v novém prostředí. Tato zkušenost určuje, jak pracujeme s každým klientem."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Jste připraveni stát se součástí smečky?",
+      "description": "Ať jste mongolský podnikatel vstupující na trh EU, český startup hledající digitální náskok, nebo jakákoliv ambiciózní firma připravená škálovat — jsme tu pro vás.",
+      "button": "Kontaktujte nás →",
+      "facts": [
+        {
+          "id": "location",
+          "text": "Varšavská 715/36, Vinohrady, 120 00 Praha 2"
+        },
+        {
+          "id": "countries",
+          "text": "Obsluhujeme 3 země"
+        },
+        {
+          "id": "languages",
+          "text": "Mluvíme CZ, EN, MN"
+        }
+      ]
+    }
+  },
+  "process": {
+    "hero": {
+      "badge": "Náš proces",
+      "titleLine1": "Od nápadu k nasazení",
+      "titleLine2": "za dny, ne měsíce",
+      "subtitle": "Náš osvědčený 5krokový proces odstraňuje dohady, zdržení a nekonečné revize, které trápí většinu spoluprací s agenturami.",
+      "highlights": [
+        {
+          "id": "delivery",
+          "label": "Průměrné dodání za 7 dní"
+        },
+        {
+          "id": "fixedPrice",
+          "label": "Fixní cena, bez překvapení"
+        },
+        {
+          "id": "revisions",
+          "label": "Neomezené revize"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "id": "01",
+        "title": "Úvodní hovor",
+        "subtitle": "30 minut — zdarma",
+        "desc": "Začínáme cíleným 30minutovým hovorem, abychom pochopili vaše podnikání, cíle a publikum. Bez omáčky, bez prodejního tlaku — jen informace potřebné pro řešení, které bude opravdu fungovat. Vyhodnotíme konkurenci, položíme klíčové otázky a společně nastavíme jasnou představu úspěchu.",
+        "deliverables": [
+          {
+            "id": "scope",
+            "label": "Dokument rozsahu projektu"
+          },
+          {
+            "id": "competitor",
+            "label": "Analýza konkurence"
+          },
+          {
+            "id": "timeline",
+            "label": "Odhad harmonogramu"
+          },
+          {
+            "id": "quote",
+            "label": "Fixní cenová nabídka"
+          }
+        ],
+        "cta": "→ Rezervujte si bezplatný hovor"
+      },
+      {
+        "id": "02",
+        "title": "Strategie a design",
+        "subtitle": "2–3 dny",
+        "desc": "Vlastní wireframy a detailní mockupy na míru vaší značce. Přesně vidíte, co budeme stavět, ještě před prvním řádkem kódu. Navrhujeme mobile-first a každý prvek má jasný účel vést návštěvníka ke konverzi. Každý pixel schvalujete vy — v této fázi jsou revize neomezené.",
+        "deliverables": [
+          {
+            "id": "mockups",
+            "label": "Mockupy v souladu se značkou"
+          },
+          {
+            "id": "layouts",
+            "label": "Mobilní i desktop layouty"
+          },
+          {
+            "id": "prototypes",
+            "label": "Interakční prototypy"
+          },
+          {
+            "id": "contentStrategy",
+            "label": "Obsahová strategie"
+          }
+        ]
+      },
+      {
+        "id": "03",
+        "title": "Vývoj",
+        "subtitle": "3–7 dní",
+        "desc": "Produkční kód na Next.js, TypeScript a Supabase. Nepoužíváme page buildery ani šablony — vše je vlastní řešení navržené pro výkon a škálování. Core Web Vitals jsou priorita: cílíme na skóre 95+ ve všech metrikách. Čistý, zdokumentovaný kód, který plně vlastníte.",
+        "deliverables": [
+          {
+            "id": "nextBuild",
+            "label": "Produkční build v Next.js"
+          },
+          {
+            "id": "typedCode",
+            "label": "TypeScript codebase"
+          },
+          {
+            "id": "seo",
+            "label": "SEO optimalizace"
+          },
+          {
+            "id": "performance",
+            "label": "Kód orientovaný na výkon"
+          }
+        ]
+      },
+      {
+        "id": "04",
+        "title": "Revize a doladění",
+        "subtitle": "1–2 dny",
+        "desc": "Kompletní QA napříč hlavními prohlížeči, zařízeními a velikostmi obrazovek. Dostanete přístup do stagingu, kde vše sami otestujete. Jakékoliv požadované změny zapracujeme bez diskuse — revize počítáme až ve chvíli, kdy jste plně spokojeni. Před nasazením ověřujeme i přístupnost a výkon.",
+        "deliverables": [
+          {
+            "id": "crossBrowser",
+            "label": "Cross-browser testování"
+          },
+          {
+            "id": "staging",
+            "label": "Přístup do staging prostředí"
+          },
+          {
+            "id": "audit",
+            "label": "Report výkonnostního auditu"
+          },
+          {
+            "id": "unlimited",
+            "label": "Neomezené revize"
+          }
+        ]
+      },
+      {
+        "id": "05",
+        "title": "Spuštění a růst",
+        "subtitle": "Průběžně",
+        "desc": "Zajistíme deployment, DNS konfiguraci i monitoring po spuštění. Web jde online bez výpadku. Po launchi sledujeme výkon a 30 dní jsme připraveni řešit jakýkoliv problém. U dlouhodobé spolupráce přidáváme průběžné zlepšování, A/B testování a růstovou optimalizaci — váš web se mění v obchodní stroj.",
+        "deliverables": [
+          {
+            "id": "deploy",
+            "label": "Nasazení bez výpadku"
+          },
+          {
+            "id": "dnsSsl",
+            "label": "Nastavení DNS a SSL"
+          },
+          {
+            "id": "support",
+            "label": "30denní podpora po spuštění"
+          },
+          {
+            "id": "analytics",
+            "label": "Analytický dashboard"
+          }
+        ]
+      }
+    ],
+    "timeline": {
+      "title": "Typický harmonogram projektu",
+      "phases": [
+        {
+          "id": "discovery",
+          "phase": "Discovery",
+          "duration": "Den 1"
+        },
+        {
+          "id": "design",
+          "phase": "Design",
+          "duration": "Den 2–4"
+        },
+        {
+          "id": "build",
+          "phase": "Vývoj",
+          "duration": "Den 4–10"
+        },
+        {
+          "id": "qa",
+          "phase": "QA",
+          "duration": "Den 10–12"
+        },
+        {
+          "id": "launch",
+          "phase": "Spuštění",
+          "duration": "Den 12–14"
+        }
+      ]
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Otázky k procesu",
+      "items": [
+        {
+          "id": "howLong",
+          "q": "Jak dlouho trvá celý proces?",
+          "a": "U standardního firemního webu trvá celý proces 7–14 pracovních dní. Komplexní platformy s klientskými portály, platební integrací nebo vlastními funkcemi trvají 3–5 týdnů. Přesný harmonogram domlouváme před začátkem a dodržujeme ho."
+        },
+        {
+          "id": "whatPrepare",
+          "q": "Co potřebuji připravit před startem?",
+          "a": "Stačí vaše cíle, hrubá představa toho, co se vám líbí (referenční weby jsou ideální), a obsah (texty, obrázky, logo). Pokud je potřeba, pomůžeme i s obsahovou strategií. Technické znalosti nejsou potřeba."
+        },
+        {
+          "id": "changesDuringDev",
+          "q": "Mohu během vývoje požadovat změny?",
+          "a": "Ano. Změny designu jsou ve fázi návrhu zdarma a bez omezení. Během vývoje zapracujeme rozumné změny — větší rozšíření rozsahu může vyžadovat úpravu nabídky, ale vždy to s vámi předem projednáme."
+        },
+        {
+          "id": "afterLaunch",
+          "q": "Co se děje po spuštění?",
+          "a": "Vše vlastníte vy — zdrojový kód, obsah i účty. Po spuštění máte 30 dní podpory zdarma. Poté můžete využít náš plán údržby (3 000 CZK/měs.), který pokrývá hosting, bezpečnostní aktualizace, monitoring výkonu a prioritní technickou podporu."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Jste připraveni začít svůj projekt?",
+      "description": "Rezervujte si bezplatný úvodní hovor a do 24 hodin získáte fixní cenovou nabídku.",
+      "ctas": [
+        {
+          "id": "bookDiscovery",
+          "label": "Rezervovat úvodní hovor →"
+        },
+        {
+          "id": "viewServices",
+          "label": "Zobrazit služby"
+        }
+      ]
+    }
+  },
+  "work": {
+    "hero": {
+      "badge": "Případové studie",
+      "titleLine1": "Skutečné výsledky,",
+      "titleLine2": "skuteční klienti",
+      "subtitle": "Ne makety. Ne hypotézy. Reálné projekty, které jsme vytvořili pro skutečné firmy — i s čísly, která to dokazují.",
+      "stats": [
+        {
+          "id": "projectsShipped",
+          "value": "47+",
+          "label": "Dodaných projektů"
+        },
+        {
+          "id": "satisfaction",
+          "value": "98%",
+          "label": "Míra spokojenosti"
+        },
+        {
+          "id": "countries",
+          "value": "3",
+          "label": "Země"
+        }
+      ]
+    },
+    "labels": {
+      "challenge": "Výzva",
+      "solution": "Naše řešení",
+      "results": "Výsledky",
+      "services": "Služby:"
+    },
+    "cta": {
+      "badge": "Další může být váš projekt",
+      "title": "Jste připraveni být na tomto seznamu?",
+      "description": "Přidejme i vaši firmu mezi naše případové studie. Rezervujte si bezplatný úvodní hovor a zjistěte, co je možné.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Začněte svůj projekt →"
+        },
+        {
+          "id": "howWeWork",
+          "label": "Jak pracujeme"
+        }
+      ]
+    },
+    "caseStudies": [
+      {
+        "id": "techventures",
+        "client": "TechVentures Prague",
+        "category": "SaaS web + klientský portál",
+        "headline": "+340% míra konverze za 30 dní",
+        "tagline": "Full-stack rebrand a spuštění platformy na Next.js",
+        "metrics": [
+          {
+            "id": "conversion",
+            "value": "+340%",
+            "label": "Míra konverze"
+          },
+          {
+            "id": "delivery",
+            "value": "5 dní",
+            "label": "Doba dodání"
+          },
+          {
+            "id": "lighthouse",
+            "value": "98",
+            "label": "Lighthouse skóre"
+          },
+          {
+            "id": "downtime",
+            "value": "€0",
+            "label": "Výpadek při spuštění"
+          }
+        ],
+        "challenge": "TechVentures Prague ztrácela enterprise klienty ve prospěch konkurence s kvalitnější online prezentací. Jejich dosavadní WordPress web byl pomalý, generický a nedokázal komunikovat prémiovou hodnotu SaaS produktu. Konverze byly pod 1,2 %.",
+        "solution": "Kompletně jsme přestavěli digitální prezentaci od nuly v Next.js 14, Supabase a s vlastním klientským portálem. Nový web přinesl prémiový tmavý design, interaktivní produktové ukázky a plně integrovaný dashboard pro stávající klienty.",
+        "results": "Do 30 dní od spuštění se konverzní poměr zvýšil z 1,2 % na 4,2 % — nárůst o 340 %. Průměrná délka návštěvy se zdvojnásobila. Tři enterprise klienti přímo uvedli nový web jako důvod nákupního rozhodnutí.",
+        "services": [
+          {
+            "id": "s1",
+            "label": "Web na Next.js"
+          },
+          {
+            "id": "s2",
+            "label": "Klientský portál"
+          },
+          {
+            "id": "s3",
+            "label": "Supabase backend"
+          },
+          {
+            "id": "s4",
+            "label": "Brand identita"
+          },
+          {
+            "id": "s5",
+            "label": "SEO strategie"
+          }
+        ],
+        "quote": {
+          "text": "Digi Wolf postavil celou naši platformu za 5 dní. Kvalita je výjimečná — v prvním měsíci nám konverze vyskočily o 340 %. Nejlepší investice, kterou jsme letos udělali.",
+          "author": "Arjun Sharma",
+          "role": "CEO, TechVentures Prague"
+        }
+      },
+      {
+        "id": "mnExportHub",
+        "client": "MN Export Hub",
+        "category": "E-commerce platforma + založení S.R.O.",
+        "headline": "€180K tržeb za prvních 90 dní",
+        "tagline": "Trojjazyčný B2B marketplace + založení české společnosti",
+        "metrics": [
+          {
+            "id": "revenue",
+            "value": "€180K",
+            "label": "Tržby za 90 dní"
+          },
+          {
+            "id": "languages",
+            "value": "3 jazyky",
+            "label": "CZ / EN / MN"
+          },
+          {
+            "id": "delivery",
+            "value": "14 dní",
+            "label": "Celková doba dodání"
+          },
+          {
+            "id": "entity",
+            "value": "S.R.O.",
+            "label": "Založená česká entita"
+          }
+        ],
+        "challenge": "Mongolská podnikatelka chtěla propojit mongolské exportéry s kupci v EU, ale neměla českou právní entitu ani online platformu. Výzvou bylo vytvořit trojjazyčný B2B marketplace a současně zajistit založení české S.R.O. v krátkém termínu.",
+        "solution": "Paralelně jsme zajistili kompletní registraci české S.R.O. a vývoj e-commerce platformy. Marketplace byl postaven na Next.js, obsahoval plnou lokalizaci CZ/EN/MN, B2B poptávkové flow a admin portál pro správu nabídek a leadů.",
+        "results": "Platforma byla spuštěna za 14 dní. Během prvních 90 dní MN Export Hub zprostředkoval B2B transakce v hodnotě €180K mezi mongolskými exportéry a českými/slovenskými odběrateli. Firma fungovala od prvního dne jako platná česká S.R.O.",
+        "services": [
+          {
+            "id": "s1",
+            "label": "E-commerce platforma"
+          },
+          {
+            "id": "s2",
+            "label": "Založení české S.R.O."
+          },
+          {
+            "id": "s3",
+            "label": "Vícejazyčnost (CZ/EN/MN)"
+          },
+          {
+            "id": "s4",
+            "label": "B2B portál"
+          },
+          {
+            "id": "s5",
+            "label": "Admin dashboard"
+          }
+        ],
+        "quote": {
+          "text": "Jako mongolská podnikatelka v Praze nesmírně oceňuji agenturu, která mluví mým jazykem — doslova. Založili mi firmu a současně postavili platformu. Výsledky mluví samy za sebe.",
+          "author": "Enkhmaa B.",
+          "role": "Founder, MN Export Hub"
+        }
+      },
+      {
+        "id": "novakConsulting",
+        "client": "Novák Consulting s.r.o.",
+        "category": "Web agentury + AI automatizace",
+        "headline": "Úspora 23 hodin týdně díky AI workflow",
+        "tagline": "Chatbot pro kvalifikaci leadů + prémiový web",
+        "metrics": [
+          {
+            "id": "timeSaved",
+            "value": "23h/týdně",
+            "label": "Ušetřený čas v administrativě"
+          },
+          {
+            "id": "qualifiedLeads",
+            "value": "4.8×",
+            "label": "Více kvalifikovaných leadů"
+          },
+          {
+            "id": "delivery",
+            "value": "6 dní",
+            "label": "Dodání webu"
+          },
+          {
+            "id": "satisfaction",
+            "value": "100%",
+            "label": "Spokojenost klienta"
+          }
+        ],
+        "challenge": "Tomáš Novák trávil 20+ hodin týdně ruční kvalifikací leadů, follow-upy s potenciálními klienty a správou konzultačních rezervací. Jeho stávající web působil zastarale a nekonvertoval. Potřeboval novou digitální prezentaci i automatizaci, která mu vrátí čas.",
+        "solution": "Vytvořili jsme prémiový konzultační web a integrovali vlastní AI chatbot pro kvalifikaci leadů, který předkvalifikuje zájemce, rezervuje úvodní hovory přímo do Calendly a posílá personalizované follow-up sekvence. Celá pipeline běží autonomně.",
+        "results": "AI systém snížil manuální administrativu z 20+ hodin na méně než 3 hodiny týdně. Kvalita leadů výrazně vzrostla — díky předkvalifikaci chatbotem Tomáš mluvil jen s lidmi, kteří byli z 80 % připraveni nakoupit. Tržby v prvním kvartálu vzrostly o 60 %.",
+        "services": [
+          {
+            "id": "s1",
+            "label": "Konzultační web"
+          },
+          {
+            "id": "s2",
+            "label": "AI chatbot"
+          },
+          {
+            "id": "s3",
+            "label": "Automatizace leadů"
+          },
+          {
+            "id": "s4",
+            "label": "Calendly integrace"
+          },
+          {
+            "id": "s5",
+            "label": "E-mailové sekvence"
+          }
+        ],
+        "quote": {
+          "text": "Vyřídili mi založení české S.R.O. a zároveň postavili web agentury. Pak automatizovali celý lead pipeline. Profesionální, rychlí a bez stresu.",
+          "author": "Tomáš Novák",
+          "role": "Founder, Novák Consulting"
+        }
+      }
+    ]
+  },
+  "blog": {
+    "badge": "Již brzy",
+    "title": "Postřehy a novinky",
+    "subtitle": "Píšeme obsah, který bude stát za to číst. Praktické návody k webovému vývoji, AI automatizaci, zakládání české společnosti a růstu podnikání ve střední Evropě. Zastavte se brzy znovu.",
+    "form": {
+      "placeholder": "vas@email.com",
+      "submit": "Upozornit mě",
+      "success": "Jste na seznamu — dáme vám vědět, jakmile spustíme."
+    }
+  },
+  "caseStudies": {
+    "hero": {
+      "badge": "Případové studie",
+      "titleLine1": "Skutečné projekty.",
+      "titleLine2": "Skutečné výsledky.",
+      "subtitle": "Každý projekt v našem portfoliu je příběhem transformace. Tady je šest našich nejvýraznějších spoluprací — podložených konkrétními čísly.",
+      "stats": [
+        {
+          "id": "projects",
+          "n": "6+",
+          "l": "Projektů"
+        },
+        {
+          "id": "clientRevenue",
+          "n": "€400K+",
+          "l": "Tržby klientů"
+        },
+        {
+          "id": "averageRating",
+          "n": "4.9★",
+          "l": "Průměrné hodnocení"
+        }
+      ]
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "Vše"
+      },
+      {
+        "id": "websites",
+        "label": "Weby"
+      },
+      {
+        "id": "sroFormation",
+        "label": "Založení S.R.O."
+      },
+      {
+        "id": "aiAutomation",
+        "label": "AI automatizace"
+      }
+    ],
+    "labels": {
+      "challenge": "Výzva",
+      "solution": "Řešení",
+      "results": "Výsledky",
+      "techStack": "Tech stack"
+    },
+    "cta": {
+      "titleLine1": "Připraveni napsat",
+      "titleLine2": "svou případovou studii?",
+      "subtitle": "Přidejte se ke společnostem, které důvěřovaly DigiWolf při transformaci své digitální přítomnosti. Udělejme z vašich výsledků další příběh, který budeme vyprávět.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Začněte svůj projekt →"
+        },
+        {
+          "id": "viewServices",
+          "label": "Zobrazit služby"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "techventures",
+        "name": "TechVentures Prague",
+        "client": "TechVentures s.r.o.",
+        "category": "Weby",
+        "tag": "SaaS web",
+        "metric": "+340%",
+        "metricLabel": "Konverze za 30 dní",
+        "challenge": "TechVentures měl zastaralý, pomalý web se slabým mobilním UX a přicházel o leady. Jejich SaaS produkt byl skvělý, ale online prezentace nedokázala komunikovat hodnotu enterprise klientům.",
+        "solution": "Přepracovali jsme celý digitální zážitek od nuly — produktově orientované landing pages, interaktivní dema, jasný ceník a extrémně rychlý Next.js build se SSR optimalizací.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "340% nárůst rezervací demo ukázek během 30 dní"
+          },
+          {
+            "id": "r2",
+            "text": "Načítání stránky zkráceno ze 7.2s na 0.9s"
+          },
+          {
+            "id": "r3",
+            "text": "Bounce rate klesl z 78 % na 31 %"
+          },
+          {
+            "id": "r4",
+            "text": "MRR vzrostlo o €42,000 v Q1 po spuštění"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js 14"
+          },
+          {
+            "id": "t2",
+            "label": "TypeScript"
+          },
+          {
+            "id": "t3",
+            "label": "Framer Motion"
+          },
+          {
+            "id": "t4",
+            "label": "Vercel"
+          },
+          {
+            "id": "t5",
+            "label": "Stripe"
+          }
+        ],
+        "testimonial": "DigiWolf kompletně proměnil naši online prezentaci. Z firmy, která přicházela o leady, jsme se stali firmou s mimořádnou konverzí. Výsledky mluví samy za sebe.",
+        "author": "Tomáš Novotný",
+        "role": "CEO, TechVentures s.r.o."
+      },
+      {
+        "id": "mnExportHub",
+        "name": "MN Export Hub",
+        "client": "MN Export Hub GmbH",
+        "category": "Založení S.R.O.",
+        "tag": "E-commerce + S.R.O.",
+        "metric": "€180K",
+        "metricLabel": "Tržby za 90 dní",
+        "challenge": "Mongolská exportní firma chtěla vstoupit na evropský trh, ale neměla právní entitu v EU, lokalizovaný web ani přehled o českých požadavcích na compliance.",
+        "solution": "End-to-end řešení: založení české S.R.O., registrace k DPH v EU, dvojjazyčná e-commerce platforma v češtině a angličtině a kompletní compliance rámec pro přeshraniční obchod.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "S.R.O. zaregistrována během 8 pracovních dní"
+          },
+          {
+            "id": "r2",
+            "text": "€180,000 tržeb během prvních 90 dní"
+          },
+          {
+            "id": "r3",
+            "text": "Úspěšný onboarding 14 velkoobchodních kupců z EU"
+          },
+          {
+            "id": "r4",
+            "text": "Plná DPH compliance ve 3 jurisdikcích EU"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js"
+          },
+          {
+            "id": "t2",
+            "label": "Shopify"
+          },
+          {
+            "id": "t3",
+            "label": "Czech Trade Licence"
+          },
+          {
+            "id": "t4",
+            "label": "EU VAT System"
+          },
+          {
+            "id": "t5",
+            "label": "Stripe"
+          }
+        ],
+        "testimonial": "Během méně než 3 měsíců jsme přešli z nulové přítomnosti v Evropě na plně funkční českou společnost a ziskový e-commerce provoz. Neuvěřitelná služba.",
+        "author": "Boldbaatar Gantulga",
+        "role": "Director, MN Export Hub"
+      },
+      {
+        "id": "novakConsulting",
+        "name": "Novak Consulting",
+        "client": "Novak & Partners s.r.o.",
+        "category": "Weby",
+        "tag": "Branding + web",
+        "metric": "4 dny",
+        "metricLabel": "Od zadání po spuštění",
+        "challenge": "Novak Consulting urgentně potřeboval profesionální web před důležitým klientským pitch meetingem. Jejich web byl šablona z roku 2018 s nefunkčními odkazy, bez SSL a bez brand identity.",
+        "solution": "Rychlý sprint: refresh brand identity, vlastní web na Next.js, copywriting obsahu, základ SEO a kompletní nasazení do 96 hodin bez kompromisu v kvalitě.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "Plně online během 4 pracovních dní"
+          },
+          {
+            "id": "r2",
+            "text": "Vyhraná zakázka za €65,000 na klientském pitchi"
+          },
+          {
+            "id": "r3",
+            "text": "Google PageSpeed skóre 98/100"
+          },
+          {
+            "id": "r4",
+            "text": "3× nárůst příchozích poptávek během 2 týdnů"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js 14"
+          },
+          {
+            "id": "t2",
+            "label": "Tailwind"
+          },
+          {
+            "id": "t3",
+            "label": "Vercel"
+          },
+          {
+            "id": "t4",
+            "label": "Google Analytics 4"
+          },
+          {
+            "id": "t5",
+            "label": "Cloudflare"
+          }
+        ],
+        "testimonial": "Byla jsem v šoku. Čtyři dny od prvního hovoru k živému profesionálnímu webu, který nám pomohl získat kontrakt za €65K. DigiWolf doručil, když to ostatní nedokázali.",
+        "author": "Petra Nováková",
+        "role": "Managing Partner, Novak & Partners"
+      },
+      {
+        "id": "fintechBratislava",
+        "name": "FinTech Bratislava",
+        "client": "FinTech Bratislava a.s.",
+        "category": "AI automatizace",
+        "tag": "Web app + AI",
+        "metric": "80%",
+        "metricLabel": "Snížení manuální práce",
+        "challenge": "Fintech startup trávil 120+ hodin týdně ručním zadáváním dat, generováním reportů a onboardingem klientů, které nebyly automatizované a byly chybové.",
+        "solution": "Vlastní AI automatizační pipeline: zpracování dokumentů přes GPT-4, automatizovaný onboarding klientů, dashboardy s reporty v reálném čase a integrace na stávající bankovní API.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "80% snížení manuální administrativní práce"
+          },
+          {
+            "id": "r2",
+            "text": "Uvolněno 120 hodin týdně pro výnosové aktivity"
+          },
+          {
+            "id": "r3",
+            "text": "Chybovost klesla z 12 % na 0.3 %"
+          },
+          {
+            "id": "r4",
+            "text": "Doba onboardingu klienta: 5 dní → 2 hodiny"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Python"
+          },
+          {
+            "id": "t2",
+            "label": "OpenAI GPT-4"
+          },
+          {
+            "id": "t3",
+            "label": "Next.js"
+          },
+          {
+            "id": "t4",
+            "label": "PostgreSQL"
+          },
+          {
+            "id": "t5",
+            "label": "n8n"
+          },
+          {
+            "id": "t6",
+            "label": "Zapier"
+          }
+        ],
+        "testimonial": "AI automatizační sada od DigiWolf zásadně změnila způsob, jakým fungujeme. Prakticky jsme získali zpět produktivní kapacitu celého jednoho týmu.",
+        "author": "Martin Kováč",
+        "role": "CTO, FinTech Bratislava"
+      },
+      {
+        "id": "pragueBeautyStudio",
+        "name": "Prague Beauty Studio",
+        "client": "Lumière Beauty Studio",
+        "category": "Weby",
+        "tag": "Branding + web",
+        "metric": "5x",
+        "metricLabel": "Růst followers na Instagramu",
+        "challenge": "Prémiové beauty studio v Praze nemělo jednotnou brand identitu, téměř žádnou aktivitu na sociálních sítích a spoléhalo se jen na doporučení bez možnosti aktivně získávat nové bonitní klienty.",
+        "solution": "Kompletní systém brand identity, luxusní web s integrací online rezervací, strategie sociálních sítí, značkové šablony obsahu a optimalizace Google My Business.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "5× více followers na Instagramu za 60 dní (1.2K → 6.1K)"
+          },
+          {
+            "id": "r2",
+            "text": "Online rezervace vzrostly o 220 %"
+          },
+          {
+            "id": "r3",
+            "text": "Průměrná hodnota rezervace vzrostla o 45 %"
+          },
+          {
+            "id": "r4",
+            "text": "Uvedení v pražském lifestyle magazínu"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js"
+          },
+          {
+            "id": "t2",
+            "label": "Calendly API"
+          },
+          {
+            "id": "t3",
+            "label": "Instagram Graph API"
+          },
+          {
+            "id": "t4",
+            "label": "Figma"
+          },
+          {
+            "id": "t5",
+            "label": "Adobe CC"
+          }
+        ],
+        "testimonial": "DigiWolf perfektně pochopil naše prémiové pozicování. Brand i web, které vytvořili, přitahují přesně typ vysokohodnotných klientů, které chceme.",
+        "author": "Karolína Dvořáčková",
+        "role": "Owner, Lumière Beauty Studio"
+      },
+      {
+        "id": "mongolianTradeHub",
+        "name": "Mongolian Trade Hub",
+        "client": "Mongolian Trade Hub s.r.o.",
+        "category": "Založení S.R.O.",
+        "tag": "S.R.O. + trojjazyčný web",
+        "metric": "3 trhy",
+        "metricLabel": "Expanze do EU za 60 dní",
+        "challenge": "Významná mongolská obchodní společnost chtěla zřídit legální EU hub pro B2B obchod ve střední Evropě, ale neměla žádnou infrastrukturu v EU, právní entitu ani vícejazyčnou digitální prezentaci.",
+        "solution": "Založení české S.R.O., trojjazyčný web (angličtina, čeština, mongolština), nastavení compliance pro obchod v EU, workflow celní dokumentace a strategické partnerství s Pražskou hospodářskou komorou.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "S.R.O. plně funkční za 7 pracovních dní"
+          },
+          {
+            "id": "r2",
+            "text": "Současná expanze do 3 trhů EU"
+          },
+          {
+            "id": "r3",
+            "text": "8 B2B partnerství během 60 dní"
+          },
+          {
+            "id": "r4",
+            "text": "Trojjazyčný web přivádí kvalifikované leady ve všech 3 jazycích"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js i18n"
+          },
+          {
+            "id": "t2",
+            "label": "Czech Legal Framework"
+          },
+          {
+            "id": "t3",
+            "label": "EU Trade Law"
+          },
+          {
+            "id": "t4",
+            "label": "Vercel"
+          },
+          {
+            "id": "t5",
+            "label": "HubSpot"
+          }
+        ],
+        "testimonial": "DigiWolf udělal naši expanzi do Evropy bezproblémovou. Od právní entity po trojjazyčný web byla každá část zvládnutá odborně a rychle.",
+        "author": "Enkhjargal Dorj",
+        "role": "CEO, Mongolian Trade Hub"
+      }
+    ]
+  },
+  "legal": {
+    "privacy": {
+      "badge": "Právní",
+      "title": "Zásady ochrany osobních údajů",
+      "intro": "Tyto zásady ochrany osobních údajů vysvětlují, jak Digi Wolf Agency s.r.o. shromažďuje, používá a chrání vaše osobní údaje v souladu s GDPR a platnými právními předpisy České republiky.",
+      "companyLine": "Společnost: Digi Wolf Agency s.r.o., IČO 243 44 648, Varšavská 715/36, Vinohrady, 120 00 Praha 2",
+      "lastUpdated": "Poslední aktualizace: 13. června 2026",
+      "contentsTitle": "Obsah",
+      "contactCardTitle": "Máte otázky k vašim údajům?",
+      "contactCardText": "Kontaktujte nás na info@digiwolf.agency. Na všechny žádosti týkající se osobních údajů odpovídáme do 30 dnů.",
+      "contactButton": "Kontaktujte nás →",
+      "sections": [
+        {
+          "id": "1",
+          "title": "1. Kdo jsme",
+          "content": "Digi Wolf Agency s.r.o., IČO 243 44 648 (\"my\", \"náš\", \"nás\") je digitální agentura registrovaná v České republice. Naše sídlo je na adrese Varšavská 715/36, Vinohrady, 120 00 Praha 2. Působíme v Evropské unii a kontaktovat nás můžete na info@digiwolf.agency.\n\nJsme správcem osobních údajů získaných prostřednictvím webu digiwolf.agency a našich služeb."
+        },
+        {
+          "id": "2",
+          "title": "2. Jaké údaje shromažďujeme",
+          "content": "Shromažďujeme pouze osobní údaje, které nám poskytnete, a omezené technické údaje vznikající při návštěvě našeho webu.\n\nKontaktní formulář (/contact):\n• Jméno\n• E-mailová adresa\n• Název společnosti (volitelné)\n• Obsah zprávy\n• Služba a rozpočtové rozmezí, které ve formuláři zvolíte\n\nRezervace (/book přes Cal.com):\n• Jméno\n• E-mailová adresa\n• Údaje potřebné k naplánování hovoru (datum, čas, typ události a případné poznámky)\n\nTechnické údaje:\n• IP adresa, typ prohlížeče, typ zařízení a navštívené stránky — automaticky shromažďované naším poskytovatelem hostingu pro účely bezpečnosti a výkonu\n\nNeshromažďujeme zvláštní kategorie údajů (zdraví, rasa, politické názory apod.) a vaše osobní údaje neprodáváme."
+        },
+        {
+          "id": "3",
+          "title": "3. Jak vaše údaje používáme",
+          "content": "Vaše osobní údaje zpracováváme pro následující účely:\n\n• Reakce na poptávky z kontaktního formuláře a navazující komunikace k vašemu projektu (předsmluvní kroky / oprávněný zájem)\n• Plánování, potvrzení a správa úvodních hovorů a konzultací rezervovaných přes Cal.com (předsmluvní kroky / plnění smlouvy)\n• Zasílání interních e-mailových notifikací našemu týmu po odeslání formuláře nebo rezervace (oprávněný zájem)\n• Ukládání záznamů o poptávkách a rezervacích v naší databázi (oprávněný zájem / plnění smlouvy)\n• Provoz, zabezpečení a zlepšování našeho webu (oprávněný zájem)\n• Plnění právních povinností podle českého a evropského práva\n\nVaše údaje nepoužíváme pro automatizované rozhodování ani profilování."
+        },
+        {
+          "id": "4",
+          "title": "4. Právní základ zpracování (GDPR čl. 6)",
+          "content": "Podle Obecného nařízení o ochraně osobních údajů (EU) 2016/679 (\"GDPR\") využíváme tyto právní základy:\n\n• Čl. 6 odst. 1 písm. b) — plnění smlouvy / předsmluvní kroky: zpracování potřebné pro reakci na poptávku, naplánování hovoru nebo poskytnutí vámi požadovaných služeb\n• Čl. 6 odst. 1 písm. f) — oprávněný zájem: provoz webu, uchovávání záznamů, interní notifikace a prevence zneužití — vyváženo vašimi právy\n• Čl. 6 odst. 1 písm. c) — právní povinnost: zpracování potřebné ke splnění povinností dle českého nebo unijního práva (např. účetní evidence klientů)\n• Čl. 6 odst. 1 písm. a) — souhlas: pouze tam, kde o něj výslovně žádáme (např. volitelný marketing). Souhlas můžete kdykoliv odvolat."
+        },
+        {
+          "id": "5",
+          "title": "5. Doba uchování údajů",
+          "content": "Osobní údaje uchováváme pouze po dobu nezbytnou pro výše uvedené účely:\n\n• Odeslání kontaktního formuláře: až 3 roky od poslední interakce, pokud nepokračuje klientský vztah\n• Záznamy o rezervacích: až 3 roky po plánovaném hovoru, nebo déle, pokud se stanete klientem\n• Údaje o klientských projektech a fakturaci: až 10 let, pokud to vyžaduje český účetní zákon\n• Serverové a bezpečnostní logy: obvykle až 90 dní\n\nJakmile údaje již nejsou potřeba, smažeme je nebo anonymizujeme. O dřívější výmaz můžete požádat (viz oddíl 9)."
+        },
+        {
+          "id": "6",
+          "title": "6. Zpracovatelé třetích stran",
+          "content": "Pro provoz webu a zpracování údajů využíváme důvěryhodné poskytovatele. Každý vystupuje jako zpracovatel na základě našich pokynů:\n\n• Supabase — hosting databáze a ukládání záznamů z kontaktních formulářů a rezervací (infrastruktura v EU)\n• Resend — doručování transakčních e-mailů po odeslání kontaktního formuláře (notifikace našemu týmu)\n• Cal.com — rezervační platforma vložená na /book; při rezervaci hovoru zpracovává jméno, e-mail a údaje o rezervaci\n• Vercel — hosting webu, doručování obsahu a serverless funkce; může zpracovávat IP adresy a request logy\n\nS těmito poskytovateli máme, kde je to vyžadováno, uzavřené smlouvy o zpracování osobních údajů. Neopravňujeme je používat vaše údaje pro jejich vlastní marketing."
+        },
+        {
+          "id": "7",
+          "title": "7. Mezinárodní předávání údajů",
+          "content": "Usilujeme o zpracování údajů v rámci Evropského hospodářského prostoru (EHP). Někteří poskytovatelé (včetně Vercel a Cal.com) mohou údaje zpracovávat v USA nebo v dalších zemích mimo EHP.\n\nPokud k předání dochází, opíráme se o vhodné záruky dle kapitoly V GDPR — například standardní smluvní doložky schválené Evropskou komisí nebo rozhodnutí o odpovídající ochraně, pokud je k dispozici.\n\nO podrobnosti k zárukám pro konkrétní předání nás můžete požádat."
+        },
+        {
+          "id": "8",
+          "title": "8. Cookies a podobné technologie",
+          "content": "Náš web používá nezbytně nutné cookies potřebné pro základní provoz a bezpečnost. Při rezervaci hovoru může Cal.com ve vloženém plánovači nastavovat vlastní cookies.\n\nNa digiwolf.agency aktuálně nepoužíváme analytické ani reklamní cookies. Vaše preference cookies ukládáme lokálně v prohlížeči po reakci na cookie lištu.\n\nPodrobnosti najdete v Zásadách používání cookies na /cookies."
+        },
+        {
+          "id": "9",
+          "title": "9. Vaše práva podle GDPR (čl. 15–22)",
+          "content": "V souvislosti s vašimi osobními údaji máte tato práva:\n\n• Právo na přístup (čl. 15): požádat o kopii osobních údajů, které o vás vedeme\n• Právo na opravu (čl. 16): opravit nepřesné nebo neúplné údaje\n• Právo na výmaz (čl. 17): požádat o smazání údajů (\"právo být zapomenut\")\n• Právo na omezení zpracování (čl. 18): za určitých okolností omezit způsob zpracování\n• Právo na přenositelnost údajů (čl. 20): získat údaje ve strukturovaném, běžně používaném formátu\n• Právo vznést námitku (čl. 21): vznést námitku proti zpracování na základě oprávněného zájmu\n• Právo odvolat souhlas (čl. 7 odst. 3): pokud je zpracování založeno na souhlasu, můžete jej kdykoliv odvolat\n\nPro uplatnění těchto práv napište na info@digiwolf.agency. Odpovíme do 30 dnů.\n\nMáte také právo podat stížnost u českého dozorového úřadu:\n\nÚřad pro ochranu osobních údajů\nPplk. Sochora 27, 170 00 Prague 7, Czech Republic\nwww.uoou.cz"
+        },
+        {
+          "id": "10",
+          "title": "10. Bezpečnost",
+          "content": "Zavádíme odpovídající technická a organizační opatření k ochraně vašich osobních údajů, včetně:\n\n• Šifrovaného přenosu dat (HTTPS/TLS)\n• Šifrovaného ukládání databáze přes Supabase\n• Řízení přístupu omezující, kdo může zobrazit údaje z poptávek a rezervací\n• Ověřování podpisu webhooků u příchozích rezervačních dat\n\nŽádný způsob přenosu dat po internetu není zcela bezpečný. Přijímáme přiměřená opatření, ale nemůžeme garantovat absolutní bezpečnost."
+        },
+        {
+          "id": "11",
+          "title": "11. Změny těchto zásad",
+          "content": "Tyto zásady ochrany osobních údajů můžeme čas od času aktualizovat. Podstatné změny zveřejníme na této stránce s aktualizovaným datem \"Poslední aktualizace\". Vhodným způsobem vás můžeme informovat také e-mailem.\n\nPokračování v používání našeho webu po změnách znamená přijetí aktualizovaných zásad."
+        }
+      ]
+    },
+    "terms": {
+      "badge": "Právní",
+      "title": "Podmínky služby",
+      "intro": "Tyto podmínky služby upravují používání služeb Digi Wolf Agency s.r.o. Před zahájením spolupráce na jakémkoliv projektu si je prosím pečlivě přečtěte.",
+      "companyLine": "Společnost: Digi Wolf Agency s.r.o., IČO 243 44 648",
+      "lastUpdated": "Poslední aktualizace: 13. června 2026",
+      "governingLaw": "Rozhodné právo: Česká republika",
+      "contentsTitle": "Obsah",
+      "contactCardTitle": "Máte otázky k našim podmínkám?",
+      "contactCardText": "Kontaktujte nás na info@digiwolf.agency s jakýmikoliv otázkami k těmto Podmínkám.",
+      "contactButton": "Kontaktujte nás →",
+      "sections": [
+        {
+          "id": "1",
+          "title": "1. Souhlas s podmínkami",
+          "content": "Pokud využijete služby Digi Wolf Agency s.r.o., IČO 243 44 648 (\"Agentura\", \"my\", \"nás\"), se sídlem Varšavská 715/36, Vinohrady, 120 00 Praha 2, použijete náš web na digiwolf.agency, odešlete kontaktní formulář nebo si přes náš web rezervujete hovor, vy (\"Klient\", \"vy\") souhlasíte s těmito Podmínkami služby.\n\nTyto Podmínky představují právně závaznou dohodu podle českého práva. Pokud s nimi nesouhlasíte, nepoužívejte prosím náš web ani služby.\n\nOsobní údaje, které nám poskytujete, zpracováváme podle Zásad ochrany osobních údajů na /privacy."
+        },
+        {
+          "id": "2",
+          "title": "2. Používání našeho webu",
+          "content": "2.1 Web digiwolf.agency smíte používat pouze k zákonným účelům.\n\n2.2 Nesmíte se pokoušet narušovat provoz webu, získat neoprávněný přístup do našich systémů, hromadně stahovat obsah ani odesílat nepravdivé nebo zavádějící informace přes naše formuláře.\n\n2.3 Rezervace probíhají prostřednictvím Cal.com vloženého na /book. Rezervací se zavazujete uvést přesné jméno a kontaktní údaje. Zrušení a přesun termínu se řídí rozhraním Cal.com a našimi potvrzovacími zprávami.\n\n2.4 Vyhrazujeme si právo omezit přístup, pokud máme důvodné podezření na porušení těchto Podmínek."
+        },
+        {
+          "id": "3",
+          "title": "3. Služby",
+          "content": "Poskytujeme digitální služby mimo jiné v těchto oblastech:\n\n• Návrh a vývoj webových stránek\n• Vývoj webových a mobilních aplikací\n• AI automatizace a implementace workflow\n• Asistence při založení české společnosti S.R.O.\n• Optimalizace pro vyhledávače (SEO)\n• Návrh brand identity\n• Údržba webu a podpora\n\nKonkrétní služby, výstupy, termíny a ceny pro každý projekt jsou stanoveny v samostatné Projektové smlouvě nebo Zadání prací (\"SOW\"), na kterém se strany dohodnou."
+        },
+        {
+          "id": "4",
+          "title": "4. Platební podmínky",
+          "content": "3.1 Ceny jsou uvedeny v příslušné Projektové smlouvě nebo na faktuře.\n\n3.2 Není-li dohodnuto jinak, splatnost je do 14 dnů od data vystavení faktury.\n\n3.3 Obvykle požadujeme 50% zálohu před zahájením prací, doplatek je splatný po dokončení.\n\n3.4 Při prodlení s úhradou může být účtován zákonný úrok z prodlení dle českého práva (zákon č. 513/1991 Sb.).\n\n3.5 Všechny ceny jsou v českých korunách (CZK), není-li uvedeno jinak. Nejsme plátci DPH, pokud to není na faktuře výslovně uvedeno."
+        },
+        {
+          "id": "5",
+          "title": "5. Duševní vlastnictví",
+          "content": "4.1 Po úplné úhradě získává Klient plné vlastnictví všech vlastních výstupů vytvořených konkrétně pro projekt (weby, kód, designy, texty).\n\n4.2 Vyhrazujeme si právo prezentovat práci v našem portfoliu a marketingových materiálech, pokud Klient písemně nepožádá o důvěrnost.\n\n4.3 Zachováváme si vlastnictví našich proprietárních nástrojů, frameworků a předem existujícího duševního vlastnictví použitých při poskytování služeb.\n\n4.4 Komponenty třetích stran (open-source knihovny, stock obrázky, fonty) podléhají vlastním licencím. O licenčních požadavcích vás budeme informovat."
+        },
+        {
+          "id": "6",
+          "title": "6. Povinnosti klienta",
+          "content": "Klient se zavazuje:\n\n• Poskytovat přesné informace a podklady potřebné pro projekt včas\n• Provádět revizi a poskytovat zpětnou vazbu v dohodnutých termínech (obvykle 5 pracovních dnů)\n• Zajistit, že vlastní nebo má práva k veškerému obsahu, obrázkům a materiálům, které nám poskytuje\n• Hradit platby včas\n• Zachovávat důvěrnost přístupových údajů, které obdrží\n\nProdlení způsobené Klientem může vést k úpravě harmonogramu a dodatečným poplatkům."
+        },
+        {
+          "id": "7",
+          "title": "7. Revize a změny",
+          "content": "6.1 Počet zahrnutých revizí je uveden v Projektové smlouvě.\n\n6.2 Další revize nad dohodnutý rozsah účtujeme podle aktuální hodinové sazby.\n\n6.3 Podstatné změny rozsahu projektu vyžadují novou nebo upravenou Projektovou smlouvu a mohou ovlivnit harmonogram i cenu."
+        },
+        {
+          "id": "8",
+          "title": "8. Záruky a prohlášení",
+          "content": "7.1 Zaručujeme, že služby budou poskytovány s odbornou péčí odpovídající standardu odvětví.\n\n7.2 Nezaručujeme dosažení konkrétních pozic ve vyhledávání, návštěvnosti ani konverzních výsledků.\n\n7.3 Klient zaručuje, že veškerý obsah a materiály, které nám poskytne, jsou zákonné a neporušují práva třetích stran."
+        },
+        {
+          "id": "9",
+          "title": "9. Omezení odpovědnosti",
+          "content": "8.1 V maximálním rozsahu povoleném českým právem je naše celková odpovědnost za jakýkoliv nárok vyplývající z těchto Podmínek omezena na částku zaplacenou Klientem za konkrétní službu, které se nárok týká.\n\n8.2 Neodpovídáme za nepřímé, následné ani náhodné škody, včetně ušlého zisku, ztráty dat nebo přerušení podnikání.\n\n8.3 Neodpovídáme za chyby nebo problémy vzniklé v důsledku služeb třetích stran, poskytovatelů hostingu nebo softwaru mimo naši kontrolu."
+        },
+        {
+          "id": "10",
+          "title": "10. Důvěrnost",
+          "content": "Obě strany se zavazují zachovávat důvěrnost všech neveřejných informací získaných od druhé strany. Tato povinnost trvá i po ukončení smlouvy po dobu 3 let."
+        },
+        {
+          "id": "11",
+          "title": "11. Ukončení",
+          "content": "10.1 Každá strana může projekt ukončit s 30denní písemnou výpovědní lhůtou.\n\n10.2 Při ukončení Klient uhradí veškeré práce provedené do data ukončení. Pokud Klient ukončí spolupráci po zaplacení zálohy, záloha je nevratná.\n\n10.3 Služby můžeme okamžitě ukončit, pokud Klient poruší tyto Podmínky, neuhradí platbu nebo se dopustí protiprávního jednání."
+        },
+        {
+          "id": "12",
+          "title": "12. Rozhodné právo a řešení sporů",
+          "content": "11.1 Tyto Podmínky se řídí právem České republiky.\n\n11.2 K řešení sporů vyplývajících z těchto Podmínek jsou příslušné soudy České republiky.\n\n11.3 Před zahájením soudního řízení podporujeme řešení sporů přímým jednáním."
+        },
+        {
+          "id": "13",
+          "title": "13. Změny těchto podmínek",
+          "content": "Tyto Podmínky můžeme čas od času aktualizovat. Podstatné změny vám sdělíme e-mailem. Pokračování v používání našich služeb po změnách znamená jejich přijetí."
+        }
+      ]
+    },
+    "cookies": {
+      "badge": "Právní",
+      "title": "Zásady používání cookies",
+      "intro": "Tyto zásady používání cookies vysvětlují, jak Digi Wolf Agency s.r.o. používá cookies a podobné technologie na digiwolf.agency.",
+      "companyLine": "Společnost: Digi Wolf Agency s.r.o., IČO 243 44 648",
+      "lastUpdated": "Poslední aktualizace: 13. června 2026",
+      "whatAreCookiesTitle": "Co jsou cookies?",
+      "whatAreCookiesText": "Cookies jsou malé textové soubory uložené ve vašem zařízení při návštěvě webu. Pomáhají webu zapamatovat si relaci, udržovat stránky bezpečné a umožnit funkce jako rezervace hovoru. Pro ukládání preference cookies používáme i local storage — funguje podobně, ale je uložené ve vašem prohlížeči a neposílá se při každém požadavku.",
+      "noAnalyticsNotice": "Na digiwolf.agency nepoužíváme analytické ani reklamní cookies. Na tomto webu neprovozujeme Google Analytics ani obdobné sledovací nástroje.",
+      "technologiesTitle": "Používané cookies a technologie",
+      "thirdPartyTitle": "Služby třetích stran",
+      "thirdPartyText1": "Náš web je hostovaný na Vercel a pro ukládání dat používá Supabase. Tito poskytovatelé mohou nastavovat nezbytně nutné cookies nebo zpracovávat technická data v rámci hostingu. Při rezervaci hovoru zpracovává rezervaci Cal.com a může nastavovat vlastní cookies.",
+      "thirdPartyText2": "Doporučujeme vám prostudovat zásady ochrany soukromí a cookies služeb Vercel, Supabase a Cal.com.",
+      "manageTitle": "Jak spravovat cookies",
+      "manageText1": "Cookies můžete spravovat v nastavení prohlížeče — odmítnout nové cookies, smazat stávající nebo dostávat upozornění na jejich nastavení. Vypnutí nezbytně nutných cookies může způsobit, že části webu (včetně rezervace) nebudou fungovat správně.",
+      "manageText2": "Pro reset vaší preference cookie lišty na našem webu vymažte local storage pro digiwolf.agency nebo odstraňte položku dw-cookie-consent v prohlížeči.",
+      "contactCardTitle": "Máte otázky nebo obavy?",
+      "contactCardText": "Napište na info@digiwolf.agency. Informace o celkovém zpracování osobních údajů najdete v našich Zásadách ochrany osobních údajů.",
+      "contactButton": "Kontaktujte nás →",
+      "cookieTypes": [
+        {
+          "id": "strictlyNecessary",
+          "type": "Nezbytně nutné cookies",
+          "required": true,
+          "requiredLabel": "Nezbytné",
+          "purpose": "Tyto cookies jsou nutné pro fungování webu. Zajišťují bezpečnost, směrování a základní funkce webu. Podle práva EU nepotřebujeme pro nezbytně nutné cookies váš souhlas.",
+          "retention": "Relace až 1 rok",
+          "examples": [
+            {
+              "id": "e1",
+              "label": "Relační a bezpečnostní cookies"
+            },
+            {
+              "id": "e2",
+              "label": "Load balancing (Vercel hosting)"
+            },
+            {
+              "id": "e3",
+              "label": "Autentizační cookies (admin sekce při přihlášení)"
+            }
+          ]
+        },
+        {
+          "id": "calCom",
+          "type": "Rezervační cookies třetích stran (Cal.com)",
+          "required": true,
+          "requiredLabel": "Nezbytné",
+          "purpose": "Při použití rezervační stránky Cal.com vkládá plánovač, který může nastavovat cookies pro správu relace a dokončení rezervace. Tyto cookies jsou nutné pro rezervaci úvodního hovoru přes náš web.",
+          "retention": "Nastavuje Cal.com — viz jejich zásady ochrany soukromí",
+          "examples": [
+            {
+              "id": "e1",
+              "label": "Cal.com session cookies na /book"
+            },
+            {
+              "id": "e2",
+              "label": "Preference rezervačního widgetu"
+            }
+          ]
+        },
+        {
+          "id": "localPreference",
+          "type": "Uložení preference (Local Storage)",
+          "required": false,
+          "requiredLabel": "Pouze preference",
+          "purpose": "Vaši volbu v cookie liště ukládáme do local storage prohlížeče (nejde o cookie), aby se upozornění nezobrazovalo opakovaně. Ukládá se pouze \"accepted\" nebo \"declined\" — bez osobních údajů.",
+          "retention": "Do vymazání dat v prohlížeči",
+          "examples": [
+            {
+              "id": "e1",
+              "label": "dw-cookie-consent — vaše volba v cookie liště"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "chat": {
+    "welcomeMessage": "Ahoj! Jsem Digi Wolf Assistant. Zeptejte se mě na naše služby, ceny, termíny nebo rezervaci bezplatného úvodního hovoru.",
+    "header": {
+      "title": "Digi Wolf Assistant",
+      "subtitle": "Obvykle odpovídá během několika sekund"
+    },
+    "thinking": "Přemýšlím...",
+    "handoff": {
+      "talkToHuman": "Mluvit s člověkem"
+    },
+    "inputPlaceholder": "Napište zprávu...",
+    "errors": {
+      "messageTooLong": "Zpráva je příliš dlouhá (max {max} znaků).",
+      "generic": "Něco se pokazilo. Zkuste to prosím znovu.",
+      "noStream": "Streamování není dostupné. Zkuste to prosím znovu.",
+      "noResponse": "Nebyla vygenerována odpověď. Zkuste to prosím znovu.",
+      "contactFormLink": "kontaktní formulář"
+    },
+    "aria": {
+      "dialog": "Chat s Digi Wolf Assistant",
+      "closeChat": "Zavřít chat",
+      "openChat": "Otevřít chat",
+      "messageInput": "Pole pro zprávu",
+      "sendMessage": "Odeslat zprávu"
+    }
+  },
+  "cookieBanner": {
+    "ariaLabel": "Souhlas s cookies",
+    "message": "Používáme nezbytné cookies a local storage pro bezpečný provoz webu a zapamatování vašich preferencí. Kliknutím na Přijmout s tímto použitím souhlasíte. Přečtěte si naše <cookiePolicy>Zásady cookies</cookiePolicy> a <privacyPolicy>Zásady ochrany osobních údajů</privacyPolicy>.",
+    "declineButton": "Odmítnout",
+    "acceptButton": "Přijmout"
+  },
+  "meta": {
+    "pages": {
+      "home": {
+        "title": "Digi Wolf Agency",
+        "description": "Digitální agentura z Prahy pro weby, AI automatizaci a založení české S.R.O."
+      },
+      "services": {
+        "title": "Služby — Webový vývoj, AI automatizace a založení S.R.O.",
+        "description": "Digi Wolf Agency nabízí prémiový webový vývoj (od 45 000 CZK), založení české S.R.O. (od 15 000 CZK), AI automatizaci, SEO a služby brand identity v Praze.",
+        "openGraphTitle": "Služby | Digi Wolf Agency",
+        "openGraphDescription": "Prémiové digitální služby: weby, AI automatizace, založení české společnosti. Sídlíme v Praze."
+      },
+      "pricing": {
+        "title": "Ceník — Transparentní balíčky a sazby",
+        "description": "Web Starter od 15 000 CZK, Growth od 45 000 CZK, Enterprise na míru. Fixní ceny, platby 50/50, bez skrytých poplatků.",
+        "openGraphTitle": "Ceník | Digi Wolf Agency — Transparentní sazby",
+        "openGraphDescription": "Jasné fixní ceny pro weby, webové aplikace, AI automatizaci a založení české S.R.O."
+      },
+      "contact": {
+        "title": "Kontakt — Začněte svůj projekt",
+        "description": "Spojte se s Digi Wolf Agency. Odpovídáme do 4 pracovních hodin. Rezervujte si bezplatný 30min strategický hovor nebo nám pošlete zadání projektu.",
+        "openGraphTitle": "Kontaktujte Digi Wolf Agency — Začněte svůj projekt",
+        "openGraphDescription": "Řekněte nám o svém projektu. Odpovídáme do 4 pracovních hodin — osobně, ne robotem."
+      },
+      "book": {
+        "title": "Rezervujte si bezplatný úvodní hovor",
+        "description": "Naplánujte si bezplatný 30min úvodní hovor s Digi Wolf Agency. Bez prodejního tlaku — poctivé doporučení k webům, založení české S.R.O. a AI automatizaci. Odpovídáme do 4 pracovních hodin.",
+        "openGraphTitle": "Rezervujte si bezplatný 30min úvodní hovor — Digi Wolf Agency",
+        "openGraphDescription": "Vyberte si termín, který vám vyhovuje. Konzultace zdarma, bez závazků. Omezená kapacita — přijímáme 3 nové klienty měsíčně."
+      },
+      "about": {
+        "title": "O nás — Náš příběh a tým",
+        "description": "Digi Wolf Agency založil v Praze mongolský podnikatel Uuganbayar Ganbaatar. Pomáháme firmám v Česku, na Slovensku a v Mongolsku dominovat digitální době.",
+        "openGraphTitle": "O Digi Wolf Agency — Digitální agentura z Prahy",
+        "openGraphDescription": "Z Ulánbátaru do Prahy — stavíme mosty mezi mongolskými podnikateli a trhem EU."
+      },
+      "process": {
+        "title": "Náš proces — Jak pracujeme | Digi Wolf Agency",
+        "description": "Zjistěte, jak Digi Wolf Agency dodává špičkové weby a digitální řešení během dnů, ne měsíců. Náš ověřený 5krokový proces od discovery po launch.",
+        "openGraphTitle": "Náš proces — Jak pracujeme | Digi Wolf Agency",
+        "openGraphDescription": "Od úvodního hovoru po živé spuštění — náš ověřený 5krokový proces přináší prémiové výsledky rychle."
+      },
+      "work": {
+        "title": "Případové studie — Naše práce | Digi Wolf Agency",
+        "description": "Skutečné výsledky pro skutečné klienty. Podívejte se, jak Digi Wolf Agency pomohl TechVentures Prague dosáhnout +340% konverzí a MN Export Hub vygenerovat €180K tržeb za 90 dní.",
+        "openGraphTitle": "Případové studie — Naše práce | Digi Wolf Agency",
+        "openGraphDescription": "Skutečné výsledky od Digi Wolf Agency — +340% konverzí, €180K tržeb a další."
+      },
+      "blog": {
+        "title": "Blog",
+        "description": "Postřehy a novinky od Digi Wolf Agency o webovém vývoji, AI automatizaci a růstu podnikání."
+      },
+      "caseStudies": {
+        "title": "Případové studie",
+        "description": "Detailní rozbory reálných projektů s výzvami, řešeními a měřitelnými výsledky."
+      },
+      "privacy": {
+        "title": "Zásady ochrany osobních údajů",
+        "description": "Zásady ochrany osobních údajů Digi Wolf Agency s.r.o. — jak shromažďujeme, používáme a chráníme vaše osobní údaje v souladu s GDPR."
+      },
+      "terms": {
+        "title": "Podmínky služby",
+        "description": "Podmínky služby Digi Wolf Agency s.r.o. — právní rámec používání našich služeb."
+      },
+      "cookies": {
+        "title": "Zásady používání cookies",
+        "description": "Zásady používání cookies Digi Wolf Agency s.r.o. — jak na našem webu používáme cookies a podobné technologie."
+      }
+    }
+  }
+}

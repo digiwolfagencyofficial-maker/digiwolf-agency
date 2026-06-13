@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { contactLeadSchema, formatContactFieldErrors } from '@/lib/contact-options'
 import { sendLeadNotification } from '@/lib/email'
 import { supabaseAdmin } from '@/lib/supabase'
+import { sendTelegramNotification } from '@/lib/telegram'
 
 export async function POST(request: NextRequest) {
   try {
@@ -49,6 +50,14 @@ export async function POST(request: NextRequest) {
       budget,
       message,
     }).catch((err) => console.error('Lead notification email failed:', err))
+
+    sendTelegramNotification({
+      title: 'New contact lead',
+      name,
+      email,
+      service,
+      summary: `${budget} — ${message}`,
+    }).catch((err) => console.error('Telegram notification failed:', err))
 
     return NextResponse.json({
       success: true,

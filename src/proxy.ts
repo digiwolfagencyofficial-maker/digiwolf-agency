@@ -1,6 +1,10 @@
+import createIntlMiddleware from 'next-intl/middleware'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { getToken } from 'next-auth/jwt'
+import { routing } from './i18n/routing'
+
+const handleI18nRouting = createIntlMiddleware(routing)
 
 const protectedPrefixes = ['/dashboard', '/admin', '/client']
 
@@ -20,15 +24,26 @@ export async function proxy(req: NextRequest) {
       loginUrl.searchParams.set('callbackUrl', pathname)
       return NextResponse.redirect(loginUrl)
     }
+
+    return NextResponse.next()
   }
 
-  return NextResponse.next()
+  if (
+    pathname.startsWith('/api') ||
+    pathname.startsWith('/login') ||
+    pathname.startsWith('/register') ||
+    pathname.startsWith('/forgot-password') ||
+    pathname.startsWith('/logout') ||
+    pathname.startsWith('/auth')
+  ) {
+    return NextResponse.next()
+  }
+
+  return handleI18nRouting(req)
 }
 
 export const config = {
   matcher: [
-    '/dashboard/:path*',
-    '/admin/:path*',
-    '/client/:path*',
+    '/((?!api|_next|_vercel|.*\\..*).*)',
   ],
 }

@@ -1,23 +1,26 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import NextLink from 'next/link'
+import { Link, usePathname } from '@/i18n/navigation'
 import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
-  { label: 'Work', href: '/work' },
-  { label: 'Process', href: '/process' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-]
+const navLinkKeys = [
+  { key: 'home', href: '/' },
+  { key: 'services', href: '/services' },
+  { key: 'work', href: '/work' },
+  { key: 'process', href: '/process' },
+  { key: 'pricing', href: '/pricing' },
+  { key: 'about', href: '/about' },
+  { key: 'contact', href: '/contact' },
+] as const
 
 export default function Navbar() {
+  const t = useTranslations('nav')
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
@@ -61,13 +64,13 @@ export default function Navbar() {
         <div style={{ maxWidth: 1280, margin: '0 auto', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-            <Image src="/digiwolf-icon-transparent.png" alt="Digi Wolf Agency" width={40} height={40} priority style={{ objectFit: 'contain' }} />
+            <Image src="/digiwolf-icon-transparent.png" alt={t('brandAlt')} width={40} height={40} priority style={{ objectFit: 'contain' }} />
             <span style={{ color: '#f0f4ff', fontWeight: 800, fontSize: 17, letterSpacing: '0.05em' }}>DIGIWOLF</span>
           </Link>
 
           {/* Desktop Links */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }} className="nav-desktop">
-            {navLinks.filter(l => l.href !== '/').map(link => {
+            {navLinkKeys.filter(l => l.href !== '/').map(link => {
               const isActive = pathname === link.href || pathname.startsWith(link.href + '/')
               return (
                 <Link key={link.href} href={link.href} style={{
@@ -80,7 +83,7 @@ export default function Navbar() {
                   onMouseEnter={e => { if (!isActive) { (e.target as HTMLElement).style.color = '#f0f4ff'; (e.target as HTMLElement).style.background = 'rgba(255,255,255,0.05)' } }}
                   onMouseLeave={e => { if (!isActive) { (e.target as HTMLElement).style.color = '#8892b0'; (e.target as HTMLElement).style.background = 'transparent' } }}
                 >
-                  {link.label}
+                  {t(link.key)}
                 </Link>
               )
             })}
@@ -88,7 +91,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <Link href="/login" style={{
+            <NextLink href="/login" style={{
               color: '#8892b0', textDecoration: 'none', fontSize: 14, fontWeight: 500,
               padding: '8px 16px', borderRadius: 8, transition: 'color 0.2s',
             }}
@@ -96,8 +99,11 @@ export default function Navbar() {
               onMouseLeave={e => (e.target as HTMLElement).style.color = '#8892b0'}
               className="nav-desktop"
             >
-              Sign In
-            </Link>
+              {t('signIn')}
+            </NextLink>
+            <div className="nav-desktop">
+              <LanguageSwitcher compact />
+            </div>
             <Link href="/book" style={{
               background: '#0047FF', color: '#fff', textDecoration: 'none',
               padding: '10px 20px', borderRadius: 10, fontSize: 14, fontWeight: 700,
@@ -107,13 +113,13 @@ export default function Navbar() {
               onMouseEnter={e => { (e.target as HTMLElement).style.transform = 'translateY(-1px)'; (e.target as HTMLElement).style.boxShadow = '0 8px 30px rgba(0,71,255,0.5)' }}
               onMouseLeave={e => { (e.target as HTMLElement).style.transform = 'none'; (e.target as HTMLElement).style.boxShadow = '0 4px 20px rgba(0,71,255,0.35)' }}
             >
-              Get Started →
+              {t('getStarted')}
             </Link>
 
             {/* Hamburger — mobile only */}
             <button
               onClick={() => setMenuOpen(v => !v)}
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={menuOpen ? t('closeMenu') : t('openMenu')}
               className="nav-mobile"
               style={{
                 width: 44, height: 44, borderRadius: 10,
@@ -148,7 +154,7 @@ export default function Navbar() {
             {/* Close button */}
             <button
               onClick={closeMenu}
-              aria-label="Close menu"
+              aria-label={t('closeMenu')}
               style={{
                 position: 'absolute', top: 16, right: 24,
                 width: 44, height: 44, borderRadius: 10,
@@ -161,7 +167,7 @@ export default function Navbar() {
             </button>
 
             <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: 4 }}>
-              {navLinks.map(link => {
+              {navLinkKeys.map(link => {
                 const isActive = pathname === link.href
                 return (
                   <Link key={link.href} href={link.href} onClick={closeMenu} style={{
@@ -173,28 +179,29 @@ export default function Navbar() {
                     minHeight: 52, display: 'flex', alignItems: 'center',
                     transition: 'all 0.2s',
                   }}>
-                    {link.label}
+                    {t(link.key)}
                   </Link>
                 )
               })}
             </div>
 
-            {/* CTAs at bottom */}
+            {/* Language + CTAs at bottom */}
             <div style={{ padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 12, marginTop: 'auto', borderTop: '1px solid rgba(255,255,255,0.07)', paddingBottom: 48 }}>
-              <Link href="/login" onClick={closeMenu} style={{
+              <LanguageSwitcher />
+              <NextLink href="/login" onClick={closeMenu} style={{
                 padding: '14px', borderRadius: 12, textDecoration: 'none',
                 fontSize: 16, fontWeight: 600, color: '#94a3b8',
                 border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center',
               }}>
-                Sign In
-              </Link>
+                {t('signIn')}
+              </NextLink>
               <Link href="/book" onClick={closeMenu} style={{
                 padding: '16px', borderRadius: 12, textDecoration: 'none',
                 fontSize: 16, fontWeight: 700, color: '#fff',
                 background: '#0047FF', textAlign: 'center',
                 boxShadow: '0 4px 20px rgba(0,71,255,0.4)',
               }}>
-                Get Started →
+                {t('getStarted')}
               </Link>
             </div>
           </motion.div>

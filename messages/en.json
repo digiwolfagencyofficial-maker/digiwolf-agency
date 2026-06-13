@@ -1,0 +1,2999 @@
+{
+  "_meta": {
+    "locale": "en",
+    "version": "1.0.0",
+    "reviewStatus": "source"
+  },
+  "nav": {
+    "brandAlt": "Digi Wolf Agency",
+    "home": "Home",
+    "services": "Services",
+    "work": "Work",
+    "process": "Process",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "signIn": "Sign In",
+    "getStarted": "Get Started",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "brandAlt": "Digi Wolf Agency logo",
+    "tagline": "Prague-based digital agency helping ambitious businesses dominate online.",
+    "copyright": "© {year} Digi Wolf Agency s.r.o., IČO 243 44 648. All rights reserved.",
+    "social": {
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    },
+    "sections": {
+      "services": {
+        "title": "Services",
+        "websites": "Agency Websites",
+        "sro": "Czech S.R.O. Formation",
+        "ai": "AI Automation",
+        "seo": "SEO & Growth",
+        "branding": "Brand Identity",
+        "maintenance": "Maintenance & Support"
+      },
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "work": "Work",
+        "pricing": "Pricing",
+        "book": "Book a Call",
+        "contact": "Contact",
+        "blog": "Blog"
+      },
+      "contact": {
+        "title": "Contact",
+        "secondaryLocation": "Prague, Czech Republic"
+      },
+      "legal": {
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "cookies": "Cookie Policy"
+      }
+    }
+  },
+  "common": {
+    "company": {
+      "labels": {
+        "company": "Company",
+        "legalName": "Legal name",
+        "ico": "IČO",
+        "email": "Email",
+        "phone": "Phone",
+        "registeredOffice": "Registered office",
+        "address": "Address",
+        "country": "Country"
+      },
+      "legalName": "Digi Wolf Agency s.r.o.",
+      "ico": "243 44 648",
+      "email": "info@digiwolf.agency",
+      "phone": "+420 296 183 158",
+      "address": {
+        "street": "Varšavská 715/36",
+        "district": "Vinohrady",
+        "city": "Praha 2",
+        "postalCode": "120 00",
+        "country": "Czech Republic",
+        "full": "Varšavská 715/36, Vinohrady, 120 00 Praha 2"
+      }
+    },
+    "buttons": {
+      "startProject": "Start Your Project →",
+      "bookFreeCall": "Book a Free Call",
+      "contactUs": "Contact Us →",
+      "viewServices": "View Services",
+      "viewPricing": "View Pricing",
+      "learnMore": "Learn more →"
+    },
+    "trustPills": [
+      {
+        "id": "freeConsult",
+        "label": "Free 30-minute consultation"
+      },
+      {
+        "id": "noCommitment",
+        "label": "No commitment required"
+      },
+      {
+        "id": "response24h",
+        "label": "Response within 24 hours"
+      }
+    ]
+  },
+  "home": {
+    "badge": "Available for new projects",
+    "hero": {
+      "title": {
+        "line1": "We Build Digital Weapons",
+        "line2": "for Ambitious Businesses"
+      },
+      "subtitle": "Web. Apps. AI Automation. Czech Company Formation. All under one roof — built in Prague, delivered globally.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Start Your Project →"
+        },
+        {
+          "id": "bookCall",
+          "label": "Book a Free Call"
+        }
+      ],
+      "floatingBadges": [
+        {
+          "id": "projectLaunched",
+          "title": "✓ Project Launched",
+          "subtitle": "TechVentures Prague"
+        },
+        {
+          "id": "satisfaction",
+          "title": "⚡ 98% Satisfaction",
+          "subtitle": "47 happy clients"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "id": "clientsServed",
+        "value": 47,
+        "suffix": "+",
+        "label": "Clients Served"
+      },
+      {
+        "id": "satisfactionRate",
+        "value": 98,
+        "suffix": "%",
+        "label": "Satisfaction Rate"
+      },
+      {
+        "id": "avgDelivery",
+        "value": 7,
+        "suffix": " days",
+        "label": "Avg. Delivery"
+      },
+      {
+        "id": "markets",
+        "value": 3,
+        "suffix": " countries",
+        "label": "Markets Active"
+      }
+    ],
+    "servicesSection": {
+      "badge": "What We Do",
+      "titleLine1": "Everything Your Business Needs",
+      "titleLine2": "to Win Online",
+      "description": "From stunning websites to AI automation and Czech company formation — we do it all, exceptionally.",
+      "cards": [
+        {
+          "id": "agencyWebsites",
+          "title": "Agency Websites",
+          "desc": "High-converting, SEO-optimised websites built with Next.js that turn visitors into paying clients.",
+          "tag": "Most Popular",
+          "price": "from 45,000 CZK"
+        },
+        {
+          "id": "sro",
+          "title": "Czech S.R.O. Formation",
+          "desc": "Full Czech company registration end-to-end in English. No bureaucracy, no stress, just results.",
+          "tag": "",
+          "price": "from 12,000 CZK"
+        },
+        {
+          "id": "aiAutomation",
+          "title": "AI Automation",
+          "desc": "Custom AI workflows, chatbots, and automation pipelines that save your team 20+ hours per week.",
+          "tag": "High Demand",
+          "price": "from 25,000 CZK"
+        },
+        {
+          "id": "seoGrowth",
+          "title": "SEO & Growth",
+          "desc": "Data-driven SEO strategies tailored for CEE markets. Rank higher, get found, grow consistently.",
+          "tag": "",
+          "price": "from 8,000 CZK/mo"
+        },
+        {
+          "id": "brandIdentity",
+          "title": "Brand Identity",
+          "desc": "Premium logo, brand system, and visual identity that makes your business unforgettable.",
+          "tag": "",
+          "price": "from 18,000 CZK"
+        },
+        {
+          "id": "maintenance",
+          "title": "Maintenance & Support",
+          "desc": "24/7 monitoring, updates, security patches, and priority support for your digital assets.",
+          "tag": "",
+          "price": "from 3,000 CZK/mo"
+        }
+      ],
+      "learnMore": "Learn more →"
+    },
+    "processSection": {
+      "badge": "How We Work",
+      "titleLine1": "From Idea to",
+      "titleLine2": "Live in Days",
+      "description": "Our proven process delivers results fast without sacrificing quality.",
+      "steps": [
+        {
+          "id": "01",
+          "title": "Discovery Call",
+          "desc": "We learn your goals, audience, and market. No fluff — just the information needed to build something that works."
+        },
+        {
+          "id": "02",
+          "title": "Strategy & Design",
+          "desc": "Custom wireframes and design mockups tailored to your brand. You approve every pixel before we code."
+        },
+        {
+          "id": "03",
+          "title": "Development",
+          "desc": "Production-grade code with Next.js, TypeScript, and Supabase. Built for performance and scale from day one."
+        },
+        {
+          "id": "04",
+          "title": "Review & Refine",
+          "desc": "Full QA across all devices. You test, we fix. Unlimited revisions until it's exactly what you want."
+        },
+        {
+          "id": "05",
+          "title": "Launch & Grow",
+          "desc": "We deploy, monitor, and continuously improve. Your success is a long-term partnership, not a one-off project."
+        }
+      ]
+    },
+    "caseStudiesSection": {
+      "badge": "Case Studies",
+      "titleLine1": "Real Results,",
+      "titleLine2": "Real Clients",
+      "viewAll": "View All →",
+      "items": [
+        {
+          "id": "techventures",
+          "title": "TechVentures Prague",
+          "category": "SaaS Website + CRM",
+          "result": "+340% conversions",
+          "desc": "Full rebrand and Next.js site launch with integrated client dashboard and Stripe payments."
+        },
+        {
+          "id": "mnExportHub",
+          "title": "MN Export Hub",
+          "category": "E-commerce + S.R.O.",
+          "result": "€180K revenue in 90 days",
+          "desc": "Czech company formation + trilingual B2B marketplace connecting Mongolian exporters to EU buyers."
+        }
+      ]
+    },
+    "testimonialsSection": {
+      "badge": "Testimonials",
+      "titleLine1": "Trusted by Entrepreneurs",
+      "titleLine2": "Across 3 Countries",
+      "items": [
+        {
+          "id": "arjun",
+          "name": "Arjun Sharma",
+          "role": "CEO, TechVentures Prague",
+          "text": "Digi Wolf built our entire SaaS website in 5 days. The quality is exceptional — our conversion rate jumped 340% in the first month."
+        },
+        {
+          "id": "tomas",
+          "name": "Tomas Novák",
+          "role": "Founder, Novák Consulting",
+          "text": "They handled my Czech S.R.O. formation while simultaneously building my agency site. Professional, fast, and zero stress."
+        },
+        {
+          "id": "enkhmaa",
+          "name": "Enkhmaa B.",
+          "role": "Director, MN Export Hub",
+          "text": "As a Mongolian entrepreneur in Prague, having an agency that speaks my language (literally) is invaluable. Results speak for themselves."
+        }
+      ]
+    },
+    "aiSection": {
+      "badge": "AI-Powered",
+      "title": "Automate Your Business with Custom AI",
+      "description": "We build AI pipelines, chatbots, and automation workflows that eliminate repetitive tasks. Our clients save an average of 23 hours per week.",
+      "checklist": [
+        {
+          "id": "leadChatbots",
+          "label": "Lead qualification chatbots"
+        },
+        {
+          "id": "docAutomation",
+          "label": "Document automation & e-signatures"
+        },
+        {
+          "id": "crmEnrichment",
+          "label": "CRM data enrichment pipelines"
+        },
+        {
+          "id": "weeklyReports",
+          "label": "AI-generated weekly reports"
+        }
+      ],
+      "flow": [
+        {
+          "id": "inputData",
+          "label": "Input Data"
+        },
+        {
+          "id": "aiProcessing",
+          "label": "AI Processing"
+        },
+        {
+          "id": "automation",
+          "label": "Automation"
+        },
+        {
+          "id": "resultsDelivered",
+          "label": "Results Delivered"
+        }
+      ],
+      "cta": "Explore AI Services →"
+    },
+    "pricingPreview": {
+      "badge": "Pricing",
+      "titleLine1": "Transparent Pricing,",
+      "titleLine2": "No Surprises",
+      "subtitle": "Every plan includes full source code, 30-day support, and a satisfaction guarantee.",
+      "plans": [
+        {
+          "id": "starter",
+          "name": "Starter",
+          "price": "15,000",
+          "currency": "CZK",
+          "desc": "Perfect for freelancers and small businesses launching their first professional website.",
+          "cta": "Get Started",
+          "featured": false,
+          "features": [
+            {
+              "id": "pages5",
+              "label": "5-page website"
+            },
+            {
+              "id": "mobile",
+              "label": "Mobile responsive"
+            },
+            {
+              "id": "seo",
+              "label": "SEO optimized"
+            },
+            {
+              "id": "contactForm",
+              "label": "Contact form"
+            },
+            {
+              "id": "support30",
+              "label": "30-day support"
+            },
+            {
+              "id": "sourceCode",
+              "label": "Source code included"
+            }
+          ]
+        },
+        {
+          "id": "growth",
+          "name": "Growth",
+          "price": "45,000",
+          "currency": "CZK",
+          "desc": "For growing agencies that need a full-featured site with client portal and integrations.",
+          "cta": "Most Popular",
+          "featured": true,
+          "badge": "BEST VALUE",
+          "features": [
+            {
+              "id": "pagesUnlimited",
+              "label": "Unlimited pages"
+            },
+            {
+              "id": "clientDashboard",
+              "label": "Client dashboard"
+            },
+            {
+              "id": "paymentIntegration",
+              "label": "Payment integration"
+            },
+            {
+              "id": "crmIntegration",
+              "label": "CRM integration"
+            },
+            {
+              "id": "aiChatbot",
+              "label": "AI chatbot"
+            },
+            {
+              "id": "support90",
+              "label": "90-day support"
+            },
+            {
+              "id": "priorityDelivery",
+              "label": "Priority delivery"
+            }
+          ]
+        },
+        {
+          "id": "enterprise",
+          "name": "Enterprise",
+          "price": "Custom",
+          "currency": "",
+          "desc": "Full-stack platform with custom features, AI automation, and dedicated account management.",
+          "cta": "Contact Us",
+          "featured": false,
+          "features": [
+            {
+              "id": "everythingGrowth",
+              "label": "Everything in Growth"
+            },
+            {
+              "id": "customAi",
+              "label": "Custom AI workflows"
+            },
+            {
+              "id": "multiLanguage",
+              "label": "Multi-language"
+            },
+            {
+              "id": "whiteLabel",
+              "label": "White-label option"
+            },
+            {
+              "id": "sla",
+              "label": "SLA guarantee"
+            },
+            {
+              "id": "dedicatedPm",
+              "label": "Dedicated PM"
+            },
+            {
+              "id": "lifetimeSupport",
+              "label": "Lifetime support"
+            }
+          ]
+        }
+      ],
+      "viewFullBreakdown": "View full pricing breakdown →"
+    },
+    "faqSection": {
+      "badge": "FAQ",
+      "title": "Questions? Answered.",
+      "items": [
+        {
+          "id": "q1",
+          "q": "How long does a website project take?",
+          "a": "Most projects take 3–6 weeks from kickoff to launch."
+        },
+        {
+          "id": "q2",
+          "q": "What's included in Czech S.R.O. formation?",
+          "a": "Full company registration, trade license, registered address for 1 year, bank account guidance. We handle everything."
+        },
+        {
+          "id": "q3",
+          "q": "Do you work with international clients?",
+          "a": "Yes — we work remotely with clients across Europe and beyond. We speak English, Czech, and Mongolian."
+        },
+        {
+          "id": "q4",
+          "q": "What's your payment structure?",
+          "a": "50% upfront to begin, 50% on final delivery. We accept bank transfer (CZK/EUR) and Wise."
+        },
+        {
+          "id": "q5",
+          "q": "Can I update the website myself after launch?",
+          "a": "Yes. We build on modern platforms and provide a handover guide. Optional maintenance retainers available."
+        },
+        {
+          "id": "q6",
+          "q": "What AI automation services do you offer?",
+          "a": "We build n8n workflows, AI agents, chatbots, and Hermes-powered automations for client acquisition, onboarding, and internal ops."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "badge": "Limited Availability",
+      "titleLine1": "Ready to Build Something",
+      "titleLine2": "Extraordinary?",
+      "description": "We only take 3 new clients per month to ensure exceptional quality. Book your discovery call before spots fill up.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Start Your Project →"
+        },
+        {
+          "id": "bookCall",
+          "label": "Book a Free Call"
+        }
+      ],
+      "points": [
+        {
+          "id": "freeConsult",
+          "label": "Free 30-minute consultation"
+        },
+        {
+          "id": "noCommitment",
+          "label": "No commitment required"
+        },
+        {
+          "id": "response24h",
+          "label": "Response within 24 hours"
+        }
+      ]
+    },
+    "techStack": [
+      {
+        "id": "nextjs",
+        "label": "Next.js"
+      },
+      {
+        "id": "typescript",
+        "label": "TypeScript"
+      },
+      {
+        "id": "supabase",
+        "label": "Supabase"
+      },
+      {
+        "id": "tailwind",
+        "label": "Tailwind CSS"
+      },
+      {
+        "id": "vercel",
+        "label": "Vercel"
+      },
+      {
+        "id": "stripe",
+        "label": "Stripe"
+      },
+      {
+        "id": "framerMotion",
+        "label": "Framer Motion"
+      },
+      {
+        "id": "prisma",
+        "label": "Prisma"
+      },
+      {
+        "id": "react",
+        "label": "React"
+      },
+      {
+        "id": "postgresql",
+        "label": "PostgreSQL"
+      },
+      {
+        "id": "resend",
+        "label": "Resend"
+      },
+      {
+        "id": "cloudflare",
+        "label": "Cloudflare"
+      }
+    ]
+  },
+  "services": {
+    "hero": {
+      "badge": "Full-Stack Agency Services",
+      "titleLine1": "Every Service You Need to",
+      "titleLine2": "Dominate Your Market",
+      "subtitle": "From zero to market leader — web development, company formation, AI automation, and more. Built by experts who understand Central European markets.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Start a Project"
+        },
+        {
+          "id": "exploreServices",
+          "label": "Explore Services ↓"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "id": "coreServices",
+        "num": "6",
+        "label": "Core Services"
+      },
+      {
+        "id": "clientsServed",
+        "num": "47+",
+        "label": "Clients Served"
+      },
+      {
+        "id": "deliveryDays",
+        "num": "5–10",
+        "label": "Day Delivery"
+      },
+      {
+        "id": "satisfaction",
+        "num": "98%",
+        "label": "Satisfaction Rate"
+      }
+    ],
+    "cards": [
+      {
+        "id": "web",
+        "title": "Web Development",
+        "tagline": "Full-stack websites that convert",
+        "price": "from 45,000 CZK",
+        "badge": "Most Popular",
+        "startingAt": "Starting at",
+        "includedTitle": "What's Included",
+        "processTitle": "Our Process",
+        "cta": "Book a Consultation →",
+        "description": "We build premium full-stack websites engineered for performance, SEO, and conversions. Next.js, Webflow, e-commerce — every pixel intentional, every millisecond optimized.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Next.js 14 + TypeScript full-stack"
+          },
+          {
+            "id": "f2",
+            "label": "Webflow & custom CMS builds"
+          },
+          {
+            "id": "f3",
+            "label": "E-commerce with Shopify / WooCommerce"
+          },
+          {
+            "id": "f4",
+            "label": "Mobile-first responsive design"
+          },
+          {
+            "id": "f5",
+            "label": "Technical SEO built-in from day one"
+          },
+          {
+            "id": "f6",
+            "label": "Core Web Vitals optimized (100/100)"
+          },
+          {
+            "id": "f7",
+            "label": "Custom animations & interactions"
+          },
+          {
+            "id": "f8",
+            "label": "Analytics & conversion tracking"
+          },
+          {
+            "id": "f9",
+            "label": "30-day post-launch support included"
+          }
+        ]
+      },
+      {
+        "id": "sro",
+        "title": "Czech S.R.O. Formation",
+        "tagline": "EU company in days, not months",
+        "price": "from 15,000 CZK",
+        "badge": "EU Gateway",
+        "startingAt": "Starting at",
+        "includedTitle": "What's Included",
+        "processTitle": "Our Process",
+        "cta": "Book a Consultation →",
+        "description": "Complete company registration for your Czech S.R.O. — bank account setup, compliance, and full English-language guidance. We handle every form, notary, and government office.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Full company registration handled end-to-end"
+          },
+          {
+            "id": "f2",
+            "label": "Bank account opening assistance"
+          },
+          {
+            "id": "f3",
+            "label": "Trade license (živnostenský list) included"
+          },
+          {
+            "id": "f4",
+            "label": "Registered office address (1 year)"
+          },
+          {
+            "id": "f5",
+            "label": "VAT registration support"
+          },
+          {
+            "id": "f6",
+            "label": "Memorandum of Association drafting"
+          },
+          {
+            "id": "f7",
+            "label": "Apostille & certified translations if needed"
+          },
+          {
+            "id": "f8",
+            "label": "Ongoing compliance consultation"
+          },
+          {
+            "id": "f9",
+            "label": "English guidance throughout"
+          }
+        ]
+      },
+      {
+        "id": "ai",
+        "title": "AI Automation",
+        "tagline": "Work smarter, scale faster",
+        "price": "from 25,000 CZK",
+        "badge": "Future-Proof",
+        "startingAt": "Starting at",
+        "includedTitle": "What's Included",
+        "processTitle": "Our Process",
+        "cta": "Book a Consultation →",
+        "description": "We deploy custom AI systems — chatbots, workflow automation, and lead generation systems — that eliminate repetitive work and supercharge your team productivity.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Custom GPT-4 / Claude chatbots"
+          },
+          {
+            "id": "f2",
+            "label": "Lead qualification & nurturing bots"
+          },
+          {
+            "id": "f3",
+            "label": "Workflow automation (n8n / Make / Zapier)"
+          },
+          {
+            "id": "f4",
+            "label": "CRM & ERP integration"
+          },
+          {
+            "id": "f5",
+            "label": "Document processing pipelines"
+          },
+          {
+            "id": "f6",
+            "label": "AI-powered content generation"
+          },
+          {
+            "id": "f7",
+            "label": "Slack / Teams internal assistants"
+          },
+          {
+            "id": "f8",
+            "label": "Custom API integrations"
+          },
+          {
+            "id": "f9",
+            "label": "Training & handover documentation"
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "title": "SEO & Growth",
+        "tagline": "Rank higher. Grow faster.",
+        "price": "from 8,000 CZK/month",
+        "badge": "Ongoing",
+        "startingAt": "Starting at",
+        "includedTitle": "What's Included",
+        "processTitle": "Our Process",
+        "cta": "Book a Consultation →",
+        "description": "Technical SEO, content strategy, and Google Ads built for Central & Eastern European markets. We combine technical excellence with strategic content to get your site on Page 1.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Full technical SEO audit & fix"
+          },
+          {
+            "id": "f2",
+            "label": "Keyword research (CZ, SK, PL, EN)"
+          },
+          {
+            "id": "f3",
+            "label": "On-page optimization & schema markup"
+          },
+          {
+            "id": "f4",
+            "label": "Monthly content strategy & briefs"
+          },
+          {
+            "id": "f5",
+            "label": "Google Ads campaign management"
+          },
+          {
+            "id": "f6",
+            "label": "Link building in CEE markets"
+          },
+          {
+            "id": "f7",
+            "label": "Google Search Console management"
+          },
+          {
+            "id": "f8",
+            "label": "Competitor gap analysis"
+          },
+          {
+            "id": "f9",
+            "label": "Monthly reporting with real metrics"
+          }
+        ]
+      },
+      {
+        "id": "brand",
+        "title": "Brand Identity",
+        "tagline": "Look like the leader you are",
+        "price": "from 12,000 CZK",
+        "badge": "Premium",
+        "startingAt": "Starting at",
+        "includedTitle": "What's Included",
+        "processTitle": "Our Process",
+        "cta": "Book a Consultation →",
+        "description": "A complete visual identity system — logo, brand guidelines, and visual system — that makes you instantly recognizable and unforgettable. From logo to brand guidelines.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Brand strategy & positioning workshop"
+          },
+          {
+            "id": "f2",
+            "label": "Primary + secondary logo suite"
+          },
+          {
+            "id": "f3",
+            "label": "Full color palette system"
+          },
+          {
+            "id": "f4",
+            "label": "Typography hierarchy selection"
+          },
+          {
+            "id": "f5",
+            "label": "Business card & letterhead design"
+          },
+          {
+            "id": "f6",
+            "label": "Social media kit (10+ templates)"
+          },
+          {
+            "id": "f7",
+            "label": "Brand guidelines PDF (50+ pages)"
+          },
+          {
+            "id": "f8",
+            "label": "Icon set & illustration style"
+          },
+          {
+            "id": "f9",
+            "label": "All source files (AI, EPS, Figma)"
+          }
+        ]
+      },
+      {
+        "id": "maintenance",
+        "title": "Website Maintenance",
+        "tagline": "Always online. Always protected.",
+        "price": "from 3,000 CZK/month",
+        "badge": "Peace of Mind",
+        "startingAt": "Starting at",
+        "includedTitle": "What's Included",
+        "processTitle": "Our Process",
+        "cta": "Book a Consultation →",
+        "description": "Hosting, updates, security, and support — 24/7. Our proactive maintenance plans keep your website and systems running at peak performance, always.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "24/7 uptime monitoring with alerts"
+          },
+          {
+            "id": "f2",
+            "label": "Managed hosting included"
+          },
+          {
+            "id": "f3",
+            "label": "Weekly CMS & dependency updates"
+          },
+          {
+            "id": "f4",
+            "label": "Security scanning & malware removal"
+          },
+          {
+            "id": "f5",
+            "label": "Daily automated backups (30-day retention)"
+          },
+          {
+            "id": "f6",
+            "label": "Performance monitoring & optimization"
+          },
+          {
+            "id": "f7",
+            "label": "Monthly performance report"
+          },
+          {
+            "id": "f8",
+            "label": "Priority bug fixes (< 4hr response)"
+          },
+          {
+            "id": "f9",
+            "label": "Dedicated Slack channel support"
+          }
+        ]
+      }
+    ],
+    "guarantees": [
+      {
+        "id": "onTime",
+        "title": "On-Time Delivery",
+        "desc": "We ship on schedule, every time. If we miss a deadline, you get 10% off your invoice."
+      },
+      {
+        "id": "fixedPricing",
+        "title": "Fixed Pricing",
+        "desc": "Quote agreed upfront, no scope creep surprises. What we quote is what you pay."
+      },
+      {
+        "id": "unlimitedRevisions",
+        "title": "Unlimited Revisions",
+        "desc": "Within scope, we iterate until you're 100% satisfied. Period."
+      }
+    ],
+    "bottomCta": {
+      "titleLine1": "Ready to Build Something",
+      "titleLine2": "Exceptional?",
+      "description": "Book a free 30-minute strategy call. We'll map your goals, identify the right services, and deliver a detailed proposal within 24 hours.",
+      "ctas": [
+        {
+          "id": "bookStrategyCall",
+          "label": "Book a Free Strategy Call →"
+        },
+        {
+          "id": "viewPricing",
+          "label": "View Pricing"
+        }
+      ]
+    }
+  },
+  "pricing": {
+    "hero": {
+      "badge": "Pricing",
+      "titleLine1": "Transparent Pricing,",
+      "titleLine2": "No Surprises",
+      "description": "Every plan includes full source code, 30-day support, and a satisfaction guarantee. Fixed prices — no hidden fees."
+    },
+    "tiers": [
+      {
+        "id": "starter",
+        "name": "Starter",
+        "price": "15,000",
+        "currency": "CZK",
+        "desc": "Perfect for freelancers and small businesses launching their first professional website.",
+        "cta": "Get Started",
+        "featured": false,
+        "features": [
+          {
+            "id": "f1",
+            "label": "5-page website"
+          },
+          {
+            "id": "f2",
+            "label": "Mobile responsive"
+          },
+          {
+            "id": "f3",
+            "label": "SEO optimized"
+          },
+          {
+            "id": "f4",
+            "label": "Contact form"
+          },
+          {
+            "id": "f5",
+            "label": "30-day support"
+          },
+          {
+            "id": "f6",
+            "label": "Source code included"
+          }
+        ]
+      },
+      {
+        "id": "growth",
+        "name": "Growth",
+        "price": "45,000",
+        "currency": "CZK",
+        "desc": "For growing agencies that need a full-featured site with client portal and integrations.",
+        "cta": "Most Popular",
+        "featured": true,
+        "featuredBadge": "BEST VALUE",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Unlimited pages"
+          },
+          {
+            "id": "f2",
+            "label": "Client dashboard"
+          },
+          {
+            "id": "f3",
+            "label": "Payment integration"
+          },
+          {
+            "id": "f4",
+            "label": "CRM integration"
+          },
+          {
+            "id": "f5",
+            "label": "AI chatbot"
+          },
+          {
+            "id": "f6",
+            "label": "90-day support"
+          },
+          {
+            "id": "f7",
+            "label": "Priority delivery"
+          }
+        ]
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "price": "Custom",
+        "currency": "",
+        "desc": "Full-stack platform with custom features, AI automation, and dedicated account management.",
+        "cta": "Contact Us",
+        "featured": false,
+        "features": [
+          {
+            "id": "f1",
+            "label": "Everything in Growth"
+          },
+          {
+            "id": "f2",
+            "label": "Custom AI workflows"
+          },
+          {
+            "id": "f3",
+            "label": "Multi-language"
+          },
+          {
+            "id": "f4",
+            "label": "White-label option"
+          },
+          {
+            "id": "f5",
+            "label": "SLA guarantee"
+          },
+          {
+            "id": "f6",
+            "label": "Dedicated PM"
+          },
+          {
+            "id": "f7",
+            "label": "Lifetime support"
+          }
+        ]
+      }
+    ],
+    "trustBadges": [
+      {
+        "id": "fixedPricing",
+        "text": "Fixed pricing, no hidden fees"
+      },
+      {
+        "id": "onTime",
+        "text": "On-time delivery guaranteed"
+      },
+      {
+        "id": "unlimitedRevisions",
+        "text": "Unlimited revisions within scope"
+      },
+      {
+        "id": "paymentPlan",
+        "text": "50/50 payment plans available"
+      }
+    ],
+    "comparison": {
+      "badge": "Compare Plans",
+      "title": "Full Feature Comparison",
+      "subtitle": "See exactly what's included in each tier — no guesswork.",
+      "featureLabel": "Feature",
+      "rows": [
+        {
+          "id": "pagesIncluded",
+          "label": "Pages included",
+          "starter": "5 pages",
+          "growth": "Unlimited",
+          "enterprise": "Unlimited"
+        },
+        {
+          "id": "mobileResponsive",
+          "label": "Mobile responsive design",
+          "starter": true,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "seoSetup",
+          "label": "SEO setup",
+          "starter": "Basic",
+          "growth": "Advanced",
+          "enterprise": "Enterprise"
+        },
+        {
+          "id": "contactForm",
+          "label": "Contact form",
+          "starter": true,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "postLaunchSupport",
+          "label": "Post-launch support",
+          "starter": "30 days",
+          "growth": "90 days",
+          "enterprise": "Lifetime"
+        },
+        {
+          "id": "sourceOwnership",
+          "label": "Source code ownership",
+          "starter": true,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "clientDashboard",
+          "label": "Client dashboard",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "paymentIntegration",
+          "label": "Payment integration",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "crmIntegration",
+          "label": "CRM integration",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "aiChatbot",
+          "label": "AI chatbot",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "customAi",
+          "label": "Custom AI workflows",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "multiLanguage",
+          "label": "Multi-language",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "whiteLabel",
+          "label": "White-label option",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "sla",
+          "label": "SLA guarantee",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "dedicatedPm",
+          "label": "Dedicated project manager",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "deliveryTimeline",
+          "label": "Delivery timeline",
+          "starter": "5–7 days",
+          "growth": "Priority",
+          "enterprise": "Custom SLA"
+        }
+      ],
+      "cta": "Get a Custom Quote →"
+    },
+    "addOns": {
+      "badge": "Add-ons",
+      "title": "Supercharge Your Plan",
+      "subtitle": "Add any of these services to your package and build a complete digital engine.",
+      "items": [
+        {
+          "id": "seoRetainer",
+          "title": "SEO & Growth Retainer",
+          "price": "8,000 CZK/mo",
+          "badge": "Monthly",
+          "desc": "Full technical SEO, keyword research, content strategy, and monthly link building."
+        },
+        {
+          "id": "maintenance",
+          "title": "Website Maintenance",
+          "price": "3,000 CZK/mo",
+          "badge": "Monthly",
+          "desc": "24/7 uptime monitoring, weekly updates, daily backups, and priority bug fixes."
+        },
+        {
+          "id": "aiChatbot",
+          "title": "AI Chatbot Integration",
+          "price": "from 15,000 CZK",
+          "badge": "One-time",
+          "desc": "Custom GPT-4 powered chatbot trained on your content, integrated with your CRM."
+        },
+        {
+          "id": "brandSystem",
+          "title": "Brand Identity System",
+          "price": "from 12,000 CZK",
+          "badge": "One-time",
+          "desc": "Complete visual identity including logo, color system, typography, and guidelines."
+        }
+      ]
+    },
+    "paymentsFaq": {
+      "badge": "Payments & Billing",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about how we bill and accept payment.",
+      "items": [
+        {
+          "id": "paymentPlans",
+          "q": "Do you offer payment plans?",
+          "a": "Yes. For projects over 20,000 CZK, we offer a 50/50 split — 50% upfront to begin work, and 50% on delivery. For retainer services, you're billed monthly at the start of each period."
+        },
+        {
+          "id": "currency",
+          "q": "What currency do you accept?",
+          "a": "We invoice in Czech Koruna (CZK). We also accept EUR and USD at the current exchange rate. All payments are processed via bank transfer or Stripe for card payments."
+        },
+        {
+          "id": "hiddenFees",
+          "q": "Are there any hidden fees?",
+          "a": "Never. Our quotes are fully itemized and fixed. The only additional costs that could arise are third-party services you choose to add (e.g., a premium CMS plan, specific API subscriptions) — we always disclose these upfront."
+        },
+        {
+          "id": "moreRevisions",
+          "q": "What happens if I need more revisions?",
+          "a": "On Starter plans, additional revision rounds are available at 2,500 CZK per round. Growth and Enterprise plans include unlimited revisions within scope. We define scope clearly in your proposal to avoid any ambiguity."
+        },
+        {
+          "id": "moneyBack",
+          "q": "How does the 14-day money-back guarantee work?",
+          "a": "If you're not satisfied with the initial design concepts after the first review round, you can request a full refund within 14 days of project start. This applies to new website projects only."
+        },
+        {
+          "id": "upgrade",
+          "q": "Can I upgrade my plan later?",
+          "a": "Absolutely. Many clients start on Starter and upgrade as their business grows. We apply a credit for work already done against your upgrade cost, so you never pay twice for the same work."
+        },
+        {
+          "id": "vat",
+          "q": "Is VAT included in your prices?",
+          "a": "All displayed prices are exclusive of VAT. If you're a Czech VAT-registered entity, standard Czech VAT (21%) will be applied to invoices. EU business clients with a valid VAT ID benefit from reverse-charge rules."
+        },
+        {
+          "id": "growthAiChatbot",
+          "q": "What's included in the AI chatbot for the Growth plan?",
+          "a": "The Growth plan includes a custom GPT-4 powered chatbot trained on your website content, integrated into your site, with basic lead qualification flows. Full AI automation systems (CRM integration, complex pipelines) are priced separately."
+        }
+      ]
+    },
+    "bottomCta": {
+      "title": "Ready to Start Your Project?",
+      "description": "Tell us about your goals and we'll send a detailed proposal within 24 hours. No commitment, no sales pressure — just a clear plan and fixed price.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Start Your Project →"
+        },
+        {
+          "id": "bookCall",
+          "label": "Book a Free Call"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Get In Touch",
+      "titleLine1": "Let's Build Something",
+      "titleLine2": "Extraordinary",
+      "subtitle": "Tell us about your project. We respond within 4 business hours — personally, not with a bot."
+    },
+    "leftColumn": {
+      "contactInformationTitle": "Contact Information",
+      "responseGuarantee": {
+        "title": "4-Hour Response Guarantee",
+        "desc": "We guarantee a personal response to every enquiry within 4 business hours. No auto-replies, no chatbots — real humans who understand your project."
+      },
+      "whatHappensNextTitle": "What Happens Next",
+      "steps": [
+        {
+          "id": "01",
+          "title": "You send your brief",
+          "desc": "Fill out the form with your project details and goals."
+        },
+        {
+          "id": "02",
+          "title": "We review & respond",
+          "desc": "Within 4 business hours, you get a personal reply — not a bot."
+        },
+        {
+          "id": "03",
+          "title": "Strategy call booked",
+          "desc": "A 30-min Zoom to align on scope, timeline, and budget."
+        }
+      ],
+      "followUs": "Follow Us",
+      "socials": [
+        {
+          "id": "linkedin",
+          "name": "LinkedIn"
+        },
+        {
+          "id": "instagram",
+          "name": "Instagram"
+        },
+        {
+          "id": "twitterX",
+          "name": "Twitter/X"
+        },
+        {
+          "id": "facebook",
+          "name": "Facebook"
+        }
+      ],
+      "contactInfo": [
+        {
+          "id": "email",
+          "label": "Email",
+          "value": "info@digiwolf.agency"
+        },
+        {
+          "id": "phone",
+          "label": "Phone",
+          "value": "+420 296 183 158"
+        },
+        {
+          "id": "office",
+          "label": "Registered office",
+          "value": "Varšavská 715/36, Vinohrady, 120 00 Praha 2"
+        }
+      ]
+    },
+    "form": {
+      "callCta": {
+        "title": "Prefer a call?",
+        "subtitle": "Book a free 30-min discovery session",
+        "button": "Book a Free 30-min Discovery Call →"
+      },
+      "title": "Start Your Project",
+      "subtitle": "Fill out the form below and we'll be in touch shortly.",
+      "fields": {
+        "fullName": "Full Name *",
+        "email": "Email Address *",
+        "company": "Company / Business Name",
+        "service": "Service Interest *",
+        "budget": "Budget Range *",
+        "message": "Project Description *"
+      },
+      "placeholders": {
+        "fullName": "Jan Novák",
+        "email": "jan@company.cz",
+        "company": "Acme s.r.o.",
+        "service": "Select a service",
+        "budget": "Select budget",
+        "message": "Tell us about your project — what you need, your goals, your timeline, and any specific requirements..."
+      },
+      "submitIdle": "Send My Project Brief →",
+      "submitLoading": "Sending your brief...",
+      "privacyNote": "By submitting, you agree to our Privacy Policy. We never share your data.",
+      "success": {
+        "title": "Message Received!",
+        "body": "Thank you for reaching out. Our team will review your brief and get back to you within 4 business hours with next steps.",
+        "confirmationLabel": "Confirmation sent to",
+        "fallbackEmail": "your email",
+        "resetButton": "Send another message"
+      },
+      "errors": {
+        "generic": "Something went wrong. Please try again or email us directly.",
+        "network": "Network error. Please try again or email us directly.",
+        "highlighted": "Please check the highlighted fields."
+      }
+    },
+    "validation": {
+      "name": "Please enter your full name",
+      "email": "Please enter a valid email address",
+      "company": "Company name is too long",
+      "service": "Please select a service",
+      "budget": "Please select a budget range",
+      "messageMin": "Please provide at least a brief project description",
+      "messageMax": "Message is too long (max 5000 characters)"
+    },
+    "services": [
+      {
+        "id": "webDevelopment",
+        "value": "Web Development"
+      },
+      {
+        "id": "sroFormation",
+        "value": "Czech S.R.O. Formation"
+      },
+      {
+        "id": "aiAutomation",
+        "value": "AI Automation"
+      },
+      {
+        "id": "seoGrowth",
+        "value": "SEO & Growth"
+      },
+      {
+        "id": "brandIdentity",
+        "value": "Brand Identity"
+      },
+      {
+        "id": "websiteMaintenance",
+        "value": "Website Maintenance"
+      }
+    ],
+    "budgets": [
+      {
+        "id": "under15k",
+        "value": "Under 15k CZK"
+      },
+      {
+        "id": "15to45k",
+        "value": "15k–45k CZK"
+      },
+      {
+        "id": "45to100k",
+        "value": "45k–100k CZK"
+      },
+      {
+        "id": "over100k",
+        "value": "100k+ CZK"
+      },
+      {
+        "id": "monthlyRetainer",
+        "value": "Monthly Retainer"
+      }
+    ],
+    "scheduleSection": {
+      "badge": "Prefer to talk first?",
+      "title": "Book a Free 30-Min Strategy Call",
+      "description": "Skip the back-and-forth. Pick a time that works for you and let's map out your project on a live call. No sales pitch — just honest advice.",
+      "tags": [
+        {
+          "id": "freeConsult",
+          "label": "Free consultation"
+        },
+        {
+          "id": "thirtyMinutes",
+          "label": "30 minutes"
+        },
+        {
+          "id": "noCommitment",
+          "label": "No commitment"
+        }
+      ],
+      "cta": "→ Book a free 30-min discovery call",
+      "slotsTitle": "Available Slots",
+      "slots": [
+        {
+          "id": "monFri",
+          "day": "Mon–Fri",
+          "time": "9:00 – 18:00 CET"
+        },
+        {
+          "id": "sat",
+          "day": "Sat",
+          "time": "10:00 – 14:00 CET"
+        }
+      ],
+      "timezoneNote": "Prague (CET) · Remote via Zoom"
+    }
+  },
+  "book": {
+    "labels": {
+      "freeDiscoveryCall": "Free Discovery Call",
+      "pickTime": "Pick a time",
+      "bookingFor": "Booking for:",
+      "timezone": "Prague (CET) · 30 minutes · Video or phone"
+    },
+    "serviceLabels": [
+      {
+        "id": "general",
+        "label": "Discovery Call"
+      },
+      {
+        "id": "discovery",
+        "label": "Discovery Call"
+      },
+      {
+        "id": "website",
+        "label": "Website Project"
+      },
+      {
+        "id": "sro",
+        "label": "Czech S.R.O. Formation"
+      },
+      {
+        "id": "ai",
+        "label": "AI Automation"
+      },
+      {
+        "id": "app",
+        "label": "Website Project"
+      }
+    ],
+    "hero": {
+      "title": "Book a Free 30-Min Discovery Call",
+      "subtitle": "No sales pitch — just honest advice about your project, timeline, and budget. Pick a time below and we'll send a calendar invite instantly.",
+      "trustPills": [
+        {
+          "id": "freeConsult",
+          "label": "Free 30-minute consultation"
+        },
+        {
+          "id": "noCommitment",
+          "label": "No commitment required"
+        },
+        {
+          "id": "responseGuarantee",
+          "label": "4-hour response guarantee"
+        }
+      ]
+    },
+    "prepare": {
+      "title": "What to prepare",
+      "subtitle": "You don't need a formal brief — just come with a rough idea. These help us make the most of your 30 minutes.",
+      "items": [
+        {
+          "id": "projectGoal",
+          "title": "Your project goal",
+          "desc": "Website, Czech S.R.O., AI automation, or something else — a one-line summary is enough."
+        },
+        {
+          "id": "timelineBudget",
+          "title": "Timeline & budget",
+          "desc": "Rough ranges help us advise honestly on what is realistic for your scope."
+        },
+        {
+          "id": "existingAssets",
+          "title": "Existing assets",
+          "desc": "Current site, brand guidelines, or competitor examples you admire."
+        },
+        {
+          "id": "questions",
+          "title": "Your questions",
+          "desc": "Anything you want answered on the call — process, pricing, or tech stack."
+        }
+      ]
+    },
+    "callTopics": {
+      "title": "What we'll cover",
+      "items": [
+        {
+          "id": "agencyWebsites",
+          "label": "Agency websites & client portals"
+        },
+        {
+          "id": "sroFormation",
+          "label": "Czech S.R.O. company formation"
+        },
+        {
+          "id": "aiWorkflows",
+          "label": "AI workflows & automation"
+        },
+        {
+          "id": "strategyTimeline",
+          "label": "Strategy, timeline & next steps"
+        }
+      ]
+    },
+    "guarantees": {
+      "response": {
+        "title": "4-Hour Response Guarantee",
+        "desc": "We guarantee a personal response to every enquiry within 4 business hours. No auto-replies, no chatbots — real humans who understand your project."
+      },
+      "availability": {
+        "badge": "Limited Availability",
+        "desc": "We only take 3 new clients per month to ensure exceptional quality. Book your discovery call before spots fill up."
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Our Story",
+      "title": "Meet the Pack",
+      "subtitle": "A Prague-based digital agency founded by a Mongolian entrepreneur — built to help ambitious businesses across Central & Eastern Europe dominate the digital age.",
+      "paragraph2": "We believe every entrepreneur deserves world-class digital infrastructure, regardless of where they started. We build the tools. We open the doors.",
+      "ctas": [
+        {
+          "id": "workWithUs",
+          "label": "Work With Us"
+        },
+        {
+          "id": "ourServices",
+          "label": "Our Services →"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "id": "clients",
+        "num": "47",
+        "suffix": "+",
+        "label": "Clients Served"
+      },
+      {
+        "id": "satisfaction",
+        "num": "98",
+        "suffix": "%",
+        "label": "Satisfaction Rate"
+      },
+      {
+        "id": "countries",
+        "num": "3",
+        "suffix": "",
+        "label": "Countries Active"
+      },
+      {
+        "id": "delivery",
+        "num": "7",
+        "suffix": " days",
+        "label": "Avg Day Delivery"
+      }
+    ],
+    "founder": {
+      "badge": "The Founder",
+      "sectionTitleLine1": "From Ulaanbaatar to Prague —",
+      "sectionTitleLine2": "Building Bridges",
+      "name": "Uuganbayar Ganbaatar",
+      "role": "Founder & CEO",
+      "route": "🇲🇳 Ulaanbaatar → 🇨🇿 Prague",
+      "skills": [
+        {
+          "id": "nextjs",
+          "label": "Next.js"
+        },
+        {
+          "id": "typescript",
+          "label": "TypeScript"
+        },
+        {
+          "id": "aiAutomation",
+          "label": "AI Automation"
+        },
+        {
+          "id": "czechLaw",
+          "label": "Czech Business Law"
+        },
+        {
+          "id": "brandStrategy",
+          "label": "Brand Strategy"
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "p1",
+          "text": "Mongolian entrepreneur based in Prague, Czech Republic. Uuganbayar founded Digi Wolf Agency to bridge the gap between Eastern European business opportunities and Mongolian diaspora entrepreneurs."
+        },
+        {
+          "id": "p2",
+          "text": "He specializes in web development, business formation (Czech S.R.O.), and AI automation — having helped over 47 entrepreneurs from Mongolia, Kazakhstan, and Central Asia establish their presence in the European market."
+        },
+        {
+          "id": "p3",
+          "text": "With over 10 years living and working in the Czech Republic, he understands firsthand what it means to be an outsider building something real in a new country — and that empathy is at the core of every service Digi Wolf offers."
+        }
+      ],
+      "cta": "Work with us →"
+    },
+    "values": {
+      "badge": "What We Stand For",
+      "title": "Our Core Values",
+      "items": [
+        {
+          "id": "speed",
+          "title": "Speed",
+          "desc": "We move fast without cutting corners. Most projects launch in 5–10 days. Systematized delivery means premium results at startup velocity."
+        },
+        {
+          "id": "precision",
+          "title": "Precision",
+          "desc": "Every line of code, every pixel, every document is crafted to the highest standard. We don't ship anything we wouldn't be proud to put our name on."
+        },
+        {
+          "id": "transparency",
+          "title": "Transparency",
+          "desc": "No hidden fees, no vague timelines, no agency doublespeak. Clear pricing, honest scoping, and direct communication throughout every project."
+        },
+        {
+          "id": "results",
+          "title": "Results",
+          "desc": "We measure success by your growth metrics, not our activity. Every strategy we deploy is tied to concrete, trackable outcomes for your business."
+        }
+      ]
+    },
+    "journey": {
+      "badge": "Our Journey",
+      "titleLine1": "5 Years of",
+      "titleLine2": "Relentless Growth",
+      "paragraphs": [
+        {
+          "id": "p1",
+          "text": "From a one-person consultancy to a full-stack digital agency serving clients across 3 countries — every milestone was earned by delivering exceptional results for our clients."
+        },
+        {
+          "id": "p2",
+          "text": "Today, Digi Wolf serves clients across the Czech Republic, Mongolia, and Slovakia, providing end-to-end digital services in English, Czech, and Mongolian."
+        }
+      ],
+      "timeline": [
+        {
+          "id": "2020",
+          "year": "2020",
+          "event": "Agency founded in Prague by Uuganbayar Ganbaatar"
+        },
+        {
+          "id": "2021",
+          "year": "2021",
+          "event": "First 10 Czech S.R.O. formations for Mongolian clients"
+        },
+        {
+          "id": "2022",
+          "year": "2022",
+          "event": "Expanded into web development — 15 sites launched"
+        },
+        {
+          "id": "2023",
+          "year": "2023",
+          "event": "Brand Identity service launched; 30+ companies rebranded"
+        },
+        {
+          "id": "2024",
+          "year": "2024",
+          "event": "AI Automation division opens; 47+ clients across 3 countries"
+        },
+        {
+          "id": "2025",
+          "year": "2025",
+          "event": "Expanding into Slovak and Polish markets"
+        }
+      ]
+    },
+    "culture": {
+      "badge": "How We Work",
+      "title": "Team Culture",
+      "subtitle": "We are a lean, high-performance team built on expertise, trust, and a genuine passion for what we do. No bloat. No politics. Just results.",
+      "pillars": [
+        {
+          "id": "globalMindset",
+          "title": "Global Mindset",
+          "desc": "We serve clients in 3 countries and speak Czech, English, and Mongolian. Diversity is our superpower."
+        },
+        {
+          "id": "systemsThinking",
+          "title": "Systems Thinking",
+          "desc": "We build repeatable processes so quality is never an accident — it's engineered in from day one."
+        },
+        {
+          "id": "continuousLearning",
+          "title": "Continuous Learning",
+          "desc": "Every team member invests in staying ahead — new frameworks, new regulations, new AI tools."
+        },
+        {
+          "id": "clientEmpathy",
+          "title": "Client Empathy",
+          "desc": "We've all been outsiders building something new. That lived experience shapes how we treat every client."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Join the Pack?",
+      "description": "Whether you're a Mongolian entrepreneur looking to enter the EU market, a Czech startup needing a digital edge, or any ambitious business ready to scale — we're here to help you dominate.",
+      "button": "Get In Touch →",
+      "facts": [
+        {
+          "id": "location",
+          "text": "Varšavská 715/36, Vinohrady, 120 00 Praha 2"
+        },
+        {
+          "id": "countries",
+          "text": "Serving 3 countries"
+        },
+        {
+          "id": "languages",
+          "text": "CZ, EN, MN spoken"
+        }
+      ]
+    }
+  },
+  "process": {
+    "hero": {
+      "badge": "Our Process",
+      "titleLine1": "From Idea to Live",
+      "titleLine2": "in Days, Not Months",
+      "subtitle": "Our battle-tested 5-step process eliminates the guesswork, delays, and revision hell that plague most agency relationships.",
+      "highlights": [
+        {
+          "id": "delivery",
+          "label": "Avg. 7-day delivery"
+        },
+        {
+          "id": "fixedPrice",
+          "label": "Fixed-price, no surprises"
+        },
+        {
+          "id": "revisions",
+          "label": "Unlimited revisions"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "id": "01",
+        "title": "Discovery Call",
+        "subtitle": "30 minutes — Free",
+        "desc": "We start with a focused 30-minute call to understand your business, goals, and audience. No fluff, no sales pitch — just the information we need to build something that actually works for you. We'll assess your competition, ask the hard questions, and come out with a crystal-clear picture of what success looks like.",
+        "deliverables": [
+          {
+            "id": "scope",
+            "label": "Project scope document"
+          },
+          {
+            "id": "competitor",
+            "label": "Competitor analysis"
+          },
+          {
+            "id": "timeline",
+            "label": "Timeline estimate"
+          },
+          {
+            "id": "quote",
+            "label": "Fixed-price quote"
+          }
+        ],
+        "cta": "→ Book your free call"
+      },
+      {
+        "id": "02",
+        "title": "Strategy & Design",
+        "subtitle": "2–3 days",
+        "desc": "Custom wireframes and high-fidelity mockups tailored to your brand. You see exactly what we're building before a single line of code is written. We design mobile-first, with every element purposefully placed to guide your visitors toward conversion. You approve every pixel — revisions are unlimited at this stage.",
+        "deliverables": [
+          {
+            "id": "mockups",
+            "label": "Brand-aligned mockups"
+          },
+          {
+            "id": "layouts",
+            "label": "Mobile & desktop layouts"
+          },
+          {
+            "id": "prototypes",
+            "label": "Interaction prototypes"
+          },
+          {
+            "id": "contentStrategy",
+            "label": "Content strategy"
+          }
+        ]
+      },
+      {
+        "id": "03",
+        "title": "Development",
+        "subtitle": "3–7 days",
+        "desc": "Production-grade code built with Next.js, TypeScript, and Supabase. We don't use page builders or templates — everything is custom-engineered for performance and scale. Core Web Vitals are a priority: we target 95+ scores across all metrics. Clean, documented code that you own completely.",
+        "deliverables": [
+          {
+            "id": "nextBuild",
+            "label": "Next.js production build"
+          },
+          {
+            "id": "typedCode",
+            "label": "TypeScript codebase"
+          },
+          {
+            "id": "seo",
+            "label": "SEO optimization"
+          },
+          {
+            "id": "performance",
+            "label": "Performance-first code"
+          }
+        ]
+      },
+      {
+        "id": "04",
+        "title": "Review & Refine",
+        "subtitle": "1–2 days",
+        "desc": "Full QA across all major browsers, devices, and screen sizes. You receive staging access to test everything yourself. Any changes you request are completed without question — we don't start counting revisions until you're completely satisfied. Accessibility and performance are validated before we move forward.",
+        "deliverables": [
+          {
+            "id": "crossBrowser",
+            "label": "Cross-browser testing"
+          },
+          {
+            "id": "staging",
+            "label": "Staging environment access"
+          },
+          {
+            "id": "audit",
+            "label": "Performance audit report"
+          },
+          {
+            "id": "unlimited",
+            "label": "Unlimited revisions"
+          }
+        ]
+      },
+      {
+        "id": "05",
+        "title": "Launch & Grow",
+        "subtitle": "Ongoing",
+        "desc": "We handle the deployment, DNS configuration, and post-launch monitoring. Your site goes live with zero downtime. After launch, we monitor performance and are on call for any issues for 30 days. For ongoing clients, we provide continuous improvements, A/B testing, and growth optimization — turning your website into a sales machine.",
+        "deliverables": [
+          {
+            "id": "deploy",
+            "label": "Zero-downtime deployment"
+          },
+          {
+            "id": "dnsSsl",
+            "label": "DNS & SSL setup"
+          },
+          {
+            "id": "support",
+            "label": "30-day post-launch support"
+          },
+          {
+            "id": "analytics",
+            "label": "Analytics dashboard"
+          }
+        ]
+      }
+    ],
+    "timeline": {
+      "title": "Typical Project Timeline",
+      "phases": [
+        {
+          "id": "discovery",
+          "phase": "Discovery",
+          "duration": "Day 1"
+        },
+        {
+          "id": "design",
+          "phase": "Design",
+          "duration": "Day 2–4"
+        },
+        {
+          "id": "build",
+          "phase": "Build",
+          "duration": "Day 4–10"
+        },
+        {
+          "id": "qa",
+          "phase": "QA",
+          "duration": "Day 10–12"
+        },
+        {
+          "id": "launch",
+          "phase": "Launch",
+          "duration": "Day 12–14"
+        }
+      ]
+    },
+    "faq": {
+      "badge": "FAQ",
+      "title": "Process Questions",
+      "items": [
+        {
+          "id": "howLong",
+          "q": "How long does the whole process take?",
+          "a": "For a standard agency website, the end-to-end process takes 7–14 business days. Complex platforms with client portals, payment integration, or custom features take 3–5 weeks. We always agree on an exact timeline before starting, and we stick to it."
+        },
+        {
+          "id": "whatPrepare",
+          "q": "What do I need to prepare before we start?",
+          "a": "Just your goals, a rough idea of what you like (reference sites are great), and your content (text, images, logo). We provide content strategy guidance if needed. No technical knowledge required from you at any point."
+        },
+        {
+          "id": "changesDuringDev",
+          "q": "Can I make changes during development?",
+          "a": "Absolutely. Changes to design are free and unlimited during the design phase. During development, we accommodate reasonable changes — major scope additions may require a quote adjustment, but we always discuss before proceeding."
+        },
+        {
+          "id": "afterLaunch",
+          "q": "What happens after launch?",
+          "a": "You own everything — all source code, content, and accounts. We include 30 days of free support after launch. After that, our Maintenance Plan (3,000 CZK/mo) covers hosting, security updates, performance monitoring, and priority technical support."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "description": "Book your free discovery call and get a fixed-price quote within 24 hours.",
+      "ctas": [
+        {
+          "id": "bookDiscovery",
+          "label": "Book Discovery Call →"
+        },
+        {
+          "id": "viewServices",
+          "label": "View Services"
+        }
+      ]
+    }
+  },
+  "work": {
+    "hero": {
+      "badge": "Case Studies",
+      "titleLine1": "Real Results,",
+      "titleLine2": "Real Clients",
+      "subtitle": "Not mock-ups. Not hypotheticals. Actual projects we built for actual businesses — with the numbers to prove it.",
+      "stats": [
+        {
+          "id": "projectsShipped",
+          "value": "47+",
+          "label": "Projects Shipped"
+        },
+        {
+          "id": "satisfaction",
+          "value": "98%",
+          "label": "Satisfaction Rate"
+        },
+        {
+          "id": "countries",
+          "value": "3",
+          "label": "Countries"
+        }
+      ]
+    },
+    "labels": {
+      "challenge": "The Challenge",
+      "solution": "Our Solution",
+      "results": "The Results",
+      "services": "Services:"
+    },
+    "cta": {
+      "badge": "Your Project Next",
+      "title": "Ready to Join This List?",
+      "description": "Let's add your company to our case studies. Book a free discovery call and see what's possible.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Start Your Project →"
+        },
+        {
+          "id": "howWeWork",
+          "label": "How We Work"
+        }
+      ]
+    },
+    "caseStudies": [
+      {
+        "id": "techventures",
+        "client": "TechVentures Prague",
+        "category": "SaaS Website + Client Portal",
+        "headline": "+340% Conversion Rate in 30 Days",
+        "tagline": "Full-stack rebrand and Next.js platform launch",
+        "metrics": [
+          {
+            "id": "conversion",
+            "value": "+340%",
+            "label": "Conversion rate"
+          },
+          {
+            "id": "delivery",
+            "value": "5 days",
+            "label": "Delivery time"
+          },
+          {
+            "id": "lighthouse",
+            "value": "98",
+            "label": "Lighthouse score"
+          },
+          {
+            "id": "downtime",
+            "value": "€0",
+            "label": "Downtime at launch"
+          }
+        ],
+        "challenge": "TechVentures Prague was losing enterprise clients to competitors with more polished digital presences. Their existing WordPress site was slow, generic, and failing to communicate the premium nature of their SaaS product. Conversion rates were under 1.2%.",
+        "solution": "We rebuilt their entire digital presence from scratch using Next.js 14, Supabase, and a custom client portal. The new site featured a premium dark design, interactive product demos, and a fully integrated dashboard for their existing clients.",
+        "results": "Within 30 days of launch, conversion rates jumped from 1.2% to 4.2% — a 340% increase. The average session duration doubled. Three enterprise clients explicitly cited the new website as a factor in their purchasing decision.",
+        "services": [
+          {
+            "id": "s1",
+            "label": "Next.js Website"
+          },
+          {
+            "id": "s2",
+            "label": "Client Portal"
+          },
+          {
+            "id": "s3",
+            "label": "Supabase Backend"
+          },
+          {
+            "id": "s4",
+            "label": "Brand Identity"
+          },
+          {
+            "id": "s5",
+            "label": "SEO Strategy"
+          }
+        ],
+        "quote": {
+          "text": "Digi Wolf built our entire platform in 5 days. The quality is exceptional — our conversion rate jumped 340% in the first month. Best investment we've made this year.",
+          "author": "Arjun Sharma",
+          "role": "CEO, TechVentures Prague"
+        }
+      },
+      {
+        "id": "mnExportHub",
+        "client": "MN Export Hub",
+        "category": "E-commerce Platform + S.R.O. Formation",
+        "headline": "€180K Revenue in First 90 Days",
+        "tagline": "Trilingual B2B marketplace + Czech company setup",
+        "metrics": [
+          {
+            "id": "revenue",
+            "value": "€180K",
+            "label": "Revenue in 90 days"
+          },
+          {
+            "id": "languages",
+            "value": "3 langs",
+            "label": "CZ / EN / MN"
+          },
+          {
+            "id": "delivery",
+            "value": "14 days",
+            "label": "Total delivery"
+          },
+          {
+            "id": "entity",
+            "value": "S.R.O.",
+            "label": "Czech entity formed"
+          }
+        ],
+        "challenge": "A Mongolian entrepreneur wanted to bridge Mongolian exporters with EU buyers but lacked both a Czech legal entity and an online platform. The challenge was creating a trilingual B2B marketplace while simultaneously handling Czech S.R.O. formation — all within a tight launch window.",
+        "solution": "We handled the complete Czech S.R.O. registration in parallel with building the e-commerce platform. The marketplace was built with Next.js, featured full Czech/English/Mongolian localization, B2B inquiry flows, and an admin portal for managing listings and leads.",
+        "results": "The platform launched within 14 days. In the first 90 days, MN Export Hub facilitated €180K in B2B transactions between Mongolian exporters and Czech/Slovak buyers. The company became operational with a valid Czech S.R.O. entity from day one.",
+        "services": [
+          {
+            "id": "s1",
+            "label": "E-commerce Platform"
+          },
+          {
+            "id": "s2",
+            "label": "Czech S.R.O. Formation"
+          },
+          {
+            "id": "s3",
+            "label": "Multilingual (CZ/EN/MN)"
+          },
+          {
+            "id": "s4",
+            "label": "B2B Portal"
+          },
+          {
+            "id": "s5",
+            "label": "Admin Dashboard"
+          }
+        ],
+        "quote": {
+          "text": "As a Mongolian entrepreneur in Prague, having an agency that speaks my language — literally — is invaluable. They formed my company and built my platform simultaneously. Results speak for themselves.",
+          "author": "Enkhmaa B.",
+          "role": "Founder, MN Export Hub"
+        }
+      },
+      {
+        "id": "novakConsulting",
+        "client": "Novák Consulting s.r.o.",
+        "category": "Agency Website + AI Automation",
+        "headline": "23 Hours/Week Saved with AI Workflows",
+        "tagline": "Lead qualification chatbot + premium website",
+        "metrics": [
+          {
+            "id": "timeSaved",
+            "value": "23h/wk",
+            "label": "Time saved on admin"
+          },
+          {
+            "id": "qualifiedLeads",
+            "value": "4.8×",
+            "label": "More qualified leads"
+          },
+          {
+            "id": "delivery",
+            "value": "6 days",
+            "label": "Website delivery"
+          },
+          {
+            "id": "satisfaction",
+            "value": "100%",
+            "label": "Client satisfaction"
+          }
+        ],
+        "challenge": "Tomáš Novák was spending 20+ hours per week manually qualifying leads, following up with prospects, and managing consultation bookings. His existing website looked dated and was not converting. He needed both a new digital presence and automation to reclaim his time.",
+        "solution": "We built a premium consulting website and integrated a custom AI lead qualification chatbot that pre-qualifies prospects, books discovery calls directly into Calendly, and sends personalized follow-up sequences. The entire pipeline runs autonomously.",
+        "results": "The AI system reduced manual admin work from 20+ hours to under 3 hours per week. Lead quality improved — the chatbot pre-qualification meant Tomáš only spoke to prospects who were already 80% ready to buy. Revenue grew 60% in the first quarter.",
+        "services": [
+          {
+            "id": "s1",
+            "label": "Consulting Website"
+          },
+          {
+            "id": "s2",
+            "label": "AI Chatbot"
+          },
+          {
+            "id": "s3",
+            "label": "Lead Automation"
+          },
+          {
+            "id": "s4",
+            "label": "Calendly Integration"
+          },
+          {
+            "id": "s5",
+            "label": "Email Sequences"
+          }
+        ],
+        "quote": {
+          "text": "They handled my Czech S.R.O. formation while simultaneously building my agency site. Then automated my entire lead pipeline. Professional, fast, and zero stress.",
+          "author": "Tomáš Novák",
+          "role": "Founder, Novák Consulting"
+        }
+      }
+    ]
+  },
+  "blog": {
+    "badge": "Coming Soon",
+    "title": "Insights & Updates",
+    "subtitle": "We're writing something worth reading. Practical guides on web development, AI automation, Czech company formation, and growing a business in Central Europe. Check back soon.",
+    "form": {
+      "placeholder": "your@email.com",
+      "submit": "Notify Me",
+      "success": "You're on the list — we'll notify you when we launch."
+    }
+  },
+  "caseStudies": {
+    "hero": {
+      "badge": "Case Studies",
+      "titleLine1": "Real Projects.",
+      "titleLine2": "Real Results.",
+      "subtitle": "Every project in our portfolio is a story of transformation. Here are six of our most impactful engagements — with the numbers to prove it.",
+      "stats": [
+        {
+          "id": "projects",
+          "n": "6+",
+          "l": "Projects"
+        },
+        {
+          "id": "clientRevenue",
+          "n": "€400K+",
+          "l": "Client Revenue"
+        },
+        {
+          "id": "averageRating",
+          "n": "4.9★",
+          "l": "Average Rating"
+        }
+      ]
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "All"
+      },
+      {
+        "id": "websites",
+        "label": "Websites"
+      },
+      {
+        "id": "sroFormation",
+        "label": "S.R.O. Formation"
+      },
+      {
+        "id": "aiAutomation",
+        "label": "AI Automation"
+      }
+    ],
+    "labels": {
+      "challenge": "Challenge",
+      "solution": "Solution",
+      "results": "Results",
+      "techStack": "Tech Stack"
+    },
+    "cta": {
+      "titleLine1": "Ready to Write",
+      "titleLine2": "Your Case Study?",
+      "subtitle": "Join the companies that trusted DigiWolf to transform their digital presence. Let's make your results the next story we tell.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Start Your Project →"
+        },
+        {
+          "id": "viewServices",
+          "label": "View Services"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "techventures",
+        "name": "TechVentures Prague",
+        "client": "TechVentures s.r.o.",
+        "category": "Websites",
+        "tag": "SaaS Website",
+        "metric": "+340%",
+        "metricLabel": "Conversions in 30 days",
+        "challenge": "TechVentures had a dated, slow-loading website with poor mobile UX that was bleeding leads. Their SaaS product was excellent but the online presence failed to communicate value to enterprise prospects.",
+        "solution": "We redesigned the entire digital experience from scratch — product-led landing pages, interactive demos, pricing clarity, and a lightning-fast Next.js build with SSR optimisation.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "340% increase in demo bookings within 30 days"
+          },
+          {
+            "id": "r2",
+            "text": "Page load time reduced from 7.2s to 0.9s"
+          },
+          {
+            "id": "r3",
+            "text": "Bounce rate dropped from 78% to 31%"
+          },
+          {
+            "id": "r4",
+            "text": "MRR grew by €42,000 in Q1 post-launch"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js 14"
+          },
+          {
+            "id": "t2",
+            "label": "TypeScript"
+          },
+          {
+            "id": "t3",
+            "label": "Framer Motion"
+          },
+          {
+            "id": "t4",
+            "label": "Vercel"
+          },
+          {
+            "id": "t5",
+            "label": "Stripe"
+          }
+        ],
+        "testimonial": "DigiWolf transformed our online presence completely. We went from losing leads to converting them at an extraordinary rate. The results speak for themselves.",
+        "author": "Tomáš Novotný",
+        "role": "CEO, TechVentures s.r.o."
+      },
+      {
+        "id": "mnExportHub",
+        "name": "MN Export Hub",
+        "client": "MN Export Hub GmbH",
+        "category": "S.R.O. Formation",
+        "tag": "E-commerce + S.R.O.",
+        "metric": "€180K",
+        "metricLabel": "Revenue in 90 days",
+        "challenge": "A Mongolian export company wanted to enter the European market but had zero EU legal entity, no localised web presence, and no understanding of Czech business compliance requirements.",
+        "solution": "End-to-end solution: Czech S.R.O. registration, EU VAT setup, a bilingual e-commerce platform in Czech and English, and a full compliance framework for cross-border trade.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "S.R.O. registered within 8 business days"
+          },
+          {
+            "id": "r2",
+            "text": "€180,000 revenue generated in first 90 days"
+          },
+          {
+            "id": "r3",
+            "text": "Successfully onboarded 14 EU wholesale buyers"
+          },
+          {
+            "id": "r4",
+            "text": "Full VAT compliance across 3 EU jurisdictions"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js"
+          },
+          {
+            "id": "t2",
+            "label": "Shopify"
+          },
+          {
+            "id": "t3",
+            "label": "Czech Trade Licence"
+          },
+          {
+            "id": "t4",
+            "label": "EU VAT System"
+          },
+          {
+            "id": "t5",
+            "label": "Stripe"
+          }
+        ],
+        "testimonial": "We went from zero European presence to a fully operational Czech company with a profitable e-commerce operation in under 3 months. Incredible service.",
+        "author": "Boldbaatar Gantulga",
+        "role": "Director, MN Export Hub"
+      },
+      {
+        "id": "novakConsulting",
+        "name": "Novak Consulting",
+        "client": "Novak & Partners s.r.o.",
+        "category": "Websites",
+        "tag": "Agency Website",
+        "metric": "4 Days",
+        "metricLabel": "From brief to live site",
+        "challenge": "Novak Consulting needed a professional website urgently before a major client pitch. Their existing site was a template from 2018 with broken links, no SSL, and zero brand identity.",
+        "solution": "Rapid sprint delivery — brand identity refresh, custom Next.js site, content copywriting, SEO foundation, and full deployment in under 96 hours without cutting corners on quality.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "Fully live in 4 business days"
+          },
+          {
+            "id": "r2",
+            "text": "Won €65,000 contract at the client pitch"
+          },
+          {
+            "id": "r3",
+            "text": "Google PageSpeed score of 98/100"
+          },
+          {
+            "id": "r4",
+            "text": "3x increase in inbound enquiries within 2 weeks"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js 14"
+          },
+          {
+            "id": "t2",
+            "label": "Tailwind"
+          },
+          {
+            "id": "t3",
+            "label": "Vercel"
+          },
+          {
+            "id": "t4",
+            "label": "Google Analytics 4"
+          },
+          {
+            "id": "t5",
+            "label": "Cloudflare"
+          }
+        ],
+        "testimonial": "I was amazed. Four days from first call to a live, polished website that helped us win a €65K contract. DigiWolf delivered when no one else could.",
+        "author": "Petra Nováková",
+        "role": "Managing Partner, Novak & Partners"
+      },
+      {
+        "id": "fintechBratislava",
+        "name": "FinTech Bratislava",
+        "client": "FinTech Bratislava a.s.",
+        "category": "AI Automation",
+        "tag": "Web App + AI",
+        "metric": "80%",
+        "metricLabel": "Reduction in manual work",
+        "challenge": "A fintech startup was spending 120+ hours per week on manual data entry, report generation, and client onboarding processes that were completely un-automated and error-prone.",
+        "solution": "Custom AI automation pipeline: GPT-4 powered document processing, automated client onboarding workflows, real-time reporting dashboards, and integration with their existing banking APIs.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "80% reduction in manual administrative work"
+          },
+          {
+            "id": "r2",
+            "text": "120 hours/week freed up for revenue-generating activity"
+          },
+          {
+            "id": "r3",
+            "text": "Error rate dropped from 12% to 0.3%"
+          },
+          {
+            "id": "r4",
+            "text": "Client onboarding time: 5 days → 2 hours"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Python"
+          },
+          {
+            "id": "t2",
+            "label": "OpenAI GPT-4"
+          },
+          {
+            "id": "t3",
+            "label": "Next.js"
+          },
+          {
+            "id": "t4",
+            "label": "PostgreSQL"
+          },
+          {
+            "id": "t5",
+            "label": "n8n"
+          },
+          {
+            "id": "t6",
+            "label": "Zapier"
+          }
+        ],
+        "testimonial": "The AI automation suite DigiWolf built has fundamentally changed how we operate. We've effectively gained back an entire team's worth of productive hours.",
+        "author": "Martin Kováč",
+        "role": "CTO, FinTech Bratislava"
+      },
+      {
+        "id": "pragueBeautyStudio",
+        "name": "Prague Beauty Studio",
+        "client": "Lumière Beauty Studio",
+        "category": "Websites",
+        "tag": "Branding + Web",
+        "metric": "5x",
+        "metricLabel": "Instagram follower growth",
+        "challenge": "A premium Prague beauty studio had no coherent brand identity, a non-existent social media presence, and relied entirely on word-of-mouth with no ability to attract new high-value clients.",
+        "solution": "Complete brand identity system, luxury website with online booking integration, social media strategy, branded content templates, and a Google My Business optimisation campaign.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "5x Instagram followers in 60 days (1.2K → 6.1K)"
+          },
+          {
+            "id": "r2",
+            "text": "Online bookings increased by 220%"
+          },
+          {
+            "id": "r3",
+            "text": "Average booking value up by 45%"
+          },
+          {
+            "id": "r4",
+            "text": "Featured in Prague lifestyle magazine"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js"
+          },
+          {
+            "id": "t2",
+            "label": "Calendly API"
+          },
+          {
+            "id": "t3",
+            "label": "Instagram Graph API"
+          },
+          {
+            "id": "t4",
+            "label": "Figma"
+          },
+          {
+            "id": "t5",
+            "label": "Adobe CC"
+          }
+        ],
+        "testimonial": "DigiWolf understood our luxury positioning perfectly. The brand and website they created attracts exactly the type of high-end clients we want.",
+        "author": "Karolína Dvořáčková",
+        "role": "Owner, Lumière Beauty Studio"
+      },
+      {
+        "id": "mongolianTradeHub",
+        "name": "Mongolian Trade Hub",
+        "client": "Mongolian Trade Hub s.r.o.",
+        "category": "S.R.O. Formation",
+        "tag": "S.R.O. + Trilingual Site",
+        "metric": "3 Markets",
+        "metricLabel": "EU expansion in 60 days",
+        "challenge": "A major Mongolian trading company wanted to establish a legal EU hub to facilitate B2B trade across Central Europe, with no existing EU infrastructure, legal entity, or multilingual digital presence.",
+        "solution": "Czech S.R.O. formation, trilingual website (English, Czech, Mongolian), EU trade compliance setup, customs documentation workflow, and strategic partnership with Prague Chamber of Commerce.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "S.R.O. operational in 7 business days"
+          },
+          {
+            "id": "r2",
+            "text": "Expanded to 3 EU markets simultaneously"
+          },
+          {
+            "id": "r3",
+            "text": "Secured 8 B2B partnerships within 60 days"
+          },
+          {
+            "id": "r4",
+            "text": "Trilingual site driving qualified leads in all 3 languages"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js i18n"
+          },
+          {
+            "id": "t2",
+            "label": "Czech Legal Framework"
+          },
+          {
+            "id": "t3",
+            "label": "EU Trade Law"
+          },
+          {
+            "id": "t4",
+            "label": "Vercel"
+          },
+          {
+            "id": "t5",
+            "label": "HubSpot"
+          }
+        ],
+        "testimonial": "DigiWolf made our European expansion seamless. From the legal entity to the trilingual website, every detail was handled with expertise and speed.",
+        "author": "Enkhjargal Dorj",
+        "role": "CEO, Mongolian Trade Hub"
+      }
+    ]
+  },
+  "legal": {
+    "privacy": {
+      "badge": "Legal",
+      "title": "Privacy Policy",
+      "intro": "This Privacy Policy explains how Digi Wolf Agency s.r.o. collects, uses, and protects your personal data in compliance with GDPR and applicable Czech law.",
+      "companyLine": "Company: Digi Wolf Agency s.r.o., IČO 243 44 648, Varšavská 715/36, Vinohrady, 120 00 Praha 2",
+      "lastUpdated": "Last updated: 13 June 2026",
+      "contentsTitle": "Contents",
+      "contactCardTitle": "Questions about your data?",
+      "contactCardText": "Contact us at info@digiwolf.agency. We respond to all data requests within 30 days.",
+      "contactButton": "Contact Us →",
+      "sections": [
+        {
+          "id": "1",
+          "title": "1. Who We Are",
+          "content": "Digi Wolf Agency s.r.o., IČO 243 44 648 (\"we\", \"our\", \"us\") is a digital agency registered in the Czech Republic. Our registered office is at Varšavská 715/36, Vinohrady, 120 00 Praha 2. We operate in the European Union and can be contacted at info@digiwolf.agency.\n\nWe are the data controller for personal data collected through our website at digiwolf.agency and through our services."
+        },
+        {
+          "id": "2",
+          "title": "2. What Data We Collect",
+          "content": "We collect only the personal data you provide to us, plus limited technical data generated when you visit our site.\n\nContact form (/contact):\n• Name\n• Email address\n• Company name (optional)\n• Message content\n• Service and budget range you select in the form\n\nBookings (/book via Cal.com):\n• Name\n• Email address\n• Booking details needed to schedule your call (date, time, event type, and any notes you provide)\n\nTechnical data:\n• IP address, browser type, device type, and pages visited — collected automatically by our hosting provider for security and performance\n\nWe do not collect special category data (health, race, political opinions, etc.) and we do not sell your personal data."
+        },
+        {
+          "id": "3",
+          "title": "3. How We Use Your Data",
+          "content": "We process your personal data for the following purposes:\n\n• To respond to contact form enquiries and follow up on your project (pre-contractual steps / legitimate interest)\n• To schedule, confirm, and manage discovery calls and consultations booked through Cal.com (pre-contractual steps / contractual necessity)\n• To send internal email notifications to our team when you submit a form or booking (legitimate interest)\n• To store enquiry and booking records in our database (legitimate interest / contractual necessity)\n• To operate, secure, and improve our website (legitimate interest)\n• To comply with legal obligations under Czech and EU law\n\nWe do not use your data for automated decision-making or profiling."
+        },
+        {
+          "id": "4",
+          "title": "4. Legal Basis for Processing (GDPR Art. 6)",
+          "content": "Under the General Data Protection Regulation (EU) 2016/679 (\"GDPR\"), we rely on the following legal bases:\n\n• Art. 6(1)(b) — Contractual necessity / pre-contractual steps: processing needed to respond to your enquiry, schedule a call, or deliver services you request\n• Art. 6(1)(f) — Legitimate interests: operating our website, storing records, sending internal notifications, and preventing abuse — balanced against your rights\n• Art. 6(1)(c) — Legal obligation: processing required to comply with Czech or EU law (e.g. accounting records for clients)\n• Art. 6(1)(a) — Consent: only where we explicitly ask for it (e.g. optional marketing). You may withdraw consent at any time."
+        },
+        {
+          "id": "5",
+          "title": "5. Data Retention",
+          "content": "We keep personal data only as long as necessary for the purposes above:\n\n• Contact form submissions: up to 3 years from your last interaction with us, unless a client relationship continues\n• Booking records: up to 3 years after the scheduled call, or longer if you become a client\n• Client project and invoice data: up to 10 years where required by Czech accounting law\n• Server and security logs: typically up to 90 days\n\nWhen data is no longer needed, we delete or anonymise it. You may request earlier deletion (see Section 9)."
+        },
+        {
+          "id": "6",
+          "title": "6. Third-Party Processors",
+          "content": "We use trusted service providers to run our website and handle your data. Each acts as a data processor on our instructions:\n\n• Supabase — database hosting and storage of contact and booking records (EU-based infrastructure)\n• Resend — transactional email delivery when you submit the contact form (notification to our team)\n• Cal.com — scheduling platform embedded on /book; processes name, email, and booking details when you book a call\n• Vercel — website hosting, content delivery, and serverless functions; may process IP addresses and request logs\n\nWe have data processing agreements in place with these providers where required. We do not authorise them to use your data for their own marketing purposes."
+        },
+        {
+          "id": "7",
+          "title": "7. International Transfers",
+          "content": "We aim to process data within the European Economic Area (EEA). Some providers (including Vercel and Cal.com) may process data in the United States or other countries outside the EEA.\n\nWhere transfers occur, we rely on appropriate safeguards under GDPR Chapter V — such as Standard Contractual Clauses approved by the European Commission, or adequacy decisions where applicable.\n\nYou may request more information about safeguards for a specific transfer by contacting us."
+        },
+        {
+          "id": "8",
+          "title": "8. Cookies and Similar Technologies",
+          "content": "Our website uses strictly necessary cookies required for basic site operation and security. When you book a call, Cal.com may set its own cookies in the embedded scheduler.\n\nWe do not currently use analytics or advertising cookies on digiwolf.agency. Your cookie preference is stored locally in your browser when you respond to our cookie notice.\n\nSee our Cookie Policy at /cookies for full details."
+        },
+        {
+          "id": "9",
+          "title": "9. Your Rights Under GDPR (Art. 15–22)",
+          "content": "You have the following rights regarding your personal data:\n\n• Right of access (Art. 15): request a copy of the personal data we hold about you\n• Right to rectification (Art. 16): correct inaccurate or incomplete data\n• Right to erasure (Art. 17): request deletion of your data (\"right to be forgotten\")\n• Right to restriction (Art. 18): limit how we process your data in certain circumstances\n• Right to data portability (Art. 20): receive your data in a structured, commonly used format\n• Right to object (Art. 21): object to processing based on legitimate interests\n• Right to withdraw consent (Art. 7(3)): where processing is based on consent, withdraw it at any time\n\nTo exercise any of these rights, email info@digiwolf.agency. We will respond within 30 days.\n\nYou also have the right to lodge a complaint with the Czech supervisory authority:\n\nOffice for Personal Data Protection (Úřad pro ochranu osobních údajů)\nPplk. Sochora 27, 170 00 Prague 7, Czech Republic\nwww.uoou.cz"
+        },
+        {
+          "id": "10",
+          "title": "10. Security",
+          "content": "We implement appropriate technical and organisational measures to protect your personal data, including:\n\n• Encrypted data transmission (HTTPS/TLS)\n• Encrypted database storage via Supabase\n• Access controls limiting who can view enquiry and booking data\n• Webhook signature verification for inbound booking data\n\nNo method of transmission over the internet is completely secure. We take reasonable precautions but cannot guarantee absolute security."
+        },
+        {
+          "id": "11",
+          "title": "11. Changes to This Policy",
+          "content": "We may update this Privacy Policy from time to time. Material changes will be posted on this page with an updated \"Last updated\" date. Where appropriate, we may also notify you by email.\n\nContinued use of our website after changes constitutes acceptance of the updated policy."
+        }
+      ]
+    },
+    "terms": {
+      "badge": "Legal",
+      "title": "Terms of Service",
+      "intro": "These Terms of Service govern your use of Digi Wolf Agency s.r.o. services. Please read them carefully before engaging us for any project.",
+      "companyLine": "Company: Digi Wolf Agency s.r.o., IČO 243 44 648",
+      "lastUpdated": "Last updated: 13 June 2026",
+      "governingLaw": "Governing law: Czech Republic",
+      "contentsTitle": "Contents",
+      "contactCardTitle": "Questions about our terms?",
+      "contactCardText": "Contact us at info@digiwolf.agency with any questions about these Terms.",
+      "contactButton": "Contact Us →",
+      "sections": [
+        {
+          "id": "1",
+          "title": "1. Agreement to Terms",
+          "content": "By engaging Digi Wolf Agency s.r.o., IČO 243 44 648 (\"Agency\", \"we\", \"us\"), registered office at Varšavská 715/36, Vinohrady, 120 00 Praha 2, for services, using our website at digiwolf.agency, submitting our contact form, or booking a call through our site, you (\"Client\", \"you\") agree to these Terms of Service.\n\nThese Terms constitute a legally binding agreement under Czech law. If you do not agree, please do not use our website or services.\n\nPersonal data you provide is processed as described in our Privacy Policy at /privacy."
+        },
+        {
+          "id": "2",
+          "title": "2. Use of Our Website",
+          "content": "2.1 You may use digiwolf.agency for lawful purposes only.\n\n2.2 You must not attempt to disrupt the site, gain unauthorised access to our systems, scrape content at scale, or submit false or misleading information through our forms.\n\n2.3 Bookings are made through Cal.com embedded on /book. By booking, you agree to provide accurate name and contact details. Cancellation and rescheduling follow Cal.com's interface and our confirmation communications.\n\n2.4 We reserve the right to suspend access where we reasonably believe these Terms have been breached."
+        },
+        {
+          "id": "3",
+          "title": "3. Services",
+          "content": "We provide digital services including, but not limited to:\n\n• Website design and development\n• Web application and mobile app development\n• AI automation and workflow implementation\n• Czech S.R.O. company formation assistance\n• Search engine optimisation (SEO)\n• Brand identity design\n• Website maintenance and support\n\nThe specific services, deliverables, timelines, and pricing for each project are set out in a separate Project Agreement or Statement of Work (\"SOW\") agreed between the parties."
+        },
+        {
+          "id": "4",
+          "title": "4. Payment Terms",
+          "content": "3.1 Fees are set out in the relevant Project Agreement or invoice.\n\n3.2 Unless otherwise agreed, payment is due within 14 days of invoice date.\n\n3.3 We typically require a 50% deposit before commencing work, with the balance due upon completion.\n\n3.4 Late payments may incur interest at the statutory rate under Czech law (Act No. 513/1991 Coll.).\n\n3.5 All prices are in Czech Crowns (CZK) unless otherwise stated. We are not registered for VAT unless explicitly stated on the invoice."
+        },
+        {
+          "id": "5",
+          "title": "5. Intellectual Property",
+          "content": "4.1 Upon full payment, the Client receives full ownership of all custom deliverables created specifically for the project (websites, code, designs, copy).\n\n4.2 We retain the right to display the work in our portfolio and marketing materials unless the Client requests confidentiality in writing.\n\n4.3 We retain ownership of our proprietary tools, frameworks, and pre-existing intellectual property used in delivering the services.\n\n4.4 Third-party components (open-source libraries, stock images, fonts) are subject to their respective licences. We will advise you of any licencing requirements."
+        },
+        {
+          "id": "6",
+          "title": "6. Client Responsibilities",
+          "content": "The Client agrees to:\n\n• Provide accurate information and content required for the project in a timely manner\n• Review and provide feedback within agreed timeframes (typically 5 business days)\n• Ensure they own or have rights to any content, images, or materials supplied to us\n• Make payments on time\n• Maintain the confidentiality of any access credentials provided\n\nDelays caused by the Client may result in revised timelines and additional fees."
+        },
+        {
+          "id": "7",
+          "title": "7. Revisions and Changes",
+          "content": "6.1 The number of included revisions is specified in the Project Agreement.\n\n6.2 Additional revisions beyond the agreed scope will be charged at our current hourly rate.\n\n6.3 Material changes to the project scope will require a new or amended Project Agreement and may affect the timeline and price."
+        },
+        {
+          "id": "8",
+          "title": "8. Warranties and Representations",
+          "content": "7.1 We warrant that our services will be delivered with reasonable skill and care, consistent with industry standards.\n\n7.2 We do not warrant that websites will achieve specific search rankings, traffic levels, or conversion rates.\n\n7.3 The Client warrants that all content and materials provided to us are lawful and do not infringe third-party rights."
+        },
+        {
+          "id": "9",
+          "title": "9. Limitation of Liability",
+          "content": "8.1 To the maximum extent permitted by Czech law, our total liability for any claim arising under these Terms is limited to the fees paid by the Client for the specific service giving rise to the claim.\n\n8.2 We are not liable for indirect, consequential, or incidental damages, including loss of revenue, loss of data, or business interruption.\n\n8.3 We are not responsible for errors or issues arising from third-party services, hosting providers, or software outside our control."
+        },
+        {
+          "id": "10",
+          "title": "10. Confidentiality",
+          "content": "Both parties agree to keep confidential any non-public information received from the other party. This obligation survives termination of the agreement for a period of 3 years."
+        },
+        {
+          "id": "11",
+          "title": "11. Termination",
+          "content": "10.1 Either party may terminate a project with 30 days' written notice.\n\n10.2 Upon termination, the Client pays for all work completed to date. If the Client terminates after the deposit stage, the deposit is non-refundable.\n\n10.3 We may immediately terminate services if the Client breaches these Terms, fails to make payment, or engages in unlawful conduct."
+        },
+        {
+          "id": "12",
+          "title": "12. Governing Law and Disputes",
+          "content": "11.1 These Terms are governed by the laws of the Czech Republic.\n\n11.2 The courts of the Czech Republic have jurisdiction over any disputes arising from these Terms.\n\n11.3 We encourage resolution of disputes through direct negotiation before commencing legal proceedings."
+        },
+        {
+          "id": "13",
+          "title": "13. Changes to These Terms",
+          "content": "We may update these Terms from time to time. Material changes will be communicated by email. Continued use of our services after changes constitutes acceptance."
+        }
+      ]
+    },
+    "cookies": {
+      "badge": "Legal",
+      "title": "Cookie Policy",
+      "intro": "This Cookie Policy explains how Digi Wolf Agency s.r.o. uses cookies and similar technologies on digiwolf.agency.",
+      "companyLine": "Company: Digi Wolf Agency s.r.o., IČO 243 44 648",
+      "lastUpdated": "Last updated: 13 June 2026",
+      "whatAreCookiesTitle": "What Are Cookies?",
+      "whatAreCookiesText": "Cookies are small text files stored on your device when you visit a website. They help the site remember your session, keep pages secure, and enable features such as booking a call. We also use local storage for your cookie preference — this works similarly but is stored in your browser, not sent with every request.",
+      "noAnalyticsNotice": "We do not use analytics or advertising cookies on digiwolf.agency. We do not run Google Analytics or similar tracking tools on this site.",
+      "technologiesTitle": "Cookies and Technologies We Use",
+      "thirdPartyTitle": "Third-Party Services",
+      "thirdPartyText1": "Our website is hosted on Vercel and uses Supabase for data storage. These providers may set strictly necessary cookies or process technical data as part of hosting. When you book a call, Cal.com processes your booking and may set its own cookies.",
+      "thirdPartyText2": "We encourage you to review the privacy and cookie policies of Vercel, Supabase, and Cal.com for more detail.",
+      "manageTitle": "How to Manage Cookies",
+      "manageText1": "You can control cookies through your browser settings — refuse new cookies, delete existing ones, or be notified when a cookie is set. Disabling strictly necessary cookies may prevent parts of the site (including booking) from working correctly.",
+      "manageText2": "To reset your cookie notice preference on our site, clear local storage for digiwolf.agency or delete the dw-cookie-consent entry in your browser.",
+      "contactCardTitle": "Questions or concerns?",
+      "contactCardText": "Email info@digiwolf.agency. For how we handle personal data overall, see our Privacy Policy.",
+      "contactButton": "Contact Us →",
+      "cookieTypes": [
+        {
+          "id": "strictlyNecessary",
+          "type": "Strictly Necessary Cookies",
+          "required": true,
+          "requiredLabel": "Essential",
+          "purpose": "These cookies are essential for the website to function. They enable security, routing, and basic site features. Under EU law, we do not need your consent for strictly necessary cookies.",
+          "retention": "Session to 1 year",
+          "examples": [
+            {
+              "id": "e1",
+              "label": "Session and security cookies"
+            },
+            {
+              "id": "e2",
+              "label": "Load balancing (Vercel hosting)"
+            },
+            {
+              "id": "e3",
+              "label": "Authentication cookies (admin area, if logged in)"
+            }
+          ]
+        },
+        {
+          "id": "calCom",
+          "type": "Third-Party Scheduling Cookies (Cal.com)",
+          "required": true,
+          "requiredLabel": "Essential",
+          "purpose": "When you use our booking page, Cal.com embeds a scheduler that may set cookies to manage your session and complete a booking. These are required to book a discovery call through our site.",
+          "retention": "Set by Cal.com — see their privacy policy",
+          "examples": [
+            {
+              "id": "e1",
+              "label": "Cal.com session cookies on /book"
+            },
+            {
+              "id": "e2",
+              "label": "Booking widget preferences"
+            }
+          ]
+        },
+        {
+          "id": "localPreference",
+          "type": "Preference Storage (Local Storage)",
+          "required": false,
+          "requiredLabel": "Preference Only",
+          "purpose": "We store your response to our cookie banner in your browser's local storage (not a cookie) so we do not show the notice again. This stores only \"accepted\" or \"declined\" — no personal data.",
+          "retention": "Until you clear browser data",
+          "examples": [
+            {
+              "id": "e1",
+              "label": "dw-cookie-consent — your cookie notice choice"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "chat": {
+    "welcomeMessage": "Hi! I'm Digi Wolf Assistant. Ask me about our services, pricing, timeline, or booking a free discovery call.",
+    "header": {
+      "title": "Digi Wolf Assistant",
+      "subtitle": "Usually replies in a few seconds"
+    },
+    "thinking": "Thinking...",
+    "handoff": {
+      "talkToHuman": "Talk to a human"
+    },
+    "inputPlaceholder": "Type your message...",
+    "errors": {
+      "messageTooLong": "Message is too long (max {max} characters).",
+      "generic": "Something went wrong. Please try again.",
+      "noStream": "Streaming is unavailable. Please try again.",
+      "noResponse": "No response generated. Please try again.",
+      "contactFormLink": "contact form"
+    },
+    "aria": {
+      "dialog": "Chat with Digi Wolf Assistant",
+      "closeChat": "Close chat",
+      "openChat": "Open chat",
+      "messageInput": "Message input",
+      "sendMessage": "Send message"
+    }
+  },
+  "cookieBanner": {
+    "ariaLabel": "Cookie consent",
+    "message": "We use essential cookies and local storage to run this site securely and remember your preferences. By clicking Accept, you agree to this use. Read our <cookiePolicy>Cookie Policy</cookiePolicy> and <privacyPolicy>Privacy Policy</privacyPolicy>.",
+    "declineButton": "Decline",
+    "acceptButton": "Accept"
+  },
+  "meta": {
+    "pages": {
+      "home": {
+        "title": "Digi Wolf Agency",
+        "description": "Prague-based digital agency for websites, AI automation, and Czech S.R.O. formation."
+      },
+      "services": {
+        "title": "Services — Web Development, AI Automation & S.R.O. Formation",
+        "description": "Digi Wolf Agency offers premium web development (from 45,000 CZK), Czech S.R.O. formation (from 15,000 CZK), AI automation, SEO, and brand identity services in Prague.",
+        "openGraphTitle": "Services | Digi Wolf Agency",
+        "openGraphDescription": "Premium digital services: websites, AI automation, Czech company formation. Based in Prague."
+      },
+      "pricing": {
+        "title": "Pricing — Transparent Packages & Rates",
+        "description": "Starter website from 15,000 CZK, Growth from 45,000 CZK, Enterprise custom. Fixed pricing, 50/50 payment plans, no hidden fees.",
+        "openGraphTitle": "Pricing | Digi Wolf Agency — Transparent Rates",
+        "openGraphDescription": "Clear, fixed pricing for websites, web apps, AI automation, and Czech S.R.O. formation."
+      },
+      "contact": {
+        "title": "Contact — Start Your Project",
+        "description": "Get in touch with Digi Wolf Agency. We respond within 4 business hours. Book a free 30-minute strategy call or send us your project brief.",
+        "openGraphTitle": "Contact Digi Wolf Agency — Start Your Project",
+        "openGraphDescription": "Tell us about your project. We respond within 4 business hours — personally, not with a bot."
+      },
+      "book": {
+        "title": "Book a Free Discovery Call",
+        "description": "Schedule a free 30-minute discovery call with Digi Wolf Agency. No sales pitch — honest advice on websites, Czech S.R.O. formation, and AI automation. We respond within 4 business hours.",
+        "openGraphTitle": "Book a Free 30-Min Discovery Call — Digi Wolf Agency",
+        "openGraphDescription": "Pick a time that works for you. Free consultation, no commitment. Limited spots — we take 3 new clients per month."
+      },
+      "about": {
+        "title": "About — Our Story & Team",
+        "description": "Digi Wolf Agency was founded by Mongolian entrepreneur Uuganbayar Ganbaatar in Prague. We help businesses across Czech Republic, Slovakia, and Mongolia dominate the digital age.",
+        "openGraphTitle": "About Digi Wolf Agency — Prague-Based Digital Agency",
+        "openGraphDescription": "From Ulaanbaatar to Prague — building bridges between Mongolian entrepreneurs and the EU market."
+      },
+      "process": {
+        "title": "Our Process — How We Work | Digi Wolf Agency",
+        "description": "Discover how Digi Wolf Agency delivers world-class websites and digital solutions in days, not months. Our 5-step proven process from discovery to launch.",
+        "openGraphTitle": "Our Process — How We Work | Digi Wolf Agency",
+        "openGraphDescription": "From discovery call to live launch — our proven 5-step process delivers premium results fast."
+      },
+      "work": {
+        "title": "Case Studies — Our Work | Digi Wolf Agency",
+        "description": "Real results for real clients. See how Digi Wolf Agency helped TechVentures Prague achieve +340% conversions and MN Export Hub generate €180K revenue in 90 days.",
+        "openGraphTitle": "Case Studies — Our Work | Digi Wolf Agency",
+        "openGraphDescription": "Real results from Digi Wolf Agency — +340% conversions, €180K revenue, and more."
+      },
+      "blog": {
+        "title": "Blog",
+        "description": "Insights and updates from Digi Wolf Agency about web development, AI automation, and business growth."
+      },
+      "caseStudies": {
+        "title": "Case Studies",
+        "description": "Real project breakdowns with challenges, solutions, and measurable results."
+      },
+      "privacy": {
+        "title": "Privacy Policy",
+        "description": "Privacy Policy for Digi Wolf Agency s.r.o. — how we collect, use, and protect your personal data in accordance with GDPR."
+      },
+      "terms": {
+        "title": "Terms of Service",
+        "description": "Terms of Service for Digi Wolf Agency s.r.o. — the legal agreement governing use of our services."
+      },
+      "cookies": {
+        "title": "Cookie Policy",
+        "description": "Cookie Policy for Digi Wolf Agency s.r.o. — how we use cookies and similar technologies on our website."
+      }
+    }
+  }
+}

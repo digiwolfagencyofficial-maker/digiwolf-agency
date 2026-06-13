@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { parseCalcomBooking, verifyCalcomSignature, type CalcomWebhookBody } from '@/lib/calcom-webhook'
 import { supabaseAdmin } from '@/lib/supabase'
+import { sendTelegramNotification } from '@/lib/telegram'
 
 export async function POST(request: NextRequest) {
   const rawBody = await request.text()
@@ -53,6 +54,18 @@ export async function POST(request: NextRequest) {
 
     if (error) {
       console.error('[calcom webhook] Supabase insert failed:', error)
+    } else {
+      const datePart = booking.preferred_date ?? 'TBD'
+      const timePart = booking.preferred_time ?? ''
+      const notesPart = booking.notes?.trim() || 'No notes'
+
+      sendTelegramNotification({
+        title: 'New Cal.com booking',
+        name: booking.name,
+        email: booking.email,
+        service: booking.service,
+        summary: `Scheduled ${datePart}${timePart ? ` at ${timePart}` : ''}. ${notesPart}`,
+      }).catch((err) => console.error('[calcom webhook] Telegram notification failed:', err))
     }
   } catch (error) {
     console.error('[calcom webhook] Unexpected error saving booking:', error)

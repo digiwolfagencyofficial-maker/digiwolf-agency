@@ -1,9 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
+
+const linkStyle = { color: '#3d74ff', textDecoration: 'none' as const }
 
 export default function CookieBanner() {
+  const t = useTranslations('cookieBanner')
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -26,7 +30,7 @@ export default function CookieBanner() {
   return (
     <div
       role="dialog"
-      aria-label="Cookie notice"
+      aria-label={t('ariaLabel')}
       style={{
         position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 9000,
         background: '#040d1f',
@@ -41,11 +45,14 @@ export default function CookieBanner() {
         justifyContent: 'space-between',
       }}>
         <p style={{ color: '#c8d3f0', fontSize: 14, lineHeight: 1.6, flex: 1, minWidth: 280, margin: 0 }}>
-          We use essential cookies and similar technologies to run digiwolf.agency, including our Cal.com booking widget.
-          We do not use analytics or advertising cookies. Read our{' '}
-          <Link href="/cookies" style={{ color: '#3d74ff', textDecoration: 'none' }}>Cookie Policy</Link>
-          {' '}and{' '}
-          <Link href="/privacy" style={{ color: '#3d74ff', textDecoration: 'none' }}>Privacy Policy</Link>.
+          {t.rich('message', {
+            cookiePolicy: (chunks) => (
+              <Link href="/cookies" style={linkStyle}>{chunks}</Link>
+            ),
+            privacyPolicy: (chunks) => (
+              <Link href="/privacy" style={linkStyle}>{chunks}</Link>
+            ),
+          })}
         </p>
         <div style={{ display: 'flex', gap: 12, flexShrink: 0 }}>
           <button
@@ -60,7 +67,7 @@ export default function CookieBanner() {
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.3)'; (e.currentTarget as HTMLElement).style.color = '#f0f4ff' }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.15)'; (e.currentTarget as HTMLElement).style.color = '#8892b0' }}
           >
-            Essential Only
+            {t('declineButton')}
           </button>
           <button
             type="button"
@@ -74,7 +81,7 @@ export default function CookieBanner() {
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 24px rgba(0,71,255,0.6)' }}
             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = 'none'; (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 16px rgba(0,71,255,0.4)' }}
           >
-            OK
+            {t('acceptButton')}
           </button>
         </div>
       </div>

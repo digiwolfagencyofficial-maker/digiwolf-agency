@@ -1,0 +1,2999 @@
+{
+  "_meta": {
+    "locale": "mn",
+    "version": "1.0.0",
+    "reviewStatus": "ai_placeholder_needs_native_review"
+  },
+  "nav": {
+    "brandAlt": "Digi Wolf Agency",
+    "home": "Нүүр",
+    "services": "Үйлчилгээ",
+    "work": "Ажлууд",
+    "process": "Процесс",
+    "pricing": "Үнэ",
+    "about": "Бидний тухай",
+    "contact": "Холбоо барих",
+    "signIn": "Нэвтрэх",
+    "getStarted": "Эхлэх",
+    "openMenu": "Цэс нээх",
+    "closeMenu": "Цэс хаах"
+  },
+  "footer": {
+    "brandAlt": "Digi Wolf Agency лого",
+    "tagline": "Прага хотод төвтэй, өндөр зорилготой бизнесүүдийг онлайнаар давамгайлахад тусалдаг дижитал агентлаг.",
+    "copyright": "© {year} Digi Wolf Agency s.r.o., IČO 243 44 648. Бүх эрх хуулиар хамгаалагдсан.",
+    "social": {
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    },
+    "sections": {
+      "services": {
+        "title": "Үйлчилгээ",
+        "websites": "Агентлагийн вебсайт",
+        "sro": "Чех S.R.O. байгуулах",
+        "ai": "AI автоматжуулалт",
+        "seo": "SEO ба өсөлт",
+        "branding": "Брэнд төрх",
+        "maintenance": "Арчилгаа ба дэмжлэг"
+      },
+      "company": {
+        "title": "Компани",
+        "about": "Бидний тухай",
+        "work": "Ажлууд",
+        "pricing": "Үнэ",
+        "book": "Дуудлага захиалах",
+        "contact": "Холбоо барих",
+        "blog": "Блог"
+      },
+      "contact": {
+        "title": "Холбоо барих",
+        "secondaryLocation": "Прага, Бүгд Найрамдах Чех Улс"
+      },
+      "legal": {
+        "privacy": "Нууцлалын бодлого",
+        "terms": "Үйлчилгээний нөхцөл",
+        "cookies": "Cookie бодлого"
+      }
+    }
+  },
+  "common": {
+    "company": {
+      "labels": {
+        "company": "Компани",
+        "legalName": "Хуулийн нэр",
+        "ico": "IČO",
+        "email": "И-мэйл",
+        "phone": "Утас",
+        "registeredOffice": "Бүртгэлтэй хаяг",
+        "address": "Хаяг",
+        "country": "Улс"
+      },
+      "legalName": "Digi Wolf Agency s.r.o.",
+      "ico": "243 44 648",
+      "email": "info@digiwolf.agency",
+      "phone": "+420 296 183 158",
+      "address": {
+        "street": "Varšavská 715/36",
+        "district": "Vinohrady",
+        "city": "Praha 2",
+        "postalCode": "120 00",
+        "country": "Czech Republic",
+        "full": "Varšavská 715/36, Vinohrady, 120 00 Praha 2"
+      }
+    },
+    "buttons": {
+      "startProject": "Төслөө эхлүүлэх →",
+      "bookFreeCall": "Үнэгүй дуудлага захиалах",
+      "contactUs": "Холбоо барих →",
+      "viewServices": "Үйлчилгээг харах",
+      "viewPricing": "Үнийг харах",
+      "learnMore": "Дэлгэрэнгүй →"
+    },
+    "trustPills": [
+      {
+        "id": "freeConsult",
+        "label": "30 минутын үнэгүй зөвлөгөө"
+      },
+      {
+        "id": "noCommitment",
+        "label": "Ямар нэгэн үүрэг хүлээлгэхгүй"
+      },
+      {
+        "id": "response24h",
+        "label": "24 цагийн дотор хариу өгнө"
+      }
+    ]
+  },
+  "home": {
+    "badge": "Шинэ төслүүд авах боломжтой",
+    "hero": {
+      "title": {
+        "line1": "Бид Дижитал Зэвсэг Бүтээдэг",
+        "line2": "Өсөх хүсэлтэй бизнесүүдэд"
+      },
+      "subtitle": "Вэб. Апп. AI автоматжуулалт. Чех компанийн бүртгэл. Бүгд нэг дор — Прага хотод бүтээж, дэлхий даяар хүргэнэ.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Төслөө эхлүүлэх →"
+        },
+        {
+          "id": "bookCall",
+          "label": "Үнэгүй дуудлага захиалах"
+        }
+      ],
+      "floatingBadges": [
+        {
+          "id": "projectLaunched",
+          "title": "✓ Төсөл амжилттай эхэлсэн",
+          "subtitle": "TechVentures Prague"
+        },
+        {
+          "id": "satisfaction",
+          "title": "⚡ 98% сэтгэл ханамж",
+          "subtitle": "47 сэтгэл хангалуун харилцагч"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "id": "clientsServed",
+        "value": 47,
+        "suffix": "+",
+        "label": "Үйлчилсэн харилцагч"
+      },
+      {
+        "id": "satisfactionRate",
+        "value": 98,
+        "suffix": "%",
+        "label": "Сэтгэл ханамжийн түвшин"
+      },
+      {
+        "id": "avgDelivery",
+        "value": 7,
+        "suffix": " хоног",
+        "label": "Дундаж гүйцэтгэл"
+      },
+      {
+        "id": "markets",
+        "value": 3,
+        "suffix": " улс",
+        "label": "Идэвхтэй зах зээл"
+      }
+    ],
+    "servicesSection": {
+      "badge": "Бид юу хийдэг вэ",
+      "titleLine1": "Таны бизнест хэрэгтэй",
+      "titleLine2": "бүх зүйл",
+      "description": "Гоёмсог вэбсайтаас эхлээд AI автоматжуулалт, Чех компанийн бүртгэл хүртэл — бид бүгдийг онцгой түвшинд хийдэг.",
+      "cards": [
+        {
+          "id": "agencyWebsites",
+          "title": "Агентлагийн вэбсайт",
+          "desc": "Next.js дээр бүтээсэн, SEO-оновчтой, хөрвүүлэлт өндөртэй вебсайтууд зочдыг төлбөр төлөгч харилцагч болгоно.",
+          "tag": "Хамгийн эрэлттэй",
+          "price": "45,000 CZK-с"
+        },
+        {
+          "id": "sro",
+          "title": "Чех S.R.O. байгуулах",
+          "desc": "Чех компанийн бүртгэлийг англи хэл дээр эхнээс нь дуустал гүйцэтгэнэ. Бичиг цаасны чирэгдэлгүй, стрессгүй, зөвхөн үр дүн.",
+          "tag": "",
+          "price": "12,000 CZK-с"
+        },
+        {
+          "id": "aiAutomation",
+          "title": "AI автоматжуулалт",
+          "desc": "Таны багийн долоо хоногт 20+ цаг хэмнэх тусгай AI workflow, chatbot, автоматжуулалтын pipeline.",
+          "tag": "Өндөр эрэлттэй",
+          "price": "25,000 CZK-с"
+        },
+        {
+          "id": "seoGrowth",
+          "title": "SEO ба өсөлт",
+          "desc": "Төв ба Зүүн Европын зах зээлд зориулсан датад суурилсан SEO стратеги. Илүү өндөр эрэмбэлэгдэж, илүү олдож, тогтвортой өснө.",
+          "tag": "",
+          "price": "8,000 CZK/сар-с"
+        },
+        {
+          "id": "brandIdentity",
+          "title": "Брэнд төрх",
+          "desc": "Таны бизнесийг мартагдашгүй болгох premium лого, брэндийн систем, визуал төрх.",
+          "tag": "",
+          "price": "18,000 CZK-с"
+        },
+        {
+          "id": "maintenance",
+          "title": "Арчилгаа ба дэмжлэг",
+          "desc": "Таны дижитал хөрөнгөнд зориулсан 24/7 хяналт, шинэчлэлт, аюулгүй байдлын засвар, өндөр түвшний дэмжлэг.",
+          "tag": "",
+          "price": "3,000 CZK/сар-с"
+        }
+      ],
+      "learnMore": "Дэлгэрэнгүй →"
+    },
+    "processSection": {
+      "badge": "Бид хэрхэн ажилладаг",
+      "titleLine1": "Санаанаас",
+      "titleLine2": "онлайнд хэдхэн хоногт",
+      "description": "Бидний батлагдсан процесс чанараа алдалгүй хурдан үр дүн өгдөг.",
+      "steps": [
+        {
+          "id": "01",
+          "title": "Танилцах дуудлага",
+          "desc": "Таны зорилго, аудитори, зах зээлийг ойлгоно. Илүү зүйлгүй — ажил хэрэгтэй мэдээлэл дээр төвлөрнө."
+        },
+        {
+          "id": "02",
+          "title": "Стратеги ба дизайн",
+          "desc": "Таны брэндэд тохируулсан wireframe болон дизайн mockup. Код бичихийн өмнө pixel бүрийг та баталгаажуулна."
+        },
+        {
+          "id": "03",
+          "title": "Хөгжүүлэлт",
+          "desc": "Next.js, TypeScript, Supabase дээр production түвшний код. Эхний өдрөөсөө гүйцэтгэл ба өсөлтөд бэлэн."
+        },
+        {
+          "id": "04",
+          "title": "Шалгалт ба сайжруулалт",
+          "desc": "Бүх төхөөрөмж дээр бүрэн QA. Та тестлэнэ, бид засна. Яг хүссэн түвшинд хүртэл хязгааргүй засвар."
+        },
+        {
+          "id": "05",
+          "title": "Нэвтрүүлэлт ба өсөлт",
+          "desc": "Бид байршуулж, хянаж, тогтмол сайжруулна. Таны амжилт бол нэг удаагийн төсөл биш, урт хугацааны түншлэл."
+        }
+      ]
+    },
+    "caseStudiesSection": {
+      "badge": "Кейс судалгаа",
+      "titleLine1": "Бодит үр дүн,",
+      "titleLine2": "бодит харилцагч",
+      "viewAll": "Бүгдийг харах →",
+      "items": [
+        {
+          "id": "techventures",
+          "title": "TechVentures Prague",
+          "category": "SaaS вебсайт + CRM",
+          "result": "Хөрвүүлэлт +340%",
+          "desc": "Нэгдсэн харилцагчийн dashboard, Stripe төлбөртэй Next.js сайтын бүрэн rebrand ба launch."
+        },
+        {
+          "id": "mnExportHub",
+          "title": "MN Export Hub",
+          "category": "E-commerce + S.R.O.",
+          "result": "90 хоногт €180K орлого",
+          "desc": "Чех компанийн бүртгэл + Монгол экспортлогчдыг ЕХ-ны худалдан авагчтай холбосон гурван хэлтэй B2B marketplace."
+        }
+      ]
+    },
+    "testimonialsSection": {
+      "badge": "Сэтгэгдэл",
+      "titleLine1": "Бизнес эрхлэгчдийн итгэл хүлээсэн",
+      "titleLine2": "3 улсын хэмжээнд",
+      "items": [
+        {
+          "id": "arjun",
+          "name": "Arjun Sharma",
+          "role": "CEO, TechVentures Prague",
+          "text": "Digi Wolf манай SaaS сайтыг 5 хоногт бүтээсэн. Чанар маш өндөр — эхний сард хөрвүүлэлт 340%-аар өссөн."
+        },
+        {
+          "id": "tomas",
+          "name": "Tomas Novák",
+          "role": "Founder, Novák Consulting",
+          "text": "Тэд миний Чех S.R.O. бүртгэлийг хийж байхдаа агентлагийн сайтыг зэрэг хөгжүүлсэн. Мэргэжлийн, хурдан, стрессгүй."
+        },
+        {
+          "id": "enkhmaa",
+          "name": "Enkhmaa B.",
+          "role": "Director, MN Export Hub",
+          "text": "Прага дахь Монгол бизнес эрхлэгчийн хувьд миний хэлээр (жинхэнэ утгаараа) ойлгодог агентлагтай байх үнэлэшгүй. Үр дүн өөрөө ярьж байна."
+        }
+      ]
+    },
+    "aiSection": {
+      "badge": "AI-тай",
+      "title": "Тусгай AI-гаар бизнесээ автоматжуул",
+      "description": "Бид давтагддаг ажлыг арилгадаг AI pipeline, chatbot, automation workflow бүтээнэ. Манай харилцагчид дунджаар долоо хоногт 23 цаг хэмнэдэг.",
+      "checklist": [
+        {
+          "id": "leadChatbots",
+          "label": "Лид ангилах chatbot"
+        },
+        {
+          "id": "docAutomation",
+          "label": "Баримт автоматжуулалт ба e-signature"
+        },
+        {
+          "id": "crmEnrichment",
+          "label": "CRM өгөгдөл баяжуулах pipeline"
+        },
+        {
+          "id": "weeklyReports",
+          "label": "AI-аар үүсгэсэн долоо хоногийн тайлан"
+        }
+      ],
+      "flow": [
+        {
+          "id": "inputData",
+          "label": "Оролтын өгөгдөл"
+        },
+        {
+          "id": "aiProcessing",
+          "label": "AI боловсруулалт"
+        },
+        {
+          "id": "automation",
+          "label": "Автоматжуулалт"
+        },
+        {
+          "id": "resultsDelivered",
+          "label": "Үр дүн хүргэгдсэн"
+        }
+      ],
+      "cta": "AI үйлчилгээг судлах →"
+    },
+    "pricingPreview": {
+      "badge": "Үнэ",
+      "titleLine1": "Ил тод үнэ,",
+      "titleLine2": "сюрпризгүй",
+      "subtitle": "Бүх төлөвлөгөөнд source code, 30 хоногийн дэмжлэг, сэтгэл ханамжийн баталгаа багтсан.",
+      "plans": [
+        {
+          "id": "starter",
+          "name": "Starter",
+          "price": "15,000",
+          "currency": "CZK",
+          "desc": "Анхны мэргэжлийн вебсайтаа эхлүүлж буй freelancer болон жижиг бизнесүүдэд тохиромжтой.",
+          "cta": "Эхлэх",
+          "featured": false,
+          "features": [
+            {
+              "id": "pages5",
+              "label": "5 хуудастай вебсайт"
+            },
+            {
+              "id": "mobile",
+              "label": "Mobile responsive"
+            },
+            {
+              "id": "seo",
+              "label": "SEO оновчтой"
+            },
+            {
+              "id": "contactForm",
+              "label": "Холбоо барих форм"
+            },
+            {
+              "id": "support30",
+              "label": "30 хоногийн дэмжлэг"
+            },
+            {
+              "id": "sourceCode",
+              "label": "Source code багтсан"
+            }
+          ]
+        },
+        {
+          "id": "growth",
+          "name": "Growth",
+          "price": "45,000",
+          "currency": "CZK",
+          "desc": "Харилцагчийн портал, интеграцтай бүрэн боломжит сайт хэрэгтэй өсч буй агентлагуудад.",
+          "cta": "Хамгийн эрэлттэй",
+          "featured": true,
+          "badge": "ХАМГИЙН ҮР АШИГТАЙ",
+          "features": [
+            {
+              "id": "pagesUnlimited",
+              "label": "Хязгааргүй хуудас"
+            },
+            {
+              "id": "clientDashboard",
+              "label": "Харилцагчийн dashboard"
+            },
+            {
+              "id": "paymentIntegration",
+              "label": "Төлбөрийн интеграц"
+            },
+            {
+              "id": "crmIntegration",
+              "label": "CRM интеграц"
+            },
+            {
+              "id": "aiChatbot",
+              "label": "AI chatbot"
+            },
+            {
+              "id": "support90",
+              "label": "90 хоногийн дэмжлэг"
+            },
+            {
+              "id": "priorityDelivery",
+              "label": "Нэн тэргүүний гүйцэтгэл"
+            }
+          ]
+        },
+        {
+          "id": "enterprise",
+          "name": "Enterprise",
+          "price": "Custom",
+          "currency": "",
+          "desc": "Тусгай боломж, AI автоматжуулалт, dedicated account management бүхий full-stack платформ.",
+          "cta": "Холбоо барих",
+          "featured": false,
+          "features": [
+            {
+              "id": "everythingGrowth",
+              "label": "Growth-ийн бүх зүйл"
+            },
+            {
+              "id": "customAi",
+              "label": "Тусгай AI workflow"
+            },
+            {
+              "id": "multiLanguage",
+              "label": "Олон хэл"
+            },
+            {
+              "id": "whiteLabel",
+              "label": "White-label сонголт"
+            },
+            {
+              "id": "sla",
+              "label": "SLA баталгаа"
+            },
+            {
+              "id": "dedicatedPm",
+              "label": "Хариуцсан PM"
+            },
+            {
+              "id": "lifetimeSupport",
+              "label": "Насан туршийн дэмжлэг"
+            }
+          ]
+        }
+      ],
+      "viewFullBreakdown": "Бүтэн үнийн задаргааг харах →"
+    },
+    "faqSection": {
+      "badge": "Түгээмэл асуулт",
+      "title": "Асуулт байна уу? Хариулъя.",
+      "items": [
+        {
+          "id": "q1",
+          "q": "Вебсайт төсөл хэр хугацаа авдаг вэ?",
+          "a": "Ихэнх төсөл эхлэлээс launch хүртэл 3–6 долоо хоног үргэлжилдэг."
+        },
+        {
+          "id": "q2",
+          "q": "Чех S.R.O. бүртгэлд яг юу багтдаг вэ?",
+          "a": "Компанийн бүртгэл, худалдааны лиценз, 1 жилийн бүртгэлтэй хаяг, банкны дансны зөвлөгөө. Бид бүхнийг хариуцна."
+        },
+        {
+          "id": "q3",
+          "q": "Та олон улсын харилцагчтай ажилладаг уу?",
+          "a": "Тийм — бид Европ болон бусад бүсийн харилцагчтай зайнаас ажилладаг. Англи, Чех, Монгол хэлээр ажиллана."
+        },
+        {
+          "id": "q4",
+          "q": "Төлбөрийн бүтэц тань ямар вэ?",
+          "a": "Эхлэхдээ 50%, эцсийн хүлээлгэн өгөхөд 50%. Банк шилжүүлэг (CZK/EUR) болон Wise хүлээн авна."
+        },
+        {
+          "id": "q5",
+          "q": "Launch хийсний дараа сайтыг өөрөө шинэчилж болох уу?",
+          "a": "Тийм. Бид орчин үеийн платформ дээр хийж, хүлээлгэн өгөх гарын авлага өгнө. Нэмэлт арчилгааны үйлчилгээ боломжтой."
+        },
+        {
+          "id": "q6",
+          "q": "Та ямар AI автоматжуулалтын үйлчилгээ үзүүлдэг вэ?",
+          "a": "Бид харилцагч таталт, onboarding, дотоод үйл ажиллагаанд зориулсан n8n workflow, AI agent, chatbot, Hermes-powered автоматжуулалт хийдэг."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "badge": "Хязгаарлагдмал боломж",
+      "titleLine1": "Онцгой зүйл",
+      "titleLine2": "бүтээхэд бэлэн үү?",
+      "description": "Бид чанарыг дээд түвшинд байлгахын тулд сард зөвхөн 3 шинэ харилцагч авдаг. Суудал дүүрэхээс өмнө танилцах дуудлагаа захиалаарай.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Төслөө эхлүүлэх →"
+        },
+        {
+          "id": "bookCall",
+          "label": "Үнэгүй дуудлага захиалах"
+        }
+      ],
+      "points": [
+        {
+          "id": "freeConsult",
+          "label": "30 минутын үнэгүй зөвлөгөө"
+        },
+        {
+          "id": "noCommitment",
+          "label": "Ямар нэгэн үүрэг хүлээлгэхгүй"
+        },
+        {
+          "id": "response24h",
+          "label": "24 цагийн дотор хариу өгнө"
+        }
+      ]
+    },
+    "techStack": [
+      {
+        "id": "nextjs",
+        "label": "Next.js"
+      },
+      {
+        "id": "typescript",
+        "label": "TypeScript"
+      },
+      {
+        "id": "supabase",
+        "label": "Supabase"
+      },
+      {
+        "id": "tailwind",
+        "label": "Tailwind CSS"
+      },
+      {
+        "id": "vercel",
+        "label": "Vercel"
+      },
+      {
+        "id": "stripe",
+        "label": "Stripe"
+      },
+      {
+        "id": "framerMotion",
+        "label": "Framer Motion"
+      },
+      {
+        "id": "prisma",
+        "label": "Prisma"
+      },
+      {
+        "id": "react",
+        "label": "React"
+      },
+      {
+        "id": "postgresql",
+        "label": "PostgreSQL"
+      },
+      {
+        "id": "resend",
+        "label": "Resend"
+      },
+      {
+        "id": "cloudflare",
+        "label": "Cloudflare"
+      }
+    ]
+  },
+  "services": {
+    "hero": {
+      "badge": "Full-Stack агентлагийн үйлчилгээ",
+      "titleLine1": "Зах зээлдээ давамгайлахад",
+      "titleLine2": "хэрэгтэй бүх үйлчилгээ",
+      "subtitle": "Тэгээс зах зээлийн тэргүүлэгч хүртэл — веб хөгжүүлэлт, компанийн бүртгэл, AI автоматжуулалт болон бусад. Төв Европын зах зээлийг ойлгодог мэргэжилтнүүд бүтээнэ.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Төсөл эхлүүлэх"
+        },
+        {
+          "id": "exploreServices",
+          "label": "Үйлчилгээг үзэх ↓"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "id": "coreServices",
+        "num": "6",
+        "label": "Үндсэн үйлчилгээ"
+      },
+      {
+        "id": "clientsServed",
+        "num": "47+",
+        "label": "Үйлчилсэн харилцагч"
+      },
+      {
+        "id": "deliveryDays",
+        "num": "5–10",
+        "label": "Хоногийн гүйцэтгэл"
+      },
+      {
+        "id": "satisfaction",
+        "num": "98%",
+        "label": "Сэтгэл ханамж"
+      }
+    ],
+    "cards": [
+      {
+        "id": "web",
+        "title": "Веб хөгжүүлэлт",
+        "tagline": "Хөрвүүлэлт авчирдаг full-stack вебсайт",
+        "price": "45,000 CZK-с",
+        "badge": "Хамгийн эрэлттэй",
+        "startingAt": "Эхлэх үнэ",
+        "includedTitle": "Багтсан зүйлс",
+        "processTitle": "Бидний процесс",
+        "cta": "Зөвлөгөө захиалах →",
+        "description": "Бид гүйцэтгэл, SEO, хөрвүүлэлтэд зориулагдсан premium full-stack вебсайт бүтээнэ. Next.js, Webflow, e-commerce — pixel бүр зорилготой, millisecond бүр оновчтой.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Next.js 14 + TypeScript full-stack"
+          },
+          {
+            "id": "f2",
+            "label": "Webflow ба custom CMS"
+          },
+          {
+            "id": "f3",
+            "label": "Shopify / WooCommerce e-commerce"
+          },
+          {
+            "id": "f4",
+            "label": "Mobile-first responsive дизайн"
+          },
+          {
+            "id": "f5",
+            "label": "Эхний өдрөөс technical SEO"
+          },
+          {
+            "id": "f6",
+            "label": "Core Web Vitals оновчлол (100/100)"
+          },
+          {
+            "id": "f7",
+            "label": "Тусгай animation ба interaction"
+          },
+          {
+            "id": "f8",
+            "label": "Analytics ба conversion tracking"
+          },
+          {
+            "id": "f9",
+            "label": "Launch дараах 30 хоногийн дэмжлэг"
+          }
+        ]
+      },
+      {
+        "id": "sro",
+        "title": "Чех S.R.O. байгуулах",
+        "tagline": "ЕХ-ны компани хэдэн сар биш, хэдхэн хоногт",
+        "price": "15,000 CZK-с",
+        "badge": "EU Gateway",
+        "startingAt": "Эхлэх үнэ",
+        "includedTitle": "Багтсан зүйлс",
+        "processTitle": "Бидний процесс",
+        "cta": "Зөвлөгөө захиалах →",
+        "description": "Чех S.R.O. компанийн бүртгэлийг бүрэн хийж өгнө — банкны данс, compliance, англи хэлний бүрэн дэмжлэгтэй. Бүх маягт, нотариат, төрийн байгууллагын ажлыг бид хариуцна.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Компанийн бүртгэлийг эхнээс дуустал бүрэн хариуцах"
+          },
+          {
+            "id": "f2",
+            "label": "Банкны данс нээхэд туслах"
+          },
+          {
+            "id": "f3",
+            "label": "Худалдааны лиценз (živnostenský list) багтсан"
+          },
+          {
+            "id": "f4",
+            "label": "Бүртгэлтэй хаяг (1 жил)"
+          },
+          {
+            "id": "f5",
+            "label": "НӨАТ бүртгэлийн дэмжлэг"
+          },
+          {
+            "id": "f6",
+            "label": "Memorandum of Association боловсруулах"
+          },
+          {
+            "id": "f7",
+            "label": "Шаардлагатай тохиолдолд apostille ба баталгаат орчуулга"
+          },
+          {
+            "id": "f8",
+            "label": "Үргэлжилсэн compliance зөвлөгөө"
+          },
+          {
+            "id": "f9",
+            "label": "Бүх үе шатанд англи хэлний дэмжлэг"
+          }
+        ]
+      },
+      {
+        "id": "ai",
+        "title": "AI автоматжуулалт",
+        "tagline": "Илүү ухаалаг ажиллаж, илүү хурдан өс",
+        "price": "25,000 CZK-с",
+        "badge": "Future-Proof",
+        "startingAt": "Эхлэх үнэ",
+        "includedTitle": "Багтсан зүйлс",
+        "processTitle": "Бидний процесс",
+        "cta": "Зөвлөгөө захиалах →",
+        "description": "Бид давтагддаг ажлыг арилгаж, багийн бүтээмжийг өсгөдөг тусгай AI систем — chatbot, workflow automation, lead generation системүүдийг нэвтрүүлнэ.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Тусгай GPT-4 / Claude chatbot"
+          },
+          {
+            "id": "f2",
+            "label": "Лид ангилах ба бойжуулах бот"
+          },
+          {
+            "id": "f3",
+            "label": "Workflow автоматжуулалт (n8n / Make / Zapier)"
+          },
+          {
+            "id": "f4",
+            "label": "CRM & ERP интеграц"
+          },
+          {
+            "id": "f5",
+            "label": "Баримт боловсруулалтын pipeline"
+          },
+          {
+            "id": "f6",
+            "label": "AI-гаар контент үүсгэх"
+          },
+          {
+            "id": "f7",
+            "label": "Slack / Teams дотоод туслах"
+          },
+          {
+            "id": "f8",
+            "label": "Custom API интеграц"
+          },
+          {
+            "id": "f9",
+            "label": "Сургалт ба handover баримтжуулалт"
+          }
+        ]
+      },
+      {
+        "id": "seo",
+        "title": "SEO ба өсөлт",
+        "tagline": "Илүү өндөр эрэмбэ. Илүү хурдан өсөлт.",
+        "price": "8,000 CZK/сар-с",
+        "badge": "Тасралтгүй",
+        "startingAt": "Эхлэх үнэ",
+        "includedTitle": "Багтсан зүйлс",
+        "processTitle": "Бидний процесс",
+        "cta": "Зөвлөгөө захиалах →",
+        "description": "Төв ба Зүүн Европын зах зээлд зориулсан technical SEO, контент стратеги, Google Ads. Бид техник чадвар ба стратегийн контентыг нэгтгэж таны сайтыг 1-р хуудсанд гаргана.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Technical SEO бүрэн аудит ба засвар"
+          },
+          {
+            "id": "f2",
+            "label": "Түлхүүр үгийн судалгаа (CZ, SK, PL, EN)"
+          },
+          {
+            "id": "f3",
+            "label": "On-page оновчлол ба schema markup"
+          },
+          {
+            "id": "f4",
+            "label": "Сарын контент стратеги ба brief"
+          },
+          {
+            "id": "f5",
+            "label": "Google Ads кампанийн удирдлага"
+          },
+          {
+            "id": "f6",
+            "label": "CEE зах зээлд link building"
+          },
+          {
+            "id": "f7",
+            "label": "Google Search Console удирдлага"
+          },
+          {
+            "id": "f8",
+            "label": "Өрсөлдөгчийн gap analysis"
+          },
+          {
+            "id": "f9",
+            "label": "Бодит метриктэй сарын тайлан"
+          }
+        ]
+      },
+      {
+        "id": "brand",
+        "title": "Брэнд төрх",
+        "tagline": "Яг тэргүүлэгч шиг харагд",
+        "price": "12,000 CZK-с",
+        "badge": "Premium",
+        "startingAt": "Эхлэх үнэ",
+        "includedTitle": "Багтсан зүйлс",
+        "processTitle": "Бидний процесс",
+        "cta": "Зөвлөгөө захиалах →",
+        "description": "Лого, брэндийн заавар, визуал систем бүхий бүрэн төрх — танай брэндийг шууд танигдах, мартагдашгүй болгоно.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Брэнд стратеги ба positioning workshop"
+          },
+          {
+            "id": "f2",
+            "label": "Үндсэн + туслах лого багц"
+          },
+          {
+            "id": "f3",
+            "label": "Өнгөний бүрэн систем"
+          },
+          {
+            "id": "f4",
+            "label": "Typography hierarchy сонголт"
+          },
+          {
+            "id": "f5",
+            "label": "Нэрийн хуудас ба албан бичгийн загвар"
+          },
+          {
+            "id": "f6",
+            "label": "Сошиал медиа kit (10+ template)"
+          },
+          {
+            "id": "f7",
+            "label": "Брэндийн гарын авлага PDF (50+ хуудас)"
+          },
+          {
+            "id": "f8",
+            "label": "Icon set ба illustration style"
+          },
+          {
+            "id": "f9",
+            "label": "Бүх эх файл (AI, EPS, Figma)"
+          }
+        ]
+      },
+      {
+        "id": "maintenance",
+        "title": "Вебсайт арчилгаа",
+        "tagline": "Үргэлж онлайн. Үргэлж хамгаалалттай.",
+        "price": "3,000 CZK/сар-с",
+        "badge": "Сэтгэл амар",
+        "startingAt": "Эхлэх үнэ",
+        "includedTitle": "Багтсан зүйлс",
+        "processTitle": "Бидний процесс",
+        "cta": "Зөвлөгөө захиалах →",
+        "description": "Хостинг, шинэчлэлт, аюулгүй байдал, дэмжлэг — 24/7. Манай идэвхтэй арчилгааны төлөвлөгөө таны сайтыг үргэлж дээд гүйцэтгэлтэй ажиллуулна.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "24/7 uptime мониторинг ба мэдэгдэл"
+          },
+          {
+            "id": "f2",
+            "label": "Managed hosting багтсан"
+          },
+          {
+            "id": "f3",
+            "label": "Долоо хоног тутмын CMS ба dependency шинэчлэлт"
+          },
+          {
+            "id": "f4",
+            "label": "Аюулгүй байдлын скан ба malware устгал"
+          },
+          {
+            "id": "f5",
+            "label": "Өдөр бүр автомат backup (30 хоног хадгалалт)"
+          },
+          {
+            "id": "f6",
+            "label": "Гүйцэтгэлийн мониторинг ба оновчлол"
+          },
+          {
+            "id": "f7",
+            "label": "Сарын гүйцэтгэлийн тайлан"
+          },
+          {
+            "id": "f8",
+            "label": "Нэн тэргүүний bug засвар (< 4 цагийн хариу)"
+          },
+          {
+            "id": "f9",
+            "label": "Тусгай Slack channel дэмжлэг"
+          }
+        ]
+      }
+    ],
+    "guarantees": [
+      {
+        "id": "onTime",
+        "title": "Цагтаа гүйцэтгэл",
+        "desc": "Бид тогтсон хугацаандаа хүргэнэ. Хэрэв хоцорвол нэхэмжлэлээс 10% хөнгөлнө."
+      },
+      {
+        "id": "fixedPricing",
+        "title": "Тогтмол үнэ",
+        "desc": "Үнийг урьдчилан тохирно, нэмэлт гэнэтийн зардалгүй. Бидний санал болгосон үнэ бол таны төлөх үнэ."
+      },
+      {
+        "id": "unlimitedRevisions",
+        "title": "Хязгааргүй засвар",
+        "desc": "Төслийн хүрээнд 100% сэтгэл ханамж хүртэл давтан сайжруулна."
+      }
+    ],
+    "bottomCta": {
+      "titleLine1": "Онцгой зүйл",
+      "titleLine2": "бүтээхэд бэлэн үү?",
+      "description": "30 минутын үнэгүй стратегийн дуудлага захиалаарай. Бид таны зорилгыг зураглаж, зөв үйлчилгээг тодорхойлж, 24 цагийн дотор нарийвчилсан санал илгээнэ.",
+      "ctas": [
+        {
+          "id": "bookStrategyCall",
+          "label": "Үнэгүй стратегийн дуудлага захиалах →"
+        },
+        {
+          "id": "viewPricing",
+          "label": "Үнийг харах"
+        }
+      ]
+    }
+  },
+  "pricing": {
+    "hero": {
+      "badge": "Үнэ",
+      "titleLine1": "Ил тод үнэ,",
+      "titleLine2": "сюрпризгүй",
+      "description": "Төлөвлөгөө бүрт source code, 30 хоногийн дэмжлэг, сэтгэл ханамжийн баталгаа багтсан. Тогтмол үнэ — далд төлбөргүй."
+    },
+    "tiers": [
+      {
+        "id": "starter",
+        "name": "Starter",
+        "price": "15,000",
+        "currency": "CZK",
+        "desc": "Анхны мэргэжлийн вебсайтаа эхлүүлж буй freelancer болон жижиг бизнесүүдэд тохиромжтой.",
+        "cta": "Эхлэх",
+        "featured": false,
+        "features": [
+          {
+            "id": "f1",
+            "label": "5 хуудастай вебсайт"
+          },
+          {
+            "id": "f2",
+            "label": "Mobile responsive"
+          },
+          {
+            "id": "f3",
+            "label": "SEO оновчтой"
+          },
+          {
+            "id": "f4",
+            "label": "Холбоо барих форм"
+          },
+          {
+            "id": "f5",
+            "label": "30 хоногийн дэмжлэг"
+          },
+          {
+            "id": "f6",
+            "label": "Source code багтсан"
+          }
+        ]
+      },
+      {
+        "id": "growth",
+        "name": "Growth",
+        "price": "45,000",
+        "currency": "CZK",
+        "desc": "Харилцагчийн портал, интеграцтай бүрэн боломжит сайт хэрэгтэй өсч буй агентлагуудад.",
+        "cta": "Хамгийн эрэлттэй",
+        "featured": true,
+        "featuredBadge": "ХАМГИЙН ҮР АШИГТАЙ",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Хязгааргүй хуудас"
+          },
+          {
+            "id": "f2",
+            "label": "Харилцагчийн dashboard"
+          },
+          {
+            "id": "f3",
+            "label": "Төлбөрийн интеграц"
+          },
+          {
+            "id": "f4",
+            "label": "CRM интеграц"
+          },
+          {
+            "id": "f5",
+            "label": "AI chatbot"
+          },
+          {
+            "id": "f6",
+            "label": "90 хоногийн дэмжлэг"
+          },
+          {
+            "id": "f7",
+            "label": "Нэн тэргүүний гүйцэтгэл"
+          }
+        ]
+      },
+      {
+        "id": "enterprise",
+        "name": "Enterprise",
+        "price": "Custom",
+        "currency": "",
+        "desc": "Тусгай боломж, AI автоматжуулалт, dedicated account management бүхий full-stack платформ.",
+        "cta": "Холбоо барих",
+        "featured": false,
+        "features": [
+          {
+            "id": "f1",
+            "label": "Growth-ийн бүх зүйл"
+          },
+          {
+            "id": "f2",
+            "label": "Тусгай AI workflow"
+          },
+          {
+            "id": "f3",
+            "label": "Олон хэл"
+          },
+          {
+            "id": "f4",
+            "label": "White-label сонголт"
+          },
+          {
+            "id": "f5",
+            "label": "SLA баталгаа"
+          },
+          {
+            "id": "f6",
+            "label": "Хариуцсан PM"
+          },
+          {
+            "id": "f7",
+            "label": "Насан туршийн дэмжлэг"
+          }
+        ]
+      }
+    ],
+    "trustBadges": [
+      {
+        "id": "fixedPricing",
+        "text": "Тогтмол үнэ, далд төлбөргүй"
+      },
+      {
+        "id": "onTime",
+        "text": "Цагтаа гүйцэтгэлийн баталгаа"
+      },
+      {
+        "id": "unlimitedRevisions",
+        "text": "Төслийн хүрээнд хязгааргүй засвар"
+      },
+      {
+        "id": "paymentPlan",
+        "text": "50/50 төлбөрийн төлөвлөгөө боломжтой"
+      }
+    ],
+    "comparison": {
+      "badge": "Төлөвлөгөө харьцуулах",
+      "title": "Бүрэн боломжийн харьцуулалт",
+      "subtitle": "Түвшин бүрт яг юу багтсаныг тодорхой харуулна — таамаглах шаардлагагүй.",
+      "featureLabel": "Функц",
+      "rows": [
+        {
+          "id": "pagesIncluded",
+          "label": "Багтсан хуудас",
+          "starter": "5 хуудас",
+          "growth": "Хязгааргүй",
+          "enterprise": "Хязгааргүй"
+        },
+        {
+          "id": "mobileResponsive",
+          "label": "Mobile responsive дизайн",
+          "starter": true,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "seoSetup",
+          "label": "SEO тохиргоо",
+          "starter": "Үндсэн",
+          "growth": "Ахисан",
+          "enterprise": "Enterprise"
+        },
+        {
+          "id": "contactForm",
+          "label": "Холбоо барих форм",
+          "starter": true,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "postLaunchSupport",
+          "label": "Launch дараах дэмжлэг",
+          "starter": "30 хоног",
+          "growth": "90 хоног",
+          "enterprise": "Насан турш"
+        },
+        {
+          "id": "sourceOwnership",
+          "label": "Source code өмчлөл",
+          "starter": true,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "clientDashboard",
+          "label": "Харилцагчийн dashboard",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "paymentIntegration",
+          "label": "Төлбөрийн интеграц",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "crmIntegration",
+          "label": "CRM интеграц",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "aiChatbot",
+          "label": "AI chatbot",
+          "starter": false,
+          "growth": true,
+          "enterprise": true
+        },
+        {
+          "id": "customAi",
+          "label": "Тусгай AI workflow",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "multiLanguage",
+          "label": "Олон хэл",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "whiteLabel",
+          "label": "White-label сонголт",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "sla",
+          "label": "SLA баталгаа",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "dedicatedPm",
+          "label": "Тусгай төслийн менежер",
+          "starter": false,
+          "growth": false,
+          "enterprise": true
+        },
+        {
+          "id": "deliveryTimeline",
+          "label": "Хүргэлтийн хугацаа",
+          "starter": "5–7 хоног",
+          "growth": "Нэн тэргүүнд",
+          "enterprise": "Custom SLA"
+        }
+      ],
+      "cta": "Тусгай үнийн санал авах →"
+    },
+    "addOns": {
+      "badge": "Нэмэлтүүд",
+      "title": "Төлөвлөгөөгөө илүү хүчирхэг болго",
+      "subtitle": "Эдгээр үйлчилгээнээс аль нэгийг багц дээрээ нэмж, бүрэн дижитал хөдөлгүүрээ байгуулна уу.",
+      "items": [
+        {
+          "id": "seoRetainer",
+          "title": "SEO ба өсөлтийн retainer",
+          "price": "8,000 CZK/сар",
+          "badge": "Сар бүр",
+          "desc": "Technical SEO, түлхүүр үгийн судалгаа, контент стратеги, сарын link building."
+        },
+        {
+          "id": "maintenance",
+          "title": "Вебсайт арчилгаа",
+          "price": "3,000 CZK/сар",
+          "badge": "Сар бүр",
+          "desc": "24/7 uptime хяналт, долоо хоногийн шинэчлэлт, өдөр бүр backup, нэн тэргүүний bug засвар."
+        },
+        {
+          "id": "aiChatbot",
+          "title": "AI Chatbot интеграц",
+          "price": "15,000 CZK-с",
+          "badge": "Нэг удаа",
+          "desc": "Таны контент дээр сурсан, CRM-тэй нэгдсэн custom GPT-4 chatbot."
+        },
+        {
+          "id": "brandSystem",
+          "title": "Брэнд төрхийн систем",
+          "price": "12,000 CZK-с",
+          "badge": "Нэг удаа",
+          "desc": "Лого, өнгөний систем, typography, заавартай бүрэн визуал төрх."
+        }
+      ]
+    },
+    "paymentsFaq": {
+      "badge": "Төлбөр ба нэхэмжлэл",
+      "title": "Түгээмэл асуулт",
+      "subtitle": "Төлбөр тооцоог хэрхэн хийдэг талаар хэрэгтэй бүх мэдээлэл.",
+      "items": [
+        {
+          "id": "paymentPlans",
+          "q": "Та төлбөрийн хуваарь санал болгодог уу?",
+          "a": "Тийм. 20,000 CZK-с дээш төслүүдэд 50/50 хуваарьтай — 50% урьдчилгаа, 50% хүлээлгэн өгөх үед. Retainer үйлчилгээг сар бүр эхэнд нь төлнө."
+        },
+        {
+          "id": "currency",
+          "q": "Ямар валютаар төлбөр хүлээн авдаг вэ?",
+          "a": "Бид Чех крон (CZK)-оор нэхэмжилнэ. Мөн EUR, USD-г тухайн үеийн ханшаар хүлээн авна. Бүх төлбөр банк шилжүүлэг эсвэл Stripe картын төлбөрөөр хийгдэнэ."
+        },
+        {
+          "id": "hiddenFees",
+          "q": "Нуугдмал нэмэлт төлбөр бий юу?",
+          "a": "Үгүй. Манай үнийн санал бүрэн задаргаатай, тогтмол байдаг. Нэмэлт зардал нь зөвхөн таны сонгосон гуравдагч үйлчилгээ (жишээ нь premium CMS, API subscription) үед үүсэж болох ба бид үргэлж урьдчилан мэдэгдэнэ."
+        },
+        {
+          "id": "moreRevisions",
+          "q": "Илүү их засвар хэрэг болвол яах вэ?",
+          "a": "Starter төлөвлөгөөнд нэмэлт засварын мөчлөг нь нэг бүр нь 2,500 CZK. Growth болон Enterprise төлөвлөгөөнд төслийн хүрээнд хязгааргүй засвар багтсан. Төслийн хүрээг санал дээр тодорхой заадаг."
+        },
+        {
+          "id": "moneyBack",
+          "q": "14 хоногийн мөнгө буцаах баталгаа хэрхэн ажилладаг вэ?",
+          "a": "Эхний review дараах анхны дизайн концепцуудад сэтгэл ханамжгүй бол төсөл эхэлснээс хойш 14 хоногийн дотор бүрэн буцаалт хүсэж болно. Энэ нь зөвхөн шинэ вебсайт төслүүдэд хамаарна."
+        },
+        {
+          "id": "upgrade",
+          "q": "Дараа нь төлөвлөгөөгөө ахиулж болох уу?",
+          "a": "Мэдээж. Олон харилцагч Starter-оос эхэлж, бизнес өсөхөд ахиулдаг. Хийгдсэн ажлын кредитийг ахиулалтын үнээс хасдаг тул ижил ажилд хоёр дахин төлөхгүй."
+        },
+        {
+          "id": "vat",
+          "q": "Үнэд НӨАТ багтсан уу?",
+          "a": "Харагдаж буй бүх үнэ НӨАТ-гүй. Хэрэв та Чехийн НӨАТ төлөгч бол нэхэмжлэлд Чехийн стандарт НӨАТ (21%) нэмэгдэнэ. ЕХ-ны хүчинтэй VAT ID-тай бизнесүүд reverse-charge дүрмээр үйлчлүүлнэ."
+        },
+        {
+          "id": "growthAiChatbot",
+          "q": "Growth төлөвлөгөөний AI chatbot-д юу багтдаг вэ?",
+          "a": "Growth төлөвлөгөөнд вебсайтын контентоор сурсан, сайтдаа суулгасан, үндсэн lead qualification flow-той custom GPT-4 chatbot багтана. Бүрэн AI автоматжуулалтын системүүд (CRM интеграц, нарийн pipeline) тусдаа үнэлэгдэнэ."
+        }
+      ]
+    },
+    "bottomCta": {
+      "title": "Төслөө эхлүүлэхэд бэлэн үү?",
+      "description": "Зорилгоо бидэнд хэлээрэй, бид 24 цагийн дотор нарийвчилсан санал илгээнэ. Ямар ч үүрэггүй, борлуулалтын дарамтгүй — зөвхөн тодорхой төлөвлөгөө, тогтмол үнэ.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Төслөө эхлүүлэх →"
+        },
+        {
+          "id": "bookCall",
+          "label": "Үнэгүй дуудлага захиалах"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "hero": {
+      "badge": "Холбоо барих",
+      "titleLine1": "Онцгой зүйлийг",
+      "titleLine2": "хамт бүтээе",
+      "subtitle": "Төслийнхөө тухай бидэнд хэлээрэй. Бид ажлын 4 цагийн дотор бодитоор хариулна — бот биш."
+    },
+    "leftColumn": {
+      "contactInformationTitle": "Холбоо барих мэдээлэл",
+      "responseGuarantee": {
+        "title": "4 цагийн хариуны баталгаа",
+        "desc": "Бид бүх хүсэлтэд ажлын 4 цагийн дотор хүний хариу өгнө. Автомат reply, chatbot биш — таны төслийг ойлгодог бодит хүмүүс."
+      },
+      "whatHappensNextTitle": "Дараа нь юу болох вэ",
+      "steps": [
+        {
+          "id": "01",
+          "title": "Та brief-ээ илгээнэ",
+          "desc": "Форм бөглөж төслийн дэлгэрэнгүй болон зорилгоо оруулна."
+        },
+        {
+          "id": "02",
+          "title": "Бид шалгаад хариулна",
+          "desc": "Ажлын 4 цагийн дотор бот биш, бодит хариу авна."
+        },
+        {
+          "id": "03",
+          "title": "Стратегийн дуудлага товлоно",
+          "desc": "30 минутын Zoom дээр хүрээ, хугацаа, төсвөө уялдуулна."
+        }
+      ],
+      "followUs": "Биднийг дагах",
+      "socials": [
+        {
+          "id": "linkedin",
+          "name": "LinkedIn"
+        },
+        {
+          "id": "instagram",
+          "name": "Instagram"
+        },
+        {
+          "id": "twitterX",
+          "name": "Twitter/X"
+        },
+        {
+          "id": "facebook",
+          "name": "Facebook"
+        }
+      ],
+      "contactInfo": [
+        {
+          "id": "email",
+          "label": "И-мэйл",
+          "value": "info@digiwolf.agency"
+        },
+        {
+          "id": "phone",
+          "label": "Утас",
+          "value": "+420 296 183 158"
+        },
+        {
+          "id": "office",
+          "label": "Бүртгэлтэй хаяг",
+          "value": "Varšavská 715/36, Vinohrady, 120 00 Praha 2"
+        }
+      ]
+    },
+    "form": {
+      "callCta": {
+        "title": "Утсаар ярилцах уу?",
+        "subtitle": "30 минутын үнэгүй танилцах уулзалтаа захиалаарай",
+        "button": "30 минутын үнэгүй танилцах дуудлага захиалах →"
+      },
+      "title": "Төслөө эхлүүлэх",
+      "subtitle": "Доорх формыг бөглөөд илгээнэ үү, бид удахгүй холбогдоно.",
+      "fields": {
+        "fullName": "Овог нэр *",
+        "email": "И-мэйл хаяг *",
+        "company": "Компани / Бизнесийн нэр",
+        "service": "Сонирхож буй үйлчилгээ *",
+        "budget": "Төсвийн хүрээ *",
+        "message": "Төслийн тайлбар *"
+      },
+      "placeholders": {
+        "fullName": "Jan Novák",
+        "email": "jan@company.cz",
+        "company": "Acme s.r.o.",
+        "service": "Үйлчилгээ сонгох",
+        "budget": "Төсөв сонгох",
+        "message": "Төслийнхөө тухай хэлнэ үү — танд юу хэрэгтэй, ямар зорилготой, хугацаа, онцгой шаардлагууд..."
+      },
+      "submitIdle": "Төслийн brief илгээх →",
+      "submitLoading": "Brief илгээж байна...",
+      "privacyNote": "Илгээснээр та манай Нууцлалын бодлогыг зөвшөөрч байна. Бид таны мэдээллийг хэзээ ч бусадтай хуваалцахгүй.",
+      "success": {
+        "title": "Зурвас хүлээн авлаа!",
+        "body": "Бидэнтэй холбогдсонд баярлалаа. Манай баг таны хүсэлтийг шалгаад дараагийн алхмуудын хамт ажлын 4 цагийн дотор холбогдоно.",
+        "confirmationLabel": "Баталгаажуулалт илгээгдсэн:",
+        "fallbackEmail": "таны и-мэйл",
+        "resetButton": "Өөр зурвас илгээх"
+      },
+      "errors": {
+        "generic": "Алдаа гарлаа. Дахин оролдох эсвэл шууд и-мэйл бичнэ үү.",
+        "network": "Сүлжээний алдаа. Дахин оролдох эсвэл шууд и-мэйл бичнэ үү.",
+        "highlighted": "Тодруулсан талбаруудыг шалгана уу."
+      }
+    },
+    "validation": {
+      "name": "Бүтэн нэрээ оруулна уу",
+      "email": "Зөв и-мэйл хаяг оруулна уу",
+      "company": "Компанийн нэр хэт урт байна",
+      "service": "Үйлчилгээ сонгоно уу",
+      "budget": "Төсвийн хүрээ сонгоно уу",
+      "messageMin": "Төслийнхөө тухай товч тайлбар оруулна уу",
+      "messageMax": "Зурвас хэт урт байна (дээд тал нь 5000 тэмдэгт)"
+    },
+    "services": [
+      {
+        "id": "webDevelopment",
+        "value": "Веб хөгжүүлэлт"
+      },
+      {
+        "id": "sroFormation",
+        "value": "Чех S.R.O. байгуулах"
+      },
+      {
+        "id": "aiAutomation",
+        "value": "AI автоматжуулалт"
+      },
+      {
+        "id": "seoGrowth",
+        "value": "SEO ба өсөлт"
+      },
+      {
+        "id": "brandIdentity",
+        "value": "Брэнд төрх"
+      },
+      {
+        "id": "websiteMaintenance",
+        "value": "Вебсайт арчилгаа"
+      }
+    ],
+    "budgets": [
+      {
+        "id": "under15k",
+        "value": "15k CZK-с доош"
+      },
+      {
+        "id": "15to45k",
+        "value": "15k–45k CZK"
+      },
+      {
+        "id": "45to100k",
+        "value": "45k–100k CZK"
+      },
+      {
+        "id": "over100k",
+        "value": "100k+ CZK"
+      },
+      {
+        "id": "monthlyRetainer",
+        "value": "Сарын retainer"
+      }
+    ],
+    "scheduleSection": {
+      "badge": "Эхлээд ярилцах уу?",
+      "title": "30 минутын үнэгүй стратегийн дуудлага захиалах",
+      "description": "Урт бичилцэх шаардлагагүй. Танд тохирох цагаа сонгоод live дуудлага дээр төслөө хамт зураглая. Борлуулалтын ятгалгагүй — зөвхөн шударга зөвлөгөө.",
+      "tags": [
+        {
+          "id": "freeConsult",
+          "label": "Үнэгүй зөвлөгөө"
+        },
+        {
+          "id": "thirtyMinutes",
+          "label": "30 минут"
+        },
+        {
+          "id": "noCommitment",
+          "label": "Ямар ч үүрэггүй"
+        }
+      ],
+      "cta": "→ 30 минутын үнэгүй танилцах дуудлага захиалах",
+      "slotsTitle": "Боломжит цагууд",
+      "slots": [
+        {
+          "id": "monFri",
+          "day": "Даваа–Баасан",
+          "time": "9:00 – 18:00 CET"
+        },
+        {
+          "id": "sat",
+          "day": "Бямба",
+          "time": "10:00 – 14:00 CET"
+        }
+      ],
+      "timezoneNote": "Прага (CET) · Zoom-оор зайнаас"
+    }
+  },
+  "book": {
+    "labels": {
+      "freeDiscoveryCall": "Үнэгүй танилцах дуудлага",
+      "pickTime": "Цагаа сонгох",
+      "bookingFor": "Захиалга:",
+      "timezone": "Прага (CET) · 30 минут · Видео эсвэл утас"
+    },
+    "serviceLabels": [
+      {
+        "id": "general",
+        "label": "Танилцах дуудлага"
+      },
+      {
+        "id": "discovery",
+        "label": "Танилцах дуудлага"
+      },
+      {
+        "id": "website",
+        "label": "Вебсайт төсөл"
+      },
+      {
+        "id": "sro",
+        "label": "Чех S.R.O. байгуулах"
+      },
+      {
+        "id": "ai",
+        "label": "AI автоматжуулалт"
+      },
+      {
+        "id": "app",
+        "label": "Вебсайт төсөл"
+      }
+    ],
+    "hero": {
+      "title": "30 минутын үнэгүй танилцах дуудлага захиалах",
+      "subtitle": "Борлуулалтын ятгалгагүй — таны төсөл, хугацаа, төсөвт зориулсан шударга зөвлөгөө. Доороос цагаа сонгоход бид календарийн урилга шууд илгээнэ.",
+      "trustPills": [
+        {
+          "id": "freeConsult",
+          "label": "30 минутын үнэгүй зөвлөгөө"
+        },
+        {
+          "id": "noCommitment",
+          "label": "Ямар нэгэн үүрэг хүлээлгэхгүй"
+        },
+        {
+          "id": "responseGuarantee",
+          "label": "4 цагийн хариуны баталгаа"
+        }
+      ]
+    },
+    "prepare": {
+      "title": "Юуг бэлдвэл сайн бэ",
+      "subtitle": "Албан ёсны brief заавал хэрэггүй — ерөнхий санаа байхад хангалттай. Эдгээр нь таны 30 минутыг хамгийн үр дүнтэй болгоно.",
+      "items": [
+        {
+          "id": "projectGoal",
+          "title": "Төслийн зорилго",
+          "desc": "Вебсайт, Чех S.R.O., AI автоматжуулалт эсвэл өөр зүйл — нэг мөрөөр тайлбарлахад хангалттай."
+        },
+        {
+          "id": "timelineBudget",
+          "title": "Хугацаа ба төсөв",
+          "desc": "Ойролцоох хүрээ нь таны зорилгод бодитоор зөвлөхөд тусална."
+        },
+        {
+          "id": "existingAssets",
+          "title": "Одоо байгаа материалууд",
+          "desc": "Одоогийн сайт, брэндийн заавар, эсвэл танд таалагдсан өрсөлдөгчийн жишээ."
+        },
+        {
+          "id": "questions",
+          "title": "Таны асуултууд",
+          "desc": "Процесс, үнэ, tech stack зэрэг дуудлага дээр хариу авахыг хүссэн бүх зүйл."
+        }
+      ]
+    },
+    "callTopics": {
+      "title": "Бид юу ярилцах вэ",
+      "items": [
+        {
+          "id": "agencyWebsites",
+          "label": "Агентлагийн вэбсайт ба харилцагчийн портал"
+        },
+        {
+          "id": "sroFormation",
+          "label": "Чех S.R.O. компанийн бүртгэл"
+        },
+        {
+          "id": "aiWorkflows",
+          "label": "AI workflow ба автоматжуулалт"
+        },
+        {
+          "id": "strategyTimeline",
+          "label": "Стратеги, хугацаа, дараагийн алхам"
+        }
+      ]
+    },
+    "guarantees": {
+      "response": {
+        "title": "4 цагийн хариуны баталгаа",
+        "desc": "Бид бүх хүсэлтэд ажлын 4 цагийн дотор хүний хариу өгнө. Автомат reply, chatbot биш — таны төслийг ойлгодог бодит хүмүүс."
+      },
+      "availability": {
+        "badge": "Хязгаарлагдмал боломж",
+        "desc": "Бид чанарыг дээд түвшинд байлгахын тулд сард зөвхөн 3 шинэ харилцагч авдаг. Суудал дүүрэхээс өмнө дуудлагаа захиалаарай."
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Бидний түүх",
+      "title": "Манай багтай танилц",
+      "subtitle": "Прага хотод Монгол үүсгэн байгуулагчтайгаар бий болсон дижитал агентлаг — Төв ба Зүүн Европ дахь өсөх хүсэлтэй бизнесүүдэд дижитал эрин үед давамгайлахад тусална.",
+      "paragraph2": "Бидний итгэл: аль улсаас эхэлснээс үл хамааран бизнес эрхлэгч бүрт дэлхийн түвшний дижитал дэд бүтэц хэрэгтэй. Бид хэрэгслийг бүтээнэ. Бид боломжийн үүдийг нээнэ.",
+      "ctas": [
+        {
+          "id": "workWithUs",
+          "label": "Хамтран ажиллах"
+        },
+        {
+          "id": "ourServices",
+          "label": "Манай үйлчилгээ →"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "id": "clients",
+        "num": "47",
+        "suffix": "+",
+        "label": "Үйлчилсэн харилцагч"
+      },
+      {
+        "id": "satisfaction",
+        "num": "98",
+        "suffix": "%",
+        "label": "Сэтгэл ханамжийн түвшин"
+      },
+      {
+        "id": "countries",
+        "num": "3",
+        "suffix": "",
+        "label": "Идэвхтэй улс"
+      },
+      {
+        "id": "delivery",
+        "num": "7",
+        "suffix": " хоног",
+        "label": "Дундаж гүйцэтгэлийн хугацаа"
+      }
+    ],
+    "founder": {
+      "badge": "Үүсгэн байгуулагч",
+      "sectionTitleLine1": "Улаанбаатараас Прага хүртэл —",
+      "sectionTitleLine2": "Гүүр бүтээж байна",
+      "name": "Uuganbayar Ganbaatar",
+      "role": "Үүсгэн байгуулагч & CEO",
+      "route": "🇲🇳 Ulaanbaatar → 🇨🇿 Prague",
+      "skills": [
+        {
+          "id": "nextjs",
+          "label": "Next.js"
+        },
+        {
+          "id": "typescript",
+          "label": "TypeScript"
+        },
+        {
+          "id": "aiAutomation",
+          "label": "AI автоматжуулалт"
+        },
+        {
+          "id": "czechLaw",
+          "label": "Чехийн бизнесийн эрх зүй"
+        },
+        {
+          "id": "brandStrategy",
+          "label": "Брэнд стратеги"
+        }
+      ],
+      "paragraphs": [
+        {
+          "id": "p1",
+          "text": "Прага хотод амьдарч буй Монгол бизнес эрхлэгч Uuganbayar нь Digi Wolf Agency-г Зүүн Европын бизнесийн боломж ба Монгол диаспора бизнес эрхлэгчдийн хоорондын зайг холбохоор үүсгэн байгуулсан."
+        },
+        {
+          "id": "p2",
+          "text": "Тэрээр веб хөгжүүлэлт, бизнесийн бүртгэл (Чех S.R.O.), AI автоматжуулалтаар мэргэшсэн бөгөөд Монгол, Казахстан, Төв Азийн 47+ бизнес эрхлэгчдэд Европын зах зээлд байр сууриа бий болгоход тусалсан."
+        },
+        {
+          "id": "p3",
+          "text": "Чех улсад 10+ жил амьдарч, ажилласан туршлагынхаа ачаар шинэ улсад гаднын хүн болж бодит зүйл бүтээнэ гэдэг ямар байдгийг өөрөө мэдэрсэн — энэ өрөвдөх сэтгэл нь Digi Wolf-ийн бүх үйлчилгээний цөмд байдаг."
+        }
+      ],
+      "cta": "Хамтран ажиллах →"
+    },
+    "values": {
+      "badge": "Бидний үнэт зүйл",
+      "title": "Үндсэн зарчмууд",
+      "items": [
+        {
+          "id": "speed",
+          "title": "Хурд",
+          "desc": "Бид чанарыг алдалгүй хурдтай ажилладаг. Ихэнх төсөл 5–10 хоногт launch хийгддэг. Системтэй delivery нь startup хурдтай premium үр дүн өгдөг."
+        },
+        {
+          "id": "precision",
+          "title": "Нарийвчлал",
+          "desc": "Кодын мөр, pixel, баримт бүрийг өндөр стандартаар бүтээнэ. Өөрсдийн нэр дээр бахархаж чадахгүй зүйлээ бид хэзээ ч гаргахгүй."
+        },
+        {
+          "id": "transparency",
+          "title": "Ил тод байдал",
+          "desc": "Нуугдмал төлбөргүй, бүдэг хугацаагүй, агентлагийн хийсвэр хэллэггүй. Тодорхой үнэ, шударга scope, шууд харилцаа."
+        },
+        {
+          "id": "results",
+          "title": "Үр дүн",
+          "desc": "Бид амжилтыг өөрсдийн идэвхээр бус, таны өсөлтийн хэмжүүрээр хэмждэг. Бидний стратеги бүр бизнесийн тань бодит, хэмжигдэх үр дүнд чиглэнэ."
+        }
+      ]
+    },
+    "journey": {
+      "badge": "Бидний замнал",
+      "titleLine1": "5 жилийн",
+      "titleLine2": "тасралтгүй өсөлт",
+      "paragraphs": [
+        {
+          "id": "p1",
+          "text": "Нэг хүний зөвлөх үйлчилгээнээс 3 улсад харилцагчтай full-stack дижитал агентлаг болж өссөн — энэ бүх үе шат бүр харилцагчдад онцгой үр дүн хүргэсний үр шим."
+        },
+        {
+          "id": "p2",
+          "text": "Өнөөдөр Digi Wolf нь Чех, Монгол, Словак даяар харилцагчдад англи, чех, монгол хэлээр эхнээс нь дуустал дижитал үйлчилгээ үзүүлж байна."
+        }
+      ],
+      "timeline": [
+        {
+          "id": "2020",
+          "year": "2020",
+          "event": "Uuganbayar Ganbaatar Прага хотод агентлагаа үүсгэн байгуулав"
+        },
+        {
+          "id": "2021",
+          "year": "2021",
+          "event": "Монгол харилцагчдад зориулсан эхний 10 Чех S.R.O. бүртгэл"
+        },
+        {
+          "id": "2022",
+          "year": "2022",
+          "event": "Веб хөгжүүлэлтийн чиглэлд өргөжиж, 15 сайт launch хийв"
+        },
+        {
+          "id": "2023",
+          "year": "2023",
+          "event": "Брэнд төрхийн үйлчилгээ нэвтэрч, 30+ компани rebrand хийв"
+        },
+        {
+          "id": "2024",
+          "year": "2024",
+          "event": "AI автоматжуулалтын нэгж нээгдэж, 3 улсад 47+ харилцагчтай болов"
+        },
+        {
+          "id": "2025",
+          "year": "2025",
+          "event": "Словак болон Польшийн зах зээл рүү тэлж байна"
+        }
+      ]
+    },
+    "culture": {
+      "badge": "Бидний ажлын хэв маяг",
+      "title": "Багийн соёл",
+      "subtitle": "Бид бол ур чадвар, итгэлцэл, хийж буй зүйлдээ чин сэтгэлээсээ дуртай байдал дээр тогтсон жижиг боловч өндөр гүйцэтгэлтэй баг. Илүүдэлгүй. Дотоод улс төргүй. Зөвхөн үр дүн.",
+      "pillars": [
+        {
+          "id": "globalMindset",
+          "title": "Дэлхийн сэтгэлгээ",
+          "desc": "Бид 3 улсад харилцагчтай, Чех, Англи, Монгол хэлээр ажилладаг. Олон янз байдал бол бидний супер хүч."
+        },
+        {
+          "id": "systemsThinking",
+          "title": "Системийн сэтгэлгээ",
+          "desc": "Бид давтагдах процессыг бүтээдэг тул чанар бол аз биш — эхний өдрөөс инженерчилсэн зүйл байдаг."
+        },
+        {
+          "id": "continuousLearning",
+          "title": "Тасралтгүй суралцах",
+          "desc": "Багийн гишүүн бүр үргэлж түрүүлж байхдаа хөрөнгө оруулдаг — шинэ framework, шинэ зохицуулалт, шинэ AI хэрэгслүүд."
+        },
+        {
+          "id": "clientEmpathy",
+          "title": "Харилцагчийг ойлгох",
+          "desc": "Бид бүгд шинээр зүйл бүтээж буй “гаднын хүн” байсан туршлагатай. Тэр бодит мэдрэмж харилцагч бүртэй харьцах арга барилыг тодорхойлдог."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Манай багт нэгдэхэд бэлэн үү?",
+      "description": "ЕХ-ны зах зээлд нэвтрэхээр зорьж буй Монгол бизнес эрхлэгч, дижитал давуу тал хайж буй Чех startup, эсвэл өсөхөд бэлэн аливаа бизнес бай — бид туслахад бэлэн.",
+      "button": "Холбоо барих →",
+      "facts": [
+        {
+          "id": "location",
+          "text": "Varšavská 715/36, Vinohrady, 120 00 Praha 2"
+        },
+        {
+          "id": "countries",
+          "text": "3 улсад үйлчилгээ үзүүлдэг"
+        },
+        {
+          "id": "languages",
+          "text": "CZ, EN, MN хэлээр ажиллана"
+        }
+      ]
+    }
+  },
+  "process": {
+    "hero": {
+      "badge": "Бидний процесс",
+      "titleLine1": "Санаанаас онлайнд",
+      "titleLine2": "сар биш, хоногоор",
+      "subtitle": "Бидний батлагдсан 5 алхамт процесс нь ихэнх агентлагийн хамтын ажиллагаанд гардаг тодорхойгүй байдал, саатал, төгсгөлгүй засварын асуудлыг арилгана.",
+      "highlights": [
+        {
+          "id": "delivery",
+          "label": "Дунджаар 7 хоногийн гүйцэтгэл"
+        },
+        {
+          "id": "fixedPrice",
+          "label": "Тогтмол үнэ, гэнэтийн зүйлгүй"
+        },
+        {
+          "id": "revisions",
+          "label": "Хязгааргүй засвар"
+        }
+      ]
+    },
+    "steps": [
+      {
+        "id": "01",
+        "title": "Танилцах дуудлага",
+        "subtitle": "30 минут — Үнэгүй",
+        "desc": "Бид таны бизнес, зорилго, аудиторыг ойлгох төвлөрсөн 30 минутын дуудлагаас эхэлнэ. Илүү зүйлгүй, борлуулалтын ятгалгагүй — зөвхөн ажиллахад шаардлагатай мэдээлэл. Бид өрсөлдөгчдийг тань үнэлж, гол асуултуудыг тавьж, амжилтын тодорхой зурагтай гарна.",
+        "deliverables": [
+          {
+            "id": "scope",
+            "label": "Төслийн scope баримт"
+          },
+          {
+            "id": "competitor",
+            "label": "Өрсөлдөгчийн шинжилгээ"
+          },
+          {
+            "id": "timeline",
+            "label": "Хугацааны тооцоо"
+          },
+          {
+            "id": "quote",
+            "label": "Тогтмол үнийн санал"
+          }
+        ],
+        "cta": "→ Үнэгүй дуудлагаа захиалах"
+      },
+      {
+        "id": "02",
+        "title": "Стратеги ба дизайн",
+        "subtitle": "2–3 хоног",
+        "desc": "Таны брэндэд тохируулсан custom wireframe болон өндөр чанартай mockup. Кодын нэг мөр бичихээс өмнө бид юу бүтээж буйг та бүрэн харна. Бид mobile-first загварчилж, элемент бүрийг хөрвүүлэлт рүү чиглүүлэн байрлуулна. Энэ үе шатанд pixel бүрийг та баталж, засвар хязгааргүй.",
+        "deliverables": [
+          {
+            "id": "mockups",
+            "label": "Брэндэд нийцсэн mockup"
+          },
+          {
+            "id": "layouts",
+            "label": "Mobile ба desktop layout"
+          },
+          {
+            "id": "prototypes",
+            "label": "Interaction prototype"
+          },
+          {
+            "id": "contentStrategy",
+            "label": "Контент стратеги"
+          }
+        ]
+      },
+      {
+        "id": "03",
+        "title": "Хөгжүүлэлт",
+        "subtitle": "3–7 хоног",
+        "desc": "Next.js, TypeScript, Supabase дээр production түвшний код. Бид page builder, бэлэн template ашиглахгүй — бүх зүйл гүйцэтгэл ба өсөлтөд зориулсан custom инженерчлэлтэй. Core Web Vitals бол тэргүүлэх зорилт: бүх үзүүлэлт дээр 95+ оноо зорьдог. Цэвэр, баримтжуулсан, бүрэн таны өмч болох код.",
+        "deliverables": [
+          {
+            "id": "nextBuild",
+            "label": "Next.js production build"
+          },
+          {
+            "id": "typedCode",
+            "label": "TypeScript кодын суурь"
+          },
+          {
+            "id": "seo",
+            "label": "SEO оновчлол"
+          },
+          {
+            "id": "performance",
+            "label": "Гүйцэтгэлд төвлөрсөн код"
+          }
+        ]
+      },
+      {
+        "id": "04",
+        "title": "Шалгалт ба сайжруулалт",
+        "subtitle": "1–2 хоног",
+        "desc": "Бүх томоохон browser, төхөөрөмж, дэлгэцийн хэмжээ дээр бүрэн QA хийнэ. Та өөрөө тестлэх staging орчин авна. Таны хүссэн өөрчлөлтийг ямар ч саадгүй гүйцэтгэнэ — бүрэн сэтгэл ханамж хүртэл засварын тоо хязгааргүй. Дараагийн шат руу шилжихээс өмнө accessibility ба performance-г баталгаажуулна.",
+        "deliverables": [
+          {
+            "id": "crossBrowser",
+            "label": "Cross-browser тест"
+          },
+          {
+            "id": "staging",
+            "label": "Staging орчны хандалт"
+          },
+          {
+            "id": "audit",
+            "label": "Гүйцэтгэлийн аудитын тайлан"
+          },
+          {
+            "id": "unlimited",
+            "label": "Хязгааргүй засвар"
+          }
+        ]
+      },
+      {
+        "id": "05",
+        "title": "Launch ба өсөлт",
+        "subtitle": "Тасралтгүй",
+        "desc": "Бид deployment, DNS тохиргоо, launch дараах хяналтыг бүрэн хариуцна. Танай сайт downtime-гүй шууд амилна. Launch хийсний дараа 30 хоногийн турш гүйцэтгэлийг хянаж, аливаа асуудалд хариу өгнө. Тасралтгүй харилцагчдад A/B тест, өсөлтийн оновчлол хийж, сайтыг борлуулалтын машин болгоно.",
+        "deliverables": [
+          {
+            "id": "deploy",
+            "label": "Downtime-гүй deployment"
+          },
+          {
+            "id": "dnsSsl",
+            "label": "DNS & SSL тохиргоо"
+          },
+          {
+            "id": "support",
+            "label": "Launch дараах 30 хоногийн дэмжлэг"
+          },
+          {
+            "id": "analytics",
+            "label": "Analytics dashboard"
+          }
+        ]
+      }
+    ],
+    "timeline": {
+      "title": "Төслийн түгээмэл хугацаа",
+      "phases": [
+        {
+          "id": "discovery",
+          "phase": "Танилцах",
+          "duration": "1-р өдөр"
+        },
+        {
+          "id": "design",
+          "phase": "Дизайн",
+          "duration": "2–4-р өдөр"
+        },
+        {
+          "id": "build",
+          "phase": "Хөгжүүлэлт",
+          "duration": "4–10-р өдөр"
+        },
+        {
+          "id": "qa",
+          "phase": "QA",
+          "duration": "10–12-р өдөр"
+        },
+        {
+          "id": "launch",
+          "phase": "Launch",
+          "duration": "12–14-р өдөр"
+        }
+      ]
+    },
+    "faq": {
+      "badge": "Түгээмэл асуулт",
+      "title": "Процессын асуултууд",
+      "items": [
+        {
+          "id": "howLong",
+          "q": "Нийт процесс хэр хугацаа авдаг вэ?",
+          "a": "Стандарт агентлагийн вебсайт бол эхнээс дуустал 7–14 ажлын өдөр. Харилцагчийн портал, төлбөрийн интеграц, custom боломжтой төвөгтэй платформууд 3–5 долоо хоног авна. Бид эхлэхээс өмнө яг хугацааг тохирч, түүнээ мөрддөг."
+        },
+        {
+          "id": "whatPrepare",
+          "q": "Эхлэхээс өмнө юу бэлдэх хэрэгтэй вэ?",
+          "a": "Зөвхөн зорилго, таалагддаг жишээ (reference сайт байвал сайн), контент (текст, зураг, лого) байхад хангалттай. Шаардлагатай бол контент стратегийн зөвлөгөө өгнө. Танаас техникийн мэдлэг огт шаардахгүй."
+        },
+        {
+          "id": "changesDuringDev",
+          "q": "Хөгжүүлэлтийн явцад өөрчлөлт оруулж болох уу?",
+          "a": "Мэдээж. Дизайны үе шатанд дизайн өөрчлөлт үнэгүй бөгөөд хязгааргүй. Хөгжүүлэлтийн шатанд боломжит өөрчлөлтүүдийг багтаана — том scope нэмэлт бол үнийн шинэчлэл шаардлагатай байж болох ч үргэлж урьдчилан ярилцдаг."
+        },
+        {
+          "id": "afterLaunch",
+          "q": "Launch хийсний дараа юу болдог вэ?",
+          "a": "Бүх зүйл таны өмч болно — бүх source code, контент, account. Launch дараа 30 хоногийн үнэгүй дэмжлэг багтсан. Үүний дараа манай Maintenance Plan (3,000 CZK/сар) нь хостинг, аюулгүй байдлын шинэчлэлт, гүйцэтгэлийн хяналт, нэн тэргүүний техникийн дэмжлэгийг хамарна."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Төслөө эхлүүлэхэд бэлэн үү?",
+      "description": "Үнэгүй танилцах дуудлага захиалаад 24 цагийн дотор тогтмол үнийн санал аваарай.",
+      "ctas": [
+        {
+          "id": "bookDiscovery",
+          "label": "Танилцах дуудлага захиалах →"
+        },
+        {
+          "id": "viewServices",
+          "label": "Үйлчилгээг харах"
+        }
+      ]
+    }
+  },
+  "work": {
+    "hero": {
+      "badge": "Кейс судалгаа",
+      "titleLine1": "Бодит үр дүн,",
+      "titleLine2": "бодит харилцагч",
+      "subtitle": "Mockup биш. Таамаг биш. Бидний бодитоор бүтээсэн төслүүд — мөн үүнийг нотлох тоон үзүүлэлттэй.",
+      "stats": [
+        {
+          "id": "projectsShipped",
+          "value": "47+",
+          "label": "Хүргэсэн төсөл"
+        },
+        {
+          "id": "satisfaction",
+          "value": "98%",
+          "label": "Сэтгэл ханамжийн түвшин"
+        },
+        {
+          "id": "countries",
+          "value": "3",
+          "label": "Улс"
+        }
+      ]
+    },
+    "labels": {
+      "challenge": "Асуудал",
+      "solution": "Бидний шийдэл",
+      "results": "Үр дүн",
+      "services": "Үйлчилгээ:"
+    },
+    "cta": {
+      "badge": "Таны төсөл дараагийнх",
+      "title": "Энэ жагсаалтад нэгдэхэд бэлэн үү?",
+      "description": "Танай компанийг манай кейс судалгаанд нэмье. Үнэгүй танилцах дуудлага захиалаад ямар боломж байгааг хараарай.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Төслөө эхлүүлэх →"
+        },
+        {
+          "id": "howWeWork",
+          "label": "Бид хэрхэн ажилладаг"
+        }
+      ]
+    },
+    "caseStudies": [
+      {
+        "id": "techventures",
+        "client": "TechVentures Prague",
+        "category": "SaaS вебсайт + харилцагчийн портал",
+        "headline": "30 хоногт хөрвүүлэлт +340%",
+        "tagline": "Full-stack rebrand ба Next.js платформын launch",
+        "metrics": [
+          {
+            "id": "conversion",
+            "value": "+340%",
+            "label": "Хөрвүүлэлтийн түвшин"
+          },
+          {
+            "id": "delivery",
+            "value": "5 хоног",
+            "label": "Гүйцэтгэлийн хугацаа"
+          },
+          {
+            "id": "lighthouse",
+            "value": "98",
+            "label": "Lighthouse оноо"
+          },
+          {
+            "id": "downtime",
+            "value": "€0",
+            "label": "Launch үеийн downtime"
+          }
+        ],
+        "challenge": "TechVentures Prague нь илүү өнгөлөг дижитал төрхтэй өрсөлдөгчдөд enterprise харилцагчдаа алдаж байсан. Тэдний одоогийн WordPress сайт удаан, ерөнхий, SaaS бүтээгдэхүүний premium үнэ цэнийг илэрхийлж чадахгүй байв. Хөрвүүлэлт 1.2%-иас доош байсан.",
+        "solution": "Бид тэдний дижитал оролцоог Next.js 14, Supabase, custom client portal ашиглан эхнээс нь бүрэн шинэчилсэн. Шинэ сайт нь premium dark дизайн, интерактив бүтээгдэхүүний демо, одоогийн харилцагчдад зориулсан бүрэн dashboard-той болсон.",
+        "results": "Launch хийснээс 30 хоногийн дараа хөрвүүлэлт 1.2%-аас 4.2% болж, 340%-иар өссөн. Дундаж session хугацаа 2 дахин уртассан. 3 enterprise харилцагч худалдан авах шийдвэрт шинэ вебсайт нөлөөлсөн гэж шууд дурдсан.",
+        "services": [
+          {
+            "id": "s1",
+            "label": "Next.js вебсайт"
+          },
+          {
+            "id": "s2",
+            "label": "Харилцагчийн портал"
+          },
+          {
+            "id": "s3",
+            "label": "Supabase backend"
+          },
+          {
+            "id": "s4",
+            "label": "Брэнд төрх"
+          },
+          {
+            "id": "s5",
+            "label": "SEO стратеги"
+          }
+        ],
+        "quote": {
+          "text": "Digi Wolf манай платформыг 5 хоногт бүтээсэн. Чанар гайхалтай — эхний сард хөрвүүлэлт 340%-аар өссөн. Энэ жил хийсэн хамгийн зөв хөрөнгө оруулалт байсан.",
+          "author": "Arjun Sharma",
+          "role": "CEO, TechVentures Prague"
+        }
+      },
+      {
+        "id": "mnExportHub",
+        "client": "MN Export Hub",
+        "category": "E-commerce платформ + S.R.O. бүртгэл",
+        "headline": "Эхний 90 хоногт €180K орлого",
+        "tagline": "Гурван хэлтэй B2B marketplace + Чех компанийн бүртгэл",
+        "metrics": [
+          {
+            "id": "revenue",
+            "value": "€180K",
+            "label": "90 хоногийн орлого"
+          },
+          {
+            "id": "languages",
+            "value": "3 langs",
+            "label": "CZ / EN / MN"
+          },
+          {
+            "id": "delivery",
+            "value": "14 хоног",
+            "label": "Нийт гүйцэтгэл"
+          },
+          {
+            "id": "entity",
+            "value": "S.R.O.",
+            "label": "Чех хуулийн этгээд байгуулагдсан"
+          }
+        ],
+        "challenge": "Нэг Монгол бизнес эрхлэгч Монгол экспортлогчдыг ЕХ-ны худалдан авагчтай холбохыг хүссэн ч Чех хуулийн этгээд болон онлайн платформ аль аль нь байгаагүй. Нягт хугацаанд гурван хэлтэй B2B marketplace бүтээхтэй зэрэгцэн Чех S.R.O. бүртгэлийг шийдэх шаардлагатай байсан.",
+        "solution": "Бид Чех S.R.O. бүртгэлийг e-commerce платформтой параллель гүйцэтгэсэн. Marketplace нь Next.js дээр бүтэж, Чех/Англи/Монгол бүрэн орчуулгатай, B2B inquiry урсгалтай, listing болон lead удирдах admin portal-той болсон.",
+        "results": "Платформ 14 хоногт launch хийсэн. Эхний 90 хоногт MN Export Hub Монгол экспортлогч ба Чех/Словак худалдан авагчдын хооронд €180K B2B хэлцэл зуучилсан. Компани эхний өдрөөс хүчин төгөлдөр Чех S.R.O. статустайгаар үйл ажиллагаагаа эхлүүлсэн.",
+        "services": [
+          {
+            "id": "s1",
+            "label": "E-commerce платформ"
+          },
+          {
+            "id": "s2",
+            "label": "Чех S.R.O. байгуулах"
+          },
+          {
+            "id": "s3",
+            "label": "Олон хэл (CZ/EN/MN)"
+          },
+          {
+            "id": "s4",
+            "label": "B2B портал"
+          },
+          {
+            "id": "s5",
+            "label": "Admin dashboard"
+          }
+        ],
+        "quote": {
+          "text": "Прага дахь Монгол бизнес эрхлэгчийн хувьд миний хэлээр — жинхэнэ утгаараа — ярьдаг агентлагтай байх үнэлэшгүй. Тэд компани бүртгэж, платформыг зэрэг бүтээсэн. Үр дүн өөрөө нотолно.",
+          "author": "Enkhmaa B.",
+          "role": "Founder, MN Export Hub"
+        }
+      },
+      {
+        "id": "novakConsulting",
+        "client": "Novák Consulting s.r.o.",
+        "category": "Агентлагийн вебсайт + AI автоматжуулалт",
+        "headline": "AI workflow-оор долоо хоногт 23 цаг хэмнэв",
+        "tagline": "Lead qualification chatbot + premium вебсайт",
+        "metrics": [
+          {
+            "id": "timeSaved",
+            "value": "23h/wk",
+            "label": "Админ ажилд хэмнэсэн цаг"
+          },
+          {
+            "id": "qualifiedLeads",
+            "value": "4.8×",
+            "label": "Илүү чанартай лид"
+          },
+          {
+            "id": "delivery",
+            "value": "6 хоног",
+            "label": "Вебсайтын гүйцэтгэл"
+          },
+          {
+            "id": "satisfaction",
+            "value": "100%",
+            "label": "Харилцагчийн сэтгэл ханамж"
+          }
+        ],
+        "challenge": "Tomáš Novák нь лид ангилах, prospect-уудтай follow-up хийх, зөвлөгөөний цаг товлох ажлыг гараар хийж долоо хоногт 20+ цаг зарцуулдаг байсан. Одоо байгаа сайт нь хуучирсан, хөрвүүлэлтгүй байсан. Түүнд шинэ дижитал төрх болон цаг хэмнэх автоматжуулалт хоёулаа хэрэгтэй байв.",
+        "solution": "Бид premium зөвлөх үйлчилгээний вебсайт бүтээж, prospect-уудыг урьдчилан ангилж, Calendly-д шууд цаг товлож, хувийн follow-up sequence илгээдэг custom AI lead qualification chatbot нэгтгэсэн. Бүх pipeline бие даан ажилладаг.",
+        "results": "AI систем нь гараар хийх админ ажлыг 20+ цагаас долоо хоногт 3 цагаас доош бууруулсан. Лидийн чанар мэдэгдэхүйц сайжирч, Tomáš зөвхөн 80% худалдан авахад бэлэн prospect-тэй ярьдаг болсон. Эхний улиралд орлого 60%-иар өссөн.",
+        "services": [
+          {
+            "id": "s1",
+            "label": "Зөвлөх үйлчилгээний вебсайт"
+          },
+          {
+            "id": "s2",
+            "label": "AI chatbot"
+          },
+          {
+            "id": "s3",
+            "label": "Лид автоматжуулалт"
+          },
+          {
+            "id": "s4",
+            "label": "Calendly интеграц"
+          },
+          {
+            "id": "s5",
+            "label": "И-мэйлийн sequence"
+          }
+        ],
+        "quote": {
+          "text": "Тэд миний Чех S.R.O. бүртгэлийг хийж байхдаа агентлагийн сайтыг зэрэг хөгжүүлсэн. Дараа нь лидийн pipeline-г бүрэн автоматжуулсан. Мэргэжлийн, хурдан, стрессгүй.",
+          "author": "Tomáš Novák",
+          "role": "Founder, Novák Consulting"
+        }
+      }
+    ]
+  },
+  "blog": {
+    "badge": "Удахгүй",
+    "title": "Санал, шинэчлэлт",
+    "subtitle": "Уншихад үнэ цэнтэй контент бэлтгэж байна. Веб хөгжүүлэлт, AI автоматжуулалт, Чех компанийн бүртгэл, Төв Европ дахь бизнесийн өсөлтийн бодит гарын авлагууд. Удахгүй эргэн шалгаарай.",
+    "form": {
+      "placeholder": "your@email.com",
+      "submit": "Надад мэдэгд",
+      "success": "Та жагсаалтад орлоо — бид launch хийхэд мэдэгдэнэ."
+    }
+  },
+  "caseStudies": {
+    "hero": {
+      "badge": "Кейс судалгаа",
+      "titleLine1": "Бодит төслүүд.",
+      "titleLine2": "Бодит үр дүн.",
+      "subtitle": "Манай портфолиод багтсан төсөл бүр өөрчлөлтийн түүх. Энд бидний хамгийн нөлөөтэй 6 ажлыг тоон нотолгоотой танилцуулж байна.",
+      "stats": [
+        {
+          "id": "projects",
+          "n": "6+",
+          "l": "Төсөл"
+        },
+        {
+          "id": "clientRevenue",
+          "n": "€400K+",
+          "l": "Харилцагчийн орлого"
+        },
+        {
+          "id": "averageRating",
+          "n": "4.9★",
+          "l": "Дундаж үнэлгээ"
+        }
+      ]
+    },
+    "filters": [
+      {
+        "id": "all",
+        "label": "Бүгд"
+      },
+      {
+        "id": "websites",
+        "label": "Вебсайт"
+      },
+      {
+        "id": "sroFormation",
+        "label": "S.R.O. бүртгэл"
+      },
+      {
+        "id": "aiAutomation",
+        "label": "AI автоматжуулалт"
+      }
+    ],
+    "labels": {
+      "challenge": "Асуудал",
+      "solution": "Шийдэл",
+      "results": "Үр дүн",
+      "techStack": "Tech Stack"
+    },
+    "cta": {
+      "titleLine1": "Өөрийн кейсийг",
+      "titleLine2": "бичихэд бэлэн үү?",
+      "subtitle": "DigiWolf-д итгэж дижитал төрхөө шинэчилсэн компаниудтай нэгдээрэй. Танай үр дүнг бидний дараагийн түүх болгоё.",
+      "ctas": [
+        {
+          "id": "startProject",
+          "label": "Төслөө эхлүүлэх →"
+        },
+        {
+          "id": "viewServices",
+          "label": "Үйлчилгээг харах"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "techventures",
+        "name": "TechVentures Prague",
+        "client": "TechVentures s.r.o.",
+        "category": "Вебсайт",
+        "tag": "SaaS вебсайт",
+        "metric": "+340%",
+        "metricLabel": "30 хоногийн хөрвүүлэлт",
+        "challenge": "TechVentures нь хуучирсан, удаан ачаалдаг, mobile UX муутай сайтаасаа болж лидээ алдаж байсан. SaaS бүтээгдэхүүн нь маш сайн ч enterprise prospect-д үнэ цэнээ онлайнаар ойлгуулж чадахгүй байв.",
+        "solution": "Бид бүтээгдэхүүнд төвлөрсөн landing page, интерактив demo, ойлгомжтой pricing, SSR оновчлолтой өндөр хурдны Next.js build-ээр дижитал туршлагыг эхнээс нь бүрэн шинэчилсэн.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "30 хоногт demo booking 340%-иар өссөн"
+          },
+          {
+            "id": "r2",
+            "text": "Хуудасны ачаалах хугацаа 7.2s-оос 0.9s болов"
+          },
+          {
+            "id": "r3",
+            "text": "Bounce rate 78%-аас 31% болж буурсан"
+          },
+          {
+            "id": "r4",
+            "text": "Launch дараах Q1-д MRR €42,000-аар өссөн"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js 14"
+          },
+          {
+            "id": "t2",
+            "label": "TypeScript"
+          },
+          {
+            "id": "t3",
+            "label": "Framer Motion"
+          },
+          {
+            "id": "t4",
+            "label": "Vercel"
+          },
+          {
+            "id": "t5",
+            "label": "Stripe"
+          }
+        ],
+        "testimonial": "DigiWolf манай онлайн төрхийг бүрэн өөрчилсөн. Бид лид алдахаас лидээ маш өндөр түвшинд хөрвүүлдэг болсон. Үр дүн бүхнийг хэлж байна.",
+        "author": "Tomáš Novotný",
+        "role": "CEO, TechVentures s.r.o."
+      },
+      {
+        "id": "mnExportHub",
+        "name": "MN Export Hub",
+        "client": "MN Export Hub GmbH",
+        "category": "S.R.O. бүртгэл",
+        "tag": "E-commerce + S.R.O.",
+        "metric": "€180K",
+        "metricLabel": "90 хоногийн орлого",
+        "challenge": "Нэг Монгол экспортын компани Европын зах зээлд нэвтрэхийг хүссэн ч ЕХ-ны хуулийн этгээдгүй, локалчлагдсан вебсайтгүй, Чехийн бизнесийн compliance шаардлагын ойлголтгүй байсан.",
+        "solution": "Эхнээс дуустал шийдэл: Чех S.R.O. бүртгэл, ЕХ-ны VAT тохиргоо, Чех ба Англи хэлтэй e-commerce платформ, хил дамнасан худалдаанд зориулсан compliance framework.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "S.R.O. 8 ажлын хоногт бүртгэгдсэн"
+          },
+          {
+            "id": "r2",
+            "text": "Эхний 90 хоногт €180,000 орлого үүссэн"
+          },
+          {
+            "id": "r3",
+            "text": "ЕХ-ны 14 wholesale худалдан авагч амжилттай onboarding хийсэн"
+          },
+          {
+            "id": "r4",
+            "text": "ЕХ-ны 3 jurisdication-д бүрэн VAT compliance"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js"
+          },
+          {
+            "id": "t2",
+            "label": "Shopify"
+          },
+          {
+            "id": "t3",
+            "label": "Czech Trade Licence"
+          },
+          {
+            "id": "t4",
+            "label": "EU VAT System"
+          },
+          {
+            "id": "t5",
+            "label": "Stripe"
+          }
+        ],
+        "testimonial": "Бид Европт огт суурьгүй байснаас 3 сарын дотор ашигтай e-commerce үйл ажиллагаатай, бүрэн ажиллагаатай Чех компани болсон. Үнэхээр гайхалтай үйлчилгээ.",
+        "author": "Boldbaatar Gantulga",
+        "role": "Director, MN Export Hub"
+      },
+      {
+        "id": "novakConsulting",
+        "name": "Novak Consulting",
+        "client": "Novak & Partners s.r.o.",
+        "category": "Вебсайт",
+        "tag": "Агентлагийн вебсайт",
+        "metric": "4 Days",
+        "metricLabel": "Brief-ээс live сайт хүртэл",
+        "challenge": "Novak Consulting том харилцагчийн pitch-ээс өмнө яаралтай мэргэжлийн вебсайт хэрэгтэй байсан. Одоогийн сайт нь 2018 оны template, эвдэрсэн холбоос, SSL-гүй, брэнд төрхгүй байв.",
+        "solution": "Хурдтай sprint delivery — брэнд төрхийн refresh, custom Next.js сайт, контент copywriting, SEO суурь, 96 цагаас бага хугацаанд чанараа алдалгүй бүрэн deployment.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "4 ажлын хоногт бүрэн live болсон"
+          },
+          {
+            "id": "r2",
+            "text": "Харилцагчийн pitch дээр €65,000 гэрээ хожсон"
+          },
+          {
+            "id": "r3",
+            "text": "Google PageSpeed 98/100 оноо"
+          },
+          {
+            "id": "r4",
+            "text": "2 долоо хоногт inbound хүсэлт 3 дахин өссөн"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js 14"
+          },
+          {
+            "id": "t2",
+            "label": "Tailwind"
+          },
+          {
+            "id": "t3",
+            "label": "Vercel"
+          },
+          {
+            "id": "t4",
+            "label": "Google Analytics 4"
+          },
+          {
+            "id": "t5",
+            "label": "Cloudflare"
+          }
+        ],
+        "testimonial": "Үнэхээр гайхсан. Эхний дуудлагаас хойш 4 хоногт live, өнгөлөг сайттай болж, €65K гэрээ хожиход тусалсан. DigiWolf бусдын хийж чадаагүйг хийсэн.",
+        "author": "Petra Nováková",
+        "role": "Managing Partner, Novak & Partners"
+      },
+      {
+        "id": "fintechBratislava",
+        "name": "FinTech Bratislava",
+        "client": "FinTech Bratislava a.s.",
+        "category": "AI Automation",
+        "tag": "Web App + AI",
+        "metric": "80%",
+        "metricLabel": "Гараар хийх ажлын бууралт",
+        "challenge": "Нэг fintech startup нь бүрэн автоматжаагүй, алдаатай өгөгдөл шивэлт, тайлан гаргалт, харилцагч onboarding-д долоо хоногт 120+ цаг зарцуулж байсан.",
+        "solution": "Custom AI automation pipeline: GPT-4 баримт боловсруулалт, автомат onboarding workflow, real-time тайлангийн dashboard, одоо ашиглаж буй банкны API-тай интеграц.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "Гараар хийх админ ажил 80%-иар буурсан"
+          },
+          {
+            "id": "r2",
+            "text": "Орлого үүсгэх ажилд долоо хоногт 120 цаг чөлөөлөгдсөн"
+          },
+          {
+            "id": "r3",
+            "text": "Алдааны түвшин 12%-аас 0.3% болсон"
+          },
+          {
+            "id": "r4",
+            "text": "Харилцагч onboarding хугацаа: 5 өдөр → 2 цаг"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Python"
+          },
+          {
+            "id": "t2",
+            "label": "OpenAI GPT-4"
+          },
+          {
+            "id": "t3",
+            "label": "Next.js"
+          },
+          {
+            "id": "t4",
+            "label": "PostgreSQL"
+          },
+          {
+            "id": "t5",
+            "label": "n8n"
+          },
+          {
+            "id": "t6",
+            "label": "Zapier"
+          }
+        ],
+        "testimonial": "DigiWolf-ийн бүтээсэн AI автоматжуулалт бидний ажиллах арга барилыг үндсээр нь өөрчилсөн. Бид бүтээмжтэй цагийн бүтэн багийг буцаан авсан мэт болсон.",
+        "author": "Martin Kováč",
+        "role": "CTO, FinTech Bratislava"
+      },
+      {
+        "id": "pragueBeautyStudio",
+        "name": "Prague Beauty Studio",
+        "client": "Lumière Beauty Studio",
+        "category": "Вебсайт",
+        "tag": "Брэндинг + Веб",
+        "metric": "5x",
+        "metricLabel": "Instagram дагагчийн өсөлт",
+        "challenge": "Прага дахь premium гоо сайхны студи нь нэгдсэн брэнд төрхгүй, сошиал оролцоо бараггүй, зөвхөн ам дамжсан хэрэглэгч дээр тулгуурлаж байсан тул шинэ өндөр үнэ цэнтэй харилцагч татах боломжгүй байв.",
+        "solution": "Бүрэн брэнд төрхийн систем, онлайн цаг захиалгатай luxury вебсайт, сошиал стратеги, брэнд контент template, Google My Business оновчлолын кампанит ажил.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "60 хоногт Instagram 5x өссөн (1.2K → 6.1K)"
+          },
+          {
+            "id": "r2",
+            "text": "Онлайн захиалга 220%-иар өссөн"
+          },
+          {
+            "id": "r3",
+            "text": "Дундаж захиалгын үнэ 45%-иар нэмэгдсэн"
+          },
+          {
+            "id": "r4",
+            "text": "Прагийн lifestyle сэтгүүлд онцлогдсон"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js"
+          },
+          {
+            "id": "t2",
+            "label": "Calendly API"
+          },
+          {
+            "id": "t3",
+            "label": "Instagram Graph API"
+          },
+          {
+            "id": "t4",
+            "label": "Figma"
+          },
+          {
+            "id": "t5",
+            "label": "Adobe CC"
+          }
+        ],
+        "testimonial": "DigiWolf манай luxury positioning-ийг төгс ойлгосон. Тэдний бүтээсэн брэнд, сайт бидний хүссэн өндөр түвшний харилцагчдыг яг татаж байна.",
+        "author": "Karolína Dvořáčková",
+        "role": "Owner, Lumière Beauty Studio"
+      },
+      {
+        "id": "mongolianTradeHub",
+        "name": "Mongolian Trade Hub",
+        "client": "Mongolian Trade Hub s.r.o.",
+        "category": "S.R.O. бүртгэл",
+        "tag": "S.R.O. + Гурван хэлтэй сайт",
+        "metric": "3 Markets",
+        "metricLabel": "60 хоногт ЕХ тэлэлт",
+        "challenge": "Томоохон Монгол худалдааны компани Төв Европт B2B худалдаа хийх ЕХ-ны хууль ёсны төв байгуулахыг хүссэн ч ЕХ-ны дэд бүтэц, хуулийн этгээд, олон хэлтэй дижитал оролцоо байгаагүй.",
+        "solution": "Чех S.R.O. бүртгэл, гурван хэлтэй вебсайт (Англи, Чех, Монгол), ЕХ худалдааны compliance тохиргоо, гаалийн баримтын workflow, Прагийн Худалдаа аж үйлдвэрийн танхимтай стратегийн түншлэл.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "S.R.O. 7 ажлын хоногт бүрэн ажиллагаатай болсон"
+          },
+          {
+            "id": "r2",
+            "text": "ЕХ-ны 3 зах зээлд зэрэг тэлсэн"
+          },
+          {
+            "id": "r3",
+            "text": "60 хоногт 8 B2B түншлэл байгуулсан"
+          },
+          {
+            "id": "r4",
+            "text": "3 хэл дээр qualified lead авчирдаг гурван хэлтэй сайт"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js i18n"
+          },
+          {
+            "id": "t2",
+            "label": "Czech Legal Framework"
+          },
+          {
+            "id": "t3",
+            "label": "EU Trade Law"
+          },
+          {
+            "id": "t4",
+            "label": "Vercel"
+          },
+          {
+            "id": "t5",
+            "label": "HubSpot"
+          }
+        ],
+        "testimonial": "DigiWolf манай Европын тэлэлтийг маш smooth болгосон. Хуулийн этгээдээс эхлээд гурван хэлтэй вебсайт хүртэл бүх нарийн деталиудыг хурд, мэргэжлийн түвшинд шийдсэн.",
+        "author": "Enkhjargal Dorj",
+        "role": "CEO, Mongolian Trade Hub"
+      }
+    ]
+  },
+  "legal": {
+    "privacy": {
+      "badge": "Эрх зүй",
+      "title": "Нууцлалын бодлого",
+      "intro": "Энэхүү Нууцлалын бодлого нь Digi Wolf Agency s.r.o. таны хувийн мэдээллийг GDPR болон Чехийн холбогдох хуульд нийцүүлэн хэрхэн цуглуулж, ашиглаж, хамгаалдгийг тайлбарлана.",
+      "companyLine": "Company: Digi Wolf Agency s.r.o., IČO 243 44 648, Varšavská 715/36, Vinohrady, 120 00 Praha 2",
+      "lastUpdated": "Сүүлд шинэчилсэн: 13 June 2026",
+      "contentsTitle": "Агуулга",
+      "contactCardTitle": "Таны өгөгдлийн талаар асуулт байна уу?",
+      "contactCardText": "info@digiwolf.agency хаягаар холбогдоно уу. Бид өгөгдлийн бүх хүсэлтэд 30 хоногийн дотор хариулна.",
+      "contactButton": "Холбоо барих →",
+      "sections": [
+        {
+          "id": "1",
+          "title": "1. Бид хэн бэ",
+          "content": "Digi Wolf Agency s.r.o., IČO 243 44 648 (\"бид\", \"манай\", \"бидэнд\") нь Бүгд Найрамдах Чех Улсад бүртгэлтэй дижитал агентлаг юм. Манай бүртгэлтэй хаяг: Varšavská 715/36, Vinohrady, 120 00 Praha 2. Бид Европын Холбоонд үйл ажиллагаа явуулдаг бөгөөд info@digiwolf.agency хаягаар холбогдож болно.\n\nБид digiwolf.agency вебсайт болон манай үйлчилгээгээр цуглуулсан хувийн мэдээллийн data controller болно."
+        },
+        {
+          "id": "2",
+          "title": "2. Бид ямар өгөгдөл цуглуулдаг вэ",
+          "content": "Бид таны шууд өгсөн хувийн мэдээлэл болон сайтад зочлоход автоматаар үүсэх хязгаарлагдмал техникийн өгөгдлийг цуглуулна.\n\nХолбоо барих форм (/contact):\n• Нэр\n• И-мэйл хаяг\n• Компанийн нэр (сонголтоор)\n• Зурвасын агуулга\n• Форм дээр сонгосон үйлчилгээ ба төсвийн хүрээ\n\nЗахиалга (/book via Cal.com):\n• Нэр\n• И-мэйл хаяг\n• Дуудлагын захиалга хийхэд шаардлагатай мэдээлэл (огноо, цаг, event type, таны оруулсан тэмдэглэл)\n\nТехникийн өгөгдөл:\n• IP хаяг, browser төрөл, төхөөрөмжийн төрөл, зочилсон хуудас — аюулгүй байдал ба гүйцэтгэлийн зорилгоор манай хостинг үйлчилгээ автоматаар цуглуулна\n\nБид special category data (эрүүл мэнд, арьс өнгө, улс төрийн үзэл гэх мэт) цуглуулахгүй бөгөөд таны хувийн мэдээллийг зардаггүй."
+        },
+        {
+          "id": "3",
+          "title": "3. Бид таны өгөгдлийг хэрхэн ашигладаг вэ",
+          "content": "Бид таны хувийн мэдээллийг дараах зорилгоор боловсруулдаг:\n\n• Холбоо барих формын хүсэлтэд хариу өгөх, төслийн follow-up хийх (гэрээний өмнөх алхам / хууль ёсны ашиг сонирхол)\n• Cal.com-оор захиалсан танилцах дуудлага, зөвлөгөөг товлох, баталгаажуулах, удирдах (гэрээний өмнөх алхам / гэрээний зайлшгүй шаардлага)\n• Та форм эсвэл захиалга илгээхэд манай багт дотоод и-мэйл мэдэгдэл илгээх (хууль ёсны ашиг сонирхол)\n• Хүсэлт ба захиалгын бүртгэлийг манай өгөгдлийн санд хадгалах (хууль ёсны ашиг сонирхол / гэрээний зайлшгүй шаардлага)\n• Вебсайтаа ажиллуулах, хамгаалах, сайжруулах (хууль ёсны ашиг сонирхол)\n• Чех болон ЕХ-ны хуулийн шаардлагыг биелүүлэх\n\nБид таны өгөгдлийг автомат шийдвэр гаргалт эсвэл profile үүсгэхэд ашиглахгүй."
+        },
+        {
+          "id": "4",
+          "title": "4. Боловсруулалтын хууль зүйн үндэс (GDPR Art. 6)",
+          "content": "Ерөнхий өгөгдөл хамгаалах журам (EU) 2016/679 (\"GDPR\")-ын дагуу бид дараах хууль зүйн үндэслэлд тулгуурлана:\n\n• Art. 6(1)(b) — Гэрээний зайлшгүй шаардлага / гэрээний өмнөх алхам: таны хүсэлтэд хариулах, дуудлага товлох, хүссэн үйлчилгээг хүргэхэд шаардлагатай боловсруулалт\n• Art. 6(1)(f) — Хууль ёсны ашиг сонирхол: вебсайт ажиллуулах, бүртгэл хадгалах, дотоод мэдэгдэл илгээх, зүй бус хэрэглээнээс сэргийлэх — таны эрхтэй тэнцвэржүүлэн\n• Art. 6(1)(c) — Хууль ёсны үүрэг: Чех эсвэл ЕХ-ны хуульд нийцэхэд шаардлагатай боловсруулалт (жишээ нь харилцагчийн нягтлангийн бүртгэл)\n• Art. 6(1)(a) — Зөвшөөрөл: зөвхөн бид тодорхой зөвшөөрөл хүссэн тохиолдолд (жишээ нь сонголтот маркетинг). Та зөвшөөрлөө хүссэн үедээ цуцалж болно."
+        },
+        {
+          "id": "5",
+          "title": "5. Өгөгдөл хадгалах хугацаа",
+          "content": "Бид хувийн мэдээллийг дээрх зорилгод шаардлагатай хугацаанд л хадгална:\n\n• Холбоо барих формын мэдээлэл: тантай сүүлд харилцсанаас хойш 3 жил хүртэл, хэрэв харилцагчийн харилцаа үргэлжилбэл түүнээс урт\n• Захиалгын бүртгэл: товлосон дуудлагын дараа 3 жил хүртэл, эсвэл та харилцагч болбол илүү урт\n• Харилцагчийн төсөл ба нэхэмжлэлийн өгөгдөл: Чехийн нягтлан бодох хуулийн шаардлагаар 10 жил хүртэл\n• Сервер ба аюулгүй байдлын лог: ихэвчлэн 90 хоног хүртэл\n\nӨгөгдөл шаардлагагүй болмогц бид устгах эсвэл танигдахгүй болгох арга хэмжээ авна. Та эрт устгах хүсэлт гаргаж болно (9-р хэсгийг үзнэ үү)."
+        },
+        {
+          "id": "6",
+          "title": "6. Гуравдагч этгээдийн боловсруулагчид",
+          "content": "Бид вебсайтаа ажиллуулах, таны өгөгдлийг боловсруулахад итгэмжлэгдсэн үйлчилгээ үзүүлэгчдийг ашигладаг. Тэд бүгд манай заавраар data processor байдлаар ажиллана:\n\n• Supabase — холбоо барих ба захиалгын өгөгдлийн сан хадгалалт (ЕХ-д суурилсан дэд бүтэц)\n• Resend — холбоо барих форм илгээх үед манай багт transactional и-мэйл хүргэлт\n• Cal.com — /book хуудсанд суурилсан цаг товлох платформ; нэр, и-мэйл, захиалгын мэдээллийг боловсруулна\n• Vercel — вебсайтын хостинг, контент хүргэлт, serverless function; IP хаяг ба request лог боловсруулж болно\n\nШаардлагатай тохиолдолд эдгээр үйлчилгээ үзүүлэгчидтэй data processing agreement байгуулсан. Бид тэдэнд таны өгөгдлийг өөрсдийн маркетингийн зорилгоор ашиглах зөвшөөрөл өгдөггүй."
+        },
+        {
+          "id": "7",
+          "title": "7. Олон улсын дамжуулалт",
+          "content": "Бид өгөгдлийг Европын Эдийн Засгийн Бүс (EEA)-д боловсруулахыг зорьдог. Гэхдээ зарим үйлчилгээ үзүүлэгч (Vercel, Cal.com зэрэг) өгөгдлийг АНУ эсвэл EEA-аас гадуурх бусад улсад боловсруулах боломжтой.\n\nДамжуулалт үүсэх үед бид GDPR-ийн V бүлэгт заасан зохих хамгаалалтыг ашигладаг — Европын Комиссоор батлагдсан Standard Contractual Clauses эсвэл тохирох adequacy decision зэрэг.\n\nТодорхой дамжуулалтын хамгаалалтын талаар нэмэлт мэдээлэл авахыг хүсвэл бидэнтэй холбогдоно уу."
+        },
+        {
+          "id": "8",
+          "title": "8. Cookie болон ижил төрлийн технологи",
+          "content": "Манай вебсайт нь үндсэн ажиллагаа, аюулгүй байдалд шаардлагатай strictly necessary cookie ашигладаг. Та дуудлага захиалах үед Cal.com-ийн суулгасан scheduler өөрийн cookie-г тохируулж болно.\n\nБид одоогоор digiwolf.agency дээр analytics эсвэл advertising cookie ашигладаггүй. Та манай cookie мэдэгдэлд хариулахад таны сонголт browser дээр locally хадгалагдана.\n\nДэлгэрэнгүйг /cookies дахь Cookie бодлогоос үзнэ үү."
+        },
+        {
+          "id": "9",
+          "title": "9. GDPR-ийн дагуух таны эрхүүд (Art. 15–22)",
+          "content": "Танд хувийн мэдээлэлтэй холбоотой дараах эрхүүд бий:\n\n• Хандах эрх (Art. 15): бидний хадгалж буй таны хувийн мэдээллийн хуулбар хүсэх\n• Залруулах эрх (Art. 16): буруу эсвэл дутуу мэдээллийг засуулах\n• Устгуулах эрх (Art. 17): мэдээллээ устгуулах (\"мартагдах эрх\")\n• Хязгаарлах эрх (Art. 18): тодорхой нөхцөлд мэдээллийн боловсруулалтыг хязгаарлуулах\n• Өгөгдөл дамжуулах эрх (Art. 20): мэдээллээ бүтэцтэй, түгээмэл форматаар авах\n• Эсэргүүцэх эрх (Art. 21): хууль ёсны ашиг сонирхолд тулгуурласан боловсруулалтад эсэргүүцэх\n• Зөвшөөрлөө цуцлах эрх (Art. 7(3)): боловсруулалт зөвшөөрөлд тулгуурласан бол хүссэн үедээ цуцлах\n\nЭдгээр эрхээ хэрэгжүүлэх бол info@digiwolf.agency хаягаар и-мэйл илгээнэ үү. Бид 30 хоногийн дотор хариулна.\n\nМөн та Чехийн хяналтын байгууллагад гомдол гаргах эрхтэй:\n\nOffice for Personal Data Protection (Úřad pro ochranu osobních údajů)\nPplk. Sochora 27, 170 00 Prague 7, Czech Republic\nwww.uoou.cz"
+        },
+        {
+          "id": "10",
+          "title": "10. Аюулгүй байдал",
+          "content": "Бид таны хувийн мэдээллийг хамгаалахад шаардлагатай техник, зохион байгуулалтын арга хэмжээг хэрэгжүүлдэг, үүнд:\n\n• Шифрлэгдсэн өгөгдөл дамжуулалт (HTTPS/TLS)\n• Supabase-р дамжуулан өгөгдлийн сангийн шифрлэгдсэн хадгалалт\n• Хүсэлт ба захиалгын өгөгдлийг хэн харахыг хязгаарласан access control\n• Ирж буй захиалгын webhook signature шалгалт\n\nИнтернэтээр дамжих ямар ч арга 100% аюулгүй байдаггүй. Бид боломжит бүх урьдчилан сэргийлэх арга хэмжээг авдаг ч бүрэн аюулгүй байдлыг баталж чадахгүй."
+        },
+        {
+          "id": "11",
+          "title": "11. Энэхүү бодлогод орох өөрчлөлт",
+          "content": "Бид энэхүү Нууцлалын бодлогыг үе үе шинэчилж болно. Чухал өөрчлөлтийг энэ хуудсанд шинэ \"Сүүлд шинэчилсэн\" огноотой нийтэлнэ. Шаардлагатай тохиолдолд и-мэйлээр мэдэгдэх боломжтой.\n\nӨөрчлөлтийн дараа манай вебсайтыг үргэлжлүүлэн ашиглах нь шинэчилсэн бодлогыг зөвшөөрсөнд тооцогдоно."
+        }
+      ]
+    },
+    "terms": {
+      "badge": "Эрх зүй",
+      "title": "Үйлчилгээний нөхцөл",
+      "intro": "Эдгээр Үйлчилгээний нөхцөл нь Digi Wolf Agency s.r.o.-ийн үйлчилгээг ашиглах харилцааг зохицуулна. Манай үйлчилгээг авахын өмнө анхааралтай уншина уу.",
+      "companyLine": "Company: Digi Wolf Agency s.r.o., IČO 243 44 648",
+      "lastUpdated": "Сүүлд шинэчилсэн: 13 June 2026",
+      "governingLaw": "Хэрэгжих хууль: Бүгд Найрамдах Чех Улс",
+      "contentsTitle": "Агуулга",
+      "contactCardTitle": "Нөхцөлийн талаар асуулт байна уу?",
+      "contactCardText": "Эдгээр Нөхцөлийн талаар асуулт байвал info@digiwolf.agency хаягаар холбогдоно уу.",
+      "contactButton": "Холбоо барих →",
+      "sections": [
+        {
+          "id": "1",
+          "title": "1. Нөхцөлийг зөвшөөрөх",
+          "content": "Digi Wolf Agency s.r.o., IČO 243 44 648 (\"Agency\", \"бид\", \"бидэнд\"), бүртгэлтэй хаяг Varšavská 715/36, Vinohrady, 120 00 Praha 2, манай үйлчилгээ авах, digiwolf.agency вебсайт ашиглах, холбоо барих форм илгээх, эсвэл сайтаар дамжуулан дуудлага захиалах үед та (\"Харилцагч\", \"та\") эдгээр Үйлчилгээний нөхцөлийг зөвшөөрч байна.\n\nЭдгээр Нөхцөл нь Чехийн хуулийн дагуу хууль зүйн хүчинтэй гэрээ юм. Хэрэв та зөвшөөрөхгүй бол манай вэбсайт, үйлчилгээг бүү ашиглана уу.\n\nТаны өгсөн хувийн мэдээллийг /privacy дахь Нууцлалын бодлогын дагуу боловсруулна."
+        },
+        {
+          "id": "2",
+          "title": "2. Манай вебсайтыг ашиглах",
+          "content": "2.1 Та digiwolf.agency-г зөвхөн хууль ёсны зорилгоор ашиглаж болно.\n\n2.2 Та сайтыг доголдуулах, системд зөвшөөрөлгүй нэвтрэх, контентыг их хэмжээгээр scrape хийх, эсвэл формоор худал/төөрөгдүүлсэн мэдээлэл илгээх ёсгүй.\n\n2.3 Захиалга /book дээр суурилсан Cal.com-оор хийгдэнэ. Захиалахдаа та нэр, холбоо барих мэдээллээ үнэн зөв өгөхийг зөвшөөрнө. Цуцлалт, дахин товлолт нь Cal.com интерфейс болон манай баталгаажуулах харилцааны дагуу хийгдэнэ.\n\n2.4 Эдгээр Нөхцөл зөрчигдсөн гэж үндэслэлтэйгээр үзвэл бид хандалтыг түдгэлзүүлэх эрхтэй."
+        },
+        {
+          "id": "3",
+          "title": "3. Үйлчилгээ",
+          "content": "Бид дараах дижитал үйлчилгээнүүдийг (үүнээр хязгаарлагдахгүйгээр) үзүүлнэ:\n\n• Вебсайт дизайн ба хөгжүүлэлт\n• Веб апп болон mobile app хөгжүүлэлт\n• AI автоматжуулалт ба workflow хэрэгжилт\n• Чех S.R.O. компанийн бүртгэлд туслалцаа\n• Search engine optimisation (SEO)\n• Брэнд төрхийн дизайн\n• Вебсайт арчилгаа ба дэмжлэг\n\nТөсөл тус бүрийн үйлчилгээ, хүргэлт, хугацаа, үнийн нөхцөл нь талуудын тохирсон тусгай Project Agreement эсвэл Statement of Work (\"SOW\")-д тусгагдана."
+        },
+        {
+          "id": "4",
+          "title": "4. Төлбөрийн нөхцөл",
+          "content": "3.1 Төлбөрийн хэмжээ нь холбогдох Project Agreement эсвэл нэхэмжлэлд тусгагдана.\n\n3.2 Өөрөөр тохироогүй бол нэхэмжлэлийн огнооноос 14 хоногийн дотор төлбөр төлнө.\n\n3.3 Бид ихэвчлэн ажлыг эхлүүлэхээс өмнө 50% урьдчилгаа, үлдэгдлийг дуусмагц авдаг.\n\n3.4 Хугацаа хэтэрсэн төлбөрт Чехийн хуулийн дагуу хуульд заасан хүү тооцогдож болно (Act No. 513/1991 Coll.).\n\n3.5 Бүх үнэ өөрөөр заагаагүй бол Чех крон (CZK)-оор илэрхийлэгдэнэ. Нэхэмжлэл дээр тодорхой заагаагүй бол бид НӨАТ төлөгчөөр бүртгэлгүй."
+        },
+        {
+          "id": "5",
+          "title": "5. Оюуны өмч",
+          "content": "4.1 Бүрэн төлбөр хийгдсэний дараа харилцагч төсөлд тусгайлан бүтээсэн бүх custom хүргэлтийн (вебсайт, код, дизайн, copy) бүрэн өмчлөлийг авна.\n\n4.2 Харилцагч бичгээр нууцлал хүсээгүй тохиолдолд бид ажлыг портфолио, маркетингийн материалд үзүүлэх эрхтэй.\n\n4.3 Үйлчилгээг хүргэхэд ашигласан манай proprietary хэрэгсэл, framework, урьдчилан байсан оюуны өмчийн эрх бидэнд үлдэнэ.\n\n4.4 Гуравдагч талын бүрэлдэхүүн (open-source library, stock image, font) нь тухайн лицензийн нөхцөлд захирагдана. Шаардлагатай лицензийн талаар бид танд урьдчилан мэдээлнэ."
+        },
+        {
+          "id": "6",
+          "title": "6. Харилцагчийн үүрэг",
+          "content": "Харилцагч дараах үүргийг хүлээнэ:\n\n• Төсөлд шаардлагатай үнэн зөв мэдээлэл, контентыг цаг тухайд нь өгөх\n• Тохирсон хугацаанд (ихэвчлэн 5 ажлын өдөр) review хийж feedback өгөх\n• Бидэнд өгсөн контент, зураг, материалын өмчлөх буюу ашиглах эрхтэй байх\n• Төлбөрийг хугацаанд нь хийх\n• Өгсөн нэвтрэх мэдээллийн нууцлалыг хадгалах\n\nХарилцагчаас шалтгаалсан саатал нь хугацаа сунгах болон нэмэлт төлбөрт хүргэж болзошгүй."
+        },
+        {
+          "id": "7",
+          "title": "7. Засвар ба өөрчлөлт",
+          "content": "6.1 Багтсан засварын тоо нь Project Agreement-д заагдана.\n\n6.2 Тохирсон хүрээнээс хэтэрсэн нэмэлт засварыг тухайн үеийн цагийн үнээр тооцно.\n\n6.3 Төслийн хүрээнд гарсан томоохон өөрчлөлт нь шинэ/нэмэлт Project Agreement шаардлагатай бөгөөд хугацаа, үнэд нөлөөлж болно."
+        },
+        {
+          "id": "8",
+          "title": "8. Баталгаа ба мэдэгдэл",
+          "content": "7.1 Бид үйлчилгээг салбарын стандарттай нийцсэн зохих ур чадвар, анхааралтайгаар хүргэхээ батална.\n\n7.2 Вебсайт тодорхой хайлтын байрлал, урсгалын хэмжээ, хөрвүүлэлтийн түвшин заавал хүрнэ гэж бид батлахгүй.\n\n7.3 Харилцагч бидэнд өгсөн бүх контент, материал нь хууль ёсны бөгөөд гуравдагч этгээдийн эрх зөрчихгүйг батална."
+        },
+        {
+          "id": "9",
+          "title": "9. Хариуцлагын хязгаарлалт",
+          "content": "8.1 Чехийн хуулиар зөвшөөрөгдөх дээд хэмжээнд, эдгээр Нөхцөлөөс үүсэх аливаа нэхэмжлэлийн манай нийт хариуцлага нь тухайн нэхэмжлэл үүссэн үйлчилгээний төлөө харилцагчаас төлсөн төлбөрөөр хязгаарлагдана.\n\n8.2 Орлого алдалт, өгөгдөл алдагдал, бизнес тасалдал зэрэг шууд бус, дагавар, санамсаргүй хохиролд бид хариуцахгүй.\n\n8.3 Манай хяналтаас гадуурх гуравдагч үйлчилгээ, хостинг үйлчилгээ үзүүлэгч, програм хангамжаас үүссэн алдаа, асуудалд бид хариуцахгүй."
+        },
+        {
+          "id": "10",
+          "title": "10. Нууцлал",
+          "content": "Хоёр тал нөгөө талаас авсан олон нийтэд нээлтгүй мэдээллийг нууцлахыг зөвшөөрнө. Энэхүү үүрэг гэрээ дууссанаас хойш 3 жилийн хугацаанд хүчинтэй байна."
+        },
+        {
+          "id": "11",
+          "title": "11. Цуцлалт",
+          "content": "10.1 Аль ч тал 30 хоногийн бичгээр мэдэгдлээр төслийг цуцалж болно.\n\n10.2 Цуцлалтын үед харилцагч тухайн өдрийг хүртэл хийгдсэн бүх ажлын төлбөрийг төлнө. Хэрэв харилцагч урьдчилгааны шатнаас хойш цуцалбал урьдчилгаа буцаагдахгүй.\n\n10.3 Харилцагч эдгээр Нөхцөлийг зөрчих, төлбөр төлөхгүй байх, эсвэл хууль бус үйл ажиллагаа явуулах тохиолдолд бид үйлчилгээг шууд зогсоох эрхтэй."
+        },
+        {
+          "id": "12",
+          "title": "12. Хэрэгжих хууль ба маргаан",
+          "content": "11.1 Эдгээр Нөхцөл нь Бүгд Найрамдах Чех Улсын хуулиар зохицуулагдана.\n\n11.2 Эдгээр Нөхцөлөөс үүсэх маргаанд Бүгд Найрамдах Чех Улсын шүүх харьяална.\n\n11.3 Шүүхийн ажиллагаа эхлэхээс өмнө маргааныг шууд хэлэлцээрээр шийдвэрлэхийг бид дэмждэг."
+        },
+        {
+          "id": "13",
+          "title": "13. Эдгээр Нөхцөлд орох өөрчлөлт",
+          "content": "Бид эдгээр Нөхцөлийг үе үе шинэчилж болно. Чухал өөрчлөлтийг и-мэйлээр мэдэгдэнэ. Өөрчлөлтийн дараа үйлчилгээг үргэлжлүүлэн ашиглах нь зөвшөөрсөнд тооцогдоно."
+        }
+      ]
+    },
+    "cookies": {
+      "badge": "Эрх зүй",
+      "title": "Cookie бодлого",
+      "intro": "Энэхүү Cookie бодлого нь Digi Wolf Agency s.r.o. digiwolf.agency дээр cookie болон ижил төстэй технологийг хэрхэн ашигладгийг тайлбарлана.",
+      "companyLine": "Company: Digi Wolf Agency s.r.o., IČO 243 44 648",
+      "lastUpdated": "Сүүлд шинэчилсэн: 13 June 2026",
+      "whatAreCookiesTitle": "Cookie гэж юу вэ?",
+      "whatAreCookiesText": "Cookie нь вебсайт руу ороход таны төхөөрөмж дээр хадгалагддаг жижиг текст файл юм. Энэ нь сесс санах, хуудсыг аюулгүй ажиллуулах, дуудлага захиалах зэрэг боломжийг дэмждэг. Мөн бид cookie-ийн сонголтыг local storage-д хадгалдаг — энэ нь төстэй ажилладаг ч browser дээр хадгалагдаж, хүсэлт бүрт автоматаар илгээгдэхгүй.",
+      "noAnalyticsNotice": "Бид digiwolf.agency дээр analytics эсвэл advertising cookie ашигладаггүй. Энэ сайт дээр Google Analytics болон ижил төрлийн tracking хэрэгсэл ажиллуулдаггүй.",
+      "technologiesTitle": "Бидний ашигладаг cookie ба технологи",
+      "thirdPartyTitle": "Гуравдагч талын үйлчилгээ",
+      "thirdPartyText1": "Манай вебсайт Vercel дээр байрлаж, өгөгдөл хадгалахдаа Supabase ашигладаг. Эдгээр үйлчилгээ үзүүлэгч нь хостингийн хүрээнд strictly necessary cookie тохируулах эсвэл техникийн өгөгдөл боловсруулах боломжтой. Та дуудлага захиалах үед Cal.com захиалгыг боловсруулж өөрийн cookie-г тохируулж болно.",
+      "thirdPartyText2": "Илүү дэлгэрэнгүй мэдээлэл авахын тулд Vercel, Supabase, Cal.com-ийн нууцлал болон cookie бодлогыг харна уу.",
+      "manageTitle": "Cookie-г хэрхэн удирдах вэ",
+      "manageText1": "Та browser-ийн тохиргоогоор cookie-г удирдаж болно — шинэ cookie-г хориглох, хуучныг устгах, cookie тохируулах үед мэдэгдэл авах. Strictly necessary cookie-г идэвхгүй болговол сайтын зарим хэсэг (захиалга зэрэг) зөв ажиллахгүй байж болно.",
+      "manageText2": "Манай сайтад cookie мэдэгдлийн сонголтоо дахин тохируулах бол digiwolf.agency-ийн local storage-г цэвэрлэх эсвэл browser-оос dw-cookie-consent утгыг устгана уу.",
+      "contactCardTitle": "Асуулт эсвэл санаа зовнил байна уу?",
+      "contactCardText": "info@digiwolf.agency хаягаар и-мэйл илгээнэ үү. Хувийн мэдээллийг хэрхэн боловсруулдгийг нийтэд нь манай Нууцлалын бодлогоос үзнэ үү.",
+      "contactButton": "Холбоо барих →",
+      "cookieTypes": [
+        {
+          "id": "strictlyNecessary",
+          "type": "Strictly Necessary Cookie",
+          "required": true,
+          "requiredLabel": "Зайлшгүй шаардлагатай",
+          "purpose": "Эдгээр cookie нь вебсайтыг ажиллуулахад зайлшгүй шаардлагатай. Аюулгүй байдал, routing, үндсэн сайтын функцийг хангана. ЕХ-ны хуулийн дагуу strictly necessary cookie-д бид таны зөвшөөрөл шаардахгүй.",
+          "retention": "Сессээс 1 жил хүртэл",
+          "examples": [
+            {
+              "id": "e1",
+              "label": "Сесс ба аюулгүй байдлын cookie"
+            },
+            {
+              "id": "e2",
+              "label": "Load balancing (Vercel hosting)"
+            },
+            {
+              "id": "e3",
+              "label": "Нэвтрэлтийн cookie (админ хэсэгт нэвтэрсэн үед)"
+            }
+          ]
+        },
+        {
+          "id": "calCom",
+          "type": "Гуравдагч талын товлолтын cookie (Cal.com)",
+          "required": true,
+          "requiredLabel": "Зайлшгүй шаардлагатай",
+          "purpose": "Та манай захиалгын хуудсыг ашиглахад Cal.com scheduler embed хэлбэрээр ажиллаж, сесс удирдах болон захиалгыг гүйцээх cookie тохируулж болно. Эдгээр нь сайтаар дамжуулан танилцах дуудлага захиалахад шаардлагатай.",
+          "retention": "Cal.com-оос хамаарна — тэдний нууцлалын бодлогыг үзнэ үү",
+          "examples": [
+            {
+              "id": "e1",
+              "label": "/book дээрх Cal.com сессийн cookie"
+            },
+            {
+              "id": "e2",
+              "label": "Захиалгын widget-ийн сонголтууд"
+            }
+          ]
+        },
+        {
+          "id": "localPreference",
+          "type": "Сонголтын хадгалалт (Local Storage)",
+          "required": false,
+          "requiredLabel": "Зөвхөн сонголт",
+          "purpose": "Бид cookie banner-ийн хариуг дахин үзүүлэхгүй байхын тулд browser-ийн local storage-д (cookie биш) хадгалдаг. Зөвхөн \"accepted\" эсвэл \"declined\" гэсэн утга хадгална — хувийн мэдээлэл хадгалахгүй.",
+          "retention": "Та browser-ийн мэдээллээ цэвэрлэх хүртэл",
+          "examples": [
+            {
+              "id": "e1",
+              "label": "dw-cookie-consent — таны cookie мэдэгдлийн сонголт"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "chat": {
+    "welcomeMessage": "Сайн байна уу! Би Digi Wolf Assistant байна. Манай үйлчилгээ, үнэ, хугацаа, эсвэл үнэгүй танилцах дуудлагын талаар асуугаарай.",
+    "header": {
+      "title": "Digi Wolf Assistant",
+      "subtitle": "Ихэнхдээ хэдхэн секундэд хариулна"
+    },
+    "thinking": "Бодож байна...",
+    "handoff": {
+      "talkToHuman": "Хүнтэй ярих"
+    },
+    "inputPlaceholder": "Зурвасаа бичнэ үү...",
+    "errors": {
+      "messageTooLong": "Зурвас хэт урт байна (дээд тал нь {max} тэмдэгт).",
+      "generic": "Алдаа гарлаа. Дахин оролдоно уу.",
+      "noStream": "Streaming боломжгүй байна. Дахин оролдоно уу.",
+      "noResponse": "Хариу үүссэнгүй. Дахин оролдоно уу.",
+      "contactFormLink": "холбоо барих форм"
+    },
+    "aria": {
+      "dialog": "Digi Wolf Assistant-тай чатлах",
+      "closeChat": "Чат хаах",
+      "openChat": "Чат нээх",
+      "messageInput": "Зурвасын талбар",
+      "sendMessage": "Зурвас илгээх"
+    }
+  },
+  "cookieBanner": {
+    "ariaLabel": "Cookie зөвшөөрөл",
+    "message": "Бид энэ сайтыг аюулгүй ажиллуулах, таны сонголтыг санахын тулд зайлшгүй cookie болон local storage ашигладаг. Accept дарснаар та үүнийг зөвшөөрнө. Манай <cookiePolicy>Cookie бодлого</cookiePolicy> болон <privacyPolicy>Нууцлалын бодлого</privacyPolicy>-г уншина уу.",
+    "declineButton": "Татгалзах",
+    "acceptButton": "Зөвшөөрөх"
+  },
+  "meta": {
+    "pages": {
+      "home": {
+        "title": "Digi Wolf Agency",
+        "description": "Прага хотод төвтэй вебсайт, AI автоматжуулалт, Чех S.R.O. бүртгэлийн дижитал агентлаг."
+      },
+      "services": {
+        "title": "Үйлчилгээ — Веб хөгжүүлэлт, AI автоматжуулалт ба S.R.O. бүртгэл",
+        "description": "Digi Wolf Agency нь Прага хотод premium веб хөгжүүлэлт (45,000 CZK-с), Чех S.R.O. бүртгэл (15,000 CZK-с), AI автоматжуулалт, SEO, брэнд төрхийн үйлчилгээ үзүүлнэ.",
+        "openGraphTitle": "Үйлчилгээ | Digi Wolf Agency",
+        "openGraphDescription": "Premium дижитал үйлчилгээ: вебсайт, AI автоматжуулалт, Чех компанийн бүртгэл. Прага хотод төвтэй."
+      },
+      "pricing": {
+        "title": "Үнэ — Ил тод багц ба тариф",
+        "description": "Starter вебсайт 15,000 CZK-с, Growth 45,000 CZK-с, Enterprise custom. Тогтмол үнэ, 50/50 төлбөрийн төлөвлөгөө, далд төлбөргүй.",
+        "openGraphTitle": "Үнэ | Digi Wolf Agency — Ил тод тариф",
+        "openGraphDescription": "Вебсайт, веб апп, AI автоматжуулалт, Чех S.R.O. бүртгэлийн тодорхой, тогтмол үнэ."
+      },
+      "contact": {
+        "title": "Холбоо барих — Төслөө эхлүүл",
+        "description": "Digi Wolf Agency-тай холбогдоорой. Бид ажлын 4 цагийн дотор хариулна. Үнэгүй 30 минутын стратегийн дуудлага захиалах эсвэл төслийн brief-ээ илгээнэ үү.",
+        "openGraphTitle": "Digi Wolf Agency-тай холбогдох — Төслөө эхлүүл",
+        "openGraphDescription": "Төслийнхөө тухай бидэнд хэлээрэй. Бид ажлын 4 цагийн дотор хүнээр хариулна — бот биш."
+      },
+      "book": {
+        "title": "Үнэгүй танилцах дуудлага захиалах",
+        "description": "Digi Wolf Agency-тай 30 минутын үнэгүй танилцах дуудлага товлоорой. Борлуулалтын ятгалгагүй — вебсайт, Чех S.R.O. бүртгэл, AI автоматжуулалтын шударга зөвлөгөө. Бид ажлын 4 цагийн дотор хариулна.",
+        "openGraphTitle": "Үнэгүй 30 минутын танилцах дуудлага — Digi Wolf Agency",
+        "openGraphDescription": "Танд тохирох цагаа сонго. Үнэгүй зөвлөгөө, ямар ч үүрэггүй. Суудал хязгаарлагдмал — бид сард 3 шинэ харилцагч авдаг."
+      },
+      "about": {
+        "title": "Бидний тухай — Түүх ба баг",
+        "description": "Digi Wolf Agency-г Монгол бизнес эрхлэгч Uuganbayar Ganbaatar Прага хотод үүсгэн байгуулсан. Бид Чех, Словак, Монголын бизнесүүдийг дижитал эрин үед давамгайлахад тусалдаг.",
+        "openGraphTitle": "Digi Wolf Agency-ийн тухай — Прага дахь дижитал агентлаг",
+        "openGraphDescription": "Улаанбаатараас Прага хүртэл — Монгол бизнес эрхлэгчдийг ЕХ-ны зах зээлтэй холбож байна."
+      },
+      "process": {
+        "title": "Бидний процесс — Бид хэрхэн ажилладаг | Digi Wolf Agency",
+        "description": "Digi Wolf Agency сар биш, хоногоор дэлхийн түвшний вебсайт, дижитал шийдэл хэрхэн хүргэдгийг харна уу. Танилцахаас launch хүртэлх батлагдсан 5 алхам.",
+        "openGraphTitle": "Бидний процесс — Бид хэрхэн ажилладаг | Digi Wolf Agency",
+        "openGraphDescription": "Танилцах дуудлагаас live launch хүртэл — манай батлагдсан 5 алхам premium үр дүнг хурдан хүргэнэ."
+      },
+      "work": {
+        "title": "Кейс судалгаа — Манай ажлууд | Digi Wolf Agency",
+        "description": "Бодит харилцагчийн бодит үр дүн. Digi Wolf Agency TechVentures Prague-д +340% хөрвүүлэлт авчирч, MN Export Hub-ийг 90 хоногт €180K орлоготой болгосон түүхийг үзээрэй.",
+        "openGraphTitle": "Кейс судалгаа — Манай ажлууд | Digi Wolf Agency",
+        "openGraphDescription": "Digi Wolf Agency-ийн бодит үр дүн — +340% хөрвүүлэлт, €180K орлого болон түүнээс ч олон."
+      },
+      "blog": {
+        "title": "Блог",
+        "description": "Digi Wolf Agency-гийн веб хөгжүүлэлт, AI автоматжуулалт, бизнес өсөлтийн тухай нийтлэл, шинэчлэлтүүд."
+      },
+      "caseStudies": {
+        "title": "Кейс судалгаа",
+        "description": "Асуудал, шийдэл, хэмжигдэхүйц үр дүнтэй бодит төслийн задлан тайлбарууд."
+      },
+      "privacy": {
+        "title": "Нууцлалын бодлого",
+        "description": "Digi Wolf Agency s.r.o.-ийн Нууцлалын бодлого — таны хувийн мэдээллийг GDPR-д нийцүүлэн хэрхэн цуглуулж, ашиглаж, хамгаалдгийг тайлбарлана."
+      },
+      "terms": {
+        "title": "Үйлчилгээний нөхцөл",
+        "description": "Digi Wolf Agency s.r.o.-ийн Үйлчилгээний нөхцөл — манай үйлчилгээг ашиглах харилцааг зохицуулах хууль зүйн гэрээ."
+      },
+      "cookies": {
+        "title": "Cookie бодлого",
+        "description": "Digi Wolf Agency s.r.o.-ийн Cookie бодлого — манай вебсайт дээр cookie болон ижил технологийг хэрхэн ашигладгийг тайлбарлана."
+      }
+    }
+  }
+}
