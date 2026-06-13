@@ -646,19 +646,19 @@
         "label": "Үндсэн үйлчилгээ"
       },
       {
-        "id": "clientsServed",
-        "num": "47+",
-        "label": "Үйлчилсэн харилцагч"
+        "id": "languages",
+        "num": "3",
+        "label": "Дэмжигдсэн хэл"
       },
       {
         "id": "deliveryDays",
-        "num": "5–10",
-        "label": "Хоногийн гүйцэтгэл"
+        "num": "7",
+        "label": "Хүргэлтийн баталгаа (хоног)"
       },
       {
-        "id": "satisfaction",
-        "num": "98%",
-        "label": "Сэтгэл ханамж"
+        "id": "sourceCode",
+        "num": "100%",
+        "label": "Source code таных"
       }
     ],
     "cards": [
@@ -1553,6 +1553,16 @@
         }
       ],
       "timezoneNote": "Прага (CET) · Zoom-оор зайнаас"
+    },
+    "guarantees": {
+      "response": {
+        "title": "24 цагийн дотор хариу",
+        "desc": "Бид асуулт бүрт 24 цагийн дотор хувь хүн хариулна. Автомат хариулт биш — төслөө ойлгодог жинхэнэ хүн."
+      },
+      "availability": {
+        "badge": "Анхны харилцагчид",
+        "desc": "Одоо анхны харилцагчид авч байна — founding-client үнээр. Үнэгүй танилцах дуудлагаа захиалаарай."
+      }
     }
   },
   "book": {
@@ -1683,28 +1693,28 @@
     },
     "stats": [
       {
-        "id": "clients",
-        "num": "47",
-        "suffix": "+",
-        "label": "Үйлчилсэн харилцагч"
-      },
-      {
-        "id": "satisfaction",
-        "num": "98",
-        "suffix": "%",
-        "label": "Сэтгэл ханамжийн түвшин"
-      },
-      {
-        "id": "countries",
+        "id": "languages",
         "num": "3",
         "suffix": "",
-        "label": "Идэвхтэй улс"
+        "label": "Хэл (EN/CZ/MN)"
+      },
+      {
+        "id": "response",
+        "num": "24",
+        "suffix": "h",
+        "label": "Хариу өгөх хугацаа"
+      },
+      {
+        "id": "markets",
+        "num": "3",
+        "suffix": "",
+        "label": "Үйлчилдэг зах зээл"
       },
       {
         "id": "delivery",
         "num": "7",
-        "suffix": " хоног",
-        "label": "Дундаж гүйцэтгэлийн хугацаа"
+        "suffix": "-day",
+        "label": "Хүргэлтийн баталгаа"
       }
     ],
     "founder": {
@@ -1743,7 +1753,7 @@
         },
         {
           "id": "p2",
-          "text": "Тэрээр веб хөгжүүлэлт, бизнесийн бүртгэл (Чех S.R.O.), AI автоматжуулалтаар мэргэшсэн бөгөөд Монгол, Казахстан, Төв Азийн 47+ бизнес эрхлэгчдэд Европын зах зээлд байр сууриа бий болгоход тусалсан."
+          "text": "Веб хөгжүүлэлт, Чех S.R.O. бүртгэл, AI автоматжуулалтаар мэргэшсэн — Монгол болон Төв Азийн бизнес эрхлэгчдэд Европын зах зээлд байр сууриа бий болгоход тусална."
         },
         {
           "id": "p3",
@@ -1780,48 +1790,43 @@
     },
     "journey": {
       "badge": "Бидний замнал",
-      "titleLine1": "5 жилийн",
-      "titleLine2": "тасралтгүй өсөлт",
+      "titleLine1": "Digi Wolf",
+      "titleLine2": "бүтээж байна",
       "paragraphs": [
         {
           "id": "p1",
-          "text": "Нэг хүний зөвлөх үйлчилгээнээс 3 улсад харилцагчтай full-stack дижитал агентлаг болж өссөн — энэ бүх үе шат бүр харилцагчдад онцгой үр дүн хүргэсний үр шим."
+          "text": "Digi Wolf Agency нь өөрийн туршлагаас төрсөн — шинэ улсад Чех бизнес бүртгэл, веб хөгжүүлэлт, дижитал өсөлтөд бизнес эрхлэгчдэд туслах."
         },
         {
           "id": "p2",
-          "text": "Өнөөдөр Digi Wolf нь Чех, Монгол, Словак даяар харилцагчдад англи, чех, монгол хэлээр эхнээс нь дуустал дижитал үйлчилгээ үзүүлж байна."
+          "text": "Өнөөдөр бид Чех, Словак, Монголын үүсгэгчид, жижиг бизнес эрхлэгчдэд англи, чех, монгол хэлээр үйлчилнэ."
         }
       ],
       "timeline": [
         {
+          "id": "2015",
+          "year": "2015",
+          "event": "Founder Прага хотод шилжин суурьшсан"
+        },
+        {
           "id": "2020",
           "year": "2020",
-          "event": "Uuganbayar Ganbaatar Прага хотод агентлагаа үүсгэн байгуулав"
-        },
-        {
-          "id": "2021",
-          "year": "2021",
-          "event": "Монгол харилцагчдад зориулсан эхний 10 Чех S.R.O. бүртгэл"
-        },
-        {
-          "id": "2022",
-          "year": "2022",
-          "event": "Веб хөгжүүлэлтийн чиглэлд өргөжиж, 15 сайт launch хийв"
+          "event": "Олон улсын бизнес эрхлэгчдэд Чех business setup зөвлөгөө эхэлсэн"
         },
         {
           "id": "2023",
           "year": "2023",
-          "event": "Брэнд төрхийн үйлчилгээ нэвтэрч, 30+ компани rebrand хийв"
-        },
-        {
-          "id": "2024",
-          "year": "2024",
-          "event": "AI автоматжуулалтын нэгж нээгдэж, 3 улсад 47+ харилцагчтай болов"
+          "event": "Веб хөгжүүлэлт, AI автоматжуулалтын үйлчилгээ нэмсэн"
         },
         {
           "id": "2025",
           "year": "2025",
-          "event": "Словак болон Польшийн зах зээл рүү тэлж байна"
+          "event": "Digi Wolf Agency launch — digiwolf.agency live болсон"
+        },
+        {
+          "id": "2026",
+          "year": "2026",
+          "event": "Чех, Словак, Монголд анхны харилцагчид авч байна"
         }
       ]
     },
@@ -1833,7 +1838,7 @@
         {
           "id": "globalMindset",
           "title": "Дэлхийн сэтгэлгээ",
-          "desc": "Бид 3 улсад харилцагчтай, Чех, Англи, Монгол хэлээр ажилладаг. Олон янз байдал бол бидний супер хүч."
+          "desc": "Чех, Словак, Монголын бизнес эрхлэгчдэд зориулсан. Чех, Англи, Монгол хэлээр ажиллана."
         },
         {
           "id": "systemsThinking",
@@ -1863,7 +1868,7 @@
         },
         {
           "id": "countries",
-          "text": "3 улсад үйлчилгээ үзүүлдэг"
+          "text": "Чех, Словак, Монголын бизнес эрхлэгчдэд"
         },
         {
           "id": "languages",
@@ -2089,38 +2094,38 @@
   },
   "work": {
     "hero": {
-      "badge": "Кейс судалгаа",
-      "titleLine1": "Бодит үр дүн,",
-      "titleLine2": "бодит харилцагч",
-      "subtitle": "Mockup биш. Таамаг биш. Бидний бодитоор бүтээсэн төслүүд — мөн үүнийг нотлох тоон үзүүлэлттэй.",
+      "badge": "Манай ажил",
+      "titleLine1": "Энэ сайт бол",
+      "titleLine2": "манай баталгаа",
+      "subtitle": "Бид founder-led агентлаг portfolio бүтээж байна. Энэ live сайт чанар, хурд, боломжийг харуулна.",
       "stats": [
         {
-          "id": "projectsShipped",
-          "value": "47+",
-          "label": "Хүргэсэн төсөл"
-        },
-        {
-          "id": "satisfaction",
-          "value": "98%",
-          "label": "Сэтгэл ханамжийн түвшин"
-        },
-        {
-          "id": "countries",
+          "id": "languages",
           "value": "3",
-          "label": "Улс"
+          "label": "Хэл (EN/CZ/MN)"
+        },
+        {
+          "id": "responseTime",
+          "value": "24h",
+          "label": "Хариу өгөх хугацаа"
+        },
+        {
+          "id": "sourceCode",
+          "value": "100%",
+          "label": "Source code таных"
         }
       ]
     },
     "labels": {
-      "challenge": "Асуудал",
-      "solution": "Бидний шийдэл",
-      "results": "Үр дүн",
-      "services": "Үйлчилгээ:"
+      "challenge": "Зорилго",
+      "solution": "Бид юу бүтээсэн",
+      "results": "Өнөөдөр live",
+      "services": "Боломжууд:"
     },
     "cta": {
-      "badge": "Таны төсөл дараагийнх",
-      "title": "Энэ жагсаалтад нэгдэхэд бэлэн үү?",
-      "description": "Танай компанийг манай кейс судалгаанд нэмье. Үнэгүй танилцах дуудлага захиалаад ямар боломж байгааг хараарай.",
+      "badge": "Анхны харилцагчид",
+      "title": "Дараагийн төсөл болох уу?",
+      "description": "Founding-client үнээр анхны харилцагчид авч байна. Үнэгүй танилцах дуудлага захиалаарай.",
       "ctas": [
         {
           "id": "startProject",
@@ -2134,162 +2139,44 @@
     },
     "caseStudies": [
       {
-        "id": "techventures",
-        "client": "TechVentures Prague",
-        "category": "SaaS вебсайт + харилцагчийн портал",
-        "headline": "30 хоногт хөрвүүлэлт +340%",
-        "tagline": "Full-stack rebrand ба Next.js платформын launch",
+        "id": "digiwolfAgency",
+        "client": "digiwolf.agency",
+        "category": "Агентлагийн вебсайт",
+        "headline": "Live production portfolio",
+        "tagline": "Та үзэж буй сайт — in-house бүтээсэн, Vercel дээр deploy",
         "metrics": [
           {
-            "id": "conversion",
-            "value": "+340%",
-            "label": "Хөрвүүлэлтийн түвшин"
-          },
-          {
-            "id": "delivery",
-            "value": "5 хоног",
-            "label": "Гүйцэтгэлийн хугацаа"
-          },
-          {
-            "id": "lighthouse",
-            "value": "98",
-            "label": "Lighthouse оноо"
-          },
-          {
-            "id": "downtime",
-            "value": "€0",
-            "label": "Launch үеийн downtime"
-          }
-        ],
-        "challenge": "TechVentures Prague нь илүү өнгөлөг дижитал төрхтэй өрсөлдөгчдөд enterprise харилцагчдаа алдаж байсан. Тэдний одоогийн WordPress сайт удаан, ерөнхий, SaaS бүтээгдэхүүний premium үнэ цэнийг илэрхийлж чадахгүй байв. Хөрвүүлэлт 1.2%-иас доош байсан.",
-        "solution": "Бид тэдний дижитал оролцоог Next.js 14, Supabase, custom client portal ашиглан эхнээс нь бүрэн шинэчилсэн. Шинэ сайт нь premium dark дизайн, интерактив бүтээгдэхүүний демо, одоогийн харилцагчдад зориулсан бүрэн dashboard-той болсон.",
-        "results": "Launch хийснээс 30 хоногийн дараа хөрвүүлэлт 1.2%-аас 4.2% болж, 340%-иар өссөн. Дундаж session хугацаа 2 дахин уртассан. 3 enterprise харилцагч худалдан авах шийдвэрт шинэ вебсайт нөлөөлсөн гэж шууд дурдсан.",
-        "services": [
-          {
-            "id": "s1",
-            "label": "Next.js вебсайт"
-          },
-          {
-            "id": "s2",
-            "label": "Харилцагчийн портал"
-          },
-          {
-            "id": "s3",
-            "label": "Supabase backend"
-          },
-          {
-            "id": "s4",
-            "label": "Брэнд төрх"
-          },
-          {
-            "id": "s5",
-            "label": "SEO стратеги"
-          }
-        ],
-        "quote": {
-          "text": "Digi Wolf манай платформыг 5 хоногт бүтээсэн. Чанар гайхалтай — эхний сард хөрвүүлэлт 340%-аар өссөн. Энэ жил хийсэн хамгийн зөв хөрөнгө оруулалт байсан.",
-          "author": "Arjun Sharma",
-          "role": "CEO, TechVentures Prague"
-        }
-      },
-      {
-        "id": "mnExportHub",
-        "client": "MN Export Hub",
-        "category": "E-commerce платформ + S.R.O. бүртгэл",
-        "headline": "Эхний 90 хоногт €180K орлого",
-        "tagline": "Гурван хэлтэй B2B marketplace + Чех компанийн бүртгэл",
-        "metrics": [
-          {
-            "id": "revenue",
-            "value": "€180K",
-            "label": "90 хоногийн орлого"
+            "id": "framework",
+            "value": "Next.js",
+            "label": "15 + TypeScript"
           },
           {
             "id": "languages",
-            "value": "3 langs",
-            "label": "CZ / EN / MN"
+            "value": "3",
+            "label": "Хэл"
           },
           {
-            "id": "delivery",
-            "value": "14 хоног",
-            "label": "Нийт гүйцэтгэл"
+            "id": "aiChat",
+            "value": "AI",
+            "label": "Chat бuilt-in"
           },
           {
-            "id": "entity",
-            "value": "S.R.O.",
-            "label": "Чех хуулийн этгээд байгуулагдсан"
-          }
-        ],
-        "challenge": "Нэг Монгол бизнес эрхлэгч Монгол экспортлогчдыг ЕХ-ны худалдан авагчтай холбохыг хүссэн ч Чех хуулийн этгээд болон онлайн платформ аль аль нь байгаагүй. Нягт хугацаанд гурван хэлтэй B2B marketplace бүтээхтэй зэрэгцэн Чех S.R.O. бүртгэлийг шийдэх шаардлагатай байсан.",
-        "solution": "Бид Чех S.R.O. бүртгэлийг e-commerce платформтой параллель гүйцэтгэсэн. Marketplace нь Next.js дээр бүтэж, Чех/Англи/Монгол бүрэн орчуулгатай, B2B inquiry урсгалтай, listing болон lead удирдах admin portal-той болсон.",
-        "results": "Платформ 14 хоногт launch хийсэн. Эхний 90 хоногт MN Export Hub Монгол экспортлогч ба Чех/Словак худалдан авагчдын хооронд €180K B2B хэлцэл зуучилсан. Компани эхний өдрөөс хүчин төгөлдөр Чех S.R.O. статустайгаар үйл ажиллагаагаа эхлүүлсэн.",
-        "services": [
-          {
-            "id": "s1",
-            "label": "E-commerce платформ"
-          },
-          {
-            "id": "s2",
-            "label": "Чех S.R.O. байгуулах"
-          },
-          {
-            "id": "s3",
-            "label": "Олон хэл (CZ/EN/MN)"
-          },
-          {
-            "id": "s4",
-            "label": "B2B портал"
-          },
-          {
-            "id": "s5",
-            "label": "Admin dashboard"
-          }
-        ],
-        "quote": {
-          "text": "Прага дахь Монгол бизнес эрхлэгчийн хувьд миний хэлээр — жинхэнэ утгаараа — ярьдаг агентлагтай байх үнэлэшгүй. Тэд компани бүртгэж, платформыг зэрэг бүтээсэн. Үр дүн өөрөө нотолно.",
-          "author": "Enkhmaa B.",
-          "role": "Founder, MN Export Hub"
-        }
-      },
-      {
-        "id": "novakConsulting",
-        "client": "Novák Consulting s.r.o.",
-        "category": "Агентлагийн вебсайт + AI автоматжуулалт",
-        "headline": "AI workflow-оор долоо хоногт 23 цаг хэмнэв",
-        "tagline": "Lead qualification chatbot + premium вебсайт",
-        "metrics": [
-          {
-            "id": "timeSaved",
-            "value": "23h/wk",
-            "label": "Админ ажилд хэмнэсэн цаг"
-          },
-          {
-            "id": "qualifiedLeads",
-            "value": "4.8×",
-            "label": "Илүү чанартай лид"
-          },
-          {
-            "id": "delivery",
-            "value": "6 хоног",
-            "label": "Вебсайтын гүйцэтгэл"
-          },
-          {
-            "id": "satisfaction",
+            "id": "code",
             "value": "100%",
-            "label": "Харилцагчийн сэтгэл ханамж"
+            "label": "Source code таных"
           }
         ],
-        "challenge": "Tomáš Novák нь лид ангилах, prospect-уудтай follow-up хийх, зөвлөгөөний цаг товлох ажлыг гараар хийж долоо хоногт 20+ цаг зарцуулдаг байсан. Одоо байгаа сайт нь хуучирсан, хөрвүүлэлтгүй байсан. Түүнд шинэ дижитал төрх болон цаг хэмнэх автоматжуулалт хоёулаа хэрэгтэй байв.",
-        "solution": "Бид premium зөвлөх үйлчилгээний вебсайт бүтээж, prospect-уудыг урьдчилан ангилж, Calendly-д шууд цаг товлож, хувийн follow-up sequence илгээдэг custom AI lead qualification chatbot нэгтгэсэн. Бүх pipeline бие даан ажилладаг.",
-        "results": "AI систем нь гараар хийх админ ажлыг 20+ цагаас долоо хоногт 3 цагаас доош бууруулсан. Лидийн чанар мэдэгдэхүйц сайжирч, Tomáš зөвхөн 80% худалдан авахад бэлэн prospect-тэй ярьдаг болсон. Эхний улиралд орлого 60%-иар өссөн.",
+        "challenge": "Шинэ founder-led агентлагийн хувьд template биш, орчин үеийн хөгжүүлэлт, олон хэл, AI, автоматжуулалтыг батлах production сайт хэрэгтэй байсан.",
+        "solution": "digiwolf.agency-г Next.js 15 дээр гурван хэлтэй routing (EN/CZ/MN), AI chat, Supabase + Resend лид, Cal.com захиалга, Stripe, GDPR хуудсуудтай бүтээсэн.",
+        "results": "Бид санал болгодог үйлчилгээ бүр энд харагдана. Харилцагчийн кейс бэлэн болох хүртэл энэ бол манай living portfolio.",
         "services": [
           {
             "id": "s1",
-            "label": "Зөвлөх үйлчилгээний вебсайт"
+            "label": "Гурван хэлтэй i18n"
           },
           {
             "id": "s2",
-            "label": "AI chatbot"
+            "label": "AI Chat"
           },
           {
             "id": "s3",
@@ -2297,18 +2184,13 @@
           },
           {
             "id": "s4",
-            "label": "Calendly интеграц"
+            "label": "Онлайн захиалга"
           },
           {
             "id": "s5",
-            "label": "И-мэйлийн sequence"
+            "label": "Stripe-ready"
           }
-        ],
-        "quote": {
-          "text": "Тэд миний Чех S.R.O. бүртгэлийг хийж байхдаа агентлагийн сайтыг зэрэг хөгжүүлсэн. Дараа нь лидийн pipeline-г бүрэн автоматжуулсан. Мэргэжлийн, хурдан, стрессгүй.",
-          "author": "Tomáš Novák",
-          "role": "Founder, Novák Consulting"
-        }
+        ]
       }
     ]
   },
@@ -2324,25 +2206,25 @@
   },
   "caseStudies": {
     "hero": {
-      "badge": "Кейс судалгаа",
-      "titleLine1": "Бодит төслүүд.",
-      "titleLine2": "Бодит үр дүн.",
-      "subtitle": "Манай портфолиод багтсан төсөл бүр өөрчлөлтийн түүх. Энд бидний хамгийн нөлөөтэй 6 ажлыг тоон нотолгоотой танилцуулж байна.",
+      "badge": "Манай ажил",
+      "titleLine1": "Portfolio",
+      "titleLine2": "бүтэж байна",
+      "subtitle": "Бид харилцагчийн кейс судалгааны сан бүтээж байна. Одоогоор энэ live сайт бол mockup биш, бодит баталгаа.",
       "stats": [
         {
-          "id": "projects",
-          "n": "6+",
-          "l": "Төсөл"
+          "id": "languages",
+          "n": "3",
+          "l": "Хэл"
         },
         {
-          "id": "clientRevenue",
-          "n": "€400K+",
-          "l": "Харилцагчийн орлого"
+          "id": "response",
+          "n": "24h",
+          "l": "Хариу өгөх хугацаа"
         },
         {
-          "id": "averageRating",
-          "n": "4.9★",
-          "l": "Дундаж үнэлгээ"
+          "id": "code",
+          "n": "100%",
+          "l": "Source code таных"
         }
       ]
     },
@@ -2365,15 +2247,15 @@
       }
     ],
     "labels": {
-      "challenge": "Асуудал",
-      "solution": "Шийдэл",
-      "results": "Үр дүн",
-      "techStack": "Tech Stack"
+      "challenge": "Зорилго",
+      "solution": "Бид юу бүтээсэн",
+      "results": "Live боломжууд",
+      "techStack": "Tech stack"
     },
     "cta": {
-      "titleLine1": "Өөрийн кейсийг",
-      "titleLine2": "бичихэд бэлэн үү?",
-      "subtitle": "DigiWolf-д итгэж дижитал төрхөө шинэчилсэн компаниудтай нэгдээрэй. Танай үр дүнг бидний дараагийн түүх болгоё.",
+      "titleLine1": "Кейс судалгаа",
+      "titleLine2": "#1 болох уу?",
+      "subtitle": "Бид founding-client үнээр анхны харилцагчид авч байна. Хамтдаа portfolio-оо бүтээе.",
       "ctas": [
         {
           "id": "startProject",
@@ -2381,43 +2263,51 @@
         },
         {
           "id": "viewServices",
-          "label": "Үйлчилгээг харах"
+          "label": "Үйлчилгээг судлах"
         }
       ]
     },
     "items": [
       {
-        "id": "techventures",
-        "name": "TechVentures Prague",
-        "client": "TechVentures s.r.o.",
-        "category": "Вебсайт",
-        "tag": "SaaS вебсайт",
-        "metric": "+340%",
-        "metricLabel": "30 хоногийн хөрвүүлэлт",
-        "challenge": "TechVentures нь хуучирсан, удаан ачаалдаг, mobile UX муутай сайтаасаа болж лидээ алдаж байсан. SaaS бүтээгдэхүүн нь маш сайн ч enterprise prospect-д үнэ цэнээ онлайнаар ойлгуулж чадахгүй байв.",
-        "solution": "Бид бүтээгдэхүүнд төвлөрсөн landing page, интерактив demo, ойлгомжтой pricing, SSR оновчлолтой өндөр хурдны Next.js build-ээр дижитал туршлагыг эхнээс нь бүрэн шинэчилсэн.",
+        "id": "digiwolfAgency",
+        "name": "digiwolf.agency",
+        "client": "Манай өөрийн production сайт",
+        "category": "Websites",
+        "tag": "Live portfolio",
+        "metric": "Live",
+        "metricLabel": "Production сайт",
+        "challenge": "Шинэ founder-led агентлагийн хувьд mockup биш, чадвараа батлах production сайт хэрэгтэй байсан.",
+        "solution": "Next.js 15 дээр гурван хэлтэй routing, AI chat, лид цуглуулалт (Supabase + Resend), Cal.com захиалга, Stripe төлбөр, GDPR хууль ёсны хуудсуудтай.",
         "results": [
           {
             "id": "r1",
-            "text": "30 хоногт demo booking 340%-иар өссөн"
+            "text": "Next.js 15 + TypeScript production build"
           },
           {
             "id": "r2",
-            "text": "Хуудасны ачаалах хугацаа 7.2s-оос 0.9s болов"
+            "text": "Гурван хэлтэй (EN / CZ / MN) next-intl"
           },
           {
             "id": "r3",
-            "text": "Bounce rate 78%-аас 31% болж буурсан"
+            "text": "Сайт дээр AI chat туслах"
           },
           {
             "id": "r4",
-            "text": "Launch дараах Q1-д MRR €42,000-аар өссөн"
+            "text": "Contact form → Supabase + имэйл мэдэгдэл"
+          },
+          {
+            "id": "r5",
+            "text": "Cal.com webhook-оор онлайн захиалга"
+          },
+          {
+            "id": "r6",
+            "text": "Stripe төлбөрийн дэд бүтэц бэлэн"
           }
         ],
         "techStack": [
           {
             "id": "t1",
-            "label": "Next.js 14"
+            "label": "Next.js 15"
           },
           {
             "id": "t2",
@@ -2425,294 +2315,21 @@
           },
           {
             "id": "t3",
-            "label": "Framer Motion"
+            "label": "Supabase"
           },
           {
             "id": "t4",
+            "label": "Tailwind CSS"
+          },
+          {
+            "id": "t5",
             "label": "Vercel"
-          },
-          {
-            "id": "t5",
-            "label": "Stripe"
-          }
-        ],
-        "testimonial": "DigiWolf манай онлайн төрхийг бүрэн өөрчилсөн. Бид лид алдахаас лидээ маш өндөр түвшинд хөрвүүлдэг болсон. Үр дүн бүхнийг хэлж байна.",
-        "author": "Tomáš Novotný",
-        "role": "CEO, TechVentures s.r.o."
-      },
-      {
-        "id": "mnExportHub",
-        "name": "MN Export Hub",
-        "client": "MN Export Hub GmbH",
-        "category": "S.R.O. бүртгэл",
-        "tag": "E-commerce + S.R.O.",
-        "metric": "€180K",
-        "metricLabel": "90 хоногийн орлого",
-        "challenge": "Нэг Монгол экспортын компани Европын зах зээлд нэвтрэхийг хүссэн ч ЕХ-ны хуулийн этгээдгүй, локалчлагдсан вебсайтгүй, Чехийн бизнесийн compliance шаардлагын ойлголтгүй байсан.",
-        "solution": "Эхнээс дуустал шийдэл: Чех S.R.O. бүртгэл, ЕХ-ны VAT тохиргоо, Чех ба Англи хэлтэй e-commerce платформ, хил дамнасан худалдаанд зориулсан compliance framework.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "S.R.O. 8 ажлын хоногт бүртгэгдсэн"
-          },
-          {
-            "id": "r2",
-            "text": "Эхний 90 хоногт €180,000 орлого үүссэн"
-          },
-          {
-            "id": "r3",
-            "text": "ЕХ-ны 14 wholesale худалдан авагч амжилттай onboarding хийсэн"
-          },
-          {
-            "id": "r4",
-            "text": "ЕХ-ны 3 jurisdication-д бүрэн VAT compliance"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js"
-          },
-          {
-            "id": "t2",
-            "label": "Shopify"
-          },
-          {
-            "id": "t3",
-            "label": "Czech Trade Licence"
-          },
-          {
-            "id": "t4",
-            "label": "EU VAT System"
-          },
-          {
-            "id": "t5",
-            "label": "Stripe"
-          }
-        ],
-        "testimonial": "Бид Европт огт суурьгүй байснаас 3 сарын дотор ашигтай e-commerce үйл ажиллагаатай, бүрэн ажиллагаатай Чех компани болсон. Үнэхээр гайхалтай үйлчилгээ.",
-        "author": "Boldbaatar Gantulga",
-        "role": "Director, MN Export Hub"
-      },
-      {
-        "id": "novakConsulting",
-        "name": "Novak Consulting",
-        "client": "Novak & Partners s.r.o.",
-        "category": "Вебсайт",
-        "tag": "Агентлагийн вебсайт",
-        "metric": "4 Days",
-        "metricLabel": "Brief-ээс live сайт хүртэл",
-        "challenge": "Novak Consulting том харилцагчийн pitch-ээс өмнө яаралтай мэргэжлийн вебсайт хэрэгтэй байсан. Одоогийн сайт нь 2018 оны template, эвдэрсэн холбоос, SSL-гүй, брэнд төрхгүй байв.",
-        "solution": "Хурдтай sprint delivery — брэнд төрхийн refresh, custom Next.js сайт, контент copywriting, SEO суурь, 96 цагаас бага хугацаанд чанараа алдалгүй бүрэн deployment.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "4 ажлын хоногт бүрэн live болсон"
-          },
-          {
-            "id": "r2",
-            "text": "Харилцагчийн pitch дээр €65,000 гэрээ хожсон"
-          },
-          {
-            "id": "r3",
-            "text": "Google PageSpeed 98/100 оноо"
-          },
-          {
-            "id": "r4",
-            "text": "2 долоо хоногт inbound хүсэлт 3 дахин өссөн"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js 14"
-          },
-          {
-            "id": "t2",
-            "label": "Tailwind"
-          },
-          {
-            "id": "t3",
-            "label": "Vercel"
-          },
-          {
-            "id": "t4",
-            "label": "Google Analytics 4"
-          },
-          {
-            "id": "t5",
-            "label": "Cloudflare"
-          }
-        ],
-        "testimonial": "Үнэхээр гайхсан. Эхний дуудлагаас хойш 4 хоногт live, өнгөлөг сайттай болж, €65K гэрээ хожиход тусалсан. DigiWolf бусдын хийж чадаагүйг хийсэн.",
-        "author": "Petra Nováková",
-        "role": "Managing Partner, Novak & Partners"
-      },
-      {
-        "id": "fintechBratislava",
-        "name": "FinTech Bratislava",
-        "client": "FinTech Bratislava a.s.",
-        "category": "AI Automation",
-        "tag": "Web App + AI",
-        "metric": "80%",
-        "metricLabel": "Гараар хийх ажлын бууралт",
-        "challenge": "Нэг fintech startup нь бүрэн автоматжаагүй, алдаатай өгөгдөл шивэлт, тайлан гаргалт, харилцагч onboarding-д долоо хоногт 120+ цаг зарцуулж байсан.",
-        "solution": "Custom AI automation pipeline: GPT-4 баримт боловсруулалт, автомат onboarding workflow, real-time тайлангийн dashboard, одоо ашиглаж буй банкны API-тай интеграц.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "Гараар хийх админ ажил 80%-иар буурсан"
-          },
-          {
-            "id": "r2",
-            "text": "Орлого үүсгэх ажилд долоо хоногт 120 цаг чөлөөлөгдсөн"
-          },
-          {
-            "id": "r3",
-            "text": "Алдааны түвшин 12%-аас 0.3% болсон"
-          },
-          {
-            "id": "r4",
-            "text": "Харилцагч onboarding хугацаа: 5 өдөр → 2 цаг"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Python"
-          },
-          {
-            "id": "t2",
-            "label": "OpenAI GPT-4"
-          },
-          {
-            "id": "t3",
-            "label": "Next.js"
-          },
-          {
-            "id": "t4",
-            "label": "PostgreSQL"
-          },
-          {
-            "id": "t5",
-            "label": "n8n"
           },
           {
             "id": "t6",
-            "label": "Zapier"
+            "label": "Resend"
           }
-        ],
-        "testimonial": "DigiWolf-ийн бүтээсэн AI автоматжуулалт бидний ажиллах арга барилыг үндсээр нь өөрчилсөн. Бид бүтээмжтэй цагийн бүтэн багийг буцаан авсан мэт болсон.",
-        "author": "Martin Kováč",
-        "role": "CTO, FinTech Bratislava"
-      },
-      {
-        "id": "pragueBeautyStudio",
-        "name": "Prague Beauty Studio",
-        "client": "Lumière Beauty Studio",
-        "category": "Вебсайт",
-        "tag": "Брэндинг + Веб",
-        "metric": "5x",
-        "metricLabel": "Instagram дагагчийн өсөлт",
-        "challenge": "Прага дахь premium гоо сайхны студи нь нэгдсэн брэнд төрхгүй, сошиал оролцоо бараггүй, зөвхөн ам дамжсан хэрэглэгч дээр тулгуурлаж байсан тул шинэ өндөр үнэ цэнтэй харилцагч татах боломжгүй байв.",
-        "solution": "Бүрэн брэнд төрхийн систем, онлайн цаг захиалгатай luxury вебсайт, сошиал стратеги, брэнд контент template, Google My Business оновчлолын кампанит ажил.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "60 хоногт Instagram 5x өссөн (1.2K → 6.1K)"
-          },
-          {
-            "id": "r2",
-            "text": "Онлайн захиалга 220%-иар өссөн"
-          },
-          {
-            "id": "r3",
-            "text": "Дундаж захиалгын үнэ 45%-иар нэмэгдсэн"
-          },
-          {
-            "id": "r4",
-            "text": "Прагийн lifestyle сэтгүүлд онцлогдсон"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js"
-          },
-          {
-            "id": "t2",
-            "label": "Calendly API"
-          },
-          {
-            "id": "t3",
-            "label": "Instagram Graph API"
-          },
-          {
-            "id": "t4",
-            "label": "Figma"
-          },
-          {
-            "id": "t5",
-            "label": "Adobe CC"
-          }
-        ],
-        "testimonial": "DigiWolf манай luxury positioning-ийг төгс ойлгосон. Тэдний бүтээсэн брэнд, сайт бидний хүссэн өндөр түвшний харилцагчдыг яг татаж байна.",
-        "author": "Karolína Dvořáčková",
-        "role": "Owner, Lumière Beauty Studio"
-      },
-      {
-        "id": "mongolianTradeHub",
-        "name": "Mongolian Trade Hub",
-        "client": "Mongolian Trade Hub s.r.o.",
-        "category": "S.R.O. бүртгэл",
-        "tag": "S.R.O. + Гурван хэлтэй сайт",
-        "metric": "3 Markets",
-        "metricLabel": "60 хоногт ЕХ тэлэлт",
-        "challenge": "Томоохон Монгол худалдааны компани Төв Европт B2B худалдаа хийх ЕХ-ны хууль ёсны төв байгуулахыг хүссэн ч ЕХ-ны дэд бүтэц, хуулийн этгээд, олон хэлтэй дижитал оролцоо байгаагүй.",
-        "solution": "Чех S.R.O. бүртгэл, гурван хэлтэй вебсайт (Англи, Чех, Монгол), ЕХ худалдааны compliance тохиргоо, гаалийн баримтын workflow, Прагийн Худалдаа аж үйлдвэрийн танхимтай стратегийн түншлэл.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "S.R.O. 7 ажлын хоногт бүрэн ажиллагаатай болсон"
-          },
-          {
-            "id": "r2",
-            "text": "ЕХ-ны 3 зах зээлд зэрэг тэлсэн"
-          },
-          {
-            "id": "r3",
-            "text": "60 хоногт 8 B2B түншлэл байгуулсан"
-          },
-          {
-            "id": "r4",
-            "text": "3 хэл дээр qualified lead авчирдаг гурван хэлтэй сайт"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js i18n"
-          },
-          {
-            "id": "t2",
-            "label": "Czech Legal Framework"
-          },
-          {
-            "id": "t3",
-            "label": "EU Trade Law"
-          },
-          {
-            "id": "t4",
-            "label": "Vercel"
-          },
-          {
-            "id": "t5",
-            "label": "HubSpot"
-          }
-        ],
-        "testimonial": "DigiWolf манай Европын тэлэлтийг маш smooth болгосон. Хуулийн этгээдээс эхлээд гурван хэлтэй вебсайт хүртэл бүх нарийн деталиудыг хурд, мэргэжлийн түвшинд шийдсэн.",
-        "author": "Enkhjargal Dorj",
-        "role": "CEO, Mongolian Trade Hub"
+        ]
       }
     ]
   },
@@ -3001,7 +2618,7 @@
         "title": "Үнэгүй танилцах дуудлага захиалах",
         "description": "Digi Wolf Agency-тай 30 минутын үнэгүй танилцах дуудлага товлоорой. Борлуулалтын ятгалгагүй — вебсайт, Чех S.R.O. бүртгэл, AI автоматжуулалтын шударга зөвлөгөө. Бид ажлын 4 цагийн дотор хариулна.",
         "openGraphTitle": "Үнэгүй 30 минутын танилцах дуудлага — Digi Wolf Agency",
-        "openGraphDescription": "Танд тохирох цагаа сонго. Үнэгүй зөвлөгөө, ямар ч үүрэггүй. Суудал хязгаарлагдмал — бид сард 3 шинэ харилцагч авдаг."
+        "openGraphDescription": "Танд тохирох цаг сонгоорой. Үнэгүй зөвлөгөө, үүрэг хүлээлгэхгүй. Одоо анхны харилцагчид авч байна."
       },
       "about": {
         "title": "Бидний тухай — Түүх ба баг",
@@ -3016,18 +2633,18 @@
         "openGraphDescription": "Танилцах дуудлагаас live launch хүртэл — манай батлагдсан 5 алхам premium үр дүнг хурдан хүргэнэ."
       },
       "work": {
-        "title": "Кейс судалгаа — Манай ажлууд | Digi Wolf Agency",
-        "description": "Бодит харилцагчийн бодит үр дүн. Digi Wolf Agency TechVentures Prague-д +340% хөрвүүлэлт авчирч, MN Export Hub-ийг 90 хоногт €180K орлоготой болгосон түүхийг үзээрэй.",
-        "openGraphTitle": "Кейс судалгаа — Манай ажлууд | Digi Wolf Agency",
-        "openGraphDescription": "Digi Wolf Agency-ийн бодит үр дүн — +340% хөрвүүлэлт, €180K орлого болон түүнээс ч олон."
+        "title": "Манай ажил | Digi Wolf Agency",
+        "description": "digiwolf.agency — Next.js, гурван хэлтэй, AI chat, лид автоматжуулалттай live production сайт.",
+        "openGraphTitle": "Манай ажил | Digi Wolf Agency",
+        "openGraphDescription": "Манай live portfolio — Next.js, гурван хэлтэй, AI chat, захиалга, Stripe. Mockup биш."
       },
       "blog": {
         "title": "Блог",
         "description": "Digi Wolf Agency-гийн веб хөгжүүлэлт, AI автоматжуулалт, бизнес өсөлтийн тухай нийтлэл, шинэчлэлтүүд."
       },
       "caseStudies": {
-        "title": "Кейс судалгаа",
-        "description": "Асуудал, шийдэл, хэмжигдэхүйц үр дүнтэй бодит төслийн задлан тайлбарууд."
+        "title": "Манай ажил | Digi Wolf Agency",
+        "description": "Portfolio бүтэж байна. digiwolf.agency бол mockup биш live баталгаа — Next.js, гурван хэлтэй, AI chat, лид автоматжуулалт, Stripe."
       },
       "privacy": {
         "title": "Нууцлалын бодлого",

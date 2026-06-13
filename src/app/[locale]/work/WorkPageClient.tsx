@@ -1,65 +1,44 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-import { Monitor, Globe2, Bot, Target, Settings, TrendingUp } from 'lucide-react'
+import { Check } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 type Stat = { id: string; value: string; label: string }
-type Metric = { id: string; value: string; label: string }
-type Service = { id: string; label: string }
-type Quote = { text: string; author: string; role: string }
-type CaseStudy = {
-  id: string
-  client: string
-  category: string
-  headline: string
-  tagline: string
-  metrics: Metric[]
-  challenge: string
-  solution: string
-  results: string
-  services: Service[]
-  quote: Quote
-}
+type Feature = { id: string; label: string }
+type Capability = { id: string; label: string }
 type Cta = { id: string; label: string }
 
-const caseStyles: Record<string, { color: string; bg: string; border: string; icon: React.ReactNode; tags: string[] }> = {
-  techventures: {
-    color: '#0047FF', bg: 'rgba(0,71,255,0.06)', border: 'rgba(0,71,255,0.2)',
-    icon: <Monitor size={24} />, tags: ['Next.js', 'TypeScript', 'Supabase', 'Framer Motion', 'Stripe'],
-  },
-  mnExportHub: {
-    color: '#10b981', bg: 'rgba(16,185,129,0.06)', border: 'rgba(16,185,129,0.2)',
-    icon: <Globe2 size={24} />, tags: ['Next.js', 'i18n', 'Supabase', 'S.R.O. Formation', 'B2B'],
-  },
-  novakConsulting: {
-    color: '#8b5cf6', bg: 'rgba(139,92,246,0.06)', border: 'rgba(139,92,246,0.2)',
-    icon: <Bot size={24} />, tags: ['Next.js', 'AI/GPT-4', 'n8n', 'Calendly API', 'Resend'],
-  },
-}
+const WolfSVG = ({ size = 32 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 32 32" fill="none">
+    <polygon points="4,14 8,2 13,12" fill="#0047FF" opacity="0.9" />
+    <polygon points="28,14 24,2 19,12" fill="#0047FF" opacity="0.9" />
+    <polygon points="6,13 9,5 12,12" fill="#3d74ff" opacity="0.6" />
+    <polygon points="26,13 23,5 20,12" fill="#3d74ff" opacity="0.6" />
+    <polygon points="16,3 28,14 26,26 16,30 6,26 4,14" fill="#0047FF" opacity="0.95" />
+    <polygon points="16,10 24,16 22,24 16,27 10,24 8,16" fill="#1a5cff" opacity="0.5" />
+    <circle cx="12" cy="17" r="2.2" fill="#F5F5F5" />
+    <circle cx="20" cy="17" r="2.2" fill="#F5F5F5" />
+    <circle cx="12.5" cy="17.3" r="1" fill="#0A0A0A" />
+    <circle cx="20.5" cy="17.3" r="1" fill="#0A0A0A" />
+    <polygon points="16,21 13,24 19,24" fill="#1a3bcc" opacity="0.7" />
+  </svg>
+)
 
 const ctaHrefs: Record<string, string> = {
-  startProject: '/contact',
+  bookCall: '/book',
+  contact: '/contact',
   howWeWork: '/process',
-}
-
-function MetricCard({ value, label }: { value: string; label: string }) {
-  return (
-    <div style={{ textAlign: 'center', padding: '20px 16px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 12 }}>
-      <div style={{ fontSize: 28, fontWeight: 900, letterSpacing: '-0.03em', marginBottom: 4 }}>{value}</div>
-      <div style={{ fontSize: 12, color: '#8892b0', fontWeight: 500 }}>{label}</div>
-    </div>
-  )
 }
 
 export default function WorkPageClient() {
   const t = useTranslations('work')
-  const [activeCase, setActiveCase] = useState<string | null>(null)
   const heroStats = t.raw('hero.stats') as Stat[]
-  const caseStudies = t.raw('caseStudies') as CaseStudy[]
+  const showcaseFeatures = t.raw('showcase.features') as Feature[]
+  const capabilities = t.raw('capabilities.items') as Capability[]
   const ctas = t.raw('cta.ctas') as Cta[]
 
   useEffect(() => {
@@ -74,7 +53,7 @@ export default function WorkPageClient() {
       },
       { threshold: 0.08 }
     )
-    document.querySelectorAll('.fade-up, .stagger').forEach((el) => observer.observe(el))
+    document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
 
@@ -109,90 +88,85 @@ export default function WorkPageClient() {
         </div>
       </section>
 
-      <section style={{ padding: '40px 24px 120px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 48 }}>
-          {caseStudies.map((cs) => {
-            const style = caseStyles[cs.id]
-            return (
-              <div
-                key={cs.id}
-                className="fade-up"
-                style={{
-                  background: `linear-gradient(135deg, ${style.bg}, rgba(255,255,255,0.01))`,
-                  border: `1px solid ${style.border}`,
-                  borderRadius: 28, overflow: 'hidden',
-                  transition: 'all 0.3s',
-                }}
-                onMouseEnter={() => setActiveCase(cs.id)}
-                onMouseLeave={() => setActiveCase(null)}
-              >
-                <div style={{ height: 3, background: `linear-gradient(90deg, transparent, ${style.color}, transparent)` }} />
+      <section style={{ padding: '0 24px 120px' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+          <p className="fade-up" style={{ color: '#8892b0', fontSize: 17, lineHeight: 1.7, maxWidth: 640, marginBottom: 48 }}>
+            {t('showcase.description')}
+          </p>
 
-                <div style={{ padding: '48px 52px' }}>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 32, flexWrap: 'wrap', gap: 20 }}>
-                    <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                        <div style={{ width: 48, height: 48, borderRadius: 12, background: style.bg, border: `1px solid ${style.border}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: style.color }}>{style.icon}</div>
-                        <div>
-                          <div style={{ fontSize: 13, color: '#8892b0', marginBottom: 2 }}>{cs.category}</div>
-                          <div style={{ fontSize: 20, fontWeight: 800 }}>{cs.client}</div>
-                        </div>
-                      </div>
-                      <h2 style={{ fontSize: 'clamp(24px, 3vw, 38px)', fontWeight: 900, letterSpacing: '-0.02em', color: style.color, marginBottom: 8 }}>{cs.headline}</h2>
-                      <p style={{ color: '#8892b0', fontSize: 16 }}>{cs.tagline}</p>
-                    </div>
-
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                      {style.tags.map((tag) => (
-                        <span key={tag} style={{ padding: '5px 12px', borderRadius: 100, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', fontSize: 12, color: '#8892b0' }}>{tag}</span>
-                      ))}
+          <div className="work-grid fade-up" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+            <div
+              style={{
+                background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)',
+                borderRadius: 24, overflow: 'hidden', transition: 'all 0.3s',
+              }}
+              onMouseEnter={(e) => { const el = e.currentTarget; el.style.transform = 'translateY(-4px)'; el.style.borderColor = 'rgba(0,71,255,0.3)'; }}
+              onMouseLeave={(e) => { const el = e.currentTarget; el.style.transform = 'none'; el.style.borderColor = 'rgba(255,255,255,0.07)'; }}
+            >
+              <div style={{ background: 'linear-gradient(135deg, rgba(0,71,255,0.15), transparent)', padding: 32, borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                <div className="browser-mockup" style={{ background: '#0d1117' }}>
+                  <div className="browser-bar">
+                    <div className="browser-dot" style={{ background: '#ff5f57' }} />
+                    <div className="browser-dot" style={{ background: '#febc2e' }} />
+                    <div className="browser-dot" style={{ background: '#28c840' }} />
+                    <div style={{ flex: 1, background: 'rgba(255,255,255,0.05)', borderRadius: 4, height: 20, marginLeft: 8, display: 'flex', alignItems: 'center', paddingLeft: 10 }}>
+                      <span style={{ color: '#8892b0', fontSize: 10 }}>digiwolf.agency</span>
                     </div>
                   </div>
-
-                  <div className="metrics-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 40 }}>
-                    {cs.metrics.map((m) => (
-                      <MetricCard key={m.id} value={m.value} label={m.label} />
-                    ))}
-                  </div>
-
-                  <div className="content-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24, marginBottom: 36 }}>
-                    {[
-                      { label: t('labels.challenge'), text: cs.challenge, icon: <Target size={18} /> },
-                      { label: t('labels.solution'), text: cs.solution, icon: <Settings size={18} /> },
-                      { label: t('labels.results'), text: cs.results, icon: <TrendingUp size={18} /> },
-                    ].map((item) => (
-                      <div key={item.label} style={{ padding: '24px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 16 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
-                          <span style={{ color: '#8892b0', display: 'flex' }}>{item.icon}</span>
-                          <span style={{ fontSize: 13, fontWeight: 700, color: '#8892b0', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{item.label}</span>
-                        </div>
-                        <p style={{ fontSize: 14, color: '#c0c8d8', lineHeight: 1.75, margin: 0 }}>{item.text}</p>
+                  <div style={{ padding: 20, height: 120, background: 'linear-gradient(135deg, rgba(255,255,255,0.02), transparent)' }}>
+                    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+                      <div style={{ width: 40, height: 40, borderRadius: 8, background: 'rgba(0,71,255,0.2)', border: '1px solid rgba(0,71,255,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <WolfSVG size={22} />
                       </div>
-                    ))}
-                  </div>
-
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 32, flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: '#8892b0', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{t('labels.services')}</span>
-                    {cs.services.map((s) => (
-                      <span key={s.id} style={{ padding: '4px 12px', borderRadius: 100, background: style.bg, border: `1px solid ${style.border}`, color: style.color, fontSize: 12, fontWeight: 600 }}>{s.label}</span>
-                    ))}
-                  </div>
-
-                  <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 16, padding: '28px 32px' }}>
-                    <div style={{ fontSize: 36, color: style.color, opacity: 0.6, lineHeight: 1, marginBottom: 12 }}>&ldquo;</div>
-                    <p style={{ fontSize: 16, color: '#c8d3f0', lineHeight: 1.8, fontStyle: 'italic', marginBottom: 20 }}>{cs.quote.text}</p>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                      <div style={{ width: 40, height: 40, borderRadius: '50%', background: `linear-gradient(135deg, ${style.color}, ${style.color}99)`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 16, color: '#fff' }}>{cs.quote.author.charAt(0)}</div>
                       <div>
-                        <div style={{ fontWeight: 700, fontSize: 14 }}>{cs.quote.author}</div>
-                        <div style={{ color: '#8892b0', fontSize: 12 }}>{cs.quote.role}</div>
+                        <div style={{ height: 8, background: 'rgba(255,255,255,0.2)', borderRadius: 4, width: 120, marginBottom: 6 }} />
+                        <div style={{ height: 6, background: 'rgba(255,255,255,0.1)', borderRadius: 4, width: 80 }} />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            )
-          })}
+              <div style={{ padding: 32 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
+                  <h2 style={{ fontSize: 22, fontWeight: 800, color: '#f0f4ff', margin: 0 }}>{t('showcase.title')}</h2>
+                  <span style={{ background: 'rgba(0,200,100,0.15)', border: '1px solid rgba(0,200,100,0.3)', color: '#00c864', fontSize: 11, fontWeight: 700, padding: '4px 10px', borderRadius: 100, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{t('showcase.tag')}</span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {showcaseFeatures.map((feature) => (
+                    <div key={feature.id} style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c8d3f0', fontSize: 14 }}>
+                      <Check size={14} color="#3d74ff" /> {feature.label}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div
+              style={{
+                background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.07)',
+                borderRadius: 24, padding: 32, transition: 'all 0.3s',
+                display: 'flex', flexDirection: 'column', justifyContent: 'center',
+              }}
+              onMouseEnter={(e) => { const el = e.currentTarget; el.style.transform = 'translateY(-4px)'; el.style.borderColor = 'rgba(0,200,100,0.3)'; }}
+              onMouseLeave={(e) => { const el = e.currentTarget; el.style.transform = 'none'; el.style.borderColor = 'rgba(255,255,255,0.07)'; }}
+            >
+              <h2 style={{ fontSize: 22, fontWeight: 800, color: '#f0f4ff', marginBottom: 8 }}>{t('capabilities.title')}</h2>
+              <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.6, marginBottom: 24 }}>{t('capabilities.subtitle')}</p>
+              <div className="capabilities-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+                {capabilities.map((cap) => (
+                  <div
+                    key={cap.id}
+                    style={{
+                      background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)',
+                      borderRadius: 12, padding: '14px 16px', color: '#c8d3f0', fontSize: 14, lineHeight: 1.5,
+                    }}
+                  >
+                    {cap.label}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -209,7 +183,7 @@ export default function WorkPageClient() {
               <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', fontWeight: 900, letterSpacing: '-0.03em', marginBottom: 20 }}>
                 {t('cta.title')}
               </h2>
-              <p style={{ color: '#8892b0', fontSize: 18, marginBottom: 40, maxWidth: 500, margin: '0 auto 40px' }}>
+              <p style={{ color: '#8892b0', fontSize: 18, marginBottom: 40, maxWidth: 520, margin: '0 auto 40px' }}>
                 {t('cta.description')}
               </p>
               <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -218,12 +192,12 @@ export default function WorkPageClient() {
                     key={cta.id}
                     href={ctaHrefs[cta.id] ?? '/contact'}
                     style={{
-                      background: cta.id === 'startProject' ? '#0047FF' : 'transparent',
+                      background: cta.id === 'bookCall' ? '#0047FF' : 'transparent',
                       color: '#f0f4ff', textDecoration: 'none',
                       padding: '16px 36px', borderRadius: 12, fontSize: 16,
-                      fontWeight: cta.id === 'startProject' ? 700 : 600,
-                      border: cta.id === 'startProject' ? 'none' : '1px solid rgba(255,255,255,0.12)',
-                      boxShadow: cta.id === 'startProject' ? '0 8px 40px rgba(0,71,255,0.4)' : 'none',
+                      fontWeight: cta.id === 'bookCall' ? 700 : 600,
+                      border: cta.id === 'bookCall' ? 'none' : '1px solid rgba(255,255,255,0.12)',
+                      boxShadow: cta.id === 'bookCall' ? '0 8px 40px rgba(0,71,255,0.4)' : 'none',
                       display: 'inline-flex', alignItems: 'center', gap: 8,
                     }}
                   >
@@ -240,8 +214,8 @@ export default function WorkPageClient() {
 
       <style>{`
         @media (max-width: 900px) {
-          .metrics-grid { grid-template-columns: repeat(2, 1fr) !important; }
-          .content-grid { grid-template-columns: 1fr !important; }
+          .work-grid { grid-template-columns: 1fr !important; }
+          .capabilities-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </div>

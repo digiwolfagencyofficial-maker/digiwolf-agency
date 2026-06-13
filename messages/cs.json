@@ -643,22 +643,22 @@
       {
         "id": "coreServices",
         "num": "6",
-        "label": "Klíčových služeb"
+        "label": "Hlavní služby"
       },
       {
-        "id": "clientsServed",
-        "num": "47+",
-        "label": "Obsloužených klientů"
+        "id": "languages",
+        "num": "3",
+        "label": "Podporované jazyky"
       },
       {
         "id": "deliveryDays",
-        "num": "5–10",
-        "label": "Dnů do dodání"
+        "num": "7",
+        "label": "Závazek dodání (dní)"
       },
       {
-        "id": "satisfaction",
-        "num": "98%",
-        "label": "Míra spokojenosti"
+        "id": "sourceCode",
+        "num": "100%",
+        "label": "Zdrojový kód váš"
       }
     ],
     "cards": [
@@ -1553,6 +1553,16 @@
         }
       ],
       "timezoneNote": "Praha (CET) · Online přes Zoom"
+    },
+    "guarantees": {
+      "response": {
+        "title": "Odpověď do 24 hodin",
+        "desc": "Na každý dotaz odpovídáme osobně do 24 hodin. Žádné automatické odpovědi — skuteční lidé, kteří rozumí vašemu projektu."
+      },
+      "availability": {
+        "badge": "První klienti",
+        "desc": "Nyní přijímáme první klienty — k dispozici jsou zvýhodněné ceny pro early partnery. Rezervujte si bezplatný úvodní hovor."
+      }
     }
   },
   "book": {
@@ -1683,28 +1693,28 @@
     },
     "stats": [
       {
-        "id": "clients",
-        "num": "47",
-        "suffix": "+",
-        "label": "Obsloužených klientů"
-      },
-      {
-        "id": "satisfaction",
-        "num": "98",
-        "suffix": "%",
-        "label": "Míra spokojenosti"
-      },
-      {
-        "id": "countries",
+        "id": "languages",
         "num": "3",
         "suffix": "",
-        "label": "Aktivní země"
+        "label": "Jazyky (EN/CZ/MN)"
+      },
+      {
+        "id": "response",
+        "num": "24",
+        "suffix": "h",
+        "label": "Doba odezvy"
+      },
+      {
+        "id": "markets",
+        "num": "3",
+        "suffix": "",
+        "label": "Trhy, kterým sloužíme"
       },
       {
         "id": "delivery",
         "num": "7",
-        "suffix": " dní",
-        "label": "Průměrná doba dodání"
+        "suffix": "-day",
+        "label": "Závazek dodání"
       }
     ],
     "founder": {
@@ -1743,7 +1753,7 @@
         },
         {
           "id": "p2",
-          "text": "Specializuje se na webový vývoj, zakládání firem (české S.R.O.) a AI automatizaci — pomohl více než 47 podnikatelům z Mongolska, Kazachstánu a Střední Asie vstoupit na evropský trh."
+          "text": "Specializuje se na webový vývoj, založení české S.R.O. a AI automatizaci — pomáhá podnikatelům z Mongolska a Střední Asie prosadit se na evropském trhu."
         },
         {
           "id": "p3",
@@ -1780,48 +1790,43 @@
     },
     "journey": {
       "badge": "Naše cesta",
-      "titleLine1": "5 let",
-      "titleLine2": "nekompromisního růstu",
+      "titleLine1": "Budování",
+      "titleLine2": "Digi Wolf",
       "paragraphs": [
         {
           "id": "p1",
-          "text": "Od jednočlenného poradenství k full-stack digitální agentuře obsluhující klienty ve 3 zemích — každý milník jsme si vybudovali doručením výjimečných výsledků."
+          "text": "Digi Wolf Agency vznikla z vlastní zkušenosti — pomáhat podnikatelům s českým business setupem, webovým vývojem a digitálním růstem v nové zemi."
         },
         {
           "id": "p2",
-          "text": "Dnes Digi Wolf obsluhuje klienty v České republice, Mongolsku a na Slovensku a poskytuje komplexní digitální služby v angličtině, češtině a mongolštině."
+          "text": "Dnes se zaměřujeme na zakladatele a malé firmy v Česku, na Slovensku a v Mongolsku — služby v angličtině, češtině a mongolštině."
         }
       ],
       "timeline": [
         {
+          "id": "2015",
+          "year": "2015",
+          "event": "Zakladatel se stěhuje do Prahy, Česká republika"
+        },
+        {
           "id": "2020",
           "year": "2020",
-          "event": "Agentura založena v Praze Uuganbayarem Ganbaatarem"
-        },
-        {
-          "id": "2021",
-          "year": "2021",
-          "event": "Prvních 10 založení českých S.R.O. pro mongolské klienty"
-        },
-        {
-          "id": "2022",
-          "year": "2022",
-          "event": "Rozšíření do webového vývoje — spuštěno 15 webů"
+          "event": "Začíná konzultovat české business setup pro mezinárodní podnikatele"
         },
         {
           "id": "2023",
           "year": "2023",
-          "event": "Spuštění služby brand identity; rebrand 30+ firem"
-        },
-        {
-          "id": "2024",
-          "year": "2024",
-          "event": "Spuštění divize AI automatizace; 47+ klientů ve 3 zemích"
+          "event": "Rozšíření do webového vývoje a AI automatizace"
         },
         {
           "id": "2025",
           "year": "2025",
-          "event": "Expanze na slovenský a polský trh"
+          "event": "Spuštění Digi Wolf Agency — digiwolf.agency jde live"
+        },
+        {
+          "id": "2026",
+          "year": "2026",
+          "event": "Přijímáme první klienty v Česku, na Slovensku a v Mongolsku"
         }
       ]
     },
@@ -1833,7 +1838,7 @@
         {
           "id": "globalMindset",
           "title": "Globální mindset",
-          "desc": "Obsluhujeme klienty ve 3 zemích a mluvíme česky, anglicky a mongolsky. Rozmanitost je naše superschopnost."
+          "desc": "Pro podnikatele v Česku, na Slovensku a v Mongolsku. Mluvíme česky, anglicky a mongolsky."
         },
         {
           "id": "systemsThinking",
@@ -1863,7 +1868,7 @@
         },
         {
           "id": "countries",
-          "text": "Obsluhujeme 3 země"
+          "text": "Pro Česko, Slovensko a Mongolsko"
         },
         {
           "id": "languages",
@@ -2089,38 +2094,38 @@
   },
   "work": {
     "hero": {
-      "badge": "Případové studie",
-      "titleLine1": "Skutečné výsledky,",
-      "titleLine2": "skuteční klienti",
-      "subtitle": "Ne makety. Ne hypotézy. Reálné projekty, které jsme vytvořili pro skutečné firmy — i s čísly, která to dokazují.",
+      "badge": "Naše práce",
+      "titleLine1": "Tento web je",
+      "titleLine2": "naše reference",
+      "subtitle": "Jsme founder-led agentura budující portfolio klientů. Tento live web ukazuje kvalitu, rychlost a funkce, které dodáváme.",
       "stats": [
         {
-          "id": "projectsShipped",
-          "value": "47+",
-          "label": "Dodaných projektů"
-        },
-        {
-          "id": "satisfaction",
-          "value": "98%",
-          "label": "Míra spokojenosti"
-        },
-        {
-          "id": "countries",
+          "id": "languages",
           "value": "3",
-          "label": "Země"
+          "label": "Jazyky (EN/CZ/MN)"
+        },
+        {
+          "id": "responseTime",
+          "value": "24h",
+          "label": "Doba odezvy"
+        },
+        {
+          "id": "sourceCode",
+          "value": "100%",
+          "label": "Zdrojový kód váš"
         }
       ]
     },
     "labels": {
-      "challenge": "Výzva",
-      "solution": "Naše řešení",
-      "results": "Výsledky",
-      "services": "Služby:"
+      "challenge": "Cíl",
+      "solution": "Co jsme postavili",
+      "results": "Co je dnes live",
+      "services": "Funkce:"
     },
     "cta": {
-      "badge": "Další může být váš projekt",
-      "title": "Jste připraveni být na tomto seznamu?",
-      "description": "Přidejme i vaši firmu mezi naše případové studie. Rezervujte si bezplatný úvodní hovor a zjistěte, co je možné.",
+      "badge": "První klienti",
+      "title": "Buďte naším dalším projektem",
+      "description": "Nyní přijímáme první klienty se zvýhodněnými cenami. Rezervujte si bezplatný úvodní hovor.",
       "ctas": [
         {
           "id": "startProject",
@@ -2134,162 +2139,44 @@
     },
     "caseStudies": [
       {
-        "id": "techventures",
-        "client": "TechVentures Prague",
-        "category": "SaaS web + klientský portál",
-        "headline": "+340% míra konverze za 30 dní",
-        "tagline": "Full-stack rebrand a spuštění platformy na Next.js",
+        "id": "digiwolfAgency",
+        "client": "digiwolf.agency",
+        "category": "Web pro agenturu",
+        "headline": "Live produkční portfolio",
+        "tagline": "Web, který právě prohlížíte — postavený in-house, nasazený na Vercel",
         "metrics": [
           {
-            "id": "conversion",
-            "value": "+340%",
-            "label": "Míra konverze"
-          },
-          {
-            "id": "delivery",
-            "value": "5 dní",
-            "label": "Doba dodání"
-          },
-          {
-            "id": "lighthouse",
-            "value": "98",
-            "label": "Lighthouse skóre"
-          },
-          {
-            "id": "downtime",
-            "value": "€0",
-            "label": "Výpadek při spuštění"
-          }
-        ],
-        "challenge": "TechVentures Prague ztrácela enterprise klienty ve prospěch konkurence s kvalitnější online prezentací. Jejich dosavadní WordPress web byl pomalý, generický a nedokázal komunikovat prémiovou hodnotu SaaS produktu. Konverze byly pod 1,2 %.",
-        "solution": "Kompletně jsme přestavěli digitální prezentaci od nuly v Next.js 14, Supabase a s vlastním klientským portálem. Nový web přinesl prémiový tmavý design, interaktivní produktové ukázky a plně integrovaný dashboard pro stávající klienty.",
-        "results": "Do 30 dní od spuštění se konverzní poměr zvýšil z 1,2 % na 4,2 % — nárůst o 340 %. Průměrná délka návštěvy se zdvojnásobila. Tři enterprise klienti přímo uvedli nový web jako důvod nákupního rozhodnutí.",
-        "services": [
-          {
-            "id": "s1",
-            "label": "Web na Next.js"
-          },
-          {
-            "id": "s2",
-            "label": "Klientský portál"
-          },
-          {
-            "id": "s3",
-            "label": "Supabase backend"
-          },
-          {
-            "id": "s4",
-            "label": "Brand identita"
-          },
-          {
-            "id": "s5",
-            "label": "SEO strategie"
-          }
-        ],
-        "quote": {
-          "text": "Digi Wolf postavil celou naši platformu za 5 dní. Kvalita je výjimečná — v prvním měsíci nám konverze vyskočily o 340 %. Nejlepší investice, kterou jsme letos udělali.",
-          "author": "Arjun Sharma",
-          "role": "CEO, TechVentures Prague"
-        }
-      },
-      {
-        "id": "mnExportHub",
-        "client": "MN Export Hub",
-        "category": "E-commerce platforma + založení S.R.O.",
-        "headline": "€180K tržeb za prvních 90 dní",
-        "tagline": "Trojjazyčný B2B marketplace + založení české společnosti",
-        "metrics": [
-          {
-            "id": "revenue",
-            "value": "€180K",
-            "label": "Tržby za 90 dní"
+            "id": "framework",
+            "value": "Next.js",
+            "label": "15 + TypeScript"
           },
           {
             "id": "languages",
-            "value": "3 jazyky",
-            "label": "CZ / EN / MN"
+            "value": "3",
+            "label": "Jazyky"
           },
           {
-            "id": "delivery",
-            "value": "14 dní",
-            "label": "Celková doba dodání"
+            "id": "aiChat",
+            "value": "AI",
+            "label": "Chat vestavěný"
           },
           {
-            "id": "entity",
-            "value": "S.R.O.",
-            "label": "Založená česká entita"
-          }
-        ],
-        "challenge": "Mongolská podnikatelka chtěla propojit mongolské exportéry s kupci v EU, ale neměla českou právní entitu ani online platformu. Výzvou bylo vytvořit trojjazyčný B2B marketplace a současně zajistit založení české S.R.O. v krátkém termínu.",
-        "solution": "Paralelně jsme zajistili kompletní registraci české S.R.O. a vývoj e-commerce platformy. Marketplace byl postaven na Next.js, obsahoval plnou lokalizaci CZ/EN/MN, B2B poptávkové flow a admin portál pro správu nabídek a leadů.",
-        "results": "Platforma byla spuštěna za 14 dní. Během prvních 90 dní MN Export Hub zprostředkoval B2B transakce v hodnotě €180K mezi mongolskými exportéry a českými/slovenskými odběrateli. Firma fungovala od prvního dne jako platná česká S.R.O.",
-        "services": [
-          {
-            "id": "s1",
-            "label": "E-commerce platforma"
-          },
-          {
-            "id": "s2",
-            "label": "Založení české S.R.O."
-          },
-          {
-            "id": "s3",
-            "label": "Vícejazyčnost (CZ/EN/MN)"
-          },
-          {
-            "id": "s4",
-            "label": "B2B portál"
-          },
-          {
-            "id": "s5",
-            "label": "Admin dashboard"
-          }
-        ],
-        "quote": {
-          "text": "Jako mongolská podnikatelka v Praze nesmírně oceňuji agenturu, která mluví mým jazykem — doslova. Založili mi firmu a současně postavili platformu. Výsledky mluví samy za sebe.",
-          "author": "Enkhmaa B.",
-          "role": "Founder, MN Export Hub"
-        }
-      },
-      {
-        "id": "novakConsulting",
-        "client": "Novák Consulting s.r.o.",
-        "category": "Web agentury + AI automatizace",
-        "headline": "Úspora 23 hodin týdně díky AI workflow",
-        "tagline": "Chatbot pro kvalifikaci leadů + prémiový web",
-        "metrics": [
-          {
-            "id": "timeSaved",
-            "value": "23h/týdně",
-            "label": "Ušetřený čas v administrativě"
-          },
-          {
-            "id": "qualifiedLeads",
-            "value": "4.8×",
-            "label": "Více kvalifikovaných leadů"
-          },
-          {
-            "id": "delivery",
-            "value": "6 dní",
-            "label": "Dodání webu"
-          },
-          {
-            "id": "satisfaction",
+            "id": "code",
             "value": "100%",
-            "label": "Spokojenost klienta"
+            "label": "Zdrojový kód váš"
           }
         ],
-        "challenge": "Tomáš Novák trávil 20+ hodin týdně ruční kvalifikací leadů, follow-upy s potenciálními klienty a správou konzultačních rezervací. Jeho stávající web působil zastarale a nekonvertoval. Potřeboval novou digitální prezentaci i automatizaci, která mu vrátí čas.",
-        "solution": "Vytvořili jsme prémiový konzultační web a integrovali vlastní AI chatbot pro kvalifikaci leadů, který předkvalifikuje zájemce, rezervuje úvodní hovory přímo do Calendly a posílá personalizované follow-up sekvence. Celá pipeline běží autonomně.",
-        "results": "AI systém snížil manuální administrativu z 20+ hodin na méně než 3 hodiny týdně. Kvalita leadů výrazně vzrostla — díky předkvalifikaci chatbotem Tomáš mluvil jen s lidmi, kteří byli z 80 % připraveni nakoupit. Tržby v prvním kvartálu vzrostly o 60 %.",
+        "challenge": "Jako nová founder-led agentura jsme potřebovali skutečný produkční web — ne šablonu — který dokazuje moderní vývoj, vícejazyčnost, AI integraci a automatizaci.",
+        "solution": "Postavili jsme digiwolf.agency na Next.js 15 s trojjazyčným routingem (EN/CZ/MN), AI chatem, zachycením leadů přes Supabase + Resend, rezervacemi Cal.com, Stripe platbami a GDPR stránkami.",
+        "results": "Každá služba, kterou nabízíme, je zde předvedena. Toto je naše živé portfolio, dokud nebudeme mít publikovatelné klientské case studies.",
         "services": [
           {
             "id": "s1",
-            "label": "Konzultační web"
+            "label": "Trojjazyčný i18n"
           },
           {
             "id": "s2",
-            "label": "AI chatbot"
+            "label": "AI Chat"
           },
           {
             "id": "s3",
@@ -2297,18 +2184,13 @@
           },
           {
             "id": "s4",
-            "label": "Calendly integrace"
+            "label": "Online rezervace"
           },
           {
             "id": "s5",
-            "label": "E-mailové sekvence"
+            "label": "Stripe-ready"
           }
-        ],
-        "quote": {
-          "text": "Vyřídili mi založení české S.R.O. a zároveň postavili web agentury. Pak automatizovali celý lead pipeline. Profesionální, rychlí a bez stresu.",
-          "author": "Tomáš Novák",
-          "role": "Founder, Novák Consulting"
-        }
+        ]
       }
     ]
   },
@@ -2324,25 +2206,25 @@
   },
   "caseStudies": {
     "hero": {
-      "badge": "Případové studie",
-      "titleLine1": "Skutečné projekty.",
-      "titleLine2": "Skutečné výsledky.",
-      "subtitle": "Každý projekt v našem portfoliu je příběhem transformace. Tady je šest našich nejvýraznějších spoluprací — podložených konkrétními čísly.",
+      "badge": "Naše práce",
+      "titleLine1": "Portfolio",
+      "titleLine2": "ve výstavbě",
+      "subtitle": "Budujeme knihovnu případových studií. Prozatím je naším důkazem kvality tento live web — ne mockup.",
       "stats": [
         {
-          "id": "projects",
-          "n": "6+",
-          "l": "Projektů"
+          "id": "languages",
+          "n": "3",
+          "l": "Jazyky"
         },
         {
-          "id": "clientRevenue",
-          "n": "€400K+",
-          "l": "Tržby klientů"
+          "id": "response",
+          "n": "24h",
+          "l": "Doba odezvy"
         },
         {
-          "id": "averageRating",
-          "n": "4.9★",
-          "l": "Průměrné hodnocení"
+          "id": "code",
+          "n": "100%",
+          "l": "Zdrojový kód váš"
         }
       ]
     },
@@ -2365,15 +2247,15 @@
       }
     ],
     "labels": {
-      "challenge": "Výzva",
-      "solution": "Řešení",
-      "results": "Výsledky",
+      "challenge": "Cíl",
+      "solution": "Co jsme postavili",
+      "results": "Co je live",
       "techStack": "Tech stack"
     },
     "cta": {
-      "titleLine1": "Připraveni napsat",
-      "titleLine2": "svou případovou studii?",
-      "subtitle": "Přidejte se ke společnostem, které důvěřovaly DigiWolf při transformaci své digitální přítomnosti. Udělejme z vašich výsledků další příběh, který budeme vyprávět.",
+      "titleLine1": "Chcete být",
+      "titleLine2": "případová studie #1?",
+      "subtitle": "Přijímáme první klienty se zvýhodněnými cenami. Postavte s námi a pomozte utvořit naše portfolio.",
       "ctas": [
         {
           "id": "startProject",
@@ -2381,43 +2263,51 @@
         },
         {
           "id": "viewServices",
-          "label": "Zobrazit služby"
+          "label": "Prozkoumat služby"
         }
       ]
     },
     "items": [
       {
-        "id": "techventures",
-        "name": "TechVentures Prague",
-        "client": "TechVentures s.r.o.",
-        "category": "Weby",
-        "tag": "SaaS web",
-        "metric": "+340%",
-        "metricLabel": "Konverze za 30 dní",
-        "challenge": "TechVentures měl zastaralý, pomalý web se slabým mobilním UX a přicházel o leady. Jejich SaaS produkt byl skvělý, ale online prezentace nedokázala komunikovat hodnotu enterprise klientům.",
-        "solution": "Přepracovali jsme celý digitální zážitek od nuly — produktově orientované landing pages, interaktivní dema, jasný ceník a extrémně rychlý Next.js build se SSR optimalizací.",
+        "id": "digiwolfAgency",
+        "name": "digiwolf.agency",
+        "client": "Náš vlastní produkční web",
+        "category": "Websites",
+        "tag": "Live portfolio",
+        "metric": "Live",
+        "metricLabel": "Produkční web",
+        "challenge": "Jako nová founder-led agentura jsme potřebovali produkční web, který dokazuje naše schopnosti — ne šablonu nebo mockup.",
+        "solution": "Postaveno na Next.js 15 s trojjazyčným routingem, AI chatem, zachycením leadů (Supabase + Resend), rezervacemi Cal.com, Stripe platbami a GDPR stránkami.",
         "results": [
           {
             "id": "r1",
-            "text": "340% nárůst rezervací demo ukázek během 30 dní"
+            "text": "Next.js 15 + TypeScript produkční build"
           },
           {
             "id": "r2",
-            "text": "Načítání stránky zkráceno ze 7.2s na 0.9s"
+            "text": "Trojjazyčný (EN / CZ / MN) s next-intl"
           },
           {
             "id": "r3",
-            "text": "Bounce rate klesl z 78 % na 31 %"
+            "text": "AI chat asistent integrovaný na webu"
           },
           {
             "id": "r4",
-            "text": "MRR vzrostlo o €42,000 v Q1 po spuštění"
+            "text": "Kontaktní formulář → Supabase + e-mailové notifikace"
+          },
+          {
+            "id": "r5",
+            "text": "Online rezervace přes Cal.com webhook"
+          },
+          {
+            "id": "r6",
+            "text": "Stripe platební infrastruktura připravena"
           }
         ],
         "techStack": [
           {
             "id": "t1",
-            "label": "Next.js 14"
+            "label": "Next.js 15"
           },
           {
             "id": "t2",
@@ -2425,294 +2315,21 @@
           },
           {
             "id": "t3",
-            "label": "Framer Motion"
+            "label": "Supabase"
           },
           {
             "id": "t4",
+            "label": "Tailwind CSS"
+          },
+          {
+            "id": "t5",
             "label": "Vercel"
-          },
-          {
-            "id": "t5",
-            "label": "Stripe"
-          }
-        ],
-        "testimonial": "DigiWolf kompletně proměnil naši online prezentaci. Z firmy, která přicházela o leady, jsme se stali firmou s mimořádnou konverzí. Výsledky mluví samy za sebe.",
-        "author": "Tomáš Novotný",
-        "role": "CEO, TechVentures s.r.o."
-      },
-      {
-        "id": "mnExportHub",
-        "name": "MN Export Hub",
-        "client": "MN Export Hub GmbH",
-        "category": "Založení S.R.O.",
-        "tag": "E-commerce + S.R.O.",
-        "metric": "€180K",
-        "metricLabel": "Tržby za 90 dní",
-        "challenge": "Mongolská exportní firma chtěla vstoupit na evropský trh, ale neměla právní entitu v EU, lokalizovaný web ani přehled o českých požadavcích na compliance.",
-        "solution": "End-to-end řešení: založení české S.R.O., registrace k DPH v EU, dvojjazyčná e-commerce platforma v češtině a angličtině a kompletní compliance rámec pro přeshraniční obchod.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "S.R.O. zaregistrována během 8 pracovních dní"
-          },
-          {
-            "id": "r2",
-            "text": "€180,000 tržeb během prvních 90 dní"
-          },
-          {
-            "id": "r3",
-            "text": "Úspěšný onboarding 14 velkoobchodních kupců z EU"
-          },
-          {
-            "id": "r4",
-            "text": "Plná DPH compliance ve 3 jurisdikcích EU"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js"
-          },
-          {
-            "id": "t2",
-            "label": "Shopify"
-          },
-          {
-            "id": "t3",
-            "label": "Czech Trade Licence"
-          },
-          {
-            "id": "t4",
-            "label": "EU VAT System"
-          },
-          {
-            "id": "t5",
-            "label": "Stripe"
-          }
-        ],
-        "testimonial": "Během méně než 3 měsíců jsme přešli z nulové přítomnosti v Evropě na plně funkční českou společnost a ziskový e-commerce provoz. Neuvěřitelná služba.",
-        "author": "Boldbaatar Gantulga",
-        "role": "Director, MN Export Hub"
-      },
-      {
-        "id": "novakConsulting",
-        "name": "Novak Consulting",
-        "client": "Novak & Partners s.r.o.",
-        "category": "Weby",
-        "tag": "Branding + web",
-        "metric": "4 dny",
-        "metricLabel": "Od zadání po spuštění",
-        "challenge": "Novak Consulting urgentně potřeboval profesionální web před důležitým klientským pitch meetingem. Jejich web byl šablona z roku 2018 s nefunkčními odkazy, bez SSL a bez brand identity.",
-        "solution": "Rychlý sprint: refresh brand identity, vlastní web na Next.js, copywriting obsahu, základ SEO a kompletní nasazení do 96 hodin bez kompromisu v kvalitě.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "Plně online během 4 pracovních dní"
-          },
-          {
-            "id": "r2",
-            "text": "Vyhraná zakázka za €65,000 na klientském pitchi"
-          },
-          {
-            "id": "r3",
-            "text": "Google PageSpeed skóre 98/100"
-          },
-          {
-            "id": "r4",
-            "text": "3× nárůst příchozích poptávek během 2 týdnů"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js 14"
-          },
-          {
-            "id": "t2",
-            "label": "Tailwind"
-          },
-          {
-            "id": "t3",
-            "label": "Vercel"
-          },
-          {
-            "id": "t4",
-            "label": "Google Analytics 4"
-          },
-          {
-            "id": "t5",
-            "label": "Cloudflare"
-          }
-        ],
-        "testimonial": "Byla jsem v šoku. Čtyři dny od prvního hovoru k živému profesionálnímu webu, který nám pomohl získat kontrakt za €65K. DigiWolf doručil, když to ostatní nedokázali.",
-        "author": "Petra Nováková",
-        "role": "Managing Partner, Novak & Partners"
-      },
-      {
-        "id": "fintechBratislava",
-        "name": "FinTech Bratislava",
-        "client": "FinTech Bratislava a.s.",
-        "category": "AI automatizace",
-        "tag": "Web app + AI",
-        "metric": "80%",
-        "metricLabel": "Snížení manuální práce",
-        "challenge": "Fintech startup trávil 120+ hodin týdně ručním zadáváním dat, generováním reportů a onboardingem klientů, které nebyly automatizované a byly chybové.",
-        "solution": "Vlastní AI automatizační pipeline: zpracování dokumentů přes GPT-4, automatizovaný onboarding klientů, dashboardy s reporty v reálném čase a integrace na stávající bankovní API.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "80% snížení manuální administrativní práce"
-          },
-          {
-            "id": "r2",
-            "text": "Uvolněno 120 hodin týdně pro výnosové aktivity"
-          },
-          {
-            "id": "r3",
-            "text": "Chybovost klesla z 12 % na 0.3 %"
-          },
-          {
-            "id": "r4",
-            "text": "Doba onboardingu klienta: 5 dní → 2 hodiny"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Python"
-          },
-          {
-            "id": "t2",
-            "label": "OpenAI GPT-4"
-          },
-          {
-            "id": "t3",
-            "label": "Next.js"
-          },
-          {
-            "id": "t4",
-            "label": "PostgreSQL"
-          },
-          {
-            "id": "t5",
-            "label": "n8n"
           },
           {
             "id": "t6",
-            "label": "Zapier"
+            "label": "Resend"
           }
-        ],
-        "testimonial": "AI automatizační sada od DigiWolf zásadně změnila způsob, jakým fungujeme. Prakticky jsme získali zpět produktivní kapacitu celého jednoho týmu.",
-        "author": "Martin Kováč",
-        "role": "CTO, FinTech Bratislava"
-      },
-      {
-        "id": "pragueBeautyStudio",
-        "name": "Prague Beauty Studio",
-        "client": "Lumière Beauty Studio",
-        "category": "Weby",
-        "tag": "Branding + web",
-        "metric": "5x",
-        "metricLabel": "Růst followers na Instagramu",
-        "challenge": "Prémiové beauty studio v Praze nemělo jednotnou brand identitu, téměř žádnou aktivitu na sociálních sítích a spoléhalo se jen na doporučení bez možnosti aktivně získávat nové bonitní klienty.",
-        "solution": "Kompletní systém brand identity, luxusní web s integrací online rezervací, strategie sociálních sítí, značkové šablony obsahu a optimalizace Google My Business.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "5× více followers na Instagramu za 60 dní (1.2K → 6.1K)"
-          },
-          {
-            "id": "r2",
-            "text": "Online rezervace vzrostly o 220 %"
-          },
-          {
-            "id": "r3",
-            "text": "Průměrná hodnota rezervace vzrostla o 45 %"
-          },
-          {
-            "id": "r4",
-            "text": "Uvedení v pražském lifestyle magazínu"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js"
-          },
-          {
-            "id": "t2",
-            "label": "Calendly API"
-          },
-          {
-            "id": "t3",
-            "label": "Instagram Graph API"
-          },
-          {
-            "id": "t4",
-            "label": "Figma"
-          },
-          {
-            "id": "t5",
-            "label": "Adobe CC"
-          }
-        ],
-        "testimonial": "DigiWolf perfektně pochopil naše prémiové pozicování. Brand i web, které vytvořili, přitahují přesně typ vysokohodnotných klientů, které chceme.",
-        "author": "Karolína Dvořáčková",
-        "role": "Owner, Lumière Beauty Studio"
-      },
-      {
-        "id": "mongolianTradeHub",
-        "name": "Mongolian Trade Hub",
-        "client": "Mongolian Trade Hub s.r.o.",
-        "category": "Založení S.R.O.",
-        "tag": "S.R.O. + trojjazyčný web",
-        "metric": "3 trhy",
-        "metricLabel": "Expanze do EU za 60 dní",
-        "challenge": "Významná mongolská obchodní společnost chtěla zřídit legální EU hub pro B2B obchod ve střední Evropě, ale neměla žádnou infrastrukturu v EU, právní entitu ani vícejazyčnou digitální prezentaci.",
-        "solution": "Založení české S.R.O., trojjazyčný web (angličtina, čeština, mongolština), nastavení compliance pro obchod v EU, workflow celní dokumentace a strategické partnerství s Pražskou hospodářskou komorou.",
-        "results": [
-          {
-            "id": "r1",
-            "text": "S.R.O. plně funkční za 7 pracovních dní"
-          },
-          {
-            "id": "r2",
-            "text": "Současná expanze do 3 trhů EU"
-          },
-          {
-            "id": "r3",
-            "text": "8 B2B partnerství během 60 dní"
-          },
-          {
-            "id": "r4",
-            "text": "Trojjazyčný web přivádí kvalifikované leady ve všech 3 jazycích"
-          }
-        ],
-        "techStack": [
-          {
-            "id": "t1",
-            "label": "Next.js i18n"
-          },
-          {
-            "id": "t2",
-            "label": "Czech Legal Framework"
-          },
-          {
-            "id": "t3",
-            "label": "EU Trade Law"
-          },
-          {
-            "id": "t4",
-            "label": "Vercel"
-          },
-          {
-            "id": "t5",
-            "label": "HubSpot"
-          }
-        ],
-        "testimonial": "DigiWolf udělal naši expanzi do Evropy bezproblémovou. Od právní entity po trojjazyčný web byla každá část zvládnutá odborně a rychle.",
-        "author": "Enkhjargal Dorj",
-        "role": "CEO, Mongolian Trade Hub"
+        ]
       }
     ]
   },
@@ -3001,7 +2618,7 @@
         "title": "Rezervujte si bezplatný úvodní hovor",
         "description": "Naplánujte si bezplatný 30min úvodní hovor s Digi Wolf Agency. Bez prodejního tlaku — poctivé doporučení k webům, založení české S.R.O. a AI automatizaci. Odpovídáme do 4 pracovních hodin.",
         "openGraphTitle": "Rezervujte si bezplatný 30min úvodní hovor — Digi Wolf Agency",
-        "openGraphDescription": "Vyberte si termín, který vám vyhovuje. Konzultace zdarma, bez závazků. Omezená kapacita — přijímáme 3 nové klienty měsíčně."
+        "openGraphDescription": "Vyberte si termín. Bezplatná konzultace, bez závazků. Nyní přijímáme první klienty."
       },
       "about": {
         "title": "O nás — Náš příběh a tým",
@@ -3016,18 +2633,18 @@
         "openGraphDescription": "Od úvodního hovoru po živé spuštění — náš ověřený 5krokový proces přináší prémiové výsledky rychle."
       },
       "work": {
-        "title": "Případové studie — Naše práce | Digi Wolf Agency",
-        "description": "Skutečné výsledky pro skutečné klienty. Podívejte se, jak Digi Wolf Agency pomohl TechVentures Prague dosáhnout +340% konverzí a MN Export Hub vygenerovat €180K tržeb za 90 dní.",
-        "openGraphTitle": "Případové studie — Naše práce | Digi Wolf Agency",
-        "openGraphDescription": "Skutečné výsledky od Digi Wolf Agency — +340% konverzí, €180K tržeb a další."
+        "title": "Naše práce | Digi Wolf Agency",
+        "description": "Podívejte se na digiwolf.agency — náš live produkční web na Next.js, trojjazyčný, s AI chatem a automatizací leadů.",
+        "openGraphTitle": "Naše práce | Digi Wolf Agency",
+        "openGraphDescription": "Náš live portfolio web — Next.js, trojjazyčný, AI chat, rezervace a Stripe. Bez mockupů."
       },
       "blog": {
         "title": "Blog",
         "description": "Postřehy a novinky od Digi Wolf Agency o webovém vývoji, AI automatizaci a růstu podnikání."
       },
       "caseStudies": {
-        "title": "Případové studie",
-        "description": "Detailní rozbory reálných projektů s výzvami, řešeními a měřitelnými výsledky."
+        "title": "Naše práce | Digi Wolf Agency",
+        "description": "Portfolio ve výstavbě. digiwolf.agency je náš live důkaz — Next.js, trojjazyčný, AI chat, automatizace leadů a Stripe."
       },
       "privacy": {
         "title": "Zásady ochrany osobních údajů",

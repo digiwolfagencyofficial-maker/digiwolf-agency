@@ -1553,6 +1553,16 @@
         }
       ],
       "timezoneNote": "Prague (CET) · Remote via Zoom"
+    },
+    "guarantees": {
+      "response": {
+        "title": "24-Hour Response",
+        "desc": "We respond personally to every enquiry within 24 hours. No auto-replies — real humans who understand your project."
+      },
+      "availability": {
+        "badge": "Founding Clients",
+        "desc": "Now accepting founding clients — limited founding-client rates available. Book a free discovery call to get started."
+      }
     }
   },
   "book": {
@@ -1828,7 +1838,7 @@
         {
           "id": "globalMindset",
           "title": "Global Mindset",
-          "desc": "We serve clients in 3 countries and speak Czech, English, and Mongolian. Diversity is our superpower."
+          "desc": "Built for entrepreneurs in Czech Republic, Slovakia, and Mongolia. We speak Czech, English, and Mongolian."
         },
         {
           "id": "systemsThinking",
@@ -2600,13 +2610,13 @@
       },
       "contact": {
         "title": "Contact — Start Your Project",
-        "description": "Get in touch with Digi Wolf Agency. We respond within 4 business hours. Book a free 30-minute strategy call or send us your project brief.",
+        "description": "Get in touch with Digi Wolf Agency. We respond within 24 hours. Book a free 30-minute strategy call or send us your project brief.",
         "openGraphTitle": "Contact Digi Wolf Agency — Start Your Project",
-        "openGraphDescription": "Tell us about your project. We respond within 4 business hours — personally, not with a bot."
+        "openGraphDescription": "Tell us about your project. We respond within 24 hours — personally, not with a bot."
       },
       "book": {
         "title": "Book a Free Discovery Call",
-        "description": "Schedule a free 30-minute discovery call with Digi Wolf Agency. No sales pitch — honest advice on websites, Czech S.R.O. formation, and AI automation. We respond within 4 business hours.",
+        "description": "Schedule a free 30-minute discovery call with Digi Wolf Agency. No sales pitch — honest advice on websites, Czech S.R.O. formation, and AI automation. We respond within 24 hours.",
         "openGraphTitle": "Book a Free 30-Min Discovery Call — Digi Wolf Agency",
         "openGraphDescription": "Pick a time that works for you. Free consultation, no commitment. Now accepting founding clients."
       },
@@ -2623,7 +2633,7 @@
         "openGraphDescription": "From discovery call to live launch — our proven 5-step process delivers premium results fast."
       },
       "work": {
-        "title": "Case Studies — Our Work | Digi Wolf Agency",
+        "title": "Our Work | Digi Wolf Agency",
         "description": "See digiwolf.agency — our live production site built with Next.js, trilingual support, AI chat, and lead automation. Proof of what we deliver.",
         "openGraphTitle": "Our Work | Digi Wolf Agency",
         "openGraphDescription": "Our live portfolio site — Next.js, trilingual, AI chat, booking, and Stripe-ready. No mockups."

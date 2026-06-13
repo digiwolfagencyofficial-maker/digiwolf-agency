@@ -18,8 +18,8 @@ type CaseStudyItem = {
   solution: string
   results: { id: string; text: string }[]
   techStack: { id: string; label: string }[]
-  testimonial: string
-  author: string
+  testimonial?: string
+  author?: string
 }
 
 type Filter = { id: string; label: string }
@@ -115,7 +115,19 @@ export default function CaseStudiesClient() {
                     <li key={r.id} style={{ marginBottom: 6 }}>{r.text}</li>
                   ))}
                 </ul>
-                <p style={{ fontStyle: 'italic', color: '#8892b0' }}>&ldquo;{cs.testimonial}&rdquo; — {cs.author}</p>
+                {cs.techStack?.length ? (
+                  <>
+                    <p style={{ fontWeight: 700, marginBottom: 8 }}>{t('labels.techStack')}</p>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
+                      {cs.techStack.map((tech) => (
+                        <span key={tech.id} style={{ padding: '4px 10px', borderRadius: 100, background: 'rgba(0,71,255,0.1)', border: '1px solid rgba(0,71,255,0.2)', color: '#3d74ff', fontSize: 12, fontWeight: 600 }}>{tech.label}</span>
+                      ))}
+                    </div>
+                  </>
+                ) : null}
+                {cs.testimonial && cs.author ? (
+                  <p style={{ fontStyle: 'italic', color: '#8892b0' }}>&ldquo;{cs.testimonial}&rdquo; — {cs.author}</p>
+                ) : null}
               </article>
             ))}
           </div>
