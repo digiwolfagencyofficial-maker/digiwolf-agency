@@ -125,41 +125,46 @@
       ],
       "floatingBadges": [
         {
-          "id": "projectLaunched",
-          "title": "✓ Төсөл амжилттай эхэлсэн",
-          "subtitle": "TechVentures Prague"
+          "id": "liveSite",
+          "title": "digiwolf.agency",
+          "subtitle": "Live"
         },
         {
-          "id": "satisfaction",
-          "title": "⚡ 98% сэтгэл ханамж",
-          "subtitle": "47 сэтгэл хангалуун харилцагч"
+          "id": "trilingual",
+          "title": "Гурван хэлтэй + AI chat",
+          "subtitle": "EN · CZ · MN"
+        },
+        {
+          "id": "founderLed",
+          "title": "Founder-led",
+          "subtitle": "Шууд холбоо"
         }
       ]
     },
     "stats": [
       {
-        "id": "clientsServed",
-        "value": 47,
-        "suffix": "+",
-        "label": "Үйлчилсэн харилцагч"
-      },
-      {
-        "id": "satisfactionRate",
-        "value": 98,
-        "suffix": "%",
-        "label": "Сэтгэл ханамжийн түвшин"
-      },
-      {
-        "id": "avgDelivery",
-        "value": 7,
-        "suffix": " хоног",
-        "label": "Дундаж гүйцэтгэл"
-      },
-      {
-        "id": "markets",
+        "id": "languages",
         "value": 3,
-        "suffix": " улс",
-        "label": "Идэвхтэй зах зээл"
+        "suffix": "",
+        "label": "Хэл (EN/CZ/MN)"
+      },
+      {
+        "id": "responseTime",
+        "value": 24,
+        "suffix": "h",
+        "label": "Хариу өгөх хугацаа"
+      },
+      {
+        "id": "deliveryCommitment",
+        "value": 7,
+        "suffix": "-day",
+        "label": "Хүргэлтийн баталгаа"
+      },
+      {
+        "id": "sourceCode",
+        "value": 100,
+        "suffix": "%",
+        "label": "Source code таных"
       }
     ],
     "servicesSection": {
@@ -247,56 +252,98 @@
       ]
     },
     "caseStudiesSection": {
-      "badge": "Кейс судалгаа",
-      "titleLine1": "Бодит үр дүн,",
-      "titleLine2": "бодит харилцагч",
-      "viewAll": "Бүгдийг харах →",
-      "items": [
-        {
-          "id": "techventures",
-          "title": "TechVentures Prague",
-          "category": "SaaS вебсайт + CRM",
-          "result": "Хөрвүүлэлт +340%",
-          "desc": "Нэгдсэн харилцагчийн dashboard, Stripe төлбөртэй Next.js сайтын бүрэн rebrand ба launch."
-        },
-        {
-          "id": "mnExportHub",
-          "title": "MN Export Hub",
-          "category": "E-commerce + S.R.O.",
-          "result": "90 хоногт €180K орлого",
-          "desc": "Чех компанийн бүртгэл + Монгол экспортлогчдыг ЕХ-ны худалдан авагчтай холбосон гурван хэлтэй B2B marketplace."
-        }
-      ]
+      "badge": "Манай ажил",
+      "titleLine1": "Энэ сайт бол",
+      "titleLine2": "манай баталгаа",
+      "description": "Та амьд production сайтыг үзэж байна — mockup биш. Энд харагдаж буй бүх зүйлийг танд ч бүтээж чадна.",
+      "cta": "Үйлчилгээг судлах →",
+      "showcase": {
+        "title": "digiwolf.agency",
+        "tag": "Live",
+        "features": [
+          {
+            "id": "nextjs",
+            "label": "Next.js 15 + TypeScript"
+          },
+          {
+            "id": "trilingual",
+            "label": "Гурван хэлтэй (EN / CZ / MN)"
+          },
+          {
+            "id": "aiChat",
+            "label": "AI chat туслах"
+          },
+          {
+            "id": "leadAutomation",
+            "label": "Лид цуглуулалт + имэйл мэдэгдэл"
+          },
+          {
+            "id": "booking",
+            "label": "Онлайн захиалга (Cal.com)"
+          },
+          {
+            "id": "stripe",
+            "label": "Stripe төлбөр бэлэн"
+          }
+        ]
+      },
+      "capabilities": {
+        "title": "Бид юу бүтээдэг вэ",
+        "items": [
+          {
+            "id": "websites",
+            "label": "Хөрвүүлэлт өндөртэй агентлагийн вебсайт"
+          },
+          {
+            "id": "sro",
+            "label": "Чех S.R.O. компанийн бүртгэл"
+          },
+          {
+            "id": "aiAutomation",
+            "label": "AI chatbot ба workflow автоматжуулалт"
+          },
+          {
+            "id": "bookingCrm",
+            "label": "Захиалгын систем ба лид CRM"
+          },
+          {
+            "id": "multilingual",
+            "label": "Олон хэлтэй сайт ба локализаци"
+          },
+          {
+            "id": "payments",
+            "label": "Stripe төлбөр ба харилцагчийн портал"
+          }
+        ]
+      }
     },
     "testimonialsSection": {
-      "badge": "Сэтгэгдэл",
-      "titleLine1": "Бизнес эрхлэгчдийн итгэл хүлээсэн",
-      "titleLine2": "3 улсын хэмжээнд",
+      "badge": "Анхны харилцагчид",
+      "titleLine1": "Чех, Словак, Монголын",
+      "titleLine2": "бизнес эрхлэгчдэд зориулсан",
+      "description": "Бид ноцтой дижитал төрх хэрэгтэй үүсгэгчид, жижиг бизнес эрхлэгчдэд үйлчилнэ — агентлагийн зардалгүй.",
       "items": [
         {
-          "id": "arjun",
-          "name": "Arjun Sharma",
-          "role": "CEO, TechVentures Prague",
-          "text": "Digi Wolf манай SaaS сайтыг 5 хоногт бүтээсэн. Чанар маш өндөр — эхний сард хөрвүүлэлт 340%-аар өссөн."
+          "id": "founderAttention",
+          "title": "Founder-ийн шууд анхаарал",
+          "desc": "Төсөл бүрийг би өөрөө удирдана — account manager, гар дамжуулалт байхгүй."
         },
         {
-          "id": "tomas",
-          "name": "Tomas Novák",
-          "role": "Founder, Novák Consulting",
-          "text": "Тэд миний Чех S.R.O. бүртгэлийг хийж байхдаа агентлагийн сайтыг зэрэг хөгжүүлсэн. Мэргэжлийн, хурдан, стрессгүй."
+          "id": "foundingRates",
+          "title": "Анхны харилцагчийн үнэ",
+          "desc": "Эрт оролцогчид portfolio бүтээж байх үед давуу үнээр ажиллана."
         },
         {
-          "id": "enkhmaa",
-          "name": "Enkhmaa B.",
-          "role": "Director, MN Export Hub",
-          "text": "Прага дахь Монгол бизнес эрхлэгчийн хувьд миний хэлээр (жинхэнэ утгаараа) ойлгодог агентлагтай байх үнэлэшгүй. Үр дүн өөрөө ярьж байна."
+          "id": "trilingualSupport",
+          "title": "Гурван хэлтэй дэмжлэг",
+          "desc": "Англи, Чех, Монгол хэлээр ажиллана — Төв Европод ховор."
         }
       ]
     },
     "aiSection": {
       "badge": "AI-тай",
       "title": "Тусгай AI-гаар бизнесээ автоматжуул",
-      "description": "Бид давтагддаг ажлыг арилгадаг AI pipeline, chatbot, automation workflow бүтээнэ. Манай харилцагчид дунджаар долоо хоногт 23 цаг хэмнэдэг.",
+      "description": "Бид давтагддаг ажлыг арилгадаг AI pipeline, chatbot, automation workflow бүтээнэ — гар ажиллагааг 20+ цаг/долоо хоног хэмнэхээр зориулсан автоматжуулалт.",
       "checklist": [
         {
           "id": "leadChatbots",
@@ -495,10 +542,10 @@
       ]
     },
     "ctaBanner": {
-      "badge": "Хязгаарлагдмал боломж",
+      "badge": "Анхны харилцагчид",
       "titleLine1": "Онцгой зүйл",
       "titleLine2": "бүтээхэд бэлэн үү?",
-      "description": "Бид чанарыг дээд түвшинд байлгахын тулд сард зөвхөн 3 шинэ харилцагч авдаг. Суудал дүүрэхээс өмнө танилцах дуудлагаа захиалаарай.",
+      "description": "Одоо анхны харилцагчид авч байна — хязгаарлагдмал founding-client үнээр. Үнэгүй танилцах дуудлагаа захиалаарай.",
       "ctas": [
         {
           "id": "startProject",
