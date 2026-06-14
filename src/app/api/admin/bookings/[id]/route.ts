@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { requireAdminApi } from '@/lib/auth'
 import { supabaseAdmin } from '@/lib/supabase'
 import { deleteCalendarEvent } from '@/lib/google-calendar'
 
@@ -8,6 +9,9 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
+    const auth = await requireAdminApi()
+    if (auth.error) return auth.error
+
     const body = await request.json()
     const { status } = body
 

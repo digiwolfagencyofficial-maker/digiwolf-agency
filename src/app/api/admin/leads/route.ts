@@ -7,14 +7,14 @@ export async function GET() {
   if (auth.error) return auth.error
 
   const { data, error } = await supabaseAdmin
-    .from('bookings')
-    .select('id, name, email, event_time, notes, created_at, preferred_date, preferred_time, message')
+    .from('leads')
+    .select('id, name, email, message, created_at')
     .order('created_at', { ascending: false })
 
   if (error) {
-    console.error('Admin bookings fetch error:', error)
-    return NextResponse.json({ error: 'Failed to fetch bookings' }, { status: 500 })
+    console.error('Admin leads fetch error:', error)
+    return NextResponse.json({ error: 'Failed to fetch leads' }, { status: 500 })
   }
 
-  return NextResponse.json({ bookings: data ?? [] })
+  return NextResponse.json({ leads: data ?? [] })
 }
