@@ -1,17 +1,13 @@
 import { createClient } from '@supabase/supabase-js'
+import { getPublicSupabaseAnonKey, getPublicSupabaseUrl, getServiceRoleKey } from '@/lib/supabase-env'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+export { isSupabaseConfigured } from '@/lib/supabase-env'
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createClient(getPublicSupabaseUrl(), getPublicSupabaseAnonKey())
 
-export const supabaseAdmin = createClient(
-  supabaseUrl,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
-  }
-)
+export const supabaseAdmin = createClient(getPublicSupabaseUrl(), getServiceRoleKey(), {
+  auth: {
+    autoRefreshToken: false,
+    persistSession: false,
+  },
+})

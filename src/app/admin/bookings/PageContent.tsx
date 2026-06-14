@@ -4,7 +4,6 @@ export const dynamic = 'force-dynamic'
 
 import { useState, useEffect, useCallback } from 'react'
 import DashboardLayout from '@/components/dashboard/DashboardLayout'
-import { supabaseAdmin } from '@/lib/supabase'
 import { Calendar } from 'lucide-react'
 
 const adminNav = [
@@ -80,18 +79,16 @@ export default function BookingsPageContent() {
 
   const fetchBookings = useCallback(async () => {
     setLoading(true)
-    let query = supabaseAdmin
-      .from('bookings')
-      .select('*')
-      .order('created_at', { ascending: false })
-
-    if (filter !== 'all') {
-      query = query.eq('status', filter)
+    try {
+      const params = filter !== 'all' ? `?status=${filter}` : ''
+      const res = await fetch(`/api/admin/bookings${params}`)
+      if (res.ok) {
+        const data = await res.json()
+        setBookings((data.bookings ?? []) as Booking[])
+      }
+    } finally {
+      setLoading(false)
     }
-
-    const { data, error } = await query
-    if (!error && data) setBookings(data as Booking[])
-    setLoading(false)
   }, [filter])
 
   useEffect(() => { fetchBookings() }, [fetchBookings])
