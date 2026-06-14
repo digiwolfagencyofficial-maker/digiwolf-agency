@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import BrandLogo from '@/components/BrandLogo'
 
 interface NavItem {
   icon: string
@@ -48,9 +48,22 @@ export default function DashboardLayout({ children, navItems, role, userName = '
           display: 'flex', alignItems: 'center', gap: 10,
           minHeight: 72,
         }}>
-          <div style={{ flexShrink: 0 }}>
-            <Image src="/digiwolf-logo.svg" alt="Digi Wolf Agency" width={sidebarOpen ? 120 : 30} height={sidebarOpen ? 48 : 30} />
-          </div>
+          <Link
+            href="/"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+              textDecoration: 'none',
+              flexShrink: 0,
+              overflow: 'hidden',
+            }}
+          >
+            <BrandLogo
+              iconSize={sidebarOpen ? 36 : 32}
+              showWordmark={sidebarOpen}
+            />
+          </Link>
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
             style={{

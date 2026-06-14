@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 import NextLink from 'next/link'
 import { Link, usePathname } from '@/i18n/navigation'
-import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
+import BrandLogo from '@/components/BrandLogo'
 import { Menu, X } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
@@ -64,8 +64,7 @@ export default function Navbar() {
         <div style={{ maxWidth: 1280, margin: '0 auto', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-            <Image src="/digiwolf-icon-transparent.png" alt={t('brandAlt')} width={40} height={40} priority style={{ objectFit: 'contain' }} />
-            <span style={{ color: '#f0f4ff', fontWeight: 800, fontSize: 17, letterSpacing: '0.05em' }}>DIGIWOLF</span>
+            <BrandLogo alt={t('brandAlt')} priority />
           </Link>
 
           {/* Desktop Links */}
