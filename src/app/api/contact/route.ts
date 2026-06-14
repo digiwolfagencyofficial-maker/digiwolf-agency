@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { contactLeadSchema, formatContactFieldErrors } from '@/lib/contact-options'
 import { sendLeadNotification } from '@/lib/email'
-import { supabaseAdmin } from '@/lib/supabase'
+import { supabaseAdmin, isSupabaseConfigured } from '@/lib/supabase'
 import { sendTelegramNotification } from '@/lib/telegram'
 
 export async function POST(request: NextRequest) {
@@ -19,21 +19,48 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Guard: surface missing/placeholder Supabase config instead of silently
+    // inserting into a placeholder client (the main "works locally" trap).
+    if (!isSupabaseConfigured()) {
+      console.error('[contact] Supabase is NOT configured. Missing env vars:', {
+        NEXT_PUBLIC_SUPABASE_URL: Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL),
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: Boolean(process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY),
+        SUPABASE_SERVICE_ROLE_KEY: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY),
+      })
+      return NextResponse.json(
+        {
+          error:
+            'Server is not configured to accept submissions right now. Please email us directly.',
+        },
+        { status: 500 }
+      )
+    }
+
     const { name, email, company, service, budget, message } = parsed.data
 
-    const { error: dbError } = await supabaseAdmin.from('leads').insert({
-      name,
-      email,
-      company: company || null,
-      service,
-      budget,
-      message,
-      status: 'new',
-      source: 'contact',
-    })
+    const { data: inserted, error: dbError } = await supabaseAdmin
+      .from('leads')
+      .insert({
+        name,
+        email,
+        company: company || null,
+        service,
+        budget,
+        message,
+        status: 'new',
+        source: 'contact',
+      })
+      .select('id')
+      .single()
 
     if (dbError) {
-      console.error('Supabase insert error:', dbError)
+      // Full error so it shows up clearly in Vercel runtime logs.
+      console.error('[contact] Supabase insert failed:', {
+        message: dbError.message,
+        details: dbError.details,
+        hint: dbError.hint,
+        code: dbError.code,
+      })
       return NextResponse.json(
         {
           error: 'We could not save your message. Please try again or email us directly.',
@@ -41,6 +68,8 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    console.log('[contact] Lead saved:', inserted?.id)
 
     sendLeadNotification({
       name,
@@ -51,20 +80,24 @@ export async function POST(request: NextRequest) {
       message,
     }).catch((err) => console.error('Lead notification email failed:', err))
 
-    sendTelegramNotification({
-      title: 'New contact lead',
-      name,
-      email,
-      service,
-      summary: `${budget} — ${message}`,
-    }).catch((err) => console.error('Telegram notification failed:', err))
+    try {
+      await sendTelegramNotification({
+        title: 'New contact lead',
+        name,
+        email,
+        service,
+        summary: `${budget} — ${message}`,
+      })
+    } catch (err) {
+      console.error('Telegram notification failed:', err)
+    }
 
     return NextResponse.json({
       success: true,
       message: 'Thank you! We will be in touch within 4 business hours.',
     })
   } catch (error) {
-    console.error('Contact API error:', error)
+    console.error('[contact] Unexpected API error:', error)
     return NextResponse.json(
       { error: 'Something went wrong. Please try again or email us directly.' },
       { status: 500 }
