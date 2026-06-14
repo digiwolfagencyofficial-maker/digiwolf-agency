@@ -1,13 +1,16 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { useRouter } from 'next/navigation'
+import { Suspense, useState, useMemo } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { createSupabaseBrowserClient } from '@/lib/supabase-browser'
+import { postLoginRedirect, safeCallbackUrl } from '@/lib/auth-utils'
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const callbackUrl = searchParams.get('callbackUrl')
   const supabase = useMemo(() => createSupabaseBrowserClient(), [])
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -21,9 +24,17 @@ export default function LoginPage() {
     setError('')
     setLoading(true)
     try {
-      const { error } = await supabase.auth.signInWithPassword({ email, password })
-      if (error) setError(error.message)
-      else router.push('/admin')
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+      if (error) {
+        setError(error.message)
+      } else {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('role')
+          .eq('id', data.user.id)
+          .maybeSingle()
+        router.push(postLoginRedirect(profile?.role, callbackUrl))
+      }
     } catch {
       setError('An error occurred. Please try again.')
     } finally {
@@ -32,9 +43,13 @@ export default function LoginPage() {
   }
 
   const handleGoogleSignIn = async () => {
+    const next = safeCallbackUrl(callbackUrl)
+    const redirectTo = next
+      ? `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`
+      : `${window.location.origin}/auth/callback`
     await supabase.auth.signInWithOAuth({
       provider: 'google',
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
+      options: { redirectTo },
     })
   }
 
@@ -237,5 +252,17 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div style={{ minHeight: '100vh', background: '#030712', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <p style={{ color: '#64748b', fontFamily: 'Inter, system-ui, sans-serif' }}>Loading...</p>
+      </div>
+    }>
+      <LoginForm />
+    </Suspense>
   )
 }

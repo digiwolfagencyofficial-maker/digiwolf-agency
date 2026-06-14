@@ -1,7 +1,8 @@
 import createIntlMiddleware from 'next-intl/middleware'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { getToken } from 'next-auth/jwt'
+import { getProfileRole } from '@/lib/profile'
+import { createSupabaseProxyClient } from '@/lib/supabase-proxy'
 import { routing } from './i18n/routing'
 
 const handleI18nRouting = createIntlMiddleware(routing)
@@ -14,18 +15,23 @@ export async function proxy(req: NextRequest) {
   const isProtected = protectedPrefixes.some((prefix) => pathname.startsWith(prefix))
 
   if (isProtected) {
-    const token = await getToken({
-      req,
-      secret: process.env.NEXTAUTH_SECRET,
-    })
+    const { supabase, getResponse, applyCookiesTo } = createSupabaseProxyClient(req)
+    const { data: { user } } = await supabase.auth.getUser()
 
-    if (!token) {
+    if (!user) {
       const loginUrl = new URL('/login', req.url)
       loginUrl.searchParams.set('callbackUrl', pathname)
-      return NextResponse.redirect(loginUrl)
+      return applyCookiesTo(NextResponse.redirect(loginUrl))
     }
 
-    return NextResponse.next()
+    if (pathname.startsWith('/admin')) {
+      const role = await getProfileRole(supabase, user.id)
+      if (role !== 'admin') {
+        return applyCookiesTo(NextResponse.redirect(new URL('/dashboard', req.url)))
+      }
+    }
+
+    return getResponse()
   }
 
   if (

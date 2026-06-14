@@ -7,7 +7,7 @@ Full-stack agency website for **Digi Wolf Agency s.r.o.** — Web development, C
 - **Framework**: Next.js 14 (App Router, TypeScript)
 - **Styling**: Tailwind CSS
 - **Database**: Supabase (PostgreSQL + Auth + Storage)
-- **Auth**: NextAuth.js v5 (beta)
+- **Auth**: Supabase Auth (SSR session cookies)
 - **UI**: Radix UI + Framer Motion + Lucide Icons
 - **Forms**: React Hook Form + Zod
 - **Email**: Resend
@@ -28,7 +28,7 @@ src/
     dashboard/       - Dashboard components
   lib/
     supabase.ts      - Supabase client
-    auth.ts          - NextAuth configuration
+    auth.ts          - Supabase auth helpers (requireAuth, requireAdmin)
     utils.ts         - Utility functions
   types/
     index.ts         - TypeScript types
@@ -56,8 +56,6 @@ Required variables:
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
-- `NEXTAUTH_SECRET`
-- `NEXTAUTH_URL`
 
 ### 3. Apply database schema
 
