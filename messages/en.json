@@ -2228,121 +2228,129 @@
       "badge": "Our Work",
       "titleLine1": "Portfolio",
       "titleLine2": "In Progress",
-      "subtitle": "We're building our client case study library. For now, this live site is concrete proof of what we deliver — no mockups, no hypotheticals.",
+      "subtitle": "We're building our client case study library. For now, this live site is our proof of build quality — no mockups, no hypotheticals.",
       "stats": [
         {
           "id": "languages",
-          "value": "3",
-          "label": "Languages (EN/CZ/MN)"
+          "n": "3",
+          "l": "Languages"
         },
         {
-          "id": "responseTime",
-          "value": "24h",
-          "label": "Response time"
+          "id": "response",
+          "n": "24h",
+          "l": "Response time"
         },
         {
-          "id": "sourceCode",
-          "value": "100%",
-          "label": "Source code yours"
+          "id": "code",
+          "n": "100%",
+          "l": "Source code yours"
         }
       ]
     },
-    "showcase": {
-      "title": "digiwolf.agency",
-      "tag": "Live now",
-      "description": "The site you're browsing right now — built in-house on Next.js App Router, deployed on Vercel. Every feature below is live and working in production.",
-      "features": [
-        {
-          "id": "nextjs",
-          "label": "Next.js App Router + TypeScript"
-        },
-        {
-          "id": "trilingual",
-          "label": "Trilingual i18n (EN / CZ / MN)"
-        },
-        {
-          "id": "supabase",
-          "label": "Supabase lead capture"
-        },
-        {
-          "id": "resend",
-          "label": "Resend email notifications"
-        },
-        {
-          "id": "calcom",
-          "label": "Cal.com booking + webhook"
-        },
-        {
-          "id": "aiChat",
-          "label": "AI chat assistant"
-        },
-        {
-          "id": "telegram",
-          "label": "Telegram lead notifications"
-        },
-        {
-          "id": "gdpr",
-          "label": "GDPR legal pages + cookie consent"
-        },
-        {
-          "id": "stripe",
-          "label": "Stripe-ready payments"
-        },
-        {
-          "id": "vercel",
-          "label": "Deployed on Vercel"
-        }
-      ]
-    },
-    "capabilities": {
-      "title": "What We Build",
-      "subtitle": "Types of work we deliver — capabilities, not claimed client projects.",
-      "items": [
-        {
-          "id": "websites",
-          "label": "High-converting agency websites"
-        },
-        {
-          "id": "sro",
-          "label": "Czech S.R.O. company formation"
-        },
-        {
-          "id": "aiAutomation",
-          "label": "AI chatbots & workflow automation"
-        },
-        {
-          "id": "bookingCrm",
-          "label": "Booking systems & lead CRM"
-        },
-        {
-          "id": "multilingual",
-          "label": "Multilingual sites & localisation"
-        },
-        {
-          "id": "payments",
-          "label": "Stripe payments & client portals"
-        }
-      ]
+    "filters": [
+      {
+        "id": "all",
+        "label": "All"
+      },
+      {
+        "id": "websites",
+        "label": "Websites"
+      },
+      {
+        "id": "sroFormation",
+        "label": "S.R.O. Formation"
+      },
+      {
+        "id": "aiAutomation",
+        "label": "AI Automation"
+      }
+    ],
+    "labels": {
+      "challenge": "Goal",
+      "solution": "What We Built",
+      "results": "Features Live",
+      "techStack": "Tech Stack"
     },
     "cta": {
-      "badge": "Founding Clients",
-      "title": "Portfolio Growing",
-      "description": "We're onboarding founding clients and building our case study library. Be an early partner — book a free discovery call or send us a message.",
+      "titleLine1": "Want to Be",
+      "titleLine2": "Case Study #1?",
+      "subtitle": "We're accepting founding clients at intro rates. Build with us and help shape our portfolio.",
       "ctas": [
         {
-          "id": "bookCall",
-          "label": "Book a Free Discovery Call →"
+          "id": "startProject",
+          "label": "Start Your Project →"
         },
         {
-          "id": "contact",
-          "label": "Get in Touch →"
-        },
-        {
-          "id": "howWeWork",
-          "label": "How We Work"
+          "id": "viewServices",
+          "label": "View Services"
         }
       ]
-    }
+    },
+    "items": [
+      {
+        "id": "digiwolfAgency",
+        "name": "digiwolf.agency",
+        "client": "Our own production site",
+        "category": "Websites",
+        "tag": "Live portfolio",
+        "metric": "Live",
+        "metricLabel": "Production site",
+        "challenge": "As a new founder-led agency, we needed a production site that proves our capabilities — not a template or mockup.",
+        "solution": "Built on Next.js 15 with trilingual routing, AI chat, lead capture (Supabase + Resend), Cal.com booking, Stripe-ready payments, and GDPR legal pages.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "Next.js 15 + TypeScript production build"
+          },
+          {
+            "id": "r2",
+            "text": "Trilingual (EN / CZ / MN) with next-intl"
+          },
+          {
+            "id": "r3",
+            "text": "AI chat assistant integrated on-site"
+          },
+          {
+            "id": "r4",
+            "text": "Lead form → Supabase + email notifications"
+          },
+          {
+            "id": "r5",
+            "text": "Online booking via Cal.com webhook"
+          },
+          {
+            "id": "r6",
+            "text": "Stripe-ready payment infrastructure"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js 15"
+          },
+          {
+            "id": "t2",
+            "label": "TypeScript"
+          },
+          {
+            "id": "t3",
+            "label": "Supabase"
+          },
+          {
+            "id": "t4",
+            "label": "Tailwind CSS"
+          },
+          {
+            "id": "t5",
+            "label": "Vercel"
+          },
+          {
+            "id": "t6",
+            "label": "Resend"
+          }
+        ]
+      }
+    ]
   },
   "legal": {
     "privacy": {
