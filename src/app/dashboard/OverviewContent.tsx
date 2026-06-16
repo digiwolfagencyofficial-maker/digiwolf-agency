@@ -5,6 +5,12 @@ export const dynamic = 'force-dynamic'
 import { useState } from 'react'
 import Link from 'next/link'
 import DashboardLayout from '@/components/dashboard/DashboardLayout'
+import { useClientProjects } from '@/hooks/useClientProjects'
+import {
+  formatProjectStatus,
+  formatProjectTimestamp,
+  getStatusStyle,
+} from '@/lib/project-display'
 
 const clientNav = [
   { icon: '⬡', label: 'Overview', href: '/dashboard' },
@@ -15,16 +21,11 @@ const clientNav = [
   { icon: '⚙️', label: 'Settings', href: '/dashboard/settings' },
 ]
 
-const stats = [
-  { label: 'Active Projects', value: '2', icon: '📁', color: '#4d80ff', bg: 'rgba(0,71,255,0.08)', trend: '+1 this month' },
-  { label: 'Pending Invoices', value: '1', icon: '🧾', color: '#eab308', bg: 'rgba(234,179,8,0.08)', trend: '12,000 CZK due' },
-  { label: 'Unread Messages', value: '3', icon: '💬', color: '#22c55e', bg: 'rgba(34,197,94,0.08)', trend: 'Reply needed' },
-  { label: 'Next Milestone', value: 'May 30', icon: '📅', color: '#a855f7', bg: 'rgba(168,85,247,0.08)', trend: '12 days left' },
-]
-
-const mockProjects = [
-  { id: 1, name: 'DigiWolf E-shop Redesign', status: 'In Progress', progress: 65, start: '1 Apr 2025', deadline: '30 Jun 2025', manager: 'Tomáš K.' },
-  { id: 2, name: 'SEO & Content Strategy', status: 'Review', progress: 88, start: '15 Mar 2025', deadline: '15 May 2025', manager: 'Jana M.' },
+const statsTemplate = [
+  { label: 'Active Projects', icon: '📁', color: '#4d80ff', bg: 'rgba(0,71,255,0.08)' },
+  { label: 'Pending Invoices', icon: '🧾', color: '#eab308', bg: 'rgba(234,179,8,0.08)', trend: '12,000 CZK due' },
+  { label: 'Unread Messages', icon: '💬', color: '#22c55e', bg: 'rgba(34,197,94,0.08)', trend: 'Reply needed' },
+  { label: 'Next Milestone', icon: '📅', color: '#a855f7', bg: 'rgba(168,85,247,0.08)', trend: '12 days left' },
 ]
 
 const mockInvoices = [
@@ -45,29 +46,16 @@ const activity = [
 ]
 
 function StatusBadge({ status }: { status: string }) {
-  const map: Record<string, { bg: string; color: string }> = {
-    'In Progress': { bg: 'rgba(0,71,255,0.12)', color: '#4d80ff' },
-    'Review': { bg: 'rgba(234,179,8,0.12)', color: '#eab308' },
-    'Paid': { bg: 'rgba(34,197,94,0.12)', color: '#22c55e' },
-    'Pending': { bg: 'rgba(234,179,8,0.12)', color: '#eab308' },
-    'Completed': { bg: 'rgba(34,197,94,0.12)', color: '#22c55e' },
+  const invoiceMap: Record<string, { bg: string; color: string }> = {
+    Paid: { bg: 'rgba(34,197,94,0.12)', color: '#22c55e' },
+    Pending: { bg: 'rgba(234,179,8,0.12)', color: '#eab308' },
   }
-  const s = map[status] || { bg: 'rgba(136,146,176,0.12)', color: '#8892b0' }
-  return <span style={{ padding: '4px 10px', borderRadius: 20, background: s.bg, color: s.color, fontSize: 12, fontWeight: 700 }}>{status}</span>
+  const s = invoiceMap[status] ?? getStatusStyle(status)
+  const label = invoiceMap[status] ? status : formatProjectStatus(status)
+  return <span style={{ padding: '4px 10px', borderRadius: 20, background: s.bg, color: s.color, fontSize: 12, fontWeight: 700 }}>{label}</span>
 }
 
-function ProgressBar({ value }: { value: number }) {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-      <div style={{ flex: 1, height: 6, background: '#0d1a35', borderRadius: 3, overflow: 'hidden' }}>
-        <div style={{ width: `${value}%`, height: '100%', background: 'linear-gradient(90deg, #0047FF, #3d74ff)', borderRadius: 3 }} />
-      </div>
-      <span style={{ fontSize: 12, color: '#8892b0', width: 32, textAlign: 'right' }}>{value}%</span>
-    </div>
-  )
-}
-
-function StatCard({ s }: { s: typeof stats[0] }) {
+function StatCard({ s }: { s: { label: string; value: string; icon: string; color: string; bg: string; trend?: string } }) {
   const [hover, setHover] = useState(false)
   return (
     <div
@@ -84,7 +72,7 @@ function StatCard({ s }: { s: typeof stats[0] }) {
     >
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
         <div style={{ width: 40, height: 40, borderRadius: 10, background: s.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20 }}>{s.icon}</div>
-        <span style={{ fontSize: 11, color: '#8892b0', background: '#0d1a35', padding: '3px 8px', borderRadius: 6 }}>{s.trend}</span>
+        <span style={{ fontSize: 11, color: '#8892b0', background: '#0d1a35', padding: '3px 8px', borderRadius: 6 }}>{s.trend ?? ''}</span>
       </div>
       <div style={{ fontSize: 30, fontWeight: 800, color: s.color, marginBottom: 4, letterSpacing: '-1px' }}>{s.value}</div>
       <div style={{ fontSize: 13, color: '#8892b0' }}>{s.label}</div>
@@ -93,12 +81,20 @@ function StatCard({ s }: { s: typeof stats[0] }) {
 }
 
 export function ClientDashboardPage() {
+  const { projects, loading, error, displayName, userInitial } = useClientProjects()
+  const projectCount = projects.length
+  const stats = statsTemplate.map((s) =>
+    s.label === 'Active Projects'
+      ? { ...s, value: String(projectCount), trend: projectCount === 1 ? '1 project' : `${projectCount} projects` }
+      : { ...s, value: s.label === 'Pending Invoices' ? '1' : s.label === 'Unread Messages' ? '3' : 'May 30' }
+  )
+
   return (
-    <DashboardLayout navItems={clientNav} role="client" userName="Martin Novák" userInitial="M">
+    <DashboardLayout navItems={clientNav} role="client" userName={displayName} userInitial={userInitial}>
       {/* Header */}
       <div style={{ marginBottom: 32 }}>
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6, letterSpacing: '-0.5px' }}>
-          Welcome back, Martin 👋
+          Welcome back, {displayName} 👋
         </h1>
         <p style={{ color: '#8892b0', fontSize: 14 }}>Here's what's happening with your projects today.</p>
       </div>
@@ -117,20 +113,38 @@ export function ClientDashboardPage() {
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr style={{ borderBottom: '1px solid #0d1a35' }}>
-              {['Project', 'Status', 'Progress', 'Start', 'Deadline', 'Manager'].map((h) => (
+              {['Project', 'Status', 'Created'].map((h) => (
                 <th key={h} style={{ padding: '12px 20px', textAlign: 'left', fontSize: 12, fontWeight: 600, color: '#8892b0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{h}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {mockProjects.map((p, i) => (
-              <tr key={p.id} style={{ borderBottom: i < mockProjects.length - 1 ? '1px solid #0a1628' : 'none' }}>
-                <td style={{ padding: '16px 20px', fontSize: 14, fontWeight: 600 }}>{p.name}</td>
-                <td style={{ padding: '16px 20px' }}><StatusBadge status={p.status} /></td>
-                <td style={{ padding: '16px 20px', minWidth: 160 }}><ProgressBar value={p.progress} /></td>
-                <td style={{ padding: '16px 20px', fontSize: 13, color: '#8892b0' }}>{p.start}</td>
-                <td style={{ padding: '16px 20px', fontSize: 13, color: '#8892b0' }}>{p.deadline}</td>
-                <td style={{ padding: '16px 20px', fontSize: 13, color: '#8892b0' }}>{p.manager}</td>
+            {loading && (
+              <tr>
+                <td colSpan={3} style={{ padding: '32px 20px', textAlign: 'center', color: '#8892b0', fontSize: 14 }}>
+                  Loading projects…
+                </td>
+              </tr>
+            )}
+            {!loading && error && (
+              <tr>
+                <td colSpan={3} style={{ padding: '32px 20px', textAlign: 'center', color: '#f87171', fontSize: 14 }}>
+                  {error}
+                </td>
+              </tr>
+            )}
+            {!loading && !error && projects.length === 0 && (
+              <tr>
+                <td colSpan={3} style={{ padding: '32px 20px', textAlign: 'center', color: '#8892b0', fontSize: 14 }}>
+                  No projects yet — your agency will add them here.
+                </td>
+              </tr>
+            )}
+            {!loading && !error && projects.map((p, i) => (
+              <tr key={p.id} style={{ borderBottom: i < projects.length - 1 ? '1px solid #0a1628' : 'none' }}>
+                <td style={{ padding: '16px 20px', fontSize: 14, fontWeight: 600, color: '#f0f4ff' }}>{p.name}</td>
+                <td style={{ padding: '16px 20px' }}><StatusBadge status={p.project_status} /></td>
+                <td style={{ padding: '16px 20px', fontSize: 13, color: '#8892b0' }}>{formatProjectTimestamp(p.created_at)}</td>
               </tr>
             ))}
           </tbody>

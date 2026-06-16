@@ -10,19 +10,29 @@ export interface Profile {
   created_at: string
 }
 
-export type ProjectStatus = 'discovery' | 'design' | 'development' | 'review' | 'launched' | 'paused'
+// Live `services` table — columns are not assumed here. We read the whole row
+// and resolve a display name at runtime (see resolveServiceName).
+export interface Service {
+  id: string
+  [key: string]: unknown
+}
 
+// Live `projects` table (real schema).
 export interface Project {
   id: string
-  client_id: string
-  title: string
-  description: string | null
-  status: ProjectStatus
-  progress: number
-  budget: number | null
-  currency: string
-  start_date: string | null
-  end_date: string | null
+  user_id: string
+  service_id: string | null
+  project_status: string
+  created_at: string
+  updated_at: string | null
+}
+
+// A client project once joined to its service and normalized for display.
+export interface ClientProjectView {
+  id: string
+  name: string
+  project_status: string
+  created_at: string
 }
 
 export type InvoiceStatus = 'draft' | 'sent' | 'paid' | 'overdue' | 'cancelled'

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
-import { supabaseAdmin } from '@/lib/supabase'
-import { getSession } from '@/lib/auth'
+import { cookies } from 'next/headers'
+import { getSession, makeSupabaseClient } from '@/lib/auth'
 
 export async function GET() {
   const session = await getSession()
@@ -9,9 +9,13 @@ export async function GET() {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const { data, error } = await supabaseAdmin
+  const cookieStore = await cookies()
+  const supabase = makeSupabaseClient(cookieStore)
+
+  const { data, error } = await supabase
     .from('projects')
     .select('*')
+    .eq('user_id', session.user.id)
     .order('created_at', { ascending: false })
 
   if (error) {
