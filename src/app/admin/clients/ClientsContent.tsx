@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic';
 
 import { useState } from 'react';
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
+import AddClientForm from '@/components/admin/AddClientForm';
 
 const adminNav = [
   { icon: '⬡', label: 'Overview', href: '/admin' },
@@ -182,6 +183,7 @@ export function ClientsPageInner() {
   const [selectedClient, setSelectedClient] = useState<Client | null>(null);
   const [messageText, setMessageText] = useState('');
   const [messageSent, setMessageSent] = useState(false);
+  const [showAddClient, setShowAddClient] = useState(false);
 
   const filtered = clients.filter(c =>
     c.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -221,7 +223,10 @@ export function ClientsPageInner() {
                 style={{ background: '#040d1f', border: '1px solid #1e293b', borderRadius: '10px', padding: '10px 14px 10px 36px', color: '#F1F5F9', fontSize: '13px', outline: 'none', width: '220px' }}
               />
             </div>
-            <button style={{ background: '#0047FF', color: '#fff', border: 'none', borderRadius: '10px', padding: '10px 20px', fontSize: '14px', fontWeight: 600, cursor: 'pointer' }}>
+            <button
+              onClick={() => setShowAddClient(true)}
+              style={{ background: '#0047FF', color: '#fff', border: 'none', borderRadius: '10px', padding: '10px 20px', fontSize: '14px', fontWeight: 600, cursor: 'pointer' }}
+            >
               + Add Client
             </button>
           </div>
@@ -447,6 +452,10 @@ export function ClientsPageInner() {
               </div>
             </div>
           </>
+        )}
+
+        {showAddClient && (
+          <AddClientForm onClose={() => setShowAddClient(false)} />
         )}
       </div>
     </DashboardLayout>
