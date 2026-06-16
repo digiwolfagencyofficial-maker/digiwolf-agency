@@ -96,15 +96,21 @@ export async function POST(req: Request) {
 
   const userId = created.user.id
 
-  // Step B — insert profile (FK requires the auth user to exist first).
-  const { error: profileError } = await supabaseAdmin.from('profiles').insert({
-    id: userId,
-    full_name: fullName,
-    role: 'client',
-  })
+  // Step B — ensure profile exists with correct name and role.
+  // handle_new_user() trigger auto-creates a profile on auth.users insert;
+  // upsert avoids duplicate-key errors and sets full_name from our form.
+  const { error: profileError } = await supabaseAdmin.from('profiles').upsert(
+    {
+      id: userId,
+      full_name: fullName,
+      role: 'client',
+    },
+    { onConflict: 'id' }
+  )
 
   if (profileError) {
-    console.error('[onboard] profile insert failed:', profileError)
+    console.error('[onboard] profile upsert failed:', profileError)
+    await supabaseAdmin.from('profiles').delete().eq('id', userId)
     await supabaseAdmin.auth.admin.deleteUser(userId)
     return NextResponse.json({ error: 'Failed to create client profile.' }, { status: 500 })
   }
