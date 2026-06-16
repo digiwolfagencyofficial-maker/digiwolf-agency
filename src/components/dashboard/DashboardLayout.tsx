@@ -20,7 +20,7 @@ interface DashboardLayoutProps {
   userInitial?: string
 }
 
-export default function DashboardLayout({ children, navItems, role, userName = 'User', userInitial = 'U' }: DashboardLayoutProps) {
+export default function DashboardLayout({ children, navItems, role, userName = 'Client', userInitial = 'C' }: DashboardLayoutProps) {
   const pathname = usePathname()
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [hoveredNav, setHoveredNav] = useState('')

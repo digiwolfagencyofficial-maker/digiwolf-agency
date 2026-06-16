@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic'
 
 import { useState } from 'react'
 import DashboardLayout from '@/components/dashboard/DashboardLayout'
+import { useClientProfile } from '@/hooks/useClientProfile'
 
 const clientNav = [
   { icon: '⬡', label: 'Overview', href: '/dashboard' },
@@ -44,6 +45,7 @@ const inputStyle: React.CSSProperties = {
 }
 
 export function DashboardSettingsPage() {
+  const { displayName, userInitial } = useClientProfile()
   const [profile, setProfile] = useState({ name: 'Martin Novák', email: 'martin@techcorp.cz', company: 'TechCorp s.r.o.', phone: '+420 777 123 456' })
   const [passwords, setPasswords] = useState({ current: '', newPass: '', confirm: '' })
   const [saved, setSaved] = useState(false)
@@ -64,7 +66,7 @@ export function DashboardSettingsPage() {
   }
 
   return (
-    <DashboardLayout navItems={clientNav} role="client" userName={profile.name} userInitial={profile.name.charAt(0)}>
+    <DashboardLayout navItems={clientNav} role="client" userName={displayName} userInitial={userInitial}>
       <div style={{ maxWidth: 720 }}>
         <div style={{ marginBottom: 32 }}>
           <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6, letterSpacing: '-0.5px' }}>Account Settings</h1>

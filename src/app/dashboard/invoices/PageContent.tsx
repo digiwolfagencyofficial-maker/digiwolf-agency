@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic';
 
 import { useState } from 'react';
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
+import { useClientProfile } from '@/hooks/useClientProfile';
 
 const clientNav = [
   { icon: '⬡', label: 'Overview', href: '/dashboard' },
@@ -64,6 +65,7 @@ const statusBadge: Record<string, { bg: string; color: string; label: string }> 
 };
 
 export function InvoicesPageInner() {
+  const { displayName, userInitial } = useClientProfile();
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
   const [hoveredDownload, setHoveredDownload] = useState<number | null>(null);
   const [hoveredPay, setHoveredPay] = useState<number | null>(null);
@@ -72,8 +74,8 @@ export function InvoicesPageInner() {
     <DashboardLayout
       navItems={clientNav}
       role="client"
-      userName="Martin Novák"
-      userInitial="M"
+      userName={displayName}
+      userInitial={userInitial}
     >
       <div style={{ padding: '32px', maxWidth: '1100px', margin: '0 auto' }}>
         {/* Header */}

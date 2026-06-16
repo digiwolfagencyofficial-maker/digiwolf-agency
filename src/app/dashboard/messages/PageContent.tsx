@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic';
 
 import { useState, useRef, useEffect } from 'react';
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
+import { useClientProfile } from '@/hooks/useClientProfile';
 
 const clientNav = [
   { icon: '⬡', label: 'Overview', href: '/dashboard' },
@@ -149,6 +150,7 @@ const conversations: Conversation[] = [
 ];
 
 export function MessagesPageInner() {
+  const { displayName, userInitial } = useClientProfile();
   const [selectedId, setSelectedId] = useState(1);
   const [messageInput, setMessageInput] = useState('');
   const [localMessages, setLocalMessages] = useState<Record<number, Message[]>>(
@@ -191,8 +193,8 @@ export function MessagesPageInner() {
     <DashboardLayout
       navItems={clientNav}
       role="client"
-      userName="Martin Novák"
-      userInitial="M"
+      userName={displayName}
+      userInitial={userInitial}
     >
       {/* Two-panel messaging layout */}
       <div

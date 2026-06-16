@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic';
 
 import { useState } from 'react';
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
+import { useClientProfile } from '@/hooks/useClientProfile';
 
 const clientNav = [
   { icon: '⬡', label: 'Overview', href: '/dashboard' },
@@ -62,6 +63,7 @@ const folderShortcuts = [
 ];
 
 export function FilesPageInner() {
+  const { displayName, userInitial } = useClientProfile();
   const [activeFilter, setActiveFilter] = useState('All');
   const [activeFolder, setActiveFolder] = useState('All Files');
   const [isDragOver, setIsDragOver] = useState(false);
@@ -80,8 +82,8 @@ export function FilesPageInner() {
     <DashboardLayout
       navItems={clientNav}
       role="client"
-      userName="Martin Novák"
-      userInitial="M"
+      userName={displayName}
+      userInitial={userInitial}
     >
       <div style={{ padding: '32px', maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
