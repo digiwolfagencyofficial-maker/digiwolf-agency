@@ -1,12 +1,13 @@
 import { NextResponse } from 'next/server'
 import { requireAdminApi } from '@/lib/auth'
 import { sendClientWelcomeEmail } from '@/lib/email'
+import { siteUrl } from '@/lib/site-url'
 import { supabaseAdmin, isSupabaseConfigured } from '@/lib/supabase'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-function siteUrl() {
-  return process.env.NEXT_PUBLIC_SITE_URL || 'https://digiwolf.agency'
+function canonicalSiteUrl() {
+  return siteUrl.replace(/\/$/, '')
 }
 
 export async function GET() {
@@ -133,26 +134,24 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Failed to create client project.' }, { status: 500 })
   }
 
-  // Step D — generate a set-password invite link. We build our own confirm URL
-  // from the hashed token so the session is established server-side via
-  // /auth/confirm (verifyOtp), then the client lands on /auth/update-password.
+  // Step D — generate a set-password link for the existing auth user.
+  // Use Supabase's action_link (verify URL) — it redirects through /auth/callback
+  // which exchanges the code for a session, then sends the user to set password.
+  const baseUrl = canonicalSiteUrl()
+  const redirectTo = `${baseUrl}/auth/callback?next=${encodeURIComponent('/auth/update-password')}`
   const { data: linkData, error: linkError } = await supabaseAdmin.auth.admin.generateLink({
-    type: 'invite',
+    type: 'recovery',
     email,
-    options: { redirectTo: `${siteUrl()}/auth/update-password` },
+    options: { redirectTo },
   })
 
-  const hashedToken = linkData?.properties?.hashed_token
+  const actionLink = linkData?.properties?.action_link
 
-  if (linkError || !hashedToken) {
-    console.error('[onboard] generateLink failed:', linkError)
+  if (linkError || !actionLink) {
+    console.error('[onboard] generateLink failed:', linkError, linkData?.properties)
     await rollback(userId)
     return NextResponse.json({ error: 'Failed to generate the invite link.' }, { status: 500 })
   }
-
-  const actionLink =
-    `${siteUrl()}/auth/confirm?token_hash=${encodeURIComponent(hashedToken)}` +
-    `&type=invite&next=${encodeURIComponent('/auth/update-password')}`
 
   // Step E — send the branded welcome email via Resend.
   try {

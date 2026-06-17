@@ -13,7 +13,11 @@ export async function GET(request: Request) {
   const supabase = makeSupabaseClient(cookieStore)
 
   if (code) {
-    await supabase.auth.exchangeCodeForSession(code)
+    const { error } = await supabase.auth.exchangeCodeForSession(code)
+    if (error) {
+      console.error('[auth/callback] exchangeCodeForSession failed:', error.message)
+      return NextResponse.redirect(new URL('/login?error=link_expired', request.url))
+    }
   }
 
   const { data: { session } } = await supabase.auth.getSession()

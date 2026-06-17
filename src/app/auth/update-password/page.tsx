@@ -18,14 +18,22 @@ export default function UpdatePasswordPage() {
 
   useEffect(() => {
     let active = true;
-    (async () => {
-      const { data } = await supabase.auth.getSession();
+
+    const syncSession = (session: { user: unknown } | null) => {
       if (!active) return;
-      setHasSession(Boolean(data.session));
+      setHasSession(Boolean(session));
       setChecking(false);
-    })();
+    };
+
+    supabase.auth.getSession().then(({ data }) => syncSession(data.session));
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      syncSession(session);
+    });
+
     return () => {
       active = false;
+      subscription.unsubscribe();
     };
   }, [supabase]);
 
