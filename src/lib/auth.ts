@@ -1,5 +1,5 @@
 import { createServerClient } from '@supabase/auth-helpers-nextjs'
-import type { Session } from '@supabase/supabase-js'
+import type { Session, User } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { NextResponse } from 'next/server'
@@ -73,6 +73,26 @@ export async function requireAdminApi(): Promise<
   }
 
   return { session }
+}
+
+/**
+ * For API routes that any signed-in user (not just admins) may call.
+ * Returns the JWT-validated user, or a JSON 401 — never redirects.
+ */
+export async function requireAuthApi(): Promise<
+  { user: User; error?: never } | { user?: never; error: NextResponse }
+> {
+  const cookieStore = await cookies()
+  const supabase = makeSupabaseClient(cookieStore)
+
+  // getUser() validates the JWT with Supabase — more reliable than getSession() in route handlers.
+  const { data: { user }, error } = await supabase.auth.getUser()
+
+  if (error || !user) {
+    return { error: NextResponse.json({ error: 'Unauthorized' }, { status: 401 }) }
+  }
+
+  return { user }
 }
 
 export { makeSupabaseClient }

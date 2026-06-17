@@ -2,9 +2,11 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import DashboardLayout from '@/components/dashboard/DashboardLayout'
 import { COMPANY, companyFullAddress } from '@/lib/company'
+import { useClientProfile } from '@/hooks/useClientProfile'
+import { createSupabaseBrowserClient } from '@/lib/supabase-browser'
 
 const adminNav = [
   { icon: '⬡', label: 'Overview', href: '/admin' },
@@ -38,6 +40,93 @@ const inputStyle: React.CSSProperties = {
 }
 
 export function AdminSettingsPage() {
+  const { profile: loadedProfile, email, loading, refresh } = useClientProfile()
+  const [account, setAccount] = useState({ name: '' })
+  const [accountSaved, setAccountSaved] = useState(false)
+  const [accountSaving, setAccountSaving] = useState(false)
+  const [accountError, setAccountError] = useState('')
+  const [passwords, setPasswords] = useState({ current: '', newPass: '', confirm: '' })
+  const [pwSaved, setPwSaved] = useState(false)
+  const [pwSaving, setPwSaving] = useState(false)
+  const [pwError, setPwError] = useState('')
+
+  useEffect(() => {
+    if (loadedProfile) setAccount({ name: loadedProfile.full_name ?? '' })
+  }, [loadedProfile])
+
+  const handleAccountSave = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setAccountSaving(true)
+    setAccountError('')
+    setAccountSaved(false)
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ full_name: account.name }),
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        throw new Error(data.error || 'Failed to save changes')
+      }
+      refresh()
+      setAccountSaved(true)
+      setTimeout(() => setAccountSaved(false), 3000)
+    } catch (err) {
+      setAccountError(err instanceof Error ? err.message : 'Failed to save changes')
+    } finally {
+      setAccountSaving(false)
+    }
+  }
+
+  const handlePasswordSave = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setPwError('')
+    setPwSaved(false)
+
+    if (passwords.newPass.length < 8) {
+      setPwError('New password must be at least 8 characters.')
+      return
+    }
+    if (passwords.newPass !== passwords.confirm) {
+      setPwError('New passwords do not match.')
+      return
+    }
+    if (!passwords.current) {
+      setPwError('Please enter your current password.')
+      return
+    }
+    if (!email) {
+      setPwError('Could not verify your account. Please refresh and try again.')
+      return
+    }
+
+    setPwSaving(true)
+    try {
+      const supabase = createSupabaseBrowserClient()
+      const { error: reauthError } = await supabase.auth.signInWithPassword({
+        email,
+        password: passwords.current,
+      })
+      if (reauthError) {
+        setPwError('Current password is incorrect.')
+        return
+      }
+      const { error: updateError } = await supabase.auth.updateUser({ password: passwords.newPass })
+      if (updateError) {
+        setPwError(updateError.message)
+        return
+      }
+      setPwSaved(true)
+      setPasswords({ current: '', newPass: '', confirm: '' })
+      setTimeout(() => setPwSaved(false), 3000)
+    } catch {
+      setPwError('Something went wrong. Please try again.')
+    } finally {
+      setPwSaving(false)
+    }
+  }
+
   const [agency, setAgency] = useState({
     name: COMPANY.legalName,
     email: COMPANY.email,
@@ -46,26 +135,12 @@ export function AdminSettingsPage() {
     address: companyFullAddress,
     website: 'https://digiwolf.agency',
   })
-  const [notifications, setNotifications] = useState({
-    newLead: true,
-    projectUpdate: true,
-    invoicePaid: true,
-    weeklyReport: false,
-    systemAlerts: true,
-  })
   const [saved, setSaved] = useState(false)
-  const [notifSaved, setNotifSaved] = useState(false)
 
   const handleAgencySave = (e: React.FormEvent) => {
     e.preventDefault()
     setSaved(true)
     setTimeout(() => setSaved(false), 3000)
-  }
-
-  const handleNotifSave = (e: React.FormEvent) => {
-    e.preventDefault()
-    setNotifSaved(true)
-    setTimeout(() => setNotifSaved(false), 3000)
   }
 
   const focusBorder = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -76,13 +151,80 @@ export function AdminSettingsPage() {
   }
 
   return (
-    <DashboardLayout navItems={adminNav} role="admin" userName="Digi Wolf Admin" userInitial="D">
+    <DashboardLayout navItems={adminNav}>
       <div style={{ maxWidth: 760 }}>
         <div style={{ marginBottom: 32 }}>
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', color: '#0047FF', textTransform: 'uppercase', marginBottom: 6 }}>Configuration</div>
           <h1 style={{ fontSize: 28, fontWeight: 700, color: '#f8fafc', margin: 0, letterSpacing: '-0.02em' }}>Agency Settings</h1>
-          <p style={{ color: '#64748b', marginTop: 6, fontSize: 14 }}>Manage your agency profile, defaults, and notification preferences.</p>
+          <p style={{ color: '#64748b', marginTop: 6, fontSize: 14 }}>Manage your account and agency profile.</p>
         </div>
+
+        {/* Your Account */}
+        <SettingSection title="Your Account">
+          <form onSubmit={handleAccountSave}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>Full Name</label>
+                <input
+                  style={inputStyle}
+                  value={account.name}
+                  placeholder={loading ? 'Loading…' : 'Your name'}
+                  onChange={e => setAccount({ name: e.target.value })}
+                  onFocus={focusBorder}
+                  onBlur={blurBorder}
+                />
+              </div>
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>Email Address</label>
+                <input
+                  type="email"
+                  readOnly
+                  disabled
+                  style={{ ...inputStyle, opacity: 0.6, cursor: 'not-allowed' }}
+                  value={email ?? ''}
+                  placeholder={loading ? 'Loading…' : ''}
+                />
+              </div>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 8 }}>
+              <button type="submit" disabled={accountSaving || loading} style={{ padding: '10px 24px', background: '#0047FF', border: 'none', borderRadius: 10, color: '#fff', fontSize: 14, fontWeight: 700, cursor: accountSaving || loading ? 'not-allowed' : 'pointer', opacity: accountSaving || loading ? 0.6 : 1, fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {accountSaving ? 'Saving…' : 'Save Changes'}
+              </button>
+              {accountSaved && <span style={{ fontSize: 13, color: '#22c55e' }}>✓ Saved successfully</span>}
+              {accountError && <span style={{ fontSize: 13, color: '#f87171' }}>{accountError}</span>}
+            </div>
+          </form>
+        </SettingSection>
+
+        {/* Change Password */}
+        <SettingSection title="Change Password">
+          <form onSubmit={handlePasswordSave}>
+            <div style={{ marginBottom: 16 }}>
+              <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>Current Password</label>
+              <input type="password" style={inputStyle} value={passwords.current} placeholder="••••••••"
+                onChange={e => setPasswords(p => ({ ...p, current: e.target.value }))} onFocus={focusBorder} onBlur={blurBorder} />
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>New Password</label>
+                <input type="password" style={inputStyle} value={passwords.newPass} placeholder="••••••••"
+                  onChange={e => setPasswords(p => ({ ...p, newPass: e.target.value }))} onFocus={focusBorder} onBlur={blurBorder} />
+              </div>
+              <div>
+                <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: '#8892b0', marginBottom: 6 }}>Confirm New Password</label>
+                <input type="password" style={inputStyle} value={passwords.confirm} placeholder="••••••••"
+                  onChange={e => setPasswords(p => ({ ...p, confirm: e.target.value }))} onFocus={focusBorder} onBlur={blurBorder} />
+              </div>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <button type="submit" disabled={pwSaving} style={{ padding: '10px 24px', background: '#0047FF', border: 'none', borderRadius: 10, color: '#fff', fontSize: 14, fontWeight: 700, cursor: pwSaving ? 'not-allowed' : 'pointer', opacity: pwSaving ? 0.6 : 1, fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {pwSaving ? 'Updating…' : 'Update Password'}
+              </button>
+              {pwSaved && <span style={{ fontSize: 13, color: '#22c55e' }}>✓ Password updated</span>}
+              {pwError && <span style={{ fontSize: 13, color: '#f87171' }}>{pwError}</span>}
+            </div>
+          </form>
+        </SettingSection>
 
         {/* Agency Info */}
         <SettingSection title="Agency Information">
@@ -164,65 +306,6 @@ export function AdminSettingsPage() {
             </div>
           </form>
         </SettingSection>
-
-        {/* Notification Preferences */}
-        <SettingSection title="Notification Preferences">
-          <form onSubmit={handleNotifSave}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-              {[
-                { key: 'newLead', label: 'New Lead Alert', desc: 'Get notified instantly when a new lead submits the contact form' },
-                { key: 'projectUpdate', label: 'Project Status Changes', desc: 'Receive alerts when project milestones are updated' },
-                { key: 'invoicePaid', label: 'Invoice Paid', desc: 'Get notified when a client pays an invoice' },
-                { key: 'weeklyReport', label: 'Weekly Summary Report', desc: 'Receive a weekly digest of leads, revenue, and project status' },
-                { key: 'systemAlerts', label: 'System Alerts', desc: 'Critical system notifications and security alerts' },
-              ].map((item, idx, arr) => (
-                <div key={item.key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '16px 0', borderBottom: idx < arr.length - 1 ? '1px solid #0f172a' : 'none' }}>
-                  <div>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: '#f0f4ff', marginBottom: 4 }}>{item.label}</div>
-                    <div style={{ fontSize: 13, color: '#64748b' }}>{item.desc}</div>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setNotifications(p => ({ ...p, [item.key]: !p[item.key as keyof typeof p] }))}
-                    style={{
-                      width: 44, height: 24, borderRadius: 12, flexShrink: 0, marginLeft: 24,
-                      background: notifications[item.key as keyof typeof notifications] ? '#0047FF' : '#1e2a45',
-                      border: 'none', cursor: 'pointer', position: 'relative', transition: 'background 0.2s',
-                    }}
-                  >
-                    <span style={{
-                      position: 'absolute', top: 3, width: 18, height: 18, borderRadius: '50%', background: '#fff',
-                      transition: 'left 0.2s',
-                      left: notifications[item.key as keyof typeof notifications] ? 23 : 3,
-                    }} />
-                  </button>
-                </div>
-              ))}
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 20 }}>
-              <button type="submit" style={{ padding: '10px 24px', background: '#0047FF', border: 'none', borderRadius: 10, color: '#fff', fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}>
-                Save Preferences
-              </button>
-              {notifSaved && <span style={{ fontSize: 13, color: '#22c55e' }}>✓ Preferences saved</span>}
-            </div>
-          </form>
-        </SettingSection>
-
-        {/* Danger Zone */}
-        <div style={{ background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.2)', borderRadius: 16, padding: 24 }}>
-          <h2 style={{ fontSize: 15, fontWeight: 700, color: '#f87171', marginBottom: 8 }}>Danger Zone</h2>
-          <p style={{ fontSize: 14, color: '#64748b', marginBottom: 20, lineHeight: 1.6 }}>
-            Reset all agency settings to defaults or export all data. These actions are irreversible.
-          </p>
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <button style={{ padding: '10px 20px', background: 'transparent', border: '1px solid rgba(100,116,139,0.4)', borderRadius: 10, color: '#94a3b8', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}>
-              Export All Data
-            </button>
-            <button style={{ padding: '10px 20px', background: 'transparent', border: '1px solid rgba(239,68,68,0.4)', borderRadius: 10, color: '#f87171', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}>
-              Reset to Defaults
-            </button>
-          </div>
-        </div>
       </div>
     </DashboardLayout>
   )

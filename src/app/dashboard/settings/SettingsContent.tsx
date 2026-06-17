@@ -2,16 +2,17 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import DashboardLayout from '@/components/dashboard/DashboardLayout'
 import { useClientProfile } from '@/hooks/useClientProfile'
+import { createSupabaseBrowserClient } from '@/lib/supabase-browser'
 
 const clientNav = [
   { icon: '⬡', label: 'Overview', href: '/dashboard' },
   { icon: '📁', label: 'My Projects', href: '/dashboard/projects' },
   { icon: '🧾', label: 'Invoices', href: '/dashboard/invoices' },
   { icon: '📂', label: 'Files', href: '/dashboard/files' },
-  { icon: '💬', label: 'Messages', href: '/dashboard/messages', badge: 3 },
+  { icon: '💬', label: 'Messages', href: '/dashboard/messages' },
   { icon: '⚙️', label: 'Settings', href: '/dashboard/settings' },
 ]
 
@@ -45,32 +46,102 @@ const inputStyle: React.CSSProperties = {
 }
 
 export function DashboardSettingsPage() {
-  const { displayName, userInitial } = useClientProfile()
-  const [profile, setProfile] = useState({ name: 'Martin Novák', email: 'martin@techcorp.cz', company: 'TechCorp s.r.o.', phone: '+420 777 123 456' })
+  const { profile: loadedProfile, email, loading, refresh } = useClientProfile()
+  const [profile, setProfile] = useState({ name: '' })
   const [passwords, setPasswords] = useState({ current: '', newPass: '', confirm: '' })
   const [saved, setSaved] = useState(false)
+  const [saving, setSaving] = useState(false)
+  const [saveError, setSaveError] = useState('')
   const [pwSaved, setPwSaved] = useState(false)
-  const [notifications, setNotifications] = useState({ projectUpdates: true, invoices: true, messages: true, marketing: false })
+  const [pwSaving, setPwSaving] = useState(false)
+  const [pwError, setPwError] = useState('')
 
-  const handleProfileSave = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (loadedProfile) {
+      setProfile({ name: loadedProfile.full_name ?? '' })
+    }
+  }, [loadedProfile])
+
+  const handleProfileSave = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSaved(true)
-    setTimeout(() => setSaved(false), 3000)
+    setSaving(true)
+    setSaveError('')
+    setSaved(false)
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ full_name: profile.name }),
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        throw new Error(data.error || 'Failed to save changes')
+      }
+      refresh()
+      setSaved(true)
+      setTimeout(() => setSaved(false), 3000)
+    } catch (err) {
+      setSaveError(err instanceof Error ? err.message : 'Failed to save changes')
+    } finally {
+      setSaving(false)
+    }
   }
 
-  const handlePasswordSave = (e: React.FormEvent) => {
+  const handlePasswordSave = async (e: React.FormEvent) => {
     e.preventDefault()
-    setPwSaved(true)
-    setPasswords({ current: '', newPass: '', confirm: '' })
-    setTimeout(() => setPwSaved(false), 3000)
+    setPwError('')
+    setPwSaved(false)
+
+    if (passwords.newPass.length < 8) {
+      setPwError('New password must be at least 8 characters.')
+      return
+    }
+    if (passwords.newPass !== passwords.confirm) {
+      setPwError('New passwords do not match.')
+      return
+    }
+    if (!passwords.current) {
+      setPwError('Please enter your current password.')
+      return
+    }
+    if (!email) {
+      setPwError('Could not verify your account. Please refresh and try again.')
+      return
+    }
+
+    setPwSaving(true)
+    try {
+      const supabase = createSupabaseBrowserClient()
+      // Re-authenticate with the current password before allowing a change.
+      const { error: reauthError } = await supabase.auth.signInWithPassword({
+        email,
+        password: passwords.current,
+      })
+      if (reauthError) {
+        setPwError('Current password is incorrect.')
+        return
+      }
+      const { error: updateError } = await supabase.auth.updateUser({ password: passwords.newPass })
+      if (updateError) {
+        setPwError(updateError.message)
+        return
+      }
+      setPwSaved(true)
+      setPasswords({ current: '', newPass: '', confirm: '' })
+      setTimeout(() => setPwSaved(false), 3000)
+    } catch {
+      setPwError('Something went wrong. Please try again.')
+    } finally {
+      setPwSaving(false)
+    }
   }
 
   return (
-    <DashboardLayout navItems={clientNav} role="client" userName={displayName} userInitial={userInitial}>
+    <DashboardLayout navItems={clientNav}>
       <div style={{ maxWidth: 720 }}>
         <div style={{ marginBottom: 32 }}>
           <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6, letterSpacing: '-0.5px' }}>Account Settings</h1>
-          <p style={{ color: '#8892b0', fontSize: 14 }}>Manage your profile, password, and notification preferences.</p>
+          <p style={{ color: '#8892b0', fontSize: 14 }}>Manage your profile and password.</p>
         </div>
 
         {/* Profile */}
@@ -78,31 +149,22 @@ export function DashboardSettingsPage() {
           <form onSubmit={handleProfileSave}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <FieldGroup label="Full Name">
-                <input style={inputStyle} value={profile.name} onChange={e => setProfile(p => ({ ...p, name: e.target.value }))}
+                <input style={inputStyle} value={profile.name} placeholder={loading ? 'Loading…' : 'Your name'}
+                  onChange={e => setProfile(p => ({ ...p, name: e.target.value }))}
                   onFocus={e => (e.target as HTMLInputElement).style.borderColor = '#0047FF'}
                   onBlur={e => (e.target as HTMLInputElement).style.borderColor = '#1e2a45'} />
               </FieldGroup>
-              <FieldGroup label="Email Address">
-                <input type="email" style={inputStyle} value={profile.email} onChange={e => setProfile(p => ({ ...p, email: e.target.value }))}
-                  onFocus={e => (e.target as HTMLInputElement).style.borderColor = '#0047FF'}
-                  onBlur={e => (e.target as HTMLInputElement).style.borderColor = '#1e2a45'} />
-              </FieldGroup>
-              <FieldGroup label="Company">
-                <input style={inputStyle} value={profile.company} onChange={e => setProfile(p => ({ ...p, company: e.target.value }))}
-                  onFocus={e => (e.target as HTMLInputElement).style.borderColor = '#0047FF'}
-                  onBlur={e => (e.target as HTMLInputElement).style.borderColor = '#1e2a45'} />
-              </FieldGroup>
-              <FieldGroup label="Phone">
-                <input type="tel" style={inputStyle} value={profile.phone} onChange={e => setProfile(p => ({ ...p, phone: e.target.value }))}
-                  onFocus={e => (e.target as HTMLInputElement).style.borderColor = '#0047FF'}
-                  onBlur={e => (e.target as HTMLInputElement).style.borderColor = '#1e2a45'} />
+              <FieldGroup label="Email Address" hint="Contact us to change your email.">
+                <input type="email" readOnly disabled style={{ ...inputStyle, opacity: 0.6, cursor: 'not-allowed' }}
+                  value={email ?? ''} placeholder={loading ? 'Loading…' : ''} />
               </FieldGroup>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 8 }}>
-              <button type="submit" style={{ padding: '10px 24px', background: '#0047FF', border: 'none', borderRadius: 10, color: '#fff', fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}>
-                Save Changes
+              <button type="submit" disabled={saving || loading} style={{ padding: '10px 24px', background: '#0047FF', border: 'none', borderRadius: 10, color: '#fff', fontSize: 14, fontWeight: 700, cursor: saving || loading ? 'not-allowed' : 'pointer', opacity: saving || loading ? 0.6 : 1, fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {saving ? 'Saving…' : 'Save Changes'}
               </button>
               {saved && <span style={{ fontSize: 13, color: '#22c55e', display: 'flex', alignItems: 'center', gap: 6 }}>✓ Saved successfully</span>}
+              {saveError && <span style={{ fontSize: 13, color: '#f87171' }}>{saveError}</span>}
             </div>
           </form>
         </SettingSection>
@@ -126,57 +188,14 @@ export function DashboardSettingsPage() {
                 onBlur={e => (e.target as HTMLInputElement).style.borderColor = '#1e2a45'} />
             </FieldGroup>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <button type="submit" style={{ padding: '10px 24px', background: '#0047FF', border: 'none', borderRadius: 10, color: '#fff', fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}>
-                Update Password
+              <button type="submit" disabled={pwSaving} style={{ padding: '10px 24px', background: '#0047FF', border: 'none', borderRadius: 10, color: '#fff', fontSize: 14, fontWeight: 700, cursor: pwSaving ? 'not-allowed' : 'pointer', opacity: pwSaving ? 0.6 : 1, fontFamily: 'Inter, system-ui, sans-serif' }}>
+                {pwSaving ? 'Updating…' : 'Update Password'}
               </button>
               {pwSaved && <span style={{ fontSize: 13, color: '#22c55e' }}>✓ Password updated</span>}
+              {pwError && <span style={{ fontSize: 13, color: '#f87171' }}>{pwError}</span>}
             </div>
           </form>
         </SettingSection>
-
-        {/* Notifications */}
-        <SettingSection title="Notification Preferences">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            {[
-              { key: 'projectUpdates', label: 'Project Updates', desc: 'Get notified when your project status changes or milestones are reached' },
-              { key: 'invoices', label: 'Invoice Notifications', desc: 'Receive alerts for new invoices and payment confirmations' },
-              { key: 'messages', label: 'New Messages', desc: 'Get notified when you receive a new message from the team' },
-              { key: 'marketing', label: 'Marketing & Tips', desc: 'Occasional updates, tips, and news from DigiWolf' },
-            ].map(item => (
-              <div key={item.key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '16px 0', borderBottom: '1px solid #0d1a35' }}>
-                <div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: '#f0f4ff', marginBottom: 4 }}>{item.label}</div>
-                  <div style={{ fontSize: 13, color: '#4a5678' }}>{item.desc}</div>
-                </div>
-                <button
-                  onClick={() => setNotifications(p => ({ ...p, [item.key]: !p[item.key as keyof typeof p] }))}
-                  style={{
-                    width: 44, height: 24, borderRadius: 12, flexShrink: 0, marginLeft: 16,
-                    background: notifications[item.key as keyof typeof notifications] ? '#0047FF' : '#1e2a45',
-                    border: 'none', cursor: 'pointer', position: 'relative', transition: 'background 0.2s',
-                  }}
-                >
-                  <span style={{
-                    position: 'absolute', top: 3, width: 18, height: 18, borderRadius: '50%', background: '#fff',
-                    transition: 'left 0.2s',
-                    left: notifications[item.key as keyof typeof notifications] ? 23 : 3,
-                  }} />
-                </button>
-              </div>
-            ))}
-          </div>
-        </SettingSection>
-
-        {/* Danger Zone */}
-        <div style={{ background: 'rgba(239,68,68,0.05)', border: '1px solid rgba(239,68,68,0.2)', borderRadius: 16, padding: 24 }}>
-          <h2 style={{ fontSize: 15, fontWeight: 700, color: '#f87171', marginBottom: 8 }}>Danger Zone</h2>
-          <p style={{ fontSize: 14, color: '#8892b0', marginBottom: 20, lineHeight: 1.6 }}>
-            Permanently delete your account and all associated data. This action cannot be undone.
-          </p>
-          <button style={{ padding: '10px 20px', background: 'transparent', border: '1px solid rgba(239,68,68,0.4)', borderRadius: 10, color: '#f87171', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}>
-            Delete Account
-          </button>
-        </div>
       </div>
     </DashboardLayout>
   )
