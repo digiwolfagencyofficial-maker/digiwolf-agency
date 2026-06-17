@@ -134,11 +134,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Failed to create client project.' }, { status: 500 })
   }
 
-  // Step D — generate a set-password link for the existing auth user.
-  // Use Supabase's action_link (verify URL) — it redirects through /auth/callback
-  // which exchanges the code for a session, then sends the user to set password.
+  // Step D — recovery link; redirect straight to update-password (implicit hash flow).
   const baseUrl = canonicalSiteUrl()
-  const redirectTo = `${baseUrl}/auth/callback?next=${encodeURIComponent('/auth/update-password')}`
+  const redirectTo = `${baseUrl}/auth/update-password`
   const { data: linkData, error: linkError } = await supabaseAdmin.auth.admin.generateLink({
     type: 'recovery',
     email,

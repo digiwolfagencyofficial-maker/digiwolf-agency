@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { createSupabaseBrowserClient } from '@/lib/supabase-browser';
+import { establishSessionFromUrlHash } from '@/lib/auth-hash';
 
 export default function UpdatePasswordPage() {
   const router = useRouter();
@@ -25,7 +26,21 @@ export default function UpdatePasswordPage() {
       setChecking(false);
     };
 
-    supabase.auth.getSession().then(({ data }) => syncSession(data.session));
+    ;(async () => {
+      try {
+        await establishSessionFromUrlHash(supabase)
+      } catch {
+        if (active) {
+          setError('This link is invalid or has expired.')
+          setChecking(false)
+        }
+        return
+      }
+
+      const { data } = await supabase.auth.getSession()
+      if (!active) return
+      syncSession(data.session)
+    })()
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       syncSession(session);

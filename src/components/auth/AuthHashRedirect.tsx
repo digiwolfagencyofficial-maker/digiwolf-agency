@@ -1,0 +1,44 @@
+'use client'
+
+import { useEffect, useMemo } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
+import { establishSessionFromUrlHash } from '@/lib/auth-hash'
+import { createSupabaseBrowserClient } from '@/lib/supabase-browser'
+
+/** Catches Supabase implicit-flow redirects that land with #access_token on any page. */
+export default function AuthHashRedirect() {
+  const router = useRouter()
+  const pathname = usePathname()
+  const supabase = useMemo(() => createSupabaseBrowserClient(), [])
+
+  useEffect(() => {
+    let active = true
+
+    ;(async () => {
+      try {
+        const { session, type } = await establishSessionFromUrlHash(supabase)
+        if (!active || !session) return
+
+        if (type === 'recovery' && pathname !== '/auth/update-password') {
+          router.replace('/auth/update-password')
+          return
+        }
+
+        // Recovery hash fell back to site root — send client to set password or dashboard.
+        if (type === 'recovery') return
+
+        if (pathname === '/' || pathname === '/login') {
+          router.replace('/dashboard')
+        }
+      } catch {
+        if (active) router.replace('/login?error=link_expired')
+      }
+    })()
+
+    return () => {
+      active = false
+    }
+  }, [supabase, router, pathname])
+
+  return null
+}
