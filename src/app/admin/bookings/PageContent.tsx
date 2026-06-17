@@ -98,7 +98,7 @@ export default function BookingsPageContent() {
   }, [fetchBookings])
 
   return (
-    <DashboardLayout navItems={adminNav} role="admin" userName="Admin" userInitial="A">
+    <DashboardLayout navItems={adminNav}>
       <style>{`
         .bookings-table-wrap { display: block; }
         .bookings-cards { display: none; }

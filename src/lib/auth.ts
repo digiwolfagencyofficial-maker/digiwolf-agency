@@ -24,6 +24,9 @@ function makeSupabaseClient(cookieStore: Awaited<ReturnType<typeof cookies>>) {
 export async function requireAuth() {
   const cookieStore = await cookies()
   const supabase = makeSupabaseClient(cookieStore)
+  const { data: { user }, error } = await supabase.auth.getUser()
+  if (error || !user) redirect('/login')
+
   const { data: { session } } = await supabase.auth.getSession()
   if (!session) redirect('/login')
   return session
@@ -32,12 +35,14 @@ export async function requireAuth() {
 export async function requireAdmin() {
   const cookieStore = await cookies()
   const supabase = makeSupabaseClient(cookieStore)
-  const { data: { session } } = await supabase.auth.getSession()
-  if (!session) redirect('/login')
+  const { data: { user }, error } = await supabase.auth.getUser()
+  if (error || !user) redirect('/login')
 
-  const role = await getProfileRole(supabase, session.user.id)
+  const role = await getProfileRole(supabase, user.id)
   if (role !== 'admin') redirect('/dashboard')
 
+  const { data: { session } } = await supabase.auth.getSession()
+  if (!session) redirect('/login')
   return session
 }
 

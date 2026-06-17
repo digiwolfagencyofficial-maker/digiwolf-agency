@@ -64,12 +64,7 @@ export function AdminOverviewPage() {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   return (
-    <DashboardLayout
-      navItems={adminNav}
-      role="admin"
-      userName="Digi Wolf Admin"
-      userInitial="D"
-    >
+    <DashboardLayout navItems={adminNav}>
       <div style={{ minHeight: '100vh', background: '#030712', color: '#F1F5F9', padding: '32px', fontFamily: 'Inter, system-ui, sans-serif' }}>
 
         {/* Header */}

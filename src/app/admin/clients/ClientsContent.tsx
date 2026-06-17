@@ -125,12 +125,7 @@ export function ClientsPageInner({ initialServices = [] }: ClientsPageProps) {
   });
 
   return (
-    <DashboardLayout
-      navItems={adminNav}
-      role="admin"
-      userName="Digi Wolf Admin"
-      userInitial="D"
-    >
+    <DashboardLayout navItems={adminNav}>
       <style>{`
         .clients-table-wrap { display: block; }
         .clients-cards { display: none; }

@@ -72,12 +72,7 @@ export function LeadPipelinePage() {
   }, [fetchLeads]);
 
   return (
-    <DashboardLayout
-      navItems={adminNav}
-      role="admin"
-      userName="Digi Wolf Admin"
-      userInitial="D"
-    >
+    <DashboardLayout navItems={adminNav}>
       <style>{`
         .leads-table-wrap { display: block; }
         .leads-cards { display: none; }

@@ -1,9 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import BrandLogo from '@/components/BrandLogo'
+import { useClientProfile } from '@/hooks/useClientProfile'
 
 interface NavItem {
   icon: string
@@ -15,16 +16,42 @@ interface NavItem {
 interface DashboardLayoutProps {
   children: React.ReactNode
   navItems: NavItem[]
-  role: 'client' | 'admin'
-  userName?: string
-  userInitial?: string
 }
 
-export default function DashboardLayout({ children, navItems, role, userName = 'Client', userInitial = 'C' }: DashboardLayoutProps) {
+export default function DashboardLayout({ children, navItems }: DashboardLayoutProps) {
   const pathname = usePathname()
+  const logoHref = pathname.startsWith('/admin') ? '/admin' : '/dashboard'
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [hoveredNav, setHoveredNav] = useState('')
-  const [notifications, setNotifications] = useState(3)
+  const [notificationsOpen, setNotificationsOpen] = useState(false)
+  const notificationsRef = useRef<HTMLDivElement>(null)
+  const { displayName, userInitial, roleLabel } = useClientProfile()
+
+  useEffect(() => {
+    if (!notificationsOpen) return
+
+    function handleClickOutside(event: MouseEvent) {
+      if (notificationsRef.current && !notificationsRef.current.contains(event.target as Node)) {
+        setNotificationsOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [notificationsOpen])
+
+  const avatarStyle = {
+    width: 36,
+    height: 36,
+    borderRadius: '50%',
+    background: 'linear-gradient(135deg, #0047FF, #3d74ff)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 14,
+    fontWeight: 700,
+    color: '#fff',
+  } as const
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', background: '#030712', color: '#f0f4ff', fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -41,7 +68,7 @@ export default function DashboardLayout({ children, navItems, role, userName = '
         transition: 'width 0.25s cubic-bezier(0.4,0,0.2,1)',
         overflow: 'hidden',
       }}>
-        {/* Logo */}
+        {/* Logo — same BrandLogo component as the public site header */}
         <div style={{
           padding: '20px 16px',
           borderBottom: '1px solid #0d1a35',
@@ -49,7 +76,8 @@ export default function DashboardLayout({ children, navItems, role, userName = '
           minHeight: 72,
         }}>
           <Link
-            href="/"
+            href={logoHref}
+            prefetch={false}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -60,8 +88,9 @@ export default function DashboardLayout({ children, navItems, role, userName = '
             }}
           >
             <BrandLogo
-              iconSize={sidebarOpen ? 36 : 32}
+              iconSize={40}
               showWordmark={sidebarOpen}
+              priority
             />
           </Link>
           <button
@@ -89,6 +118,7 @@ export default function DashboardLayout({ children, navItems, role, userName = '
               <Link
                 key={item.label}
                 href={item.href}
+                prefetch={false}
                 onMouseEnter={() => setHoveredNav(item.label)}
                 onMouseLeave={() => setHoveredNav('')}
                 style={{
@@ -132,19 +162,20 @@ export default function DashboardLayout({ children, navItems, role, userName = '
           borderTop: '1px solid #0d1a35',
           display: 'flex', alignItems: 'center', gap: 10,
         }}>
-          <div style={{
-            width: 36, height: 36, borderRadius: '50%', flexShrink: 0,
-            background: 'linear-gradient(135deg, #0047FF, #3d74ff)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: 15, fontWeight: 700, color: '#fff',
-          }}>{userInitial}</div>
+          <div style={{ ...avatarStyle, flexShrink: 0, fontSize: 15 }}>
+            {userInitial}
+          </div>
           {sidebarOpen && (
             <>
               <div style={{ flex: 1, overflow: 'hidden' }}>
-                <div style={{ fontSize: 13, fontWeight: 600, color: '#f0f4ff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{userName}</div>
-                <div style={{ fontSize: 11, color: '#8892b0', textTransform: 'capitalize' }}>{role}</div>
+                <div style={{ fontSize: 13, fontWeight: 600, color: '#f0f4ff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  {displayName}
+                </div>
+                {roleLabel && (
+                  <div style={{ fontSize: 11, color: '#8892b0', textTransform: 'capitalize' }}>{roleLabel}</div>
+                )}
               </div>
-              <Link href="/login" style={{ fontSize: 16, color: '#8892b0', textDecoration: 'none', flexShrink: 0 }} title="Sign out">⎋</Link>
+              <Link href="/logout" style={{ fontSize: 16, color: '#8892b0', textDecoration: 'none', flexShrink: 0 }} title="Sign out">⎋</Link>
             </>
           )}
         </div>
@@ -177,27 +208,43 @@ export default function DashboardLayout({ children, navItems, role, userName = '
             <span>Search...</span>
             <span style={{ fontSize: 11, color: '#4a5568', marginLeft: 8 }}>⌘K</span>
           </div>
-          <button style={{
-            position: 'relative', width: 40, height: 40, borderRadius: 10,
-            background: '#040d1f', border: '1px solid #0d1a35',
-            cursor: 'pointer', color: '#8892b0', fontSize: 18,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}>
-            🔔
-            {notifications > 0 && (
-              <span style={{
-                position: 'absolute', top: 8, right: 8,
-                width: 8, height: 8, borderRadius: '50%',
-                background: '#0047FF', border: '2px solid #030712',
-              }} />
+
+          <div ref={notificationsRef} style={{ position: 'relative' }}>
+            <button
+              type="button"
+              aria-label="Notifications"
+              aria-expanded={notificationsOpen}
+              onClick={() => setNotificationsOpen((open) => !open)}
+              style={{
+                width: 40, height: 40, borderRadius: 10,
+                background: notificationsOpen ? 'rgba(0,71,255,0.12)' : '#040d1f',
+                border: `1px solid ${notificationsOpen ? 'rgba(0,71,255,0.25)' : '#0d1a35'}`,
+                cursor: 'pointer', color: '#8892b0', fontSize: 18,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}
+            >
+              🔔
+            </button>
+            {notificationsOpen && (
+              <div style={{
+                position: 'absolute', top: 'calc(100% + 8px)', right: 0,
+                width: 280, background: '#040d1f', border: '1px solid #0d1a35',
+                borderRadius: 12, boxShadow: '0 16px 40px rgba(0,0,0,0.35)',
+                overflow: 'hidden', zIndex: 60,
+              }}>
+                <div style={{ padding: '12px 16px', borderBottom: '1px solid #0d1a35', fontSize: 13, fontWeight: 600, color: '#f0f4ff' }}>
+                  Notifications
+                </div>
+                <div style={{ padding: '24px 16px', textAlign: 'center', fontSize: 13, color: '#8892b0' }}>
+                  No notifications yet
+                </div>
+              </div>
             )}
-          </button>
-          <div style={{
-            width: 36, height: 36, borderRadius: '50%',
-            background: 'linear-gradient(135deg, #0047FF, #3d74ff)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: 14, fontWeight: 700, color: '#fff', cursor: 'pointer',
-          }}>{userInitial}</div>
+          </div>
+
+          <div style={{ ...avatarStyle, cursor: 'pointer' }} title={displayName || undefined}>
+            {userInitial}
+          </div>
         </div>
 
         <div style={{ padding: '32px' }}>

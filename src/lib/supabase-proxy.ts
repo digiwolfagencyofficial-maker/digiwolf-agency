@@ -24,9 +24,9 @@ export function createSupabaseProxyClient(request: NextRequest) {
     supabase,
     getResponse: () => response,
     applyCookiesTo(target: NextResponse) {
-      response.cookies.getAll().forEach(({ name, value }) => {
-        target.cookies.set(name, value)
-      })
+      for (const cookie of response.cookies.getAll()) {
+        target.cookies.set(cookie)
+      }
       return target
     },
   }

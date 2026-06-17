@@ -51,7 +51,7 @@ const maxLeads = Math.max(...monthlyLeads.map(m => m.leads))
 
 export function AdminAnalyticsPage() {
   return (
-    <DashboardLayout navItems={adminNav} role="admin" userName="Digi Wolf Admin" userInitial="D">
+    <DashboardLayout navItems={adminNav}>
       <div>
         {/* Header */}
         <div style={{ marginBottom: 32 }}>

@@ -42,7 +42,7 @@ export function AdminInvoicesPage() {
   const overdue = invoices.filter(i => i.status === 'Overdue').reduce((sum, i) => sum + parseInt(i.amount.replace(/[^0-9]/g, '')), 0)
 
   return (
-    <DashboardLayout navItems={adminNav} role="admin" userName="Digi Wolf Admin" userInitial="D">
+    <DashboardLayout navItems={adminNav}>
       <div>
         {/* Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 32 }}>

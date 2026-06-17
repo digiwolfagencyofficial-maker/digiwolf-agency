@@ -16,21 +16,16 @@ const clientNav = [
   { icon: '📁', label: 'My Projects', href: '/dashboard/projects' },
   { icon: '🧾', label: 'Invoices', href: '/dashboard/invoices' },
   { icon: '📂', label: 'Files', href: '/dashboard/files' },
-  { icon: '💬', label: 'Messages', href: '/dashboard/messages', badge: 3 },
+  { icon: '💬', label: 'Messages', href: '/dashboard/messages' },
   { icon: '⚙️', label: 'Settings', href: '/dashboard/settings' },
 ];
 
 export function ProjectsPageInner() {
-  const { projects, loading, error, displayName, userInitial } = useClientProjects();
+  const { projects, loading, error, displayName } = useClientProjects();
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   return (
-    <DashboardLayout
-      navItems={clientNav}
-      role="client"
-      userName={displayName}
-      userInitial={userInitial}
-    >
+    <DashboardLayout navItems={clientNav}>
       <div style={{ padding: '32px', maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ marginBottom: '32px' }}>

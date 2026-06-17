@@ -42,7 +42,7 @@ export function AdminProjectsPage() {
   const filtered = filter === 'All' ? projects : projects.filter(p => p.status === filter)
 
   return (
-    <DashboardLayout navItems={adminNav} role="admin" userName="Digi Wolf Admin" userInitial="D">
+    <DashboardLayout navItems={adminNav}>
       <div>
         {/* Header */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 32 }}>

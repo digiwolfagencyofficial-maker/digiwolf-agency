@@ -2,81 +2,20 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState } from 'react';
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
-import { useClientProfile } from '@/hooks/useClientProfile';
 
 const clientNav = [
   { icon: '⬡', label: 'Overview', href: '/dashboard' },
   { icon: '📁', label: 'My Projects', href: '/dashboard/projects' },
   { icon: '🧾', label: 'Invoices', href: '/dashboard/invoices' },
   { icon: '📂', label: 'Files', href: '/dashboard/files' },
-  { icon: '💬', label: 'Messages', href: '/dashboard/messages', badge: 3 },
+  { icon: '💬', label: 'Messages', href: '/dashboard/messages' },
   { icon: '⚙️', label: 'Settings', href: '/dashboard/settings' },
 ];
 
-const invoices = [
-  {
-    number: 'INV-2024-001',
-    description: 'E-shop Redesign — Phase 1',
-    amount: '22,500 CZK',
-    amountRaw: 22500,
-    status: 'Paid',
-    due: '15 Feb 2024',
-  },
-  {
-    number: 'INV-2024-002',
-    description: 'Brand Identity Package',
-    amount: '28,000 CZK',
-    amountRaw: 28000,
-    status: 'Paid',
-    due: '1 Mar 2024',
-  },
-  {
-    number: 'INV-2024-003',
-    description: 'SEO Strategy — Monthly Retainer',
-    amount: '12,000 CZK',
-    amountRaw: 12000,
-    status: 'Paid',
-    due: '1 Apr 2024',
-  },
-  {
-    number: 'INV-2024-004',
-    description: 'E-shop Redesign — Phase 2',
-    amount: '22,500 CZK',
-    amountRaw: 22500,
-    status: 'Paid',
-    due: '30 Apr 2024',
-  },
-  {
-    number: 'INV-2024-005',
-    description: 'AI Automation Setup — Kickoff',
-    amount: '12,000 CZK',
-    amountRaw: 12000,
-    status: 'Pending',
-    due: '31 May 2024',
-  },
-];
-
-const statusBadge: Record<string, { bg: string; color: string; label: string }> = {
-  Paid: { bg: 'rgba(34,197,94,0.12)', color: '#22c55e', label: 'Paid' },
-  Pending: { bg: 'rgba(251,191,36,0.12)', color: '#fbbf24', label: 'Pending' },
-  Overdue: { bg: 'rgba(239,68,68,0.12)', color: '#ef4444', label: 'Overdue' },
-};
-
 export function InvoicesPageInner() {
-  const { displayName, userInitial } = useClientProfile();
-  const [hoveredRow, setHoveredRow] = useState<number | null>(null);
-  const [hoveredDownload, setHoveredDownload] = useState<number | null>(null);
-  const [hoveredPay, setHoveredPay] = useState<number | null>(null);
-
   return (
-    <DashboardLayout
-      navItems={clientNav}
-      role="client"
-      userName={displayName}
-      userInitial={userInitial}
-    >
+    <DashboardLayout navItems={clientNav}>
       <div style={{ padding: '32px', maxWidth: '1100px', margin: '0 auto' }}>
         {/* Header */}
         <div
@@ -123,7 +62,7 @@ export function InvoicesPageInner() {
                 margin: 0,
               }}
             >
-              12,000 CZK
+              0 CZK
             </p>
           </div>
         </div>
@@ -185,7 +124,7 @@ export function InvoicesPageInner() {
                 margin: 0,
               }}
             >
-              157,000 CZK
+              0 CZK
             </p>
           </div>
 
@@ -237,7 +176,7 @@ export function InvoicesPageInner() {
                 margin: 0,
               }}
             >
-              12,000 CZK
+              0 CZK
             </p>
           </div>
 
@@ -331,119 +270,21 @@ export function InvoicesPageInner() {
             )}
           </div>
 
-          {/* Table Rows */}
-          {invoices.map((inv, i) => {
-            const badge = statusBadge[inv.status];
-            const isHovered = hoveredRow === i;
-            return (
-              <div
-                key={inv.number}
-                onMouseEnter={() => setHoveredRow(i)}
-                onMouseLeave={() => setHoveredRow(null)}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: '160px 1fr 140px 110px 130px 200px',
-                  padding: '16px 20px',
-                  borderBottom:
-                    i < invoices.length - 1
-                      ? '1px solid rgba(255,255,255,0.04)'
-                      : 'none',
-                  background: isHovered
-                    ? 'rgba(0,71,255,0.04)'
-                    : 'transparent',
-                  transition: 'background 0.2s ease',
-                  alignItems: 'center',
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    color: '#4d8aff',
-                    fontFamily: 'monospace',
-                  }}
-                >
-                  {inv.number}
-                </span>
-                <span style={{ fontSize: '14px', color: '#c8d4f0' }}>
-                  {inv.description}
-                </span>
-                <span
-                  style={{
-                    fontSize: '14px',
-                    fontWeight: 700,
-                    color: '#f0f4ff',
-                  }}
-                >
-                  {inv.amount}
-                </span>
-                <span>
-                  <span
-                    style={{
-                      display: 'inline-block',
-                      padding: '3px 10px',
-                      borderRadius: '20px',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      background: badge.bg,
-                      color: badge.color,
-                    }}
-                  >
-                    {badge.label}
-                  </span>
-                </span>
-                <span style={{ fontSize: '13px', color: '#6b7a9e' }}>
-                  {inv.due}
-                </span>
-                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                  <button
-                    onMouseEnter={() => setHoveredDownload(i)}
-                    onMouseLeave={() => setHoveredDownload(null)}
-                    style={{
-                      padding: '6px 12px',
-                      background:
-                        hoveredDownload === i
-                          ? '#0047FF'
-                          : 'rgba(0,71,255,0.15)',
-                      border: '1px solid rgba(0,71,255,0.35)',
-                      borderRadius: '7px',
-                      color: hoveredDownload === i ? '#fff' : '#4d8aff',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      transition: 'all 0.2s ease',
-                      whiteSpace: 'nowrap',
-                    }}
-                  >
-                    ⬇ Download PDF
-                  </button>
-                  {(inv.status === 'Pending' || inv.status === 'Overdue') && (
-                    <button
-                      onMouseEnter={() => setHoveredPay(i)}
-                      onMouseLeave={() => setHoveredPay(null)}
-                      style={{
-                        padding: '6px 14px',
-                        background:
-                          hoveredPay === i
-                            ? '#16a34a'
-                            : 'rgba(34,197,94,0.15)',
-                        border: '1px solid rgba(34,197,94,0.35)',
-                        borderRadius: '7px',
-                        color: hoveredPay === i ? '#fff' : '#22c55e',
-                        fontSize: '12px',
-                        fontWeight: 600,
-                        cursor: 'pointer',
-                        transition: 'all 0.2s ease',
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      Pay Now
-                    </button>
-                  )}
-                </div>
-              </div>
-            );
-          })}
+          <div
+            style={{
+              textAlign: 'center',
+              padding: '80px 20px',
+              color: '#8892b0',
+            }}
+          >
+            <div style={{ fontSize: '48px', marginBottom: '16px' }}>🧾</div>
+            <p style={{ fontSize: '18px', fontWeight: 600, color: '#6b7a9e', margin: '0 0 8px 0' }}>
+              No invoices yet
+            </p>
+            <p style={{ fontSize: '14px', margin: 0 }}>
+              Invoices from your agency will appear here.
+            </p>
+          </div>
         </div>
 
         {/* Footer note */}

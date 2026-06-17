@@ -106,7 +106,7 @@ export default function SetupPageContent() {
   }
 
   return (
-    <DashboardLayout navItems={adminNav} role="admin" userName="Admin" userInitial="A">
+    <DashboardLayout navItems={adminNav}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <div style={{ marginBottom: 32 }}>
           <h1 style={{ fontSize: 26, fontWeight: 800, color: '#f0f4ff', margin: '0 0 6px' }}>Setup Guide</h1>
