@@ -8,6 +8,8 @@ import BrandLogo from '@/components/BrandLogo'
 import { Menu, X } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { useClientProfile } from '@/hooks/useClientProfile'
+import { postLoginRedirect } from '@/lib/auth-utils'
 
 const navLinkKeys = [
   { key: 'home', href: '/' },
@@ -21,6 +23,9 @@ const navLinkKeys = [
 
 export default function Navbar() {
   const t = useTranslations('nav')
+  const { profile, userId } = useClientProfile()
+  const isLoggedIn = !!userId
+  const portalHref = postLoginRedirect(profile?.role, null)
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
@@ -90,16 +95,29 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <NextLink href="/login" style={{
-              color: '#8892b0', textDecoration: 'none', fontSize: 14, fontWeight: 500,
-              padding: '8px 16px', borderRadius: 8, transition: 'color 0.2s',
-            }}
-              onMouseEnter={e => (e.target as HTMLElement).style.color = '#f0f4ff'}
-              onMouseLeave={e => (e.target as HTMLElement).style.color = '#8892b0'}
-              className="nav-desktop"
-            >
-              {t('signIn')}
-            </NextLink>
+            {isLoggedIn ? (
+              <NextLink href={portalHref} style={{
+                color: '#8892b0', textDecoration: 'none', fontSize: 14, fontWeight: 500,
+                padding: '8px 16px', borderRadius: 8, transition: 'color 0.2s',
+              }}
+                onMouseEnter={e => (e.target as HTMLElement).style.color = '#f0f4ff'}
+                onMouseLeave={e => (e.target as HTMLElement).style.color = '#8892b0'}
+                className="nav-desktop"
+              >
+                {t('dashboard')}
+              </NextLink>
+            ) : (
+              <NextLink href="/login" style={{
+                color: '#8892b0', textDecoration: 'none', fontSize: 14, fontWeight: 500,
+                padding: '8px 16px', borderRadius: 8, transition: 'color 0.2s',
+              }}
+                onMouseEnter={e => (e.target as HTMLElement).style.color = '#f0f4ff'}
+                onMouseLeave={e => (e.target as HTMLElement).style.color = '#8892b0'}
+                className="nav-desktop"
+              >
+                {t('signIn')}
+              </NextLink>
+            )}
             <div className="nav-desktop">
               <LanguageSwitcher compact />
             </div>
@@ -187,13 +205,23 @@ export default function Navbar() {
             {/* Language + CTAs at bottom */}
             <div style={{ padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 12, marginTop: 'auto', borderTop: '1px solid rgba(255,255,255,0.07)', paddingBottom: 48 }}>
               <LanguageSwitcher />
-              <NextLink href="/login" onClick={closeMenu} style={{
-                padding: '14px', borderRadius: 12, textDecoration: 'none',
-                fontSize: 16, fontWeight: 600, color: '#94a3b8',
-                border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center',
-              }}>
-                {t('signIn')}
-              </NextLink>
+              {isLoggedIn ? (
+                <NextLink href={portalHref} onClick={closeMenu} style={{
+                  padding: '14px', borderRadius: 12, textDecoration: 'none',
+                  fontSize: 16, fontWeight: 600, color: '#94a3b8',
+                  border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center',
+                }}>
+                  {t('dashboard')}
+                </NextLink>
+              ) : (
+                <NextLink href="/login" onClick={closeMenu} style={{
+                  padding: '14px', borderRadius: 12, textDecoration: 'none',
+                  fontSize: 16, fontWeight: 600, color: '#94a3b8',
+                  border: '1px solid rgba(255,255,255,0.1)', textAlign: 'center',
+                }}>
+                  {t('signIn')}
+                </NextLink>
+              )}
               <Link href="/book" onClick={closeMenu} style={{
                 padding: '16px', borderRadius: 12, textDecoration: 'none',
                 fontSize: 16, fontWeight: 700, color: '#fff',
