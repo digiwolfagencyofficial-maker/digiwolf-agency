@@ -54,15 +54,22 @@ export async function requireAdminApi(): Promise<
 > {
   const cookieStore = await cookies()
   const supabase = makeSupabaseClient(cookieStore)
-  const { data: { session } } = await supabase.auth.getSession()
 
-  if (!session) {
+  // getUser() validates the JWT with Supabase — more reliable than getSession() in route handlers.
+  const { data: { user }, error: userError } = await supabase.auth.getUser()
+
+  if (userError || !user) {
     return { error: NextResponse.json({ error: 'Unauthorized' }, { status: 401 }) }
   }
 
-  const role = await getProfileRole(supabase, session.user.id)
+  const role = await getProfileRole(supabase, user.id)
   if (role !== 'admin') {
     return { error: NextResponse.json({ error: 'Forbidden' }, { status: 403 }) }
+  }
+
+  const { data: { session } } = await supabase.auth.getSession()
+  if (!session) {
+    return { error: NextResponse.json({ error: 'Unauthorized' }, { status: 401 }) }
   }
 
   return { session }

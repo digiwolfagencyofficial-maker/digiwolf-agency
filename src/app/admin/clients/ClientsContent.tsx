@@ -177,7 +177,13 @@ const projectStatusColor: Record<string, string> = {
   'Completed': '#10B981',
 };
 
-export function ClientsPageInner() {
+type ServiceOption = { id: string; name: string; slug: string };
+
+type ClientsPageProps = {
+  initialServices?: ServiceOption[];
+};
+
+export function ClientsPageInner({ initialServices = [] }: ClientsPageProps) {
   const [search, setSearch] = useState('');
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
   const [selectedClient, setSelectedClient] = useState<Client | null>(null);
@@ -455,7 +461,10 @@ export function ClientsPageInner() {
         )}
 
         {showAddClient && (
-          <AddClientForm onClose={() => setShowAddClient(false)} />
+          <AddClientForm
+            onClose={() => setShowAddClient(false)}
+            services={initialServices}
+          />
         )}
       </div>
     </DashboardLayout>

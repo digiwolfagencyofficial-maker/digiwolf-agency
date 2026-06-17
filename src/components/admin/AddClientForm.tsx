@@ -7,6 +7,7 @@ type Service = { id: string; name: string; slug: string };
 type Props = {
   onClose: () => void;
   onSuccess?: () => void;
+  services?: Service[];
 };
 
 const inputStyle: React.CSSProperties = {
@@ -30,8 +31,8 @@ const labelStyle: React.CSSProperties = {
   marginBottom: '6px',
 };
 
-export default function AddClientForm({ onClose, onSuccess }: Props) {
-  const [services, setServices] = useState<Service[]>([]);
+export default function AddClientForm({ onClose, onSuccess, services: initialServices = [] }: Props) {
+  const [services, setServices] = useState<Service[]>(initialServices);
   const [servicesError, setServicesError] = useState<string | null>(null);
   const [email, setEmail] = useState('');
   const [fullName, setFullName] = useState('');
@@ -41,21 +42,33 @@ export default function AddClientForm({ onClose, onSuccess }: Props) {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    if (initialServices && initialServices.length > 0) {
+      setServices(initialServices);
+      return;
+    }
+
     let active = true;
     (async () => {
       try {
-        const res = await fetch('/api/admin/onboard');
-        if (!res.ok) throw new Error('Failed to load services');
+        const res = await fetch('/api/admin/onboard', { credentials: 'same-origin' });
+        if (!res.ok) {
+          const body = await res.json().catch(() => ({}));
+          throw new Error(body.error || `Failed to load services (${res.status})`);
+        }
         const data = await res.json();
         if (active) setServices((data.services ?? []) as Service[]);
-      } catch {
-        if (active) setServicesError('Could not load services. Please refresh.');
+      } catch (err) {
+        if (active) {
+          setServicesError(
+            err instanceof Error ? err.message : 'Could not load services. Please refresh.'
+          );
+        }
       }
     })();
     return () => {
       active = false;
     };
-  }, []);
+  }, [initialServices]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -181,7 +194,11 @@ export default function AddClientForm({ onClose, onSuccess }: Props) {
                 required
               >
                 <option value="" disabled>
-                  {servicesError ? 'Unavailable' : 'Select a service…'}
+                  {servicesError
+                    ? 'Unavailable'
+                    : services.length === 0
+                      ? 'Loading services…'
+                      : 'Select a service…'}
                 </option>
                 {services.map((s) => (
                   <option key={s.id} value={s.id}>
