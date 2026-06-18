@@ -2229,121 +2229,129 @@
       "badge": "Naše práce",
       "titleLine1": "Portfolio",
       "titleLine2": "ve výstavbě",
-      "subtitle": "Budujeme knihovnu případových studií. Prozatím je tento live web konkrétním důkazem toho, co dodáváme — ne mockup.",
+      "subtitle": "Budujeme knihovnu případových studií. Prozatím je naším důkazem kvality tento live web — ne mockup.",
       "stats": [
         {
           "id": "languages",
-          "value": "3",
-          "label": "Jazyky (EN/CZ/MN)"
+          "n": "3",
+          "l": "Jazyky"
         },
         {
-          "id": "responseTime",
-          "value": "24h",
-          "label": "Doba odezvy"
+          "id": "response",
+          "n": "24h",
+          "l": "Doba odezvy"
         },
         {
-          "id": "sourceCode",
-          "value": "100%",
-          "label": "Zdrojový kód váš"
+          "id": "code",
+          "n": "100%",
+          "l": "Zdrojový kód váš"
         }
       ]
     },
-    "showcase": {
-      "title": "digiwolf.agency",
-      "tag": "Live nyní",
-      "description": "Web, který právě prohlížíte — postavený in-house na Next.js App Router, nasazený na Vercel. Každá funkce níže je live a funguje v produkci.",
-      "features": [
-        {
-          "id": "nextjs",
-          "label": "Next.js App Router + TypeScript"
-        },
-        {
-          "id": "trilingual",
-          "label": "Trojjazyčný i18n (EN / CZ / MN)"
-        },
-        {
-          "id": "supabase",
-          "label": "Zachycení leadů přes Supabase"
-        },
-        {
-          "id": "resend",
-          "label": "E-mailová upozornění přes Resend"
-        },
-        {
-          "id": "calcom",
-          "label": "Rezervace Cal.com + webhook"
-        },
-        {
-          "id": "aiChat",
-          "label": "AI chat asistent"
-        },
-        {
-          "id": "telegram",
-          "label": "Telegram upozornění na leady"
-        },
-        {
-          "id": "gdpr",
-          "label": "GDPR stránky + souhlas s cookies"
-        },
-        {
-          "id": "stripe",
-          "label": "Stripe-ready platby"
-        },
-        {
-          "id": "vercel",
-          "label": "Nasazeno na Vercel"
-        }
-      ]
-    },
-    "capabilities": {
-      "title": "Co stavíme",
-      "subtitle": "Typy práce, které dodáváme — schopnosti, ne údajně dokončené klientské projekty.",
-      "items": [
-        {
-          "id": "websites",
-          "label": "Konverzní weby pro agentury"
-        },
-        {
-          "id": "sro",
-          "label": "Založení české S.R.O."
-        },
-        {
-          "id": "aiAutomation",
-          "label": "AI chatboti a automatizace workflow"
-        },
-        {
-          "id": "bookingCrm",
-          "label": "Rezervační systémy a lead CRM"
-        },
-        {
-          "id": "multilingual",
-          "label": "Vícejazyčné weby a lokalizace"
-        },
-        {
-          "id": "payments",
-          "label": "Stripe platby a klientské portály"
-        }
-      ]
+    "filters": [
+      {
+        "id": "all",
+        "label": "Vše"
+      },
+      {
+        "id": "websites",
+        "label": "Weby"
+      },
+      {
+        "id": "sroFormation",
+        "label": "Založení S.R.O."
+      },
+      {
+        "id": "aiAutomation",
+        "label": "AI automatizace"
+      }
+    ],
+    "labels": {
+      "challenge": "Cíl",
+      "solution": "Co jsme postavili",
+      "results": "Co je live",
+      "techStack": "Tech stack"
     },
     "cta": {
-      "badge": "První klienti",
-      "title": "Portfolio roste",
-      "description": "Přijímáme první klienty a budujeme knihovnu případových studií. Staňte se raným partnerem — rezervujte si bezplatný úvodní hovor nebo nám napište.",
+      "titleLine1": "Chcete být",
+      "titleLine2": "případová studie #1?",
+      "subtitle": "Přijímáme první klienty se zvýhodněnými cenami. Postavte s námi a pomozte utvořit naše portfolio.",
       "ctas": [
         {
-          "id": "bookCall",
-          "label": "Rezervovat bezplatný hovor →"
+          "id": "startProject",
+          "label": "Začněte svůj projekt →"
         },
         {
-          "id": "contact",
-          "label": "Kontaktovat nás →"
-        },
-        {
-          "id": "howWeWork",
-          "label": "Jak pracujeme"
+          "id": "viewServices",
+          "label": "Prozkoumat služby"
         }
       ]
-    }
+    },
+    "items": [
+      {
+        "id": "digiwolfAgency",
+        "name": "digiwolf.agency",
+        "client": "Náš vlastní produkční web",
+        "category": "Websites",
+        "tag": "Live portfolio",
+        "metric": "Live",
+        "metricLabel": "Produkční web",
+        "challenge": "Jako nová founder-led agentura jsme potřebovali produkční web, který dokazuje naše schopnosti — ne šablonu nebo mockup.",
+        "solution": "Postaveno na Next.js 15 s trojjazyčným routingem, AI chatem, zachycením leadů (Supabase + Resend), rezervacemi Cal.com, Stripe platbami a GDPR stránkami.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "Next.js 15 + TypeScript produkční build"
+          },
+          {
+            "id": "r2",
+            "text": "Trojjazyčný (EN / CZ / MN) s next-intl"
+          },
+          {
+            "id": "r3",
+            "text": "AI chat asistent integrovaný na webu"
+          },
+          {
+            "id": "r4",
+            "text": "Kontaktní formulář → Supabase + e-mailové notifikace"
+          },
+          {
+            "id": "r5",
+            "text": "Online rezervace přes Cal.com webhook"
+          },
+          {
+            "id": "r6",
+            "text": "Stripe platební infrastruktura připravena"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js 15"
+          },
+          {
+            "id": "t2",
+            "label": "TypeScript"
+          },
+          {
+            "id": "t3",
+            "label": "Supabase"
+          },
+          {
+            "id": "t4",
+            "label": "Tailwind CSS"
+          },
+          {
+            "id": "t5",
+            "label": "Vercel"
+          },
+          {
+            "id": "t6",
+            "label": "Resend"
+          }
+        ]
+      }
+    ]
   },
   "legal": {
     "privacy": {

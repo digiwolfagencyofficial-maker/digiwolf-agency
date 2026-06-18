@@ -29,6 +29,20 @@ Generated: 14 June 2026
 - Client names and metrics are kept as in source (€, %, company names).
 - Review Mongolian/Czech narrative flow in long-form case study paragraphs (`work`, `caseStudies`).
 
+#### `caseStudies` namespace (restored 14 June 2026)
+
+Keys synced from `en.json`: `hero`, `filters`, `labels`, `cta`, `items` (array).
+
+| Key | MN status | CS status |
+|-----|-----------|-----------|
+| `hero.stats` | AI — uses `n`/`l` fields | AI — uses `n`/`l` fields |
+| `filters` | AI — "Бүгд", "Вебсайт", "S.R.O. бүртгэл", "AI автоматжуулалт" | AI — "Vše", "Weby", "Založení S.R.O.", "AI automatizace" |
+| `labels` | AI — "Зорилго", "Бид юу бүтээсэн", etc. | AI — "Cíl", "Co jsme postavili", etc. |
+| `items[0]` (digiwolf.agency) | AI — full case study copy | AI — full case study copy |
+| `cta` | AI — founding-client CTA | AI — founding-client CTA |
+
+**Native review focus:** filter labels, case study narrative tone, and whether "Live portfolio" / "Production site" should be localized or kept in English.
+
 ### 4. Contact form & validation
 
 - `contact.validation.*` — error messages should sound natural in each language.

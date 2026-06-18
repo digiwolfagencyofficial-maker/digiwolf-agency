@@ -2229,121 +2229,129 @@
       "badge": "Манай ажил",
       "titleLine1": "Portfolio",
       "titleLine2": "бүтэж байна",
-      "subtitle": "Бид харилцагчийн кейс судалгааны сан бүтээж байна. Одоогоор энэ live сайт бол бидний чадварыг батлах бодит баримт — mockup биш.",
+      "subtitle": "Бид харилцагчийн кейс судалгааны сан бүтээж байна. Одоогоор энэ live сайт бол mockup биш, бодит баталгаа.",
       "stats": [
         {
           "id": "languages",
-          "value": "3",
-          "label": "Хэл (EN/CZ/MN)"
+          "n": "3",
+          "l": "Хэл"
         },
         {
-          "id": "responseTime",
-          "value": "24h",
-          "label": "Хариу өгөх хугацаа"
+          "id": "response",
+          "n": "24h",
+          "l": "Хариу өгөх хугацаа"
         },
         {
-          "id": "sourceCode",
-          "value": "100%",
-          "label": "Source code таных"
+          "id": "code",
+          "n": "100%",
+          "l": "Source code таных"
         }
       ]
     },
-    "showcase": {
-      "title": "digiwolf.agency",
-      "tag": "Live одоо",
-      "description": "Та яг одоо үзэж буй сайт — Next.js App Router дээр in-house бүтээсэн, Vercel дээр deploy хийсэн. Доорх боломж бүр production дээр ажиллаж байна.",
-      "features": [
-        {
-          "id": "nextjs",
-          "label": "Next.js App Router + TypeScript"
-        },
-        {
-          "id": "trilingual",
-          "label": "Гурван хэлтэй i18n (EN / CZ / MN)"
-        },
-        {
-          "id": "supabase",
-          "label": "Supabase лид capture"
-        },
-        {
-          "id": "resend",
-          "label": "Resend имэйл мэдэгдэл"
-        },
-        {
-          "id": "calcom",
-          "label": "Cal.com захиалга + webhook"
-        },
-        {
-          "id": "aiChat",
-          "label": "AI chat туслах"
-        },
-        {
-          "id": "telegram",
-          "label": "Telegram лид мэдэгдэл"
-        },
-        {
-          "id": "gdpr",
-          "label": "GDPR хууль ёсны хуудас + cookie зөвшөөрөл"
-        },
-        {
-          "id": "stripe",
-          "label": "Stripe-ready төлбөр"
-        },
-        {
-          "id": "vercel",
-          "label": "Vercel дээр deploy"
-        }
-      ]
-    },
-    "capabilities": {
-      "title": "Бид юу бүтээдэг вэ",
-      "subtitle": "Бидний санал болгодог ажлын төрөл — харилцагчийн төсөл биш, чадвар.",
-      "items": [
-        {
-          "id": "websites",
-          "label": "Өндөр хөрвүүлэлттэй агентлагийн вебсайт"
-        },
-        {
-          "id": "sro",
-          "label": "Чех S.R.O. компанийн бүртгэл"
-        },
-        {
-          "id": "aiAutomation",
-          "label": "AI chatbot & workflow автоматжуулалт"
-        },
-        {
-          "id": "bookingCrm",
-          "label": "Захиалгын систем & лид CRM"
-        },
-        {
-          "id": "multilingual",
-          "label": "Олон хэлтэй сайт & локализаци"
-        },
-        {
-          "id": "payments",
-          "label": "Stripe төлбөр & клиент портал"
-        }
-      ]
+    "filters": [
+      {
+        "id": "all",
+        "label": "Бүгд"
+      },
+      {
+        "id": "websites",
+        "label": "Вебсайт"
+      },
+      {
+        "id": "sroFormation",
+        "label": "S.R.O. бүртгэл"
+      },
+      {
+        "id": "aiAutomation",
+        "label": "AI автоматжуулалт"
+      }
+    ],
+    "labels": {
+      "challenge": "Зорилго",
+      "solution": "Бид юу бүтээсэн",
+      "results": "Live боломжууд",
+      "techStack": "Tech stack"
     },
     "cta": {
-      "badge": "Анхны харилцагчид",
-      "title": "Portfolio өсөж байна",
-      "description": "Бид founding-client харилцагчид авч, кейс судалгааны сан бүтээж байна. Эрт хамтрагч болоорой — үнэгүй танилцах дуудлага захиалаарай эсвэл бидэнтэй холбогдоорой.",
+      "titleLine1": "Кейс судалгаа",
+      "titleLine2": "#1 болох уу?",
+      "subtitle": "Бид founding-client үнээр анхны харилцагчид авч байна. Хамтдаа portfolio-оо бүтээе.",
       "ctas": [
         {
-          "id": "bookCall",
-          "label": "Үнэгүй танилцах дуудлага захиалах →"
+          "id": "startProject",
+          "label": "Төслөө эхлүүлэх →"
         },
         {
-          "id": "contact",
-          "label": "Холбогдох →"
-        },
-        {
-          "id": "howWeWork",
-          "label": "Бид хэрхэн ажилладаг"
+          "id": "viewServices",
+          "label": "Үйлчилгээг судлах"
         }
       ]
-    }
+    },
+    "items": [
+      {
+        "id": "digiwolfAgency",
+        "name": "digiwolf.agency",
+        "client": "Манай өөрийн production сайт",
+        "category": "Websites",
+        "tag": "Live portfolio",
+        "metric": "Live",
+        "metricLabel": "Production сайт",
+        "challenge": "Шинэ founder-led агентлагийн хувьд mockup биш, чадвараа батлах production сайт хэрэгтэй байсан.",
+        "solution": "Next.js 15 дээр гурван хэлтэй routing, AI chat, лид цуглуулалт (Supabase + Resend), Cal.com захиалга, Stripe төлбөр, GDPR хууль ёсны хуудсуудтай.",
+        "results": [
+          {
+            "id": "r1",
+            "text": "Next.js 15 + TypeScript production build"
+          },
+          {
+            "id": "r2",
+            "text": "Гурван хэлтэй (EN / CZ / MN) next-intl"
+          },
+          {
+            "id": "r3",
+            "text": "Сайт дээр AI chat туслах"
+          },
+          {
+            "id": "r4",
+            "text": "Contact form → Supabase + имэйл мэдэгдэл"
+          },
+          {
+            "id": "r5",
+            "text": "Cal.com webhook-оор онлайн захиалга"
+          },
+          {
+            "id": "r6",
+            "text": "Stripe төлбөрийн дэд бүтэц бэлэн"
+          }
+        ],
+        "techStack": [
+          {
+            "id": "t1",
+            "label": "Next.js 15"
+          },
+          {
+            "id": "t2",
+            "label": "TypeScript"
+          },
+          {
+            "id": "t3",
+            "label": "Supabase"
+          },
+          {
+            "id": "t4",
+            "label": "Tailwind CSS"
+          },
+          {
+            "id": "t5",
+            "label": "Vercel"
+          },
+          {
+            "id": "t6",
+            "label": "Resend"
+          }
+        ]
+      }
+    ]
   },
   "legal": {
     "privacy": {
