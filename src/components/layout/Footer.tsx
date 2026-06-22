@@ -30,7 +30,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: 12, textDecoration: 'none', marginBottom: 20 }}>
-              <Image src="/digiwolf-logo.png" alt="Digi Wolf Agency" width={200} height={80} style={{ maxWidth: '200px', width: '100%', height: 'auto', objectFit: 'contain' }} />
+              <Image src="/digiwolf-lockup.png" alt="Digi Wolf Agency" width={200} height={49} unoptimized style={{ maxWidth: '200px', width: '100%', height: 'auto', objectFit: 'contain' }} />
             </Link>
             <p style={{ color: '#64748b', fontSize: 14, lineHeight: 1.8, maxWidth: 300, marginBottom: 24 }}>
               Prague-based digital agency specialising in premium websites, AI automation, and Czech S.R.O. formation. Serving clients across Europe and Mongolia.

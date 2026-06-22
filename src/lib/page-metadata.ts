@@ -54,9 +54,9 @@ export async function buildPageMetadata(
       description: openGraphDescription,
       images: [
         {
-          url: '/digiwolf-logo.png',
-          width: 1200,
-          height: 630,
+          url: '/digiwolf-lockup.png',
+          width: 971,
+          height: 194,
           alt: 'Digi Wolf Agency',
         },
       ],
@@ -65,7 +65,7 @@ export async function buildPageMetadata(
       card: 'summary_large_image',
       title: openGraphTitle,
       description: openGraphDescription,
-      images: ['/digiwolf-logo.png'],
+      images: ['/digiwolf-lockup.png'],
     },
   }
 }

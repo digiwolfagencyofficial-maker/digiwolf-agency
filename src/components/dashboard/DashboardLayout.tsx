@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import BrandLogo from '@/components/BrandLogo'
+import Logo from '@/components/Logo'
 import { useClientProfile } from '@/hooks/useClientProfile'
 
 interface NavItem {
@@ -20,7 +20,6 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout({ children, navItems }: DashboardLayoutProps) {
   const pathname = usePathname()
-  const logoHref = pathname.startsWith('/admin') ? '/admin' : '/dashboard'
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [hoveredNav, setHoveredNav] = useState('')
   const [notificationsOpen, setNotificationsOpen] = useState(false)
@@ -68,31 +67,14 @@ export default function DashboardLayout({ children, navItems }: DashboardLayoutP
         transition: 'width 0.25s cubic-bezier(0.4,0,0.2,1)',
         overflow: 'hidden',
       }}>
-        {/* Logo — same BrandLogo component as the public site header */}
+        {/* Logo */}
         <div style={{
-          padding: '20px 16px',
+          padding: '12px 16px',
           borderBottom: '1px solid #0d1a35',
           display: 'flex', alignItems: 'center', gap: 10,
-          minHeight: 72,
+          minHeight: 64,
         }}>
-          <Link
-            href={logoHref}
-            prefetch={false}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 10,
-              textDecoration: 'none',
-              flexShrink: 0,
-              overflow: 'hidden',
-            }}
-          >
-            <BrandLogo
-              iconSize={40}
-              showWordmark={sidebarOpen}
-              priority
-            />
-          </Link>
+          <Logo variant={sidebarOpen ? 'full' : 'mark'} priority />
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
             style={{

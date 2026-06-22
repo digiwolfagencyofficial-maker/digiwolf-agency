@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import Logo from '@/components/Logo'
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState('')
@@ -23,10 +23,7 @@ export default function ForgotPasswordPage() {
       <div style={{ width: '100%', maxWidth: 440 }}>
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
-          <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-            <Image src="/digiwolf-icon.png" alt="Digi Wolf Agency" width={44} height={44} style={{ objectFit: 'contain' }} />
-            <span style={{ fontSize: 18, fontWeight: 800, color: '#f0f4ff', letterSpacing: '0.05em' }}>DIGIWOLF</span>
-          </Link>
+          <Logo variant="full" className="justify-center" />
         </div>
 
         <div style={{ background: '#040d1f', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 20, padding: '40px 36px', position: 'relative', overflow: 'hidden' }}>

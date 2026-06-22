@@ -43,7 +43,7 @@ export default function BlogClient() {
               background: 'rgba(0,71,255,0.12)', border: '1px solid rgba(0,71,255,0.25)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
-              <Image src="/digiwolf-icon.png" alt="Digi Wolf Agency" width={48} height={48} style={{ objectFit: 'contain' }} />
+              <Image src="/digiwolf-icon.png" alt="Digi Wolf Agency" width={48} height={48} unoptimized style={{ objectFit: 'contain' }} />
             </div>
           </div>
 

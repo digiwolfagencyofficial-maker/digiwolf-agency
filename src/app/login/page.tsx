@@ -3,7 +3,7 @@
 import { Suspense, useState, useMemo } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import Image from 'next/image'
+import Logo from '@/components/Logo'
 import { createSupabaseBrowserClient } from '@/lib/supabase-browser'
 import { postLoginRedirect, safeCallbackUrl } from '@/lib/auth-utils'
 
@@ -116,17 +116,9 @@ function LoginForm() {
         background: '#030712',
       }}>
         <div style={{ width: '100%', maxWidth: 380 }}>
-          {/* Logo — icon only, transparent */}
+          {/* Logo */}
           <div style={{ textAlign: 'center', marginBottom: 32 }}>
-            <Link href="/" style={{ display: 'inline-block' }}>
-              <Image
-                src="/digiwolf-icon-transparent.png"
-                alt="DigiWolf"
-                width={64}
-                height={64}
-                style={{ objectFit: 'contain' }}
-              />
-            </Link>
+            <Logo variant="full" className="justify-center" />
           </div>
 
           <h1 style={{ fontSize: 28, fontWeight: 800, color: '#f0f4ff', textAlign: 'center', margin: '0 0 8px' }}>Welcome back</h1>

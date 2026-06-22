@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import NextLink from 'next/link'
 import { Link, usePathname } from '@/i18n/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
-import BrandLogo from '@/components/BrandLogo'
+import Logo from '@/components/Logo'
 import { Menu, X } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
@@ -66,11 +66,10 @@ export default function Navbar() {
           background: 'transparent',
         })
       }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-            <BrandLogo alt={t('brandAlt')} priority />
-          </Link>
+          <Logo variant="full" priority className="nav-logo-full" />
+          <Logo variant="mark" priority className="nav-logo-mark" />
 
           {/* Desktop Links */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }} className="nav-desktop">
@@ -238,9 +237,13 @@ export default function Navbar() {
       <style>{`
         .nav-desktop { display: flex !important; }
         .nav-mobile { display: none !important; }
+        .nav-logo-full { display: inline-flex !important; }
+        .nav-logo-mark { display: none !important; }
         @media (max-width: 768px) {
           .nav-desktop { display: none !important; }
           .nav-mobile { display: flex !important; }
+          .nav-logo-full { display: none !important; }
+          .nav-logo-mark { display: inline-flex !important; }
         }
       `}</style>
     </>

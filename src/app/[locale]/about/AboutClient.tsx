@@ -273,7 +273,7 @@ export default function AboutClient() {
       <section style={{ padding: '100px 24px', textAlign: 'center' as const, background: 'linear-gradient(180deg, transparent 0%, rgba(59,130,246,0.07) 100%)' }}>
         <div style={{ maxWidth: 680, margin: '0 auto' }}>
           <div style={{ marginBottom: 20, display: 'flex', justifyContent: 'center' }}>
-            <Image src="/digiwolf-icon.png" alt="Digi Wolf" width={72} height={72} style={{ borderRadius: 16, opacity: 0.9 }} />
+            <Image src="/digiwolf-icon.png" alt="Digi Wolf" width={72} height={72} unoptimized style={{ borderRadius: 16, opacity: 0.9, objectFit: 'contain' }} />
           </div>
           <h2 style={{ fontSize: 'clamp(28px, 4vw, 52px)', fontWeight: 800, marginBottom: 20 }}>{t('cta.title')}</h2>
           <p style={{ fontSize: 18, color: '#8892b0', lineHeight: 1.7, marginBottom: 40 }}>{t('cta.description')}</p>

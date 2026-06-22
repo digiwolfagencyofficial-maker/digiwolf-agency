@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import Image from 'next/image'
+import Logo from '@/components/Logo'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
@@ -52,12 +52,10 @@ export default function Navbar() {
         WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : '1px solid transparent',
       }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px', height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
-          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
-            <Image src="/digiwolf-icon.png" alt="Digi Wolf Agency" width={40} height={40} priority style={{ objectFit: 'contain' }} />
-            <span style={{ fontSize: 17, fontWeight: 800, color: '#f0f4ff', letterSpacing: '0.05em' }}>DIGIWOLF</span>
-          </Link>
+          <Logo variant="full" priority className="nav-logo-full" />
+          <Logo variant="mark" priority className="nav-logo-mark" />
 
           {/* Desktop nav links */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 4 }} className="nav-desktop">
@@ -198,9 +196,13 @@ export default function Navbar() {
       <style>{`
         .nav-desktop { display: flex !important; }
         .nav-mobile { display: none !important; }
+        .nav-logo-full { display: inline-flex !important; }
+        .nav-logo-mark { display: none !important; }
         @media (max-width: 768px) {
           .nav-desktop { display: none !important; }
           .nav-mobile { display: flex !important; }
+          .nav-logo-full { display: none !important; }
+          .nav-logo-mark { display: inline-flex !important; }
         }
       `}</style>
     </>
