@@ -122,7 +122,8 @@ export default function Navbar() {
             </div>
             <Link href="/book" style={{
               background: '#0047FF', color: '#fff', textDecoration: 'none',
-              padding: '10px 20px', borderRadius: 10, fontSize: 14, fontWeight: 700,
+              padding: '10px 18px', borderRadius: 10, fontSize: 14, fontWeight: 700,
+              whiteSpace: 'nowrap', flexShrink: 0,
               transition: 'transform 0.2s, box-shadow 0.2s',
               boxShadow: '0 4px 20px rgba(0,71,255,0.35)',
             }}
@@ -226,6 +227,7 @@ export default function Navbar() {
                 fontSize: 16, fontWeight: 700, color: '#fff',
                 background: '#0047FF', textAlign: 'center',
                 boxShadow: '0 4px 20px rgba(0,71,255,0.4)',
+                whiteSpace: 'nowrap',
               }}>
                 {t('getStarted')}
               </Link>

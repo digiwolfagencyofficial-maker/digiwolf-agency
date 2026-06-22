@@ -92,14 +92,15 @@ export default function Navbar() {
             </Link>
             <Link href="/book" style={{
               background: '#0047FF', color: '#fff', textDecoration: 'none',
-              padding: '10px 22px', borderRadius: 10, fontSize: 14, fontWeight: 700,
+              padding: '10px 18px', borderRadius: 10, fontSize: 14, fontWeight: 700,
               boxShadow: '0 4px 20px rgba(0,71,255,0.35)', transition: 'all 0.2s',
               display: 'inline-flex', alignItems: 'center', gap: 6,
+              whiteSpace: 'nowrap', flexShrink: 0,
             }}
               onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'translateY(-1px)'; el.style.boxShadow = '0 8px 30px rgba(0,71,255,0.5)' }}
               onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = 'none'; el.style.boxShadow = '0 4px 20px rgba(0,71,255,0.35)' }}
             >
-              Get Started →
+              Book a Free Call →
             </Link>
           </div>
 
@@ -186,7 +187,7 @@ export default function Navbar() {
                 background: '#0047FF', textAlign: 'center',
                 boxShadow: '0 4px 20px rgba(0,71,255,0.4)',
               }}>
-                Get Started →
+                Book a Free Call →
               </Link>
             </div>
           </motion.div>
