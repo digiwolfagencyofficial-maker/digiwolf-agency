@@ -9,6 +9,10 @@
 - Legal pages — `/privacy`, `/terms`, `/cookies` with GDPR content; cookie consent banner in root layout; footer links on all pages
 - Company details sitewide — `src/lib/company.ts` (IČO 243 44 648, Varšavská 715/36, Vinohrady, 120 00 Praha 2) on footers, contact, about, legal pages, admin settings
 
+- Auth pages redesign + forgot-password flow — premium split-screen `/login` & `/register`, new `/forgot-password` (now wired to `supabase.auth.resetPasswordForEmail`) and `/reset-password` (recovery session → new password with confirm + strength meter → redirect to login with success toast). Shared UI kit in `src/components/auth/AuthShell.tsx`. Fake testimonial ("Martin Novák / TechStart Praha") and invented stats ("47+/98%/6 days") removed and replaced with honest differentiators (Founder-led, Trilingual EN·CZ·MN, Source code yours, 24h response). "Forgot password?" link added on login; password show/hide, inline validation, friendly Supabase error mapping, Terms+Privacy consent checkbox on register.
+  - **Action needed (no code):** In Supabase → Authentication → URL Configuration → Redirect URLs, add `https://digiwolf.agency/reset-password` (and `http://localhost:3000/reset-password` for local). Email delivery uses the existing Supabase + Resend setup.
+  - Note: restored the committed `src/app/favicon.ico`; a corrupt local copy (invalid ICO) had been crashing every page with a 500. `proxy.ts` updated to exempt `/reset-password` from locale routing.
+
 ## Remaining
 - `/blog` — content & layout
 - `/dashboard` — client portal

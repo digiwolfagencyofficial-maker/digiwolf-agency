@@ -19,12 +19,14 @@ export default function AuthHashRedirect() {
         const { session, type } = await establishSessionFromUrlHash(supabase)
         if (!active || !session) return
 
-        if (type === 'recovery' && pathname !== '/auth/update-password') {
-          router.replace('/auth/update-password')
+        // Pages that handle the recovery session themselves — don't bounce away.
+        const recoveryPages = ['/reset-password', '/auth/update-password']
+        if (type === 'recovery' && !recoveryPages.includes(pathname)) {
+          router.replace('/reset-password')
           return
         }
 
-        // Recovery hash fell back to site root — send client to set password or dashboard.
+        // Recovery hash landed on a page that handles it — let that page proceed.
         if (type === 'recovery') return
 
         if (pathname === '/' || pathname === '/login') {

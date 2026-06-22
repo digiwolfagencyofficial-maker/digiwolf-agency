@@ -1,37 +1,54 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useId, useMemo, useState } from 'react'
 import Link from 'next/link'
-import Logo from '@/components/Logo'
 import { createSupabaseBrowserClient } from '@/lib/supabase-browser'
+import { friendlyAuthError } from '@/lib/auth-errors'
+import { getPasswordStrength } from '@/lib/password-strength'
+import {
+  AuthShell,
+  AuthHeader,
+  AuthField,
+  PasswordField,
+  SubmitButton,
+  GoogleButton,
+  OrDivider,
+  Banner,
+  authColors,
+} from '@/components/auth/AuthShell'
 
 export default function RegisterPage() {
   const supabase = useMemo(() => createSupabaseBrowserClient(), [])
+  const termsId = useId()
   const [name, setName] = useState('')
+  const [company, setCompany] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [company, setCompany] = useState('')
+  const [confirm, setConfirm] = useState('')
+  const [agreed, setAgreed] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
-  const [focused, setFocused] = useState('')
 
-  const fieldStyle = (id: string): React.CSSProperties => ({
-    width: '100%',
-    padding: '12px 16px',
-    background: focused === id ? '#0d1528' : '#0a1020',
-    border: `1.5px solid ${focused === id ? '#0047FF' : '#1e2a45'}`,
-    borderRadius: 10,
-    color: '#f0f4ff',
-    fontSize: 15,
-    outline: 'none',
-    transition: 'all 0.2s',
-    boxSizing: 'border-box' as const,
-  })
+  const strength = getPasswordStrength(password)
+  const passwordsMatch = confirm.length === 0 || confirm === password
+  const canSubmit = strength.acceptable && confirm === password && agreed && email.length > 0
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
+    if (!strength.acceptable) {
+      setError('Password must be at least 8 characters.')
+      return
+    }
+    if (password !== confirm) {
+      setError('Passwords don’t match. Please re-enter them.')
+      return
+    }
+    if (!agreed) {
+      setError('Please accept the Terms and Privacy Policy to continue.')
+      return
+    }
     setLoading(true)
     try {
       const { error } = await supabase.auth.signUp({
@@ -39,169 +56,100 @@ export default function RegisterPage() {
         password,
         options: {
           data: { full_name: name, company },
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
         },
       })
       if (error) {
-        setError(error.message)
+        setError(friendlyAuthError(error.message))
       } else {
         setSuccess(true)
       }
     } catch {
-      setError('An error occurred. Please try again.')
+      setError('Network error — check your connection and try again.')
     } finally {
       setLoading(false)
     }
   }
 
+  const handleGoogleSignIn = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: `${window.location.origin}/auth/callback` },
+    })
+  }
+
+  if (success) {
+    return (
+      <AuthShell>
+        <AuthHeader title="Check your email" subtitle="One quick step to activate your account." />
+        <Banner tone="success">
+          We’ve sent a confirmation link to <strong>{email}</strong>. Click it to activate your account and sign in.
+        </Banner>
+        <p style={{ textAlign: 'center', fontSize: 14, color: '#64748b', margin: '8px 0 0' }}>
+          <Link href="/login" style={{ color: '#3d74ff', fontWeight: 600, textDecoration: 'none' }}>← Back to sign in</Link>
+        </p>
+      </AuthShell>
+    )
+  }
+
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: '#030712',
-      display: 'flex',
-      fontFamily: 'Inter, system-ui, sans-serif',
-    }}>
-      {/* Left Panel */}
-      <div style={{
-        flex: 1,
-        background: 'linear-gradient(135deg, #020818 0%, #030f2a 60%, #040d20 100%)',
-        borderRight: '1px solid #0d1a35',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '60px 56px',
-        position: 'relative',
-        overflow: 'hidden',
-      }}>
-        <div style={{ position: 'absolute', top: '20%', left: '20%', width: 300, height: 300, background: 'radial-gradient(circle, rgba(0,71,255,0.08) 0%, transparent 70%)', borderRadius: '50%', pointerEvents: 'none' }} />
+    <AuthShell>
+      <AuthHeader title="Create your account" subtitle="Free to join. No credit card required." />
 
-        <div style={{ maxWidth: 420, width: '100%' }}>
-          <div style={{ marginBottom: 48 }}>
-            <h2 style={{ fontSize: 32, fontWeight: 800, color: '#f0f4ff', margin: '0 0 16px' }}>
-              Start your digital transformation
-            </h2>
-            <p style={{ fontSize: 16, color: '#64748b', lineHeight: 1.7, margin: 0 }}>
-              Join 47+ businesses across Central Europe who trust DigiWolf to build and grow their digital presence.
-            </p>
-          </div>
+      {error && <Banner tone="error">{error}</Banner>}
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-            {[
-              ['🚀', 'Web Development', 'Premium sites delivered in 6 days'],
-              ['⚡', 'AI Automation', 'Save 20+ hours per week'],
-              ['🏢', 'Czech S.R.O. Formation', 'Company setup in 7 days'],
-            ].map(([icon, title, desc]) => (
-              <div key={title} style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px', background: 'rgba(255,255,255,0.03)', border: '1px solid #0d1a35', borderRadius: 12 }}>
-                <span style={{ fontSize: 24 }}>{icon}</span>
-                <div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: '#f0f4ff', marginBottom: 2 }}>{title}</div>
-                  <div style={{ fontSize: 12, color: '#64748b' }}>{desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <form onSubmit={handleSubmit} noValidate>
+        <AuthField label="Full name" value={name} onChange={setName} placeholder="Your name" autoComplete="name" />
+        <AuthField label="Company (optional)" value={company} onChange={setCompany} placeholder="Your company s.r.o." autoComplete="organization" />
+        <AuthField label="Email address" type="email" value={email} onChange={setEmail} placeholder="you@company.com" required autoComplete="email" />
+        <PasswordField
+          label="Password"
+          value={password}
+          onChange={setPassword}
+          placeholder="At least 8 characters"
+          required
+          autoComplete="new-password"
+          showStrength
+        />
+        <PasswordField
+          label="Confirm password"
+          value={confirm}
+          onChange={setConfirm}
+          placeholder="Re-enter your password"
+          required
+          autoComplete="new-password"
+          invalid={!passwordsMatch}
+          hint={!passwordsMatch ? 'Passwords don’t match yet.' : undefined}
+        />
 
-      {/* Right Panel — Register Form */}
-      <div style={{
-        width: 480,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '60px 48px',
-        background: '#030712',
-        overflowY: 'auto',
-      }}>
-        <div style={{ width: '100%', maxWidth: 380 }}>
-          {/* Logo */}
-          <div style={{ textAlign: 'center', marginBottom: 32 }}>
-            <Logo variant="full" className="justify-center" />
-          </div>
-
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: '#f0f4ff', textAlign: 'center', margin: '0 0 8px' }}>Create your account</h1>
-          <p style={{ fontSize: 14, color: '#64748b', textAlign: 'center', margin: '0 0 32px' }}>Free to join. No credit card required.</p>
-
-          {success ? (
-            <div style={{ background: 'rgba(0,200,100,0.1)', border: '1px solid rgba(0,200,100,0.3)', borderRadius: 12, padding: '24px', textAlign: 'center' }}>
-              <div style={{ fontSize: 32, marginBottom: 12 }}>📧</div>
-              <div style={{ fontSize: 16, fontWeight: 700, color: '#00c864', marginBottom: 8 }}>Check your email!</div>
-              <div style={{ fontSize: 14, color: '#8892b0', lineHeight: 1.6 }}>
-                We&apos;ve sent a confirmation link to <strong style={{ color: '#f0f4ff' }}>{email}</strong>. Click it to activate your account.
-              </div>
-              <Link href="/login" style={{ display: 'inline-block', marginTop: 20, color: '#0047FF', fontWeight: 600, textDecoration: 'none', fontSize: 14 }}>
-                Back to Sign In →
-              </Link>
-            </div>
-          ) : (
-            <>
-              {error && (
-                <div style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.3)', borderRadius: 8, padding: '12px 16px', marginBottom: 20, fontSize: 13, color: '#f87171', textAlign: 'center' }}>
-                  {error}
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit}>
-                <div style={{ marginBottom: 16 }}>
-                  <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#94a3b8', marginBottom: 6 }}>Full name</label>
-                  <input type="text" value={name} onChange={e => setName(e.target.value)} onFocus={() => setFocused('name')} onBlur={() => setFocused('')} placeholder="Uuganbayar Ganbaatar" required style={fieldStyle('name')} />
-                </div>
-
-                <div style={{ marginBottom: 16 }}>
-                  <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#94a3b8', marginBottom: 6 }}>Company (optional)</label>
-                  <input type="text" value={company} onChange={e => setCompany(e.target.value)} onFocus={() => setFocused('company')} onBlur={() => setFocused('')} placeholder="Your Company s.r.o." style={fieldStyle('company')} />
-                </div>
-
-                <div style={{ marginBottom: 16 }}>
-                  <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#94a3b8', marginBottom: 6 }}>Email address</label>
-                  <input type="email" value={email} onChange={e => setEmail(e.target.value)} onFocus={() => setFocused('email')} onBlur={() => setFocused('')} placeholder="you@company.com" required style={fieldStyle('email')} />
-                </div>
-
-                <div style={{ marginBottom: 24 }}>
-                  <label style={{ display: 'block', fontSize: 13, fontWeight: 500, color: '#94a3b8', marginBottom: 6 }}>Password</label>
-                  <input type="password" value={password} onChange={e => setPassword(e.target.value)} onFocus={() => setFocused('password')} onBlur={() => setFocused('')} placeholder="Min. 8 characters" required minLength={8} style={fieldStyle('password')} />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  style={{
-                    width: '100%',
-                    padding: '14px',
-                    background: loading ? '#1e2a45' : 'linear-gradient(135deg, #0047FF, #0066ff)',
-                    border: 'none',
-                    borderRadius: 10,
-                    color: '#fff',
-                    fontSize: 15,
-                    fontWeight: 700,
-                    cursor: loading ? 'not-allowed' : 'pointer',
-                    marginBottom: 28,
-                  }}
-                >
-                  {loading ? 'Creating account...' : 'Create Free Account'}
-                </button>
-              </form>
-            </>
-          )}
-
-          {!success && (
-            <p style={{ textAlign: 'center', fontSize: 14, color: '#64748b', margin: 0 }}>
-              Already have an account?{' '}
-              <Link href="/login" style={{ color: '#0047FF', fontWeight: 600, textDecoration: 'none' }}>
-                Sign in →
-              </Link>
-            </p>
-          )}
-
-          <p style={{ textAlign: 'center', fontSize: 11, color: '#334155', marginTop: 16 }}>
-            By creating an account you agree to our{' '}
-            <Link href="/privacy" style={{ color: '#475569', textDecoration: 'underline' }}>Privacy Policy</Link>
+        <label htmlFor={termsId} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, margin: '4px 0 20px', cursor: 'pointer' }}>
+          <input
+            id={termsId}
+            type="checkbox"
+            checked={agreed}
+            onChange={(e) => setAgreed(e.target.checked)}
+            style={{ width: 16, height: 16, marginTop: 2, accentColor: authColors.ACCENT, cursor: 'pointer', flexShrink: 0 }}
+          />
+          <span style={{ fontSize: 13, color: '#94a3b8', lineHeight: 1.5 }}>
+            I agree to the{' '}
+            <Link href="/terms" style={{ color: '#3d74ff', textDecoration: 'underline' }}>Terms of Service</Link>
             {' '}and{' '}
-            <Link href="/terms" style={{ color: '#475569', textDecoration: 'underline' }}>Terms of Service</Link>
-          </p>
-        </div>
-      </div>
-    </div>
+            <Link href="/privacy" style={{ color: '#3d74ff', textDecoration: 'underline' }}>Privacy Policy</Link>.
+          </span>
+        </label>
+
+        <SubmitButton loading={loading} loadingLabel="Creating account…" disabled={!canSubmit}>
+          Create free account
+        </SubmitButton>
+
+        <OrDivider />
+        <GoogleButton onClick={handleGoogleSignIn} label="Sign up with Google" />
+      </form>
+
+      <p style={{ textAlign: 'center', fontSize: 14, color: '#64748b', margin: '24px 0 0' }}>
+        Already have an account?{' '}
+        <Link href="/login" style={{ color: '#3d74ff', fontWeight: 600, textDecoration: 'none' }}>Sign in →</Link>
+      </p>
+    </AuthShell>
   )
 }
