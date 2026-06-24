@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
-import { Globe, Scale, Bot, TrendingUp, Palette, Shield, Check, Clock, Lock, Infinity } from 'lucide-react'
+import { Globe, Scale, Bot, Shield, Check, Clock, Lock, Infinity } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -24,23 +24,18 @@ type ServiceCard = {
 type Stat = { id: string; num: string; label: string }
 type Guarantee = { id: string; title: string; desc: string }
 type Cta = { id: string; label: string }
+type MaintenanceNote = { title: string; desc: string; cta: string }
 
 const SERVICE_ICONS: Record<string, React.ReactNode> = {
   web: <Globe size={26} />,
-  sro: <Scale size={26} />,
   ai: <Bot size={26} />,
-  seo: <TrendingUp size={26} />,
-  brand: <Palette size={26} />,
-  maintenance: <Shield size={26} />,
+  sro: <Scale size={26} />,
 }
 
 const SERVICE_COLORS: Record<string, string> = {
   web: '#3b82f6',
-  sro: '#6366f1',
   ai: '#10b981',
-  seo: '#f59e0b',
-  brand: '#ec4899',
-  maintenance: '#8b5cf6',
+  sro: '#6366f1',
 }
 
 const GUARANTEE_ICONS: Record<string, React.ReactNode> = {
@@ -68,24 +63,6 @@ const CARD_PROCESS: Record<string, { step: string; label: string; desc: string }
     { step: '03', label: 'Build & Test', desc: 'Iterative development with weekly demos and your feedback.' },
     { step: '04', label: 'Deploy & Train', desc: 'Live deployment with full team training and documentation.' },
   ],
-  seo: [
-    { step: '01', label: 'SEO Audit', desc: 'Complete technical and content audit delivered in week one.' },
-    { step: '02', label: 'Strategy Build', desc: 'Custom roadmap targeting your exact keywords and markets.' },
-    { step: '03', label: 'Execution', desc: 'Monthly sprints covering technical fixes, content, and links.' },
-    { step: '04', label: 'Review & Iterate', desc: 'Monthly calls reviewing rankings, traffic, and next steps.' },
-  ],
-  brand: [
-    { step: '01', label: 'Brand Discovery', desc: 'Deep dive into your story, values, and ideal customer.' },
-    { step: '02', label: 'Concept Directions', desc: '3 distinct creative directions presented for feedback.' },
-    { step: '03', label: 'Refinement', desc: 'Two rounds of revisions until it feels exactly right.' },
-    { step: '04', label: 'Brand Handover', desc: 'Complete asset library + guidelines delivered and walkthrough.' },
-  ],
-  maintenance: [
-    { step: '01', label: 'Onboarding', desc: 'We audit your current setup and set up monitoring tools.' },
-    { step: '02', label: 'Baseline Fix', desc: 'Any critical issues resolved in the first week.' },
-    { step: '03', label: 'Ongoing Maintenance', desc: 'Weekly updates, checks, and optimizations run automatically.' },
-    { step: '04', label: 'Monthly Review', desc: 'Report delivered with metrics, changes made, and next steps.' },
-  ],
 }
 
 function bookServiceParam(cardId: string) {
@@ -98,6 +75,7 @@ export default function ServicesPage() {
   const [hoveredProcess, setHoveredProcess] = useState<string | null>(null)
 
   const cards = useMemo(() => t.raw('cards') as ServiceCard[], [t])
+  const maintenanceNote = useMemo(() => t.raw('maintenanceNote') as MaintenanceNote, [t])
   const stats = useMemo(() => t.raw('stats') as Stat[], [t])
   const guarantees = useMemo(() => t.raw('guarantees') as Guarantee[], [t])
   const heroCtas = useMemo(() => t.raw('hero.ctas') as Cta[], [t])
@@ -195,7 +173,7 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section id="services" style={{ padding: '100px 24px', maxWidth: 1280, margin: '0 auto' }}>
         <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32 }}>
-          {cards.map((svc) => {
+          {cards.map((svc, index) => {
             const color = SERVICE_COLORS[svc.id] ?? '#3b82f6'
             const isHovered = hoveredCard === svc.id
             const process = CARD_PROCESS[svc.id] ?? []
@@ -216,6 +194,7 @@ export default function ServicesPage() {
                   boxShadow: isHovered ? `0 24px 60px rgba(0,0,0,0.4), 0 0 40px ${color}22` : '0 4px 20px rgba(0,0,0,0.2)',
                   cursor: 'default',
                   display: 'flex', flexDirection: 'column',
+                  gridColumn: index === 0 ? '1 / -1' : undefined,
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 24 }}>
@@ -312,6 +291,36 @@ export default function ServicesPage() {
               </div>
             )
           })}
+        </div>
+
+        <div style={{
+          marginTop: 32, padding: '28px 32px',
+          background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)',
+          borderRadius: 20, display: 'flex', flexWrap: 'wrap',
+          alignItems: 'center', justifyContent: 'space-between', gap: 20,
+        }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16, flex: 1, minWidth: 280 }}>
+            <div style={{
+              width: 48, height: 48, borderRadius: 12,
+              background: 'rgba(139,92,246,0.12)', border: '1px solid rgba(139,92,246,0.25)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a78bfa', flexShrink: 0,
+            }}>
+              <Shield size={22} />
+            </div>
+            <div>
+              <h3 style={{ fontSize: 17, fontWeight: 700, color: '#f0f4ff', marginBottom: 8 }}>{maintenanceNote.title}</h3>
+              <p style={{ fontSize: 14, color: '#8892b0', lineHeight: 1.7, margin: 0 }}>{maintenanceNote.desc}</p>
+            </div>
+          </div>
+          <Link href="/contact" style={{
+            display: 'inline-block', textAlign: 'center' as const,
+            background: 'rgba(255,255,255,0.05)', color: '#f0f4ff',
+            padding: '12px 24px', borderRadius: 12, fontWeight: 600, fontSize: 14,
+            textDecoration: 'none', border: '1px solid rgba(255,255,255,0.1)',
+            whiteSpace: 'nowrap',
+          }}>
+            {maintenanceNote.cta}
+          </Link>
         </div>
       </section>
 

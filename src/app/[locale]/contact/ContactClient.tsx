@@ -21,8 +21,6 @@ const SERVICE_API_VALUES: Record<string, string> = {
   webDevelopment: 'Web Development',
   sroFormation: 'Czech S.R.O. Formation',
   aiAutomation: 'AI Automation',
-  seoGrowth: 'SEO & Growth',
-  brandIdentity: 'Brand Identity',
   websiteMaintenance: 'Website Maintenance',
 }
 

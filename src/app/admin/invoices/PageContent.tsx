@@ -21,8 +21,8 @@ const adminNav = [
 const invoices = [
   { id: 'INV-2026-001', client: 'Petr Novak', project: 'E-commerce Redesign', amount: '42,500 CZK', status: 'Paid', due: '1 Apr 2026', issued: '15 Mar 2026' },
   { id: 'INV-2026-002', client: 'Mike Chen', project: 'AI Chatbot Integration', amount: '60,000 CZK', status: 'Pending', due: '15 May 2026', issued: '1 May 2026' },
-  { id: 'INV-2026-003', client: 'Sarah K', project: 'SEO Campaign Q2', amount: '15,000 CZK', status: 'Paid', due: '1 Apr 2026', issued: '15 Mar 2026' },
-  { id: 'INV-2026-004', client: 'Tom B', project: 'Brand Identity Package', amount: '27,500 CZK', status: 'Pending', due: '30 May 2026', issued: '15 Apr 2026' },
+  { id: 'INV-2026-003', client: 'Alena Novotna', project: 'Agency Website Build', amount: '22,500 CZK', status: 'Paid', due: '1 Apr 2026', issued: '15 Mar 2026' },
+  { id: 'INV-2026-004', client: 'Bat-Erdene', project: 'SRO Formation', amount: '15,000 CZK', status: 'Pending', due: '30 May 2026', issued: '15 Apr 2026' },
   { id: 'INV-2026-005', client: 'Jana Horák', project: 'SRO Legal Setup', amount: '15,000 CZK', status: 'Paid', due: '20 Apr 2026', issued: '5 Apr 2026' },
   { id: 'INV-2026-006', client: 'Alena Novotna', project: 'Landing Page Redesign', amount: '20,000 CZK', status: 'Overdue', due: '1 May 2026', issued: '15 Apr 2026' },
 ]

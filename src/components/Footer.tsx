@@ -25,7 +25,14 @@ const InstagramIcon = () => (
   </svg>
 )
 
-const serviceIds = ['websites', 'sro', 'ai', 'seo', 'branding', 'maintenance'] as const
+const serviceIds = ['websites', 'ai', 'sro', 'maintenance'] as const
+
+const serviceHrefs: Record<(typeof serviceIds)[number], string> = {
+  websites: '/services',
+  ai: '/services',
+  sro: '/services',
+  maintenance: '/contact',
+}
 
 const companyLinks = [
   { key: 'about', href: '/about' },
@@ -87,7 +94,7 @@ export default function Footer() {
             <h4 style={{ color: '#f0f4ff', fontWeight: 700, fontSize: 14, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: 20 }}>{t('sections.services.title')}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {serviceIds.map(id => (
-                <Link key={id} href="/services" style={{ color: '#8892b0', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
+                <Link key={id} href={serviceHrefs[id]} style={{ color: '#8892b0', textDecoration: 'none', fontSize: 14, transition: 'color 0.2s' }}
                   onMouseEnter={e => (e.target as HTMLElement).style.color = '#f0f4ff'}
                   onMouseLeave={e => (e.target as HTMLElement).style.color = '#8892b0'}
                 >{t(`sections.services.${id}`)}</Link>

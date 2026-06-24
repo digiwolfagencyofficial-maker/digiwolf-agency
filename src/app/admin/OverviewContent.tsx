@@ -22,22 +22,22 @@ const leads = [
   { name: 'Petr Novak', email: 'petr@firma.cz', service: 'Web Dev', date: 'Today', status: 'New' },
   { name: 'Jana Horák', email: 'jana@shop.cz', service: 'SRO Formation', date: 'Yesterday', status: 'Contacted' },
   { name: 'Mike Chen', email: 'mike@startup.com', service: 'AI Automation', date: '2 days ago', status: 'Qualified' },
-  { name: 'Sarah K', email: 'sarah@retail.cz', service: 'SEO', date: '3 days ago', status: 'New' },
-  { name: 'Tom B', email: 'tom@brand.cz', service: 'Branding', date: '4 days ago', status: 'Won' },
+  { name: 'Bat-Erdene', email: 'bat@mongol.cz', service: 'SRO Formation', date: '3 days ago', status: 'New' },
+  { name: 'Alena Novotna', email: 'alena@firma.cz', service: 'Web Dev', date: '4 days ago', status: 'Won' },
 ];
 
 const projects = [
   { name: 'E-commerce Redesign', client: 'Petr Novak', progress: 72, deadline: 'Jun 15' },
   { name: 'AI Chatbot Integration', client: 'Mike Chen', progress: 45, deadline: 'Jul 2' },
-  { name: 'SEO Campaign Q2', client: 'Sarah K', progress: 88, deadline: 'May 31' },
-  { name: 'Brand Identity', client: 'Tom B', progress: 30, deadline: 'Jul 20' },
+  { name: 'Agency Website Build', client: 'Alena Novotna', progress: 88, deadline: 'May 31' },
   { name: 'SRO Legal Setup', client: 'Jana Horák', progress: 60, deadline: 'Jun 8' },
+  { name: 'SRO Formation — Bat-Erdene', client: 'Bat-Erdene', progress: 30, deadline: 'Jul 20' },
 ];
 
 const activity = [
   { icon: '💬', text: 'New message from Petr Novak', time: '5 min ago' },
   { icon: '✅', text: 'Invoice #1042 marked as paid', time: '1 hour ago' },
-  { icon: '🎯', text: 'New lead: Sarah K submitted inquiry', time: '2 hours ago' },
+  { icon: '🎯', text: 'New lead: Bat-Erdene submitted inquiry', time: '2 hours ago' },
   { icon: '📋', text: 'Project "AI Chatbot" milestone reached', time: '4 hours ago' },
   { icon: '👥', text: 'Jana Horák added as new client', time: 'Yesterday' },
 ];

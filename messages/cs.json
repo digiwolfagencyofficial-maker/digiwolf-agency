@@ -31,12 +31,10 @@
     "sections": {
       "services": {
         "title": "Služby",
-        "websites": "Weby pro firmy",
+        "websites": "Kompletní tvorba webových stránek",
         "sro": "Založení české S.R.O.",
         "ai": "AI automatizace",
-        "seo": "SEO a růst",
-        "branding": "Brand identita",
-        "maintenance": "Údržba a podpora"
+        "maintenance": "Podpora na vyžádání"
       },
       "company": {
         "title": "Společnost",
@@ -110,14 +108,14 @@
     "badge": "Přijímáme nové projekty",
     "hero": {
       "title": {
-        "line1": "Tvoříme digitální zbraně",
-        "line2": "pro ambiciózní firmy"
+        "line1": "Založte si vlastní firmu v Česku",
+        "line2": "bez byrokracie a stresu"
       },
-      "subtitle": "Weby. Aplikace. AI automatizace. Založení české společnosti. Vše pod jednou střechou — vytvořeno v Praze, dodáváno globálně.",
+      "subtitle": "Chcete podnikat sami, ale nevíte, kde začít — a úřady, formuláře a právní jazyk to ještě ztěžují. Založíme vaši s.r.o., postavíme web a provedeme vás každým krokem. Bez byrokracie. Bez hádání. Nebudete na to sami.",
       "ctas": [
         {
           "id": "startProject",
-          "label": "Začněte svůj projekt →"
+          "label": "Začněte podnikat →"
         },
         {
           "id": "bookCall",
@@ -144,79 +142,59 @@
     },
     "stats": [
       {
-        "id": "languages",
-        "value": 3,
-        "suffix": "",
-        "label": "Jazyky (EN/CZ/MN)"
+        "id": "noLanguageBarrier",
+        "headline": "Vyřízeno za vás",
+        "detail": "Vše vysvětlíme a obstaráme — od formulářů po registraci."
       },
       {
-        "id": "responseTime",
-        "value": 24,
-        "suffix": "h",
-        "label": "Doba odezvy"
+        "id": "companyAndWebsite",
+        "headline": "Firma + web v jednom",
+        "detail": "Vaše s.r.o. a web jako jeden balíček, ne pět dodavatelů."
       },
       {
-        "id": "deliveryCommitment",
-        "value": 7,
-        "suffix": "-day",
-        "label": "Závazek dodání"
+        "id": "guidedEndToEnd",
+        "headline": "Průvodce od A do Z",
+        "detail": "Provedeme vás každým krokem — neztratíte se a nebudete sami."
       },
       {
-        "id": "sourceCode",
-        "value": 100,
-        "suffix": "%",
-        "label": "Zdrojový kód váš"
+        "id": "founderLed",
+        "headline": "Veden zakladatelem",
+        "detail": "Pracujete přímo s člověkem, který vše dělá. Žádné předávání."
       }
     ],
     "servicesSection": {
       "badge": "Co děláme",
-      "titleLine1": "Vše, co vaše firma potřebuje",
-      "titleLine2": "k online vítězství",
-      "description": "Od špičkových webů po AI automatizaci a založení české společnosti — zvládneme vše na výjimečné úrovni.",
+      "titleLine1": "Tři způsoby, jak vám",
+      "titleLine2": "pomůžeme růst online",
+      "description": "Přehledná nabídka — weby na míru, AI automatizace a založení české společnosti. Bez zbytečného přetížení, jen to podstatné.",
       "cards": [
         {
           "id": "agencyWebsites",
-          "title": "Weby pro firmy",
-          "desc": "Vysoce konverzní, SEO optimalizované weby na Next.js, které mění návštěvníky v platící klienty.",
+          "title": "Kompletní tvorba webových stránek",
+          "desc": "Kompletní weby na míru, které dodají vašemu podnikání profesionální vzhled a promění návštěvníky v zákazníky. Rychlé, moderní a postavené na výkon.",
           "tag": "Nejoblíbenější",
           "price": "od 45 000 CZK"
         },
         {
-          "id": "sro",
-          "title": "Založení české S.R.O.",
-          "desc": "Kompletní založení české společnosti v angličtině od začátku do konce. Bez byrokracie, bez stresu, s výsledkem.",
-          "tag": "",
-          "price": "od 12 000 CZK"
-        },
-        {
           "id": "aiAutomation",
           "title": "AI automatizace",
-          "desc": "Vlastní AI workflow, chatboti a automatizační pipeline, které vašemu týmu ušetří 20+ hodin týdně.",
-          "tag": "Vysoká poptávka",
+          "desc": "Chytrá automatizace integrovaná do vašeho webu — zachytávání poptávek, okamžité odpovědi, rezervace a follow-up — aby vaše firma fungovala a rostla, zatímco se vy věnujete zákazníkům.",
+          "tag": "",
           "price": "od 25 000 CZK"
         },
         {
-          "id": "seoGrowth",
-          "title": "SEO a růst",
-          "desc": "Datově řízené SEO strategie pro trhy střední a východní Evropy. Lepší pozice, vyšší dohledatelnost, stabilní růst.",
+          "id": "sro",
+          "title": "Založení společnosti v České republice (S.R.O.)",
+          "desc": "Pomáháme mongolským podnikatelům založit S.R.O. v Česku — od papírování po registraci — abyste mohli podnikat legálně a s jistotou.",
           "tag": "",
-          "price": "od 8 000 CZK/měs."
-        },
-        {
-          "id": "brandIdentity",
-          "title": "Brand identita",
-          "desc": "Prémiové logo, brand systém a vizuální identita, díky kterým bude vaše firma nezapomenutelná.",
-          "tag": "",
-          "price": "od 18 000 CZK"
-        },
-        {
-          "id": "maintenance",
-          "title": "Údržba a podpora",
-          "desc": "24/7 monitoring, aktualizace, bezpečnostní záplaty a prioritní podpora pro vaše digitální aktiva.",
-          "tag": "",
-          "price": "od 3 000 CZK/měs."
+          "price": "od 15 000 CZK"
         }
       ],
+      "maintenanceNote": {
+        "title": "Potřebujete pomoc po spuštění?",
+        "desc": "Potřebujete pomoc poté, co je web online? Ozvěte se kdykoli — náš tým vás podpoří aktualizacemi, opravami nebo úpravami, když je budete potřebovat.",
+        "cta": "Kontaktujte nás →"
+      },
       "learnMore": "Zjistit více →"
     },
     "processSection": {
@@ -533,7 +511,7 @@
         {
           "id": "q5",
           "q": "Mohu si web po spuštění upravovat sám/sama?",
-          "a": "Ano. Stavíme na moderních platformách a předáme vám návod. Volitelně nabízíme i měsíční údržbu."
+          "a": "Ano. Stavíme na moderních platformách a předáme vám návod. Potřebujete-li pomoc později, kontaktujte nás kdykoli."
         },
         {
           "id": "q6",
@@ -625,10 +603,10 @@
   },
   "services": {
     "hero": {
-      "badge": "Full-stack agenturní služby",
-      "titleLine1": "Všechny služby, které potřebujete",
-      "titleLine2": "k dominanci na trhu",
-      "subtitle": "Od nuly k lídrovi trhu — webový vývoj, založení společnosti, AI automatizace a další. Tvořeno odborníky, kteří rozumí středoevropským trhům.",
+      "badge": "Naše služby",
+      "titleLine1": "Tři hlavní služby.",
+      "titleLine2": "Jeden jasný fokus.",
+      "subtitle": "Kompletní weby, AI automatizace a založení české S.R.O. — pro podnikatele, kteří chtějí výsledky bez zbytečného přetížení.",
       "ctas": [
         {
           "id": "startProject",
@@ -643,7 +621,7 @@
     "stats": [
       {
         "id": "coreServices",
-        "num": "6",
+        "num": "3",
         "label": "Hlavní služby"
       },
       {
@@ -665,305 +643,79 @@
     "cards": [
       {
         "id": "web",
-        "title": "Webový vývoj",
-        "tagline": "Full-stack weby, které konvertují",
+        "title": "Kompletní tvorba webových stránek",
+        "tagline": "Weby na míru, které konvertují",
         "price": "od 45 000 CZK",
         "badge": "Nejoblíbenější",
         "startingAt": "Začíná na",
         "includedTitle": "Co je zahrnuto",
         "processTitle": "Náš proces",
         "cta": "Rezervovat konzultaci →",
-        "description": "Vytváříme prémiové full-stack weby navržené pro výkon, SEO a konverze. Next.js, Webflow, e-commerce — každý pixel má svůj účel, každá milisekunda je optimalizovaná.",
+        "description": "Kompletní weby na míru, které dodají vašemu podnikání profesionální vzhled a promění návštěvníky v zákazníky. Rychlé, moderní a postavené na výkon.",
         "features": [
-          {
-            "id": "f1",
-            "label": "Next.js 14 + TypeScript full-stack"
-          },
-          {
-            "id": "f2",
-            "label": "Webflow a vlastní CMS řešení"
-          },
-          {
-            "id": "f3",
-            "label": "E-commerce přes Shopify / WooCommerce"
-          },
-          {
-            "id": "f4",
-            "label": "Mobile-first responzivní design"
-          },
-          {
-            "id": "f5",
-            "label": "Technické SEO od prvního dne"
-          },
-          {
-            "id": "f6",
-            "label": "Core Web Vitals optimalizace (100/100)"
-          },
-          {
-            "id": "f7",
-            "label": "Vlastní animace a interakce"
-          },
-          {
-            "id": "f8",
-            "label": "Analytika a měření konverzí"
-          },
-          {
-            "id": "f9",
-            "label": "30 dní podpory po spuštění v ceně"
-          }
+          { "id": "f1", "label": "Next.js + TypeScript full-stack" },
+          { "id": "f2", "label": "Vlastní design na míru vaší značce" },
+          { "id": "f3", "label": "Mobile-first responzivní design" },
+          { "id": "f4", "label": "Formuláře pro leady a kontaktní toky" },
+          { "id": "f5", "label": "Technické SEO od prvního dne" },
+          { "id": "f6", "label": "Optimalizace Core Web Vitals" },
+          { "id": "f7", "label": "Analytika a měření konverzí" },
+          { "id": "f8", "label": "Plné vlastnictví zdrojového kódu" },
+          { "id": "f9", "label": "30 dní podpory po spuštění v ceně" }
+        ]
+      },
+      {
+        "id": "ai",
+        "title": "AI automatizace",
+        "tagline": "Integrováno do vašeho webu",
+        "price": "od 25 000 CZK",
+        "badge": "Vysoká poptávka",
+        "startingAt": "Začíná na",
+        "includedTitle": "Co je zahrnuto",
+        "processTitle": "Náš proces",
+        "cta": "Rezervovat konzultaci →",
+        "description": "Chytrá automatizace integrovaná do vašeho webu — zachytávání poptávek, okamžité odpovědi, rezervace a follow-up — aby vaše firma fungovala a rostla, zatímco se vy věnujete zákazníkům.",
+        "features": [
+          { "id": "f1", "label": "Vlastní AI chatboti na vašem webu" },
+          { "id": "f2", "label": "Kvalifikace a nurturing leadů" },
+          { "id": "f3", "label": "Automatizace workflow (n8n / Make / Zapier)" },
+          { "id": "f4", "label": "Integrace rezervací a kalendáře" },
+          { "id": "f5", "label": "Integrace CRM" },
+          { "id": "f6", "label": "Okamžité odpovědi a follow-up sekvence" },
+          { "id": "f7", "label": "Automatizace e-mailů a notifikací" },
+          { "id": "f8", "label": "Vlastní API integrace" },
+          { "id": "f9", "label": "Školení a předávací dokumentace" }
         ]
       },
       {
         "id": "sro",
-        "title": "Založení české S.R.O.",
-        "tagline": "Společnost v EU během dní, ne měsíců",
+        "title": "Založení společnosti v České republice (S.R.O.)",
+        "tagline": "Pro mongolské podnikatele vstupující do EU",
         "price": "od 15 000 CZK",
         "badge": "Vstupní brána do EU",
         "startingAt": "Začíná na",
         "includedTitle": "Co je zahrnuto",
         "processTitle": "Náš proces",
         "cta": "Rezervovat konzultaci →",
-        "description": "Kompletní registrace české S.R.O. — pomoc s bankovním účtem, compliance a plné vedení v angličtině. Vyřídíme každý formulář, notáře i úřady.",
+        "description": "Pomáháme mongolským podnikatelům založit S.R.O. v Česku — od papírování po registraci — abyste mohli podnikat legálně a s jistotou.",
         "features": [
-          {
-            "id": "f1",
-            "label": "Kompletní registrace společnosti od A do Z"
-          },
-          {
-            "id": "f2",
-            "label": "Pomoc s otevřením bankovního účtu"
-          },
-          {
-            "id": "f3",
-            "label": "Živnostenský list v ceně"
-          },
-          {
-            "id": "f4",
-            "label": "Adresa sídla (1 rok)"
-          },
-          {
-            "id": "f5",
-            "label": "Podpora při registraci k DPH"
-          },
-          {
-            "id": "f6",
-            "label": "Příprava společenské smlouvy"
-          },
-          {
-            "id": "f7",
-            "label": "Apostila a ověřené překlady dle potřeby"
-          },
-          {
-            "id": "f8",
-            "label": "Průběžné compliance poradenství"
-          },
-          {
-            "id": "f9",
-            "label": "Průvodce v angličtině po celou dobu"
-          }
-        ]
-      },
-      {
-        "id": "ai",
-        "title": "AI automatizace",
-        "tagline": "Pracujte chytřeji, škálujte rychleji",
-        "price": "od 25 000 CZK",
-        "badge": "Future-Proof",
-        "startingAt": "Začíná na",
-        "includedTitle": "Co je zahrnuto",
-        "processTitle": "Náš proces",
-        "cta": "Rezervovat konzultaci →",
-        "description": "Nasazujeme vlastní AI systémy — chatboty, automatizace workflow a systémy pro generování leadů — které odstraňují rutinní práci a výrazně zvyšují produktivitu týmu.",
-        "features": [
-          {
-            "id": "f1",
-            "label": "Vlastní chatboti GPT-4 / Claude"
-          },
-          {
-            "id": "f2",
-            "label": "Boti pro kvalifikaci a nurturing leadů"
-          },
-          {
-            "id": "f3",
-            "label": "Automatizace workflow (n8n / Make / Zapier)"
-          },
-          {
-            "id": "f4",
-            "label": "Integrace CRM a ERP"
-          },
-          {
-            "id": "f5",
-            "label": "Pipeline pro zpracování dokumentů"
-          },
-          {
-            "id": "f6",
-            "label": "AI generování obsahu"
-          },
-          {
-            "id": "f7",
-            "label": "Interní asistenti pro Slack / Teams"
-          },
-          {
-            "id": "f8",
-            "label": "Vlastní API integrace"
-          },
-          {
-            "id": "f9",
-            "label": "Školení a předávací dokumentace"
-          }
-        ]
-      },
-      {
-        "id": "seo",
-        "title": "SEO a růst",
-        "tagline": "Vyšší pozice. Rychlejší růst.",
-        "price": "od 8 000 CZK/měsíc",
-        "badge": "Průběžně",
-        "startingAt": "Začíná na",
-        "includedTitle": "Co je zahrnuto",
-        "processTitle": "Náš proces",
-        "cta": "Rezervovat konzultaci →",
-        "description": "Technické SEO, obsahová strategie a Google Ads pro trhy střední a východní Evropy. Kombinujeme technickou kvalitu a strategický obsah, abyste se dostali na 1. stránku výsledků.",
-        "features": [
-          {
-            "id": "f1",
-            "label": "Kompletní technický SEO audit a opravy"
-          },
-          {
-            "id": "f2",
-            "label": "Keyword research (CZ, SK, PL, EN)"
-          },
-          {
-            "id": "f3",
-            "label": "On-page optimalizace a schema markup"
-          },
-          {
-            "id": "f4",
-            "label": "Měsíční obsahová strategie a briefy"
-          },
-          {
-            "id": "f5",
-            "label": "Správa kampaní Google Ads"
-          },
-          {
-            "id": "f6",
-            "label": "Linkbuilding pro CEE trhy"
-          },
-          {
-            "id": "f7",
-            "label": "Správa Google Search Console"
-          },
-          {
-            "id": "f8",
-            "label": "Analýza mezer vůči konkurenci"
-          },
-          {
-            "id": "f9",
-            "label": "Měsíční reporty s reálnými metrikami"
-          }
-        ]
-      },
-      {
-        "id": "brand",
-        "title": "Brand identita",
-        "tagline": "Vypadejte jako lídr, kterým jste",
-        "price": "od 12 000 CZK",
-        "badge": "Premium",
-        "startingAt": "Začíná na",
-        "includedTitle": "Co je zahrnuto",
-        "processTitle": "Náš proces",
-        "cta": "Rezervovat konzultaci →",
-        "description": "Kompletní systém vizuální identity — logo, brand guideline a vizuální systém — díky kterému budete okamžitě rozpoznatelní a nezapomenutelní.",
-        "features": [
-          {
-            "id": "f1",
-            "label": "Workshop brand strategie a pozicování"
-          },
-          {
-            "id": "f2",
-            "label": "Primární i sekundární sada log"
-          },
-          {
-            "id": "f3",
-            "label": "Kompletní barevný systém"
-          },
-          {
-            "id": "f4",
-            "label": "Volba typografické hierarchie"
-          },
-          {
-            "id": "f5",
-            "label": "Návrh vizitek a hlavičkového papíru"
-          },
-          {
-            "id": "f6",
-            "label": "Sada pro sociální sítě (10+ šablon)"
-          },
-          {
-            "id": "f7",
-            "label": "Brand guideline PDF (50+ stran)"
-          },
-          {
-            "id": "f8",
-            "label": "Sada ikon a styl ilustrací"
-          },
-          {
-            "id": "f9",
-            "label": "Všechny zdrojové soubory (AI, EPS, Figma)"
-          }
-        ]
-      },
-      {
-        "id": "maintenance",
-        "title": "Údržba webu",
-        "tagline": "Stále online. Stále chráněno.",
-        "price": "od 3 000 CZK/měsíc",
-        "badge": "Klid na práci",
-        "startingAt": "Začíná na",
-        "includedTitle": "Co je zahrnuto",
-        "processTitle": "Náš proces",
-        "cta": "Rezervovat konzultaci →",
-        "description": "Hosting, aktualizace, bezpečnost a podpora — 24/7. Naše proaktivní údržba drží váš web i systémy v nejvyšší výkonnosti.",
-        "features": [
-          {
-            "id": "f1",
-            "label": "24/7 monitoring dostupnosti s upozorněními"
-          },
-          {
-            "id": "f2",
-            "label": "Spravovaný hosting v ceně"
-          },
-          {
-            "id": "f3",
-            "label": "Týdenní aktualizace CMS a závislostí"
-          },
-          {
-            "id": "f4",
-            "label": "Bezpečnostní skeny a odstranění malware"
-          },
-          {
-            "id": "f5",
-            "label": "Denní automatické zálohy (retence 30 dní)"
-          },
-          {
-            "id": "f6",
-            "label": "Monitoring výkonu a optimalizace"
-          },
-          {
-            "id": "f7",
-            "label": "Měsíční report výkonu"
-          },
-          {
-            "id": "f8",
-            "label": "Prioritní opravy chyb (< 4h reakce)"
-          },
-          {
-            "id": "f9",
-            "label": "Podpora přes dedikovaný Slack kanál"
-          }
+          { "id": "f1", "label": "Kompletní registrace společnosti od A do Z" },
+          { "id": "f2", "label": "Pomoc s otevřením bankovního účtu" },
+          { "id": "f3", "label": "Živnostenský list v ceně" },
+          { "id": "f4", "label": "Adresa sídla (1 rok)" },
+          { "id": "f5", "label": "Podpora při registraci k DPH" },
+          { "id": "f6", "label": "Příprava společenské smlouvy" },
+          { "id": "f7", "label": "Apostila a ověřené překlady dle potřeby" },
+          { "id": "f8", "label": "Průběžné compliance poradenství" },
+          { "id": "f9", "label": "Průvodce v angličtině a mongolštině" }
         ]
       }
     ],
+    "maintenanceNote": {
+      "title": "Potřebujete pomoc po spuštění?",
+      "desc": "Potřebujete pomoc poté, co je web online? Ozvěte se kdykoli — náš tým vás podpoří aktualizacemi, opravami nebo úpravami, když je budete potřebovat.",
+      "cta": "Kontaktujte nás →"
+    },
     "guarantees": [
       {
         "id": "onTime",
@@ -1259,41 +1011,6 @@
       ],
       "cta": "Získat nabídku na míru →"
     },
-    "addOns": {
-      "badge": "Doplňky",
-      "title": "Posilte svůj balíček",
-      "subtitle": "Přidejte některou z těchto služeb a vytvořte kompletní digitální motor vašeho růstu.",
-      "items": [
-        {
-          "id": "seoRetainer",
-          "title": "SEO a Growth retainer",
-          "price": "8,000 CZK/měs.",
-          "badge": "Měsíčně",
-          "desc": "Kompletní technické SEO, analýza klíčových slov, obsahová strategie a měsíční linkbuilding."
-        },
-        {
-          "id": "maintenance",
-          "title": "Údržba webu",
-          "price": "3,000 CZK/měs.",
-          "badge": "Měsíčně",
-          "desc": "24/7 monitoring, týdenní aktualizace, denní zálohy a prioritní opravy chyb."
-        },
-        {
-          "id": "aiChatbot",
-          "title": "Integrace AI chatbota",
-          "price": "od 15 000 CZK",
-          "badge": "Jednorázově",
-          "desc": "Vlastní chatbot na GPT-4 natrénovaný na vašem obsahu, integrovaný s vaším CRM."
-        },
-        {
-          "id": "brandSystem",
-          "title": "Systém brand identity",
-          "price": "od 12 000 CZK",
-          "badge": "Jednorázově",
-          "desc": "Kompletní vizuální identita včetně loga, barevného systému, typografie a guideline."
-        }
-      ]
-    },
     "paymentsFaq": {
       "badge": "Platby a fakturace",
       "title": "Často kladené otázky",
@@ -1485,14 +1202,6 @@
       {
         "id": "aiAutomation",
         "value": "AI automatizace"
-      },
-      {
-        "id": "seoGrowth",
-        "value": "SEO a růst"
-      },
-      {
-        "id": "brandIdentity",
-        "value": "Brand identita"
       },
       {
         "id": "websiteMaintenance",
@@ -2074,7 +1783,7 @@
         {
           "id": "afterLaunch",
           "q": "Co se děje po spuštění?",
-          "a": "Vše vlastníte vy — zdrojový kód, obsah i účty. Po spuštění máte 30 dní podpory zdarma. Poté můžete využít náš plán údržby (3 000 CZK/měs.), který pokrývá hosting, bezpečnostní aktualizace, monitoring výkonu a prioritní technickou podporu."
+          "a": "Vše vlastníte vy — zdrojový kód, obsah i účty. Po spuštění máte 30 dní podpory zdarma. Potřebujete-li pomoc později, kontaktujte nás kdykoli — aktualizace a opravy na vyžádání. Nebo se zeptejte na možnosti podpory při bezplatném rezervačním hovoru."
         }
       ]
     },
@@ -2439,7 +2148,7 @@
         {
           "id": "3",
           "title": "3. Služby",
-          "content": "Poskytujeme digitální služby mimo jiné v těchto oblastech:\n\n• Návrh a vývoj webových stránek\n• Vývoj webových a mobilních aplikací\n• AI automatizace a implementace workflow\n• Asistence při založení české společnosti S.R.O.\n• Optimalizace pro vyhledávače (SEO)\n• Návrh brand identity\n• Údržba webu a podpora\n\nKonkrétní služby, výstupy, termíny a ceny pro každý projekt jsou stanoveny v samostatné Projektové smlouvě nebo Zadání prací (\"SOW\"), na kterém se strany dohodnou."
+          "content": "Poskytujeme digitální služby mimo jiné v těchto oblastech:\n\n• Kompletní návrh a vývoj webových stránek\n• AI automatizace a implementace workflow\n• Asistence při založení české společnosti S.R.O.\n• Údržba webu a podpora na vyžádání\n\nKonkrétní služby, výstupy, termíny a ceny pro každý projekt jsou stanoveny v samostatné Projektové smlouvě nebo Zadání prací (\"SOW\"), na kterém se strany dohodnou."
         },
         {
           "id": "4",
@@ -2610,7 +2319,7 @@
       },
       "services": {
         "title": "Služby — Webový vývoj, AI automatizace a založení S.R.O.",
-        "description": "Digi Wolf Agency nabízí prémiový webový vývoj (od 45 000 CZK), založení české S.R.O. (od 15 000 CZK), AI automatizaci, SEO a služby brand identity v Praze.",
+        "description": "Digi Wolf Agency nabízí kompletní tvorbu webových stránek (od 45 000 CZK), AI automatizaci a založení české S.R.O. pro mongolské podnikatele v Praze.",
         "openGraphTitle": "Služby | Digi Wolf Agency",
         "openGraphDescription": "Prémiové digitální služby: weby, AI automatizace, založení české společnosti. Sídlíme v Praze."
       },

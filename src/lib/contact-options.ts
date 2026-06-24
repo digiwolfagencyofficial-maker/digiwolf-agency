@@ -4,8 +4,6 @@ export const CONTACT_SERVICES = [
   'Web Development',
   'Czech S.R.O. Formation',
   'AI Automation',
-  'SEO & Growth',
-  'Brand Identity',
   'Website Maintenance',
 ] as const
 

@@ -21,8 +21,8 @@ const adminNav = [
 const projects = [
   { id: 1, name: 'E-commerce Redesign', client: 'Petr Novak', status: 'In Progress', deadline: '15 Jun 2026', budget: '85,000 CZK', progress: 72 },
   { id: 2, name: 'AI Chatbot Integration', client: 'Mike Chen', status: 'In Progress', deadline: '2 Jul 2026', budget: '120,000 CZK', progress: 45 },
-  { id: 3, name: 'SEO Campaign Q2', client: 'Sarah K', status: 'Review', deadline: '31 May 2026', budget: '30,000 CZK', progress: 88 },
-  { id: 4, name: 'Brand Identity Package', client: 'Tom B', status: 'In Progress', deadline: '20 Jul 2026', budget: '55,000 CZK', progress: 30 },
+  { id: 3, name: 'Agency Website Build', client: 'Alena Novotna', status: 'Review', deadline: '31 May 2026', budget: '45,000 CZK', progress: 88 },
+  { id: 4, name: 'SRO Formation — Bat-Erdene', client: 'Bat-Erdene', status: 'In Progress', deadline: '20 Jul 2026', budget: '15,000 CZK', progress: 30 },
   { id: 5, name: 'SRO Legal Setup', client: 'Jana Horák', status: 'Completed', deadline: '8 May 2026', budget: '15,000 CZK', progress: 100 },
   { id: 6, name: 'Landing Page Redesign', client: 'Alena Novotna', status: 'In Progress', deadline: '1 Jun 2026', budget: '40,000 CZK', progress: 60 },
 ]

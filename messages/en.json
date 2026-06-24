@@ -31,12 +31,10 @@
     "sections": {
       "services": {
         "title": "Services",
-        "websites": "Agency Websites",
+        "websites": "Complete Website Development",
         "sro": "Czech S.R.O. Formation",
         "ai": "AI Automation",
-        "seo": "SEO & Growth",
-        "branding": "Brand Identity",
-        "maintenance": "Maintenance & Support"
+        "maintenance": "On-Demand Support"
       },
       "company": {
         "title": "Company",
@@ -110,14 +108,14 @@
     "badge": "Available for new projects",
     "hero": {
       "title": {
-        "line1": "We Build Digital Weapons",
-        "line2": "for Ambitious Businesses"
+        "line1": "Start Your Own Business in Czechia",
+        "line2": "No Czech Required"
       },
-      "subtitle": "Web. Apps. AI Automation. Czech Company Formation. All under one roof — built in Prague, delivered globally.",
+      "subtitle": "Most newcomers want to work for themselves but don't know where to start — and doing it in a foreign language feels impossible. We register your Czech company, build your website, and walk you through every step, in English, Czech, or Mongolian. No bureaucracy. No guesswork. No doing it alone.",
       "ctas": [
         {
           "id": "startProject",
-          "label": "Start Your Project →"
+          "label": "Start Your Business →"
         },
         {
           "id": "bookCall",
@@ -144,79 +142,59 @@
     },
     "stats": [
       {
-        "id": "languages",
-        "value": 3,
-        "suffix": "",
-        "label": "Languages (EN/CZ/MN)"
+        "id": "noLanguageBarrier",
+        "headline": "No Czech needed",
+        "detail": "Everything handled and explained in English, Czech, or Mongolian."
       },
       {
-        "id": "responseTime",
-        "value": 24,
-        "suffix": "h",
-        "label": "Response time"
+        "id": "companyAndWebsite",
+        "headline": "Company + website, together",
+        "detail": "Your s.r.o. and your site as one package, not five separate vendors."
       },
       {
-        "id": "deliveryCommitment",
-        "value": 7,
-        "suffix": "-day",
-        "label": "Delivery commitment"
+        "id": "guidedEndToEnd",
+        "headline": "Guided start to finish",
+        "detail": "We walk you through every step, so you're never lost or alone."
       },
       {
-        "id": "sourceCode",
-        "value": 100,
-        "suffix": "%",
-        "label": "Source code yours"
+        "id": "founderLed",
+        "headline": "Founder-led",
+        "detail": "You work directly with the person doing the work. No handoffs."
       }
     ],
     "servicesSection": {
       "badge": "What We Do",
-      "titleLine1": "Everything Your Business Needs",
-      "titleLine2": "to Win Online",
-      "description": "From stunning websites to AI automation and Czech company formation — we do it all, exceptionally.",
+      "titleLine1": "Three Ways We Help",
+      "titleLine2": "You Grow Online",
+      "description": "A focused offering — custom websites, AI automation, and Czech company formation. No overwhelm, just what matters.",
       "cards": [
         {
           "id": "agencyWebsites",
-          "title": "Agency Websites",
-          "desc": "High-converting, SEO-optimised websites built with Next.js that turn visitors into paying clients.",
+          "title": "Complete Website Development",
+          "desc": "Complete, custom-built websites designed to make your business look professional and turn visitors into customers. Fast, modern, and built to perform.",
           "tag": "Most Popular",
           "price": "from 45,000 CZK"
         },
         {
-          "id": "sro",
-          "title": "Czech S.R.O. Formation",
-          "desc": "Full Czech company registration end-to-end in English. No bureaucracy, no stress, just results.",
-          "tag": "",
-          "price": "from 12,000 CZK"
-        },
-        {
           "id": "aiAutomation",
           "title": "AI Automation",
-          "desc": "Custom AI workflows, chatbots, and automation pipelines that save your team 20+ hours per week.",
-          "tag": "High Demand",
+          "desc": "Smart automation built into your website — lead capture, instant replies, bookings, and follow-ups — so your business runs and grows while you focus on your customers.",
+          "tag": "",
           "price": "from 25,000 CZK"
         },
         {
-          "id": "seoGrowth",
-          "title": "SEO & Growth",
-          "desc": "Data-driven SEO strategies tailored for CEE markets. Rank higher, get found, grow consistently.",
+          "id": "sro",
+          "title": "Company Formation in the Czech Republic (S.R.O.)",
+          "desc": "Start your legal business in the Czech Republic. We guide Mongolians through setting up an S.R.O. — from paperwork to registration — so you can operate legally and with confidence.",
           "tag": "",
-          "price": "from 8,000 CZK/mo"
-        },
-        {
-          "id": "brandIdentity",
-          "title": "Brand Identity",
-          "desc": "Premium logo, brand system, and visual identity that makes your business unforgettable.",
-          "tag": "",
-          "price": "from 18,000 CZK"
-        },
-        {
-          "id": "maintenance",
-          "title": "Maintenance & Support",
-          "desc": "24/7 monitoring, updates, security patches, and priority support for your digital assets.",
-          "tag": "",
-          "price": "from 3,000 CZK/mo"
+          "price": "from 15,000 CZK"
         }
       ],
+      "maintenanceNote": {
+        "title": "Need help after launch?",
+        "desc": "Need help after your site is live? Get in touch anytime and our team will support you with updates, fixes, or changes when you need them.",
+        "cta": "Get in touch →"
+      },
       "learnMore": "Learn more →"
     },
     "processSection": {
@@ -533,7 +511,7 @@
         {
           "id": "q5",
           "q": "Can I update the website myself after launch?",
-          "a": "Yes. We build on modern platforms and provide a handover guide. Optional maintenance retainers available."
+          "a": "Yes. We build on modern platforms and provide a handover guide. Need help later? Contact us anytime for on-demand updates and fixes."
         },
         {
           "id": "q6",
@@ -625,10 +603,10 @@
   },
   "services": {
     "hero": {
-      "badge": "Full-Stack Agency Services",
-      "titleLine1": "Every Service You Need to",
-      "titleLine2": "Dominate Your Market",
-      "subtitle": "From zero to market leader — web development, company formation, AI automation, and more. Built by experts who understand Central European markets.",
+      "badge": "Our Services",
+      "titleLine1": "Three Core Services.",
+      "titleLine2": "One Clear Focus.",
+      "subtitle": "Complete websites, AI automation, and Czech S.R.O. formation — built for entrepreneurs who want results without the agency overwhelm.",
       "ctas": [
         {
           "id": "startProject",
@@ -643,7 +621,7 @@
     "stats": [
       {
         "id": "coreServices",
-        "num": "6",
+        "num": "3",
         "label": "Core Services"
       },
       {
@@ -665,31 +643,31 @@
     "cards": [
       {
         "id": "web",
-        "title": "Web Development",
-        "tagline": "Full-stack websites that convert",
+        "title": "Complete Website Development",
+        "tagline": "Custom-built sites that convert",
         "price": "from 45,000 CZK",
         "badge": "Most Popular",
         "startingAt": "Starting at",
         "includedTitle": "What's Included",
         "processTitle": "Our Process",
         "cta": "Book a Consultation →",
-        "description": "We build premium full-stack websites engineered for performance, SEO, and conversions. Next.js, Webflow, e-commerce — every pixel intentional, every millisecond optimized.",
+        "description": "Complete, custom-built websites designed to make your business look professional and turn visitors into customers. Fast, modern, and built to perform.",
         "features": [
           {
             "id": "f1",
-            "label": "Next.js 14 + TypeScript full-stack"
+            "label": "Next.js + TypeScript full-stack"
           },
           {
             "id": "f2",
-            "label": "Webflow & custom CMS builds"
+            "label": "Custom design tailored to your brand"
           },
           {
             "id": "f3",
-            "label": "E-commerce with Shopify / WooCommerce"
+            "label": "Mobile-first responsive design"
           },
           {
             "id": "f4",
-            "label": "Mobile-first responsive design"
+            "label": "Lead capture forms & contact flows"
           },
           {
             "id": "f5",
@@ -697,15 +675,15 @@
           },
           {
             "id": "f6",
-            "label": "Core Web Vitals optimized (100/100)"
+            "label": "Core Web Vitals optimized"
           },
           {
             "id": "f7",
-            "label": "Custom animations & interactions"
+            "label": "Analytics & conversion tracking"
           },
           {
             "id": "f8",
-            "label": "Analytics & conversion tracking"
+            "label": "Full source-code ownership"
           },
           {
             "id": "f9",
@@ -714,16 +692,66 @@
         ]
       },
       {
+        "id": "ai",
+        "title": "AI Automation",
+        "tagline": "Built into your website",
+        "price": "from 25,000 CZK",
+        "badge": "High Demand",
+        "startingAt": "Starting at",
+        "includedTitle": "What's Included",
+        "processTitle": "Our Process",
+        "cta": "Book a Consultation →",
+        "description": "Smart automation built into your website — lead capture, instant replies, bookings, and follow-ups — so your business runs and grows while you focus on your customers.",
+        "features": [
+          {
+            "id": "f1",
+            "label": "Custom AI chatbots on your site"
+          },
+          {
+            "id": "f2",
+            "label": "Lead qualification & nurturing"
+          },
+          {
+            "id": "f3",
+            "label": "Workflow automation (n8n / Make / Zapier)"
+          },
+          {
+            "id": "f4",
+            "label": "Booking & calendar integration"
+          },
+          {
+            "id": "f5",
+            "label": "CRM integration"
+          },
+          {
+            "id": "f6",
+            "label": "Instant reply & follow-up sequences"
+          },
+          {
+            "id": "f7",
+            "label": "Email & notification automation"
+          },
+          {
+            "id": "f8",
+            "label": "Custom API integrations"
+          },
+          {
+            "id": "f9",
+            "label": "Training & handover documentation"
+          }
+        ]
+      },
+      {
         "id": "sro",
-        "title": "Czech S.R.O. Formation",
-        "tagline": "EU company in days, not months",
+        "title": "Company Formation in the Czech Republic (S.R.O.)",
+        "tagline": "For Mongolian entrepreneurs entering the EU",
         "price": "from 15,000 CZK",
         "badge": "EU Gateway",
         "startingAt": "Starting at",
         "includedTitle": "What's Included",
         "processTitle": "Our Process",
         "cta": "Book a Consultation →",
-        "description": "Complete company registration for your Czech S.R.O. — bank account setup, compliance, and full English-language guidance. We handle every form, notary, and government office.",
+        "description": "Start your legal business in the Czech Republic. We guide Mongolians through setting up an S.R.O. — from paperwork to registration — so you can operate legally and with confidence.",
         "features": [
           {
             "id": "f1",
@@ -759,211 +787,16 @@
           },
           {
             "id": "f9",
-            "label": "English guidance throughout"
-          }
-        ]
-      },
-      {
-        "id": "ai",
-        "title": "AI Automation",
-        "tagline": "Work smarter, scale faster",
-        "price": "from 25,000 CZK",
-        "badge": "Future-Proof",
-        "startingAt": "Starting at",
-        "includedTitle": "What's Included",
-        "processTitle": "Our Process",
-        "cta": "Book a Consultation →",
-        "description": "We deploy custom AI systems — chatbots, workflow automation, and lead generation systems — that eliminate repetitive work and supercharge your team productivity.",
-        "features": [
-          {
-            "id": "f1",
-            "label": "Custom GPT-4 / Claude chatbots"
-          },
-          {
-            "id": "f2",
-            "label": "Lead qualification & nurturing bots"
-          },
-          {
-            "id": "f3",
-            "label": "Workflow automation (n8n / Make / Zapier)"
-          },
-          {
-            "id": "f4",
-            "label": "CRM & ERP integration"
-          },
-          {
-            "id": "f5",
-            "label": "Document processing pipelines"
-          },
-          {
-            "id": "f6",
-            "label": "AI-powered content generation"
-          },
-          {
-            "id": "f7",
-            "label": "Slack / Teams internal assistants"
-          },
-          {
-            "id": "f8",
-            "label": "Custom API integrations"
-          },
-          {
-            "id": "f9",
-            "label": "Training & handover documentation"
-          }
-        ]
-      },
-      {
-        "id": "seo",
-        "title": "SEO & Growth",
-        "tagline": "Rank higher. Grow faster.",
-        "price": "from 8,000 CZK/month",
-        "badge": "Ongoing",
-        "startingAt": "Starting at",
-        "includedTitle": "What's Included",
-        "processTitle": "Our Process",
-        "cta": "Book a Consultation →",
-        "description": "Technical SEO, content strategy, and Google Ads built for Central & Eastern European markets. We combine technical excellence with strategic content to get your site on Page 1.",
-        "features": [
-          {
-            "id": "f1",
-            "label": "Full technical SEO audit & fix"
-          },
-          {
-            "id": "f2",
-            "label": "Keyword research (CZ, SK, PL, EN)"
-          },
-          {
-            "id": "f3",
-            "label": "On-page optimization & schema markup"
-          },
-          {
-            "id": "f4",
-            "label": "Monthly content strategy & briefs"
-          },
-          {
-            "id": "f5",
-            "label": "Google Ads campaign management"
-          },
-          {
-            "id": "f6",
-            "label": "Link building in CEE markets"
-          },
-          {
-            "id": "f7",
-            "label": "Google Search Console management"
-          },
-          {
-            "id": "f8",
-            "label": "Competitor gap analysis"
-          },
-          {
-            "id": "f9",
-            "label": "Monthly reporting with real metrics"
-          }
-        ]
-      },
-      {
-        "id": "brand",
-        "title": "Brand Identity",
-        "tagline": "Look like the leader you are",
-        "price": "from 12,000 CZK",
-        "badge": "Premium",
-        "startingAt": "Starting at",
-        "includedTitle": "What's Included",
-        "processTitle": "Our Process",
-        "cta": "Book a Consultation →",
-        "description": "A complete visual identity system — logo, brand guidelines, and visual system — that makes you instantly recognizable and unforgettable. From logo to brand guidelines.",
-        "features": [
-          {
-            "id": "f1",
-            "label": "Brand strategy & positioning workshop"
-          },
-          {
-            "id": "f2",
-            "label": "Primary + secondary logo suite"
-          },
-          {
-            "id": "f3",
-            "label": "Full color palette system"
-          },
-          {
-            "id": "f4",
-            "label": "Typography hierarchy selection"
-          },
-          {
-            "id": "f5",
-            "label": "Business card & letterhead design"
-          },
-          {
-            "id": "f6",
-            "label": "Social media kit (10+ templates)"
-          },
-          {
-            "id": "f7",
-            "label": "Brand guidelines PDF (50+ pages)"
-          },
-          {
-            "id": "f8",
-            "label": "Icon set & illustration style"
-          },
-          {
-            "id": "f9",
-            "label": "All source files (AI, EPS, Figma)"
-          }
-        ]
-      },
-      {
-        "id": "maintenance",
-        "title": "Website Maintenance",
-        "tagline": "Always online. Always protected.",
-        "price": "from 3,000 CZK/month",
-        "badge": "Peace of Mind",
-        "startingAt": "Starting at",
-        "includedTitle": "What's Included",
-        "processTitle": "Our Process",
-        "cta": "Book a Consultation →",
-        "description": "Hosting, updates, security, and support — 24/7. Our proactive maintenance plans keep your website and systems running at peak performance, always.",
-        "features": [
-          {
-            "id": "f1",
-            "label": "24/7 uptime monitoring with alerts"
-          },
-          {
-            "id": "f2",
-            "label": "Managed hosting included"
-          },
-          {
-            "id": "f3",
-            "label": "Weekly CMS & dependency updates"
-          },
-          {
-            "id": "f4",
-            "label": "Security scanning & malware removal"
-          },
-          {
-            "id": "f5",
-            "label": "Daily automated backups (30-day retention)"
-          },
-          {
-            "id": "f6",
-            "label": "Performance monitoring & optimization"
-          },
-          {
-            "id": "f7",
-            "label": "Monthly performance report"
-          },
-          {
-            "id": "f8",
-            "label": "Priority bug fixes (< 4hr response)"
-          },
-          {
-            "id": "f9",
-            "label": "Dedicated Slack channel support"
+            "label": "Guidance in English & Mongolian"
           }
         ]
       }
     ],
+    "maintenanceNote": {
+      "title": "Need help after launch?",
+      "desc": "Need help after your site is live? Get in touch anytime and our team will support you with updates, fixes, or changes when you need them.",
+      "cta": "Get in touch →"
+    },
     "guarantees": [
       {
         "id": "onTime",
@@ -1259,41 +1092,6 @@
       ],
       "cta": "Get a Custom Quote →"
     },
-    "addOns": {
-      "badge": "Add-ons",
-      "title": "Supercharge Your Plan",
-      "subtitle": "Add any of these services to your package and build a complete digital engine.",
-      "items": [
-        {
-          "id": "seoRetainer",
-          "title": "SEO & Growth Retainer",
-          "price": "8,000 CZK/mo",
-          "badge": "Monthly",
-          "desc": "Full technical SEO, keyword research, content strategy, and monthly link building."
-        },
-        {
-          "id": "maintenance",
-          "title": "Website Maintenance",
-          "price": "3,000 CZK/mo",
-          "badge": "Monthly",
-          "desc": "24/7 uptime monitoring, weekly updates, daily backups, and priority bug fixes."
-        },
-        {
-          "id": "aiChatbot",
-          "title": "AI Chatbot Integration",
-          "price": "from 15,000 CZK",
-          "badge": "One-time",
-          "desc": "Custom GPT-4 powered chatbot trained on your content, integrated with your CRM."
-        },
-        {
-          "id": "brandSystem",
-          "title": "Brand Identity System",
-          "price": "from 12,000 CZK",
-          "badge": "One-time",
-          "desc": "Complete visual identity including logo, color system, typography, and guidelines."
-        }
-      ]
-    },
     "paymentsFaq": {
       "badge": "Payments & Billing",
       "title": "Frequently Asked Questions",
@@ -1485,14 +1283,6 @@
       {
         "id": "aiAutomation",
         "value": "AI Automation"
-      },
-      {
-        "id": "seoGrowth",
-        "value": "SEO & Growth"
-      },
-      {
-        "id": "brandIdentity",
-        "value": "Brand Identity"
       },
       {
         "id": "websiteMaintenance",
@@ -2074,7 +1864,7 @@
         {
           "id": "afterLaunch",
           "q": "What happens after launch?",
-          "a": "You own everything — all source code, content, and accounts. We include 30 days of free support after launch. After that, our Maintenance Plan (3,000 CZK/mo) covers hosting, security updates, performance monitoring, and priority technical support."
+          "a": "You own everything — all source code, content, and accounts. We include 30 days of free support after launch. Need help after that? Contact us anytime for on-demand updates and fixes, or ask about support options on your free booking call."
         }
       ]
     },
@@ -2439,7 +2229,7 @@
         {
           "id": "3",
           "title": "3. Services",
-          "content": "We provide digital services including, but not limited to:\n\n• Website design and development\n• Web application and mobile app development\n• AI automation and workflow implementation\n• Czech S.R.O. company formation assistance\n• Search engine optimisation (SEO)\n• Brand identity design\n• Website maintenance and support\n\nThe specific services, deliverables, timelines, and pricing for each project are set out in a separate Project Agreement or Statement of Work (\"SOW\") agreed between the parties."
+          "content": "We provide digital services including, but not limited to:\n\n• Complete website design and development\n• AI automation and workflow implementation\n• Czech S.R.O. company formation assistance\n• On-demand website maintenance and support\n\nThe specific services, deliverables, timelines, and pricing for each project are set out in a separate Project Agreement or Statement of Work (\"SOW\") agreed between the parties."
         },
         {
           "id": "4",
@@ -2610,7 +2400,7 @@
       },
       "services": {
         "title": "Services — Web Development, AI Automation & S.R.O. Formation",
-        "description": "Digi Wolf Agency offers premium web development (from 45,000 CZK), Czech S.R.O. formation (from 15,000 CZK), AI automation, SEO, and brand identity services in Prague.",
+        "description": "Digi Wolf Agency offers complete website development (from 45,000 CZK), AI automation, and Czech S.R.O. formation for Mongolian entrepreneurs in Prague.",
         "openGraphTitle": "Services | Digi Wolf Agency",
         "openGraphDescription": "Premium digital services: websites, AI automation, Czech company formation. Based in Prague."
       },

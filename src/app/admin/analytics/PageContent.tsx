@@ -34,10 +34,9 @@ const trafficSources = [
 ]
 
 const topServices = [
-  { service: 'Web Development', count: 8, revenue: '340,000 CZK', pct: 45 },
+  { service: 'Web Development', count: 8, revenue: '340,000 CZK', pct: 52 },
   { service: 'AI Automation', count: 4, revenue: '240,000 CZK', pct: 32 },
-  { service: 'Czech S.R.O.', count: 5, revenue: '75,000 CZK', pct: 10 },
-  { service: 'SEO & Growth', count: 3, revenue: '90,000 CZK', pct: 12 },
+  { service: 'Czech S.R.O.', count: 5, revenue: '75,000 CZK', pct: 16 },
 ]
 
 const kpis = [

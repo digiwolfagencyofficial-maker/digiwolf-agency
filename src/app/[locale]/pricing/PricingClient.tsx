@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-import { Check, Lock, Clock, Infinity, CreditCard, TrendingUp, Shield, Bot, Palette, Minus } from 'lucide-react'
+import { Check, Lock, Clock, Infinity, CreditCard, Minus } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FaqAccordion from '@/components/ui/FaqAccordion'
@@ -33,14 +33,6 @@ type FaqItem = { id: string; q: string; a: string }
 
 type TrustBadge = { id: string; text: string }
 
-type AddOn = {
-  id: string
-  title: string
-  price: string
-  badge: string
-  desc: string
-}
-
 type CtaItem = { id: string; label: string }
 
 const TRUST_BADGE_ICONS: Record<string, React.ReactNode> = {
@@ -48,20 +40,6 @@ const TRUST_BADGE_ICONS: Record<string, React.ReactNode> = {
   onTime: <Clock size={14} />,
   unlimitedRevisions: <Infinity size={14} />,
   paymentPlan: <CreditCard size={14} />,
-}
-
-const ADDON_ICONS: Record<string, React.ReactNode> = {
-  seoRetainer: <TrendingUp size={24} />,
-  maintenance: <Shield size={24} />,
-  aiChatbot: <Bot size={24} />,
-  brandSystem: <Palette size={24} />,
-}
-
-const ADDON_COLORS: Record<string, string> = {
-  seoRetainer: '#0047FF',
-  maintenance: '#3d74ff',
-  aiChatbot: '#0047FF',
-  brandSystem: '#3d74ff',
 }
 
 const CTA_HREFS: Record<string, string> = {
@@ -98,7 +76,6 @@ export default function PricingPage() {
   const comparisonRows = t.raw('comparison.rows') as ComparisonRow[]
   const paymentFaqs = t.raw('paymentsFaq.items') as FaqItem[]
   const trustBadges = t.raw('trustBadges') as TrustBadge[]
-  const addOns = t.raw('addOns.items') as AddOn[]
   const bottomCtas = t.raw('bottomCta.ctas') as CtaItem[]
 
   const comparisonTitle = t('comparison.title')
@@ -352,54 +329,6 @@ export default function PricingPage() {
             >
               {t('comparison.cta')}
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Additional services */}
-      <section style={{ padding: '100px 24px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <span className="badge" style={{ marginBottom: 20, display: 'inline-flex' }}>{t('addOns.badge')}</span>
-            <h2 style={{ fontSize: 'clamp(26px, 4vw, 44px)', fontWeight: 800, marginBottom: 14 }}>
-              {t('addOns.title')}
-            </h2>
-            <p style={{ fontSize: 17, color: '#8892b0', maxWidth: 500, margin: '0 auto', lineHeight: 1.7 }}>
-              {t('addOns.subtitle')}
-            </p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24 }}>
-            {addOns.map((addon) => (
-              <div
-                key={addon.id}
-                style={{
-                  background: 'rgba(255,255,255,0.03)',
-                  border: '1px solid rgba(255,255,255,0.07)',
-                  borderRadius: 22, padding: 32,
-                }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 20 }}>
-                  <div style={{
-                    width: 52, height: 52, borderRadius: 14,
-                    background: 'rgba(0,71,255,0.12)', border: '1px solid rgba(0,71,255,0.25)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: ADDON_COLORS[addon.id] ?? '#0047FF',
-                  }}>
-                    {ADDON_ICONS[addon.id]}
-                  </div>
-                  <span style={{
-                    background: 'rgba(0,71,255,0.12)', border: '1px solid rgba(0,71,255,0.25)',
-                    color: '#3d74ff', padding: '3px 10px', borderRadius: 100,
-                    fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
-                  }}>
-                    {addon.badge}
-                  </span>
-                </div>
-                <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{addon.title}</h3>
-                <p style={{ fontSize: 14, color: '#8892b0', lineHeight: 1.6, marginBottom: 16 }}>{addon.desc}</p>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#0047FF' }}>{addon.price}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -3,11 +3,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-import { Globe, Scale, Bot, TrendingUp, Palette, Shield, Check, Inbox, Zap, User, Sparkles, Languages } from 'lucide-react'
+import { Globe, Scale, Bot, Shield, Check, Inbox, Zap, User, Sparkles, Languages } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FaqAccordion from '@/components/ui/FaqAccordion'
-import AnimatedCounter from '@/components/ui/AnimatedCounter'
 
 const IconWrapper = ({ children }: { children: React.ReactNode }) => (
   <div style={{ background: 'rgba(0,71,255,0.12)', borderRadius: '10px', padding: '10px', display: 'inline-flex' }}>
@@ -31,7 +30,7 @@ const WolfSVG = ({ size = 32 }: { size?: number }) => (
   </svg>
 )
 
-type HomeStat = { id: string; value: number; suffix: string; label: string }
+type HomeStat = { id: string; headline: string; detail: string }
 type ServiceCard = { id: string; title: string; desc: string; tag: string; price: string }
 type ProcessStep = { id: string; title: string; desc: string }
 type ValueProp = { id: string; title: string; desc: string }
@@ -53,15 +52,13 @@ type PricingPlan = {
   badge?: string
   features: { id: string; label: string }[]
 }
+type MaintenanceNote = { title: string; desc: string; cta: string }
 type CtaPoint = { id: string; label: string }
 
 const SERVICE_ICONS: Record<string, React.ReactNode> = {
   agencyWebsites: <Globe size={24} className="text-blue-400" />,
-  sro: <Scale size={24} className="text-blue-400" />,
   aiAutomation: <Bot size={24} className="text-blue-400" />,
-  seoGrowth: <TrendingUp size={24} className="text-blue-400" />,
-  brandIdentity: <Palette size={24} className="text-blue-400" />,
-  maintenance: <Shield size={24} className="text-blue-400" />,
+  sro: <Scale size={24} className="text-blue-400" />,
 }
 
 const VALUE_PROP_ICONS: Record<string, React.ReactNode> = {
@@ -87,6 +84,7 @@ export default function HomePageClient() {
 
   const stats = t.raw('stats') as HomeStat[]
   const services = t.raw('servicesSection.cards') as ServiceCard[]
+  const maintenanceNote = t.raw('servicesSection.maintenanceNote') as MaintenanceNote
   const process = t.raw('processSection.steps') as ProcessStep[]
   const valueProps = t.raw('testimonialsSection.items') as ValueProp[]
   const faqs = t.raw('faqSection.items') as FaqItem[]
@@ -238,21 +236,14 @@ export default function HomePageClient() {
                 </div>
 
                 <div className="fade-up fade-up-delay-4 hero-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
-                  {stats.map((s) => {
-                    const shortSuffix = s.suffix.length <= 2 ? s.suffix : ''
-                    const unit = s.suffix.length > 2 ? s.suffix.trim() : ''
-                    return (
-                      <div key={s.id} style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', paddingLeft: 16 }}>
-                        <div style={{ fontSize: 28, fontWeight: 800, color: '#f0f4ff', letterSpacing: '-0.02em', display: 'flex', alignItems: 'baseline', gap: 4, flexWrap: 'wrap' }}>
-                          <AnimatedCounter value={s.value} suffix={shortSuffix} immediate />
-                          {unit ? (
-                            <span style={{ fontSize: 14, fontWeight: 600, color: '#8892b0' }}>{unit}</span>
-                          ) : null}
-                        </div>
-                        <div style={{ fontSize: 12, color: '#8892b0', marginTop: 2 }}>{s.label}</div>
+                  {stats.map((s) => (
+                    <div key={s.id} style={{ borderLeft: '1px solid rgba(255,255,255,0.08)', paddingLeft: 16 }}>
+                      <div style={{ fontSize: 22, fontWeight: 800, color: '#f0f4ff', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+                        {s.headline}
                       </div>
-                    )
-                  })}
+                      <div style={{ fontSize: 12, color: '#8892b0', marginTop: 6, lineHeight: 1.45 }}>{s.detail}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -336,11 +327,12 @@ export default function HomePageClient() {
             </div>
 
             <div className="stagger services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
-              {services.map((s) => (
+              {services.map((s, index) => (
                 <div key={s.id} style={{
                   background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)',
                   borderRadius: 20, padding: 32, position: 'relative', overflow: 'hidden',
                   transition: 'all 0.3s ease', cursor: 'default',
+                  gridColumn: index === 0 ? '1 / -1' : undefined,
                 }}
                   onMouseEnter={e => {
                     const el = e.currentTarget as HTMLElement
@@ -382,6 +374,31 @@ export default function HomePageClient() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="fade-up" style={{
+              marginTop: 24, padding: '24px 28px',
+              background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)',
+              borderRadius: 16, display: 'flex', flexWrap: 'wrap',
+              alignItems: 'center', justifyContent: 'space-between', gap: 16,
+            }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, flex: 1, minWidth: 240 }}>
+                <div style={{ background: 'rgba(0,71,255,0.1)', borderRadius: 10, padding: 10, display: 'inline-flex', flexShrink: 0 }}>
+                  <Shield size={20} className="text-blue-400" />
+                </div>
+                <div>
+                  <p style={{ color: '#f0f4ff', fontWeight: 600, fontSize: 15, marginBottom: 6 }}>{maintenanceNote.title}</p>
+                  <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.6, margin: 0 }}>{maintenanceNote.desc}</p>
+                </div>
+              </div>
+              <Link href="/contact" style={{
+                color: '#3d74ff', textDecoration: 'none', fontSize: 14, fontWeight: 600,
+                border: '1px solid rgba(0,71,255,0.3)', padding: '10px 20px', borderRadius: 10,
+                whiteSpace: 'nowrap', transition: 'all 0.2s',
+              }}
+                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(0,71,255,0.1)'; }}
+                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'transparent'; }}
+              >{maintenanceNote.cta}</Link>
             </div>
           </div>
         </section>

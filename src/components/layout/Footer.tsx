@@ -33,7 +33,7 @@ export default function Footer() {
               <Image src="/digiwolf-lockup.png" alt="Digi Wolf Agency" width={200} height={49} unoptimized style={{ maxWidth: '200px', width: '100%', height: 'auto', objectFit: 'contain' }} />
             </Link>
             <p style={{ color: '#64748b', fontSize: 14, lineHeight: 1.8, maxWidth: 300, marginBottom: 24 }}>
-              Prague-based digital agency specialising in premium websites, AI automation, and Czech S.R.O. formation. Serving clients across Europe and Mongolia.
+              Prague-based digital agency — complete websites, AI automation, and Czech S.R.O. formation for Mongolian entrepreneurs across Europe.
             </p>
             <div style={{ display: 'flex', gap: 12 }}>
               {[
@@ -61,10 +61,10 @@ export default function Footer() {
             <h4 style={{ fontSize: 13, fontWeight: 700, color: '#f0f4ff', marginBottom: 20, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Services</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {[
-                { label: 'Website Design', href: '/services' },
-                { label: 'Czech S.R.O. Formation', href: '/services' },
+                { label: 'Complete Website Development', href: '/services' },
                 { label: 'AI Automation', href: '/services' },
-                { label: 'Web Apps & Mobile', href: '/services' },
+                { label: 'Czech S.R.O. Formation', href: '/services' },
+                { label: 'On-Demand Support', href: '/contact' },
               ].map(l => (
                 <Link key={l.label} href={l.href} style={{ fontSize: 14, color: '#64748b', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#f0f4ff'}
