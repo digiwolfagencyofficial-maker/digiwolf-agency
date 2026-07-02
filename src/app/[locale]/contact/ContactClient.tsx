@@ -41,24 +41,20 @@ const CONTACT_INFO_ICONS: Record<string, React.ReactNode> = {
   office: <MapPin size={18} />,
 }
 
+const GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/JFqYT8pznvFcHpMr9'
+
 const SOCIAL_HREFS: Record<string, string> = {
-  linkedin: 'https://linkedin.com/company/digiwolf-agency',
-  instagram: 'https://instagram.com/digiwolf.agency',
-  twitterX: 'https://twitter.com/digiwolfagency',
-  facebook: 'https://facebook.com/digiwolfagency',
+  facebook: 'https://www.facebook.com/digiwolf.agency',
 }
 
 const SOCIAL_ICONS: Record<string, string> = {
-  linkedin: 'in',
-  instagram: '◎',
-  twitterX: '𝕏',
   facebook: 'f',
 }
 
 function contactHref(id: string): string | undefined {
   if (id === 'email') return `mailto:${COMPANY.email}`
   if (id === 'phone') return `tel:${COMPANY.phone.replace(/\s/g, '')}`
-  if (id === 'office') return `https://maps.google.com/?q=${encodeURIComponent(companyFullAddress)}`
+  if (id === 'office') return GOOGLE_MAPS_URL
   return undefined
 }
 
@@ -274,7 +270,16 @@ export default function ContactPage() {
                           {item.label}
                         </div>
                         {href
-                          ? <a href={href} style={{ fontSize: '15px', color: '#93c5fd', textDecoration: 'none', fontWeight: 500 }}>{value}</a>
+                          ? (
+                            <a
+                              href={href}
+                              target={item.id === 'office' ? '_blank' : undefined}
+                              rel={item.id === 'office' ? 'noopener noreferrer' : undefined}
+                              style={{ fontSize: '15px', color: '#93c5fd', textDecoration: 'none', fontWeight: 500 }}
+                            >
+                              {value}
+                            </a>
+                          )
                           : <div style={{ fontSize: '15px', color: '#cbd5e1', lineHeight: 1.5 }}>{value}</div>
                         }
                       </div>

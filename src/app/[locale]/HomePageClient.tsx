@@ -635,6 +635,14 @@ export default function HomePageClient() {
               <p style={{ color: '#8892b0', fontSize: 18, maxWidth: 480, margin: '0 auto' }}>
                 {t('pricingPreview.subtitle')}
               </p>
+              <p style={{
+                display: 'inline-flex', alignItems: 'center', gap: 8,
+                color: '#3d74ff', fontSize: 14, fontWeight: 600,
+                background: 'rgba(0,71,255,0.1)', border: '1px solid rgba(0,71,255,0.25)',
+                borderRadius: 100, padding: '8px 18px', marginTop: 20,
+              }}>
+                {t('pricingPreview.promoNote')}
+              </p>
             </div>
 
             <div className="stagger pricing-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>

@@ -181,6 +181,7 @@ export default function ServicesPage() {
             return (
               <div
                 key={svc.id}
+                id={svc.id}
                 onMouseEnter={() => setHoveredCard(svc.id)}
                 onMouseLeave={() => setHoveredCard(null)}
                 style={{
@@ -189,6 +190,7 @@ export default function ServicesPage() {
                     : 'rgba(255,255,255,0.03)',
                   border: `1px solid ${isHovered ? color + '44' : 'rgba(255,255,255,0.07)'}`,
                   borderRadius: 24, padding: 40,
+                  scrollMarginTop: 100,
                   transition: 'all 0.35s cubic-bezier(0.4,0,0.2,1)',
                   transform: isHovered ? 'translateY(-6px)' : 'none',
                   boxShadow: isHovered ? `0 24px 60px rgba(0,0,0,0.4), 0 0 40px ${color}22` : '0 4px 20px rgba(0,0,0,0.2)',

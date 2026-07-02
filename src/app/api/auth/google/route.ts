@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
         <ul>
           <li>GOOGLE_CLIENT_ID</li>
           <li>GOOGLE_CLIENT_SECRET</li>
-          <li>GOOGLE_REDIRECT_URI = https://digiwolf-agency.vercel.app/api/auth/google/callback</li>
+          <li>GOOGLE_REDIRECT_URI = https://digiwolf.agency/api/auth/google/callback</li>
         </ul>
         <p>Then redeploy and visit this page again.</p>
       </body></html>

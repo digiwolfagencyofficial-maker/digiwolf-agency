@@ -24,9 +24,7 @@
     "tagline": "Pražská agentura pro tvorbu webů, AI automatizaci a založení české firmy.",
     "copyright": "© {year} Digi Wolf Agency s.r.o., IČO 243 44 648. Všechna práva vyhrazena.",
     "social": {
-      "linkedin": "LinkedIn",
-      "facebook": "Facebook",
-      "instagram": "Instagram"
+      "facebook": "Facebook"
     },
     "sections": {
       "services": {
@@ -1108,18 +1106,6 @@
       ],
       "followUs": "Sledujte nás",
       "socials": [
-        {
-          "id": "linkedin",
-          "name": "LinkedIn"
-        },
-        {
-          "id": "instagram",
-          "name": "Instagram"
-        },
-        {
-          "id": "twitterX",
-          "name": "Twitter/X"
-        },
         {
           "id": "facebook",
           "name": "Facebook"

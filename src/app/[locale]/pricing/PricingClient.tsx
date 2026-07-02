@@ -113,6 +113,14 @@ export default function PricingPage() {
           }}>
             {t('hero.description')}
           </p>
+          <p style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+            color: '#3d74ff', fontSize: 14, fontWeight: 600,
+            background: 'rgba(0,71,255,0.1)', border: '1px solid rgba(0,71,255,0.25)',
+            borderRadius: 100, padding: '8px 18px', marginTop: 24,
+          }}>
+            {t('hero.promoNote')}
+          </p>
         </div>
       </section>
 
