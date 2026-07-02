@@ -21,7 +21,7 @@
   },
   "footer": {
     "brandAlt": "Logo Digi Wolf Agency",
-    "tagline": "Digitální agentura z Prahy, která pomáhá ambiciózním firmám dominovat online.",
+    "tagline": "Pražská agentura pro tvorbu webů, AI automatizaci a založení české firmy.",
     "copyright": "© {year} Digi Wolf Agency s.r.o., IČO 243 44 648. Všechna práva vyhrazena.",
     "social": {
       "linkedin": "LinkedIn",
@@ -111,7 +111,7 @@
         "line1": "Založte si vlastní firmu v Česku",
         "line2": "bez byrokracie a stresu"
       },
-      "subtitle": "Chcete podnikat sami, ale nevíte, kde začít — a úřady, formuláře a právní jazyk to ještě ztěžují. Založíme vaši s.r.o., postavíme web a provedeme vás každým krokem. Bez byrokracie. Bez hádání. Nebudete na to sami.",
+      "subtitle": "Založíme vaši českou firmu, postavíme web a zautomatizujeme odpovědi zákazníkům — v angličtině, češtině nebo mongolštině. Vy vedete byznys, o zbytek se postaráme my.",
       "ctas": [
         {
           "id": "startProject",
@@ -144,55 +144,55 @@
       {
         "id": "noLanguageBarrier",
         "headline": "Vyřízeno za vás",
-        "detail": "Vše vysvětlíme a obstaráme — od formulářů po registraci."
+        "detail": "Vše vysvětlíme ve vašem jazyce."
       },
       {
         "id": "companyAndWebsite",
         "headline": "Firma + web v jednom",
-        "detail": "Vaše s.r.o. a web jako jeden balíček, ne pět dodavatelů."
+        "detail": "Jeden partner místo pěti dodavatelů."
       },
       {
         "id": "guidedEndToEnd",
         "headline": "Průvodce od A do Z",
-        "detail": "Provedeme vás každým krokem — neztratíte se a nebudete sami."
+        "detail": "Nikdy nejste ztraceni ani sami."
       },
       {
         "id": "founderLed",
         "headline": "Veden zakladatelem",
-        "detail": "Pracujete přímo s člověkem, který vše dělá. Žádné předávání."
+        "detail": "Pracujete přímo s tvůrcem. Žádné předávání."
       }
     ],
     "servicesSection": {
       "badge": "Co děláme",
       "titleLine1": "Tři způsoby, jak vám",
       "titleLine2": "pomůžeme růst online",
-      "description": "Přehledná nabídka — weby na míru, AI automatizace a založení české společnosti. Bez zbytečného přetížení, jen to podstatné.",
+      "description": "Weby, AI automatizace a založení české firmy. Nic navíc, co nepotřebujete.",
       "cards": [
         {
           "id": "agencyWebsites",
           "title": "Kompletní tvorba webových stránek",
-          "desc": "Kompletní weby na míru, které dodají vašemu podnikání profesionální vzhled a promění návštěvníky v zákazníky. Rychlé, moderní a postavené na výkon.",
+          "desc": "Rychlý, moderní web, který dodá vašemu podnikání profesionální vzhled — a promění návštěvníky v zákazníky.",
           "tag": "Nejoblíbenější",
-          "price": "od 45 000 CZK"
+          "price": "od 19 900 CZK"
         },
         {
           "id": "aiAutomation",
           "title": "AI automatizace",
-          "desc": "Chytrá automatizace integrovaná do vašeho webu — zachytávání poptávek, okamžité odpovědi, rezervace a follow-up — aby vaše firma fungovala a rostla, zatímco se vy věnujete zákazníkům.",
+          "desc": "Okamžité odpovědi, rezervace a follow-upy, které běží 24/7 — takže o žádného zákazníka nepřijdete, i když zrovna pracujete.",
           "tag": "",
-          "price": "od 25 000 CZK"
+          "price": "od 14 900 CZK"
         },
         {
           "id": "sro",
           "title": "Založení společnosti v České republice (S.R.O.)",
-          "desc": "Pomáháme mongolským podnikatelům založit S.R.O. v Česku — od papírování po registraci — abyste mohli podnikat legálně a s jistotou.",
+          "desc": "Od papírování po registraci — založíme vaši českou firmu legálně, rychle a ve vašem jazyce.",
           "tag": "",
-          "price": "od 15 000 CZK"
+          "price": "od 24 900 CZK"
         }
       ],
       "maintenanceNote": {
         "title": "Potřebujete pomoc po spuštění?",
-        "desc": "Potřebujete pomoc poté, co je web online? Ozvěte se kdykoli — náš tým vás podpoří aktualizacemi, opravami nebo úpravami, když je budete potřebovat.",
+        "desc": "Web už běží? Postaráme se o aktualizace, opravy a úpravy, kdykoli je budete potřebovat.",
         "cta": "Kontaktujte nás →"
       },
       "learnMore": "Zjistit více →"
@@ -206,27 +206,27 @@
         {
           "id": "01",
           "title": "Úvodní hovor",
-          "desc": "Poznáme vaše cíle, cílovou skupinu a trh. Bez omáčky — jen informace, které potřebujeme pro funkční řešení."
+          "desc": "Poznáme vaše cíle a váš trh. 30 minut, žádné omáčky."
         },
         {
           "id": "02",
           "title": "Strategie a design",
-          "desc": "Vlastní wireframy a designové návrhy na míru vaší značce. Každý pixel schválíte dříve, než začneme kódovat."
+          "desc": "Design uvidíte a schválíte dřív, než napíšeme jediný řádek kódu."
         },
         {
           "id": "03",
           "title": "Vývoj",
-          "desc": "Produkční kód v Next.js, TypeScript a Supabase. Od prvního dne stavíme na výkon a škálování."
+          "desc": "Produkční vývoj v Next.js, TypeScript a Supabase."
         },
         {
           "id": "04",
           "title": "Revize a doladění",
-          "desc": "Kompletní QA na všech zařízeních. Vy testujete, my opravujeme. Neomezené úpravy, dokud není vše přesně podle vašich představ."
+          "desc": "Testujete na všech zařízeních. My opravujeme, dokud to nesedí."
         },
         {
           "id": "05",
           "title": "Spuštění a růst",
-          "desc": "Nasadíme, monitorujeme a průběžně zlepšujeme. Váš úspěch je dlouhodobé partnerství, ne jednorázový projekt."
+          "desc": "Nasadíme, monitorujeme a po spuštění dál vylepšujeme."
         }
       ]
     },
@@ -234,7 +234,7 @@
       "badge": "Naše práce",
       "titleLine1": "Tento web je",
       "titleLine2": "naše reference",
-      "description": "Prohlížíte si živý produkční web — ne mockup. Vše, co zde vidíte, umíme vytvořit i pro vás.",
+      "description": "Tento web je naše portfolio. Prohlížíte si živý produkční web — vše, co tu vidíte, umíme postavit i pro vás.",
       "cta": "Prozkoumat služby →",
       "showcase": {
         "title": "digiwolf.agency",
@@ -300,29 +300,29 @@
       "badge": "První klienti",
       "titleLine1": "Pro podnikatele",
       "titleLine2": "v Česku, na Slovensku a v Mongolsku",
-      "description": "Sloužíme zakladatelům a malým firmám, které potřebují seriózní digitální přítomnost — bez agenturní režie.",
+      "description": "Pro zakladatele a malé firmy, které potřebují seriózní digitální přítomnost — bez agenturní režie.",
       "items": [
         {
           "id": "founderAttention",
           "title": "Přímá pozornost zakladatele",
-          "desc": "Každý projekt vedu osobně — žádní account manažeři, žádné předávání."
+          "desc": "Každý projekt vedu osobně. Žádní account manažeři."
         },
         {
           "id": "foundingRates",
           "title": "Zvýhodněné ceny pro první klienty",
-          "desc": "Raní partneři získají prioritní ceny, zatímco budujeme portfolio."
+          "desc": "První partneři získají přednostní ceny."
         },
         {
           "id": "trilingualSupport",
           "title": "Trojjazyčná podpora",
-          "desc": "Pracujeme v angličtině, češtině a mongolštině — vzácné ve střední Evropě."
+          "desc": "Angličtina, čeština a mongolština — vzácná kombinace ve střední Evropě."
         }
       ]
     },
     "aiSection": {
       "badge": "Poháněno AI",
       "title": "Automatizujte podnikání pomocí vlastní AI",
-      "description": "Tvoříme AI pipeline, chatboty a automatizační workflow, které eliminují opakující se úkoly — automatizace navržené tak, aby ušetřily 20+ hodin týdně na ruční práci.",
+      "description": "Chatboti a workflow, které odpovídají zákazníkům, kvalifikují poptávky a vyřizují papírování — ušetří vám 20+ hodin týdně.",
       "checklist": [
         {
           "id": "leadChatbots",
@@ -366,13 +366,14 @@
       "titleLine1": "Transparentní ceny,",
       "titleLine2": "bez překvapení",
       "subtitle": "Každý balíček obsahuje kompletní zdrojový kód, 30denní podporu a garanci spokojenosti.",
+      "promoNote": "První klienti: 50% sleva na weby a AI automatizaci s kódem FOUNDING50 — omezený počet míst.",
       "plans": [
         {
           "id": "starter",
           "name": "Starter",
-          "price": "15,000",
+          "price": "19,900",
           "currency": "CZK",
-          "desc": "Ideální pro freelancery a malé firmy, které spouští svůj první profesionální web.",
+          "desc": "Pro freelancery a malé firmy, které potřebují profesionální web rychle.",
           "cta": "Začít",
           "featured": false,
           "features": [
@@ -405,9 +406,9 @@
         {
           "id": "growth",
           "name": "Growth",
-          "price": "45,000",
+          "price": "49,900",
           "currency": "CZK",
-          "desc": "Pro rostoucí agentury, které potřebují plně vybavený web s klientským portálem a integracemi.",
+          "desc": "Pro firmy připravené růst — online rezervace, platby a AI asistent, který odpovídá zákazníkům 24/7.",
           "cta": "Nejoblíbenější",
           "featured": true,
           "badge": "NEJLEPŠÍ POMĚR CENA/VÝKON",
@@ -447,7 +448,7 @@
           "name": "Enterprise",
           "price": "Na míru",
           "currency": "",
-          "desc": "Full-stack platforma s vlastním vývojem, AI automatizací a dedikovaným account managementem.",
+          "desc": "Pro firmy, které chtějí vlastní AI automatizaci a dlouhodobého technologického partnera.",
           "cta": "Kontaktujte nás",
           "featured": false,
           "features": [
@@ -524,7 +525,7 @@
       "badge": "První klienti",
       "titleLine1": "Připraveni vytvořit něco",
       "titleLine2": "výjimečného?",
-      "description": "Nyní přijímáme první klienty — k dispozici jsou zvýhodněné ceny pro early partnery. Rezervujte si bezplatný úvodní hovor.",
+      "description": "Omezené ceny pro první klienty. Rezervujte si bezplatný 30minutový hovor — bez závazků, odpovíme do 24 hodin.",
       "ctas": [
         {
           "id": "startProject",
@@ -645,7 +646,7 @@
         "id": "web",
         "title": "Kompletní tvorba webových stránek",
         "tagline": "Weby na míru, které konvertují",
-        "price": "od 45 000 CZK",
+        "price": "od 19 900 CZK",
         "badge": "Nejoblíbenější",
         "startingAt": "Začíná na",
         "includedTitle": "Co je zahrnuto",
@@ -668,7 +669,7 @@
         "id": "ai",
         "title": "AI automatizace",
         "tagline": "Integrováno do vašeho webu",
-        "price": "od 25 000 CZK",
+        "price": "od 14 900 CZK",
         "badge": "Vysoká poptávka",
         "startingAt": "Začíná na",
         "includedTitle": "Co je zahrnuto",
@@ -691,7 +692,7 @@
         "id": "sro",
         "title": "Založení společnosti v České republice (S.R.O.)",
         "tagline": "Pro mongolské podnikatele vstupující do EU",
-        "price": "od 15 000 CZK",
+        "price": "od 24 900 CZK",
         "badge": "Vstupní brána do EU",
         "startingAt": "Začíná na",
         "includedTitle": "Co je zahrnuto",
@@ -754,15 +755,16 @@
       "badge": "Ceník",
       "titleLine1": "Transparentní ceny,",
       "titleLine2": "bez překvapení",
-      "description": "Každý balíček obsahuje kompletní zdrojový kód, 30denní podporu a garanci spokojenosti. Fixní ceny — žádné skryté poplatky."
+      "description": "Každý balíček obsahuje kompletní zdrojový kód, 30denní podporu a garanci spokojenosti. Fixní ceny — žádné skryté poplatky.",
+      "promoNote": "První klienti: 50% sleva na weby a AI automatizaci s kódem FOUNDING50 — omezený počet míst."
     },
     "tiers": [
       {
         "id": "starter",
         "name": "Starter",
-        "price": "15,000",
+        "price": "19,900",
         "currency": "CZK",
-        "desc": "Ideální pro freelancery a malé firmy, které spouští svůj první profesionální web.",
+        "desc": "Pro freelancery a malé firmy, které potřebují profesionální web rychle.",
         "cta": "Začít",
         "featured": false,
         "features": [
@@ -795,9 +797,9 @@
       {
         "id": "growth",
         "name": "Growth",
-        "price": "45,000",
+        "price": "49,900",
         "currency": "CZK",
-        "desc": "Pro rostoucí agentury, které potřebují plně vybavený web s klientským portálem a integracemi.",
+        "desc": "Pro firmy připravené růst — online rezervace, platby a AI asistent, který odpovídá zákazníkům 24/7.",
         "cta": "Nejoblíbenější",
         "featured": true,
         "featuredBadge": "NEJLEPŠÍ POMĚR CENA/VÝKON",
@@ -837,7 +839,7 @@
         "name": "Enterprise",
         "price": "Na míru",
         "currency": "",
-        "desc": "Full-stack platforma s vlastním vývojem, AI automatizací a dedikovaným account managementem.",
+        "desc": "Pro firmy, které chtějí vlastní AI automatizaci a dlouhodobého technologického partnera.",
         "cta": "Kontaktujte nás",
         "featured": false,
         "features": [
@@ -2319,13 +2321,13 @@
       },
       "services": {
         "title": "Služby — Webový vývoj, AI automatizace a založení S.R.O.",
-        "description": "Digi Wolf Agency nabízí kompletní tvorbu webových stránek (od 45 000 CZK), AI automatizaci a založení české S.R.O. pro mongolské podnikatele v Praze.",
+        "description": "Digi Wolf Agency nabízí kompletní tvorbu webových stránek (od 19 900 CZK), AI automatizaci a založení české S.R.O. pro mongolské podnikatele v Praze.",
         "openGraphTitle": "Služby | Digi Wolf Agency",
         "openGraphDescription": "Prémiové digitální služby: weby, AI automatizace, založení české společnosti. Sídlíme v Praze."
       },
       "pricing": {
         "title": "Ceník — Transparentní balíčky a sazby",
-        "description": "Web Starter od 15 000 CZK, Growth od 45 000 CZK, Enterprise na míru. Fixní ceny, platby 50/50, bez skrytých poplatků.",
+        "description": "Web Starter od 19 900 CZK, Growth od 49 900 CZK, Enterprise na míru. Fixní ceny, platby 50/50, bez skrytých poplatků.",
         "openGraphTitle": "Ceník | Digi Wolf Agency — Transparentní sazby",
         "openGraphDescription": "Jasné fixní ceny pro weby, webové aplikace, AI automatizaci a založení české S.R.O."
       },

@@ -21,7 +21,7 @@
   },
   "footer": {
     "brandAlt": "Digi Wolf Agency logo",
-    "tagline": "Prague-based digital agency helping ambitious businesses dominate online.",
+    "tagline": "Prague-based agency for websites, AI automation, and Czech company formation.",
     "copyright": "© {year} Digi Wolf Agency s.r.o., IČO 243 44 648. All rights reserved.",
     "social": {
       "linkedin": "LinkedIn",
@@ -111,7 +111,7 @@
         "line1": "Start Your Own Business in Czechia",
         "line2": "No Czech Required"
       },
-      "subtitle": "Most newcomers want to work for themselves but don't know where to start — and doing it in a foreign language feels impossible. We register your Czech company, build your website, and walk you through every step, in English, Czech, or Mongolian. No bureaucracy. No guesswork. No doing it alone.",
+      "subtitle": "We register your Czech company, build your website, and automate your customer replies — in English, Czech, or Mongolian. You run the business. We handle the rest.",
       "ctas": [
         {
           "id": "startProject",
@@ -144,55 +144,55 @@
       {
         "id": "noLanguageBarrier",
         "headline": "No Czech needed",
-        "detail": "Everything handled and explained in English, Czech, or Mongolian."
+        "detail": "Everything explained in your language."
       },
       {
         "id": "companyAndWebsite",
         "headline": "Company + website, together",
-        "detail": "Your s.r.o. and your site as one package, not five separate vendors."
+        "detail": "One partner instead of five vendors."
       },
       {
         "id": "guidedEndToEnd",
         "headline": "Guided start to finish",
-        "detail": "We walk you through every step, so you're never lost or alone."
+        "detail": "You're never lost or alone."
       },
       {
         "id": "founderLed",
         "headline": "Founder-led",
-        "detail": "You work directly with the person doing the work. No handoffs."
+        "detail": "You work directly with the builder. No handoffs."
       }
     ],
     "servicesSection": {
       "badge": "What We Do",
       "titleLine1": "Three Ways We Help",
       "titleLine2": "You Grow Online",
-      "description": "A focused offering — custom websites, AI automation, and Czech company formation. No overwhelm, just what matters.",
+      "description": "Websites, AI automation, and Czech company formation. Nothing you don't need.",
       "cards": [
         {
           "id": "agencyWebsites",
           "title": "Complete Website Development",
-          "desc": "Complete, custom-built websites designed to make your business look professional and turn visitors into customers. Fast, modern, and built to perform.",
+          "desc": "A fast, modern website that makes your business look professional — and turns visitors into customers.",
           "tag": "Most Popular",
-          "price": "from 45,000 CZK"
+          "price": "from 19,900 CZK"
         },
         {
           "id": "aiAutomation",
           "title": "AI Automation",
-          "desc": "Smart automation built into your website — lead capture, instant replies, bookings, and follow-ups — so your business runs and grows while you focus on your customers.",
+          "desc": "Instant replies, bookings, and follow-ups that run 24/7 — so you never lose a lead while you work.",
           "tag": "",
-          "price": "from 25,000 CZK"
+          "price": "from 14,900 CZK"
         },
         {
           "id": "sro",
           "title": "Company Formation in the Czech Republic (S.R.O.)",
-          "desc": "Start your legal business in the Czech Republic. We guide Mongolians through setting up an S.R.O. — from paperwork to registration — so you can operate legally and with confidence.",
+          "desc": "From paperwork to registration, we set up your Czech company — legally, quickly, in your language.",
           "tag": "",
-          "price": "from 15,000 CZK"
+          "price": "from 24,900 CZK"
         }
       ],
       "maintenanceNote": {
         "title": "Need help after launch?",
-        "desc": "Need help after your site is live? Get in touch anytime and our team will support you with updates, fixes, or changes when you need them.",
+        "desc": "Site already live? We handle updates, fixes, and changes whenever you need them.",
         "cta": "Get in touch →"
       },
       "learnMore": "Learn more →"
@@ -206,27 +206,27 @@
         {
           "id": "01",
           "title": "Discovery Call",
-          "desc": "We learn your goals, audience, and market. No fluff — just the information needed to build something that works."
+          "desc": "We learn your goals and your market. 30 minutes, no fluff."
         },
         {
           "id": "02",
           "title": "Strategy & Design",
-          "desc": "Custom wireframes and design mockups tailored to your brand. You approve every pixel before we code."
+          "desc": "You see and approve the design before we write any code."
         },
         {
           "id": "03",
           "title": "Development",
-          "desc": "Production-grade code with Next.js, TypeScript, and Supabase. Built for performance and scale from day one."
+          "desc": "Production-grade build with Next.js, TypeScript, and Supabase."
         },
         {
           "id": "04",
           "title": "Review & Refine",
-          "desc": "Full QA across all devices. You test, we fix. Unlimited revisions until it's exactly what you want."
+          "desc": "You test on every device. We fix until it's right."
         },
         {
           "id": "05",
           "title": "Launch & Grow",
-          "desc": "We deploy, monitor, and continuously improve. Your success is a long-term partnership, not a one-off project."
+          "desc": "We deploy, monitor, and keep improving after launch."
         }
       ]
     },
@@ -234,7 +234,7 @@
       "badge": "Our Work",
       "titleLine1": "This Site Is",
       "titleLine2": "Our Proof",
-      "description": "You're browsing a live production build — not a mockup. Everything you see here, we can build for you.",
+      "description": "This website is our portfolio. You're browsing a live production build — everything here, we can build for you.",
       "cta": "Explore Services →",
       "showcase": {
         "title": "digiwolf.agency",
@@ -300,29 +300,29 @@
       "badge": "Founding Clients",
       "titleLine1": "Built for Entrepreneurs",
       "titleLine2": "Across Czech Republic, Slovakia & Mongolia",
-      "description": "We serve founders and small businesses who need a serious digital presence — without agency overhead.",
+      "description": "For founders and small businesses that need a serious digital presence — without agency overhead.",
       "items": [
         {
           "id": "founderAttention",
           "title": "Direct founder attention",
-          "desc": "Every project is led personally — no account managers, no hand-offs."
+          "desc": "Every project led personally. No account managers."
         },
         {
           "id": "foundingRates",
           "title": "Founding-client rates",
-          "desc": "Early partners get priority pricing while we build our portfolio."
+          "desc": "Early partners get priority pricing."
         },
         {
           "id": "trilingualSupport",
           "title": "Trilingual support",
-          "desc": "We work in English, Czech, and Mongolian — rare in Central Europe."
+          "desc": "English, Czech, and Mongolian — rare in Central Europe."
         }
       ]
     },
     "aiSection": {
       "badge": "AI-Powered",
       "title": "Automate Your Business with Custom AI",
-      "description": "We build AI pipelines, chatbots, and automation workflows that eliminate repetitive tasks — automations designed to save 20+ hours/week on manual work.",
+      "description": "Chatbots and workflows that answer customers, qualify leads, and handle paperwork — saving you 20+ hours a week.",
       "checklist": [
         {
           "id": "leadChatbots",
@@ -366,13 +366,14 @@
       "titleLine1": "Transparent Pricing,",
       "titleLine2": "No Surprises",
       "subtitle": "Every plan includes full source code, 30-day support, and a satisfaction guarantee.",
+      "promoNote": "Founding clients: 50% off websites and AI automation with code FOUNDING50 — limited spots.",
       "plans": [
         {
           "id": "starter",
           "name": "Starter",
-          "price": "15,000",
+          "price": "19,900",
           "currency": "CZK",
-          "desc": "Perfect for freelancers and small businesses launching their first professional website.",
+          "desc": "For freelancers and small businesses that need a professional website, fast.",
           "cta": "Get Started",
           "featured": false,
           "features": [
@@ -405,9 +406,9 @@
         {
           "id": "growth",
           "name": "Growth",
-          "price": "45,000",
+          "price": "49,900",
           "currency": "CZK",
-          "desc": "For growing agencies that need a full-featured site with client portal and integrations.",
+          "desc": "For businesses ready to grow — online bookings, payments, and an AI assistant that answers customers 24/7.",
           "cta": "Most Popular",
           "featured": true,
           "badge": "BEST VALUE",
@@ -447,7 +448,7 @@
           "name": "Enterprise",
           "price": "Custom",
           "currency": "",
-          "desc": "Full-stack platform with custom features, AI automation, and dedicated account management.",
+          "desc": "For businesses that want custom AI automation and a long-term tech partner.",
           "cta": "Contact Us",
           "featured": false,
           "features": [
@@ -524,7 +525,7 @@
       "badge": "Founding Clients",
       "titleLine1": "Ready to Build Something",
       "titleLine2": "Extraordinary?",
-      "description": "Now accepting founding clients — limited founding-client rates available. Book a free discovery call to get started.",
+      "description": "Limited founding-client rates. Book a free 30-minute call — no commitment, reply within 24 hours.",
       "ctas": [
         {
           "id": "startProject",
@@ -645,7 +646,7 @@
         "id": "web",
         "title": "Complete Website Development",
         "tagline": "Custom-built sites that convert",
-        "price": "from 45,000 CZK",
+        "price": "from 19,900 CZK",
         "badge": "Most Popular",
         "startingAt": "Starting at",
         "includedTitle": "What's Included",
@@ -695,7 +696,7 @@
         "id": "ai",
         "title": "AI Automation",
         "tagline": "Built into your website",
-        "price": "from 25,000 CZK",
+        "price": "from 14,900 CZK",
         "badge": "High Demand",
         "startingAt": "Starting at",
         "includedTitle": "What's Included",
@@ -745,7 +746,7 @@
         "id": "sro",
         "title": "Company Formation in the Czech Republic (S.R.O.)",
         "tagline": "For Mongolian entrepreneurs entering the EU",
-        "price": "from 15,000 CZK",
+        "price": "from 24,900 CZK",
         "badge": "EU Gateway",
         "startingAt": "Starting at",
         "includedTitle": "What's Included",
@@ -835,15 +836,16 @@
       "badge": "Pricing",
       "titleLine1": "Transparent Pricing,",
       "titleLine2": "No Surprises",
-      "description": "Every plan includes full source code, 30-day support, and a satisfaction guarantee. Fixed prices — no hidden fees."
+      "description": "Every plan includes full source code, 30-day support, and a satisfaction guarantee. Fixed prices — no hidden fees.",
+      "promoNote": "Founding clients: 50% off websites and AI automation with code FOUNDING50 — limited spots."
     },
     "tiers": [
       {
         "id": "starter",
         "name": "Starter",
-        "price": "15,000",
+        "price": "19,900",
         "currency": "CZK",
-        "desc": "Perfect for freelancers and small businesses launching their first professional website.",
+        "desc": "For freelancers and small businesses that need a professional website, fast.",
         "cta": "Get Started",
         "featured": false,
         "features": [
@@ -876,9 +878,9 @@
       {
         "id": "growth",
         "name": "Growth",
-        "price": "45,000",
+        "price": "49,900",
         "currency": "CZK",
-        "desc": "For growing agencies that need a full-featured site with client portal and integrations.",
+        "desc": "For businesses ready to grow — online bookings, payments, and an AI assistant that answers customers 24/7.",
         "cta": "Most Popular",
         "featured": true,
         "featuredBadge": "BEST VALUE",
@@ -918,7 +920,7 @@
         "name": "Enterprise",
         "price": "Custom",
         "currency": "",
-        "desc": "Full-stack platform with custom features, AI automation, and dedicated account management.",
+        "desc": "For businesses that want custom AI automation and a long-term tech partner.",
         "cta": "Contact Us",
         "featured": false,
         "features": [
@@ -2400,13 +2402,13 @@
       },
       "services": {
         "title": "Services — Web Development, AI Automation & S.R.O. Formation",
-        "description": "Digi Wolf Agency offers complete website development (from 45,000 CZK), AI automation, and Czech S.R.O. formation for Mongolian entrepreneurs in Prague.",
+        "description": "Digi Wolf Agency offers complete website development (from 19,900 CZK), AI automation, and Czech S.R.O. formation for Mongolian entrepreneurs in Prague.",
         "openGraphTitle": "Services | Digi Wolf Agency",
         "openGraphDescription": "Premium digital services: websites, AI automation, Czech company formation. Based in Prague."
       },
       "pricing": {
         "title": "Pricing — Transparent Packages & Rates",
-        "description": "Starter website from 15,000 CZK, Growth from 45,000 CZK, Enterprise custom. Fixed pricing, 50/50 payment plans, no hidden fees.",
+        "description": "Starter website from 19,900 CZK, Growth from 49,900 CZK, Enterprise custom. Fixed pricing, 50/50 payment plans, no hidden fees.",
         "openGraphTitle": "Pricing | Digi Wolf Agency — Transparent Rates",
         "openGraphDescription": "Clear, fixed pricing for websites, web apps, AI automation, and Czech S.R.O. formation."
       },
