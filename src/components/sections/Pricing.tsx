@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react'
 const plans = [
   {
     tier: 'Starter',
-    price: '15,000',
+    price: '19,900',
     currency: 'CZK',
     desc: 'Perfect for solo founders and small businesses who need a professional online presence fast.',
     features: [
@@ -22,7 +22,7 @@ const plans = [
   },
   {
     tier: 'Growth',
-    price: '35,000',
+    price: '49,900',
     currency: 'CZK',
     desc: 'For growing businesses that need a powerful site or web app with more pages and integrations.',
     features: [

@@ -2,10 +2,11 @@
 
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
-import { Check, Lock, Clock, Infinity, CreditCard, Minus } from 'lucide-react'
+import { Check, Lock, Clock, Infinity, CreditCard, Minus, Zap, Building2, Bot } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FaqAccordion from '@/components/ui/FaqAccordion'
+import { FOUNDING_OFFER_ACTIVE, FOUNDING_SPOTS_LEFT, FOUNDING_PRICES } from '@/config/founding-offer'
 
 type CompareCell = boolean | string
 
@@ -30,10 +31,48 @@ type ComparisonRow = {
 }
 
 type FaqItem = { id: string; q: string; a: string }
-
 type TrustBadge = { id: string; text: string }
-
 type CtaItem = { id: string; label: string }
+
+type CompanyFormationCard = {
+  id: string
+  name: string
+  price: string
+  foundingPrice?: string
+  currency: string
+  period: string
+  desc: string
+  cta: string
+  features: { id: string; label: string }[]
+}
+
+type AiCard = {
+  id: string
+  name: string
+  subtitle: string
+  setupPrice: string
+  monthlyPrice: string
+  foundingSetupPrice?: string
+  currency: string
+  desc: string
+  cta: string
+  features: { id: string; label: string }[]
+}
+
+type CompanyFormationSection = {
+  badge: string
+  title: string
+  subtitle: string
+  cards: CompanyFormationCard[]
+}
+
+type AiAutomationSection = {
+  badge: string
+  title: string
+  subtitle: string
+  careNote: string
+  cards: AiCard[]
+}
 
 const TRUST_BADGE_ICONS: Record<string, React.ReactNode> = {
   fixedPricing: <Lock size={14} />,
@@ -69,6 +108,22 @@ function CompareValue({ value, featured }: { value: CompareCell; featured?: bool
   )
 }
 
+function FoundingBadge({ text }: { text: string }) {
+  return (
+    <div style={{
+      display: 'inline-flex', alignItems: 'center', gap: 6,
+      background: 'linear-gradient(135deg, rgba(255,180,0,0.15), rgba(255,120,0,0.1))',
+      border: '1px solid rgba(255,180,0,0.4)',
+      borderRadius: 100, padding: '5px 12px',
+      fontSize: 11, fontWeight: 700, color: '#ffc340',
+      letterSpacing: '0.02em',
+    }}>
+      <Zap size={10} fill="#ffc340" />
+      {text}
+    </div>
+  )
+}
+
 export default function PricingPage() {
   const t = useTranslations('pricing')
 
@@ -77,18 +132,39 @@ export default function PricingPage() {
   const paymentFaqs = t.raw('paymentsFaq.items') as FaqItem[]
   const trustBadges = t.raw('trustBadges') as TrustBadge[]
   const bottomCtas = t.raw('bottomCta.ctas') as CtaItem[]
+  const foundingBanner = t.raw('foundingBanner') as { text: string; websiteBadge: string; aiBadge: string; sroBadge: string }
+  const companyFormation = t.raw('companyFormation') as CompanyFormationSection
+  const aiAutomation = t.raw('aiAutomation') as AiAutomationSection
 
   const comparisonTitle = t('comparison.title')
   const comparisonTitleParts = comparisonTitle.split(' ')
   const bottomTitleParts = t('bottomCta.title').split(' ')
 
+  const bannerText = foundingBanner.text.replace('{spotsLeft}', String(FOUNDING_SPOTS_LEFT))
+
   return (
     <div style={{ background: '#030712', minHeight: '100vh', color: '#f0f4ff', fontFamily: 'Inter, system-ui, sans-serif' }}>
       <Navbar />
 
+      {/* Founding offer banner */}
+      {FOUNDING_OFFER_ACTIVE && (
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(255,140,0,0.12), rgba(0,71,255,0.12))',
+          borderBottom: '1px solid rgba(255,180,0,0.2)',
+          padding: '12px 24px',
+          textAlign: 'center',
+          position: 'relative',
+          zIndex: 10,
+        }}>
+          <p style={{ margin: 0, fontSize: 14, fontWeight: 600, color: '#ffc340', lineHeight: 1.5 }}>
+            {bannerText}
+          </p>
+        </div>
+      )}
+
       {/* Hero */}
       <section style={{
-        position: 'relative', padding: '140px 24px 80px',
+        position: 'relative', padding: '120px 24px 80px',
         textAlign: 'center', overflow: 'hidden',
       }}>
         <div style={{
@@ -113,14 +189,6 @@ export default function PricingPage() {
           }}>
             {t('hero.description')}
           </p>
-          <p style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8,
-            color: '#3d74ff', fontSize: 14, fontWeight: 600,
-            background: 'rgba(0,71,255,0.1)', border: '1px solid rgba(0,71,255,0.25)',
-            borderRadius: 100, padding: '8px 18px', marginTop: 24,
-          }}>
-            {t('hero.promoNote')}
-          </p>
         </div>
       </section>
 
@@ -131,93 +199,132 @@ export default function PricingPage() {
           gridTemplateColumns: 'repeat(3, 1fr)',
           gap: 20,
         }}>
-          {tiers.map((plan) => (
-            <div
-              key={plan.id}
-              style={{
-                background: plan.featured
-                  ? 'linear-gradient(135deg, rgba(0,71,255,0.15), rgba(61,116,255,0.06))'
-                  : 'rgba(255,255,255,0.03)',
-                border: plan.featured ? '1px solid rgba(0,71,255,0.4)' : '1px solid rgba(255,255,255,0.07)',
-                borderRadius: 24, padding: 40, position: 'relative', overflow: 'hidden',
-                boxShadow: plan.featured ? '0 0 60px rgba(0,71,255,0.15)' : 'none',
-                transition: 'all 0.3s',
-                transform: plan.featured ? 'scale(1.03)' : 'none',
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget
-                el.style.transform = plan.featured ? 'scale(1.05) translateY(-4px)' : 'translateY(-4px)'
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget
-                el.style.transform = plan.featured ? 'scale(1.03)' : 'none'
-              }}
-            >
-              {plan.featured && plan.featuredBadge && (
-                <div style={{
-                  position: 'absolute', top: 20, right: 20,
-                  background: '#0047FF', color: '#fff',
-                  fontSize: 10, fontWeight: 800, padding: '4px 12px',
-                  borderRadius: 100, letterSpacing: '0.08em', textTransform: 'uppercase',
-                }}>
-                  {plan.featuredBadge}
-                </div>
-              )}
-              <div style={{
-                position: 'absolute', top: 0, left: 0, right: 0, height: 2,
-                background: plan.featured
-                  ? 'linear-gradient(90deg, transparent, #0047FF, transparent)'
-                  : 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)',
-              }} />
+          {tiers.map((plan) => {
+            const isWebsite = plan.id === 'starter' || plan.id === 'growth'
+            const foundingKey = plan.id === 'starter' ? 'starter' : plan.id === 'growth' ? 'growth' : null
+            const foundingData = foundingKey ? FOUNDING_PRICES[foundingKey] : null
 
-              <h2 style={{ fontSize: 18, fontWeight: 800, color: '#f0f4ff', marginBottom: 8 }}>{plan.name}</h2>
-              <div style={{ marginBottom: 16 }}>
-                {plan.price === 'Custom' ? (
-                  <span style={{ fontSize: 36, fontWeight: 900, color: '#f0f4ff', letterSpacing: '-0.03em' }}>{plan.price}</span>
-                ) : (
-                  <>
-                    <span style={{ fontSize: 40, fontWeight: 900, color: '#f0f4ff', letterSpacing: '-0.03em' }}>{plan.price}</span>
-                    <span style={{ fontSize: 16, color: '#8892b0', marginLeft: 6 }}>{plan.currency}</span>
-                  </>
-                )}
-              </div>
-              <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.6, marginBottom: 28 }}>{plan.desc}</p>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
-                {plan.features.map((f) => (
-                  <div key={f.id} style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c8d3f0', fontSize: 14 }}>
-                    <Check size={14} color={plan.featured ? '#3d74ff' : '#8892b0'} />
-                    {f.label}
-                  </div>
-                ))}
-              </div>
-
-              <Link
-                href="/contact"
+            return (
+              <div
+                key={plan.id}
                 style={{
-                  display: 'block', textAlign: 'center', textDecoration: 'none',
-                  padding: '14px', borderRadius: 12, fontWeight: 700, fontSize: 15,
-                  background: plan.featured ? '#0047FF' : 'transparent',
-                  color: plan.featured ? '#fff' : '#f0f4ff',
-                  border: plan.featured ? 'none' : '1px solid rgba(255,255,255,0.15)',
-                  boxShadow: plan.featured ? '0 8px 30px rgba(0,71,255,0.4)' : 'none',
-                  transition: 'all 0.2s',
+                  background: plan.featured
+                    ? 'linear-gradient(135deg, rgba(0,71,255,0.15), rgba(61,116,255,0.06))'
+                    : 'rgba(255,255,255,0.03)',
+                  border: plan.featured ? '1px solid rgba(0,71,255,0.4)' : '1px solid rgba(255,255,255,0.07)',
+                  borderRadius: 24, padding: 40, position: 'relative', overflow: 'hidden',
+                  boxShadow: plan.featured ? '0 0 60px rgba(0,71,255,0.15)' : 'none',
+                  transition: 'all 0.3s',
+                  transform: plan.featured ? 'scale(1.03)' : 'none',
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget
-                  el.style.opacity = '0.85'
-                  el.style.transform = 'translateY(-1px)'
+                  el.style.transform = plan.featured ? 'scale(1.05) translateY(-4px)' : 'translateY(-4px)'
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget
-                  el.style.opacity = '1'
-                  el.style.transform = 'none'
+                  el.style.transform = plan.featured ? 'scale(1.03)' : 'none'
                 }}
               >
-                {plan.cta} →
-              </Link>
-            </div>
-          ))}
+                {plan.featured && plan.featuredBadge && (
+                  <div style={{
+                    position: 'absolute', top: 20, right: 20,
+                    background: '#0047FF', color: '#fff',
+                    fontSize: 10, fontWeight: 800, padding: '4px 12px',
+                    borderRadius: 100, letterSpacing: '0.08em', textTransform: 'uppercase',
+                  }}>
+                    {plan.featuredBadge}
+                  </div>
+                )}
+                <div style={{
+                  position: 'absolute', top: 0, left: 0, right: 0, height: 2,
+                  background: plan.featured
+                    ? 'linear-gradient(90deg, transparent, #0047FF, transparent)'
+                    : 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)',
+                }} />
+
+                <h2 style={{ fontSize: 18, fontWeight: 800, color: '#f0f4ff', marginBottom: 8 }}>{plan.name}</h2>
+                <div style={{ marginBottom: 8 }}>
+                  {plan.price === 'Custom' ? (
+                    <span style={{ fontSize: 36, fontWeight: 900, color: '#f0f4ff', letterSpacing: '-0.03em' }}>{plan.price}</span>
+                  ) : (
+                    <>
+                      {FOUNDING_OFFER_ACTIVE && foundingData ? (
+                        <div>
+                          <span style={{ fontSize: 28, fontWeight: 900, color: '#ffc340', letterSpacing: '-0.03em' }}>
+                            {foundingData.discounted}
+                          </span>
+                          <span style={{ fontSize: 14, color: '#8892b0', marginLeft: 6 }}>{plan.currency}</span>
+                          <span style={{ fontSize: 13, color: '#5a6478', textDecoration: 'line-through', marginLeft: 10 }}>
+                            {foundingData.normal} {plan.currency}
+                          </span>
+                        </div>
+                      ) : (
+                        <>
+                          <span style={{ fontSize: 40, fontWeight: 900, color: '#f0f4ff', letterSpacing: '-0.03em' }}>{plan.price}</span>
+                          <span style={{ fontSize: 16, color: '#8892b0', marginLeft: 6 }}>{plan.currency}</span>
+                        </>
+                      )}
+                    </>
+                  )}
+                </div>
+                {FOUNDING_OFFER_ACTIVE && isWebsite && plan.price !== 'Custom' && (
+                  <div style={{ marginBottom: 12 }}>
+                    <FoundingBadge text={foundingBanner.websiteBadge} />
+                  </div>
+                )}
+                <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.6, marginBottom: 28 }}>{plan.desc}</p>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
+                  {plan.features.map((f) => (
+                    <div key={f.id} style={{
+                      display: 'flex', alignItems: 'center', gap: 10,
+                      color: f.id === 'carePlan' || f.id === 'f7' || f.id === 'f8'
+                        ? '#8892b0'
+                        : '#c8d3f0',
+                      fontSize: 14,
+                      fontStyle: f.id === 'carePlan' || f.id === 'f7' || f.id === 'f8' ? 'italic' : 'normal',
+                    }}>
+                      <Check
+                        size={14}
+                        color={
+                          f.id === 'carePlan' || f.id === 'f7' || f.id === 'f8'
+                            ? '#4a5568'
+                            : plan.featured ? '#3d74ff' : '#8892b0'
+                        }
+                      />
+                      {f.label}
+                    </div>
+                  ))}
+                </div>
+
+                <Link
+                  href={plan.id === 'enterprise' ? '/contact' : '/book'}
+                  style={{
+                    display: 'block', textAlign: 'center', textDecoration: 'none',
+                    padding: '14px', borderRadius: 12, fontWeight: 700, fontSize: 15,
+                    background: plan.featured ? '#0047FF' : 'transparent',
+                    color: plan.featured ? '#fff' : '#f0f4ff',
+                    border: plan.featured ? 'none' : '1px solid rgba(255,255,255,0.15)',
+                    boxShadow: plan.featured ? '0 8px 30px rgba(0,71,255,0.4)' : 'none',
+                    transition: 'all 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget
+                    el.style.opacity = '0.85'
+                    el.style.transform = 'translateY(-1px)'
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget
+                    el.style.opacity = '1'
+                    el.style.transform = 'none'
+                  }}
+                >
+                  {plan.cta} →
+                </Link>
+              </div>
+            )
+          })}
         </div>
 
         {/* Trust badges */}
@@ -326,7 +433,7 @@ export default function PricingPage() {
 
           <div style={{ textAlign: 'center', marginTop: 40 }}>
             <Link
-              href="/contact"
+              href="/book"
               style={{
                 display: 'inline-block',
                 background: '#0047FF', color: '#fff',
@@ -338,6 +445,218 @@ export default function PricingPage() {
               {t('comparison.cta')}
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Company Formation section */}
+      <section style={{ padding: '100px 24px', maxWidth: 1280, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 56 }}>
+          <span className="badge" style={{ marginBottom: 20, display: 'inline-flex' }}>
+            <Building2 size={13} style={{ marginRight: 6 }} />
+            {companyFormation.badge}
+          </span>
+          <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 800, marginBottom: 14, letterSpacing: '-0.03em' }}>
+            {companyFormation.title}
+          </h2>
+          <p style={{ fontSize: 17, color: '#8892b0', maxWidth: 560, margin: '0 auto', lineHeight: 1.7 }}>
+            {companyFormation.subtitle}
+          </p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24, maxWidth: 880, margin: '0 auto' }}>
+          {companyFormation.cards.map((card) => {
+            const isSro = card.id === 'sroComplete'
+
+            return (
+              <div
+                key={card.id}
+                style={{
+                  background: isSro ? 'linear-gradient(135deg, rgba(0,71,255,0.12), rgba(61,116,255,0.04))' : 'rgba(255,255,255,0.03)',
+                  border: isSro ? '1px solid rgba(0,71,255,0.35)' : '1px solid rgba(255,255,255,0.07)',
+                  borderRadius: 24, padding: 36, position: 'relative', overflow: 'hidden',
+                }}
+              >
+                <div style={{
+                  position: 'absolute', top: 0, left: 0, right: 0, height: 2,
+                  background: isSro
+                    ? 'linear-gradient(90deg, transparent, #0047FF, transparent)'
+                    : 'linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)',
+                }} />
+
+                <h3 style={{ fontSize: 20, fontWeight: 800, color: '#f0f4ff', marginBottom: 8 }}>{card.name}</h3>
+                <div style={{ marginBottom: 8 }}>
+                  {FOUNDING_OFFER_ACTIVE && card.foundingPrice ? (
+                    <div>
+                      <span style={{ fontSize: 32, fontWeight: 900, color: '#ffc340', letterSpacing: '-0.03em' }}>
+                        {card.foundingPrice}
+                      </span>
+                      <span style={{ fontSize: 14, color: '#8892b0', marginLeft: 6 }}>{card.currency}</span>
+                      <span style={{ fontSize: 13, color: '#5a6478', textDecoration: 'line-through', marginLeft: 10 }}>
+                        {card.price} {card.currency}
+                      </span>
+                      <span style={{ fontSize: 12, color: '#8892b0', marginLeft: 4 }}>/ {card.period}</span>
+                    </div>
+                  ) : (
+                    <>
+                      <span style={{ fontSize: 32, fontWeight: 900, color: '#f0f4ff', letterSpacing: '-0.03em' }}>{card.price}</span>
+                      <span style={{ fontSize: 14, color: '#8892b0', marginLeft: 6 }}>{card.currency}</span>
+                      <span style={{ fontSize: 13, color: '#8892b0', marginLeft: 6 }}>/ {card.period}</span>
+                    </>
+                  )}
+                </div>
+
+                {FOUNDING_OFFER_ACTIVE && isSro && (
+                  <div style={{ marginBottom: 12 }}>
+                    <FoundingBadge text={foundingBanner.sroBadge} />
+                  </div>
+                )}
+
+                <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.6, marginBottom: 24 }}>{card.desc}</p>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 28 }}>
+                  {card.features.map((f) => (
+                    <div key={f.id} style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c8d3f0', fontSize: 14 }}>
+                      <Check size={13} color={isSro ? '#3d74ff' : '#8892b0'} />
+                      {f.label}
+                    </div>
+                  ))}
+                </div>
+
+                <Link
+                  href="/book"
+                  style={{
+                    display: 'block', textAlign: 'center', textDecoration: 'none',
+                    padding: '13px', borderRadius: 12, fontWeight: 700, fontSize: 15,
+                    background: isSro ? '#0047FF' : 'transparent',
+                    color: isSro ? '#fff' : '#f0f4ff',
+                    border: isSro ? 'none' : '1px solid rgba(255,255,255,0.15)',
+                    boxShadow: isSro ? '0 8px 30px rgba(0,71,255,0.35)' : 'none',
+                  }}
+                >
+                  {card.cta}
+                </Link>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* AI Automation section */}
+      <section style={{
+        padding: '100px 24px',
+        background: 'rgba(255,255,255,0.01)',
+        borderTop: '1px solid rgba(255,255,255,0.05)',
+        borderBottom: '1px solid rgba(255,255,255,0.05)',
+      }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 56 }}>
+            <span className="badge" style={{ marginBottom: 20, display: 'inline-flex' }}>
+              <Bot size={13} style={{ marginRight: 6 }} />
+              {aiAutomation.badge}
+            </span>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 800, marginBottom: 14, letterSpacing: '-0.03em' }}>
+              {aiAutomation.title}
+            </h2>
+            <p style={{ fontSize: 17, color: '#8892b0', maxWidth: 560, margin: '0 auto', lineHeight: 1.7 }}>
+              {aiAutomation.subtitle}
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24, maxWidth: 900, margin: '0 auto' }}>
+            {aiAutomation.cards.map((card, idx) => {
+              const isPro = card.id === 'aiAutomationPro'
+              const foundingKey = card.id === 'aiAutoReply' ? 'aiAutoReply' : card.id === 'aiAutomationPro' ? 'aiAutomationPro' : null
+              const foundingData = foundingKey ? FOUNDING_PRICES[foundingKey as keyof typeof FOUNDING_PRICES] : null
+
+              return (
+                <div
+                  key={card.id}
+                  style={{
+                    background: isPro
+                      ? 'linear-gradient(135deg, rgba(0,71,255,0.12), rgba(61,116,255,0.04))'
+                      : 'rgba(255,255,255,0.03)',
+                    border: isPro ? '1px solid rgba(0,71,255,0.35)' : '1px solid rgba(255,255,255,0.07)',
+                    borderRadius: 24, padding: 36, position: 'relative', overflow: 'hidden',
+                  }}
+                >
+                  <div style={{
+                    position: 'absolute', top: 0, left: 0, right: 0, height: 2,
+                    background: isPro
+                      ? 'linear-gradient(90deg, transparent, #0047FF, transparent)'
+                      : 'linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent)',
+                  }} />
+
+                  <div style={{ marginBottom: 4 }}>
+                    <h3 style={{ fontSize: 20, fontWeight: 800, color: '#f0f4ff', marginBottom: 2 }}>{card.name}</h3>
+                    <span style={{ fontSize: 12, color: '#8892b0', fontWeight: 500 }}>{card.subtitle}</span>
+                  </div>
+
+                  <div style={{ marginBottom: 8, marginTop: 12 }}>
+                    {FOUNDING_OFFER_ACTIVE && foundingData && 'discounted' in foundingData ? (
+                      <div>
+                        <span style={{ fontSize: 28, fontWeight: 900, color: '#ffc340', letterSpacing: '-0.03em' }}>
+                          {foundingData.discounted}
+                        </span>
+                        <span style={{ fontSize: 14, color: '#8892b0', marginLeft: 5 }}>{card.currency} setup</span>
+                        <span style={{ fontSize: 13, color: '#5a6478', textDecoration: 'line-through', marginLeft: 10 }}>
+                          {card.setupPrice} {card.currency}
+                        </span>
+                        <div style={{ marginTop: 4, fontSize: 14, color: '#8892b0' }}>
+                          + {card.monthlyPrice} {card.currency}/month care
+                        </div>
+                      </div>
+                    ) : (
+                      <div>
+                        <span style={{ fontSize: 28, fontWeight: 900, color: '#f0f4ff', letterSpacing: '-0.03em' }}>{card.setupPrice}</span>
+                        <span style={{ fontSize: 14, color: '#8892b0', marginLeft: 5 }}>{card.currency} setup</span>
+                        <div style={{ marginTop: 4, fontSize: 14, color: '#8892b0' }}>
+                          + {card.monthlyPrice} {card.currency}/month care
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {FOUNDING_OFFER_ACTIVE && (
+                    <div style={{ marginBottom: 12 }}>
+                      <FoundingBadge text={foundingBanner.aiBadge} />
+                    </div>
+                  )}
+
+                  <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.6, marginBottom: 24 }}>{card.desc}</p>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 28 }}>
+                    {card.features.map((f) => (
+                      <div key={f.id} style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c8d3f0', fontSize: 14 }}>
+                        <Check size={13} color={isPro ? '#3d74ff' : '#8892b0'} />
+                        {f.label}
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link
+                    href="/book"
+                    style={{
+                      display: 'block', textAlign: 'center', textDecoration: 'none',
+                      padding: '13px', borderRadius: 12, fontWeight: 700, fontSize: 15,
+                      background: isPro ? '#0047FF' : 'transparent',
+                      color: isPro ? '#fff' : '#f0f4ff',
+                      border: isPro ? 'none' : '1px solid rgba(255,255,255,0.15)',
+                      boxShadow: isPro ? '0 8px 30px rgba(0,71,255,0.35)' : 'none',
+                    }}
+                  >
+                    {card.cta}
+                  </Link>
+                </div>
+              )
+            })}
+          </div>
+
+          <p style={{
+            textAlign: 'center', marginTop: 32, fontSize: 13, color: '#8892b0',
+            maxWidth: 520, margin: '32px auto 0',
+          }}>
+            {aiAutomation.careNote}
+          </p>
         </div>
       </section>
 

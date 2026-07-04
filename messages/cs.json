@@ -21,7 +21,7 @@
   },
   "footer": {
     "brandAlt": "Logo Digi Wolf Agency",
-    "tagline": "Pražská agentura pro tvorbu webů, AI automatizaci a založení české firmy.",
+    "tagline": "Pražská agentura pro tvorbu webů, AI automatizaci a založení české firmy — v angličtině, češtině a mongolštině.",
     "copyright": "© {year} Digi Wolf Agency s.r.o., IČO 243 44 648. Všechna práva vyhrazena.",
     "social": {
       "facebook": "Facebook"
@@ -103,21 +103,21 @@
     ]
   },
   "home": {
-    "badge": "Přijímáme nové projekty",
+    "badge": "⚡ Prvních 10 klientů: sleva 50 %",
     "hero": {
       "title": {
-        "line1": "Založte si vlastní firmu v Česku",
-        "line2": "bez byrokracie a stresu"
+        "line1": "Weby, které vyhrávají zákazníky.",
+        "line2": "AI, které nikdy nespí."
       },
-      "subtitle": "Založíme vaši českou firmu, postavíme web a zautomatizujeme odpovědi zákazníkům — v angličtině, češtině nebo mongolštině. Vy vedete byznys, o zbytek se postaráme my.",
+      "subtitle": "Stavíme profesionální weby a AI automatizace pro malé firmy — vaši zákazníci dostanou okamžité odpovědi, rezervace a follow-upy 24/7, i když zrovna pracujete. Začínáte od nuly? Založíme vám i českou firmu. Vše v angličtině, češtině nebo mongolštině.",
       "ctas": [
         {
           "id": "startProject",
-          "label": "Začněte podnikat →"
+          "label": "Zajistit si místo →"
         },
         {
           "id": "bookCall",
-          "label": "Rezervujte si bezplatný hovor"
+          "label": "Zobrazit ceník"
         }
       ],
       "floatingBadges": [
@@ -140,43 +140,43 @@
     },
     "stats": [
       {
-        "id": "noLanguageBarrier",
-        "headline": "Vyřízeno za vás",
-        "detail": "Vše vysvětlíme ve vašem jazyce."
+        "id": "fixedPrices",
+        "headline": "Pevné ceny",
+        "detail": "Cena, kterou nabídneme, je cena, kterou zaplatíte."
       },
       {
-        "id": "companyAndWebsite",
-        "headline": "Firma + web v jednom",
-        "detail": "Jeden partner místo pěti dodavatelů."
+        "id": "ownEverything",
+        "headline": "Vše je vaše",
+        "detail": "Kompletní zdrojový kód a účty na vaše jméno."
       },
       {
-        "id": "guidedEndToEnd",
-        "headline": "Průvodce od A do Z",
-        "detail": "Nikdy nejste ztraceni ani sami."
+        "id": "moneyBack",
+        "headline": "Vrácení peněz do 14 dní",
+        "detail": "Nejste spokojeni? Peníze vám vrátíme."
       },
       {
         "id": "founderLed",
         "headline": "Veden zakladatelem",
-        "detail": "Pracujete přímo s tvůrcem. Žádné předávání."
+        "detail": "Mluvíte přímo s člověkem, který to staví."
       }
     ],
     "servicesSection": {
       "badge": "Co děláme",
       "titleLine1": "Tři způsoby, jak vám",
       "titleLine2": "pomůžeme růst online",
-      "description": "Weby, AI automatizace a založení české firmy. Nic navíc, co nepotřebujete.",
+      "description": "Tři služby. Jeden cíl: váš byznys roste, zatímco AI se stará o rutinu.",
       "cards": [
         {
           "id": "agencyWebsites",
           "title": "Kompletní tvorba webových stránek",
-          "desc": "Rychlý, moderní web, který dodá vašemu podnikání profesionální vzhled — a promění návštěvníky v zákazníky.",
+          "desc": "Rychlý, moderní web, díky kterému bude váš byznys působit profesionálně — a promění návštěvníky v platící zákazníky.",
           "tag": "Nejoblíbenější",
           "price": "od 19 900 CZK"
         },
         {
           "id": "aiAutomation",
           "title": "AI automatizace",
-          "desc": "Okamžité odpovědi, rezervace a follow-upy, které běží 24/7 — takže o žádného zákazníka nepřijdete, i když zrovna pracujete.",
+          "desc": "Už nikdy nepřijdete o zákazníka. Okamžité odpovědi, rezervace a follow-upy automaticky — 24 hodin denně, 7 dní v týdnu.",
           "tag": "",
           "price": "od 14 900 CZK"
         },
@@ -232,7 +232,7 @@
       "badge": "Naše práce",
       "titleLine1": "Tento web je",
       "titleLine2": "naše reference",
-      "description": "Tento web je naše portfolio. Prohlížíte si živý produkční web — vše, co tu vidíte, umíme postavit i pro vás.",
+      "description": "Tento web je naše portfolio. Prohlížíte si živý produkční build — vše, co tu vidíte, umíme postavit i pro vás.",
       "cta": "Prozkoumat služby →",
       "showcase": {
         "title": "digiwolf.agency",
@@ -298,7 +298,7 @@
       "badge": "První klienti",
       "titleLine1": "Pro podnikatele",
       "titleLine2": "v Česku, na Slovensku a v Mongolsku",
-      "description": "Pro zakladatele a malé firmy, které potřebují seriózní digitální přítomnost — bez agenturní režie.",
+      "description": "Pro zakladatele a malé firmy, které chtějí seriózní digitální přítomnost — bez agenturní režie.",
       "items": [
         {
           "id": "founderAttention",
@@ -308,7 +308,7 @@
         {
           "id": "foundingRates",
           "title": "Zvýhodněné ceny pro první klienty",
-          "desc": "První partneři získají přednostní ceny."
+          "desc": "Prvních 10 klientů získá slevu 50 % — a doživotní prioritní přístup."
         },
         {
           "id": "trilingualSupport",
@@ -319,8 +319,8 @@
     },
     "aiSection": {
       "badge": "Poháněno AI",
-      "title": "Automatizujte podnikání pomocí vlastní AI",
-      "description": "Chatboti a workflow, které odpovídají zákazníkům, kvalifikují poptávky a vyřizují papírování — ušetří vám 20+ hodin týdně.",
+      "title": "Nezůstaňte pozadu v éře AI",
+      "description": "AI rychle mění způsob, jakým byznys funguje. Vaše konkurence se zautomatizuje — otázkou je jen, jestli to uděláte první. My to zjednodušíme: vaše zprávy na Facebooku jsou zodpovězeny okamžitě, leady zachyceny, rezervace potvrzeny — třeba i ve 2 ráno. Majitelé díky tomu ušetří 20+ hodin týdně.",
       "checklist": [
         {
           "id": "leadChatbots",
@@ -398,6 +398,10 @@
             {
               "id": "sourceCode",
               "label": "Zdrojový kód v ceně"
+            },
+            {
+              "id": "carePlan",
+              "label": "+ volitelný Care Plan 990 Kč/měsíc"
             }
           ]
         },
@@ -438,6 +442,10 @@
             {
               "id": "priorityDelivery",
               "label": "Prioritní dodání"
+            },
+            {
+              "id": "carePlan",
+              "label": "+ volitelný Care Plan 990 Kč/měsíc"
             }
           ]
         },
@@ -505,7 +513,7 @@
         {
           "id": "q4",
           "q": "Jak fungují platby?",
-          "a": "50 % předem při zahájení, 50 % při finálním dodání. Přijímáme bankovní převod (CZK/EUR) a Wise."
+          "a": "U webových projektů platíte 50 % zálohou při zahájení a 50 % při finálním předání. Měsíční care plány a AI retainerové služby se fakturují měsíčně. Přijímáme bankovní převod (CZK/EUR) a Wise."
         },
         {
           "id": "q5",
@@ -521,17 +529,17 @@
     },
     "ctaBanner": {
       "badge": "První klienti",
-      "titleLine1": "Připraveni vytvořit něco",
-      "titleLine2": "výjimečného?",
-      "description": "Omezené ceny pro první klienty. Rezervujte si bezplatný 30minutový hovor — bez závazků, odpovíme do 24 hodin.",
+      "titleLine1": "10 zakladatelských míst. Sleva 50 %.",
+      "titleLine2": "Jednoduchá dohoda.",
+      "description": "Vy získáte profesionální web a AI automatizaci za poloviční cenu. My získáme vaše upřímné hodnocení a váš úspěšný příběh. To je oboustranná výhra — a končí po 10 klientech. Rezervujte si bezplatný 30minutový hovor, odpovíme do 24 hodin.",
       "ctas": [
         {
           "id": "startProject",
-          "label": "Začněte svůj projekt →"
+          "label": "Zajistit si místo →"
         },
         {
           "id": "bookCall",
-          "label": "Rezervujte si bezplatný hovor"
+          "label": "Zobrazit ceník"
         }
       ],
       "points": [
@@ -789,6 +797,10 @@
           {
             "id": "f6",
             "label": "Zdrojový kód v ceně"
+          },
+          {
+            "id": "f7",
+            "label": "+ volitelný Care Plan 990 Kč/měsíc"
           }
         ]
       },
@@ -829,6 +841,10 @@
           {
             "id": "f7",
             "label": "Prioritní dodání"
+          },
+          {
+            "id": "f8",
+            "label": "+ volitelný Care Plan 990 Kč/měsíc"
           }
         ]
       },
@@ -1019,7 +1035,7 @@
         {
           "id": "paymentPlans",
           "q": "Nabízíte splátkové kalendáře?",
-          "a": "Ano. U projektů nad 20 000 CZK nabízíme rozdělení 50/50 — 50 % předem při zahájení, 50 % při předání. U retainer služeb fakturujeme měsíčně na začátku období."
+          "a": "Ano. U všech webových projektů (od 19 900 Kč) nabízíme rozdělení 50/50 — 50 % záloha při zahájení, 50 % při finálním předání. Měsíční care plány a retainerové služby se fakturují na začátku každého období."
         },
         {
           "id": "currency",
@@ -1054,7 +1070,104 @@
         {
           "id": "growthAiChatbot",
           "q": "Co obsahuje AI chatbot v balíčku Growth?",
-          "a": "Balíček Growth zahrnuje vlastní chatbot na GPT-4 natrénovaný na obsahu vašeho webu, integrovaný do webu, se základními flow pro kvalifikaci leadů. Plné AI automatizace (CRM integrace, komplexní pipeline) se naceňují zvlášť."
+          "a": "Balíček Growth zahrnuje vlastní chatbot na GPT-4 natrénovaný na obsahu vašeho webu, integrovaný do webu, se základními flow pro kvalifikaci leadů. Samostatné AI automatizace jsou k dispozici zvlášť (AI Auto-Reply: 14 900 Kč nastavení + 1 490 Kč/měsíc; AI Automation Pro: 34 900 Kč nastavení + 2 990 Kč/měsíc)."
+        },
+        {
+          "id": "carePlan",
+          "q": "Co je Website Care Plan?",
+          "a": "Care Plan je volitelný doplněk za 990 Kč/měsíc pro Starter a Growth webové projekty. Zahrnuje hosting, bezpečnostní monitoring, aktualizace CMS a až 2 hodiny drobných úprav měsíčně. Zrušit lze kdykoli."
+        }
+      ]
+    },
+    "foundingBanner": {
+      "text": "⚡ Zakladatelská nabídka: první 10 klientů získá 50% slevu na weby a AI automatizaci — zbývá {spotsLeft} míst. Kód: FOUNDING50",
+      "websiteBadge": "50% sleva pro zakladatelské klienty",
+      "aiBadge": "50% sleva pro zakladatelské klienty",
+      "sroBadge": "Ušetřete 5 000 Kč s kódem FOUNDINGSRO"
+    },
+    "companyFormation": {
+      "badge": "Zakládání společností",
+      "title": "Začněte podnikat v České republice",
+      "subtitle": "Kompletní právní záležitosti vyřídíme za vás — česky, anglicky i mongolsky. Žádná byrokracie.",
+      "cards": [
+        {
+          "id": "sroComplete",
+          "name": "S.R.O. komplet",
+          "price": "24,900",
+          "foundingPrice": "19,900",
+          "currency": "CZK",
+          "period": "jednorázově",
+          "desc": "Vše, co potřebujete k legálnímu podnikání v České republice.",
+          "cta": "Začít →",
+          "features": [
+            { "id": "f1", "label": "Kompletní registrace společnosti" },
+            { "id": "f2", "label": "Živnostenské oprávnění" },
+            { "id": "f3", "label": "Poradenství k otevření bankovního účtu" },
+            { "id": "f4", "label": "Sídlo společnosti v ceně (1 rok)" },
+            { "id": "f5", "label": "Společenská smlouva" },
+            { "id": "f6", "label": "Podpora při registraci k DPH" },
+            { "id": "f7", "label": "Poradenství v AJ, ČJ a MN" }
+          ]
+        },
+        {
+          "id": "registeredAddress",
+          "name": "Sídlo společnosti",
+          "price": "4,900",
+          "currency": "CZK",
+          "period": "ročně",
+          "desc": "Legální registrovaná adresa sídla v naší pražské kanceláři — ze zákona povinná pro každou s.r.o.",
+          "cta": "Přidat k objednávce →",
+          "features": [
+            { "id": "f1", "label": "Pražská adresa — Vinohrady" },
+            { "id": "f2", "label": "Přeposílání pošty v ceně" },
+            { "id": "f3", "label": "Vyžadováno při registraci s.r.o." },
+            { "id": "f4", "label": "Roční obnova" }
+          ]
+        }
+      ]
+    },
+    "aiAutomation": {
+      "badge": "AI automatizace",
+      "title": "Pusťte svůj byznys na autopilota",
+      "subtitle": "Automatizaci budujeme, hostujeme, monitorujeme a vylepšujeme. Měsíční péči lze kdykoli zrušit.",
+      "careNote": "Nastavení + měsíční péče: hostujeme, monitorujeme a průběžně vylepšujeme vaši automatizaci. Měsíční péči lze kdykoli zrušit.",
+      "cards": [
+        {
+          "id": "aiAutoReply",
+          "name": "AI Auto-Reply",
+          "subtitle": "Facebook Messenger",
+          "setupPrice": "14,900",
+          "monthlyPrice": "1,490",
+          "foundingSetupPrice": "7,450",
+          "currency": "CZK",
+          "desc": "Okamžité AI odpovědi na každou zprávu na Facebooku — nepřetržitě, 24/7. Žádná zmeškaná poptávka.",
+          "cta": "Začít →",
+          "features": [
+            { "id": "f1", "label": "Integrace Facebook Messenger" },
+            { "id": "f2", "label": "AI okamžité odpovědi" },
+            { "id": "f3", "label": "Zachycení a kvalifikace leadů" },
+            { "id": "f4", "label": "Flow pro rezervace a schůzky" },
+            { "id": "f5", "label": "Měsíční monitoring a vylepšování" }
+          ]
+        },
+        {
+          "id": "aiAutomationPro",
+          "name": "AI Automation Pro",
+          "subtitle": "Kompletní workflow automatizace",
+          "setupPrice": "34,900",
+          "monthlyPrice": "2,990",
+          "foundingSetupPrice": "17,450",
+          "currency": "CZK",
+          "desc": "End-to-end automatizace celého vašeho byznysu — CRM, emaily, follow-upy, reporty a další.",
+          "cta": "Začít →",
+          "features": [
+            { "id": "f1", "label": "Vlastní n8n / Make workflow" },
+            { "id": "f2", "label": "CRM integrace a obohacování dat" },
+            { "id": "f3", "label": "Automatizace e-mailů a notifikací" },
+            { "id": "f4", "label": "AI týdenní reporty" },
+            { "id": "f5", "label": "Více kanálů (web, WhatsApp, email)" },
+            { "id": "f6", "label": "Měsíční monitoring a vylepšování" }
+          ]
         }
       ]
     },

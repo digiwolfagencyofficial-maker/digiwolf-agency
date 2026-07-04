@@ -7,6 +7,7 @@ import { Globe, Scale, Bot, Shield, Check, Inbox, Zap, User, Sparkles, Languages
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FaqAccordion from '@/components/ui/FaqAccordion'
+import { FOUNDING_OFFER_ACTIVE, FOUNDING_SPOTS_LEFT, FOUNDING_PRICES } from '@/config/founding-offer'
 
 const IconWrapper = ({ children }: { children: React.ReactNode }) => (
   <div style={{ background: 'rgba(0,71,255,0.12)', borderRadius: '10px', padding: '10px', display: 'inline-flex' }}>
@@ -75,8 +76,8 @@ const AI_FLOW_ICONS: Record<string, React.ReactNode> = {
 }
 
 const CTA_HREFS: Record<string, string> = {
-  startProject: '/contact',
-  bookCall: '/book',
+  startProject: '/book',
+  bookCall: '/pricing',
 }
 
 export default function HomePageClient() {
@@ -157,6 +158,25 @@ export default function HomePageClient() {
   return (
     <>
       <Navbar />
+
+      {/* Founding offer banner */}
+      {FOUNDING_OFFER_ACTIVE && (
+        <div style={{
+          background: 'linear-gradient(135deg, rgba(255,140,0,0.12), rgba(0,71,255,0.12))',
+          borderBottom: '1px solid rgba(255,180,0,0.2)',
+          padding: '12px 24px',
+          textAlign: 'center',
+          position: 'relative',
+          zIndex: 50,
+        }}>
+          <p style={{ margin: 0, fontSize: 14, fontWeight: 600, color: '#ffc340', lineHeight: 1.5 }}>
+            ⚡ {t('badge')} — {FOUNDING_SPOTS_LEFT} spots left.{' '}
+            <Link href="/pricing" style={{ color: '#ffc340', textDecoration: 'underline', textUnderlineOffset: 3 }}>
+              See pricing →
+            </Link>
+          </p>
+        </div>
+      )}
 
       <main style={{ background: '#030712', minHeight: '100vh', overflow: 'hidden' }}>
 
@@ -646,53 +666,88 @@ export default function HomePageClient() {
             </div>
 
             <div className="stagger pricing-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
-              {pricingPlans.map((plan) => (
-                <div key={plan.id} style={{
-                  background: plan.featured ? 'linear-gradient(135deg, rgba(0,71,255,0.15), rgba(61,116,255,0.06))' : 'rgba(255,255,255,0.03)',
-                  border: plan.featured ? '1px solid rgba(0,71,255,0.4)' : '1px solid rgba(255,255,255,0.07)',
-                  borderRadius: 24, padding: 40, position: 'relative', overflow: 'hidden',
-                  boxShadow: plan.featured ? '0 0 60px rgba(0,71,255,0.15)' : 'none',
-                  transition: 'all 0.3s',
-                  transform: plan.featured ? 'scale(1.03)' : 'none',
-                }}
-                  onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = plan.featured ? 'scale(1.05) translateY(-4px)' : 'translateY(-4px)'; }}
-                  onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = plan.featured ? 'scale(1.03)' : 'none'; }}
-                >
-                  {plan.featured && plan.badge && (
-                    <div style={{ position: 'absolute', top: 20, right: 20, background: '#0047FF', color: '#fff', fontSize: 10, fontWeight: 800, padding: '4px 12px', borderRadius: 100, letterSpacing: '0.08em', textTransform: 'uppercase' as const }}>{plan.badge}</div>
-                  )}
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: plan.featured ? 'linear-gradient(90deg, transparent, #0047FF, transparent)' : 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)' }} />
+              {pricingPlans.map((plan) => {
+                const foundingKey = plan.id === 'starter' ? 'starter' : plan.id === 'growth' ? 'growth' : null
+                const foundingData = foundingKey ? FOUNDING_PRICES[foundingKey] : null
 
-                  <h3 style={{ fontSize: 18, fontWeight: 800, color: '#f0f4ff', marginBottom: 8 }}>{plan.name}</h3>
-                  <div style={{ marginBottom: 16 }}>
-                    <span style={{ fontSize: plan.price === 'Custom' ? 36 : 40, fontWeight: 900, color: '#f0f4ff', letterSpacing: '-0.03em' }}>{plan.price === 'Custom' ? '' : plan.price}</span>
-                    {plan.price === 'Custom' ? <span style={{ fontSize: 36, fontWeight: 900, color: '#f0f4ff' }}>{plan.price}</span> : null}
-                    {plan.currency && <span style={{ fontSize: 16, color: '#8892b0', marginLeft: 6 }}>{plan.currency}</span>}
-                  </div>
-                  <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.6, marginBottom: 28 }}>{plan.desc}</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
-                    {plan.features.map((f) => (
-                      <div key={f.id} style={{ display: 'flex', alignItems: 'center', gap: 10, color: '#c8d3f0', fontSize: 14 }}>
-                        <Check size={14} color={plan.featured ? '#3d74ff' : '#8892b0'} /> {f.label}
-                      </div>
-                    ))}
-                  </div>
-                  <Link href="/contact" style={{
-                    display: 'block', textAlign: 'center', textDecoration: 'none',
-                    padding: '14px', borderRadius: 12, fontWeight: 700, fontSize: 15,
-                    background: plan.featured ? '#0047FF' : 'transparent',
-                    color: plan.featured ? '#fff' : '#f0f4ff',
-                    border: plan.featured ? 'none' : '1px solid rgba(255,255,255,0.15)',
-                    boxShadow: plan.featured ? '0 8px 30px rgba(0,71,255,0.4)' : 'none',
-                    transition: 'all 0.2s',
+                return (
+                  <div key={plan.id} style={{
+                    background: plan.featured ? 'linear-gradient(135deg, rgba(0,71,255,0.15), rgba(61,116,255,0.06))' : 'rgba(255,255,255,0.03)',
+                    border: plan.featured ? '1px solid rgba(0,71,255,0.4)' : '1px solid rgba(255,255,255,0.07)',
+                    borderRadius: 24, padding: 40, position: 'relative', overflow: 'hidden',
+                    boxShadow: plan.featured ? '0 0 60px rgba(0,71,255,0.15)' : 'none',
+                    transition: 'all 0.3s',
+                    transform: plan.featured ? 'scale(1.03)' : 'none',
                   }}
-                    onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.opacity = '0.85'; el.style.transform = 'translateY(-1px)'; }}
-                    onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.opacity = '1'; el.style.transform = 'none'; }}
+                    onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.transform = plan.featured ? 'scale(1.05) translateY(-4px)' : 'translateY(-4px)'; }}
+                    onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.transform = plan.featured ? 'scale(1.03)' : 'none'; }}
                   >
-                    {plan.cta} →
-                  </Link>
-                </div>
-              ))}
+                    {plan.featured && plan.badge && (
+                      <div style={{ position: 'absolute', top: 20, right: 20, background: '#0047FF', color: '#fff', fontSize: 10, fontWeight: 800, padding: '4px 12px', borderRadius: 100, letterSpacing: '0.08em', textTransform: 'uppercase' as const }}>{plan.badge}</div>
+                    )}
+                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: plan.featured ? 'linear-gradient(90deg, transparent, #0047FF, transparent)' : 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)' }} />
+
+                    <h3 style={{ fontSize: 18, fontWeight: 800, color: '#f0f4ff', marginBottom: 8 }}>{plan.name}</h3>
+                    <div style={{ marginBottom: FOUNDING_OFFER_ACTIVE && foundingData ? 6 : 16 }}>
+                      {plan.price === 'Custom' ? (
+                        <span style={{ fontSize: 36, fontWeight: 900, color: '#f0f4ff' }}>{plan.price}</span>
+                      ) : FOUNDING_OFFER_ACTIVE && foundingData ? (
+                        <div>
+                          <span style={{ fontSize: 32, fontWeight: 900, color: '#ffc340', letterSpacing: '-0.03em' }}>{foundingData.discounted}</span>
+                          <span style={{ fontSize: 14, color: '#8892b0', marginLeft: 5 }}>{plan.currency}</span>
+                          <span style={{ fontSize: 12, color: '#5a6478', textDecoration: 'line-through', marginLeft: 8 }}>{foundingData.normal} {plan.currency}</span>
+                        </div>
+                      ) : (
+                        <>
+                          <span style={{ fontSize: 40, fontWeight: 900, color: '#f0f4ff', letterSpacing: '-0.03em' }}>{plan.price}</span>
+                          {plan.currency && <span style={{ fontSize: 16, color: '#8892b0', marginLeft: 6 }}>{plan.currency}</span>}
+                        </>
+                      )}
+                    </div>
+                    {FOUNDING_OFFER_ACTIVE && foundingData && (
+                      <div style={{ marginBottom: 12 }}>
+                        <span style={{
+                          display: 'inline-flex', alignItems: 'center', gap: 5,
+                          background: 'linear-gradient(135deg, rgba(255,180,0,0.15), rgba(255,120,0,0.1))',
+                          border: '1px solid rgba(255,180,0,0.35)',
+                          borderRadius: 100, padding: '4px 10px',
+                          fontSize: 10, fontWeight: 700, color: '#ffc340',
+                        }}>
+                          <Zap size={9} fill="#ffc340" />
+                          50% off — founding clients
+                        </span>
+                      </div>
+                    )}
+                    <p style={{ color: '#8892b0', fontSize: 14, lineHeight: 1.6, marginBottom: 28 }}>{plan.desc}</p>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 32 }}>
+                      {plan.features.map((f) => (
+                        <div key={f.id} style={{
+                          display: 'flex', alignItems: 'center', gap: 10,
+                          color: f.id === 'carePlan' ? '#8892b0' : '#c8d3f0',
+                          fontSize: 14,
+                          fontStyle: f.id === 'carePlan' ? 'italic' : 'normal',
+                        }}>
+                          <Check size={14} color={f.id === 'carePlan' ? '#4a5568' : plan.featured ? '#3d74ff' : '#8892b0'} /> {f.label}
+                        </div>
+                      ))}
+                    </div>
+                    <Link href={plan.id === 'enterprise' ? '/contact' : '/book'} style={{
+                      display: 'block', textAlign: 'center', textDecoration: 'none',
+                      padding: '14px', borderRadius: 12, fontWeight: 700, fontSize: 15,
+                      background: plan.featured ? '#0047FF' : 'transparent',
+                      color: plan.featured ? '#fff' : '#f0f4ff',
+                      border: plan.featured ? 'none' : '1px solid rgba(255,255,255,0.15)',
+                      boxShadow: plan.featured ? '0 8px 30px rgba(0,71,255,0.4)' : 'none',
+                      transition: 'all 0.2s',
+                    }}
+                      onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.opacity = '0.85'; el.style.transform = 'translateY(-1px)'; }}
+                      onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.opacity = '1'; el.style.transform = 'none'; }}
+                    >
+                      {plan.cta} →
+                    </Link>
+                  </div>
+                )
+              })}
             </div>
 
             <div className="fade-up" style={{ textAlign: 'center', marginTop: 32 }}>

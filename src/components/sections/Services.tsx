@@ -7,7 +7,7 @@ const services = [
     icon: '🌐',
     title: 'Agency Websites',
     desc: 'Pixel-perfect, fast, and conversion-focused marketing sites built with modern tech. Custom design, CMS, SEO-ready — launched in days, not months.',
-    price: 'from 15,000 CZK',
+    price: 'from 19,900 CZK',
     delay: '',
   },
   {
@@ -28,14 +28,14 @@ const services = [
     icon: '🏢',
     title: 'Czech S.R.O. Formation',
     desc: 'We set up your Czech S.R.O. company from end to end — registration, legal documents, bank account guidance, and a business website. All in English.',
-    price: 'from 25,000 CZK',
+    price: 'from 24,900 CZK',
     delay: 'fade-in-delay-1',
   },
   {
     icon: '🤖',
     title: 'AI Automation',
     desc: 'Eliminate repetitive work with intelligent workflows. AI-powered chatbots, lead capture automations, CRM integrations, and custom AI agents built for your business.',
-    price: 'from 20,000 CZK',
+    price: 'from 14,900 CZK',
     delay: 'fade-in-delay-2',
   },
   {

@@ -21,7 +21,7 @@
   },
   "footer": {
     "brandAlt": "Digi Wolf Agency logo",
-    "tagline": "Prague-based agency for websites, AI automation, and Czech company formation.",
+    "tagline": "Prague-based agency for websites, AI automation, and Czech company formation — in English, Czech, and Mongolian.",
     "copyright": "© {year} Digi Wolf Agency s.r.o., IČO 243 44 648. All rights reserved.",
     "social": {
       "facebook": "Facebook"
@@ -103,21 +103,21 @@
     ]
   },
   "home": {
-    "badge": "Available for new projects",
+    "badge": "⚡ First 10 clients: 50% off",
     "hero": {
       "title": {
-        "line1": "Start Your Own Business in Czechia",
-        "line2": "No Czech Required"
+        "line1": "Websites That Win Customers.",
+        "line2": "AI That Never Sleeps."
       },
-      "subtitle": "We register your Czech company, build your website, and automate your customer replies — in English, Czech, or Mongolian. You run the business. We handle the rest.",
+      "subtitle": "We build professional websites and AI automation for small businesses — your customers get instant replies, bookings, and follow-ups 24/7, even while you work. Starting from zero? We'll register your Czech company too. All in English, Czech, or Mongolian.",
       "ctas": [
         {
           "id": "startProject",
-          "label": "Start Your Business →"
+          "label": "Claim a Founding Spot →"
         },
         {
           "id": "bookCall",
-          "label": "Book a Free Call"
+          "label": "See Pricing"
         }
       ],
       "floatingBadges": [
@@ -140,43 +140,43 @@
     },
     "stats": [
       {
-        "id": "noLanguageBarrier",
-        "headline": "No Czech needed",
-        "detail": "Everything explained in your language."
+        "id": "fixedPrices",
+        "headline": "Fixed prices",
+        "detail": "The price we quote is the price you pay."
       },
       {
-        "id": "companyAndWebsite",
-        "headline": "Company + website, together",
-        "detail": "One partner instead of five vendors."
+        "id": "ownEverything",
+        "headline": "You own everything",
+        "detail": "Full source code and accounts in your name."
       },
       {
-        "id": "guidedEndToEnd",
-        "headline": "Guided start to finish",
-        "detail": "You're never lost or alone."
+        "id": "moneyBack",
+        "headline": "14-day money-back",
+        "detail": "Not happy? You get your money back."
       },
       {
         "id": "founderLed",
         "headline": "Founder-led",
-        "detail": "You work directly with the builder. No handoffs."
+        "detail": "You talk directly to the person building it."
       }
     ],
     "servicesSection": {
       "badge": "What We Do",
       "titleLine1": "Three Ways We Help",
       "titleLine2": "You Grow Online",
-      "description": "Websites, AI automation, and Czech company formation. Nothing you don't need.",
+      "description": "Three services. One goal: your business grows while AI handles the busywork.",
       "cards": [
         {
           "id": "agencyWebsites",
           "title": "Complete Website Development",
-          "desc": "A fast, modern website that makes your business look professional — and turns visitors into customers.",
+          "desc": "A fast, modern website that makes your business look professional — and turns visitors into paying customers.",
           "tag": "Most Popular",
           "price": "from 19,900 CZK"
         },
         {
           "id": "aiAutomation",
           "title": "AI Automation",
-          "desc": "Instant replies, bookings, and follow-ups that run 24/7 — so you never lose a lead while you work.",
+          "desc": "Never miss a customer again. Instant replies, bookings, and follow-ups on autopilot — 24/7.",
           "tag": "",
           "price": "from 14,900 CZK"
         },
@@ -232,7 +232,7 @@
       "badge": "Our Work",
       "titleLine1": "This Site Is",
       "titleLine2": "Our Proof",
-      "description": "This website is our portfolio. You're browsing a live production build — everything here, we can build for you.",
+      "description": "This website is our portfolio. You're browsing a live production build — everything you see here, we can build for you.",
       "cta": "Explore Services →",
       "showcase": {
         "title": "digiwolf.agency",
@@ -298,7 +298,7 @@
       "badge": "Founding Clients",
       "titleLine1": "Built for Entrepreneurs",
       "titleLine2": "Across Czech Republic, Slovakia & Mongolia",
-      "description": "For founders and small businesses that need a serious digital presence — without agency overhead.",
+      "description": "For founders and small businesses that want a serious digital presence — without agency overhead.",
       "items": [
         {
           "id": "founderAttention",
@@ -308,7 +308,7 @@
         {
           "id": "foundingRates",
           "title": "Founding-client rates",
-          "desc": "Early partners get priority pricing."
+          "desc": "The first 10 clients get 50% off — and priority treatment forever."
         },
         {
           "id": "trilingualSupport",
@@ -319,8 +319,8 @@
     },
     "aiSection": {
       "badge": "AI-Powered",
-      "title": "Automate Your Business with Custom AI",
-      "description": "Chatbots and workflows that answer customers, qualify leads, and handle paperwork — saving you 20+ hours a week.",
+      "title": "Don't Get Left Behind in the AI Era",
+      "description": "AI is changing how business works — fast. Your competitors will automate; the only question is whether you do it first. We make it simple: your Facebook messages answered instantly, leads captured, bookings confirmed — even at 2 AM. Owners save 20+ hours a week.",
       "checklist": [
         {
           "id": "leadChatbots",
@@ -398,6 +398,10 @@
             {
               "id": "sourceCode",
               "label": "Source code included"
+            },
+            {
+              "id": "carePlan",
+              "label": "+ optional Care Plan 990 CZK/month"
             }
           ]
         },
@@ -438,6 +442,10 @@
             {
               "id": "priorityDelivery",
               "label": "Priority delivery"
+            },
+            {
+              "id": "carePlan",
+              "label": "+ optional Care Plan 990 CZK/month"
             }
           ]
         },
@@ -505,7 +513,7 @@
         {
           "id": "q4",
           "q": "What's your payment structure?",
-          "a": "50% upfront to begin, 50% on final delivery. We accept bank transfer (CZK/EUR) and Wise."
+          "a": "For websites, it's 50% deposit to begin and 50% on final delivery. Monthly care plans and AI retainers are billed monthly. We accept bank transfer (CZK/EUR) and Wise."
         },
         {
           "id": "q5",
@@ -521,17 +529,17 @@
     },
     "ctaBanner": {
       "badge": "Founding Clients",
-      "titleLine1": "Ready to Build Something",
-      "titleLine2": "Extraordinary?",
-      "description": "Limited founding-client rates. Book a free 30-minute call — no commitment, reply within 24 hours.",
+      "titleLine1": "10 Founding Spots. 50% Off.",
+      "titleLine2": "A Simple Deal.",
+      "description": "You get a professional website and AI automation at half price. We get your honest testimonial and your success story. That's the win-win — and it ends after 10 clients. Book a free 30-minute call; we reply within 24 hours.",
       "ctas": [
         {
           "id": "startProject",
-          "label": "Start Your Project →"
+          "label": "Claim a Founding Spot →"
         },
         {
           "id": "bookCall",
-          "label": "Book a Free Call"
+          "label": "See Pricing"
         }
       ],
       "points": [
@@ -870,6 +878,10 @@
           {
             "id": "f6",
             "label": "Source code included"
+          },
+          {
+            "id": "f7",
+            "label": "+ optional Care Plan 990 CZK/month"
           }
         ]
       },
@@ -910,6 +922,10 @@
           {
             "id": "f7",
             "label": "Priority delivery"
+          },
+          {
+            "id": "f8",
+            "label": "+ optional Care Plan 990 CZK/month"
           }
         ]
       },
@@ -1100,7 +1116,7 @@
         {
           "id": "paymentPlans",
           "q": "Do you offer payment plans?",
-          "a": "Yes. For projects over 20,000 CZK, we offer a 50/50 split — 50% upfront to begin work, and 50% on delivery. For retainer services, you're billed monthly at the start of each period."
+          "a": "Yes. For all website projects (starting at 19,900 CZK), we offer a 50/50 split — 50% deposit to begin work, and 50% on final delivery. For monthly care plans and retainer services, you're billed at the start of each period."
         },
         {
           "id": "currency",
@@ -1135,7 +1151,104 @@
         {
           "id": "growthAiChatbot",
           "q": "What's included in the AI chatbot for the Growth plan?",
-          "a": "The Growth plan includes a custom GPT-4 powered chatbot trained on your website content, integrated into your site, with basic lead qualification flows. Full AI automation systems (CRM integration, complex pipelines) are priced separately."
+          "a": "The Growth plan includes a custom GPT-4 powered chatbot trained on your website content, integrated into your site, with basic lead qualification flows. Standalone AI automation packages (AI Auto-Reply: 14,900 CZK setup + 1,490 CZK/month; AI Automation Pro: 34,900 CZK setup + 2,990 CZK/month) are available separately."
+        },
+        {
+          "id": "carePlan",
+          "q": "What is the Website Care Plan?",
+          "a": "The Care Plan is an optional 990 CZK/month add-on available for Starter and Growth website projects. It covers hosting, security monitoring, CMS updates, and up to 2 hours of small changes per month. Cancel anytime."
+        }
+      ]
+    },
+    "foundingBanner": {
+      "text": "⚡ Founding offer: first 10 clients get 50% off websites & AI automation — {spotsLeft} spots left. Code: FOUNDING50",
+      "websiteBadge": "50% off for founding clients",
+      "aiBadge": "50% off for founding clients",
+      "sroBadge": "Save 5,000 CZK with code FOUNDINGSRO"
+    },
+    "companyFormation": {
+      "badge": "Company Formation",
+      "title": "Start Your Business in the Czech Republic",
+      "subtitle": "Full legal setup handled end-to-end — in English, Czech, and Mongolian. No bureaucracy headaches.",
+      "cards": [
+        {
+          "id": "sroComplete",
+          "name": "S.R.O. Complete",
+          "price": "24,900",
+          "foundingPrice": "19,900",
+          "currency": "CZK",
+          "period": "one-time",
+          "desc": "Everything you need to legally operate a business in the Czech Republic.",
+          "cta": "Get Started →",
+          "features": [
+            { "id": "f1", "label": "Full company registration" },
+            { "id": "f2", "label": "Trade license (živnostenský list)" },
+            { "id": "f3", "label": "Bank account opening guidance" },
+            { "id": "f4", "label": "Registered address included (1 year)" },
+            { "id": "f5", "label": "Memorandum of Association" },
+            { "id": "f6", "label": "VAT registration support" },
+            { "id": "f7", "label": "Guidance in EN, CZ & MN" }
+          ]
+        },
+        {
+          "id": "registeredAddress",
+          "name": "Registered Company Address",
+          "price": "4,900",
+          "currency": "CZK",
+          "period": "per year",
+          "desc": "A legal registered office address at our Prague location — required by law for every Czech company.",
+          "cta": "Add to Order →",
+          "features": [
+            { "id": "f1", "label": "Prague Vinohrady address" },
+            { "id": "f2", "label": "Mail forwarding included" },
+            { "id": "f3", "label": "Required for S.R.O. registration" },
+            { "id": "f4", "label": "Annual renewal" }
+          ]
+        }
+      ]
+    },
+    "aiAutomation": {
+      "badge": "AI Automation",
+      "title": "Put Your Business on Autopilot",
+      "subtitle": "We build, host, monitor, and improve your automation. Cancel monthly care anytime.",
+      "careNote": "Setup + monthly care: we host, monitor, and improve your automation. Cancel monthly care anytime.",
+      "cards": [
+        {
+          "id": "aiAutoReply",
+          "name": "AI Auto-Reply",
+          "subtitle": "Facebook Messenger",
+          "setupPrice": "14,900",
+          "monthlyPrice": "1,490",
+          "foundingSetupPrice": "7,450",
+          "currency": "CZK",
+          "desc": "Instant AI replies to every Facebook Messenger message — 24/7. Never miss a customer enquiry again.",
+          "cta": "Get Started →",
+          "features": [
+            { "id": "f1", "label": "Facebook Messenger integration" },
+            { "id": "f2", "label": "AI-powered instant replies" },
+            { "id": "f3", "label": "Lead capture & qualification" },
+            { "id": "f4", "label": "Booking & appointment flows" },
+            { "id": "f5", "label": "Monthly monitoring & improvements" }
+          ]
+        },
+        {
+          "id": "aiAutomationPro",
+          "name": "AI Automation Pro",
+          "subtitle": "Full workflow automation",
+          "setupPrice": "34,900",
+          "monthlyPrice": "2,990",
+          "foundingSetupPrice": "17,450",
+          "currency": "CZK",
+          "desc": "End-to-end automation across your whole business — CRM, emails, follow-ups, reporting, and more.",
+          "cta": "Get Started →",
+          "features": [
+            { "id": "f1", "label": "Custom n8n / Make workflows" },
+            { "id": "f2", "label": "CRM integration & enrichment" },
+            { "id": "f3", "label": "Email & notification automation" },
+            { "id": "f4", "label": "AI-generated weekly reports" },
+            { "id": "f5", "label": "Multi-channel (web, WhatsApp, email)" },
+            { "id": "f6", "label": "Monthly monitoring & improvements" }
+          ]
         }
       ]
     },
