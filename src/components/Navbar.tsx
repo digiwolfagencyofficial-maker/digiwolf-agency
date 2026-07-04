@@ -5,11 +5,12 @@ import NextLink from 'next/link'
 import { Link, usePathname } from '@/i18n/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import Logo from '@/components/Logo'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Zap } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import { useClientProfile } from '@/hooks/useClientProfile'
 import { postLoginRedirect } from '@/lib/auth-utils'
+import { FOUNDING_OFFER_ACTIVE, FOUNDING_SPOTS_LEFT } from '@/config/founding-offer'
 
 const navLinkKeys = [
   { key: 'home', href: '/' },
@@ -54,19 +55,37 @@ export default function Navbar() {
     <>
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-        padding: '0 24px',
         transition: 'all 0.3s ease',
         ...(scrolled ? {
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
-          background: 'rgba(3,7,18,0.92)',
+          background: 'rgba(3,7,18,0.95)',
           borderBottom: '1px solid rgba(255,255,255,0.07)',
           boxShadow: '0 4px 30px rgba(0,0,0,0.3)',
         } : {
           background: 'transparent',
         })
       }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+
+        {/* Announcement banner — part of the unified header block */}
+        {FOUNDING_OFFER_ACTIVE && (
+          <div style={{
+            background: 'linear-gradient(90deg, rgba(255,140,0,0.14) 0%, rgba(0,71,255,0.14) 100%)',
+            borderBottom: '1px solid rgba(255,180,0,0.18)',
+            padding: '8px 24px',
+            textAlign: 'center',
+          }}>
+            <p style={{ margin: 0, fontSize: 13, fontWeight: 600, color: '#ffc340', lineHeight: 1.4, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+              <Zap size={12} fill="#ffc340" style={{ flexShrink: 0 }} />
+              First {FOUNDING_SPOTS_LEFT} clients get 50% off websites &amp; AI — code <strong style={{ letterSpacing: '0.04em' }}>FOUNDING50</strong>
+              <Link href="/pricing" style={{ color: '#ffc340', textDecoration: 'none', marginLeft: 8, opacity: 0.8, borderBottom: '1px solid rgba(255,195,64,0.4)', paddingBottom: 1, whiteSpace: 'nowrap' }}>
+                See pricing →
+              </Link>
+            </p>
+          </div>
+        )}
+
+        <div style={{ maxWidth: 1280, margin: '0 auto', height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px' }}>
           {/* Logo */}
           <Logo variant="full" priority className="nav-logo-full" />
           <Logo variant="mark" priority className="nav-logo-mark" />

@@ -7,7 +7,7 @@ import { Globe, Scale, Bot, Shield, Check, Inbox, Zap, User, Sparkles, Languages
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FaqAccordion from '@/components/ui/FaqAccordion'
-import { FOUNDING_OFFER_ACTIVE, FOUNDING_SPOTS_LEFT, FOUNDING_PRICES } from '@/config/founding-offer'
+import { FOUNDING_OFFER_ACTIVE, FOUNDING_PRICES } from '@/config/founding-offer'
 
 const IconWrapper = ({ children }: { children: React.ReactNode }) => (
   <div style={{ background: 'rgba(0,71,255,0.12)', borderRadius: '10px', padding: '10px', display: 'inline-flex' }}>
@@ -159,29 +159,10 @@ export default function HomePageClient() {
     <>
       <Navbar />
 
-      {/* Founding offer banner */}
-      {FOUNDING_OFFER_ACTIVE && (
-        <div style={{
-          background: 'linear-gradient(135deg, rgba(255,140,0,0.12), rgba(0,71,255,0.12))',
-          borderBottom: '1px solid rgba(255,180,0,0.2)',
-          padding: '12px 24px',
-          textAlign: 'center',
-          position: 'relative',
-          zIndex: 50,
-        }}>
-          <p style={{ margin: 0, fontSize: 14, fontWeight: 600, color: '#ffc340', lineHeight: 1.5 }}>
-            ⚡ {t('badge')} — {FOUNDING_SPOTS_LEFT} spots left.{' '}
-            <Link href="/pricing" style={{ color: '#ffc340', textDecoration: 'underline', textUnderlineOffset: 3 }}>
-              See pricing →
-            </Link>
-          </p>
-        </div>
-      )}
-
       <main style={{ background: '#030712', minHeight: '100vh', overflow: 'hidden' }}>
 
         {/* ============ HERO ============ */}
-        <section ref={heroRef} style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: 80 }}>
+        <section ref={heroRef} style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: FOUNDING_OFFER_ACTIVE ? 116 : 80 }}>
           <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,71,255,0.12) 0%, transparent 60%)' }} />
           <div className="orb orb-1" style={{ position: 'absolute' }} />
           <div className="orb orb-2" style={{ position: 'absolute' }} />
