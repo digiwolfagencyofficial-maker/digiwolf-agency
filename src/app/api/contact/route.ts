@@ -95,9 +95,10 @@ export async function POST(request: NextRequest) {
       console.error('Telegram notification failed:', err)
     }
 
-    // Fire-and-forget: never let a webhook failure affect the response the
-    // visitor sees — the lead is already saved above.
-    sendLeadToN8n({
+    // Awaited so the webhook POST completes before this serverless function's
+    // execution is frozen — sendLeadToN8n() already catches its own errors,
+    // so a webhook failure still can't affect the response below.
+    await sendLeadToN8n({
       name,
       email,
       phone: '',
@@ -105,7 +106,7 @@ export async function POST(request: NextRequest) {
       service: mapServiceToN8nLead(service),
       lang,
       source: 'contact-form',
-    }).catch((err) => console.error('[contact] n8n lead intake webhook failed:', err))
+    })
 
     return NextResponse.json({
       success: true,
