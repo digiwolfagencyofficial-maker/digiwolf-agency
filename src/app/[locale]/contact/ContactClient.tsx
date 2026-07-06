@@ -2,13 +2,14 @@
 
 import { useMemo, useState } from 'react'
 import { Link } from '@/i18n/navigation'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { z } from 'zod'
 import { Mail, Phone, MapPin, Zap, Check, Calendar } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { formatContactFieldErrors } from '@/lib/contact-options'
 import { COMPANY, companyFullAddress } from '@/lib/company'
+import { localeLabels, type Locale } from '@/i18n/routing'
 
 type ContactOption = { id: string; value: string }
 type ContactInfoItem = { id: string; label: string; value: string }
@@ -68,6 +69,7 @@ function contactValue(id: string): string {
 export default function ContactPage() {
   const t = useTranslations('contact')
   const tv = useTranslations('contact.validation')
+  const locale = useLocale() as Locale
 
   const [form, setForm] = useState({
     name: '',
@@ -139,6 +141,9 @@ export default function ContactPage() {
       service: SERVICE_API_VALUES[parsed.data.service],
       budget: BUDGET_API_VALUES[parsed.data.budget],
       message: parsed.data.message,
+      // Metadata for the n8n lead intake webhook — which language version of
+      // the site the form was submitted from.
+      lang: localeLabels[locale] ?? 'EN',
     }
 
     setLoading(true)

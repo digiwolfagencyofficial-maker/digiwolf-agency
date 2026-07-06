@@ -3,11 +3,14 @@ import { contactLeadSchema, formatContactFieldErrors } from '@/lib/contact-optio
 import { sendLeadNotification } from '@/lib/email'
 import { supabaseAdmin, isSupabaseConfigured } from '@/lib/supabase'
 import { sendTelegramNotification } from '@/lib/telegram'
+import { mapLangToN8nLead, mapServiceToN8nLead, sendLeadToN8n } from '@/lib/n8n'
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
     const parsed = contactLeadSchema.safeParse(body)
+    // Not part of the validated lead schema — just metadata for the n8n webhook.
+    const lang = mapLangToN8nLead(typeof body?.lang === 'string' ? body.lang : undefined)
 
     if (!parsed.success) {
       return NextResponse.json(
@@ -91,6 +94,18 @@ export async function POST(request: NextRequest) {
     } catch (err) {
       console.error('Telegram notification failed:', err)
     }
+
+    // Fire-and-forget: never let a webhook failure affect the response the
+    // visitor sees — the lead is already saved above.
+    sendLeadToN8n({
+      name,
+      email,
+      phone: '',
+      message,
+      service: mapServiceToN8nLead(service),
+      lang,
+      source: 'contact-form',
+    }).catch((err) => console.error('[contact] n8n lead intake webhook failed:', err))
 
     return NextResponse.json({
       success: true,
