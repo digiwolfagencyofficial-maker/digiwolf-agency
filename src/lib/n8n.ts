@@ -18,7 +18,7 @@ const SERVICE_TO_N8N: Record<string, N8nLeadService> = {
   'Web Development': 'Website',
   'Czech S.R.O. Formation': 'S.R.O.',
   'AI Automation': 'AI Automation',
-  'Website Maintenance': 'Other',
+  'Website Care Plan': 'Other',
 }
 
 export function mapServiceToN8nLead(service: string | undefined | null): N8nLeadService {

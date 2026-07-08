@@ -4,7 +4,7 @@ export const CONTACT_SERVICES = [
   'Web Development',
   'Czech S.R.O. Formation',
   'AI Automation',
-  'Website Maintenance',
+  'Website Care Plan',
 ] as const
 
 export const CONTACT_BUDGETS = [

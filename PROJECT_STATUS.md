@@ -118,7 +118,22 @@ Migrations live in `supabase/migrations/`. **Live DB is source of truth** for co
 |-------|---------|
 | `profiles` | Extends `auth.users`: full_name, **role**, company, phone, language, timestamps. RLS: own row read/update; admin full access. |
 | `projects` | Client portal rows: `user_id`, `service_id`, `project_status`, pricing/delivery/testimonial columns (006). RLS: `user_id = auth.uid()` for SELECT; admin via `is_admin()`. |
-| `services` | Service catalog (`id`, `name`, `slug`, `active`, …). Used by onboard + client/admin project views. **Not in repo migrations** — exists on live only. |
+| `services` | Service catalog — **8 sellable tiers** (migration 010). Columns: `slug`, `name`, `category`, `setup_price`, `monthly_price`, `founding_price`, `billing_period`, plus `description`, `is_custom_price`, `display_order`, `currency`, `active`. Used by onboard + client/admin project views. |
+
+#### `services` catalog (8 rows — migration 010)
+
+| slug | name | category | setup_price | monthly_price | founding_price | billing_period |
+|------|------|----------|-------------|---------------|----------------|----------------|
+| `website-starter` | Website — Starter | website | 19,900 CZK | — | 9,950 CZK | one_time |
+| `website-growth` | Website — Growth | website | 49,900 CZK | — | 24,950 CZK | one_time |
+| `website-enterprise` | Website — Enterprise | website | custom | — | — | one_time |
+| `website-care-plan` | Website Care Plan | website | — | 990 CZK | — | monthly |
+| `sro-complete` | S.R.O. Complete | company_formation | 24,900 CZK | — | 19,900 CZK | one_time |
+| `registered-address` | Registered Company Address | company_formation | 4,900 CZK | — | — | yearly |
+| `ai-auto-reply` | AI Auto-Reply | ai_automation | 14,900 CZK | 1,490 CZK | 7,450 CZK | monthly |
+| `ai-automation-pro` | AI Automation Pro | ai_automation | 34,900 CZK | 2,990 CZK | 17,450 CZK | monthly |
+
+Replaces the old 3-row catalog (`web-presence`, `company-formation`, `ai-automation` with flat `price`).
 | `leads` | Contact form pipeline. Public insert; admin read. |
 | `bookings` | Cal.com + legacy booking rows. Extended by migration 003 (Cal.com fields). |
 | `invoices` | Billing records (`user_id`, …). RLS hardened in 007; dashboard UI not wired yet. |
@@ -162,8 +177,10 @@ Removed from live — zero rows **and** zero `.from('…')` / `.rpc()` reference
 ### Remaining schema drift (non-critical)
 
 - **`invoices` / `files` in 001:** Migration 001 still defines legacy shapes (`client_id`, `files` table); live uses `invoices.user_id` and `documents`. Do not assume 001 matches live for those tables.
-- **`services`, `chat_*`:** Used in app but not fully captured in repo migrations.
+- **`chat_*`:** Used in app but not fully captured in repo migrations.
 - **`documents`, `messages`, `payments`:** Kept on live for planned features despite zero current app reads/writes.
+- **`leads.service_interest` is a dead column:** Never read or written by any app code — the contact pipeline writes `service` (free text) instead. Known, low-priority gap; not a bug to fix now.
+- **`bookings.service_id` is never populated:** Cal.com bookings only store a free-text service value from Cal.com's own booking form; nothing in the app resolves it to a `services.id` row. Known, low-priority gap; not a bug to fix now.
 
 ---
 
@@ -171,7 +188,9 @@ Removed from live — zero rows **and** zero `.from('…')` / `.rpc()` reference
 
 ### Stripe
 
-**Not integrated.** No Stripe SDK, env vars, or API routes. Mentioned only in marketing copy (`CaseStudies.tsx`, meta descriptions).
+**Not integrated directly in this app.** No Stripe SDK, env vars, or Stripe-facing API routes here. Mentioned only in marketing copy (`CaseStudies.tsx`, meta descriptions).
+
+Payment handling is planned to live in **n8n**: n8n listens for Stripe payment events and, on success, calls `POST /api/internal/onboard-client` (see n8n table above) to run onboarding and log the paid invoice — this app never talks to Stripe directly.
 
 ### Cal.com
 
@@ -195,6 +214,7 @@ Removed from live — zero rows **and** zero `.from('…')` / `.rpc()` reference
 |------------|----------|
 | `POST /api/contact` | `sendLeadToN8n()` → `N8N_LEAD_INTAKE_WEBHOOK_URL` (default `https://automation.digiwolf.agency/webhook/lead-intake`). Payload: name, email, phone, message, service, lang, source. Failures logged only. |
 | `src/lib/n8n.ts` | Mapping helpers only; no inbound n8n routes. |
+| `POST /api/internal/onboard-client` | **New (inbound).** Shared-secret endpoint (`x-internal-secret` header must match `N8N_INTERNAL_SECRET`) that n8n's Stripe-payment workflow (**WF3**) calls instead of writing to Supabase directly. Runs the same onboarding logic as `/api/admin/onboard` (via `src/lib/onboarding.ts`) and optionally logs a paid `invoices` row. See §5 for request/response shape. |
 
 ### Other integrations (not in user list but present)
 
@@ -219,7 +239,8 @@ Removed from live — zero rows **and** zero `.from('…')` / `.rpc()` reference
 | `GET /api/projects` | Session | List caller's projects. |
 | `GET /api/invoices` | Session | List invoices (admin client; dashboard UI doesn't use it). |
 | `GET /api/clients` | Session | List client profiles (legacy/generic). |
-| `GET/POST /api/admin/onboard` | Admin | List services / create client + project + welcome email. |
+| `GET/POST /api/admin/onboard` | Admin | List services / create client + project + welcome email. Core logic lives in `src/lib/onboarding.ts` (`onboardClient()`), shared with the internal automation route below. |
+| `POST /api/internal/onboard-client` | Shared secret (`x-internal-secret` = `N8N_INTERNAL_SECRET`) | **New.** Automation entry point for n8n **WF3** (Stripe payment → client onboarding). Body: `{ email, full_name, service_slug, amount?, currency? }`. Resolves `service_slug` → `services.id`, calls `onboardClient()`, and — if `amount` is provided — inserts a `status: 'paid'` row into `invoices` (`invoice_number`, `amount`, `currency`, `user_id`). Returns `{ success, userId, projectId }`. Replaces any plan where n8n would write directly to Supabase for onboarding. |
 | `GET /api/admin/clients` | Admin | Client list with projects. |
 | `GET /api/admin/leads` | Admin | Contact leads (subset of columns). |
 | `GET /api/admin/bookings` | Admin | All bookings. |
@@ -275,7 +296,8 @@ Removed from live — zero rows **and** zero `.from('…')` / `.rpc()` reference
 |----------|-------------|
 | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` | Supabase |
 | `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `CONTACT_NOTIFY_EMAIL` | Resend |
-| `N8N_LEAD_INTAKE_WEBHOOK_URL` | n8n |
+| `N8N_LEAD_INTAKE_WEBHOOK_URL` | n8n (outbound: lead intake) |
+| `N8N_INTERNAL_SECRET` | n8n (inbound: `POST /api/internal/onboard-client` shared-secret auth, WF3 Stripe → onboarding) |
 | `CALCOM_WEBHOOK_SECRET` | Cal.com webhooks |
 | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REDIRECT_URI`, `GOOGLE_REFRESH_TOKEN` | Google Calendar (legacy booking) |
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Contact notifications |
@@ -292,5 +314,7 @@ Removed from live — zero rows **and** zero `.from('…')` / `.rpc()` reference
 - `supabase/migrations/*.sql` — intended DB shape (compare with `src/types/index.ts` and hooks)
 - `src/app/api/contact/route.ts` — lead pipeline
 - `src/app/api/webhooks/calcom/route.ts` — booking pipeline
-- `src/app/api/admin/onboard/route.ts` — client creation
+- `src/lib/onboarding.ts` — shared `onboardClient()` logic (user, profile, project, invite, welcome email)
+- `src/app/api/admin/onboard/route.ts` — admin-facing client creation (thin wrapper over `onboardClient()`)
+- `src/app/api/internal/onboard-client/route.ts` — n8n/Stripe-facing client creation (thin wrapper over `onboardClient()`)
 - `src/app/[locale]/book/BookClient.tsx` — current booking UX (Cal.com, not wizard)

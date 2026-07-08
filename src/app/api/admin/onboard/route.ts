@@ -1,14 +1,9 @@
 import { NextResponse } from 'next/server'
 import { requireAdminApi } from '@/lib/auth'
-import { sendClientWelcomeEmail } from '@/lib/email'
-import { siteUrl } from '@/lib/site-url'
+import { onboardClient, OnboardingError } from '@/lib/onboarding'
 import { supabaseAdmin, isSupabaseConfigured } from '@/lib/supabase'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-function canonicalSiteUrl() {
-  return siteUrl.replace(/\/$/, '')
-}
 
 export async function GET() {
   const auth = await requireAdminApi()
@@ -76,103 +71,19 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'The selected service is not available.' }, { status: 400 })
   }
 
-  // Step A — create the auth user (no password; client sets it via invite link).
-  const { data: created, error: createError } = await supabaseAdmin.auth.admin.createUser({
-    email,
-    email_confirm: true,
-    user_metadata: { full_name: fullName },
-  })
-
-  if (createError || !created?.user) {
-    const message = createError?.message ?? 'Failed to create user'
-    if (message.toLowerCase().includes('already')) {
-      return NextResponse.json(
-        { error: 'A user with this email already exists.' },
-        { status: 409 }
-      )
-    }
-    console.error('[onboard] createUser failed:', createError)
-    return NextResponse.json({ error: message }, { status: 400 })
-  }
-
-  const userId = created.user.id
-
-  // Step B — ensure profile exists with correct name and role.
-  // handle_new_user() trigger auto-creates a profile on auth.users insert;
-  // upsert avoids duplicate-key errors and sets full_name from our form.
-  const { error: profileError } = await supabaseAdmin.from('profiles').upsert(
-    {
-      id: userId,
-      full_name: fullName,
-      role: 'client',
-    },
-    { onConflict: 'id' }
-  )
-
-  if (profileError) {
-    console.error('[onboard] profile upsert failed:', profileError)
-    await supabaseAdmin.from('profiles').delete().eq('id', userId)
-    await supabaseAdmin.auth.admin.deleteUser(userId)
-    return NextResponse.json({ error: 'Failed to create client profile.' }, { status: 500 })
-  }
-
-  // Step C — insert the project in the Onboarding state.
-  const { data: project, error: projectError } = await supabaseAdmin
-    .from('projects')
-    .insert({
-      user_id: userId,
-      service_id: serviceId,
-      project_status: 'Onboarding',
-    })
-    .select('id')
-    .single()
-
-  if (projectError || !project) {
-    console.error('[onboard] project insert failed:', projectError)
-    await supabaseAdmin.from('profiles').delete().eq('id', userId)
-    await supabaseAdmin.auth.admin.deleteUser(userId)
-    return NextResponse.json({ error: 'Failed to create client project.' }, { status: 500 })
-  }
-
-  // Step D — recovery link; redirect straight to update-password (implicit hash flow).
-  const baseUrl = canonicalSiteUrl()
-  const redirectTo = `${baseUrl}/auth/update-password`
-  const { data: linkData, error: linkError } = await supabaseAdmin.auth.admin.generateLink({
-    type: 'recovery',
-    email,
-    options: { redirectTo },
-  })
-
-  const actionLink = linkData?.properties?.action_link
-
-  if (linkError || !actionLink) {
-    console.error('[onboard] generateLink failed:', linkError, linkData?.properties)
-    await rollback(userId)
-    return NextResponse.json({ error: 'Failed to generate the invite link.' }, { status: 500 })
-  }
-
-  // Step E — send the branded welcome email via Resend.
   try {
-    await sendClientWelcomeEmail({ fullName, email, setPasswordUrl: actionLink })
+    const { userId, projectId } = await onboardClient({ email, fullName, serviceId })
+    return NextResponse.json({
+      success: true,
+      userId,
+      projectId,
+      emailSent: true,
+    })
   } catch (err) {
-    console.error('[onboard] welcome email failed:', err)
-    await rollback(userId)
-    return NextResponse.json(
-      { error: 'Client created but the welcome email could not be sent. Please try again.' },
-      { status: 502 }
-    )
+    if (err instanceof OnboardingError) {
+      return NextResponse.json({ error: err.message }, { status: err.status })
+    }
+    console.error('[onboard] unexpected error:', err)
+    return NextResponse.json({ error: 'Failed to onboard client.' }, { status: 500 })
   }
-
-  return NextResponse.json({
-    success: true,
-    userId,
-    projectId: project.id,
-    emailSent: true,
-  })
-}
-
-async function rollback(userId: string) {
-  await supabaseAdmin.from('projects').delete().eq('user_id', userId)
-  await supabaseAdmin.from('profiles').delete().eq('id', userId)
-  await supabaseAdmin.auth.admin.deleteUser(userId)
 }

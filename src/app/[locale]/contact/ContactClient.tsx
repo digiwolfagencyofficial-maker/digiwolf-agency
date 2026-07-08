@@ -22,7 +22,7 @@ const SERVICE_API_VALUES: Record<string, string> = {
   webDevelopment: 'Web Development',
   sroFormation: 'Czech S.R.O. Formation',
   aiAutomation: 'AI Automation',
-  websiteMaintenance: 'Website Maintenance',
+  websiteMaintenance: 'Website Care Plan',
 }
 
 const BUDGET_API_VALUES: Record<string, string> = {
