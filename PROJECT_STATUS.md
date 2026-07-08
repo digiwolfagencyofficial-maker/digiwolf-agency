@@ -111,6 +111,7 @@ Migrations live in `supabase/migrations/`. **Live DB is source of truth** for co
 | 007 | `007_security_hardening.sql` | RLS rebuild + RPC lockdown — **applied live** |
 | 008 | `008_drop_dead_tables.sql` | Drop 8 unused tables — **applied live** |
 | 009 | `009_fix_projects_rls_policy.sql` | Belt-and-suspenders projects RLS fix (`user_id`); idempotent on live |
+| 010 | `010_services_redesign.sql` | Reshape `services` to 8 sellable tiers — **applied live 2026-07-08** |
 
 ### Live tables (11 — after `008_drop_dead_tables`, applied 2026-07-08)
 
@@ -118,9 +119,9 @@ Migrations live in `supabase/migrations/`. **Live DB is source of truth** for co
 |-------|---------|
 | `profiles` | Extends `auth.users`: full_name, **role**, company, phone, language, timestamps. RLS: own row read/update; admin full access. |
 | `projects` | Client portal rows: `user_id`, `service_id`, `project_status`, pricing/delivery/testimonial columns (006). RLS: `user_id = auth.uid()` for SELECT; admin via `is_admin()`. |
-| `services` | Service catalog — **8 sellable tiers** (migration 010). Columns: `slug`, `name`, `category`, `setup_price`, `monthly_price`, `founding_price`, `billing_period`, plus `description`, `is_custom_price`, `display_order`, `currency`, `active`. Used by onboard + client/admin project views. |
+| `services` | Service catalog — **8 sellable tiers, applied live 2026-07-08** (migration 010). Columns: `id`, `slug`, `name`, `description`, `setup_price`, `monthly_price`, `founding_price`, `billing_period`, `category`, `is_custom_price`, `display_order`, `currency`, `active`, `created_at`. Used by onboard + client/admin project views. |
 
-#### `services` catalog (8 rows — migration 010)
+#### `services` catalog (8 rows — migration 010, verified live 2026-07-08 via direct query post-apply)
 
 | slug | name | category | setup_price | monthly_price | founding_price | billing_period |
 |------|------|----------|-------------|---------------|----------------|----------------|
@@ -133,7 +134,7 @@ Migrations live in `supabase/migrations/`. **Live DB is source of truth** for co
 | `ai-auto-reply` | AI Auto-Reply | ai_automation | 14,900 CZK | 1,490 CZK | 7,450 CZK | monthly |
 | `ai-automation-pro` | AI Automation Pro | ai_automation | 34,900 CZK | 2,990 CZK | 17,450 CZK | monthly |
 
-Replaces the old 3-row catalog (`web-presence`, `company-formation`, `ai-automation` with flat `price`).
+Replaced the old 3-row catalog (`web-presence`, `company-formation`, `ai-automation` with flat `price`). The missing `currency` column was added via `ALTER TABLE ... ADD COLUMN IF NOT EXISTS currency` in the same migration. The one flagged pre-migration-safety-check project (`ai-automation` service, user `bolomj.site@gmail.com` / "UB G") was confirmed by the founder as their own test account before this ran — its `projects.service_id` was cleared (set `NULL`) by the migration along with the other test rows, since the old service IDs no longer exist.
 | `leads` | Contact form pipeline. Public insert; admin read. |
 | `bookings` | Cal.com + legacy booking rows. Extended by migration 003 (Cal.com fields). |
 | `invoices` | Billing records (`user_id`, …). RLS hardened in 007; dashboard UI not wired yet. |
