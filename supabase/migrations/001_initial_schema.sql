@@ -11,18 +11,12 @@ CREATE TABLE IF NOT EXISTS public.profiles (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Projects
+-- Projects (client portal: one row per onboarded user + service)
 CREATE TABLE IF NOT EXISTS public.projects (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  client_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
-  title TEXT NOT NULL,
-  description TEXT,
-  status TEXT DEFAULT 'discovery' CHECK (status IN ('discovery','design','development','review','launched','paused')),
-  start_date DATE,
-  end_date DATE,
-  budget DECIMAL(10,2),
-  currency TEXT DEFAULT 'CZK',
-  progress INTEGER DEFAULT 0 CHECK (progress >= 0 AND progress <= 100),
+  user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
+  service_id UUID,
+  project_status TEXT DEFAULT 'Onboarding',
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
@@ -94,8 +88,8 @@ CREATE POLICY "Users can view own profile" ON public.profiles FOR SELECT USING (
 CREATE POLICY "Users can update own profile" ON public.profiles FOR UPDATE USING (auth.uid() = id);
 CREATE POLICY "Admin full access profiles" ON public.profiles FOR ALL USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
 
--- Projects: clients see their own, admins see all
-CREATE POLICY "Clients view own projects" ON public.projects FOR SELECT USING (client_id = auth.uid());
+-- Projects: users see their own, admins see all
+CREATE POLICY "Users view own projects" ON public.projects FOR SELECT USING (user_id = auth.uid());
 CREATE POLICY "Admin full access projects" ON public.projects FOR ALL USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
 
 -- Invoices: clients see their own, admins see all
@@ -107,7 +101,7 @@ CREATE POLICY "Clients view own files" ON public.files FOR SELECT USING (client_
 CREATE POLICY "Admin full access files" ON public.files FOR ALL USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
 
 -- Messages: project participants
-CREATE POLICY "Clients view own messages" ON public.messages FOR SELECT USING (EXISTS (SELECT 1 FROM public.projects WHERE id = project_id AND client_id = auth.uid()));
+CREATE POLICY "Clients view own messages" ON public.messages FOR SELECT USING (EXISTS (SELECT 1 FROM public.projects WHERE id = project_id AND user_id = auth.uid()));
 CREATE POLICY "Admin full access messages" ON public.messages FOR ALL USING (EXISTS (SELECT 1 FROM public.profiles WHERE id = auth.uid() AND role = 'admin'));
 
 -- Leads: admins only
