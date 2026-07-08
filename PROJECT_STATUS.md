@@ -189,9 +189,13 @@ Removed from live — zero rows **and** zero `.from('…')` / `.rpc()` reference
 
 ### Stripe
 
-**Not integrated directly in this app.** No Stripe SDK, env vars, or Stripe-facing API routes here. Mentioned only in marketing copy (`CaseStudies.tsx`, meta descriptions).
+**No Stripe SDK, env vars, or Stripe-facing API routes.** As of 2026-07-08, `src/lib/services.ts` is a new data-only catalog (`SERVICE_PACKAGES`) holding the 8 sellable packages with their live **Stripe Payment Link** URLs (`buy.stripe.com/...`, hardcoded — created manually in the Stripe Dashboard, not via API). `buildCheckoutUrl()` appends `?client_reference_id=EN|CZ|MN` to direct-checkout links, or returns `/book?service=<slug>` for `checkoutMode: 'consult'` packages. **Not yet wired into any page/UI** — no pricing/services page imports it yet. Still true: this app never calls the Stripe API directly.
 
 Payment handling is planned to live in **n8n**: n8n listens for Stripe payment events and, on success, calls `POST /api/internal/onboard-client` (see n8n table above) to run onboarding and log the paid invoice — this app never talks to Stripe directly.
+
+`registered-address` now matches the `services` DB table price (4,900 CZK/yr, corrected 2026-07-08 after the founder confirmed the original Payment Link couldn't be re-priced and issued a new one). It also has Stripe's "Let customers adjust quantity" enabled (min 1, max 3 — buys 1–3 years); modeled via new `quantityAdjustable`/`minQuantity`/`maxQuantity` fields on `ServicePackage`. Stripe handles the quantity picker + multiplication on its hosted checkout page — `buildCheckoutUrl()` does not pass quantity in the URL.
+
+**Prices are display values and must be kept in sync with the live Stripe Payment Links (source of truth = Stripe) any time a link is re-created.**
 
 ### Cal.com
 
@@ -281,7 +285,7 @@ Payment handling is planned to live in **n8n**: n8n listens for Stripe payment e
 
 ### Stubbed / mock / placeholder
 
-- **Stripe:** Not implemented (marketing references only).
+- **Stripe:** No SDK/API calls. `src/lib/services.ts` (new, 2026-07-08) holds the package catalog + Stripe Payment Link URLs + `buildCheckoutUrl()`/`formatCzk()`/`getById()`/`byService()` helpers, but nothing in the UI imports it yet — pricing/services pages still use their own hardcoded data.
 - **Blog:** Coming-soon page; notify form has no API.
 - **Admin overview, projects, invoices, analytics:** Hardcoded demo data.
 - **Client invoices, files, messages pages:** Styled empty shells, no data layer.
@@ -319,3 +323,4 @@ Payment handling is planned to live in **n8n**: n8n listens for Stripe payment e
 - `src/app/api/admin/onboard/route.ts` — admin-facing client creation (thin wrapper over `onboardClient()`)
 - `src/app/api/internal/onboard-client/route.ts` — n8n/Stripe-facing client creation (thin wrapper over `onboardClient()`)
 - `src/app/[locale]/book/BookClient.tsx` — current booking UX (Cal.com, not wizard)
+- `src/lib/services.ts` — service package catalog + Stripe Payment Link checkout helpers (new 2026-07-08; not yet wired to any page). Reuses `FOUNDING_OFFER_ACTIVE` from `src/config/founding-offer.ts`. Tests: `src/lib/services.test.ts` (run via `npm test`, added Vitest as a new dev dependency).
