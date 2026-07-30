@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { onboardClient, OnboardingError } from '@/lib/onboarding'
+import { normalizeClientLocale, onboardClient, OnboardingError } from '@/lib/onboarding'
 import { isSupabaseConfigured, supabaseAdmin } from '@/lib/supabase'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -10,6 +10,8 @@ interface OnboardClientRequestBody {
   service_slug?: string
   amount?: number
   currency?: string
+  /** Defaults to 'en' if absent or not one of en/cs/mn. */
+  locale?: string
 }
 
 /**
@@ -47,6 +49,7 @@ export async function POST(req: Request) {
   const serviceSlug = body.service_slug?.trim()
   const amount = body.amount
   const currency = body.currency?.trim().toUpperCase() || 'CZK'
+  const locale = normalizeClientLocale(body.locale)
 
   if (!email || !fullName || !serviceSlug) {
     return NextResponse.json(
@@ -78,17 +81,30 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: `Unknown or inactive service_slug: ${serviceSlug}` }, { status: 400 })
   }
 
-  let userId: string
-  let projectId: string
+  let userId: string | undefined
+  let projectId: string | undefined
+  let alreadyExists = false
   try {
-    const result = await onboardClient({ email, fullName, serviceId: service.id })
+    const result = await onboardClient({ email, fullName, serviceId: service.id, locale })
     userId = result.userId
     projectId = result.projectId
+    alreadyExists = result.alreadyExists ?? false
   } catch (err) {
     if (err instanceof OnboardingError) {
       return NextResponse.json({ error: err.message }, { status: err.status })
     }
     console.error('[internal/onboard-client] unexpected onboarding error:', err)
+    return NextResponse.json({ error: 'Failed to onboard client.' }, { status: 500 })
+  }
+
+  if (alreadyExists) {
+    // Duplicate delivery (e.g. a retried Stripe webhook) for a client that was
+    // already onboarded — don't log a second invoice, just confirm success.
+    return NextResponse.json({ success: true, alreadyExists: true })
+  }
+
+  if (!userId || !projectId) {
+    console.error('[internal/onboard-client] onboarding succeeded without userId/projectId')
     return NextResponse.json({ error: 'Failed to onboard client.' }, { status: 500 })
   }
 

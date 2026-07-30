@@ -2,21 +2,31 @@
 
 import { useMemo, useState } from 'react'
 import { Link } from '@/i18n/navigation'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Globe, Scale, Bot, Shield, Check, Clock, Lock, Infinity } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import {
+  FeaturedPackageBadge,
+  PackageCtaButton,
+  PackageFoundingBadge,
+  PackagePriceBlock,
+} from '@/components/package/PackageUi'
+import {
+  byService,
+  formatCzk,
+  type ServicePackage,
+  type Locale as ServiceLocale,
+} from '@/lib/services'
 
 type ServiceCard = {
   id: string
   title: string
   tagline: string
-  price: string
   badge: string
   startingAt: string
   includedTitle: string
   processTitle: string
-  cta: string
   description: string
   features: { id: string; label: string }[]
 }
@@ -25,6 +35,7 @@ type Stat = { id: string; num: string; label: string }
 type Guarantee = { id: string; title: string; desc: string }
 type Cta = { id: string; label: string }
 type MaintenanceNote = { title: string; desc: string; cta: string }
+type PackageUiT = (key: string, values?: Record<string, string | number>) => string
 
 const SERVICE_ICONS: Record<string, React.ReactNode> = {
   web: <Globe size={26} />,
@@ -36,6 +47,12 @@ const SERVICE_COLORS: Record<string, string> = {
   web: '#3b82f6',
   ai: '#10b981',
   sro: '#6366f1',
+}
+
+const SERVICE_TO_CATALOG: Record<string, ServicePackage['service']> = {
+  web: 'website',
+  ai: 'ai',
+  sro: 'sro',
 }
 
 const GUARANTEE_ICONS: Record<string, React.ReactNode> = {
@@ -65,12 +82,55 @@ const CARD_PROCESS: Record<string, { step: string; label: string; desc: string }
   ],
 }
 
-function bookServiceParam(cardId: string) {
-  return cardId === 'web' ? 'website' : cardId
+function getStartingAtLabel(packages: ServicePackage[], t: PackageUiT): string {
+  const prices = packages.map((pkg) => pkg.priceCzk).filter((price): price is number => price != null)
+  if (prices.length === 0) return t('customTalk')
+  return t('fromPrice', { amount: formatCzk(Math.min(...prices)) })
+}
+
+function ServicePackageCard({
+  pkg,
+  locale,
+  color,
+}: {
+  pkg: ServicePackage
+  locale: ServiceLocale
+  color: string
+}) {
+  const packageUiT = useTranslations('packageUi') as unknown as PackageUiT
+  const featured = pkg.featured ?? false
+
+  return (
+    <div
+      style={{
+        background: featured ? `${color}12` : 'rgba(255,255,255,0.03)',
+        border: `1px solid ${featured ? `${color}55` : 'rgba(255,255,255,0.08)'}`,
+        borderRadius: 16,
+        padding: 24,
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      {featured && <FeaturedPackageBadge label={packageUiT('featuredBadge')} />}
+      <h4 style={{ fontSize: 17, fontWeight: 800, color: '#f0f4ff', marginBottom: 8, paddingRight: featured ? 96 : 0 }}>
+        {pkg.name[locale]}
+      </h4>
+      <div style={{ marginBottom: 8 }}>
+        <PackagePriceBlock pkg={pkg} size="sm" />
+      </div>
+      <PackageFoundingBadge pkg={pkg} />
+      <p style={{ fontSize: 13, color: '#8892b0', lineHeight: 1.6, marginBottom: 16 }}>
+        {pkg.description[locale]}
+      </p>
+      <PackageCtaButton pkg={pkg} featured={featured} accentColor={color} />
+    </div>
+  )
 }
 
 export default function ServicesPage() {
+  const locale = useLocale() as ServiceLocale
   const t = useTranslations('services')
+  const packageUiT = useTranslations('packageUi') as unknown as PackageUiT
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
   const [hoveredProcess, setHoveredProcess] = useState<string | null>(null)
 
@@ -90,7 +150,6 @@ export default function ServicesPage() {
     <div style={{ background: '#0a0a0a', minHeight: '100vh', color: '#f0f4ff', fontFamily: 'Inter, system-ui, sans-serif' }}>
       <Navbar />
 
-      {/* Hero */}
       <section style={{ position: 'relative', padding: '140px 24px 100px', textAlign: 'center' as const, overflow: 'hidden' }}>
         <div style={{
           position: 'absolute', top: '50%', left: '50%',
@@ -150,7 +209,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
       <section style={{
         borderTop: '1px solid rgba(255,255,255,0.06)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
@@ -170,13 +228,15 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Grid */}
       <section id="services" style={{ padding: '100px 24px', maxWidth: 1280, margin: '0 auto' }}>
         <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32 }}>
           {cards.map((svc, index) => {
             const color = SERVICE_COLORS[svc.id] ?? '#3b82f6'
             const isHovered = hoveredCard === svc.id
             const process = CARD_PROCESS[svc.id] ?? []
+            const catalogService = SERVICE_TO_CATALOG[svc.id]
+            const packages = catalogService ? byService(catalogService) : []
+            const startingAtLabel = getStartingAtLabel(packages, packageUiT)
 
             return (
               <div
@@ -228,7 +288,7 @@ export default function ServicesPage() {
                   display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                 }}>
                   <span style={{ fontSize: 13, color: '#8892b0' }}>{svc.startingAt}</span>
-                  <span style={{ fontSize: 20, fontWeight: 800, color }}>{svc.price}</span>
+                  <span style={{ fontSize: 20, fontWeight: 800, color }}>{startingAtLabel}</span>
                 </div>
 
                 <div style={{ marginBottom: 32, flex: 1 }}>
@@ -279,7 +339,28 @@ export default function ServicesPage() {
                   </div>
                 )}
 
-                <Link href={`/book?service=${bookServiceParam(svc.id)}`} style={{
+                {packages.length > 0 && (
+                  <div style={{ marginBottom: 28 }}>
+                    <p style={{
+                      fontSize: 12, fontWeight: 700, color: '#8892b0',
+                      letterSpacing: '0.1em', textTransform: 'uppercase' as const,
+                      marginBottom: 14,
+                    }}>
+                      {packageUiT('packagesTitle')}
+                    </p>
+                    <div style={{
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                      gap: 16,
+                    }}>
+                      {packages.map((pkg) => (
+                        <ServicePackageCard key={pkg.id} pkg={pkg} locale={locale} color={color} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <Link href="/pricing" style={{
                   display: 'block', textAlign: 'center' as const,
                   background: isHovered ? color : 'rgba(255,255,255,0.05)',
                   color: '#fff', padding: '14px 24px', borderRadius: 12,
@@ -288,7 +369,7 @@ export default function ServicesPage() {
                   transition: 'all 0.3s',
                   boxShadow: isHovered ? `0 8px 30px ${color}40` : 'none',
                 }}>
-                  {svc.cta}
+                  {t('viewAllPricing')}
                 </Link>
               </div>
             )
@@ -326,7 +407,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Guarantees */}
       <section style={{
         padding: '80px 24px',
         background: 'rgba(255,255,255,0.02)',
@@ -360,7 +440,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Bottom CTA */}
       <section style={{
         padding: '100px 24px',
         textAlign: 'center' as const,

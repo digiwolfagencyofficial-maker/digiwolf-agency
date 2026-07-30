@@ -15,8 +15,8 @@ Factual snapshot of the repo as of 2026-07-08. Intended for AI assistants to avo
 | Route | Description |
 |-------|-------------|
 | `/` | Homepage — hero, services preview, CTAs, case-study section. |
-| `/services` | Service offerings (website, S.R.O., AI, etc.) with booking links. |
-| `/pricing` | Pricing tiers with per-service book links. |
+| `/services` | Service offerings — category cards + per-package pricing/CTAs from `src/lib/services.ts`. |
+| `/pricing` | Pricing tiers — all package prices, badges, and checkout CTAs from `src/lib/services.ts`. |
 | `/process` | 5-step agency process page. |
 | `/about` | Founder/company story. |
 | `/contact` | Contact form → `POST /api/contact`. |
@@ -189,7 +189,7 @@ Removed from live — zero rows **and** zero `.from('…')` / `.rpc()` reference
 
 ### Stripe
 
-**No Stripe SDK, env vars, or Stripe-facing API routes.** As of 2026-07-08, `src/lib/services.ts` is a new data-only catalog (`SERVICE_PACKAGES`) holding the 8 sellable packages with their live **Stripe Payment Link** URLs (`buy.stripe.com/...`, hardcoded — created manually in the Stripe Dashboard, not via API). `buildCheckoutUrl()` appends `?client_reference_id=EN|CZ|MN` to direct-checkout links, or returns `/book?service=<slug>` for `checkoutMode: 'consult'` packages. **Not yet wired into any page/UI** — no pricing/services page imports it yet. Still true: this app never calls the Stripe API directly.
+**No Stripe SDK, env vars, or Stripe-facing API routes.** As of 2026-07-08, `src/lib/services.ts` is the single source of truth for the 8 sellable packages with their live **Stripe Payment Link** URLs (`buy.stripe.com/...`, hardcoded — created manually in the Stripe Dashboard, not via API). `buildCheckoutUrl()` appends `?client_reference_id=EN|CZ|MN` to direct-checkout links, or returns `/book?service=<slug>` for `checkoutMode: 'consult'` packages. **Wired into `/pricing` and `/services`** via shared UI in `src/components/package/PackageUi.tsx` (prices from `formatCzk()`, CTAs from `checkoutMode`). This app never calls the Stripe API directly.
 
 Payment handling is planned to live in **n8n**: n8n listens for Stripe payment events and, on success, calls `POST /api/internal/onboard-client` (see n8n table above) to run onboarding and log the paid invoice — this app never talks to Stripe directly.
 
@@ -210,7 +210,7 @@ Payment handling is planned to live in **n8n**: n8n listens for Stripe payment e
 | Touchpoint | Behavior |
 |------------|----------|
 | `POST /api/contact` | `sendLeadNotification()` → email to `CONTACT_NOTIFY_EMAIL` (skips if `RESEND_API_KEY` unset). |
-| `POST /api/admin/onboard` | `sendClientWelcomeEmail()` → invite/set-password email (throws if Resend missing). |
+| `POST /api/admin/onboard` | `sendClientWelcomeEmail()` → invite/set-password email (throws if Resend missing). **Localized 2026-07-30** — subject/body sent in en/cs/mn based on the `locale` passed through `onboardClient()` (default `en`). Includes a paragraph linking to the [intake form](https://app.notion.com/p/623951b4ab9f453ab571097d2b29d078?pvs=106) carried forward from the retired n8n workflow. |
 | Env | `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, `CONTACT_NOTIFY_EMAIL`. |
 
 ### n8n
@@ -244,8 +244,8 @@ Payment handling is planned to live in **n8n**: n8n listens for Stripe payment e
 | `GET /api/projects` | Session | List caller's projects. |
 | `GET /api/invoices` | Session | List invoices (admin client; dashboard UI doesn't use it). |
 | `GET /api/clients` | Session | List client profiles (legacy/generic). |
-| `GET/POST /api/admin/onboard` | Admin | List services / create client + project + welcome email. Core logic lives in `src/lib/onboarding.ts` (`onboardClient()`), shared with the internal automation route below. |
-| `POST /api/internal/onboard-client` | Shared secret (`x-internal-secret` = `N8N_INTERNAL_SECRET`) | **New.** Automation entry point for n8n **WF3** (Stripe payment → client onboarding). Body: `{ email, full_name, service_slug, amount?, currency? }`. Resolves `service_slug` → `services.id`, calls `onboardClient()`, and — if `amount` is provided — inserts a `status: 'paid'` row into `invoices` (`invoice_number`, `amount`, `currency`, `user_id`). Returns `{ success, userId, projectId }`. Replaces any plan where n8n would write directly to Supabase for onboarding. |
+| `GET/POST /api/admin/onboard` | Admin | List services / create client + project + welcome email. Body accepts optional `locale` (`en`/`cs`/`mn`, defaults to `en`). Core logic lives in `src/lib/onboarding.ts` (`onboardClient()`), shared with the internal automation route below. Response includes `alreadyExists` (see idempotency note below). |
+| `POST /api/internal/onboard-client` | Shared secret (`x-internal-secret` = `N8N_INTERNAL_SECRET`) | Automation entry point for n8n **WF3** (Stripe payment → client onboarding). Body: `{ email, full_name, service_slug, amount?, currency?, locale? }` (`locale` optional, defaults to `en` if absent/invalid — one of `en`/`cs`/`mn`). Resolves `service_slug` → `services.id`, calls `onboardClient()`, and — if `amount` is provided — inserts a `status: 'paid'` row into `invoices` (`invoice_number`, `amount`, `currency`, `user_id`). Returns `{ success, userId, projectId }`, or `{ success: true, alreadyExists: true }` (no invoice logged) if the email was already onboarded — see idempotency note below. Replaces any plan where n8n would write directly to Supabase for onboarding. |
 | `GET /api/admin/clients` | Admin | Client list with projects. |
 | `GET /api/admin/leads` | Admin | Contact leads (subset of columns). |
 | `GET /api/admin/bookings` | Admin | All bookings. |
@@ -253,6 +253,8 @@ Payment handling is planned to live in **n8n**: n8n listens for Stripe payment e
 | `POST /api/auth/register` | Public | Server-side user creation (exists; register page uses client SDK instead). |
 | `/api/auth/google`, `/api/auth/google/callback` | Setup | Google Calendar OAuth for refresh token. |
 | `GET /logout` | Session | Sign out. |
+
+**`onboardClient()` idempotency (added 2026-07-30):** if `supabaseAdmin.auth.admin.createUser()` fails because the email already exists, `onboardClient()` no longer runs the rollback-and-throw path — it returns `{ alreadyExists: true }` (no `userId`/`projectId`) instead. `POST /api/internal/onboard-client` short-circuits on this and returns `{ success: true, alreadyExists: true }` without logging an invoice, so a retried Stripe webhook delivery from n8n doesn't look like a failure or trigger a false alert. `POST /api/admin/onboard` returns the same flag (`emailSent: false` in that case) — note this also changes behavior for the admin "Add Client" UI: re-submitting an existing client's email now returns success with `alreadyExists: true` instead of a 409 error.
 
 ---
 
@@ -265,7 +267,7 @@ Payment handling is planned to live in **n8n**: n8n listens for Stripe payment e
 - `/book` Cal.com scheduling + webhook persistence + admin bookings list.
 - Supabase Auth (login, register, Google OAuth, forgot/reset password, logout).
 - Role-based routing (client vs admin).
-- Admin client onboarding (`/admin/clients` + `/api/admin/onboard` + Resend invite).
+- Admin client onboarding (`/admin/clients` + `/api/admin/onboard` + Resend invite). Welcome email is now localized (en/cs/mn) via an optional `locale` field threaded through `onboardClient()`, and includes an intake-form link carried forward from the retired n8n workflow.
 - Admin leads inbox (read contact submissions).
 - Client dashboard projects (RLS reads from `projects` + `services`).
 - Client/admin account settings (name + password).
@@ -285,7 +287,7 @@ Payment handling is planned to live in **n8n**: n8n listens for Stripe payment e
 
 ### Stubbed / mock / placeholder
 
-- **Stripe:** No SDK/API calls. `src/lib/services.ts` (new, 2026-07-08) holds the package catalog + Stripe Payment Link URLs + `buildCheckoutUrl()`/`formatCzk()`/`getById()`/`byService()` helpers, but nothing in the UI imports it yet — pricing/services pages still use their own hardcoded data.
+- **Stripe:** No SDK/API calls. `src/lib/services.ts` holds the package catalog + Stripe Payment Link URLs + `buildCheckoutUrl()`/`formatCzk()`/`getById()`/`byService()` helpers. **Pricing and services pages consume it** via `src/components/package/PackageUi.tsx`. Homepage pricing preview still uses `FOUNDING_PRICES` from `src/config/founding-offer.ts` (not yet migrated to catalog).
 - **Blog:** Coming-soon page; notify form has no API.
 - **Admin overview, projects, invoices, analytics:** Hardcoded demo data.
 - **Client invoices, files, messages pages:** Styled empty shells, no data layer.
@@ -319,8 +321,9 @@ Payment handling is planned to live in **n8n**: n8n listens for Stripe payment e
 - `supabase/migrations/*.sql` — intended DB shape (compare with `src/types/index.ts` and hooks)
 - `src/app/api/contact/route.ts` — lead pipeline
 - `src/app/api/webhooks/calcom/route.ts` — booking pipeline
-- `src/lib/onboarding.ts` — shared `onboardClient()` logic (user, profile, project, invite, welcome email)
+- `src/lib/onboarding.ts` — shared `onboardClient()` logic (user, profile, project, invite, welcome email, locale, already-exists idempotency)
+- `src/lib/email.ts` — `sendClientWelcomeEmail()` localized copy (en/cs/mn) + intake-form link
 - `src/app/api/admin/onboard/route.ts` — admin-facing client creation (thin wrapper over `onboardClient()`)
 - `src/app/api/internal/onboard-client/route.ts` — n8n/Stripe-facing client creation (thin wrapper over `onboardClient()`)
 - `src/app/[locale]/book/BookClient.tsx` — current booking UX (Cal.com, not wizard)
-- `src/lib/services.ts` — service package catalog + Stripe Payment Link checkout helpers (new 2026-07-08; not yet wired to any page). Reuses `FOUNDING_OFFER_ACTIVE` from `src/config/founding-offer.ts`. Tests: `src/lib/services.test.ts` (run via `npm test`, added Vitest as a new dev dependency).
+- `src/lib/services.ts` — service package catalog + Stripe Payment Link checkout helpers. Shared UI: `src/components/package/PackageUi.tsx`. Tests: `src/lib/services.test.ts` (run via `npm test`).

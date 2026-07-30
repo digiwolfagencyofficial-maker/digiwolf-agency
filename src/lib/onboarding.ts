@@ -1,16 +1,23 @@
-import { sendClientWelcomeEmail } from '@/lib/email'
+import { normalizeClientLocale, sendClientWelcomeEmail, type ClientWelcomeLocale } from '@/lib/email'
 import { siteUrl } from '@/lib/site-url'
 import { supabaseAdmin } from '@/lib/supabase'
+
+export type { ClientWelcomeLocale }
+export { normalizeClientLocale }
 
 export interface OnboardClientInput {
   email: string
   fullName: string
   serviceId: string
+  /** Defaults to 'en' if missing or not one of en/cs/mn. */
+  locale?: ClientWelcomeLocale
 }
 
 export interface OnboardClientResult {
-  userId: string
-  projectId: string
+  userId?: string
+  projectId?: string
+  /** True when the email already had an account — nothing new was created. */
+  alreadyExists?: boolean
 }
 
 /** Result-style error so callers can map to their own HTTP status codes. */
@@ -46,7 +53,10 @@ export async function onboardClient({
   email,
   fullName,
   serviceId,
+  locale,
 }: OnboardClientInput): Promise<OnboardClientResult> {
+  const resolvedLocale = normalizeClientLocale(locale)
+
   // Step A — create the auth user (no password; client sets it via invite link).
   const { data: created, error: createError } = await supabaseAdmin.auth.admin.createUser({
     email,
@@ -57,7 +67,13 @@ export async function onboardClient({
   if (createError || !created?.user) {
     const message = createError?.message ?? 'Failed to create user'
     if (message.toLowerCase().includes('already')) {
-      throw new OnboardingError('A user with this email already exists.', 409)
+      // This email was already onboarded in an earlier call (e.g. a retried
+      // Stripe webhook delivery from n8n). Nothing was created in this call,
+      // so there's nothing to roll back — report success rather than a 502
+      // so the duplicate delivery doesn't look like a failure or trigger a
+      // false alert upstream.
+      console.warn('[onboarding] createUser: email already exists, treating as already onboarded:', email)
+      return { alreadyExists: true }
     }
     console.error('[onboarding] createUser failed:', createError)
     throw new OnboardingError(message, 400)
@@ -121,7 +137,7 @@ export async function onboardClient({
 
   // Step E — send the branded welcome email via Resend.
   try {
-    await sendClientWelcomeEmail({ fullName, email, setPasswordUrl: actionLink })
+    await sendClientWelcomeEmail({ fullName, email, setPasswordUrl: actionLink, locale: resolvedLocale })
   } catch (err) {
     console.error('[onboarding] welcome email failed:', err)
     await rollback(userId)
