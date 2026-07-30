@@ -1,9 +1,14 @@
+import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
+import { requireAdminApi } from '@/lib/auth'
 
-// GET /api/auth/google/callback — exchanges code for refresh token (one-time setup)
+// GET /api/auth/google/callback — exchanges code for refresh token (admin-only setup)
 export async function GET(request: NextRequest) {
+  const auth = await requireAdminApi()
+  if (auth.error) return auth.error
+
   const { searchParams } = new URL(request.url)
-  const code  = searchParams.get('code')
+  const code = searchParams.get('code')
   const state = searchParams.get('state')
   const error = searchParams.get('error')
 
@@ -17,7 +22,11 @@ export async function GET(request: NextRequest) {
     `, { headers: { 'Content-Type': 'text/html' } })
   }
 
-  if (state !== 'digiwolf2025' || !code) {
+  const cookieStore = await cookies()
+  const savedState = cookieStore.get('google_oauth_state')?.value
+  cookieStore.delete('google_oauth_state')
+
+  if (!state || state !== savedState || !code) {
     return NextResponse.json({ error: 'Invalid state' }, { status: 400 })
   }
 
@@ -45,7 +54,7 @@ export async function GET(request: NextRequest) {
         <a href="https://myaccount.google.com/permissions" style="color:#0047FF" target="_blank">myaccount.google.com/permissions</a>
         then try again.</p>
         <pre style="background:#040d1f;padding:16px;border-radius:8px;overflow:auto">${JSON.stringify(tokens, null, 2)}</pre>
-        <a href="/api/auth/google?secret=digiwolf2025" style="color:#0047FF">← Try Again</a>
+        <a href="/api/auth/google" style="color:#0047FF">← Try Again</a>
       </body></html>
     `, { headers: { 'Content-Type': 'text/html' } })
   }

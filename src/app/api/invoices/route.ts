@@ -1,18 +1,27 @@
 import { NextResponse } from 'next/server'
+import { cookies } from 'next/headers'
 import { supabaseAdmin } from '@/lib/supabase'
-import { getSession } from '@/lib/auth'
+import { requireAuthApi, makeSupabaseClient } from '@/lib/auth'
+import { getProfileRole } from '@/lib/profile'
 
 export async function GET() {
-  const session = await getSession()
+  const auth = await requireAuthApi()
+  if (auth.error) return auth.error
 
-  if (!session) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const cookieStore = await cookies()
+  const supabase = makeSupabaseClient(cookieStore)
+  const role = await getProfileRole(supabase, auth.user.id)
 
-  const { data, error } = await supabaseAdmin
+  let query = supabaseAdmin
     .from('invoices')
     .select('*')
     .order('created_at', { ascending: false })
+
+  if (role !== 'admin') {
+    query = query.eq('client_id', auth.user.id)
+  }
+
+  const { data, error } = await query
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
