@@ -3,7 +3,6 @@
 export const dynamic = 'force-dynamic'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import DashboardLayout from '@/components/dashboard/DashboardLayout'
 
 const adminNav = [
@@ -180,7 +179,15 @@ export default function SetupPageContent() {
             <li>Copy the refresh token shown → add to Vercel as <code style={{ background: 'rgba(0,71,255,0.1)', padding: '2px 6px', borderRadius: 5, color: '#93c5fd', fontSize: 12 }}>GOOGLE_REFRESH_TOKEN</code> → redeploy</li>
           </ol>
 
-          <Link
+          {/*
+            Deliberately a plain <a>, not next/link: this isn't an app page, it's
+            an OAuth-start endpoint that sets a one-time state cookie and 302s to
+            Google. next/link prefetches hrefs in the viewport, which would fire
+            that side-effecting GET (and race the state cookie) before the user
+            ever clicks — a real bug we hit in production, not just a lint nit.
+          */}
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a
             href="/api/auth/google"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
@@ -190,7 +197,7 @@ export default function SetupPageContent() {
             }}
           >
             Authorize Google Calendar →
-          </Link>
+          </a>
         </div>
 
         {/* Section 3: Test Booking */}
