@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "cleanup:test-data": "node --no-warnings scripts/cleanup-test-data.ts",
+    "cleanup:test-data:live": "node --no-warnings scripts/cleanup-test-data.ts --dry-run=false --yes"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
