@@ -19,7 +19,12 @@ export async function proxy(req: NextRequest) {
     const { data: { user } } = await supabase.auth.getUser()
 
     if (!user) {
-      const loginUrl = new URL('/login', req.url)
+      // Clone the incoming request's own URL rather than constructing a new
+      // one from an env var, so this always redirects to /login on whatever
+      // host is actually being browsed (localhost, preview, or production).
+      const loginUrl = req.nextUrl.clone()
+      loginUrl.pathname = '/login'
+      loginUrl.search = ''
       loginUrl.searchParams.set('callbackUrl', pathname)
       return applyCookiesTo(NextResponse.redirect(loginUrl))
     }
@@ -27,7 +32,10 @@ export async function proxy(req: NextRequest) {
     if (pathname.startsWith('/admin')) {
       const role = await getProfileRole(supabase, user.id)
       if (role !== 'admin') {
-        return applyCookiesTo(NextResponse.redirect(new URL('/dashboard', req.url)))
+        const dashboardUrl = req.nextUrl.clone()
+        dashboardUrl.pathname = '/dashboard'
+        dashboardUrl.search = ''
+        return applyCookiesTo(NextResponse.redirect(dashboardUrl))
       }
     }
 
