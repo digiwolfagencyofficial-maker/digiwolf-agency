@@ -21,7 +21,7 @@ const clientNav = [
 ];
 
 export function ProjectsPageInner() {
-  const { projects, loading, error, displayName } = useClientProjects();
+  const { projects, loading, error } = useClientProjects();
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   return (

@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import DashboardLayout from '@/components/dashboard/DashboardLayout'
 import { COMPANY, companyFullAddress } from '@/lib/company'
 import { useClientProfile } from '@/hooks/useClientProfile'
@@ -50,9 +50,15 @@ export function AdminSettingsPage() {
   const [pwSaving, setPwSaving] = useState(false)
   const [pwError, setPwError] = useState('')
 
-  useEffect(() => {
-    if (loadedProfile) setAccount({ name: loadedProfile.full_name ?? '' })
-  }, [loadedProfile])
+  // loadedProfile arrives asynchronously after mount, so we sync it into the
+  // editable `account` state during render (React's documented pattern for
+  // adjusting state from a changing value) instead of an effect — this avoids
+  // an extra post-paint render and the flash of stale state it would cause.
+  const [syncedProfile, setSyncedProfile] = useState(loadedProfile)
+  if (loadedProfile !== syncedProfile) {
+    setSyncedProfile(loadedProfile)
+    setAccount({ name: loadedProfile?.full_name ?? '' })
+  }
 
   const handleAccountSave = async (e: React.FormEvent) => {
     e.preventDefault()

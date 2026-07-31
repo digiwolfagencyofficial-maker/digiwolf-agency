@@ -67,6 +67,9 @@ export default function AnimatedCounter({
     if (!node || hasAnimated.current) return
 
     if (immediate || prefersReducedMotion()) {
+      // Skips the count-up animation and jumps straight to the target value
+      // when the caller asked for it or the OS-level reduced-motion setting is on.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCount(value)
       hasAnimated.current = true
       return

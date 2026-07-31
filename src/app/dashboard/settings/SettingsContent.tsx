@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import DashboardLayout from '@/components/dashboard/DashboardLayout'
 import { useClientProfile } from '@/hooks/useClientProfile'
 import { createSupabaseBrowserClient } from '@/lib/supabase-browser'
@@ -56,11 +56,15 @@ export function DashboardSettingsPage() {
   const [pwSaving, setPwSaving] = useState(false)
   const [pwError, setPwError] = useState('')
 
-  useEffect(() => {
-    if (loadedProfile) {
-      setProfile({ name: loadedProfile.full_name ?? '' })
-    }
-  }, [loadedProfile])
+  // loadedProfile arrives asynchronously after mount, so we sync it into the
+  // editable `profile` state during render (React's documented pattern for
+  // adjusting state from a changing value) instead of an effect — this avoids
+  // an extra post-paint render and the flash of stale state it would cause.
+  const [syncedProfile, setSyncedProfile] = useState(loadedProfile)
+  if (loadedProfile !== syncedProfile) {
+    setSyncedProfile(loadedProfile)
+    setProfile({ name: loadedProfile?.full_name ?? '' })
+  }
 
   const handleProfileSave = async (e: React.FormEvent) => {
     e.preventDefault()

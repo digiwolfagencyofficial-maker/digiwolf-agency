@@ -45,10 +45,16 @@ export default function ChatWidget() {
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
+    // Seeds the transcript with a single translated greeting bubble the
+    // moment the widget mounts (or the locale changes).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMessages([{ id: 'welcome', role: 'assistant', content: t('welcomeMessage') }])
   }, [t])
 
   useEffect(() => {
+    // Reads (or creates) this tab's chat session id from sessionStorage so
+    // follow-up messages in the conversation share the same id.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSessionId(getSessionId())
   }, [])
 

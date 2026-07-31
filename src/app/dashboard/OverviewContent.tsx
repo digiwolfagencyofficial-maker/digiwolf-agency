@@ -79,7 +79,7 @@ export function ClientDashboardPage() {
         <h1 style={{ fontSize: 28, fontWeight: 800, marginBottom: 6, letterSpacing: '-0.5px' }}>
           Welcome back, {displayName} 👋
         </h1>
-        <p style={{ color: '#8892b0', fontSize: 14 }}>Here's what's happening with your projects today.</p>
+        <p style={{ color: '#8892b0', fontSize: 14 }}>Here&apos;s what&apos;s happening with your projects today.</p>
       </div>
 
       {/* Stats */}

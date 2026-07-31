@@ -32,7 +32,7 @@ const labelStyle: React.CSSProperties = {
 };
 
 export default function AddClientForm({ onClose, onSuccess, services: initialServices = [] }: Props) {
-  const [services, setServices] = useState<Service[]>(initialServices);
+  const [services, setServices] = useState<Service[]>(() => initialServices);
   const [servicesError, setServicesError] = useState<string | null>(null);
   const [email, setEmail] = useState('');
   const [fullName, setFullName] = useState('');
@@ -42,8 +42,9 @@ export default function AddClientForm({ onClose, onSuccess, services: initialSer
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    // `services` is already initialized from initialServices via lazy useState above,
+    // so we only need to fetch here when the caller didn't provide any up front.
     if (initialServices && initialServices.length > 0) {
-      setServices(initialServices);
       return;
     }
 

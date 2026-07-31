@@ -68,6 +68,9 @@ export function LeadPipelinePage() {
   }, []);
 
   useEffect(() => {
+    // Loads the sales lead pipeline from /api/admin/leads so the board is
+    // populated as soon as this admin page first renders.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchLeads();
   }, [fetchLeads]);
 

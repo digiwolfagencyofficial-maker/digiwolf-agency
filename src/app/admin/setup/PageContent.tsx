@@ -3,6 +3,7 @@
 export const dynamic = 'force-dynamic'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import DashboardLayout from '@/components/dashboard/DashboardLayout'
 
 const adminNav = [
@@ -36,8 +37,6 @@ alter table bookings enable row level security;
 create policy "Anyone can insert" on bookings for insert with check (true);
 create policy "Admin can read all" on bookings for select using (auth.role() = 'authenticated');
 create policy "Admin can update" on bookings for update using (auth.role() = 'authenticated');`
-
-const GOOGLE_CLIENT_ID = typeof window === 'undefined' ? undefined : undefined
 
 const sectionStyle: React.CSSProperties = {
   background: '#040d1f',
@@ -181,7 +180,7 @@ export default function SetupPageContent() {
             <li>Copy the refresh token shown → add to Vercel as <code style={{ background: 'rgba(0,71,255,0.1)', padding: '2px 6px', borderRadius: 5, color: '#93c5fd', fontSize: 12 }}>GOOGLE_REFRESH_TOKEN</code> → redeploy</li>
           </ol>
 
-          <a
+          <Link
             href="/api/auth/google"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
@@ -191,7 +190,7 @@ export default function SetupPageContent() {
             }}
           >
             Authorize Google Calendar →
-          </a>
+          </Link>
         </div>
 
         {/* Section 3: Test Booking */}

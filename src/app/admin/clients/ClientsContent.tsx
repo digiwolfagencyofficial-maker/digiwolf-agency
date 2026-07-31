@@ -113,6 +113,9 @@ export function ClientsPageInner({ initialServices = [] }: ClientsPageProps) {
   }, []);
 
   useEffect(() => {
+    // Loads the full client roster from /api/admin/clients to populate the
+    // table when the admin clients page first renders.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchClients();
   }, [fetchClients]);
 

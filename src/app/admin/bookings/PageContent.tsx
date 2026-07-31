@@ -94,6 +94,9 @@ export default function BookingsPageContent() {
   }, [])
 
   useEffect(() => {
+    // Loads the booking records from /api/admin/bookings so the table has
+    // data to show as soon as this admin page opens.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchBookings()
   }, [fetchBookings])
 

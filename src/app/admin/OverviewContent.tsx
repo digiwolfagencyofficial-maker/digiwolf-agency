@@ -3,6 +3,7 @@
 export const dynamic = 'force-dynamic';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import DashboardLayout from '@/components/dashboard/DashboardLayout';
 
 const adminNav = [
@@ -135,7 +136,7 @@ export function AdminOverviewPage() {
           <div style={{ background: '#040d1f', border: '1px solid #0f172a', borderRadius: '14px', padding: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
               <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#F1F5F9', margin: 0 }}>Recent Leads</h2>
-              <a href="/admin/leads" style={{ fontSize: '12px', color: '#0047FF', textDecoration: 'none' }}>View All →</a>
+              <Link href="/admin/leads" style={{ fontSize: '12px', color: '#0047FF', textDecoration: 'none' }}>View All →</Link>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: '#0f172a', borderRadius: '8px', overflow: 'hidden' }}>
               {leads.map((lead, i) => (
@@ -173,7 +174,7 @@ export function AdminOverviewPage() {
           <div style={{ background: '#040d1f', border: '1px solid #0f172a', borderRadius: '14px', padding: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
               <h2 style={{ fontSize: '16px', fontWeight: 600, color: '#F1F5F9', margin: 0 }}>Active Projects</h2>
-              <a href="/admin/projects" style={{ fontSize: '12px', color: '#0047FF', textDecoration: 'none' }}>View All →</a>
+              <Link href="/admin/projects" style={{ fontSize: '12px', color: '#0047FF', textDecoration: 'none' }}>View All →</Link>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {projects.map((proj, i) => (

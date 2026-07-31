@@ -11,7 +11,10 @@ export default function CookieBanner() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
+    // Checks localStorage for a prior consent choice and reveals the banner
+    // only if the visitor hasn't decided yet.
     const consent = localStorage.getItem('dw-cookie-consent')
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!consent) setVisible(true)
   }, [])
 
