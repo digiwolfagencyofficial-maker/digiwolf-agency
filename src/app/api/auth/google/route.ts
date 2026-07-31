@@ -1,13 +1,12 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { randomUUID } from 'crypto'
+import { cookies } from 'next/headers'
+import { NextResponse } from 'next/server'
+import { requireAdminApi } from '@/lib/auth'
 
-// GET /api/auth/google — start OAuth flow (one-time admin setup)
-export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url)
-  const secret = searchParams.get('secret')
-
-  if (secret !== 'digiwolf2025') {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+// GET /api/auth/google — start OAuth flow (admin-only setup)
+export async function GET() {
+  const auth = await requireAdminApi()
+  if (auth.error) return auth.error
 
   if (!process.env.GOOGLE_CLIENT_ID) {
     return new NextResponse(`
@@ -24,6 +23,16 @@ export async function GET(request: NextRequest) {
     `, { status: 400, headers: { 'Content-Type': 'text/html' } })
   }
 
+  const state = randomUUID()
+  const cookieStore = await cookies()
+  cookieStore.set('google_oauth_state', state, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    maxAge: 600,
+    path: '/',
+  })
+
   const redirectUri = process.env.GOOGLE_REDIRECT_URI || 'https://digiwolf.agency/api/auth/google/callback'
 
   const params = new URLSearchParams({
@@ -33,7 +42,7 @@ export async function GET(request: NextRequest) {
     scope: 'https://www.googleapis.com/auth/calendar.events',
     access_type: 'offline',
     prompt: 'consent',
-    state: 'digiwolf2025',
+    state,
   })
 
   return NextResponse.redirect(`https://accounts.google.com/o/oauth2/v2/auth?${params}`)

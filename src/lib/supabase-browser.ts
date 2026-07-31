@@ -1,4 +1,4 @@
-import { createBrowserClient } from '@supabase/auth-helpers-nextjs'
+import { createBrowserClient } from '@supabase/ssr'
 import { getPublicSupabaseAnonKey, getPublicSupabaseUrl } from '@/lib/supabase-env'
 
 export function createSupabaseBrowserClient() {

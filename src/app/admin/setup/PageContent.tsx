@@ -182,7 +182,7 @@ export default function SetupPageContent() {
           </ol>
 
           <a
-            href="/api/auth/google?secret=digiwolf2025"
+            href="/api/auth/google"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               background: '#0047FF', color: '#fff', textDecoration: 'none',
