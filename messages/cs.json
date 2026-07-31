@@ -723,6 +723,7 @@
       "desc": "Potřebujete pomoc poté, co je web online? Ozvěte se kdykoli — náš tým vás podpoří aktualizacemi, opravami nebo úpravami, když je budete potřebovat.",
       "cta": "Kontaktujte nás →"
     },
+    "viewAllPricing": "Zobrazit celý ceník →",
     "guarantees": [
       {
         "id": "onTime",
@@ -755,6 +756,20 @@
         }
       ]
     }
+  },
+  "packageUi": {
+    "buyNow": "Koupit nyní",
+    "bookCall": "Rezervovat hovor",
+    "foundingBadge": "Zakladatelská nabídka",
+    "customTalk": "Individuální cena — domluvme se",
+    "dueToday": "Dnes k úhradě: {amount}",
+    "perMonth": "/měs.",
+    "perYear": "/rok",
+    "setupLabel": "nastavení",
+    "featuredBadge": "Nejlepší hodnota",
+    "fromPrice": "od {amount}",
+    "packagesTitle": "Balíčky",
+    "registeredAddressNote": "Při pokladně vyberte 1–3 roky — uvedená cena je za rok."
   },
   "pricing": {
     "hero": {

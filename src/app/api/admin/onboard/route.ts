@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { requireAdminApi } from '@/lib/auth'
-import { onboardClient, OnboardingError } from '@/lib/onboarding'
+import { normalizeClientLocale, onboardClient, OnboardingError } from '@/lib/onboarding'
 import { supabaseAdmin, isSupabaseConfigured } from '@/lib/supabase'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     )
   }
 
-  let body: { email?: string; full_name?: string; service_id?: string }
+  let body: { email?: string; full_name?: string; service_id?: string; locale?: string }
   try {
     body = await req.json()
   } catch {
@@ -44,6 +44,7 @@ export async function POST(req: Request) {
   const email = body.email?.trim().toLowerCase()
   const fullName = body.full_name?.trim()
   const serviceId = body.service_id?.trim()
+  const locale = normalizeClientLocale(body.locale)
 
   if (!email || !fullName || !serviceId) {
     return NextResponse.json(
@@ -72,12 +73,18 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { userId, projectId } = await onboardClient({ email, fullName, serviceId })
+    const { userId, projectId, alreadyExists } = await onboardClient({
+      email,
+      fullName,
+      serviceId,
+      locale,
+    })
     return NextResponse.json({
       success: true,
       userId,
       projectId,
-      emailSent: true,
+      emailSent: !alreadyExists,
+      alreadyExists: alreadyExists ?? false,
     })
   } catch (err) {
     if (err instanceof OnboardingError) {

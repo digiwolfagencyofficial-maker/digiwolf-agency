@@ -804,6 +804,7 @@
       "desc": "Need help after your site is live? Get in touch anytime and our team will support you with updates, fixes, or changes when you need them.",
       "cta": "Get in touch →"
     },
+    "viewAllPricing": "View all pricing →",
     "guarantees": [
       {
         "id": "onTime",
@@ -836,6 +837,20 @@
         }
       ]
     }
+  },
+  "packageUi": {
+    "buyNow": "Buy now",
+    "bookCall": "Book a call",
+    "foundingBadge": "Founding offer",
+    "customTalk": "Custom — let's talk",
+    "dueToday": "{amount} due today",
+    "perMonth": "/mo",
+    "perYear": "/yr",
+    "setupLabel": "setup",
+    "featuredBadge": "Best value",
+    "fromPrice": "from {amount}",
+    "packagesTitle": "Packages",
+    "registeredAddressNote": "Choose 1–3 years at checkout — price shown is per year."
   },
   "pricing": {
     "hero": {
