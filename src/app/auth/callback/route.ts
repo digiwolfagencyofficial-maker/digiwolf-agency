@@ -8,6 +8,15 @@ export async function GET(request: Request) {
   const requestUrl = new URL(request.url)
   const code = requestUrl.searchParams.get('code')
   const next = safeCallbackUrl(requestUrl.searchParams.get('next'))
+  const oauthError = requestUrl.searchParams.get('error')
+  const oauthErrorDescription = requestUrl.searchParams.get('error_description')
+
+  if (oauthError) {
+    console.error('[auth/callback] OAuth provider returned an error:', oauthError, oauthErrorDescription)
+    const loginUrl = new URL('/login', request.url)
+    loginUrl.searchParams.set('error', oauthErrorDescription || oauthError)
+    return NextResponse.redirect(loginUrl)
+  }
 
   const cookieStore = await cookies()
   const supabase = makeSupabaseClient(cookieStore)
